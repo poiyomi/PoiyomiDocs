@@ -6,11 +6,11 @@ import PoiVideo from '@site/src/components/PoiVideo'
 
 # Color & Normals
 
-<PoiVideo url='/vid/color-and-normals/Loop_Main.mp4'/>
+<PoiVideo url='/vid/color-and-normals/main_Loop.mp4'/>
 
 The **Color & Normals** section defines fundamental attributes of a material, including most options that affect the Base Color and per-pixel Normals of the material.
 
-![Main Options](/img/color-and-normals/Options_Main.png)
+![Main Options](/img/color-and-normals/main_Options.png)
 
 ## Color & Alpha
 
@@ -36,7 +36,7 @@ When expanded, the Normal Map texture has options for **Tiling** and **Offset**,
 
 The Normal Map texture has a slider for **Intensity**, which affects how much influence the normal map has on the surface. This is a special property and has unique considerations for animating[^1].
 
-<PoiVideo url='/vid/color-and-normals/Normal-Map_Intensity.mp4'/>
+<PoiVideo url='/vid/color-and-normals/main_Normal-Map_Intensity.mp4'/>
 
 *Adjusting the Intensity of a Normal Map on a Shaded material*
 
@@ -48,7 +48,7 @@ Poiyomi, and most Unity shaders, use [OpenGL formatted normal maps](https://help
 
 The Alpha Map texture provides an additional slot to influence the base alpha of a material. This texture will be multiplied with the base alpha from the Main Texture. It should generally be black and white, as only its value (specifically the red channel value) will be used, not the color.
 
-![Alpha Map](/img/color-and-normals/Alpha-Map_Comparison.png)
+![Alpha Map](/img/color-and-normals/main_Alpha-Map_Comparison.png)
 
 *Alpha Map: Opaque / Cutout (0.5 Cutoff) / Cutout (0 Cutoff, Alpha To Coverage and Dithering with MSAA) / Fade*
 
@@ -56,7 +56,7 @@ When expanded, the Alpha Map texture has options for **Tiling** and **Offset**. 
 
 The Alpha Map can be inverted with the **Invert** option.
 
-![Alpha Map Invert](/img/color-and-normals/Alpha-Map_Invert.png)
+![Alpha Map Invert](/img/color-and-normals/main_Alpha-Map_Invert.png)
 
 *Alpha Map Invert: Off/On*
 
@@ -70,11 +70,11 @@ This is a special property and has unique considerations for animating[^1].
 
 In the Cutout rendering mode, this value is set to `0.5` by default, and generally does not need to be adjusted.
 
-![Alpha Cutoff Cutout GIF]((/img/color-and-normals/Alpha-Cutoff_Cutout.png)
+![Alpha Cutoff Cutout GIF]((/img/main_color-and-normals/Alpha-Cutoff_Cutout.png)
 *Alpha Cutoff (Cutout Rendering Preset): 0 -> 0.25 -> 0.5 -> 0.75*
 
 In Transparent rendering modes like Fade, Transparent, TransClipping, etc., this value defaults to `0.0`. It can be used as a hard cutoff below which a transparent material will render nothing.
 
-<PoiVideo url='/vid/color-and-normals/Alpha-Cutoff_Fade.mp4'/> 
+<PoiVideo url='/vid/color-and-normals/main_Alpha-Cutoff_Fade.mp4'/> 
 
 [^1]: [Special Unity Properties](docs/../../general/locking.md#unity-special-properties)
