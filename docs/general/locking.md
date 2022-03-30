@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Locking
+title: Locking and Animation
 ---
 import PoiVideo from '@site/src/components/PoiVideo' 
 
@@ -23,6 +23,7 @@ For VRChat, the locking process happens automatically for any materials used in 
 To animate a property on a locked shader, they need to be marked as animated. To do this, while the material is unlocked, *right click* the property and select **Animated (When Locked)**. This will add a green `A` next to the property (short for `A`nimated).
 
 ![Marking a property as animated](/img/general/locking_animated.png)
+
 *Marking a property as animated*
 
 ### Rename Animated
@@ -43,7 +44,7 @@ Optionally, set the value to the value the keyframe should have. Then, select **
 
 If the property is set to **Animated (when locked)**, the keyframe will be copied with the standard property name. If the property is set to **Renamed (when locked)**, the keyframe will be copied with the renamed property.
 
-### Other Options
+### Property Name Options
 
 These options are mostly useful for shader debugging and development, as well as editor scripting.
 
@@ -60,30 +61,97 @@ Copies the name of the property, appending the renaming suffix if the property i
 Copies the name of the property, appending the renaming suffix if applicable. If the renderer is a child of an object with an animator, it will copy the path with reference to the parent animator.
 
 ![Copy Animated Property Path](/img/general/locking_copy-animated-property-path.png)
+
 *Selecting **Copy Animated Property Path** would copy the value `Armature/Hips/Sphere/_DecalEmissionStrength` .*
 
-## Non-Animatable Properties
+## Special Cases for Animation
 
-Some properties cannot be animated at runtime in the same way as most.
+### Animating Vector/Color Channels
 
-### Section Header Checkboxes
+When animating 
+
+### Unity Special Properties
+
+Some properties in the shader are handled by Unity differently than most, and either cannot be animated, or can only be animated in a specific way. These are generally[^1] properties also used in Unity's [Standard Shader](https://docs.unity3d.com/Manual/shader-StandardShader.html), and are used to provide proper fallback behavior for VRChat's [Shader Blocking and Fallback System](https://docs.vrchat.com/docs/shader-fallback-system). 
+
+The following table provides a list of features that will be animated on all materials on a renderer regardless of their lock state. For certain values, they can be renamed for animation (and, if necessary, will have a dummy version of the original, un-renamed version for fallback shaders).
+
+This behavior is not a bug, it's behavior defined by Unity, beyond the control of the shader author (given the need to name these properties specifically for fallback shaders to work correctly).
+
+| Property Name | Can be Renamed? | Property |
+|--|--|--|
+| `_Color`                  | ✔️ | [Main Color](docs/../../color-and-normals/main.md#color) |
+| `_MainTex_ST`             | ❌ | [Main Texture Tiling/Offset](docs/../../color-and-normals/main.md#main-texture) |
+| `_BumpMap_ST`             | ❌ | [Normal Map Tiling/Offset](docs/../../color-and-normals/main.md#normal-map) |
+| `_BumpScale`              | ✔️ | [Normal Map Intensity](docs/../../color-and-normals/main.md#normal-map) |
+| `_Cutoff`                 | ✔️ | [Alpha Cutoff](docs/../../color-and-normals/main.md#alpha-cutoff) |
+| `_DetailMask_ST`          | ❌ | [Detail Mask Tiling/Offset](docs/../../color-and-normals/details.md#detail-mask) |
+| `_DetailNormalMap_ST`     | ❌ | [Detail Mask Tiling/Offset](docs/../../color-and-normals/details.md#detail-normal) |
+| `_DetailNormalMapScale`   | ✔️ | [Detail Mask Tiling/Offset](docs/../../color-and-normals/details.md#detail-normal-intensity) |
+| `_EmissionColor`          | ✔️ | [Emission 0 Color](docs/../../special-fx/emission.md#emission-color) |
+| `_EmissionMap_ST`         | ❌ | [Emission 0 Map Tiling/Offset](docs/../../special-fx/emission.md#emission-map) |
+
+### Non-Animatable Properties
+
+Some properties cannot be animated at runtime in the same way as most, due to the way they function. You may be able to create keyframes that change these properties, but they will not work at runtime.
+
+To adjust these properties at runtime, you'll need to create different materials with the different settings. These can then be animated to change on the material, though be advised that there are issues with animating material slots on a renderer - notably, the slot labelled "Element 4" cannot be animated without the slot labelled "Material 2" changing[^2].
+
+#### Section Header Checkboxes
 
 ![Section Header Checkbox](/img/general/locking_section-header-checkbox.png)
 
-These section checkboxes signal the shader to add and remove code, and as such cannot be animated at runtime.
+These section checkboxes signal the shader to add and remove code, and cannot be animated at runtime.
 
-If you want to toggle the effect of a section, look for a property that controls the overall effect. For example, to disable **Color Adjust**, you could
+If you want to toggle the effect of a section, use a property that controls the overall effect. For example, to disable **Color Adjust**, you could animate the settings to their default values. To disable a **Decal**, animate the *Alpha* value to `0`.
 
-### Keyword Toggle Checkboxes
+#### Keyword Toggle Checkboxes
 
-Description
+These include anything that toggles a [Keyword](https://docs.unity3d.com/Manual/shader-keywords.html), which is generally reserved for large changes in features, or the addition of texture slots. These also add and remove code from the shader, and cannot be animated at runtime.
 
-## Animating Vector/Color Channels
+- RGBA Masking: Enable Normals
+- Light Data: Enable Additive
+- Light Data: Ignore Directional
+- Light Data: Debug
+- Shading: Lighting Type
+- Shading: (Cloth Mode) Clothmask Lerp
+- Matcap 1/2: Custom Normal
 
-Description
+#### Rendering/Low Level Options
+
+These options relate to low-level directives and settings that change how the graphics driver interprets the shader, and generally cannot be adjusted at runtime.
+
+- Lock/Unlock Shader
+- Rendering Preset
+- Rendering: Cull
+- Rendering: ZTest
+- Rendering: ZWrite
+- Rendering: Color Mask
+- Rendering: Offset Factor
+- Rendering: Offset Units
+- Rendering: Reduce Clip Distance
+- Rendering: Ignore Fog
+- Rendering: Enable GPU Instancing
+- Rendering: RGB Blend Op
+- Rendering: Alpha Blend Op
+- Rendering: Source Blend
+- Rendering: Destination Blend
+- Rendering: Stencil Reference Value
+- Rendering: Stencil ReadMask Value
+- Rendering: Stencil WriteMask Value
+- Rendering: Stencil Pass Op
+- Rendering: Stencil Fail Op
+- Rendering: Stencil ZFail Op
+- Rendering: Stencil Compare Function
+- VRChat Fallback Shader
+- Render Queue
 
 ## Technical Details
 
-The locking feature uses an optimization procedure developed by [Kaj](https://github.com/DarthShader/Kaj-Unity-Shaders). When the shader is locked in, a unique version is generated that removes unused code, defines fixed values for shader properties, and defined unused texture slots to be fixed values.
+The locking feature uses an optimization procedure developed by [Kaj](https://github.com/DarthShader/Kaj-Unity-Shaders). When the shader is locked in, a unique version is generated that removes unused code, defines fixed values for non-animated shader properties, and defined unused texture slots to be fixed values.
 
-This significantly improves performance, helps mitigate the 64 texture slot crash sometimes seen when many complex materials with lots of modules enabled are present in a scene.
+This significantly improves performance, helps mitigate the [64 texture slot crash](docs/../../general/textures#64-texture-slot-crash) sometimes seen when many complex materials with lots of modules enabled are present in a scene.
+
+[^1]: For a more complete list, see the [List of some "Illegal Property Renames"](https://github.com/Thryrallo/ThryEditor/blob/master/Editor/ShaderOptimizer.cs#L227)
+
+[^2]: https://hai-vr.notion.site/Avatars-27b50349acbe46c6914a502a7795c966#0cb36bb88d9e471dab10d6f0c2212201
