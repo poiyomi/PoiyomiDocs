@@ -6,26 +6,30 @@ sidebar_position: 4
 
 ![Docusaurus logo](/img/CirclelogoBig.png)
 
-### Detail Mask
+## Detail Mask
 
 Description
 
-### Detail Texture Tint
+## Detail Texture Tint
 
 Description
 
-### Detail Texture
+## Detail Texture
 
 Description
 
-### Detail Tex Intensity
+## Detail Tex Intensity
 
 Description
 
-### Detail Brightness
+## Detail Brightness
 
 Description
 
-### Detail Normal
+## Detail Normal
+
+Description
+
+## Detail Normal Intensity
 
 Description
