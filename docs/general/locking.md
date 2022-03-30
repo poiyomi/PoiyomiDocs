@@ -68,7 +68,11 @@ Copies the name of the property, appending the renaming suffix if applicable. If
 
 ### Animating Vector/Color Channels
 
-When animating 
+When animating vector channels (including color channels, texture tiling/offset options, panning, and many others), the keyframe will be applied to the entire vector/color channel by default. It's possible to remove unused channels by deleting them individually after creating the keyframe, but may require special considerations in your animator.
+
+With Write Defaults enabled in your animator states, the vector/color channels will be set to the default value of the material if not animated in a specific state. This means you should be able to animate individual vector/color channels of a material without worrying about the unused channels.
+
+With Write Defaults disabled in your animator states, the vector/color channels will not be set to the default value of the material if not animated in a specific state. If the state of each channel is not animated, this can lead to undefined behavior. It's best to explicitly animate the state of all 4 channels of a vector in a default animator state, then animate the channels individually in subsequent states. This will ensure that the channels are initialized to the correct value.
 
 ### Unity Special Properties
 
