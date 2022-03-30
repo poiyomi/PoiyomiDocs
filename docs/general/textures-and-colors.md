@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: Textures
+title: Textures and Colors
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
@@ -18,7 +18,15 @@ Description
 
 Description
 
+## Color Blending
+
+Description
+
 ## Channels
+
+Description
+
+## Vertex Colors
 
 Description
 
@@ -29,5 +37,9 @@ Description
 Description
 
 ### Encoding
+
+Description
+
+## 64 Texture Slot Crash
 
 Description
