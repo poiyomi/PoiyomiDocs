@@ -1,47 +1,61 @@
 ---
 sidebar_position: 7
+title: Back Face
 ---
+import PoiVideo from '@site/src/components/PoiVideo'
 
 # Back Face
 
 ![Docusaurus logo](/img/CirclelogoBig.png)
 
-### Color
+Back Face provides options for modifying the base color, emission, and alpha for the back faces of a mesh.
 
-Description
+To use this section, Culling should be set to `Off` or `Front` in order for backfaces to be visible.
 
-### Emission Strength
+## Color
 
-Description
+Tint color to multiply the backface by.
 
-### Alpha
+## Emission Strength
 
-Description
+Range: `0-20`
 
-### Texture
+How much emission to add to the backface. Draws from the backface color.
 
-Description
+## Alpha
 
-### Mask
+Range: `0-1`
 
-Description
+Alpha multiplier for the backface. 
 
-### Detail Intensity
+## Texture
 
-Description
+Texture to override the backface base color with.
 
-### Replace Alpha
+## Mask
 
-Description
+Texture used to mask the effect of backface color, texture, emission, and alpha modifiers.
+
+## Detail Intensity
+
+Detail Intensity backface multipler for detail textures in the [Details](details.md) section.
+
+## Replace Alpha
+
+Whether to replace the alpha value for the backface with the alpha calculated from the Backface Texture and Alpha settings.
 
 ## Hue Shift
 
-Description
+Enable or Disable hue shift for the backface base color.
 
 ### Hue Shift
 
-Description
+Range: `0-1`
+
+How much to shift the backface base color around the hue circle. 
+
+This value is circular, and will have the same result at 0 and 1. 
 
 ### Hue Shift Speed
 
-Description
+How much to constantly shift the hue with time. A value of 1 will result in a full hue shift cycle every 20 seconds.
