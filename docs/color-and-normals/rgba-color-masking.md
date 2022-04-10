@@ -74,6 +74,8 @@ Normal Map texture to be used for the R masked area.
 
 ### Intensity
 
+Range: `0-10`
+
 Intensity of the R Normal.
 
 ## G Normal
@@ -81,6 +83,8 @@ Intensity of the R Normal.
 Normal Map texture to be used for the G masked area.
 
 ### Intensity
+
+Range: `0-10`
 
 Intensity of the G Normal.
 
@@ -90,6 +94,8 @@ Normal Map texture to be used for the B masked area.
 
 ### Intensity
 
+Range: `0-10`
+
 Intensity of the B Normal.
 
 ## A Normal
@@ -97,5 +103,7 @@ Intensity of the B Normal.
 Normal Map texture to be used for the A masked area.
 
 ### Intensity
+
+Range: `0-10`
 
 Intensity of the A Normal.
