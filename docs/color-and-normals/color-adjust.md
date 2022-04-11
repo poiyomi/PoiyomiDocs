@@ -74,7 +74,7 @@ Which audio link frequency band to use for the hue shift motion.
 
 ### Motion Type
 
-Which chronotensity motion mode to use for the hue shift motion. These are somewhat self descriptive, but more information is available in the [Audio Link Docs]().
+Which chronotensity motion mode to use for the hue shift motion. These are somewhat self descriptive, but more information is available in the [Audio Link Docs](https://github.com/llealloo/vrc-udon-audio-link/tree/master/Docs#alpass_chronotensity).
 
 ### Motion Speed
 
