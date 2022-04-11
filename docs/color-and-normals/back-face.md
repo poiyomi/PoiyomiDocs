@@ -6,8 +6,6 @@ import PoiVideo from '@site/src/components/PoiVideo'
 
 # Back Face
 
-![Docusaurus logo](/img/CirclelogoBig.png)
-
 Back Face provides options for modifying the base color, emission, and alpha for the back faces of a mesh.
 
 To use this section, Culling should be set to `Off` or `Front` in order for backfaces to be visible.

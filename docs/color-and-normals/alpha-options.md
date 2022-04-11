@@ -6,8 +6,6 @@ import PoiVideo from '@site/src/components/PoiVideo'
 
 # Alpha Options
 
-![Docusaurus logo](/img/CirclelogoBig.png)
-
 The **Alpha Options** provides options for modifying how the material treats alpha.
 
 The effects of these options are heavily influenced by the [Render Preset](../general/render-settings.md) and other render settings.

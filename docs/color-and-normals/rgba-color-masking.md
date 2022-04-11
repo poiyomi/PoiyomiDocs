@@ -6,8 +6,6 @@ import PoiVideo from '@site/src/components/PoiVideo'
 
 # RGBA Color Masking
 
-![Docusaurus logo](/img/CirclelogoBig.png)
-
 RGBA Color Masking provides a flexible way to apply different color tints, textures, and normal maps with the main color.
 
 RGBA Color masking does not affect the alpha of the material.

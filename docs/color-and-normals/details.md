@@ -6,8 +6,6 @@ import PoiVideo from '@site/src/components/PoiVideo'
 
 # Details
 
-![Docusaurus logo](/img/CirclelogoBig.png)
-
 The Details section provides options to apply additional textures (often tiled) to the base color and normals.
 
 ## Detail Mask

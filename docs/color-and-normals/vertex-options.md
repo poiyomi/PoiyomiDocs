@@ -6,8 +6,6 @@ import PoiVideo from '@site/src/components/PoiVideo'
 
 # Vertex Options
 
-![Docusaurus logo](/img/CirclelogoBig.png)
-
 The **Vertex Offset** section provides options related to the position of model vertices, and can be used to modify a material's vertices in various ways without actually modifying the mesh.
 
 ## Local Translation

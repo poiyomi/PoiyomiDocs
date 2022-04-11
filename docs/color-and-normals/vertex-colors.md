@@ -6,8 +6,6 @@ import PoiVideo from '@site/src/components/PoiVideo'
 
 # Vertex Colors
 
-![Docusaurus logo](/img/CirclelogoBig.png)
-
 The Vertex Colors section provides options for using a mesh's vertex colors to affect the base color and alpha. 
 
 ## Linear Colors

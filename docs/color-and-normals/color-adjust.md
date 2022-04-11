@@ -6,8 +6,6 @@ import PoiVideo from '@site/src/components/PoiVideo'
 
 # Color Adjust
 
-![Docusaurus logo](/img/CirclelogoBig.png)
-
 The **Color Adjust** section provides options for modifying the base color of the material. This is applied directly after the main **Color and Normals** section, and will not affect other sections that modify the base color.
 
 ## Mask
