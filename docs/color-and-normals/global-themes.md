@@ -1,6 +1,6 @@
 ---
 sidebar_position: 10
-title: Decals
+title: Global Themes
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
