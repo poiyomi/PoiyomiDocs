@@ -16,11 +16,15 @@ The **Color & Normals** section defines fundamental attributes of a material, in
 
 ### Color
 
+- `Type`: Color
+
 A tint color that's blended multiplicatively with the base texture. If no Main Texture is specified, the material's base texture becomes this color.
 
 This color can be changed to a [Theme Color](global-themes.md).
 
 ### Main Texture
+
+- `Type`: **Color** Texture (sRGB **ON**)
 
 The Main Texture of the material. The base color of the material is set from the color of this texture. In transparent rendering modes, the Main Texture's Alpha sets the base alpha of the material.
 
@@ -29,6 +33,8 @@ Like most other textures, the **Tiling** and **Offset** values of the Main Textu
 The assigned **UV Map** and the **Panning** of the Main Texture can be adjusted, and can be animated independently.
 
 ## Normal Map
+
+- `Type`: **Normal Map** Texture (sRGB **OFF**)
 
 The Normal Map texture changes the normal of the surface based on a normal map texture. This allows additional detail to be added to a material without increasing the complexity of a mesh.
 
@@ -46,6 +52,8 @@ Poiyomi, and most Unity shaders, use [OpenGL formatted normal maps](https://help
 
 ## Alpha Map
 
+- `Type`: **Data** Texture (sRGB **OFF**)
+
 The Alpha Map texture provides an additional slot to influence the base alpha of a material. This texture will be multiplied with the base alpha from the Main Texture. It should generally be black and white, as only its value (specifically the red channel value) will be used, not the color.
 
 ![Alpha Map](/img/color-and-normals/main_Alpha-Map_Comparison.png)
@@ -62,7 +70,7 @@ The Alpha Map can be inverted with the **Invert** option.
 
 ### Alpha Cutoff
 
-Range: `0-1`
+- `Type`: **Float**, Range: `0.0 - 1.0`
 
 The **Alpha Cutoff** value sets the alpha value at which to [clip](https://docs.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-clip) a pixel. If the alpha value of a pixel is below this value, the pixel is [discarded](https://docs.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-discard).
 

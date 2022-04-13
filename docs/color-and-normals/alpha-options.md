@@ -4,27 +4,31 @@ title: Alpha Options
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
-# Alpha Options
-
-The **Alpha Options** provides options for modifying how the material treats alpha.
+The **Alpha Options** section provides options for modifying how the material treats alpha.
 
 The effects of these options are heavily influenced by the [Render Preset](../general/render-settings.md) and other render settings.
 
 ## Force Opaque
 
+- `Type`: **Checkbox**
+
 This option forces the material to have an alpha value of 1. Generally, this will result in any transparency being disabled.
 
 ## Alpha Mod
 
-Range: `-1 - 1`
+- `Type`: **Float**, Range: `-1.0 - 1.0`
 
 Alpha Mod defines a direct value to add to or remove from the material alpha. This directly influences all alpha values on the material.
 
 ## Alpha Premultiply
 
+- `Type`: **Checkbox**
+
 With Alpha Premultiply enabled, the shader will multiply the base color by the alpha value after all base color operations, but before lighting and emission calculations. This results in a different appearance for transparent materials.s
 
 ## Alpha To Coverage
+
+- `Type`: **Checkbox**
 
 Enable or Disable Alpha to Coverage. This affects how the shader is sampled by functions that read the coverage of a fragment. 
 
@@ -32,17 +36,21 @@ Alpha to Coverage can be enabled in the cutout render mode to provide transparen
 
 ### Sharpened A2C
 
+- `Type`: **Checkbox**
+
 Sharpened Alpha to Coverage (A2C) rescales the alpha value using the mipmaps. 
 
 This option is useful for using Alpha to Coverage on dense collections of cutout polygons that will be discernable from varying distances, such as vegetation and grass.
 
 ### Mip Level Alpha Scale
 
-Range: `0-1`
+- `Type`: **Float**, Range: `0.0 - 1.0`
 
 How much to use the mipmaps to rescale the alpha value. Only used when Sharpened A2C is enabled.
 
 ## Dithering
+
+- `Type`: **Checkbox**
 
 Enable or disable alpha dithering.
 
@@ -50,17 +58,19 @@ Dithering is a technique that introduces intentional noise in order to provide a
 
 ### Dither Gradient
 
-Range: `0-1`
+- `Type`: **Float**, Range: `0.0 - 1.0`
 
 The range to apply dithering over. The larger this value is, the more dithering will be applied.
 
 ## Distance Alpha
 
+- `Type`: **Checkbox**
+
 Enable or Disable Distance Alpha. Distance Alpha can modify the alpha value based on the distance from the viewer (camera) to the object/pixel.
 
 ### Pos To Use
 
-Options: `Object Position/Pixel Position`
+- `Type`: **Dropdown**, Options: `Object Position/Pixel Position`
 
 Which position to use to calculate distance.
 
@@ -70,25 +80,31 @@ Which position to use to calculate distance.
 
 ### Min Distance Alpha
 
-Range: `0-1`
+- `Type`: **Float**, Range: `0.0 - 1.0`
 
 The alpha multiplier that will be applied at the [Min Distance](#Min-Distance). 
 
 ### Max Distance Alpha
 
-Range: `0-1`
+- `Type`: **Float**, Range: `0.0 - 1.0`
 
 The alpha multiplier that will be applied at the [Max Distance](#Max-Distance). 
 
 ### Min Distance
 
+- `Type`: **Float**
+
 The distance (in meters) at which the Min Distance Alpha multiplier will be applied.
 
 ### Max Distance
 
+- `Type`: **Float**
+
 The distance (in meters) at which the Max Distance Alpha multiplier will be applied.
 
 ## Fresnel Alpha
+
+- `Type`: **Checkbox**
 
 Enable or Disable the Fresnel Alpha effect. Fresnel Alpha uses the angle between the viewer (camera) and the object's normal to modify the alpha.
 
@@ -96,27 +112,31 @@ This can be used to simulate materials that are more opaque at shallow angles, s
 
 ### Intensity
 
-Range: `0-1`
+- `Type`: **Float**, Range: `0.0 - 1.0`
 
 How much the alpha should be modified by the Fresnel Alpha effect.
 
 ### Sharpness
 
-Range: `0-1`
+- `Type`: **Float**, Range: `0.0 - 1.0`
 
 How sharp the transition should be between full effect and no effect.
 
 ### Width
 
-Range: `0-1`
+- `Type`: **Float**, Range: `0.0 - 1.0`
 
 How wide the Fresnel Alpha effect should be.
 
 ### Invert
 
+- `Type`: **Checkbox**
+
 Whether the Fresnel Alpha effect should increase in intensity from the outside-in or the inside-out.
 
 ## Angular Alpha
+
+- `Type`: **Checkbox**
 
 Angular Alpha uses the angle between a specified direction and the object or vertex position to modify the material alpha. 
 
@@ -124,7 +144,7 @@ This can be used to create materials that are only visible when looking directly
 
 ### Angle Type
 
-Options: `Camera Face Model/Model Face Camera/Face Each Other`
+- `Type`: **Dropdown**, Options: `Camera Face Model/Model Face Camera/Face Each Other`
 
 Defines how the angle should be calculated.
 
@@ -136,7 +156,7 @@ Defines how the angle should be calculated.
 
 ### Model or Vert Position
 
-Options: `Model/Vertex`
+- `Type`: **Dropdown**, Options: `Model/Vertex`
 
 `Model` will calculate distance relative to the origin of the object, resulting in the whole object having a uniform alpha change. This is useful for making an entire material change alpha at once.
 
@@ -148,37 +168,43 @@ Defines the vector used for the model Forward Direction. Relative to the model's
 
 ### Camera Angle Min
 
-Range: `0-180`
+- `Type`: **Float**, Range: `0.0 - 180.0`
 
 The angle (in degrees) at which the alpha multiplier should be 0 in the `Camera Face Model` mode.
 
 ### Camera Angle Max
 
-Range: `0-180`
+- `Type`: **Float**, Range: `0.0 - 180.0`
 
 The angle (in degrees) at which the alpha multiplier should be 1 in the `Camera Face Model` mode.
 
 ### Model Angle Min
 
-Range: `0-180`
+- `Type`: **Float**, Range: `0.0 - 180.0`
 
 The angle (in degrees) at which the alpha multiplier should be 0 in the `Model Face Camera` mode.
 
 ### Model Angle Max
 
-Range: `0-180`
+- `Type`: **Float**, Range: `0.0 - 180.0`
 
 The angle (in degrees) at which the alpha multiplier should be 1 in the `Model Face Camera` mode.
 
 ### Min Alpha
 
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
 The minimum value of alpha for the Angular Alpha mode. This will prevent the alpha from going below a certain level.
 
 ## Alpha Audio Link
 
+- `Type`: **Checkbox**
+
 With [Audio Link](../audio-link/controls.md) enabled, the alpha can be modified based on the audio level in a specific band.
 
 ### Add Range
+
+- `Type`: **Vector2**
 
 How much to add (or subtract) from alpha. The **X** value is the alpha added with no volume in the Alpha Add Band, and the **Y** value is the alpha added with maximum volume.
 
@@ -186,6 +212,6 @@ If audio link is not present in a world, no value will be added. Using this beha
 
 ### Alpha Add Band
 
-Options: `Bass/Low Mid/High Mid/Treble`
+- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
 
 Which band to use for Alpha Add.
