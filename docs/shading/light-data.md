@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Main
+title: Light Data
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
@@ -60,7 +60,7 @@ Options: `Poi Custom/Standard/UTS2`
 
 Defines how to calculate the light color. These will generally exhibit small differences under simple or ideal lighting, but will diverge in more complex or adverse lighting conditions.
 
-#### Poi Custom
+#### Poi Custom (Light Color)
 
 Poi Custom light color uses a custom light calculation to better handle adverse lighting conditions, such as those often encountered in user-created content.
 
@@ -70,7 +70,7 @@ Poi Custom light color mode adds the **Indirect uses Normals** option.
 
 Standard light color uses a light calculation that more closely matches the Unity Standard shader. It can often break down in adverse lighting conditions.
 
-#### UTS2
+#### UTS2 (Light Color)
 
 UTS2 (Unitychan Toon Shader 2) light color uses a calculation that produces a result that's generally consistent, but often incoherent with the environmental lighting conditions. 
 
@@ -84,7 +84,7 @@ Changes how the light map is calculated.
 
 This option may be removed in future versions of the shader.
 
-#### Poi Custom
+#### Poi Custom (Light Map)
 
 Poi Custom light map uses a custom calculation for the lightmap. It takes into account the baked lighting conditions.
 
@@ -102,7 +102,7 @@ Options: `Poi Custom/Forced Local Direction/Forced World Direction/UTS2`
 
 Defines how the light direction should be calculated. This can be used to emulate the look of other shaders, or to force a certain appearance while still remaining lit.
 
-#### Poi Custom
+#### Poi Custom (Light Direction)
 
 Poi Custom light direction calculates the light direction taking into account the lighting conditions. This will be only slightly different from the Unity Standard Shader's light direction under ideal cases, but will handle a lack of direct lighting better.
 
@@ -120,7 +120,7 @@ Forced World Direction forces the light direction to a specific vector. This vec
 
 This option adds the **Forced Direction** option. 
 
-#### UTS2
+#### UTS2 (Light Direction)
 
 UTS2 calculates the light direction the same as the Unity Standard Shader, but will use the view direction to "fake" a light direction, which results in better handling of a lack of direct lighting.
 
@@ -159,7 +159,6 @@ Range: `0-10`
 If **Limit Brightness** is enabled, the brightness due to base pass lighting calculations will never go above this value. Add pass lighting or emission can cause the final color to exceed this value.
 
 This option is only visible when **Limit Brightness** is enabled.
-
 
 ### Min Direct Brightness
 
