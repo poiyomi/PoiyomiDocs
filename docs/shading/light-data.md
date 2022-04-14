@@ -4,11 +4,11 @@ title: Light Data
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
-# Light Data
-
 The Light Data section provides options for changing features relating to the data used for lighting and shading the material. Options here significantly influence the functionality of the Shading Section
 
 ## AO Maps
+
+- `Type`: **Data** Texture (sRGB **OFF**)
 
 A texture used to define the Ambient Occlusion (AO) for different areas on the material. Ambient occlusion darkens the lighting provided by ambient (indirect) lighting, an effect frequency seen in physical environments. This texture is generally baked in a 3d program like Blender or Substance Painter.
 
@@ -18,11 +18,13 @@ Generally, if only a single map is being used (such as in the case of a black an
 
 ### AO Map R/G/B/A Intensity
 
-Range: `0-1`
+- `Type`: **Float**, Range: `0.0 - 1.0`
 
 Intensity of each AO map channel.
 
 ## Detail Shadows
+
+- `Type`: **Data** Texture (sRGB **OFF**)
 
 A texture used to define the Detail Shadows for different areas on the material. Detail Shadows darken the lighting provided by direct lighting. In some cases, this texture is similar to (or identical to) the AO texture. 
 
@@ -34,11 +36,13 @@ Generally, if only a single map is being used (such as in the case of a black an
 
 ### Detail Shadow R/G/B/A Intensity
 
-Range: `0-1`
+- `Type`: **Float**, Range: `0.0 - 1.0`
 
 Intensity of each Detail Shadow map channel.
 
 ## Shadow Masks
+
+- `Type`: **Data** Texture (sRGB **OFF**)
 
 A texture used to define the shadow mask on different areas of the material. Shadow Masks reduce the influence of shadows, and can be used to to create stylized models and appearances.
 
@@ -46,7 +50,7 @@ The Shadow Mask texture reads all 4 RGBA channels independently, allowing differ
 
 ### Shadow Mask R/G/B/A Intensity
 
-Range: `0-1`
+- `Type`: **Float**, Range: `0.0 - 1.0`
 
 Intensity of each Detail Shadow map channel.
 
@@ -56,7 +60,7 @@ Options controlling the lighting in the base pass. The base pass is used for bas
 
 ### Light Color Mode
 
-Options: `Poi Custom/Standard/UTS2`
+- `Type`: **Dropdown**, Options: `Poi Custom`/`Standard`/`UTS2`
 
 Defines how to calculate the light color. These will generally exhibit small differences under simple or ideal lighting, but will diverge in more complex or adverse lighting conditions.
 
@@ -78,7 +82,7 @@ This mode adds the **Unlit Intensity** option.
 
 ### Light Map Mode
 
-Options: `Poi Custom/Normalized NDotL/Saturated NDotL`
+- `Type`: **Dropdown**, Options: `Poi Custom`/`Normalized NDotL`/`Saturated NDotL`
 
 Changes how the light map is calculated.
 
@@ -98,7 +102,7 @@ Normalized NDotL uses the dot product between the mesh normal and the light dire
 
 ### Light Direction Mode
 
-Options: `Poi Custom/Forced Local Direction/Forced World Direction/UTS2`
+Options: `Poi Custom`/`Forced Local Direction`/`Forced World Direction`/`UTS2`
 
 Defines how the light direction should be calculated. This can be used to emulate the look of other shaders, or to force a certain appearance while still remaining lit.
 
@@ -126,15 +130,21 @@ UTS2 calculates the light direction the same as the Unity Standard Shader, but w
 
 ### Forced Direction
 
+- `Type`: **Vector3**
+
 What direction to force the lighting to.
 
 This option is only visible when **Light Direction Mode** is set to `Forced Local Direction` or `Forced World Direction`.
 
 ### Force Light Color
 
+- `Type`: **Checkbox**
+
 Whether to force the light color to a specific color. Enabling this option adds the **Forced Color** option.
 
 #### Forced Color
+
+- `Type`: **Color**
 
 What color the light should be forced to.
 
@@ -142,19 +152,21 @@ This option is only visible when **Force Light Color** is enabled.
 
 ### Unlit Intensity
 
-Range: `0.001-4`
+- `Type`: **Float**, Range: `0.001-4`
 
-How much 
+How much the model should be lit, even in the absence of direct lighting.
 
 This option is only visible when **Light Color Mode** is set to `UTS2`.
 
 ### Limit Brightness
 
+- `Type`: **Checkbox**
+
 Whether to cap the brightness value to a specific maximum. Enabling this option adds the **Max Brightness** option.
 
 ### Max Brightness
 
-Range: `0-10`
+- `Type`: **Float**, Range: `0.0 - 10.0`
 
 If **Limit Brightness** is enabled, the brightness due to base pass lighting calculations will never go above this value. Add pass lighting or emission can cause the final color to exceed this value.
 
@@ -162,13 +174,13 @@ This option is only visible when **Limit Brightness** is enabled.
 
 ### Min Direct Brightness
 
-Range: `0-1`
+- `Type`: **Float**, Range: `0.0 - 1.0`
 
 Sets the minimum value for direct lighting. This can be useful for preventing a model from getting too dark in adverse lighting conditions.
 
 ### Indirect Uses Normals
 
-Range: `0-1`
+- `Type`: **Float**, Range: `0.0 - 1.0`
 
 Defines how much to use normals when calculating indirect lighting direction. If not enabled, the indirect lighting will be sampled using the 0-vector. 
 
@@ -176,13 +188,13 @@ This option is only visible when **Light Color Mode** is set to `Poi Custom`.
 
 ### Receieve Casted Shadows
 
-Range: `0-1`
+- `Type`: **Float**, Range: `0.0 - 1.0`
 
 Defines how much to apply Unity's built-in casted shadows to the model. These can look good under certain conditions, but often will look blocky or otherwise produce undesirable results.
 
 ### Grayscale Lighting?
 
-Range: `0-1`
+- `Type`: **Float**, Range: `0.0 - 1.0`
 
 Defines how much to desaturate the base pass lighting color. This keeps the perceptual luminance the same, but reduces the saturation.
 
@@ -192,29 +204,37 @@ Options relating to lighting performed in the add pass. The add pass is used for
 
 ### Enable Additive
 
+- `Type`: **Checkbox**
+
 Enables or disables add pass lighting in general.
 
 ### Ignore Directional
+
+- `Type`: **Checkbox**
 
 Ignore directional lights in the add pass.
 
 ### Limit Brightness
 
+- `Type`: **Checkbox**
+
 Whether to limit the brightness of add pass lights. Enabling this adds the **Max Brightness** option.
 
 #### Max Brightness
+
+- `Type`: **Float**, Range: `0.0 - 10.0`
 
 Defines the maximum allowed brightness resulting from the add pass.
 
 ### Grayscale Lighting?
 
-Range: `0-1`
+- `Type`: **Float**, Range: `0.0 - 1.0`
 
 Defines how much to desaturate the add pass lighting color. This keeps the perceptual luminance the same, but reduces the saturation.
 
 ### Point Light Passthrough
 
-Range: `0-1`
+- `Type`: **Float**, Range: `0.0 - 1.0`
 
 How much to apply realtime point lighting to the indirect color.
 
@@ -224,6 +244,8 @@ Vertex lighting allows realtime lights set to non-important to perform their lig
 
 ### Enabled
 
+- `Type`: **Checkbox**
+
 Enables or Disables vertex lighting.
 
 ## Debug Visualization
@@ -231,6 +253,8 @@ Enables or Disables vertex lighting.
 Debug visualization provides visualizations of the results of lighting data settings and calculations. 
 
 ### Debug
+
+- `Type`: **Checkbox**
 
 Enable or Disable debug view.
 
