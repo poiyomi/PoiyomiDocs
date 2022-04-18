@@ -28,3 +28,18 @@ A stable, but possibly outdated version of Poiyomi Toon is available on [GitHub]
 The Pro version of the shader is available on the [Poiyomi Patreon](https://www.patreon.com/poiyomi).
 
 Features that are specific to the Pro version of the shader will be indicated on their respective pages.
+
+## Completion Status
+
+| Section      | Status |
+| ----------- | ----------- |
+| General Shader Settings | ⚠️  Partial      |
+| Color & Normals         | ⚠️  Partial      |
+|  Shading                | ⚠️  Partial      |
+|  Outlines               | ❌ Not Started  |
+|  Audio Link             | ❌ Not Started  |
+|  Special FX             | ❌ Not Started  |
+|  Modifiers              | ❌ Not Started  |
+|  Post Processing        | ❌ Not Started  |
+|  Rendering              | ❌ Not Started  |
+|  Grab Pass              | ❌ Not Started  |
