@@ -50,7 +50,7 @@ const config = {
       hideableSidebar: true,
       navbar: {
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Poiyomi Text Logo',
           src: 'img/logo.svg',
         },
         items: [

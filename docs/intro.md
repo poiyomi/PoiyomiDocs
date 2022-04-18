@@ -3,47 +3,28 @@ sidebar_position: 0
 slug: /
 title: Poiyomi Shaders
 ---
+import PoiVideo from '@site/src/components/PoiVideo'
 
-# Tutorial Intro
+## [Join the Discord!](https://discord.gg/poiyomi)
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Poiyomi Toon is a free, feature-rich shader for Unity, with a specific focus on usage with VRChat.
 
-## Getting Started
+On the sidebar, you'll find documentation for different parts of the shader.
 
-Get started by **creating a new site**.
+:::info
+This documentation is a work in progress! If you have any questions, please [join the Discord](https://discord.gg/poiyomi) and ask!
+:::
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+## Downloads
 
-### What you'll need
+### Free
 
-- [Node.js](https://nodejs.org/en/download/) version 14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+The latest version of Poiyomi Toon (free) is available in the [Poiyomi Discord server](https://discord.gg/poiyomi).
 
-## Generate a new site
+A stable, but possibly outdated version of Poiyomi Toon is available on [GitHub](https://github.com/poiyomi/PoiyomiToonShader).
 
-Generate a new Docusaurus site using the **classic template**.
+### [Patreon](https://www.patreon.com/poiyomi)
 
-The classic template will automatically be added to your project after you run the command:
+The Pro version of the shader is available on the [Poiyomi Patreon](https://www.patreon.com/poiyomi).
 
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+Features that are specific to the Pro version of the shader will be indicated on their respective pages.
