@@ -4,7 +4,7 @@ title: Light Data
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
-The Light Data section provides options for changing features relating to the data used for lighting and shading the material. Options here significantly influence the functionality of the Shading Section
+The Light Data section provides options for changing features relating to the data used for lighting and shading the material. Options here significantly influence the functionality of the [Shading](docs/../../shading/main) section.
 
 ## AO Maps
 
@@ -76,7 +76,7 @@ Standard light color uses a light calculation that more closely matches the Unit
 
 #### UTS2 (Light Color)
 
-UTS2 (Unitychan Toon Shader 2) light color uses a calculation that produces a result that's generally consistent, but often incoherent with the environmental lighting conditions. 
+UTS2 (UnityChan Toon Shader 2) light color uses a calculation that produces a result that's generally consistent, but often incoherent with the environmental lighting conditions. 
 
 This mode adds the **Unlit Intensity** option.
 
