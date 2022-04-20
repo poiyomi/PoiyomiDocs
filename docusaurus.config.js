@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Poiyomi Shaders',
-  tagline: 'Dinosaurs are cool',
+  tagline: 'Free Shaders for Unity and VRChat',
   url: 'docs.poiyomi.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -48,6 +48,10 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       hideableSidebar: true,
+      tableOfContents: {
+        minHeadingLevel: 2,
+        maxHeadingLevel: 3,
+      },
       navbar: {
         logo: {
           alt: 'Poiyomi Text Logo',
