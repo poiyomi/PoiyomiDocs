@@ -50,7 +50,7 @@ How far toward the edge the matcap texture should be applied. At 0.0, it would o
 
 - `Type`: **Data** Texture (sRGB **OFF**)
 
-Mask that defines where to apply the matcap effect.
+Mask that defines where to apply the matcap effect. Black indicates where the matcap should not be applied, and white indicates where it should be applied.
 
 ## Emission Strength
 
@@ -62,7 +62,7 @@ How much emission to apply to the matcap.
 
 - `Type`: **Float**, Range: `0.0 - 5.0`
 
-A scaling factor for the matcap texture. This is useful for making the matcap texture more or less visible, and defaults to `1.0`. Values above 1 will make the matcap brighter.
+A scaling factor for the matcap texture. This is useful for making the matcap texture more or less visible, and defaults to `1.0`. Values above `1.0` will make the matcap brighter.
 
 ## Hide in Shadow
 
