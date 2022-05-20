@@ -106,7 +106,7 @@ The first two values (`X` and `Y`) set the *tiling* for the mask channels. The s
 
 ### UV
 
-- `Type`: **Dropdown**, Options:
+- `Type`: **Dropdown**, Options: `UV0`/`UV1`/`UV2`/`UV3`/`Panosphere`/`World Pos XZ`/`Polar UV`/`Distorted UV`
 
 UV selection for the Reflection and Specular masks, if Split Mask Sampling is enabled.
 
