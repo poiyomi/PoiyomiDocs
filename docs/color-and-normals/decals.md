@@ -6,7 +6,7 @@ import PoiVideo from '@site/src/components/PoiVideo'
 
 Decals are used to place images onto a uv with specific location, rotation, and blending. 4 independent decal sections are available, with extensive base and audio link options.
 
-They can be used to add high resolution designs and details onto a mesh without the base texture having to be higher resolution, or to replace base textures entirely. 
+They can be used to add high resolution designs and details onto a mesh without the base texture having to be higher resolution, or to replace base textures entirely.
 
 ## Decal RGBA Mask
 
@@ -90,7 +90,7 @@ A constant roatation speed applied to the decal. A value of `180` will rotate th
 
 - `Type`: **Dropdown**
 
-Which blending operation to use for the decal's base color. 
+Which blending operation to use for the decal's base color.
 
 These are the same blending operations used in Adobe Photoshop.
 
@@ -98,7 +98,7 @@ These are the same blending operations used in Adobe Photoshop.
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
-How much to apply the blended color to the base color. 
+How much to apply the blended color to the base color.
 
 This option can be used to hide and show a decal by animating its value.
 
@@ -124,12 +124,161 @@ How much to constantly shift the decal hue with time. A value of 1 will result i
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
-How much to shift the base color around the hue circle. 
+How much to shift the base color around the hue circle.
 
-This value is circular, and will have the same result at `0` and `1`. 
+This value is circular, and will have the same result at `0` and `1`.
 
 ### Hue Angle Power
 
 - `Type`: **Float**
 
 How much to shift the hue with surface angle. A value of `1` will give maximum hue shift when looking straight-on, and no hue shift cycle when looking side-on. The opposite effect can be achieved with negative values. Higher or lower values will produce more or less hue shift as the surface angle changes, creating the kind of effect seen on some holographic trading cards and iridescent materials.
+
+## Audio Link
+
+These options are only available if the material has Audio Link enabled.
+
+### Scale
+
+#### Scale Band
+
+- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+
+Which band of the audio to use for the Audio Link Scale Mod.
+
+#### Scale Mod
+
+How much to modify (mod) the scale of the decal. These values are added to the current scale, and can be positive or negative.
+
+- `Type`: **Vector4**
+
+| Channel | Function |
+| --- | --- |
+| X | Amount Added to X Scale with no audio in Scale Band |
+| Y | Amount Added to Y Scale with no audio in Scale Band |
+| Z | Amount Added to X Scale with max audio in Scale Band |
+| W | Amount Added to Y Scale with max audio in Scale Band |
+
+### Side
+
+#### Side Band
+
+- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+
+Which band to use for the Audio Link Side adjustment.
+
+#### Side Mod Min
+
+- `Type`: **Vector4**
+
+How much to modify (mod) the side adjustment of the decal when there is no audio in the Side Band. These values are added to the current scale, and can be positive or negative.
+
+| Channel | Function |
+| --- | --- |
+| X | Amount Added to X Left with no audio in Side Band |
+| Y | Amount Added to X Right with no audio in Side Band |
+| Z | Amount Added to Y Up with no audio in Side Band |
+| W | Amount Added to Y Down with no audio in Side Band |
+
+#### Side Mod Max
+
+How much to modify (mod) the side adjustment of the decal when there is maximum audio in the Side Band. These values are added to the current scale, and can be positive or negative.
+
+- `Type`: **Vector4**
+
+| Channel | Function |
+| --- | --- |
+| X | Amount Added to X Left with max audio in Side Band |
+| Y | Amount Added to X Right with max audio in Side Band |
+| Z | Amount Added to Y Up with max audio in Side Band |
+| W | Amount Added to Y Down with max audio in Side Band |
+
+### Rotation
+
+#### Rotation Band
+
+- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+
+Which band to use for the Audio Link Rotation adjustment.
+
+#### Rotation Mod
+
+- `Type`: **Vector2**
+
+How much to modify (mod) the rotation of the decal, in degrees.
+
+| Channel | Function |
+| --- | --- |
+| X | Amount Added to rotation with no audio in Rotation Band |
+| Y | Amount Added to rotation with max audio in Rotation Band |
+
+### Alpha
+
+#### Alpha Band
+
+- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+
+Which band to use for the Audio Link Alpha adjustment.
+
+#### Alpha Mod
+
+- `Type`: **Vector2**
+
+How much to modify (mod) the alpha of the decal, in degrees.
+
+| Channel | Function |
+| --- | --- |
+| X | Amount Added to alpha with no audio in alpha Band |
+| Y | Amount Added to alpha with max audio in alpha Band |
+
+### Emission
+
+#### Emission Band
+
+- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+
+Which band to use for the Audio Link Emission adjustment.
+
+#### Emission Mod
+
+- `Type`: **Vector2**
+
+How much to modify (mod) the alpha of the decal.
+
+| Channel | Function |
+| --- | --- |
+| X | Amount Added to Emission with no audio in Emission Band |
+| Y | Amount Added to Emission with max audio in Emission Band |
+
+### CC Strip
+
+- `Type`: **Checkbox**
+
+Enables or disables the ColorChord strip. ColorChord strip is a strip of colors that vary based on the audio, producing specific consistent colors for given chords.
+
+### Chrono (Chronotensity) Rotation
+
+#### Chrono Rotation Band
+
+- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+
+Which band to use for the Audio Link Chrono Rotation adjustment.
+
+#### Chrono Motion Type
+
+- `Type`: **Dropdown**, Options:
+  - Motion Increases as intensity of the band increases
+  - Above but Smooth
+  - Motion moves back and forth as a function of intensity
+  - Above but Smoooth
+  - Fixed Speed Increase when the band is dark Stationary when light
+  - Above but Smooooth
+  - Fixed Speed Increase when the band is dark Fixed speed decrease when light
+
+Which motion type to use for the Chrono Rotation. Chronotensity is an Audio Link feature that allows time-dependent features, which shaders alone cannot do. In this case, chronotensity is used to create a time-dependent rotation of the decal.
+
+#### Chrono Rotation Speed
+
+- `Type`: **Float**
+
+How much chronotensity should affect the rotation of the decal. Good starting values are `0.1 - 0.5`.
