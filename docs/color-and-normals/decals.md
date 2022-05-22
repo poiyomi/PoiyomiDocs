@@ -267,13 +267,19 @@ Which band to use for the Audio Link Chrono Rotation adjustment.
 #### Chrono Motion Type
 
 - `Type`: **Dropdown**, Options:
-  - Motion Increases as intensity of the band increases
-  - Above but Smooth
-  - Motion moves back and forth as a function of intensity
-  - Above but Smoooth
-  - Fixed Speed Increase when the band is dark Stationary when light
-  - Above but Smooooth
-  - Fixed Speed Increase when the band is dark Fixed speed decrease when light
+
+<details>
+<summary><b>Chronotensity Options</b></summary>
+
+- Motion Increases as intensity of the band increases
+- Above but Smooth
+- Motion moves back and forth as a function of intensity
+- Above but Smoooth
+- Fixed Speed Increase when the band is dark Stationary when light
+- Above but Smooooth
+- Fixed Speed Increase when the band is dark Fixed speed decrease when light
+
+</details>
 
 Which motion type to use for the Chrono Rotation. Chronotensity is an Audio Link feature that allows time-dependent features, which shaders alone cannot do. In this case, chronotensity is used to create a time-dependent rotation of the decal.
 
