@@ -18,11 +18,11 @@ Defines how to apply the UV to the normals of the model.
 
 ### UTS Style
 
-UTS Style maps the texture based on the view normals, with no correction for the angle of view. This results in slightly more distortion in the top and bottom of the texture, but is generally acceptable.
+UTS Style maps the texture based on the view normals, with no correction for the angle of view. This results in slightly more distortion in the top and bottom of the texture, but is generally acceptable. In VR, however, moving your head results in a rotation and distortion of the matcap.
 
 ### Top Pinch
 
-Top Pinch maps the texture based on the view normals, with a correction for the angle of view. This results in a more uniform texture, but has artifacts in the top and bottom of the texture.
+Top Pinch maps the texture based on the view normals, with a correction for the angle of view. This prevents rotation of the matcap when the head is tilted in VR. This results in a more uniform projection, but has artifacts in the top and bottom of the texture.
 
 ### Double Sided
 
