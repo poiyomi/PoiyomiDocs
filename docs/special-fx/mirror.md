@@ -1,15 +1,21 @@
 ---
 sidebar_position: 7
+title: Mirror
 ---
+import PoiVideo from '@site/src/components/PoiVideo'
 
-# Mirror
+The mirror section is a very simple section that controls whether the shader should appear in VRChat mirrors or not.
 
-![Docusaurus logo](/img/CirclelogoBig.png)
+## Show in Mirror
 
-### Show in Mirror
+- `Type`: **Dropdown**, Options: `Show In Both`/`Show Only In Mirror`/`Don't Show In Mirror`
 
-Description
+Mode to use for the mirror.
 
-### Mirror Texture
+- `Show In Both`: The material will be shown both outside and inside the mirror.
+- `Show Only In Mirror`: The material will only be shown inside the mirror.
+- `Don't Show In Mirror`: The material will only be shown outside the mirror.
 
-Description
+## Mirror Texture
+
+Texture to apply to the base color only when in the mirror.
