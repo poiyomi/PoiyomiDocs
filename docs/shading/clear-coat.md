@@ -1,5 +1,5 @@
 ---
-sidebar_position: 7
+sidebar_position: 8
 title: Clearcoat
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
