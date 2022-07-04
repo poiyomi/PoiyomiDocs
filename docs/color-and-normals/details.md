@@ -1,31 +1,55 @@
 ---
 sidebar_position: 4
+title: Details
 ---
+import PoiVideo from '@site/src/components/PoiVideo'
 
-# Details
+The Details section provides options to apply additional textures (often tiled) to the base color and normals.
 
-![Docusaurus logo](/img/CirclelogoBig.png)
+## Detail Mask
 
-### Detail Mask
+- `Type`: **Data** Texture (sRGB **OFF**)
 
-Description
+A texture that defines how and where to apply different detail textures.
 
-### Detail Texture Tint
+| Channel | Mask |
+|--|--|
+| Red | Detail Texture |
+| Green |  Detail Normal  |
+| Blue | n/a |
 
-Description
+## Detail Texture Tint
 
-### Detail Texture
+- `Type`: **Color**
 
-Description
+A tint color that's blended multiplicatively with the Detail Texture.
 
-### Detail Tex Intensity
+## Detail Texture
 
-Description
+- `Type`: **Color** Texture (sRGB **ON**)
 
-### Detail Brightness
+Texture used to add detail to the base color. This texture is blended multiplicatively with the base color.
 
-Description
+## Detail Tex Intensity
 
-### Detail Normal
+- `Type`: **Float**, Range: `0.0 - 10.0`
 
-Description
+How much to blend the detail texture with the main texture.
+
+## Detail Brightness
+
+- `Type`: **Float**, Range: `0.0 - 2.0`
+
+Multiplier for the detail texture's base brightness. Can be used to emphasize darker parts of a detail texture.
+
+## Detail Normal
+
+- `Type`: **Normal Map** Texture (sRGB **OFF**)
+
+A normal map texture that's blended with the base normal map. 
+
+### Detail Normal Intensity
+
+- `Type`: **Float**, Range: `0.0 - 10.0`
+
+Intensity multipler for the detail normal map.

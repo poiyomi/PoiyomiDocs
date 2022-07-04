@@ -1,19 +1,25 @@
 ---
 sidebar_position: 6
+title: Vertex Colors
 ---
+import PoiVideo from '@site/src/components/PoiVideo'
 
-# Vertex Colors
+The Vertex Colors section provides options for using a mesh's vertex colors to affect the base color and alpha. 
 
-![Docusaurus logo](/img/CirclelogoBig.png)
+## Linear Colors
 
-### Linear Colors
+- `Type`: **Checkbox**
 
-Description
+Whether to convert the mesh vertex colors from gamma space to linear space.
 
-### Use Vertex Color
+## Use Vertex Color
 
-Description
+- `Type`: **Float**, Range: `0.0 - 1.0`
 
-### Use Vertex Color Alpha
+How much to blend vertex colors with the base color. Colors are blended multiplicatively with the base color.
 
-Description
+## Use Vertex Color Alpha
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+How much to blend vertex alpha with the base alpha. Alpha is blended multiplicatively with the base alpha.

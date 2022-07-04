@@ -1,31 +1,45 @@
 ---
-sidebar_position: 8
+sidebar_position: 9
+title: Environmental Rim
 ---
+import PoiVideo from '@site/src/components/PoiVideo'
 
-# Environmental Rim
+Environmental rim is a rim lighting effect that simulates low-angle reflections from the surrounding environment. It draws from the scene's reflection probes, and can be used to add a realistic edge lighting that reacts dynamically to the environment.
 
-![Docusaurus logo](/img/CirclelogoBig.png)
+This effect is similar to the rim glow seen in the realistic lighting mode and the Unity Standard Shader, especially at high Smoothness values.
 
-### Mask
+## Mask
 
-Description
+- `Type`: **Data** Texture (sRGB **OFF**)
 
-### Blur
+A mask texture used to define where to apply the Environmental Rim effect. This is drawn from the red channel of the mask texture.
 
-Description
+## Blur
 
-### Rim Width
+- `Type`: **Float**, Range: `0.0 - 1.0`
 
-Description
+How much to blur the rim reflection. This uses the lower mipmaps of the reflection probe cubemap to blur the reflection, simulating a less smooth material.
 
-### Rim Sharpness
+## Rim Width
 
-Description
+- `Type`: **Float**, Range: `0.0 - 1.0`
 
-### Min Brightness Threshold
+How wide the rim should be. This determines how far toward the center the rim extends.
 
-Description
+## Rim Sharpness
 
-### Intensity
+- `Type`: **Float**, Range: `0.0 - 1.0`
 
-Description
+How sharp the edge of the rim should be. A lower Rim Sharpness value creates a softer rim.
+
+## Min Brightness Threshold
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+The minimum brightness that should be applied to the rim. This can be used to only add lighting where there's a bright object or area in the reflection probe, instead of reflecting the whole environment. 
+
+## Intensity
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+How strongly the rim color should be applied. This can be used to create a less intense environmental rim effect.

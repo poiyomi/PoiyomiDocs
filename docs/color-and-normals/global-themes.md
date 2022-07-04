@@ -1,23 +1,31 @@
 ---
 sidebar_position: 10
+title: Global Themes
 ---
+import PoiVideo from '@site/src/components/PoiVideo'
 
-# Global Themes
+Global Themes provide a central place to change colors throughout the shader. By setting color pickers to a Global Theme color, they will follow the color chosen in Global Themes.
 
-![Docusaurus logo](/img/CirclelogoBig.png)
+## Color 0
 
-### Color 0
+- `Type`: **Color**
 
-Description
+Color used for color 0.
 
-### Color 1
+## Color 1
 
-Description
+- `Type`: **Color**
 
-### Color 2
+Color used for color 1.
 
-Description
+## Color 2
 
-### Color 3
+- `Type`: **Color**
 
-Description
+Color used for color 2.
+
+## Color 3
+
+- `Type`: **Color**
+
+Color used for color 3.
