@@ -38,7 +38,8 @@
       "last 1 safari version"
     ]
   },
-  "engines": {
-    "node": ">=16"
-  }
+  "main": "index.js",
+  "repository": "https://github.com/poiyomi/PoiyomiDocs.git",
+  "author": "poiyomi <king.art.arthur@gmail.com>",
+  "license": "MIT"
 }
