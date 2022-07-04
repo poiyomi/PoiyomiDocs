@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Poiyomi Shaders',
   tagline: 'Free Shaders for Unity and VRChat',
-  url: '',
+  url: 'poiyomi.vercel.app',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
