@@ -38,7 +38,7 @@ Base color of the rim lighting. Blended with the base color and affected by [**R
 
 This color is blended multiplicatively with the [**Rim Texture**](##Rim-Texture), if defined.
 
-This color can be set to a [Theme Color](global-themes.md).
+This color can be set to a [Theme Color](docs/color-and-normals/global-themes.md).
 
 ## Rim Width
 
