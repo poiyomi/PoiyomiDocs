@@ -52,6 +52,9 @@ const config = {
           hideable: true,
         },
       },
+      colorMode: {
+        defaultMode: 'dark',
+      },
       tableOfContents: {
         minHeadingLevel: 2,
         maxHeadingLevel: 3,
