@@ -172,7 +172,7 @@ If **Limit Brightness** is enabled, the brightness due to base pass lighting cal
 
 This option is only visible when **Limit Brightness** is enabled.
 
-### Min Direct Brightness
+### Min Brightness
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
