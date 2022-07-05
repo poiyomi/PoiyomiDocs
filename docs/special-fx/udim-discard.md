@@ -24,9 +24,9 @@ Which UV to draw from for discarding. This can be the base UV or a secondary UV 
 
 Defines how the discarding is performed. Generally, this should be set to `Vertex` unless there is a good reason to use `Pixel`.
 
-`Pixel` mode discards the pixels that are inside the discard UV by using the `discard` HLSL Semantic. This performs the discarding in the fragment shader, which is slower than `Vertex` mode, but is exact to UV tile edges.
+`Vertex` mode discards the vertices that are inside the discard UV by evicting the vertices (and any attached triangles) to an invalid position, causing the GPU to never run the fragment shader stage. This is faster than `Pixel` mode, but is not exact to UV tile edges.
 
-Vertex mode discards the vertices that are inside the discard UV by evicting the vertices (and any attached triangles) to an invalid position, causing the GPU to never run the fragment shader stage. This faster than `Pixel` mode, but is not exact to UV tile edges.
+`Pixel` mode discards the pixels that are inside the discard UV by using the `clip` HLSL operation. This performs the discarding in the fragment shader, which is slower than `Vertex` mode, but is exact to UV tile edges.
 
 ## Discard Coordinates
 
