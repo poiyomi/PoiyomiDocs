@@ -54,7 +54,7 @@ Defines how much emission the edge should produce. Values above 1 generally prod
 
 ### Dissolved Color
 
-A color tint blended multiplicatively with the dissolved texture. By setting the Alpha channel of this color to `0`, and selecting a [render preset](docs/../../general/render-settings.md) that allows transparency (such as Cutout), the dissolve can transition from the base color to transparency.
+A color tint blended multiplicatively with the dissolved texture. By setting the Alpha channel of this color to `0`, and selecting a [render preset](docs/../../general/render-preset.md) that allows transparency (such as Cutout), the dissolve can transition from the base color to transparency.
 
 ### Dissolved Texture
 
