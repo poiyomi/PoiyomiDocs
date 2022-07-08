@@ -36,12 +36,12 @@ Features that are specific to the Pro version of the shader will be indicated on
 :::info
 This documentation is a work in progress! If you have any questions, or if you think you've found an issue, please [join the Discord](https://discord.gg/poiyomi) and ask! Our goal is to have a fully-fleshed out documentation site with rich visual examples and explanations for all of the shader features.
 
-During the creation of this documentation, however, priority is placed on getting text-based documentation complete first, followed by images and videos, so don't panic if there's a lot of text for now!
+During the creation of this documentation, however, priority is placed on getting text-based documentation complete first, followed by images and videos, so don't panic if it seems like there's a lot of text for now!
 :::
 
 | Section      | Status |
 | ----------- | ----------- |
-| General Shader Settings | ⚠️  Work-In-Progress  |
+| General Shader Settings | 📓  Text Complete    |
 | Color & Normals         | 📓  Text Complete    |
 |  Shading                | 📓  Text Complete    |
 |  Outlines               | ❌ Not Started       |
