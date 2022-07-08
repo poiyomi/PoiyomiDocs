@@ -44,10 +44,10 @@ During the creation of this documentation, however, priority is placed on gettin
 | General Shader Settings | 📓  Text Complete    |
 | Color & Normals         | 📓  Text Complete    |
 |  Shading                | 📓  Text Complete    |
-|  Outlines               | ❌ Not Started       |
+|  Outlines               | 📓  Text Complete    |
 |  Audio Link             | ❌ Not Started       |
 |  Special FX             | ⚠️  Work-In-Progress  |
 |  Modifiers              | ❌ Not Started       |
-|  Post Processing        | ❌ Not Started       |
+|  Post Processing        | 📓  Text Complete    |
 |  Rendering              | ❌ Not Started       |
 |  Grab Pass              | ❌ Not Started       |
