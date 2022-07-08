@@ -90,4 +90,4 @@ Defines what fallback shader to use if shaders are hidden on an avatar. This inc
 - Toon/Opaque: Opaque Toon-lit (flat lit) shader material
 - Toon/Cutout: Cutout Toon-lit (flat lit) shader material, drawing from base texture alpha
 
-For more information on VRC fallback shaders, including what specific properties will be copied to the fallback shader, see the [VRC documentation for the Shader Fallback System.]([/docs/general/vrc-fallback-shader-reference.md](https://docs.vrchat.com/docs/shader-fallback-system))
+For more information on VRC fallback shaders, including what specific properties will be copied to the fallback shader, see the [VRC documentation for the Shader Fallback System.](https://docs.vrchat.com/docs/shader-fallback-system)
