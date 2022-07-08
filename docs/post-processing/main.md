@@ -1,51 +1,73 @@
 ---
 sidebar_position: 2
+title: Post Processing
 ---
+import PoiVideo from '@site/src/components/PoiVideo'
 
-# Post Processing
+Post Processing provides some advanced options for modifying the look of the shader. These can be used to create a specific look, or adjusted at runtime to match the user's environment.
 
-![Docusaurus logo](/img/CirclelogoBig.png)
+## Mask
 
-### Mask
+- `Type`: **Data** Texture (sRGB **OFF**)
 
-Description
+Mask that defines where to apply the post-processing effects. Black applies no effect, while white applies full effects.
 
-### LUT
+## Hue
 
-Description
+- `Type`: **Float**, Range: `0.0 - 1.0`
 
-### LUT Strength
+Global hue adjustment, applied to the final color of the shader.
 
-Description
+## Tint
 
-### Hue
+- `Type`: **HDR Color**
 
-Description
+Global tint color, applied to the final color of the shader.
 
-### Tint
+## RGB
 
-Description
+- `Type`: **Vector3**
 
-### RGB
+RGB vector multiplied with the final color of the shader. This can be thought of as equivalent to a color tint, but applied to the RGB channels.
 
-Description
+## Contrast
 
-### Contrast
+- `Type`: **Float**
 
-Description
+Contrast adjustment, applied to the final color of the shader. Increases the amount of contrast between low and high color values.
 
-### Saturation
+## Saturation
 
-Description
+- `Type`: **Float**
 
-### Brightness
+Saturation adjustment, applied to the final color of the shader. Saturation determines how much color is present in the final color. If set to 0, the final color is grayscale. If set to 1, the final color is the same as the input color. Values greater than 1 increase the amount of color present.
 
-Description
+## Brightness
 
-### Lightness
+- `Type`: **Float**
 
-Description
+Brightness adjustment, applied to the final color of the shader. This represents a multiplier applied to the final color.
 
-### HDR
+## Lightness
 
-Description
+- `Type`: **Float**
+
+Lightness adjustment, applied to the final color of the shader. This represents a value directly added to or removed from the final color, harshly affecting the intensity of the final color.
+
+## HDR
+
+- `Type`: **Float**
+
+How much to move the final color towards its HDR equivalent color. This is a very niche feature.
+
+## Posterization
+
+- `Type`: **Checkbox**
+
+Enables or disables Posterization. Posterization is a technique that converts the final color to a limited number of colors.
+
+### Steps
+
+- `Type`: **Float**, Range: `1.0 - 30.0`
+
+How many steps to use when using Posterization.
