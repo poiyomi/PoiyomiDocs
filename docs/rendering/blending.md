@@ -1,23 +1,23 @@
 ---
 sidebar_position: 2
+title: Blending
 ---
+import PoiVideo from '@site/src/components/PoiVideo'
 
-# Blending
+The Blending section defines how the shader should blend on top of pixels that are already drawn. These options are set by the [Render Preset](/docs/general/render-preset.md) selected at the top of the shader, and almost always need not be set manually.
 
-![Docusaurus logo](/img/CirclelogoBig.png)
+## Blending Options
 
-### RGB Blend Op
+These blend options are exposed separately for the base pass and the add pass, as the add pass needs to blend on top of the base pass.
 
-Description
+### RGB/Alpha Blend Op
 
-### Alpha Blend Op
+- `Type`: **Dropdown**
 
-Description
+What blend op to use for the RGB and A channels. This is almost always set to `Add`. See the [Unity documentation](https://docs.unity3d.com/Manual/SL-BlendOp.html) for more information.
 
-### Source Blend
+### Source/Destination Blend
 
-Description
+- `Type`: **Dropdown**
 
-### Destination Blend
-
-Description
+Which blend factors to use for the source and destination. See the [Unity documentation](https://docs.unity3d.com/Manual/SL-Blend.html) and [Render Presets](/docs/general/render-preset.md) page for more information.

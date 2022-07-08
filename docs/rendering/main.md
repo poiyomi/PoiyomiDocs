@@ -1,47 +1,93 @@
 ---
 sidebar_position: 1
+title: Rendering
 ---
+import PoiVideo from '@site/src/components/PoiVideo'
 
-# Rendering
+The rendering section provides various low-level options for controlling how the shader renders. Many of these options are set by the [Render Preset](/docs/general/render-preset.md) selected at the top of the shader, and need not be set manually, with the notable exception of Cull and VRC Fallback.
 
-![Docusaurus logo](/img/CirclelogoBig.png)
+## Cull
 
-### Cull
+- `Type`: **Dropdown**, Options: `Back`/`Front`/`Off`
 
-Description
+Sets what faces should be culled. By default, back faces are culled, in order to improve performance. This can be set to `Off` in order to render both front and back faces. `Front` is useful for special effects.
 
-### ZTest
+:::tip
+This option is usually the only one in this section that should be adjusted by most users.
+:::
 
-Description
+## ZTest
 
-### ZWrite
+- `Type`: **Dropdown**, Options: `Disabled`/`Never`/`Less`/`Equal`/`LessEqual`/`Greater`/`NotEqual`/`GreaterEqual`/`Always`
 
-Description
+Sets how the shader should test the depth buffer. By default, the depth buffer is tested, and if the depth value is not less than or equal to the current value, the pixel is discarded.
 
-### Color Mask
+Learn more at [Unity's documentation](https://docs.unity3d.com/Manual/SL-ZTest.html).
 
-Description
+## ZWrite
 
-### Offset Factor
+- `Type`: **Dropdown**, Options: `Off`/`On`
 
-Description
+Determines whether the shader should write to the depth buffer. For opaque presets, this is usually `On`, but for transparent presets, this is usually `Off`.
 
-### Offset Units
+Learn more at [Unity's documentation](https://docs.unity3d.com/Manual/SL-ZWrite.html).
 
-Description
+## Color Mask
 
-### Reduce Clip Distance
+- `Type`: **Dropdown**
 
-Description
+Color Mask determines which color channels should be rendered. By default, this is set to `RGBA`, which means that all colors are rendered. All permutations of color channels are available.
 
-### Ignore Fog
+Learn more at [Unity's documentation](https://docs.unity3d.com/Manual/SL-ColorMask.html).
 
-Description
+## Offset Factor
 
-### Enable GPU Instancing
+- `Type`: **Float**
 
-Description
+Offset factor moves where a polygon is rendered in screenspace. This doesn't change the visual appearance of the polygon, but can be used to specially modify the depth value of the polygon.
 
-### VRC Fallback
+Learn more at [Unity's documentation.](https://docs.unity3d.com/Manual/SL-Offset.html)
 
-Description
+## Offset Units
+
+- `Type`: **Float**
+
+A fixed value to move the polygon away from or toward the camera, while keeping it visually the same size.
+
+Learn more at [Unity's documentation.](https://docs.unity3d.com/Manual/SL-Offset.html)
+
+## Reduce Clip Distance
+
+- `Type`: **Checkbox**
+
+Creates a smaller clip distance for the material. This can be used to make geometry not disappear when very close to the camera.
+
+## Ignore Fog
+
+- `Type`: **Checkbox**
+
+If checked, this material will not be affected by fog, if present in the scene.
+
+Learn more at [Unity's documentation.](https://docs.unity3d.com/2018.3/Documentation/Manual/PostProcessing-Fog.html)
+
+## Enable GPU Instancing
+
+- `Type`: **Checkbox**
+
+Enables or disables GPU instancing for this material. GPU instancing allows for rendering multiple copies of the same mesh with the same material, given some specific conditions are met. This can be used to create more efficient rendering of objects with multiple copies.
+
+Learn more at [Unity's documentation.](https://docs.unity3d.com/Manual/GPUInstancing.html)
+
+## VRC Fallback
+
+- `Type`: **Dropdown**
+
+Defines what fallback shader to use if shaders are hidden on an avatar. This includes a large variety of shaders, with some of the more useful options being:
+
+- Hidden: Material disappears if shaders are hidden (useful for things that are hidden by shader!)
+- Standard/Opaque: Opaque standard shader material
+- Standard/Cutout: Cutout standard shader material, drawing from base texture alpha
+- Toon/Opaque: Opaque Toon-lit (flat lit) shader material
+- Toon/Cutout: Cutout Toon-lit (flat lit) shader material, drawing from base texture alpha
+
+For more information on VRC fallback shaders, including what specific properties will be copied to the fallback shader, see the [VRC documentation for the Shader Fallback System.](https://docs.vrchat.com/docs/shader-fallback-system)
