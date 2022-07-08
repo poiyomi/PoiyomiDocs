@@ -14,7 +14,7 @@ To use these presets, download them and place them in your exports folder. For m
 ### Download
 
 :::info
-<h3> 📥 <a target="_blank" href="/assets/substance/Unity Poiyomi V7 r2022-07-07.spexp" download="Unity Poiyomi V7 r2022-07-07.spexp"><b><code>Unity Poiyomi V8 r2022-07-07.spexp</code></b></a></h3>
+<h3> 📥 <a target="_blank" href="/assets/substance/Unity Poiyomi V8 r2022-07-07.spexp" download="Unity Poiyomi V8 r2022-07-07.spexp"><b><code>Unity Poiyomi V8 r2022-07-07.spexp</code></b></a></h3>
 
 <h3> 📥 <a target="_blank" href="/assets/substance/Unity Poiyomi V8_ExtraMaps r2022-07-07.spexp" download="Unity Poiyomi V8_ExtraMaps r2022-07-07.spexp"><b><code>Unity Poiyomi V8_ExtraMaps r2022-07-07.spexp</code></b></a></h3>
 :::
