@@ -1193,7 +1193,7 @@
     "@docsearch/css" "3.1.1"
     algoliasearch "^4.0.0"
 
-"@docusaurus/core@2.0.0-beta.21":
+"@docusaurus/core@2.0.0-beta.21", "@docusaurus/core@^2.0.0-beta.21":
   version "2.0.0-beta.21"
   resolved "https://registry.yarnpkg.com/@docusaurus/core/-/core-2.0.0-beta.21.tgz#50897317b22dbd94b1bf91bb30c2a0fddd15a806"
   integrity sha512-qysDMVp1M5UozK3u/qOxsEZsHF7jeBvJDS+5ItMPYmNKvMbNKeYZGA0g6S7F9hRDwjIlEbvo7BaX0UMDcmTAWA==
@@ -1311,7 +1311,7 @@
     url-loader "^4.1.1"
     webpack "^5.72.1"
 
-"@docusaurus/module-type-aliases@2.0.0-beta.21":
+"@docusaurus/module-type-aliases@2.0.0-beta.21", "@docusaurus/module-type-aliases@^2.0.0-beta.21":
   version "2.0.0-beta.21"
   resolved "https://registry.yarnpkg.com/@docusaurus/module-type-aliases/-/module-type-aliases-2.0.0-beta.21.tgz#345f1c1a99407775d1d3ffc1a90c2df93d50a9b8"
   integrity sha512-gRkWICgQZiqSJgrwRKWjXm5gAB+9IcfYdUbCG0PRPP/G8sNs9zBIOY4uT4Z5ox2CWFEm44U3RTTxj7BiLVMBXw==
@@ -1421,7 +1421,7 @@
     sitemap "^7.1.1"
     tslib "^2.4.0"
 
-"@docusaurus/preset-classic@2.0.0-beta.21":
+"@docusaurus/preset-classic@^2.0.0-beta.21":
   version "2.0.0-beta.21"
   resolved "https://registry.yarnpkg.com/@docusaurus/preset-classic/-/preset-classic-2.0.0-beta.21.tgz#1362d8650ebed22633db411caaba80075f7c86ce"
   integrity sha512-KvBnIUu7y69pNTJ9UhX6SdNlK6prR//J3L4rhN897tb8xx04xHHILlPXko2Il+C3Xzgh3OCgyvkoz9K6YlFTDw==
