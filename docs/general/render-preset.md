@@ -24,8 +24,8 @@ Similar to Opaque, but allows a yes/no for whether a pixel should be rendered. T
 
 By default, cutout is binary: it either renders or it doesn't. You can use certain options to improve partially transparent areas and edges:
 
-- [Dithering](/color-and-normals/alpha-options.md`#dithering`) uses a technique that introduces noise in order to provide a perceptually smoother transition between two sharp differences in alpha.
-- [Alpha to Coverage](/color-and-normals/alpha-options.md`#alpha-to-coverage`) uses partial transparency values to provide variable transparency levels when the viewer is using Multi-Sampled Anti-Aliasing (MSAA). The number of transparency levels is equal to the MSAA level (x2, x4, x8, etc). VRChat allows users to select the number of MSAA levels they want to use, so it's best to make your material still look good with no MSAA.
+- [Dithering](/color-and-normals/alpha-options.md#dithering) uses a technique that introduces noise in order to provide a perceptually smoother transition between two sharp differences in alpha.
+- [Alpha to Coverage](/color-and-normals/alpha-options.md#alpha-to-coverage) uses partial transparency values to provide variable transparency levels when the viewer is using Multi-Sampled Anti-Aliasing (MSAA). The number of transparency levels is equal to the MSAA level (x2, x4, x8, etc). VRChat allows users to select the number of MSAA levels they want to use, so it's best to make your material still look good with no MSAA.
 
 :::tip
 You can enable MSAA in your Unity project by going to **Edit** > **Project Settings** > **Quality** and finding the *Anti Aliasing* options, and setting them to *MSAA 4x*.

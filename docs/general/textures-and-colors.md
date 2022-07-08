@@ -136,7 +136,7 @@ HDR colors are similar to standard colors, but they can contain much higher inte
 
 ### Alpha
 
-The alpha channel is used to store opacity. It is a floating point value from 0 to 1. Generally, this is used to determine how much an effect or a part of an effect. For example, in [RGBA Masking](docs/color-and-normals/rgba-masking.md), the alpha channel is used to determine how much of a channel's texture should be used.
+The alpha channel is used to store opacity. It is a floating point value from 0 to 1. Generally, this is used to determine how much an effect or a part of an effect. For example, in [RGBA Masking](docs/color-and-normals/rgba-color-masking.md), the alpha channel is used to determine how much of a channel's texture should be used.
 
 One notable exception is the base color, where the alpha channel is used to determine the opacity of the material.
 
