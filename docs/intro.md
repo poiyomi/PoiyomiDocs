@@ -49,5 +49,5 @@ During the creation of this documentation, however, priority is placed on gettin
 |  Special FX             | ⚠️  Work-In-Progress  |
 |  Modifiers              | ❌ Not Started       |
 |  Post Processing        | 📓  Text Complete    |
-|  Rendering              | ❌ Not Started       |
-|  Grab Pass              | ❌ Not Started       |
+|  Rendering              | 📓  Text Complete    |
+|  Grab Pass              | 📓  Text Complete    |
