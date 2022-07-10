@@ -28,7 +28,7 @@ const config = {
           // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
           showLastUpdateTime: true,
         },
-        blog: false,
+        blog: true,
         /*
         blog: {
           showReadingTime: true,
@@ -71,7 +71,7 @@ const config = {
             position: 'left',
             label: 'Docs',
           },
-          // {to: '/blog', label: 'Updates', position: 'left'},
+          {to: '/blog', label: 'Updates and Tips', position: 'left'},
           {
             href: 'https://github.com/poiyomi/PoiyomiToonShader',
             label: 'GitHub',
