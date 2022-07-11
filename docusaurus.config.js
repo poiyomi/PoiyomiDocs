@@ -28,15 +28,15 @@ const config = {
           // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
           showLastUpdateTime: true,
         },
-        blog: false,
-        /*
+        // blog: true,
+        
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          // editUrl:
+            // 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
-        */
+        
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -71,7 +71,7 @@ const config = {
             position: 'left',
             label: 'Docs',
           },
-          // {to: '/blog', label: 'Updates', position: 'left'},
+          {to: '/blog', label: 'Blog: Updates & Tips', position: 'left'},
           {
             href: 'https://github.com/poiyomi/PoiyomiToonShader',
             label: 'GitHub',
