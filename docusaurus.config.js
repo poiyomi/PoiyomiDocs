@@ -71,7 +71,7 @@ const config = {
             position: 'left',
             label: 'Docs',
           },
-          {to: '/blog', label: 'Updates and Tips', position: 'left'},
+          {to: '/blog', label: 'Blog: Updates & Tips', position: 'left'},
           {
             href: 'https://github.com/poiyomi/PoiyomiToonShader',
             label: 'GitHub',
