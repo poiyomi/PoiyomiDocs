@@ -5,6 +5,15 @@ title: Poiyomi Shaders
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
+<head>
+  <html className="some-extra-html-class" />
+  <body className="other-extra-body-class" />
+  <title>Poiyomi Shader Docs!</title>
+  <meta charSet="utf-8" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="canonical" href="https://docusaurus.io/docs/markdown-features/head-metadata" />
+</head>
+
 ## [✨ Join the Discord! ✨](https://discord.gg/poiyomi)
 
 Poiyomi Toon is a **free**, feature-rich toon and PBR shader for Unity, with a specific focus on usage with VRChat.
