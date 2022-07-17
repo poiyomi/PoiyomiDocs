@@ -1,17 +1,30 @@
 ---
 sidebar_position: 0
 slug: /
-title: Poiyomi Shaders
+title: Intro
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
 <head>
-  <html className="some-extra-html-class" />
-  <body className="other-extra-body-class" />
-  <title>Poiyomi Shader Docs!</title>
-  <meta charSet="utf-8" />
-  <meta name="twitter:card" content="summary" />
-  <link rel="canonical" href="https://docusaurus.io/docs/markdown-features/head-metadata" />
+<meta name="description" content="Poiyomi Shader Docs!">
+
+<!-- Google / Search Engine Tags -->
+<meta itemprop="name" content="Poiyomi Shaders">
+<meta itemprop="description" content="Poiyomi Shader Docs!">
+<meta itemprop="image" content="https://www.poiyomi.com/assets/images/CirclelogoBig-3d44028a616231563c23feda8225278a.png">
+
+<!-- Facebook Meta Tags -->
+<meta property="og:url" content="https://www.poiyomi.com">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Poiyomi Shaders">
+<meta property="og:description" content="Poiyomi Shader Docs!">
+<meta property="og:image" content="https://www.poiyomi.com/assets/images/CirclelogoBig-3d44028a616231563c23feda8225278a.png">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Poiyomi Shaders">
+<meta name="twitter:description" content="Poiyomi Shader Docs!">
+<meta name="twitter:image" content="https://www.poiyomi.com/assets/images/CirclelogoBig-3d44028a616231563c23feda8225278a.png">
 </head>
 
 ## [✨ Join the Discord! ✨](https://discord.gg/poiyomi)
@@ -48,15 +61,15 @@ This documentation is a work in progress! If you have any questions, or if you t
 During the creation of this documentation, however, priority is placed on getting text-based documentation complete first, followed by images and videos, so don't panic if it seems like there's a lot of text for now!
 :::
 
-| Section      | Status |
-| ----------- | ----------- |
+| Section                 | Status              |
+| ----------------------- | ------------------- |
 | General Shader Settings | 📓  Text Complete    |
 | Color & Normals         | 📓  Text Complete    |
-|  Shading                | 📓  Text Complete    |
-|  Outlines               | 📓  Text Complete    |
-|  Audio Link             | ❌ Not Started       |
-|  Special FX             | ⚠️  Work-In-Progress  |
-|  Modifiers              | ❌ Not Started       |
-|  Post Processing        | 📓  Text Complete    |
-|  Rendering              | 📓  Text Complete    |
-|  Grab Pass              | 📓  Text Complete    |
+| Shading                 | 📓  Text Complete    |
+| Outlines                | 📓  Text Complete    |
+| Audio Link              | ❌ Not Started       |
+| Special FX              | ⚠️  Work-In-Progress |
+| Modifiers               | ❌ Not Started       |
+| Post Processing         | 📓  Text Complete    |
+| Rendering               | 📓  Text Complete    |
+| Grab Pass               | 📓  Text Complete    |
