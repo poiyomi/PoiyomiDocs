@@ -23,6 +23,8 @@ The 1st step of any tps setup is adding penetrators and orifices to your avatar.
 - Enable TPS on the material of your penetrators
 - Create an orifice by placing an empty gameobject where you want it. Make sure the blue arrow points outwards from the orifice
 
+To make [custom penetrators](penetrators) or [custom orifices](orifices) check out the respected sections.
+
 :::warning
 Always run the wizard after making changes to orifice / penetrator placement, including scaling and re-parenting.
 :::
