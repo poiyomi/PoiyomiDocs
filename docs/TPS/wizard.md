@@ -11,8 +11,8 @@ TPS requires the VRChat Avatars SDK3 (https://vrchat.com/home/download)
 In general the Wizard is organized in multiple steps that you should go through in numerical order.
 
 ## Step 0 - Auto Fixes
-This sections only shows up if your unity has configuration issues that will prvent you from being able to correctly place tps objects or see the penetrator deformation.
-- `Scene Lighting`: If your lighting is turned of in scene mode you will not see the penetrator move.
+This sections only shows up if your unity has configuration issues that will prevent you from being able to correctly place tps objects or see the penetrator deformation.
+- `Scene Lighting`: If your lighting is turned off in scene mode you will not see the penetrator move.
 - `Pivot Mode`: If your pivot mode is not set to pivot point the placement of the unity tools will not represent where the origin of your penetrator is.
 
 ![Step 0](/img/tps/step0.png)
@@ -36,7 +36,7 @@ Always run the wizard after making changes to orifice / penetrator placement, in
 Select your avatar root & its fx layer animator, then click the `Scan Avatar for TPS` button.
 This will find all penetrators & orifices on your avatar.
 - Penetrators are identified by having the `[TPS][Penetrator]` prefix or by having TPS enabled on their materials.
-- Orifices are identified by having the `[TPS][Orifice]` prefix or by having tps lights already setup 
+- Orifices are identified by having the `[TPS][Orifice]` prefix or by having tps lights already setup.
 
 ![Step 2.1](/img/tps/step2.1.png)
 
@@ -52,7 +52,7 @@ After making changes to your setup while the Wizard is open you will have to res
 
 ### Step 2.3 - Configure Penetrators
 
-Click the "Bake" button if it is avaiable.
+Click the "Bake" button if it is available.
 
 #### Baking
 Penetrators can be Skinned or Static meshes.
@@ -76,10 +76,10 @@ On your first setup or if you change the penetrator scale you should add a tip o
 #### Optional
 The animator setup is optional. This allows you to drive shapekeys depending on penetration depth & penetrator size or even create custom animation based on those values.
 - `Renderer`: Renderer that has the shapekeys you want to drive.
-- `Max Depth`: The maximum depth of your oficie. This determines when the depth value will be 1.0. This is initilized with the maximum vertex distance of the renderer in the orifice forward direction
-- `Shapekeys - Entering`: Shapekey that will be driven when the penetrator enters the office.
-- `Shapekeys - Full Penetration`: Shapekey that will be driven when the penetrator is inside the office.
-- `Shapekeys - Max orifice width`: Maximum opening width of the shapekeys. This is initlized with the maximum vertex offset of the shapekeys.
+- `Max Depth`: The maximum depth of your orifice. This determines when the depth value will be 1.0. This is initialized with the maximum vertex distance of the renderer in the orifice forward direction.
+- `Shapekeys - Entering`: Shapekey that will be driven when the penetrator enters the orifice.
+- `Shapekeys - Full Penetration`: Shapekey that will be driven when the penetrator is inside the orifice.
+- `Shapekeys - Max orifice width`: Maximum opening width of the shapekeys. This is initialized with the maximum vertex offset of the shapekeys.
 - `Shapekeys - Scale by width`: If this is enabled the shapekey animations will be scaled to open to the width of the current penetrator. For this the max orifice width needs to be correct.
 
 The entering shapekey will be driven to zero (lerped) once fully inside the orifice.
@@ -101,6 +101,6 @@ Always hit the `Apply` button after making changes to the setup.
 
 #### Remove TPS Objects
 - Remove TPS From Animator & Physics
-- Deletes all Oricies & Penetrators from the avatar
+- Deletes all Orifices & Penetrators from the avatar
 
 ![Remove](/img/tps/remove.png)
