@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+title: Custom Penetrators
+---
 # Creating Custom Penetrators 
 
 Custom penetrators are split into two categories: Static and Skinned.

@@ -1,3 +1,7 @@
+---
+sidebar_position: 4
+title: System Specifications
+---
 # System Specifications
 TPS is a Penetration System that uses a combination of Vertex Lights & VRC Contacts to deform a penetrator towards an orifice.
 

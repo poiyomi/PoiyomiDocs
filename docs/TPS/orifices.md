@@ -1,3 +1,7 @@
+---
+sidebar_position: 3
+title: Custom Orifices
+---
 # Creating Custom Orifices
 
 ## Configure Custom Orifice

@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+title: How to Setup
+---
 # How to Setup
 
 :::note 
