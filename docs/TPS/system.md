@@ -5,7 +5,7 @@ title: System Specifications
 # System Specifications
 TPS is a Penetration System that uses a combination of Vertex Lights & VRC Contacts to deform a penetrator towards an orifice.
 
-The Animator Setup + Light & Contact placement is done by the [Wizard](#using-the-wizard).
+The Animator Setup + Light & Contact placement is done by the [Wizard](wizard).
 ### Lights + Shader
 1 or 2 Lights placed on the root & normal of each orifice to tell the shader on the penetrator mesh how to deform itself along a bezier curve.
 The range property of the lights encodes its type & the type of the orifice (Hole / Ring).
