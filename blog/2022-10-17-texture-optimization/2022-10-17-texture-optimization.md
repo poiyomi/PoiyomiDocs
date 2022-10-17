@@ -7,6 +7,8 @@ authors:
 tags: [textures, optimization, tips, vrchat]
 ---
 
+import PoiVideo from '@site/src/components/PoiVideo'
+
 :::tip TL;DR
 - **MEASURE TEXTURE VRAM USAGE AND DOWNLOAD SIZE** using [Lox9973's Assetbundle Stat tool](https://vsk.lox9973.com/abstat/) and [Thry's VRAM estimator](https://github.com/Thryrallo/VRCAvatarTools/).
 - **Reduce Resolution** *in the texture import settings*! Not every texture needs to be 4k.
@@ -46,6 +48,10 @@ GPU texture formats almost always have a fixed amount of data per pixel when loa
 
 Crunch compression is frequently talked about around the topic of avatar and world optimization. When optimizing filesize, you can use crunch compression for things that you can afford lose quality on, and verify visually that it still looks OK. Test different crunch quality levels and measure the difference it makes in VRAM and filesize, and choose what works out best for your application.
 
+![Crunch Compression Comparison](texture-optimization-crunch.png)
+
+*Left-to-Right: `DXT1` Crunch (25 Quality), `DXT1` Crunch (75 Quality), `DXT1`, `BC7`* [(Open for full quality)](texture-optimization-crunch.png)
+
 For things that you can't crunch (it's ok if this is a lot of your textures!), prefer the following formats where possible:
 - `DXT1` ("Normal Quality") (low quality but 3-channel, so it stays small). This format should not be used if the source has an alpha channel, or if it contains smooth gradients - skin textures often look especially bad.
 - `BC7` ("High Quality") for anything else, especially if it needs an alpha channel. It adds an alpha channel, but even if you're not using it, `BC7` uses the data more smartly than any other format.
@@ -76,7 +82,12 @@ For worlds, it depends entirely on the content and intended usecase of the world
 :::warning **Seriously, don't disable mipmaps!**
 [Mipmaps improve both visual quality and performance](https://blog.imaginationtech.com/why-you-really-should-be-using-mipmapping-in-your-graphics-applications/). Disabling them isn't actually beneficial.
 :::
+
 You should only disable mipmaps if it's something like a lookup table (LUT) or data texture (ex. font textures) that always needs the full texture resolution. While disabling them may reduce VRAM usage, it's not worth the hit to performance, and will make things look worse.
+
+<PoiVideo url='/vid/blog/texture-optimization-bgolus-mipmaps.mp4'/>
+
+*Please don't turn off mipmaps. Image courtesy [Ben Golus](https://bgolus.medium.com/sharper-mipmapping-using-shader-based-supersampling-ed7aadb47bec)*
 
 ### Don't just look at the build report
 
