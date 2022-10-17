@@ -1,6 +1,7 @@
 ---
 slug: 2022-10-17-texture-optimization
 title: 'Optimizing Texture Memory & Size'
+description: Tips and guidelines for optimizing texture memory and filesize for VRChat creation.
 authors:
   razgriz
 tags: [textures, optimization, tips, vrchat]
