@@ -27,6 +27,10 @@ const config = {
             from: '/special-fx/udim-discard',
             to: '/special-fx/uv-tile-discard',
           },
+          {
+            from: '/general/substance-export',
+            to: '/general/substance-painter',
+          },
           // Redirect from multiple old paths to the new path
           // {
           //   to: '/docs/newDoc2',

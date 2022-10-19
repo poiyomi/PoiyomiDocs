@@ -1,12 +1,20 @@
 ---
 sidebar_position: 5
-title: Substance Painter Export
+title: Substance Painter
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
-[Adobe Substance Painter](https://www.adobe.com/products/substance3d-painter.html) is frequently used for authoring PBR (Physically Based Rendering) texture maps, and works well for creating realistic looking textures. Provided on this page are some export presets for Substance Painter that can be used to easily export textures for use in a Poiyomi Material.
+[Adobe Substance Painter](https://www.adobe.com/products/substance3d-painter.html) is frequently used for authoring PBR (Physically Based Rendering) texture maps, and works well for creating realistic looking textures. Provided on this page are some project settings and export presets for Substance Painter that can be used to easily export textures for use in a Poiyomi Material.
 
-To use these presets, download them and place them in your exports folder. For most people, this is located in one of the following locations:
+# Project Settings
+
+The default "ASM - PBR Metallic Rough" settings work well for 
+
+# Export Presets
+
+To use these presets, download them and add them to your substance project either by navigating to `File -> Import Resources` and adding them, or dragging them onto the shelf (which will open the same interface with the presets pre-selected)
+
+Alternatively, place these presets in your exports folder. For most people, this is located in one of the following locations:
 
 - `C:\Users\*UserName*\Documents\Substance 3D Painter\shelf\export-presets`
 - `C:\Users\*UserName*\Documents\Adobe\Adobe Substance 3D Painter\assets\export-presets`

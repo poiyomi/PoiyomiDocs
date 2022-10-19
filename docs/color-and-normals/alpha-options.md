@@ -24,7 +24,7 @@ Alpha Mod defines a direct value to add to or remove from the material alpha. Th
 
 - `Type`: **Checkbox**
 
-With Alpha Premultiply enabled, the shader will multiply the base color by the alpha value after all base color operations, but before lighting and emission calculations. This results in a different appearance for transparent materials.s
+With Alpha Premultiply enabled, the shader will multiply the base color by the alpha value after all base color operations, but before lighting and emission calculations. This results in a different appearance for transparent materials.
 
 ## Alpha To Coverage
 
