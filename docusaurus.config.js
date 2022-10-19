@@ -16,6 +16,27 @@ const config = {
   organizationName: 'poiyomi', // Usually your GitHub org/user name.
   projectName: 'PoiyomiToonShader', // Usually your repo name.
 
+  plugins: [
+    [
+      require.resolve('@docusaurus/plugin-client-redirects'),
+      {
+        fromExtensions: ['html', 'htm'], // /myPage.html -> /myPage
+        redirects: [
+          // /docs/oldDoc -> /docs/newDoc
+          {
+            from: '/special-fx/udim-discard',
+            to: '/special-fx/uv-tile-discard',
+          },
+          // Redirect from multiple old paths to the new path
+          // {
+          //   to: '/docs/newDoc2',
+          //   from: ['/docs/oldDocFrom2019', '/docs/legacyDocFrom2016'],
+          // },
+        ],
+      },
+    ],
+  ],
+
   presets: [
     [
       'classic',

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: UDIM Discard
+title: UV Tile Discard
 ---
 import PoiVideo from '@site/src/components/PoiVideo' 
 
