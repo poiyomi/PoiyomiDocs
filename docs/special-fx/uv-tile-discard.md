@@ -4,23 +4,19 @@ title: UV Tile Discard
 ---
 import PoiVideo from '@site/src/components/PoiVideo' 
 
-UDIM Discard, or UV Tile Discarding, provides an efficient way to discard portions of a model at runtime. This is done by placing portions of the model on different UV Tiles, and then discarding specific tiles at runtime.
+UV Tile Discard (previously known as UDIM Discard) provides an efficient way to toggle portions of a model on and off at runtime. This is done by placing portions of the model on different UV Tiles, and then discarding specific tiles at runtime.
 
-Traditionally, UDIMs are used to create a grid of tiles, with specific textures placed on different tiles. UDIM discard simply uses the concept of UV tiles, not doing anything with any textures. You can learn more about UV Tiles and UDIMs from [Foundry Learn](https://learn.foundry.com/modo/901/content/help/pages/uving/udim_workflow.html).
-
-:::caution
-When **Animating Discard Coordinates**, make sure to [read the notes below](#animating-discard-coordinates)! Unity's Animator has some bugs that affect UDIM discard.
-:::
+Traditionally, UDIMs are used to create a grid of tiles, with specific textures placed on different tiles. UV Tile Discard simply uses the concept of UV tiles, not doing anything with any textures. You can learn more about UV Tiles and UDIMs from [Foundry Learn](https://learn.foundry.com/modo/901/content/help/pages/uving/udim_workflow.html).
 
 ## Discard UV
 
 - `Type`: **Dropdown**, Options: `UV0`/`UV1`/`UV2`/`UV3`
 
-Which UV to draw from for discarding. This can be the base UV or a secondary UV made specifically for UDIM discard.
+Which UV to draw from for discarding. This can be the base UV or an alternative UV made specifically for UV Tile discard.
 
 ## Discard Mode
 
-- `Type`: **Dropdown**, Options: `Pixel`/`Vertex`
+- `Type`: **Dropdown**, Options: `Vertex (Faster)`/`Pixel (Slower)`
 
 Defines how the discarding is performed. Generally, this should be set to `Vertex` unless there is a good reason to use `Pixel`.
 
@@ -32,14 +28,21 @@ Defines how the discarding is performed. Generally, this should be set to `Verte
 
 - `Type`: **Checkboxes**
 
-Defines which UV tiles to discard. These are organized into 4 rows of 4 tiles, defining a grid of 16 discard tiles. The bottom left is the origin, and the top right is the maximum. The bottom left tile (0,0) is where most UV mapping is performed.
+Defines which UV tiles to discard. These are organized into 4 rows (v) of 4 tiles (u), defining a grid of 16 discard tiles. The bottom left is the origin, and the top right is the maximum. The bottom left tile (0,0) is where most UV mapping is performed.
 
-### Animating Discard Coordinates
+When a box is checked, that tile is discarded. When animating these checkboxes, each one is its own independent property.
 
-Because Unity's Animator has some bugs that affect UDIM discard, it is recommended to animate the discard coordinates in a specific way.
 
-When using **Write Defaults OFF**, each discard coordinate can be animated separately, but if only one channel is ever written, it can leave the other channels in an indeterminate state during certain animator situations - most notably, within VRChat, when an avatar is loading in or calibrating. This can cause all four channels to be written to `0`/Off, which can cause all 4 tiles to disappear, potentially causing the avatar to appear to be missing, or clothes to be gone.
+## UV Tile Setup
 
-This can be prevented by either animating all four channels in all states, or by forcing the discard coordinates to be written to `1`/On in a layer that evaluates before the actual layer that sets the discard properties.
+For an example of a correct setup using Blender, we can take an existing mesh, and add an extra UV channel to it:
 
-When using **Write Defaults ON**, all four channels in a discard row should always be animated. Otherwise, unused channels will return to the written default state.
+<PoiVideo url='/vid/special-fx/uv-tile-discard_setup_blender1.mp4'/>
+
+On that extra UV channel, move different UV islands to different uv tiles. Using whole number offsets lets you map textures to it, but since we made an alternate UV, all that's necessary is that the islands are on different UV tiles:
+
+<PoiVideo url='/vid/special-fx/uv-tile-discard_setup_blender2.mp4'/>
+
+With the UVs set up, we can use enable UV tile discard on the material, set the UV to the one we created (they're matched by slot position), and use UV tile discard successfully:
+
+<PoiVideo url='/vid/special-fx/uv-tile-discard_setup_unity1.mp4'/>
