@@ -16,7 +16,7 @@ Afterwards you can either apply the presets or discard the changes.
 Right click opens the quick presets UI. Here you can only select one preset, which is applied immediately.
 ![Presets2](/img/thryeditor/presets2.png)
 
-Learn how to create presets here [TODO](TODO).
+Learn how to create presets here [TODO](enduser).
 
 ### Shader Translator
 The shader translator is there to help you swap from one shader to an new one.
