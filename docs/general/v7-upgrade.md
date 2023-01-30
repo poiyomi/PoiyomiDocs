@@ -12,6 +12,12 @@ This page covers a few of the major differences between the two versions that sh
 It's always a good idea to make a copy of any materials before changing them, so you can return to the original version if you need to!
 :::
 
+To upgrade the shader, delete the `_PoiyomiShaders` folder in your assets.
+
+If you've changed import settings for any included textures, you can delete everything but the `Textures` folder in `_PoiyomiShaders`.
+
+Sometimes when updating your locked materials may get stuck in the locked state. This happens because the name of the shader changed. Avoid this by unlocking materials before updating. To Fix this, reselect the correct Poiyomi shader for the broken materials.
+
 ## Shading
 
 ### Light Data
