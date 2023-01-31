@@ -9,6 +9,8 @@ tags: [textures, optimization, tips, vrchat]
 
 import PoiVideo from '@site/src/components/PoiVideo'
 
+*2023-01-30: Updated with additional info, clarifications, and organization* 
+
 :::tip TL;DR
 - **MEASURE TEXTURE VRAM USAGE AND DOWNLOAD SIZE** using [lox9973's Assetbundle Stat tool](https://vsk.lox9973.com/abstat/) and [Thry's VRAM estimator](https://github.com/Thryrallo/VRCAvatarTools/).
 - **Reduce Resolution** *in the texture import settings*! Not every texture needs to be 2k or 4k.
@@ -54,7 +56,7 @@ Crunch pre-compresses textures in a way that's easy for the CPU to decompress at
 
 ### Recommendations
 
-Different textures have different requirements. Here's some recommendations of what to ues for what situation:
+Different textures have different requirements. Here's some recommendations of what to use for what situation:
 
 #### Color Textures
 
