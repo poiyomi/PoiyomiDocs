@@ -39,7 +39,9 @@ For an example of a correct setup using Blender, we can take an existing mesh, a
 
 <PoiVideo url='/vid/special-fx/uv-tile-discard_setup_blender1.mp4'/>
 
-While it's not strictly necessary, the `UDIM Grid` setting allows us to visualise our tiles. Note that to change this setting your mesh has to be in `Edit Mode`.
+While it's not strictly necessary, the `UDIM Grid` setting allows us to visualise our tiles. To change this setting your mesh has to be in `Edit Mode`. In blender 3.2 and later, this setting can be found in the overlays dropdown.
+
+![Overlays](/img/special-fx/uv-tile-discard_overlays.png)
 
 On that extra UV channel, move different UV islands to different uv tiles. Using whole number offsets lets you map textures to it, but since we made an alternate UV, all that's necessary is that the islands are on different UV tiles:
 
