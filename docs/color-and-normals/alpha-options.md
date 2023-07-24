@@ -200,7 +200,7 @@ The minimum value of alpha for the Angular Alpha mode. This will prevent the alp
 
 - `Type`: **Checkbox**
 
-With [Audio Link](../audio-link/controls.md) enabled, the alpha can be modified based on the audio level in a specific band.
+With [Audio Link](../audio-link/audio-link.md) enabled, the alpha can be modified based on the audio level in a specific band.
 
 ### Add Range
 

@@ -72,7 +72,7 @@ How much to constantly shift the hue with time. A value of 1 will result in a fu
 
 - `Type`: **Checkbox**
 
-With [Audio Link](../audio-link/controls.md) enabled, hue shift can be controlled with Audio Link chronotensity.
+With [Audio Link](../audio-link/audio-link.md) enabled, hue shift can be controlled with Audio Link chronotensity.
 
 ### Band
 
