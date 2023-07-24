@@ -4,8 +4,6 @@ sidebar_position: 2
 
 # Spectrum
 
-![Docusaurus logo](/img/CirclelogoBig.png)
-
 ## Transform
 
 Description
