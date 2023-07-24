@@ -192,7 +192,7 @@ This option is only visible when **Light Color Mode** is set to `Poi Custom`.
 
 Defines how much to apply Unity's built-in casted shadows to the model. These can look good under certain conditions, but often will look blocky or otherwise produce undesirable results.
 
-### Grayscale Lighting?
+### Grayscale Lighting
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
