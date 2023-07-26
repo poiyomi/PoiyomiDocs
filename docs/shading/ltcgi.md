@@ -8,6 +8,9 @@ import PoiVideo from '@site/src/components/PoiVideo'
 LTCGI is an optimized plug-and-play realtime area light solution using the linearly transformed cosine algorithm for standalone Unity and VRChat. For more information on LTCGI visit https://ltcgi.dev/
 :::
 
+<PoiVideo url='/vid/shading/ltcgi_demo.mp4'/>  
+<em>In this demonstration, the video player reflecting off of the avatar's eye, and the light dynamically illuminating the face and environment are produced by LTCGI.</em>
+
 ## Anim Toggle
 
 - `Type`: **Checkbox**
