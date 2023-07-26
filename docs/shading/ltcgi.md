@@ -21,7 +21,7 @@ A checkbox you can animate to enable/disable LTCGI lighting and reflections.
 
 - `Type`: **Color** (RGBA)
 
-This color will be blended multiplicatively with LTCGI to tint the reflection. Use shades of gray to darken lighting as desired.
+This color will be blended multiplicatively with LTCGI to tint the lighting. Use shades of gray to darken lighting as desired.
 
 ## Specular Tint
 
@@ -33,7 +33,7 @@ This color will be blended multiplicatively with LTCGI to tint the reflection. U
 
 - `Type`: **Checkbox**
 
-When enabled, will sample smoothness values defined in [Reflections & Specular](./reflections-and-specular.md)
+When enabled, will sample smoothness and metallicity values defined in [Reflections & Specular](./reflections-and-specular.md)
 
 ## Smoothness
 
