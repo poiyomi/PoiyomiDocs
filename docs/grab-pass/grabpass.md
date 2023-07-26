@@ -4,10 +4,6 @@ title: Grabpass
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
-:::tip
-🪙 **This is a patreon-only feature!** Subscribe to the [Patreon](https://www.patreon.com/poiyomi) at the $10 tier or higher to unlock it.
-:::
-
 :::caution
 Grabpass is an expensive feature - it has to take a screenshot every frame. This will always cause some amount of performance hit, so use it judiciously.
 :::
