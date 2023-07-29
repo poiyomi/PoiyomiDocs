@@ -16,7 +16,8 @@ import PoiVideo from '@site/src/components/PoiVideo'
 - **Reduce Resolution** *in the texture import settings*! Not every texture needs to be 2k or 4k.
 - **Don't disable mipmaps** - Your materials will look and run better with them on!
 - **Crunch doesn't change VRAM usage** but can reduce download size. Not a magic bullet!
-- **For Normal Maps & textures with Alpha, Use High Quality (BC7)**. Normal Quality (DXT5) uses the same VRAM but looks worse.
+- **For Normal Maps, Use RG Compressed BC5 (From Platform overrides menu[^1])**. Normal Quality (DXT5nm) and High Quality (BC7) use the same VRAM but look worse.
+- **For textures with Alpha, Use High Quality (BC7)**. Normal Quality (DXT5) uses the same VRAM but looks worse.
 - **Don't use JPG (or other lossy formats)** to store your source textures! Lower quality, with no benefit to VRAM/Download Size.
 :::
 
@@ -71,7 +72,7 @@ If you are using an alpha channel, either use `BC7` ("High Quality") or crunch i
 #### Normal Maps
 
 - `DXTnm Crunch` ("Use Crunch Compression") for normal maps that do not need to be high quality. Crunch is not ideal for normal maps, so it often results in low quality results.
-- When not crunching, **always use `BC7` ("High Quality") for normal maps**. or, for [even better quality](https://twitter.com/aras_p/status/1605181836992589824), `BC5`[^1] for Normal Maps. The default setting of `DXT5/DXTnm` ("Normal Quality") uses the same memory but looks worse!
+- When not crunching, **always use `BC5`[^1] or alternatively `BC7` ("High Quality") for Normal maps**. `BC7` can cause some artfiacts and banding that `BC5`[^1], which stores the R and G channels as two separate BC4 channels, can help reduce. The default setting of `DXT5/DXTnm` ("Normal Quality") uses the same memory but looks worse! 
 
 #### Data/Other textures
 
