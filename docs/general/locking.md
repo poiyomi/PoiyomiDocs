@@ -8,7 +8,8 @@ import PoiVideo from '@site/src/components/PoiVideo'
 
 ## Lock-in
 
-At the top of a shader, there's a button labeled **Lock In Optimized Shader**. Pressing this will lock the shader, graying out any options that have not be unlocked. This may take a few seconds to complete.
+At the top of a shader, there's a button labeled **Lock In Optimized Shader**. Pressing this will lock the shader, graying out any options that have not been
+marked for animation. This may take a few seconds to complete.
 
 To unlock the shader, just press the button again. It'll be labelled **Unlock Shader**.
 
