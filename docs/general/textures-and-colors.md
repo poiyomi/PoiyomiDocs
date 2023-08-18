@@ -8,7 +8,7 @@ Textures and Colors are used everywhere in the shader, so it's important to unde
 
 ## Textures
 
-A texture is a 2D image containing multiple channels of data. Textures are used to define how a material looks, how it responds to light, where effects are applied and what they look like, andm ore.
+A texture is a 2D image containing multiple channels of data. Textures are used to define how a material looks, how it responds to light, where effects are applied and what they look like, and more.
 
 ### Source Texture Formats
 
