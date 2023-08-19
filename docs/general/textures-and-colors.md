@@ -118,7 +118,7 @@ Turning off mipmaps should only be done for very specific data textures that sho
 
 ### Wrap Mode
 
-Wrap Mode defines how a texture should repeat when it is tiled. This has various options including Repeat (repeats the texture), Clamp (clamps the texture to the edge of the texture), and Mirror (mirrors the texture).
+Wrap Mode defines how a texture should repeat when it is tiled. This has various options including Repeat (repeats the texture), Clamp (stretches the edges of the texture), and Mirror (mirrors the texture).
 
 This option has a caveat. For most textures, the wrap mode defined for the *Main Texture* will be used. This is due to a limitation within the DirectX Graphics API, which limits the amount of samplers that can be defined.
 
