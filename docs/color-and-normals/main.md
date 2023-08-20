@@ -78,7 +78,7 @@ This is a special property and has unique considerations for animating[^1].
 
 In the Cutout rendering mode, this value is set to `0.5` by default, and generally does not need to be adjusted.
 
-![Alpha Cutoff Cutout GIF]((/img/main_color-and-normals/Alpha-Cutoff_Cutout.png)
+![Alpha Cutoff Cutout GIF](/img/color-and-normals/main_Alpha-Cutoff_Cutout.png)
 *Alpha Cutoff (Cutout Rendering Preset): 0 -> 0.25 -> 0.5 -> 0.75*
 
 In Transparent rendering modes like Fade, Transparent, TransClipping, etc., this value defaults to `0.0`. It can be used as a hard cutoff below which a transparent material will render nothing.
