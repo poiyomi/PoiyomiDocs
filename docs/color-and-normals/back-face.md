@@ -42,13 +42,19 @@ Texture used to mask the effect of backface color, texture, emission, and alpha 
 
 - `Type`: **Float**, Range: `0.0 - 5.0`
 
-Detail Intensity backface multipler for detail textures in the [Details](details.md) section.
+Detail Intensity backface multiplier for detail textures in the [Details](details.md) section.
 
 ## Replace Alpha
 
 - `Type`: **Checkbox**
 
 Whether to replace the alpha value for the backface with the alpha calculated from the Backface Texture and Alpha settings.
+
+## Emission Limiter
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+Emission multiplier to limit the emission on the backface.
 
 ## Hue Shift
 
