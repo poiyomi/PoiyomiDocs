@@ -72,7 +72,7 @@ To determine the VRAM usage of an avatar, you can download Thry's VRCAvatarTools
 
 ### sRGB
 
-sRGB is a setting that determines whether the texture should be stored in gamma-corrected space. This is necessary for color textures, but should always be off for data textures.
+sRGB is a setting that determines whether the texture should be stored in [gamma-corrected](https://learnopengl.com/Advanced-Lighting/Gamma-Correction) space. This is necessary for color textures, but should always be off for data textures.
 
 :::caution
 It's **very** important to set the sRGB setting to `Off` for textures that are not being used directly as color. Any masks, non-color maps, or other data textures will have incorrect values if sRGB is enabled. Color Textures should keep sRGB `On`.
