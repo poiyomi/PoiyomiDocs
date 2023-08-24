@@ -52,7 +52,7 @@ The Shadow Mask texture reads all 4 RGBA channels independently, allowing differ
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
-Intensity of each Detail Shadow map channel.
+Intensity of each Shadow mask channel.
 
 ## Base Pass Lighting
 
