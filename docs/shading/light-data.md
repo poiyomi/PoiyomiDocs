@@ -10,7 +10,7 @@ The Light Data section provides options for changing features relating to the da
 
 - `Type`: **Data** Texture (sRGB **OFF**)
 
-A texture used to define the Ambient Occlusion (AO) for different areas on the material. Ambient occlusion darkens the lighting provided by ambient (indirect) lighting, an effect frequency seen in physical environments. This texture is generally baked in a 3d program like Blender or Substance Painter.
+A texture used to define the Ambient Occlusion (AO) for different areas on the material. Ambient occlusion darkens the lighting provided by ambient (indirect) lighting, an effect frequently seen in physical environments. This texture is generally baked in a 3d program like Blender or Substance Painter.
 
 The AO map texture reads all 4 RGBA channels independently, allowing different AO maps to be packed into individual channels, and the intensity of each channel can be adjusted independently using the sliders visible on dropdown. This can be used to create different AO maps for different material states, for example, different AO maps on the skin of a character with different combinations of clothing.
 
