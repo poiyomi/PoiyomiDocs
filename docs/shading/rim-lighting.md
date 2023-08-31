@@ -70,7 +70,7 @@ Total emission values above 1 will generally cause glow in worlds with bloom.
 
 ![Rim Lighting Emission](/img/shading/Rim-Lighting_Emission.png)
 
-*Rim Lighting Sharpness: 0 / 0.5 / 1 / 2 / 5*
+*Rim Lighting Emission: 0 / 0.5 / 1 / 2 / 5*
 
 ## Rim Color Brighten
 
