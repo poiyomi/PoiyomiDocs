@@ -140,7 +140,7 @@ How much shadows should be mixed into the outline color.
 
 - `Type`: **Checkbox**
 
-Enableas hue shifting of the outline color.
+Enables hue shifting of the outline color.
 
 ### Shift
 
