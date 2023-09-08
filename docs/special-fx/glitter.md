@@ -131,7 +131,7 @@ Minimum brightness level for the glitter. At `0`, the glitter will be completely
 
 - `Type`: **Float**, Range: `0.0 - 40.0`
 
-Maximum brightness level for the glitter. At `0`, the glitter will be completely dark. At `1`, the glitter will always have the maximum brightness.
+Maximum brightness level for the glitter. At `0`, the glitter will always be completely invisible.
 
 ## Glitter Bias
 
