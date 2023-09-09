@@ -140,7 +140,7 @@ How much shadows should be mixed into the outline color.
 
 - `Type`: **Checkbox**
 
-Enableas hue shifting of the outline color.
+Enables hue shifting of the outline color.
 
 ### Shift
 
@@ -154,7 +154,7 @@ This value is circular, and will have the same result at `0` and `1`.
 
 - `Type`: **Float**
 
-How much to constantly shift the decal hue with time. A value of 1 will result in a full hue shift cycle every 20 seconds.
+How much to constantly shift the outline hue over time. A value of 1 will result in a full hue shift cycle every 20 seconds.
 
 ## Advanced
 

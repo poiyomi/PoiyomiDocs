@@ -292,7 +292,7 @@ ShadeMap lighting uses textures to determine the lighting level. Options are ava
 
 ShadeMap lighting is useful for creating highly stylized lighting effects. [It's similar to UnityChan Toon Shader 2's](https://github.com/unity3d-jp/UnityChanToonShaderVer2_Project/blob/release/legacy/2.0/Manual/UTS2_Manual_en.md#2-basic-three-colors-and-control-maps-setups-menu) three-color shading system.
 
-For a basic ShadeMap shading setup, you can enable *Use BaseMap as 1st ShadeMap* and *Use BaseMap as 2nt ShadeMap*, set the *1st ShadeColor* and *2nd ShadeColor* to a lighter and darker tone respectively, and set the BaseColor Step and ShadeColor Step to a larger (`0.4 - 0.6`) and smaller (`0.1 - 0.3`), respectively.
+For a basic ShadeMap shading setup, you can enable *Use BaseMap as 1st ShadeMap* and *Use BaseMap as 2nd ShadeMap*, set the *1st ShadeColor* and *2nd ShadeColor* to a lighter and darker tone respectively, and set the BaseColor Step and ShadeColor Step to a larger (`0.4 - 0.6`) and smaller (`0.1 - 0.3`), respectively.
 
 This lighting mode uses the following options:
 

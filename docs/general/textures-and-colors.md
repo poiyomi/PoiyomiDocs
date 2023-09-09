@@ -8,7 +8,7 @@ Textures and Colors are used everywhere in the shader, so it's important to unde
 
 ## Textures
 
-A texture is a 2D image containing multiple channels of data. Textures are used to define how a material looks, how it responds to light, where effects are applied and what they look like, andm ore.
+A texture is a 2D image containing multiple channels of data. Textures are used to define how a material looks, how it responds to light, where effects are applied and what they look like, and more.
 
 ### Source Texture Formats
 
@@ -72,7 +72,7 @@ To determine the VRAM usage of an avatar, you can download Thry's VRCAvatarTools
 
 ### sRGB
 
-sRGB is a setting that determines whether the texture should be stored in gamma-corrected space. This is necessary for color textures, but should always be off for data textures.
+sRGB is a setting that determines whether the texture should be stored in [gamma-corrected](https://learnopengl.com/Advanced-Lighting/Gamma-Correction) space. This is necessary for color textures, but should always be off for data textures.
 
 :::caution
 It's **very** important to set the sRGB setting to `Off` for textures that are not being used directly as color. Any masks, non-color maps, or other data textures will have incorrect values if sRGB is enabled. Color Textures should keep sRGB `On`.
@@ -118,7 +118,7 @@ Turning off mipmaps should only be done for very specific data textures that sho
 
 ### Wrap Mode
 
-Wrap Mode defines how a texture should repeat when it is tiled. This has various options including Repeat (repeats the texture), Clamp (clamps the texture to the edge of the texture), and Mirror (mirrors the texture).
+Wrap Mode defines how a texture should repeat when it is tiled. This has various options including Repeat (repeats the texture), Clamp (stretches the edges of the texture), and Mirror (mirrors the texture).
 
 This option has a caveat. For most textures, the wrap mode defined for the *Main Texture* will be used. This is due to a limitation within the DirectX Graphics API, which limits the amount of samplers that can be defined.
 

@@ -8,10 +8,10 @@ title: How to Setup
 TPS requires the VRChat Avatars SDK3 (https://vrchat.com/home/download)
 :::
 
-In general the Wizard is organized in multiple steps that you should go through in numerical order.
+In general, the Wizard is organized in multiple steps that you should go through in numerical order.
 
 ## Step 0 - Auto Fixes
-This sections only shows up if your unity has configuration issues that will prevent you from being able to correctly place tps objects or see the penetrator deformation.
+This section only shows up if your unity setup has configuration issues that will prevent you from being able to correctly place tps objects or see the penetrator deformation.
 - `Scene Lighting`: If your lighting is turned off in scene mode you will not see the penetrator move.
 - `Pivot Mode`: If your pivot mode is not set to pivot point the placement of the unity tools will not represent where the origin of your penetrator is.
 

@@ -14,7 +14,7 @@ The Dissolve module provides features for transitioning between a base appearanc
 
 Options: `Basic/Point2Point`
 
-Defines the mode dissolve is operating in. In `Basic`, the 0-1 value of the [**Dissolve Gradient**](##Dissolve-Gradient) texture is used to define the scale from 0 to 1. In `Point2Point`, the pixel's position is used to define the scale.
+Defines the mode dissolve is operating in. In `Basic`, the 0-1 value of the [**Dissolve Gradient**](#dissolve-gradient) texture is used to define the scale from 0 to 1. In `Point2Point`, the pixel's position is used to define the scale.
 
 ## Edge
 

@@ -70,12 +70,12 @@ Options per texture slot:
 
 # Settings
 
-The `Settings UI` can be opten via the `gears icon` in the top left corner of materials using the menu item of the top bar `Thry -> Shader UI -> Settings`.
+The `Settings UI` window can be opened via the `gears icon` in the top left corner of a material. Or using the menu item of the top bar `Thry -> Shader UI -> Settings`.
 
 ### Localization
-Changes the language of the UI. If a shader supports localization its language will cahnged too.
+Changes the language of the UI. If a shader supports localization its language will be changed too.
 
-To languages are loaded from `thry_editor_locale.csv`. If you would like to contribute you can edit the file and create a pull request on [github](https://github.com/Thryrallo/ThryEditor).
+The languages are loaded from `thry_editor_locale.csv`. If you would like to contribute you can edit the file and create a pull request on [github](https://github.com/Thryrallo/ThryEditor).
 
 ![localization](/img/thryeditor/localization.png)
 
