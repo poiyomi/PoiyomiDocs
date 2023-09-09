@@ -75,7 +75,7 @@ The `Settings UI` window can be opened via the `gears icon` in the top left corn
 ### Localization
 Changes the language of the UI. If a shader supports localization its language will be changed too.
 
-To languages are loaded from `thry_editor_locale.csv`. If you would like to contribute you can edit the file and create a pull request on [github](https://github.com/Thryrallo/ThryEditor).
+The languages are loaded from `thry_editor_locale.csv`. If you would like to contribute you can edit the file and create a pull request on [github](https://github.com/Thryrallo/ThryEditor).
 
 ![localization](/img/thryeditor/localization.png)
 
