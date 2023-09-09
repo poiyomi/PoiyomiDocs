@@ -71,7 +71,7 @@ Replaces the base color with the iridescence color. At `1.0`, the base color is 
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
-Multiplies the base color with the iridescence color. This generally darkens the base color. Black areas of the iridescence color will always darken, white areas will not affect the base color, and colored areas will darken if the base color doesn't match the iridescence color color in that area.
+Multiplies the base color with the iridescence color. This generally darkens the base color. Black areas of the iridescence color will always darken, white areas will not affect the base color, and colored areas will darken if the base color doesn't match the iridescence color in that area.
 
 ## Emission Strength
 
