@@ -98,7 +98,7 @@ Normalized NDotL uses the dot product between the mesh normal and the light dire
 
 #### Saturated NDotL
 
-Normalized NDotL uses the dot product between the mesh normal and the light direction, saturated at `0` and `1`.
+Saturated NDotL uses the dot product between the mesh normal and the light direction, saturated at `0` and `1`.
 
 ### Light Direction Mode
 
