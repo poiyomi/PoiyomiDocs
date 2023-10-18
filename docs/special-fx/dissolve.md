@@ -154,6 +154,16 @@ The 3D Point to start the dissolve at. For avatars, this should be set far enoug
 
 The 3D Point to end the dissolve at. For avatars, this should be set far enough away that changes in skinning (sticking arms/legs out) don't cause the dissolve to unintentionally trigger.
 
+### Clamp Dissolve
+
+`Type`: **Checkbox**
+
+If set to True, this ensures that the whole material is clamped to the set value. This means if the dissolve Alpha is at `1` or `0`, they will never be partially dissolved or not dissolved. This can fix issues where portions of your Material are not completely Dissolved or Visible, particularly with your Model's Scale.
+
+:::tip 
+It may be benificial to enable this option if you change your Avatar's Scale frequently in-game. This will help prevent Dissolves from partially working as intended at various heights or scales. 
+:::
+
 ## Hue Shift
 
 Enables/Disables hue shifting features for dissolve. Unlike most sections, this checkbox can be animated.
