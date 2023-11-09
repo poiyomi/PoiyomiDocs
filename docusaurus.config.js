@@ -1,35 +1,35 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCodeTheme = require("prism-react-renderer/themes/github");
+const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Poiyomi Shaders',
-  tagline: 'Free Shaders for Unity and VRChat',
-  url: 'https://poiyomi.vercel.app',
-  baseUrl: '/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
-  organizationName: 'poiyomi', // Usually your GitHub org/user name.
-  projectName: 'PoiyomiToonShader', // Usually your repo name.
+  title: "Poiyomi Shaders",
+  tagline: "Free Shaders for Unity and VRChat",
+  url: "https://poiyomi.vercel.app",
+  baseUrl: "/",
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
+  favicon: "img/favicon.ico",
+  organizationName: "poiyomi", // Usually your GitHub org/user name.
+  projectName: "PoiyomiToonShader", // Usually your repo name.
 
   plugins: [
     [
-      require.resolve('@docusaurus/plugin-client-redirects'),
+      require.resolve("@docusaurus/plugin-client-redirects"),
       {
-        fromExtensions: ['html', 'htm'], // /myPage.html -> /myPage
+        fromExtensions: ["html", "htm"], // /myPage.html -> /myPage
         redirects: [
           // /docs/oldDoc -> /docs/newDoc
           {
-            from: '/special-fx/udim-discard',
-            to: '/special-fx/uv-tile-discard',
+            from: "/special-fx/udim-discard",
+            to: "/special-fx/uv-tile-discard",
           },
           {
-            from: '/general/substance-export',
-            to: '/general/substance-painter',
+            from: "/general/substance-export",
+            to: "/general/substance-painter",
           },
           // Redirect from multiple old paths to the new path
           // {
@@ -43,27 +43,27 @@ const config = {
 
   presets: [
     [
-      'classic',
+      "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          routeBasePath: '/',
-          sidebarPath: require.resolve('./sidebars.js'),
+          routeBasePath: "/",
+          sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
           showLastUpdateTime: true,
         },
         // blog: true,
-        
+
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // editUrl:
-            // 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          // 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
-        
+
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve("./src/css/custom.css"),
         },
       }),
     ],
@@ -78,7 +78,7 @@ const config = {
         },
       },
       colorMode: {
-        defaultMode: 'dark',
+        defaultMode: "dark",
       },
       tableOfContents: {
         minHeadingLevel: 2,
@@ -86,26 +86,36 @@ const config = {
       },
       navbar: {
         logo: {
-          alt: 'Poiyomi Text Logo',
-          src: 'img/logo.svg',
+          alt: "Poiyomi Text Logo",
+          src: "img/logo.svg",
         },
         items: [
           {
-            type: 'doc',
-            docId: 'intro',
-            position: 'left',
-            label: 'Docs',
+            type: "doc",
+            docId: "intro",
+            position: "left",
+            label: "Docs",
           },
-          {to: '/blog', label: 'Blog: Updates & Tips', position: 'left'},
+          { to: "/blog", label: "Blog: Updates & Tips", position: "left" },
           {
-            href: 'https://github.com/poiyomi/PoiyomiToonShader',
-            label: 'GitHub',
-            position: 'right',
+            to: "poiyomitoonvcc", 
+            label: "Poiyomi Toon VCC",
+            position: "left",
           },
           {
-            href: 'https://discord.gg/poiyomi',
-            label: 'Discord',
-            position: 'right',
+            href: "https://twitter.com/poiyomi",
+            label: "Twitter",
+            position: "right",
+          },
+          {
+            href: "https://discord.gg/poiyomi",
+            label: "Discord",
+            position: "right",
+          },
+          {
+            href: "https://github.com/poiyomi/PoiyomiToonShader",
+            label: "GitHub",
+            position: "right",
           },
         ],
       },
