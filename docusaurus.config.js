@@ -98,6 +98,16 @@ const config = {
           },
           {to: '/blog', label: 'Blog: Updates & Tips', position: 'left'},
           {
+            to: 'poiyomitoonvcc', // The path to the Markdown file
+            label: 'Poiyomi Toon VCC', // The label for the button
+            position: 'left', // Position it on the left side of the navbar
+          },
+          {
+            href: 'https://twitter.com/poiyomi',
+            label: 'Twitter',
+            position: 'right'
+          },
+          {
             href: 'https://github.com/poiyomi/PoiyomiToonShader',
             label: 'GitHub',
             position: 'right',
