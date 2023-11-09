@@ -108,13 +108,13 @@ const config = {
             position: "right",
           },
           {
-            href: "https://github.com/poiyomi/PoiyomiToonShader",
-            label: "GitHub",
+            href: "https://discord.gg/poiyomi",
+            label: "Discord",
             position: "right",
           },
           {
-            href: "https://discord.gg/poiyomi",
-            label: "Discord",
+            href: "https://github.com/poiyomi/PoiyomiToonShader",
+            label: "GitHub",
             position: "right",
           },
         ],
