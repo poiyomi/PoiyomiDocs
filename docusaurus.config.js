@@ -88,6 +88,8 @@ const config = {
         logo: {
           alt: "Poiyomi Text Logo",
           src: "img/logo.svg",
+          width: 44,
+          height: 32
         },
         items: [
           {
