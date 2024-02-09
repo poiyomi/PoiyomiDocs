@@ -4,7 +4,7 @@ title: Stencil
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
-The stencil section gives access to the stencil buffer, and its associated capabilities. The stencil buffer can be used to create effecst where one shader can only draw where another has rendered, or cannot render where another has already rendered.
+The stencil section gives access to the stencil buffer, and its associated capabilities. The stencil buffer can be used to create effects where one shader can only draw where another has rendered, or cannot render where another has already rendered.
 
 To learn more about stencils, visit the [Unity documentation](https://docs.unity3d.com/Manual/SL-Stencil.html).
 

@@ -14,7 +14,7 @@ The Dissolve module provides features for transitioning between a base appearanc
 
 Options: `Basic/Point2Point`
 
-Defines the mode dissolve is operating in. In `Basic`, the 0-1 value of the [**Dissolve Gradient**](##Dissolve-Gradient) texture is used to define the scale from 0 to 1. In `Point2Point`, the pixel's position is used to define the scale.
+Defines the mode dissolve is operating in. In `Basic`, the 0-1 value of the [**Dissolve Gradient**](#dissolve-gradient) texture is used to define the scale from 0 to 1. In `Point2Point`, the pixel's position is used to define the scale.
 
 ## Edge
 
@@ -153,6 +153,16 @@ The 3D Point to start the dissolve at. For avatars, this should be set far enoug
 ### End Point
 
 The 3D Point to end the dissolve at. For avatars, this should be set far enough away that changes in skinning (sticking arms/legs out) don't cause the dissolve to unintentionally trigger.
+
+### Clamp Dissolve
+
+`Type`: **Checkbox**
+
+If set to True, this ensures that the whole material is clamped to the set value. This means if the dissolve Alpha is at `1` or `0`, they will never be partially dissolved or partially visible. This can fix issues where portions of your Material have visibility issues at certain poses with those values.
+
+:::tip 
+It may be benificial to enable this option if you change your Avatar's Scale frequently in VRChat, as it will help prevent Dissolves from partially working as intended at various heights or scales. 
+:::
 
 ## Hue Shift
 

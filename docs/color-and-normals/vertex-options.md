@@ -58,7 +58,7 @@ How much to offset the vertex height for the mask. A value of `0` will mean that
 
 - `Type`: **Checkbox**
 
-Vertex Rounding snaps vertices to specific intervals in the world coordinate system. The amount snap interval is defined by the Rounding Interval. This option can be used to create retro effects, or pixelization.
+Vertex Rounding snaps vertices to specific intervals in the world coordinate system. The amount of snap interval is defined by the Rounding Interval. This option can be used to create retro effects, or pixelization.
 
 ### Rounding Interval
 

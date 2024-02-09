@@ -111,7 +111,7 @@ How much the glitter should occupy the voronoi cell. At `0.0`, the glitter will 
 
 How much contrast the glitter should have. At lower values, the cells will all have a similar brightness. At higher values, cells will have increasingly different brightness levels.
 
-Only visible when **Mode** is set to `Angle`.
+Only visible when **Mode** is set to `Angle` or `Light Reflections`.
 
 ## Glitter Angle Range
 
@@ -131,7 +131,7 @@ Minimum brightness level for the glitter. At `0`, the glitter will be completely
 
 - `Type`: **Float**, Range: `0.0 - 40.0`
 
-Maximum brightness level for the glitter. At `0`, the glitter will be completely dark. At `1`, the glitter will always have the maximum brightness.
+Maximum brightness level for the glitter. At `0`, the glitter will always be completely invisible.
 
 ## Glitter Bias
 
