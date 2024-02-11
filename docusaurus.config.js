@@ -33,7 +33,7 @@ const config = {
           },
           {
             from: '/grab-pass/grabpass',
-            to: '/grabpass',
+            to: '/grabpass/',
           },
           // Redirect from multiple old paths to the new path
           // {
