@@ -4,6 +4,10 @@ title: How to Setup
 ---
 # How to Setup
 
+:::tip
+**This is a patreon-only feature!** Subscribe to the [Patreon](https://www.patreon.com/poiyomi) at the $10 tier or higher to unlock it.
+:::
+
 :::note 
 TPS requires the VRChat Avatars SDK3 (https://vrchat.com/home/download)
 :::

@@ -31,6 +31,10 @@ const config = {
             from: "/general/substance-export",
             to: "/general/substance-painter",
           },
+          {
+            from: '/grab-pass/grabpass',
+            to: '/grabpass/',
+          },
           // Redirect from multiple old paths to the new path
           // {
           //   to: '/docs/newDoc2',
