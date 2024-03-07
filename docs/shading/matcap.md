@@ -8,7 +8,7 @@ Matcaps, or sphere textures, are textures that are mapped to an object based on 
 
 The word Matcap is a portmanteau of **M**aterial **C**apture. The technique was originally designed as a fast, low-overhead way to approximate the look of specific materials, baking in many details. With modern GPU performance and physically based shading techniques, matcaps are not as necessary for performance as they used to be.
 
-Two matcap sections are provided in the shader.
+Four matcap sections are provided in the shader.
 
 ## UV Mode
 
