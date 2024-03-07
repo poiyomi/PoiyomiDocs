@@ -12,8 +12,8 @@ Two matcap sections are provided in the shader.
 
 ## UV Mode
 
-- `Type`: **Dropdown**, Options: `UTS Style`/`Top Pinch`/`Double Sided`
-
+- `Type`: **Dropdown**, Options: `UTS Style`/`Top Pinch`/`Double Sided`/`Gradient`
+  
 Defines how to apply the UV to the normals of the model.
 
 ### UTS Style
@@ -27,6 +27,10 @@ Top Pinch maps the texture based on the view normals, with a correction for the 
 ### Double Sided
 
 Double Sided uses the object's orientation and the reflection vectors to determine the matcap projection. This results in a consistent, unique matcap effect.
+
+### Gradient
+
+Allows you to configure a radial gradient to be used as your matcap texture. Click the rectangle to the right of the Matcap texture slot to open the gradient editor. This functionality replaces the previously seen iridescence module.
 
 ## Color
 
