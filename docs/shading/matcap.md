@@ -8,12 +8,12 @@ Matcaps, or sphere textures, are textures that are mapped to an object based on 
 
 The word Matcap is a portmanteau of **M**aterial **C**apture. The technique was originally designed as a fast, low-overhead way to approximate the look of specific materials, baking in many details. With modern GPU performance and physically based shading techniques, matcaps are not as necessary for performance as they used to be.
 
-Two matcap sections are provided in the shader.
+Four matcap sections are provided in the shader.
 
 ## UV Mode
 
-- `Type`: **Dropdown**, Options: `UTS Style`/`Top Pinch`/`Double Sided`
-
+- `Type`: **Dropdown**, Options: `UTS Style`/`Top Pinch`/`Double Sided`/`Gradient`
+  
 Defines how to apply the UV to the normals of the model.
 
 ### UTS Style
@@ -27,6 +27,10 @@ Top Pinch maps the texture based on the view normals, with a correction for the 
 ### Double Sided
 
 Double Sided uses the object's orientation and the reflection vectors to determine the matcap projection. This results in a consistent, unique matcap effect.
+
+### Gradient
+
+Allows you to configure a radial gradient to be used as your matcap texture. Click the rectangle to the right of the Matcap texture slot to open the gradient editor. This functionality replaces the previously seen iridescence module.
 
 ## Color
 
