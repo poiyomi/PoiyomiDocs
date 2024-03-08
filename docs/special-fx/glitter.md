@@ -8,7 +8,7 @@ The glitter feature is a simple effect that adds a voronoi-based sparkle to the 
 
 ## UV
 
-- `Type`: **Dropdown**, Options: `UV0`/`UV1`/`UV2`/`UV3`/`Panosphere`/`World Pos XZ`/`Polar UV`/`Distorted UV`
+- `Type`: **Dropdown**, Options: `UV0`/`UV1`/`UV2`/`UV3`/`Panosphere`/`World Pos`/`Local Pos`/`Polar UV`/`Distorted UV`
 
 Which UV to project the glitter effect on. 
 
@@ -16,7 +16,7 @@ The UV used for this should be relatively even for the glitter effect to not be 
 
 ## Mode
 
-- `Type`: **Dropdown**, Options:`Angle`/`Linear Emission`/`Light Reflections`
+- `Type`: **Dropdown**, Options: `Angle`/`Linear Emission`/`Light Reflections`
 
 Which mode to use for glitter.
 
@@ -39,115 +39,121 @@ How the glitter should be blended with the base color.
 - `Add`: The glitter effect is added to the base color. Generally results in a brighter effect.
 - `Replace`: The glitter effect replaces the base color. Generally results in a richer effect.
 
-## Color
-
-- `Type`: **HDR Color**
-
-Base color used for the glitter effect. This color is an HDR color, meaning it can have an intensity applied to make the color brighter than normal colors.
-
-## Use Surface Color
+## Use Normals
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
-How much to blend the surface color with the glitter color. This creates a somewhat metallic effect. A value of 1.0 will result in the **Color** being completely replaced by the surface color.
+At `0`, only vertex normals are taken into account when calculating glitter. At `1`, normal maps (pixel normals) are also taken into account at full strength. Values in between blend.
 
-## Glitter Color Map
+## Layers
 
-- `Type`: **Color** Texture (sRGB **ON**)
+- `Type`: **Integer**, Range: `1 - 4`
 
-Map of what color the glitter should be in different areas of the mesh. This offers more control over the glitter color.
+How many layers of the glitter effect should be applied.
 
-## Glitter Mask
+## Shape & Color
 
-- `Type`: **Data** Texture (sRGB **OFF**)
-
-Mask texture that defines what areas of the mesh should have glitter. Black areas will not have glitter, while white areas will.
-
-## Glitter Texture
+### Shape Texture
 
 - `Type`: **Color** Texture (sRGB **ON**)
 
 Texture to use for the individual glitter particles. These particles are placed in each voronoi cell. The glitter texture should generally be used with large glitter particles (smaller **Glitter Density**).
 
-## Panning Speed
+### Color Map
 
-- `Type`: **Vector2**
+- `Type`: **Color** Texture (sRGB **ON**)
 
-How fast the glitter particles should move across the **Glitter UV**. This is a 2D vector, with the X and Y values defining the speed in the X and Y directions.
+Map of what color the glitter should be in different areas of the mesh. This offers more control over the glitter color.
 
-## Rotation Speed
+### Color
 
-- `Type`: **Float**
+- `Type`: **HDR Color**
 
-How fast the glitter particles should rotate within the voronoi cell. This is only visible with glitter set to Square, or glitter that uses a Texture.
+Base color used for the glitter effect. This color is an HDR color, meaning it can have an intensity applied to make the color brighter than normal colors.
 
-## Glitter Density
+### Use Base Color
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+How much to blend the surface color with the glitter color. This creates a somewhat metallic effect. A value of 1.0 will result in the **Color** being completely replaced by the surface color.
+
+### Random Color
+
+- `Type`: **Boolean**
+
+Applies random colors to glitter.
+
+#### Saturation Range
+
+- `Type`: **Multislider**, Range: `0.0 - 1.0`
+
+The saturation range of the randomly generated glitter colors.
+
+#### Brightness Range
+
+- `Type`: **Multislider**, Range: `0.0 - 1.0`
+
+The brightness range of the randomly generated glitter colors.
+
+## Position & Size
+
+### Glitter Density
 
 - `Type`: **Float**
 
 How dense the glitter should be. This represents the number of voronoi cells that should bne along the edge of the mesh UV. Reasonable values are generally between `250` and `1000`, but can vary significantly.
 
-## Glitter Jitter
-
-- `Type`: **Float**, Range: `0.0 - 1.0`
-
-How much to randomize the shape of the glitter voronoi cells. At `0.0`, the cells will be completely square. At `1.0`, the cells will be totally randomized.
-
-## Glitter Speed
-
-- `Type`: **Float**
-
-How fast the the glitter should "flicker", or cycle between bright and dark. Higher values will result in a faster flickering effect.
-
-## Glitter Size
+### Glitter Size
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
 How much the glitter should occupy the voronoi cell. At `0.0`, the glitter will be totally invisible. At `1.0`, the glitter will completely fill the cell, making the borders of the cell visible.
 
-## Glitter Contrast
+### Panning
 
-- `Type`: **Float**, Range: `1 - 1000`
+- `Type`: **Vector2**
 
-How much contrast the glitter should have. At lower values, the cells will all have a similar brightness. At higher values, cells will have increasingly different brightness levels.
+How fast the glitter particles should move across the **Glitter UV**. This is a 2D vector, with the X and Y values defining the speed in the X and Y directions.
 
-Only visible when **Mode** is set to `Angle` or `Light Reflections`.
+### Random Position
 
-## Glitter Angle Range
+- `Type`: **Boolean**
 
-- `Type`: **Float**, Range: `0 - 90`
+Applies random positional offset to glitter.
 
-Range to limit the angle of the glitter effect. Smaller values will create a tighter glitter pattern.
+### Random Size
 
-Only visible when **Mode** is set to `Angle` or `Light Reflections`.
+- `Type`: **Boolean**
 
-## Glitter Min Brightness
+Applies random size to glitter.
+
+#### Size Range
+
+- `Type`: **Multislider**, Range: `0.0 - 1.0`
+
+The size range of the glitter. Overrides 'Glitter Size'.
+
+## Sparkle Control
+
+### Glitter Min Brightness
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
 Minimum brightness level for the glitter. At `0`, the glitter will be completely invisible. At `1`, the glitter will always have the maximum brightness.
 
-## Glitter Max Brightness
+### Glitter Max Brightness
 
 - `Type`: **Float**, Range: `0.0 - 40.0`
 
 Maximum brightness level for the glitter. At `0`, the glitter will always be completely invisible.
 
-## Glitter Bias
+### Speed
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: **Float**
 
-How much to bias the glitter brightness. At `0`, the glitter will be completely dark. At `1`, the glitter will always have the maximum brightness. This works similarly to the **Glitter Contrast** Property.
+How fast the the glitter should "flicker", or cycle between bright and dark. Higher values will result in a faster flickering effect.
 
-Only Visible when **Mode** is set to `Angle`.
-
-## Hide in Shadow
-
-- `Type`: **Float**, Range: `0.0 - 1.0`
-
-How much to hide the glitter in shadow. At `0`, the glitter will be completely visible in shadow. At `1`, the glitter will be completely invisible in shadow.
-
-## Dim Light
+### Dim Light
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
@@ -155,23 +161,85 @@ How much to "dim" the glitter effect, which shrinks it from taking up the entire
 
 Only visible when **Mode** is set to `Linear Emission`.
 
-## Frequency
+### Glitter Angle Range
 
-- `Type`: **Float**, Range: `0 - 100`
+- `Type`: **Float**, Range: `0 - 90`
 
-How fast the glitter should "flicker", or cycle between bright and dark. Higher values will result in a faster flickering effect.
+Range to limit the angle of the glitter effect. Smaller values will create a tighter glitter pattern.
 
-Only visible when **Mode** is set to `Linear Emission`.
+Only visible when **Mode** is set to `Angle` or `Light Reflections`.
 
-## Jaggy Fix
+### Glitter Bias
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+How much to bias the glitter brightness. At `0`, the glitter will be completely dark. At `1`, the glitter will always have the maximum brightness. This works similarly to the **Glitter Contrast** Property.
+
+Only Visible when **Mode** is set to `Angle`.
+
+### Post Contrast
+
+- `Type`: **Float**, Range: `1 - 1000`
+
+How much contrast the glitter should have. At lower values, the cells will all have a similar brightness. At higher values, cells will have increasingly different brightness levels.
+
+Only visible when **Mode** is set to `Angle` or `Light Reflections`.
+
+### Distant Jaggy Fix
 
 - `Type`: **Float**, Range: `0.0 - 0.1`
 
-How much to apply a fix for jagged edges of square glitter. Slightly rounds the corners of the glitter particles.
+How much to apply a fix for jagged edges of square glitter. Slightly rounds the corners of the glitter cells.
 
 Only visible when **Shape** is set to `Square`.
 
+## Rotations
+
+### Random Offset
+
+- `Type`: **Boolean**
+
+Applies random rotation offsets to glitter cells.
+
+### Constant Speed
+
+- `Type`: **Float**
+
+How fast the glitter particles should rotate within the voronoi cell. This is only visible with glitter set to Square, or glitter that uses a Texture.
+
+### Random Speed Range
+
+- `Type`: **Vector2**
+
+Applies a constant, randomly selected rotation speed to each cell, meaning each individual cell will have a consistent rotation speed.
+
+## Masking & Light Masking
+
+### Glitter Mask
+
+- `Type`: **Data** Texture (sRGB **OFF**)
+
+Mask texture that defines what areas of the mesh should have glitter. Black areas will not have glitter, while white areas will.
+
+### Hide in Shadow
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+How much to hide the glitter in shadow. At `0`, the glitter will be completely visible in shadow. At `1`, the glitter will be completely invisible in shadow.
+
+### Scale with Lighting
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+Increasing this value will scale the brightness of the glitter based on the intensity of scene lighting.
+
+### Global Mask
+
+Allows you to mask glitter effects using a Global Mask.
+
 ## Hue Shift
+
+- `Type`: **Boolean**
 
 Enables or Disables the Hue Shift effect for glitter.
 
@@ -185,40 +253,82 @@ How much to constantly shift the hue with time. A value of 1 will result in a fu
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
-How much to shift the base color around the hue circle.
+How much to shift the base color around the hue circle. This value is circular, and will have the same result at 0 and 1.
 
-This value is circular, and will have the same result at 0 and 1.
+## AudioLink 🎵
 
-## Random Stuff
+- `Type`: **Boolean**
 
-Enables certain random variations for the glitter effect.
+Enables or Disables AudioLink effects for glitter.
 
-### Saturation Range
+### Alpha Band
 
-- `Type`: **Vector2**, Range: `0.0 - 1.0`
+- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
 
-Range of saturation values to randomly use for each glitter cell. The first value is the minimum saturation, and the second value is the maximum saturation.
+Selects which audio band should be used to modulate glitter alpha. 
 
-### Brightness Range
+### Alpha Mod
 
-- `Type`: **Vector2**, Range: `0.0 - 1.0`
+- `Type`: **Vector2**
 
-Range of brightness values to randomly use for each glitter cell. The first value is the minimum brightness, and the second value is the maximum brightness.
+Configures by how much glitter alpha should be modulated when the selected band gets triggered. 'Min' specifies alpha at rest, 'Max' specifies alpha at full activation.
 
-### Random Size
+### Max Brightness Band
 
-- `Type`: **Checkbox**
+- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
 
-Enables random size selection for each glitter cell.
+Selects which audio band should be used to modulate glitter max brightness. 
 
-### Size Range
+### Max Brightness Mod
 
-- `Type`: **Vector2**, Range: `0.0 - 1.0`
+- `Type`: **Vector2**
 
-Range of size values to randomly use for each glitter cell. The first value is the minimum size, and the second value is the maximum size.
+Configures by how much glitter max brightness should be modulated when the selected band gets triggered. 'Min' specifies max brightness at rest, 'Max' specifies max brightness at full activation.
 
-### Random Tex Rotation
+### Size Band
 
-- `Type`: **Checkbox**
+- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
 
-Enables random rotation of the glitter texture. Texture rotation is only applied when the glitter texture is in use.
+Selects which audio band should be used to modulate glitter size. 
+
+### Size Mod
+
+- `Type`: **Vector2**
+
+Configures by how much glitter size should be modulated when the selected band gets triggered. 'Min' specifies the size at rest, 'Max' specifies the size at full activation.
+
+### Chrono Sparkle Type
+
+- `Type`: **Dropdown**
+
+Determines how chronotensity is applied to sparkle speed.
+
+### Chrono Sparkle Band
+
+- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+
+Selects which audio band should be used to drive chronotensity sparkle speed.
+
+### Chrono Sparkle Speed
+
+- `Type`: **Float**
+
+Determines how much sparkle speed will be modulated as a function of chronotensity.
+
+### Chrono Rotation Type
+
+- `Type`: **Dropdown**
+
+Determines how chronotensity is applied to sparkle texture rotation.
+
+### Chrono Rotation Band
+
+- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+
+Selects which audio band should be used to drive chronotensity sparkle texture rotation.
+
+### Chrono Rotation Speed
+
+- `Type`: **Float**
+
+Determines how much sparkle rotation speed will be modulated as a function of chronotensity.
