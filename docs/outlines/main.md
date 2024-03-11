@@ -129,7 +129,7 @@ Determines if you want the Outlines to blend in a way that is similar to Unity-C
 
 - `Type`: **Checkbox**
 
-Enables the ability to modify the Outline Color in a similar fashion to `Color Adjust` in **Color & Normals**. This is applied directly after the main [Outline Color](#color), and will not affect other sections that modify the base Outline Color.
+Enables the ability to modify the Outline Color in a similar fashion to [Color Adjust](../color-and-normals/color-adjust.md). This is applied directly after the main [Outline Color](#color), and will not affect other sections that modify the base Outline Color.
 
 ### Hue
 
@@ -318,8 +318,11 @@ Sets how the Outline Stencil should test the depth buffer. By default, the depth
 ## AudioLink
 
 :::info
-This section is only exposed if [AudioLink](https://www.poiyomi.com/audio-link/) is activated on the Material.
+This section allows control of the Outlines through [AudioLink](../audio-link/audio-link.md). It will only be exposed when AudioLink is activated on the Material.
 :::
+
+<PoiVideo url='/vid/outlines/outlineALtest.mp4'/>
+<em>Demonstration of the Bass Band controlling the Outline Size, Emission, and Color via AudioLink.</em>
 
 ### Size Band
 

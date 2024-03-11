@@ -64,7 +64,7 @@ During the creation of this documentation, however, priority is placed on gettin
 | Color & Normals         | 📓  Text Complete    |
 | Shading                 | 📓  Text Complete    |
 | Outlines                | 📓  Text Complete    |
-| Audio Link              | ❌ Not Started       |
+| Audio Link              | ⚠️  Work-In-Progress |
 | Special FX              | ⚠️  Work-In-Progress |
 | Modifiers               | ❌ Not Started       |
 | Post Processing         | 📓  Text Complete    |
