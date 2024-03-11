@@ -4,37 +4,24 @@ title: Outlines
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
-The Outline feature creates outlines using a simplified pass with the mesh offset by a small amount. This is also known as an "Inverted Hull" outline.
+The Outlines feature creates outlines using a simplified pass with the mesh offset by a small amount. This is also known as an "Inverted Hull" outline.
 
 For smooth meshes, the inverted hull technique works well, but for hard-edged models, it can have noticable seams. To correct this, you can bake a version of the mesh with smoothed normals baked into the vertex color, using the Poi Vertex Color Baker. This will overwrite other vertex color data, and will create a unique version of the mesh.
 
-:::tip
-**To use outlines, choose an outline shader variant!**
-
-Outline variants are separated from the main shader because they add a pass that's not necessary for the main shader.
+:::info
+All Outline features have been reintroduced to the main Shader variant as of version 9.0 and newer. There is no need to select a separate variant in order to use Outlines anymore.
 :::
 
 ## Mode
 
-- `Type`: **Dropdown**, Options: `Basic`/`Tint`/`Rim Light`/`Directional`/`Drop Shadow`
+- `Type`: **Dropdown**, Options: `Basic`/`Rim Light`/`Directional`/`Drop Shadow`
+    - Default: `Basic`
 
 Changes the mode of the outline.
 
 ### Basic
 
 Default mode. The width of the outline is constant around the model.
-
-### Tint
-
-Basic, but with the base color of the vertex applied as a tint to the outline color.
-
-#### Tint Mix
-
-- `Type`: **Float**, Range: `0.0 - 1.0`
-
-How much to mix the base color with the outline color. At 0, no tint is applied. At 1, the base color tint is fully applied.
-
-*Only available when mode is set to `Tint`.*
 
 ### Rim Light
 
@@ -70,95 +57,223 @@ In Drop Shadow mode, the **Width** is *not* used.
 
 How much to offset the outline in the X, Y, and Z directions, in unity base units.
 
-## Fixed Size
+## Space
 
-- `Type`: **Checkbox**
+- `Type`: **Dropdown**, Options: `Local`/`World`
+    - Default: `Local`
 
-Enables a fixed screen-space size for outlines, such that outlines do not get smaller when moving away from the model.
+Determines where the size of the Outlines should assume the initial scale units from. Influences the [Outline Size](#outline-size).
 
-## Fixed Size Max Distance
+- `Local` renders the Size based on the Scale Units of your Avatar.
+- `World` renders the Size based on World Units.
 
-- `Type`: **Float**
+:::info
+If you choose the Space to be `World`, the Outline Size will remain the same regardless of your Avatar Scale. Keep this in mind when choosing this option.
+:::
 
-How far away from the model to use the fixed size outlines. Beyond this distance, the outlines will properly scale with distance.
-
-## Vertex Color
-
-- `Type`: **Dropdown**, Options: `Off`/`Normals`/`Mask VC.r`
-
-How to use the vertex colors of the model, if they've been specially prepared.
-
-- `Off`: No vertex color data is used.
-- `Normals`: The (smoothed) vertex colors are used as the normal data.
-- `Mask VC.r`: The vertex colors are used as the mask data. The mask data is the red channel of the vertex colors.
-
-## Enable Lighting
-
-- `Type`: **Checkbox**
-
-Enables lighting for the outline. This darkens the outline color in shadowed areas.
-
-## Width
+## Outline Size
 
 - `Type`: **Float**
 
-Width of the outline, in unity base units (scaled down by 100).
+Thickness of the Outline, in Unity base units (scaled down by 100).
+
+### Outline Size Mask
+
+- `Type`: **Data** Texture (`sRGB: OFF`)
+
+Mask Texture in Grayscale that determines the thickness of the Outline in various places on the model. Areas in darker Grayscale will reduce the thickness based on the initial [Outline Size](#outline-size) value set.
+
+Examples:
+- If your Outline Size is `0.5` and a section of your Texture is 50% Gray, it will reduce the thickness in that area to about `0.25` thickness, which is half of your Outline Size.
+- If a section of your Texture is Black, it will reduce the thickness all the way down to `0` thickness.
+    - If [Clip 0 Width](#clip-0-width) is enabled in this scenario, the Outline will be clipped entirely.
+
+:::note
+This determines the Outline Width *per-vertex*, not per-pixel.
+:::
+
+## Outline Texture
+
+- `Type`: **Data** Texture (`sRGB: ON`)
+
+Texture to use for the Outline. Will be tinted based on the [Color Adjust](#color-adjust) settings.
 
 ## Color
 
 - `Type`: **Color**
 
-Base color of the outline. Mixed in various ways depending on the **Mode** settings.
+Base Color of the Outline. Can be mixed in various ways depending on the [Mode](#mode) settings.
 
 ## Outline Emission
 
-- `Type`: **Float**
+- `Type`: **Float**, Range: `0.0 - 20.0`
 
-How much emission the outline should have. Creates a glowing effect, especially in worlds with post-processing bloom.
+How much Emission the Outline should have. Creates a glowing effect, especially in Worlds with Post Processing Bloom.
 
-## Outline Texture
-
-- `Type`: **Color** Texture (sRGB **ON**)
-
-Texture to use for the outline. This is tinted by the **Color** setting.
-
-## Outline Mask
-
-- `Type`: **Data** Texture (sRGB **OFF**)
-
-Mask that determines the thickness of the outline in various places on the model.
-
-Note that this determines the outline width *per-vertex*, not per-pixel.
-
-## Shadow Strength
+## MainTex Blend
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
-How much shadows should be mixed into the outline color.
+How much the [Outline Color](#color) should be blended with your Texture.
 
-## Hue Shift
+## UTS2 style Blend
 
 - `Type`: **Checkbox**
 
-Enables hue shifting of the outline color.
+Determines if you want the Outlines to blend in a way that is similar to Unity-Chan Toon Shader 2 (UTS2).
 
-### Shift
+
+<!---------- Color Adjust Section ---------->
+
+## Color Adjust
+
+- `Type`: **Checkbox**
+
+Enables the ability to modify the Outline Color in a similar fashion to `Color Adjust` in **Color & Normals**. This is applied directly after the main [Outline Color](#color), and will not affect other sections that modify the base Outline Color.
+
+### Hue
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
-How much to shift the base color around the hue circle.
+How much to shift the Outline Color around the Hue Circle.
 
-This value is circular, and will have the same result at `0` and `1`.
+### Saturation
+
+- `Type`: **Float**, Range: `0.0 - 2.0`
+
+Adjusts the saturation of the Outline Color.
+
+- A value of `0` will make the Oultine Color fully desaturate (Grayscale).
+- A value of `1` will not alter the color at all.
+- A value greater than `1` will increase the Saturation of the outline Color.
+
+### Value
+
+- `Type`: **Float**, Range: `0.0 - 2.0`
+
+Adjusts the influence of the HSV Color Model.
+
+### Gamma
+
+- `Type`: **Float**, Range: `0.0 - 2.0`
+
+Adjusts the Brightness of the Color.
 
 ### Shift Speed
 
 - `Type`: **Float**
 
-How much to constantly shift the outline hue over time. A value of 1 will result in a full hue shift cycle every 20 seconds.
+How much to constantly shift the hue with time.
 
-## Advanced
+For reference, a value of `1` will result in a full Hue Shift cycle every 20 seconds.
 
-These settings are for advanced usage, and generally don't need to be modified.
+
+<!---------- Distance Alpha Section ---------->
+
+## Distance Alpha
+
+- `Type`: **Checkbox**
+
+When enabled, Distance Alpha can modify the Alpha value of the Outlines based on the distance from the Camera to the Object or Pixel.
+
+### Pos To Use
+
+- `Type`: **Dropdown**, Options: `Object Position`/`Pixel Position`
+
+Which position to use to calculate distance.
+
+- `Object Position` will calculate distance relative to the origin of the Outline, resulting in the whole Outline having a uniform alpha change. This is useful for making an entire Outline change alpha based on the distance from the Outline itself.
+- `Pixel Position` will calculate distance relative to the position of each pixel on the Outline. This means different parts of an Outline can have different levels of alpha. This is useful for making parts of an Outline appear or disappear based on distance without the whole Outline being affected.
+
+### Min Distance Alpha
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+The alpha multiplier that will be applied at the [Min Distance](#min-distance).
+
+### Max Distance Alpha
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+The alpha multiplier that will be applied at the [Max Distance](#max-distance).
+
+### Min Distance
+
+- `Type`: **Float**
+
+The distance (in meters) at which the [Min Distance Alpha](#min-distance-alpha) multiplier will be applied.
+
+### Max Distance
+
+- `Type`: **Float**
+
+The distance (in meters) at which the [Max Distance Alpha](#max-distance-alpha) multiplier will be applied.
+
+
+<!---------- Fixed Size Over Distance Section ---------->
+
+## Fixed Size Over Distance
+
+- `Type`: **Checkbox**
+    - Default: `true`
+
+Enables a fixed screen-space size for outlines. This can allow control of the outlines to not get smaller when moving away from the model.
+
+### Fixed Width
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+    - Default: `0.5`
+
+The width of the fixed outline size.
+
+### Fixed Size Max Distance
+
+- `Type`: **Float**
+    - Default: `1`
+
+How far away from the model to use the fixed size outlines in Unity Base Units. Beyond this distance, the outlines will properly scale accordingly.
+
+:::caution
+Keep your Max Distance value at a small number in order to ensure they scale correctly without blocking your Avatar's visibility when viewed at a distance!
+:::
+
+
+<!---------- Lighting Section ---------->
+
+## Lighting
+
+- `Type`: **Checkbox**
+    - Default: `true`
+
+Enables lighting for the Outline. This darkens the outline color in shadowed areas.
+
+### Shadow Strength
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+Shadow intensity of the Outlines.
+
+
+<!---------- Vertex Color Section ---------->
+
+## Vertex Colors
+
+### Vertex Color Normals
+
+- `Type`: **Checkbox**
+
+Use the vertex colors of the model, if they've been specially prepared. The (smoothed) vertex colors are used as the normal data.
+
+### Vertex Color Mask
+
+- `Type`: **Dropdown**, Options: `Off`/`R`/`G`/`B`/`A`
+
+Choose which Color channel to use in your Mask for the Vertex Colors.
+
+
+<!---------- Rendering Options Section ---------->
+
+## Rendering Options
 
 ### Clip 0 Width
 
@@ -166,38 +281,105 @@ These settings are for advanced usage, and generally don't need to be modified.
 
 Enables clipping of the outline if a vertex has `0` outline width.
 
+:::tip
+If using an [Outline Size Mask](#outline-size-mask), all areas that are marked in `Black` will be clipped when this option is enabled.
+:::
+
 ### Override Base Alpha
 
 - `Type`: **Checkbox**
 
-Sets the base fragment alpha to the outline's alpha value.
+Sets the base fragment Alpha to the Outline's Alpha value.
 
 ### Cam Z Offset
 
 - `Type`: **Float**
+    - Default: `0`
 
-How much to offset the camera Z position when rendering the outline. This is useful for giving control over the clipping of the outline.
-
-### Outline Distance Fade
-
-- `Type`: **Vector2**
-
-Determines how much to fade the outline based on distance.
+How much to offset the Camera Z Position when Rendering the Outlines. This is useful for giving control over the clipping of the Outlines.
 
 ### Cull
 
 - `Type`: **Dropdown**, Options: `Off`/`Front`/`Back`
+    - Default: `Front`
 
 Which faces to cull. For the inverted hull technique, this should be set to `Front`.
 
-### Offset Factor
+### ZTest
 
-- `Type`: **Float**
+- `Type`: **Dropdown**, Options: `Disabled`/`Never`/`Less`/`Equal`/`LessEqual`/`Greater`/`NotEqual`/`GreaterEqual`/`Always`
+    - Default: `LessEqual`
 
-*Currently Unused.*
+Sets how the Outline Stencil should test the depth buffer. By default, the depth buffer is tested, and if the depth value is not less than or equal to the current value, the Outline is discarded.
 
-### Offset Units
 
-- `Type`: **Float**
+<!---------- AudioLink Section ---------->
 
-*Currently Unused.*
+## AudioLink
+
+:::info
+This section is only exposed if [AudioLink](https://www.poiyomi.com/audio-link/) is activated on the Material.
+:::
+
+### Size Band
+
+- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+
+Which Band to use for the Outline Size adjustment.
+
+#### Size Mod
+
+- `Type`: **Vector2**
+
+How much to add to or subtract from the Outline Size with Audio.
+
+| Modifier | Function |
+| --- | --- |
+| Min | Amount changed to Outline Size with No Audio in Size Band |
+| Max | Amount changed to Outline Size with Max Audio in Size Band |
+
+### Emission Band
+
+- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+
+Which Band to use for Outline Emission adjustment.
+
+#### Emission Mod
+
+- `Type`: **Vector2**
+
+How much to add to or subtract from the Outline Emission Intensity with Audio.
+
+| Modifier | Function |
+| --- | --- |
+| Min | Amount changed to Outline Emission with No Audio in Emission Band |
+| Max | Amount changed to Outline Emission with Max Audio in Emission Band |
+
+### Color
+
+- `Type`: **Checkbox**
+
+Enables the ability to change the Outline Color with Audio.
+
+#### Band
+
+- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+
+Which Band to use to change the Outline Color with Audio.
+
+#### Replace
+
+- `Type`: **Vector2**
+
+How much to replace the Outline Color with Audio.
+
+| Modifier | Function |
+| --- | --- |
+| Min | Amount of Outline Color replaced with No Audio in Color Band |
+| Max | Amount of Outline Color replaced with Max Audio in Color Band |
+
+#### Color
+
+- `Type`: **Color**
+
+Which color to replace the current Outline Color with Audio.
