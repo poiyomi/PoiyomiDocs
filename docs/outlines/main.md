@@ -3,6 +3,8 @@ sidebar_position: 1
 title: Outlines
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 The Outlines feature creates outlines using a simplified pass with the mesh offset by a small amount. This is also known as an "Inverted Hull" outline.
 
@@ -368,6 +370,9 @@ How much to add to or subtract from the Outline Emission Intensity with Audio.
 
 Enables the ability to change the Outline Color with Audio.
 
+<details>
+<summary><b>Color Options</b></summary>
+
 #### Band
 
 - `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
@@ -390,3 +395,5 @@ How much to replace the Outline Color with Audio.
 - `Type`: **Color**
 
 Which color to replace the current Outline Color with Audio.
+
+</details>
