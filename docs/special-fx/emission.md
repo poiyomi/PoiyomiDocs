@@ -6,13 +6,13 @@ import PoiVideo from '@site/src/components/PoiVideo'
 
 Emission is a function that allows adding brightness directly to the base color of a mesh. It can be used to add highlights, or to add a glow effect to a mesh.
 
-There are 4 identical emission sections, each with their own unique options. They are independent of each other. Emissions are always added with one another when overlapping.
+There are 4 Emission Slots total, each with their own unique options. They are independent of each other. Emissions are always added with one another when overlapping.
 
-## Replace Base Color
+## Emission Mask
 
-- `Type`: **Checkbox**
+- `Type`: **Data** Texture (sRGB **OFF**)
 
-If enabled, the base color of the mesh will be replaced with the emission color (calculated from the combined strength of all the emission sections with Replace Base Color enabled). This means that the mesh, in areas with intense emission, will take on the color of the emission.
+Mask texture that defines where to place the emission effect. Black areas will not be affected by the emission, while white areas will be fully affected by the emission.
 
 ## Emission Color
 
@@ -28,18 +28,6 @@ This color is an HDR color, meaning it can have an intensity applied to make the
 
 Color map of the emission. This is used to define the color of the emission in different areas on the mesh. Black areas will not be affected by the emission, while areas with color will be affected by the emission.
 
-## Base Color as Map?
-
-- `Type`: **Checkbox**
-
-Applies the base color as a map. Useful for adding highlights to a mesh, especially in combination with an emission mask.
-
-## Emission Mask
-
-- `Type`: **Data** Texture (sRGB **OFF**)
-
-Mask texture that defines where to place the emission effect. Black areas will not be affected by the emission, while white areas will be fully affected by the emission.
-
 ## Emission Strength
 
 - `Type`: **Float**, Range: `0.0 - 20.0`
@@ -47,6 +35,18 @@ Mask texture that defines where to place the emission effect. Black areas will n
 Strength of the emission. Values greater than `1.0` will not change the base color as much, but will increase the amount the emission *blooms* (glows) in worlds with post processing enabled, and bloom configured.
 
 Generally, this value should be set between `0.0` and `1.0` for a normal effect, and `1.0` to `5.0` for a more intense effect.
+
+## Use Base Colors
+
+- `Type`: **Checkbox**
+
+Applies the base color as a map. Useful for adding highlights to a mesh, especially in combination with an emission mask.
+
+## Override Base Color
+
+- `Type`: **Checkbox**
+
+If enabled, the base color of the mesh will be replaced with the emission color (calculated from the combined strength of all the emission sections with Replace Base Color enabled). This means that the mesh, in areas with intense emission, will take on the color of the emission.
 
 ## Hue Shift
 
@@ -202,55 +202,89 @@ How much distance there should be between each wave. This value is unitless, and
 
 - `Type`: **Float**
 
-An offset applied to the wave. This value is unitless, and depends on the velocity and interval values.
+An offset applied to the wave. This value is unitless, and depends on the velocity and interval values.\
+
+<!---------- AudioLink Section ---------->
 
 ## Audio Link
 
 - `Type`: **Checkbox**
 
-Enables or disables Emission Audio Link features.
+Enables or disables Emission AudioLink features.
 
-### Emission Add
+:::info
+This section allows control of the Emission through [AudioLink](../audio-link/audio-link.md). It will only be exposed when AudioLink is activated on the Material.
+:::
 
-- `Type`: **Checkbox**
+### Strength Multiplier
 
-#### Emission Strength Add
+Adjusts the Emission Strength times(x) the defined value. This will use the equation, `emissionStrength *= lerp`.
+
+#### Band
+
+- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+
+Which band to use for the AudioLink Emission multiplier.
+
+#### Multiplier
+
+- `Type`: **Vector4**
+    - Default: `Min = 1`, `Max = 1`
+
+How much to multiply the Emission Strength with Audio.
+
+:::caution
+This is a mathematical value. Your multiplier must be at least `1` or greater for AudioLink Emissions to work by default.
+
+If you change any of these to `0`, Emissions may not be visible since there's nothing being multiplied.
+:::
+
+| Modifier | Function |
+| --- | --- |
+| Min | Amount of Emission being multiplied with no audio |
+| Max | Amount of Emission being multiplied with max audio |
+
+### Strength Add
+
+Adjusts the Emission Strength by adding or subtracting from the current [Emission Strength](#emission-strength).
+
+#### Band
+
+- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+
+Which band to use for the AudioLink Emission adjustment.
+
+#### Strength Add
 
 - `Type`: **Vector2**
 
 How much to add to or subtract from the emission strength with audio.
 
-| Channel | Function |
+| Modifier | Function |
 | --- | --- |
-| X | Amount Added to Emission with no audio in Emission Band |
-| Y | Amount Added to Emission with max audio in Emission Band |
-
-
-#### Emission Add Band
-
-- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
-
-Which band to use for the Audio Link Emission adjustment.
-
+| Min | Amount Added to Emission with no audio in Emission Band |
+| Max | Amount Added to Emission with max audio in Emission Band |
 
 ### Center Out
 
-#### Center Out Add
+Makes the Emission move from the center of the mesh to the edges of the mesh, relative to the view direction and the mesh's normal. This feature functions completely separate from [Center Out](#center-out).
+
+#### Band
+
+- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+
+Which band to use for the AudioLink Center Out adjustment.
+
+#### Strength
 
 - `Type`: **Vector2**
 
 How much to add to or subtract from the center out strength with audio.
 
-| Channel | Function |
+| Modifier | Function |
 | --- | --- |
-| X | Amount Added to Emission with no audio in Center Out Band |
-| Y | Amount Added to Emission with max audio in Center Out Band |
-
-#### Center Out Duration
-
-- `Type`: **Float**, Range: `0.0 - 1.0`
-
-How much audio history should be used to calculate the center out. Lower values will result in a faster center out with less detail.
+| Min | Amount Added to Emission with no audio in Center Out Band |
+| Max | Amount Added to Emission with max audio in Center Out Band |
 
 #### Intensity Threshold
 
@@ -258,8 +292,8 @@ How much audio history should be used to calculate the center out. Lower values 
 
 How high the audio intensity must be before being added to the center out strength. This can be used to create a "punchier" center out effect.
 
-#### Center Out Band
+#### Duration
 
-- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+- `Type`: **Float**, Range: `0.0 - 1.0`
 
-Which band to use for the Audio Link Center Out adjustment.
+How much audio history should be used to calculate the center out. Lower values will result in a faster center out with less detail.
