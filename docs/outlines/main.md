@@ -176,6 +176,10 @@ For reference, a value of `1` will result in a full Hue Shift cycle every 20 sec
 
 When enabled, Distance Alpha can modify the Alpha value of the Outlines based on the distance from the Camera to the Object or Pixel.
 
+:::info
+Distance Alpha requires Transparency in order for it to work.
+:::
+
 ### Pos To Use
 
 - `Type`: **Dropdown**, Options: `Object Position`/`Pixel Position`
@@ -279,10 +283,10 @@ Choose which Color channel to use in your Mask for the Vertex Colors.
 
 - `Type`: **Checkbox**
 
-Enables clipping of the outline if a vertex has `0` outline width.
+Enables clipping of the outline if a vertex has `0` outline thickness.
 
 :::tip
-If using an [Outline Size Mask](#outline-size-mask), all areas that are marked in `Black` will be clipped when this option is enabled.
+If using an [Outline Size Mask](#outline-size-mask), all areas that are marked in `Black` will be clipped when this option is enabled. This can be useful for certain areas of your Avatar that have inverted normals, such as the Eyes.
 :::
 
 ### Override Base Alpha
