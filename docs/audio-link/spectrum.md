@@ -1,204 +1,298 @@
 ---
 sidebar_position: 2
-title: Spectrum
+title: AL Spectrum
 ---
+import PoiVideo from '@site/src/components/PoiVideo'
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-# Spectrum
+This module allows you to have a fancy spectrum of varying styles that appear with your Audio. It is projected onto the UV of your choice and is scaled to each end of your UV space by default.
+
+<PoiVideo url='/vid/audio-link/ALSpectrumDemo.mp4'/>
+<em>Demonstration of AL Spectrum projecting across a custom UV1 layout on the Suit.</em>
 
 ## Transform
-
-Description
 
 ### UV Mode
 
 - `Type`: **Dropdown**, Options: `Normal`/`Circle`
+    - Default: `Normal`
 
-Description
+Choice of UV projection of your Spectrum.
+
+<PoiVideo url='/vid/audio-link/ALSpect_NormVSCircle.mp4'/>
+
+- `Normal` is the standard default mode, projected flat on the UV from left to right.
+- `Circle` turns it into a more circular-shaped Spectrum while projected on your UV. It is centered by default.
 
 ### UV
 
 - `Type`: **Dropdown**, Options: `UV0`/`UV1`/`UV2`/`UV3`/`Panosphere`/`World Pos`/`Local Pos`/`Polar UV`/`Distorted UV`
 
-Description
+Choice of UV to use for your Spectrum. You will most likely be configuring this for your specific model.
 
 ### Position
 
-- `Type`: **Float** (2)
+- `Type`: **Float2**
+    - Default: `X = 0.5`, `Y = 0.5`
 
-Description
+Adjusts the Position of the Spectrum's projection on the model's UV space. The Position is based off of the direct center of the projection plane.
+
+| Axis | Function |
+| --- | --- |
+| X | Position on the UV's X-axis (Left -> Right) |
+| Y | Position on the UV's Y-axis (Bottom -> Top) |
 
 ### Scale
 
-- `Type`: **Float** (4)
+- `Type`: **Float4**
+    - Default: `X = 1`, `Y = 1`, `Z = 1`, `W = 1`
 
-Description
+Adjusts the Scale of the Spectrum's projection on the model's UV space.
+
+<PoiVideo url='/vid/audio-link/ALSpect_ScalePos.mp4'/>
+
+| Axis | Function |
+| --- | --- |
+| X | Scale from the Left-end of the projection |
+| Y | Scale from the Right-end of the projection |
+| Z | Scale from the Top-end of the projection |
+| W | Scale from the Bottom-end of the projection |
 
 ### Rotation
 
 - `Type`: **Float**, Range: `0.0 - 360.0`
 
-Description
+Rotation of the Spectrum's projection in degrees.
 
 ### Rotation Speed
 
 - `Type`: **Float**
 
-Description
+Consistent rotation speed of the Spectrum's projection. A value of `1` will result in a complete 360° rotation of the Spectrum every 20 seconds.
 
 ### Line Width
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
+    - Default: `1`
 
-Description
+How large the width of the Spectrum should be across the projection.
 
-## Volume
+<PoiVideo url='/vid/audio-link/ALSpect_LineWidth.mp4'/>
 
-Description
+- A value of `1` will present ignored width and lock it to remain on the bottom-edge of the projection, resulting in a standard spectrum with empty space overhead.
+- A value **less than** `1` will result in a change in the Spectrum's width across the projection. This makes it use the entire space. The locations of where the Bands will move to and from are as it follows:
+    - `Top-edge = Full Audio`
+    - `Bottom-edge = No Audio`
 
-### Volume Step Num (0 = Off)
+## Volume and Band
 
-- `Type`: **Float**
+Adjustment of the UV Space and it's appearance across the Spectrum.
 
-Description
+<PoiVideo url='/vid/audio-link/ALSpect_VolBandStepNum.mp4'/>
 
-### Volume Clip Min
+### Volume
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+Adjustment of the Volume's UV Space and it's appearance. Goes from Bottom to Top.
 
-Description
+<details>
+<summary><b>Volume Options</b></summary>
 
-### Volume Clip Max
-
-- `Type`: **Float**, Range: `0.0 - 1.0`
-
-Description
-
-## Band
-
-
-
-Description
-
-### Band Step Num (0 = Off)
+#### Volume Step Num (0 = Off)
 
 - `Type`: **Float**
 
-Description
+Determines if the Volume projection should have steps for each set amount of units on the projection.
 
-### Band Clip Min
+- A value of `0` sets it uncapped, leaving zero gaps in each step.
+- A value greater than `0` will result in a set amount of steps determined by the user.
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
-
-Description
-
-### Band Clip Max
+#### Volume Clip Min
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
-Description
+Clipping control of the Volume's projection from the Bottom-edge.
+
+#### Volume Clip Max
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+Clipping control of the VOlume's projection from the Top-edge.
+
+</details>
+
+### Band
+
+Adjustment of the Band's UV Space and it's appearance. Goes from Left to Right.
+
+<details>
+<summary><b>Band Options</b></summary>
+
+#### Band Step Num (0 = Off)
+
+- `Type`: **Float**
+
+Determines if the Band projection should have steps for each set amount of units on the projection.
+
+- A value of `0` sets it uncapped, leaving zero gaps in each step.
+- A value greater than `0` will result in a set amount of steps determined by the user.
+
+#### Band Clip Min
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+Clipping control of the Band's projection from the Left-edge.
+
+#### Band Clip Max
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+Clipping control of the Band's projection from the Right-edge.
+
+</details>
 
 ## Shape Clip
 
 - `Type`: **Checkbox**
 
-Description
+Enables the ability to provide a set amount of space between each Step for the `Band` or `Volume`, clipping whatever is in-between each step. Use this in conjunction with your [Volume Step Num](#volume-step-num-0--off) and [Band Step Num](#band-step-num-0--off) values to achieve a digital visualizer look.
+
+:::info
+Shape Clip requires a [Volume Step Num](#volume-step-num-0--off) or [Band Step Num](#band-step-num-0--off) with a value greater than `0` for this to appear correctly.
+:::
+
+<PoiVideo url='/vid/audio-link/ALSpect_ShapeClip.mp4'/>
 
 ### Volume Width
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
-Description
+Width of the space between each step on the Volume.
+
+- A value of `0` is wider spacing and fully clipped.
+- A value of `0.5` shows visible clipping between each space by a factor of `0.5` units.
+- A value of `1` shows no visible clipping between each space whatsoever.
 
 ### Band Width
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
-Description
+Width of the space between each step on the Band.
+
+- A value of `0` is wider spacing and fully clipped.
+- A value of `0.5` shows visible clipping between each space by a factor of `0.5` units.
+- A value of `1` shows no visible clipping between each space whatsoever.
 
 ## Audio Mods
 
-Description
+Modifier for increasing or decreasing the sensitivity of the Spectrum from each Band. This will greatly influence how the Spectrum appears in the projection.
+
+<PoiVideo url='/vid/audio-link/ALSpect_AudMods.mp4'/>
 
 ### Volume
 
 - `Type`: **Float**
+    - Default: `0.5`
 
-Description
+Adjusts the sensitivity of the Volume Band. Higher values will yield larger Spectrums.
 
 ### Bass Boost
 
 - `Type`: **Float**
+    - Default: `5`
 
-Description
+Adjusts the sensitivity of the Bass Band. Higher values will yield increased reaction to the Bass on the Spectrum.
 
 ### Treble Boost
 
 - `Type`: **Float**
+    - Default: `1`
 
-Description
+Adjusts the sensitivity of the Treble Band. Higher values will yield increased reaction to the the Treble on the Spectrum.
 
 ## Colors and Blending
 
-- `Type`: **RGB:** Color Texture **A:** Mask (sRGB **ON**)
+Use this section to customize the Color and overall Appearance of your Spectrum.
 
-Description
+<PoiVideo url='/vid/audio-link/ALSpect_Blending.mp4'/>
+
+### Color & Mask
+
+- `Type`: **RGB:** `Color Texture` **A:** `Mask` `(sRGB: ON)`
+
+Texture slot for customizing the Colors and Blending of your Spectrum.
 
 ### Source
 
 - `Type`: **Dropdown**, Options: `UVX`/`UVY`/`Volume`
+    - Default: `UVY`
 
-Description
+Choose which direction the blending of Colors will be using. The colors you specify will appear on the Spectrum depending on the intensity of the music on each Band.
+
+| Option | Description |
+| --- | --- |
+| UVX | Blends the colors on the X-axis from Left to Right |
+| UVY | Blends the colors on the Y-axis from Bottom to Top |
+| Volume | Changes to blending the color of the Shape dependant on the music intensity
 
 ### Volume Color Low
 
 - `Type`: **Color**
 
-Description
+Color of the Volume at the start of the blending with your selected `Source`.
+
+This will be treated as the lowest frequency when `Source` is set to `Volume`.
 
 ### Low Emission
 
 - `Type`: **Float**, Range: `0.0 - 20.0`
 
-Description
+Adjusts the Emission Strength of the Volume Color Low.
 
 ### Volume Color Mid
 
 - `Type`: **Color**
 
-Description
+Color of the Volume around the middle of the blending.
+
+This will be treated as the middle frequency when `Source` is set to `Volume`.
 
 ### Mid Emission
 
 - `Type`: **Float**, Range: `0.0 - 20.0`
 
-Description
+Adjusts the Emission Strength of the Volume Color Mid.
 
 ### Volume Color High
 
 - `Type`: **Color**
 
-Description
+Color of the Volume at the end of the blending with your selected `Source`.
+
+This will be treated as the highest frequency when `Source` is set to `Volume`.
 
 ### High Emission
 
 - `Type`: **Float**, Range: `0.0 - 20.0`
 
-Description
+Adjusts the Emission Strength of the Volume Color High.
 
 ### Blend Type
 
 - `Type`: **Dropdown**, Options: `Replace`/`Multiply`/`Screen`/`Linear Dodge(Add)`/`Overlay`/`Mixed`
 
-Description
+Behavior of the Spectrum's blending against your Material.
 
 ### Alpha
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
-Description
+Adjusts the visibility of the entire Spectrum projection on your Material.
 
 ### Override Alpha
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
-Description
+Overrides the entire Opacity of the Material besides the Spectrum itself. Requires Transparency.
+
+<PoiVideo url='/vid/audio-link/ALSpect_AlphaOverride.mp4'/>

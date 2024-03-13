@@ -2,6 +2,8 @@
 sidebar_position: 1
 title: AudioLink
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 AudioLink is a system that analyzes and processes in-world audio into many different highly reactive data streams and exposes the data to VRChat Udon, world shaders, and avatar shaders. For more information on AudioLink visit https://audiolink.dev/
 
@@ -65,6 +67,47 @@ Modifier for smoothing the High Mid Band.
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
 Modifier for smoothing the Treble Band.
+
+## Overrides
+
+Animatable sections that allow manual override of the Audio Bands against AudioLink data from the World.
+
+### Band Overrides
+
+- `Type`: **Checkbox**
+
+Enables the Band Overrides function. These sliders will manually override the mentioned Band as if music is playing, except that now you're manually animating it's values.
+
+This can be useful if you for some reason wish to use the `Voice` VRChat Parameter to also animate the forementioned Overrides in your Animator. As an example, you could use `Voice` to make those Bands have an effect when you speak.
+
+<details>
+<summary><b>Band Overrides Options</b></summary>
+
+#### Bass
+
+- `Type`: **Float4**, Range: `0.0 - 1.0`
+
+How much to override the Bass Band. A value greater than `0` will override the Band to the specified value.
+
+#### Low Mid
+
+- `Type`: **Float4**, Range: `0.0 - 1.0`
+
+How much to override the Low Mid Band. A value greater than `0` will override the Band to the specified value.
+
+#### High Mid
+
+- `Type`: **Float4**, Range: `0.0 - 1.0`
+
+How much to override the High Mid Band. A value greater than `0` will override the Band to the specified value.
+
+#### Treble
+
+- `Type`: **Float4**, Range: `0.0 - 1.0`
+
+How much to override the Treble Band. A value greater than `0` will override the Band to the specified value.
+
+</details>
 
 <!---------- HOW TO SECTION ---------->
 
