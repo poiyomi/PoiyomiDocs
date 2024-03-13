@@ -3,6 +3,8 @@ sidebar_position: 1
 title: Outlines
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 The Outlines feature creates outlines using a simplified pass with the mesh offset by a small amount. This is also known as an "Inverted Hull" outline.
 
@@ -129,7 +131,7 @@ Determines if you want the Outlines to blend in a way that is similar to Unity-C
 
 - `Type`: **Checkbox**
 
-Enables the ability to modify the Outline Color in a similar fashion to `Color Adjust` in **Color & Normals**. This is applied directly after the main [Outline Color](#color), and will not affect other sections that modify the base Outline Color.
+Enables the ability to modify the Outline Color in a similar fashion to [Color Adjust](../color-and-normals/color-adjust.md). This is applied directly after the main [Outline Color](#color), and will not affect other sections that modify the base Outline Color.
 
 ### Hue
 
@@ -175,6 +177,10 @@ For reference, a value of `1` will result in a full Hue Shift cycle every 20 sec
 - `Type`: **Checkbox**
 
 When enabled, Distance Alpha can modify the Alpha value of the Outlines based on the distance from the Camera to the Object or Pixel.
+
+:::info
+Distance Alpha requires Transparency in order for it to work.
+:::
 
 ### Pos To Use
 
@@ -279,10 +285,10 @@ Choose which Color channel to use in your Mask for the Vertex Colors.
 
 - `Type`: **Checkbox**
 
-Enables clipping of the outline if a vertex has `0` outline width.
+Enables clipping of the outline if a vertex has `0` outline thickness.
 
 :::tip
-If using an [Outline Size Mask](#outline-size-mask), all areas that are marked in `Black` will be clipped when this option is enabled.
+If using an [Outline Size Mask](#outline-size-mask), all areas that are marked in `Black` will be clipped when this option is enabled. This can be useful for certain areas of your Avatar that have inverted normals, such as the Eyes.
 :::
 
 ### Override Base Alpha
@@ -318,8 +324,11 @@ Sets how the Outline Stencil should test the depth buffer. By default, the depth
 ## AudioLink
 
 :::info
-This section is only exposed if [AudioLink](https://www.poiyomi.com/audio-link/) is activated on the Material.
+This section allows control of the Outlines through [AudioLink](../audio-link/audio-link.md). It will only be exposed when AudioLink is activated on the Material.
 :::
+
+<PoiVideo url='/vid/outlines/outlineALtest.mp4'/>
+<em>Demonstration of the Bass Band controlling the Outline Size, Emission, and Color via AudioLink.</em>
 
 ### Size Band
 
@@ -361,6 +370,9 @@ How much to add to or subtract from the Outline Emission Intensity with Audio.
 
 Enables the ability to change the Outline Color with Audio.
 
+<details>
+<summary><b>Color Options</b></summary>
+
 #### Band
 
 - `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
@@ -383,3 +395,5 @@ How much to replace the Outline Color with Audio.
 - `Type`: **Color**
 
 Which color to replace the current Outline Color with Audio.
+
+</details>
