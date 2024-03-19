@@ -71,7 +71,7 @@ Textures are the largest contributors to VRAM usage. Reducing the size and amoun
 To determine the VRAM usage of an avatar, you can download [Thry's VRC Avatar Performance Tools](https://github.com/Thryrallo/VRC-Avatar-Performance-Tools) and use the `Thry -> Avatar -> VRAM` menu. This will show you the VRAM usage of your avatar, and what assets are using the most VRAM.
 
 :::danger Save VRAM, Save Lives!
-Multiple Textures set above 2048px will consume a vast amount of VRAM, contributing to serious performance issues for both yourself and others. Saying that your PC is "perfectly fine using 4K textures everywhere" is no excuse to use High Res Textures.
+Multiple Textures set above 2048px will consume a vast amount of VRAM, contributing to serious performance issues for both yourself and others.
 
 **Please do your part by avoiding the use of High Res Textures on your Avatar!**
 :::
@@ -80,7 +80,7 @@ Multiple Textures set above 2048px will consume a vast amount of VRAM, contribut
 
 sRGB is a setting that determines whether the texture should be stored in [gamma-corrected](https://learnopengl.com/Advanced-Lighting/Gamma-Correction) space. This is necessary for color textures, but should always be off for data textures.
 
-:::caution
+:::caution Turn this OFF for Non-color Maps
 It's **very** important to set the sRGB setting to `Off` for textures that are not being used directly as color. Any masks, non-color maps, or other data textures will have incorrect values if sRGB is enabled. Color Textures should keep sRGB `On`.
 :::
 
@@ -105,6 +105,12 @@ Crunch compression will not reduce the size of the texture in VRAM, as it has to
 Hai-vr has written some notes about crunch compression on [their Notion](https://hai-vr.notion.site/Crunch-Compression-2119cc1366574068809250fafedbe27a), which outline some of the controversies and limitations of crunch compression.
 
 Consider carefully before using crunch compression for your textures, and always look at the actual differences in visual quality.
+
+:::danger
+Using Crunch Compression on Textures set to 2048px or higher may cause a much longer import time in the Unity Editor.
+
+If you are an Avatar Creator, consider leaving this OFF in your Packages.
+:::
 
 ### Max Size
 

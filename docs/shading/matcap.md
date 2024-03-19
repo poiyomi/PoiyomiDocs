@@ -168,7 +168,7 @@ Mixes the Matcap to the base color. This generally changes certain areas of the 
 
 Blends the Matcap with the base color by looking at each channel's color information and multiplies the inverse of the blend and base color. This results in always a lighter color, although areas with black leaves the color unchanged and white will produce white.
 
-This is in a similar way to how Adobe Photoshop does it.
+This is in a similar way to how various Photo Editing programs does it, such as Photoshop.
 
 ### Unlit Add
 

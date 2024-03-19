@@ -9,8 +9,10 @@ This page covers all the information you need to know when updating from 8.0 to 
 
 :::info Unity 2022 Recommended
 Poiyomi 9.0 is specifically made to work with **Unity 2022**, as that is now the version required by VRChat. To see which specific version VRChat is using, please refer to their [Creators Documentation](https://creators.vrchat.com/sdk/upgrade/current-unity-version/).
+:::
 
-You should still have no problem using Unity 2019, however, we cannot guarantee it may be supported for long. **We highly recommend using Unity 2022 with Poiyomi 9.0 moving forward.**
+:::caution
+While Poiyomi 9.0 should still work in Unity 2019, we cannot guarantee it may be supported for long. **We highly recommend using Unity 2022 with Poiyomi 9.0 moving forward.**
 :::
 
 To upgrade the shader, delete the `_PoiyomiShaders` folder in your assets.
@@ -21,11 +23,11 @@ Sometimes when updating, your locked materials may get stuck in the locked state
 
 ## Automatic Upgrade
 
-Once you have installed the latest version of Poiyomi Shaders and are ready to upgrade your Materials from 8.x to 9.x, change the shader to `.poiyomi/Poiyomi Toon` or similar. Then click this Button when prompted:
+Once you have installed the latest version of Poiyomi Shaders and are ready to upgrade your Materials from 8.x to 9.x, change the shader to `.poiyomi/Poiyomi Toon` or similar. You should see this Green Button appear in the UI. Press it to Apply the Upgrades.
 
 ![9.0 Upgrade Banner](/img/general/Poi9UpgradePic.png)
 
-This will automatically convert any of your existing properties to be 9.0-compatible.
+This function will automatically convert any of your existing properties to be 9.0-compatible.
 
 :::caution
 Do keep in mind not all will be converted perfectly, so we highly suggest you make a copy of your Materials before going forward with this.
@@ -33,13 +35,19 @@ Do keep in mind not all will be converted perfectly, so we highly suggest you ma
 
 ### Older Versions
 
-All previous versions of Poiyomi Shaders are located underneath `.poiyomi/Old Versions` now. They are provided so that you can upgrade seamlessly. **Do Not use them for new Materials other than to upgrade them.**
+All previous versions of Poiyomi Shaders are located underneath `.poiyomi/Old Versions` now. They are provided so that you can upgrade seamlessly.
+
+:::caution Only Upgrade from Old Versions
+Please do not use Old Versions for new Materials other than to upgrade them.
+:::
 
 ## Important Changes from 8.x to 9.x
 
 ### RGBA Color Masking
 
-The entire Module has been redone completely from scratch, resulting in a better user interface and workflow. Please take the time to go over everything if you use this feature.
+The entire Module has been redone completely from scratch, resulting in a better user interface and workflow.
+
+Please take the time to go over everything if you use this feature.
 
 ![New RGBA Color Masking Panel](/img/general/9UpRGBAColMask.png)
 
