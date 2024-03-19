@@ -16,13 +16,13 @@ The AO map texture reads all 4 RGBA channels independently, allowing different A
 
 Generally, if only a single map is being used (such as in the case of a black and white AO map), only one slider should generally be used. 
 
-### AO Map R/G/B/A Intensity
+### AO Map R/G/B/A Strength
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
 Intensity of each AO map channel.
 
-## Detail Shadows
+## Shadow Map
 
 - `Type`: **Data** Texture (sRGB **OFF**)
 
@@ -34,7 +34,7 @@ The Detail Shadow texture reads all 4 RGBA channels independently, allowing diff
 
 Generally, if only a single map is being used (such as in the case of a black and white Detail Shadow map), only one slider should generally be used.
 
-### Detail Shadow R/G/B/A Intensity
+### Shadow Map R/G/B/A Intensity
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
@@ -60,7 +60,7 @@ Options controlling the lighting in the base pass. The base pass is used for bas
 
 ### Light Color Mode
 
-- `Type`: **Dropdown**, Options: `Poi Custom`/`Standard`/`UTS2`
+- `Type`: **Dropdown**, Options: `Poi Custom`/`Standard`/`UTS2`/`OpenLit (lilToon)`
 
 Defines how to calculate the light color. These will generally exhibit small differences under simple or ideal lighting, but will diverge in more complex or adverse lighting conditions.
 
@@ -79,6 +79,10 @@ Standard light color uses a light calculation that more closely matches the Unit
 UTS2 (UnityChan Toon Shader 2) light color uses a calculation that produces a result that's generally consistent, but often incoherent with the environmental lighting conditions. 
 
 This mode adds the **Unlit Intensity** option.
+
+#### OpenLit (lilToon)
+
+Uses the Light Coloring mode used by lilToon.
 
 ### Light Map Mode
 
@@ -102,7 +106,7 @@ Normalized NDotL uses the dot product between the mesh normal and the light dire
 
 ### Light Direction Mode
 
-Options: `Poi Custom`/`Forced Local Direction`/`Forced World Direction`/`UTS2`
+Options: `Poi Custom`/`Forced Local Direction`/`Forced World Direction`/`UTS2`/`OpenLit (lilToon)`/`View Direction`
 
 Defines how the light direction should be calculated. This can be used to emulate the look of other shaders, or to force a certain appearance while still remaining lit.
 
@@ -128,13 +132,19 @@ This option adds the **Forced Direction** option.
 
 UTS2 calculates the light direction the same as the Unity Standard Shader, but will use the view direction to "fake" a light direction, which results in better handling of a lack of direct lighting.
 
+#### OpenLit (lilToon)
+
+Uses the light direction mode unique to lilToon.
+
 ### Forced Direction
 
 - `Type`: **Vector3**
 
 What direction to force the lighting to.
 
+:::info
 This option is only visible when **Light Direction Mode** is set to `Forced Local Direction` or `Forced World Direction`.
+:::
 
 ### Force Light Color
 
@@ -148,7 +158,9 @@ Whether to force the light color to a specific color. Enabling this option adds 
 
 What color the light should be forced to.
 
+:::info
 This option is only visible when **Force Light Color** is enabled.
+:::
 
 ### Unlit Intensity
 
@@ -156,7 +168,9 @@ This option is only visible when **Force Light Color** is enabled.
 
 How much the model should be lit, even in the absence of direct lighting.
 
+:::info
 This option is only visible when **Light Color Mode** is set to `UTS2`.
+:::
 
 ### Limit Brightness
 
@@ -170,7 +184,9 @@ Whether to cap the brightness value to a specific maximum. Enabling this option 
 
 If **Limit Brightness** is enabled, the brightness due to base pass lighting calculations will never go above this value. Add pass lighting or emission can cause the final color to exceed this value.
 
+:::info
 This option is only visible when **Limit Brightness** is enabled.
+:::
 
 ### Min Brightness
 
@@ -184,7 +200,9 @@ Sets the minimum value for direct lighting. This can be useful for preventing a 
 
 Defines how much to use normals when calculating indirect lighting direction. If not enabled, the indirect lighting will be sampled using the 0-vector. 
 
+:::info
 This option is only visible when **Light Color Mode** is set to `Poi Custom`.
+:::
 
 ### Receieve Casted Shadows
 
@@ -198,11 +216,23 @@ Defines how much to apply Unity's built-in casted shadows to the model. These ca
 
 Defines how much to desaturate the base pass lighting color. This keeps the perceptual luminance the same, but reduces the saturation.
 
-## Add Pass Lighting
+### Vertex Lights (Non-Important)
+
+- `Type`: **Checkbox**
+
+Enables Vertex Lights to be used. Vertex lighting allows realtime lights set to non-important to perform their lighting calculations on a per-vertex basis instead of a per-pixel basis. This results in these lights being much lighter to process at runtime.
+
+### Mirror Vertex Lights (Non-Important)
+
+- `Type`: **Checkbox**
+
+Enables Vertex Lights to be used in Mirrors. Because VRChat interprets vertex lighting a little bit differently when looked at through a Mirror, this option enables correct handling of those vertex lights in the mirror.
+
+## Add Pass (Point & Spot Lights)
 
 Options relating to lighting performed in the add pass. The add pass is used for any realtime point lights or directional lights beyond the first in a scene.
 
-### Enable Additive
+### Pixel Lights (Important)
 
 - `Type`: **Checkbox**
 
@@ -214,19 +244,33 @@ Enables or disables add pass lighting in general.
 
 Ignore directional lights in the add pass.
 
+:::info
+This option is only shown if **Pixel Lights (Important)** is enabled.
+:::
+
 ### Limit Brightness
 
 - `Type`: **Checkbox**
 
 Whether to limit the brightness of add pass lights. Enabling this adds the **Max Brightness** option.
 
-#### Max Brightness
+### Max Brightness
 
 - `Type`: **Float**, Range: `0.0 - 10.0`
 
 Defines the maximum allowed brightness resulting from the add pass.
 
-### Grayscale Lighting?
+:::info
+This option is only shown if **Limit Brightness** is enabled.
+:::
+
+### Receieve Casted Shadows (Add Pass)
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+Defines how much to apply Unity's built-in casted shadows to the model. These can look good under certain conditions, but often will look blocky or otherwise produce undesirable results.
+
+### Grayscale Lighting
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
@@ -238,16 +282,6 @@ Defines how much to desaturate the add pass lighting color. This keeps the perce
 
 How much to apply realtime point lighting to the indirect color.
 
-## Vertex Lighting
-
-Vertex lighting allows realtime lights set to non-important to perform their lighting calculations on a per-vertex basis instead of a per-pixel basis. This results in these lights being much lighter to process at runtime.
-
-### Enabled
-
-- `Type`: **Checkbox**
-
-Enables or Disables vertex lighting.
-
 ## Debug Visualization
 
 Debug visualization provides visualizations of the results of lighting data settings and calculations. 
@@ -257,6 +291,10 @@ Debug visualization provides visualizations of the results of lighting data sett
 - `Type`: **Checkbox**
 
 Enable or Disable debug view.
+
+:::danger DO NOT LEAVE THIS ON!
+This section is only meant to visualize and debug your Light Data settings. Make sure to turn it off prior to finalizing your Material!
+:::
 
 #### Direct Color
 
@@ -301,3 +339,33 @@ Shows the shadow map from any Add Pass lighting across the model.
 #### Add NDotL
 
 Shows the N Dot L result (Normal dot Light) from any Add Pass lighting across the model.
+
+## Baked Lighting
+
+Controls for the lighting behavior when used in a Scene with Global Illumination or Baked Lightmaps.
+
+:::caution World SDK users only!
+This section is only exposed when using the `.poiyomi/Poiyomi Toon World` Shader. If you are building a World with Poiyomi Materials, using `Poiyomi World` is required in order to include it with your lightmaps.
+:::
+
+### GI Emission Multiplier
+
+- `Type`: **Float**
+
+Sets the Global Illumination Multiplier for the Emission's influence on your baked meshes.
+
+### Double Sided Global Illumination
+
+- `Type`: **Checkbox**
+
+If enabled, allows the Global Illumination to be baked on both faces.
+
+### Global Illumination
+
+- `Type`: **Dropdown**, Options: `None`/`Baked`/`Realtime`
+
+Sets the behavior of how your Material is treated in your environment.
+
+- `None`: Nothing in your environment will be influenced by the Emissions.
+- `Baked`: Any meshes nearby will be influenced by the Emissions.
+- `Realtime`: Any meshes nearby will be influenced by the Emissions in real time.

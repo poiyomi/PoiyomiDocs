@@ -125,3 +125,165 @@ Sets the speed at which the rim color's hue value is shifted. At a value of `1`,
 Range: `0-1`
 
 A fixed value by which to hue shift the material. At values of `0` and `1`, there will be no change to the material. In between, the hue will shift through the color wheel.
+
+<!-- PROPOSED 9.0 UPDATE AREA, DO NOT COMMENT OUT
+
+# Rim Lighting
+
+**Rim Lighting** can be used to add a highlight or glow around the edges (or center) of a material. It uses the angle between your view and the normal of the surface to define the intensity of the effect.
+
+Rim Lighting is sometimes referred to in conjunction with or as Fresnel, in reference to the [Fresnel Effect](https://docs.unity3d.com/Manual/StandardShaderFresnel.html).
+
+## Style
+
+- `Type`: **Dropdown**, Options: `Poiyomi`/`UTS2`/`LilToon`
+
+Choose the style of Rim Lighting that you wish to use.
+
+## Mask & Bias
+
+- `Type`: **Data** Texture (`sRGB: OFF`)
+
+A texture overlaid on the mesh defining the intensity of the rim lighting at each point. It should generally be black and white, as only its value (specifically the red channel value) will be used, not the color.
+
+When expanded, the Rim Mask texture has options for **Tiling** and **Offset**. The assigned **UV Map** and the **Panning** of the Rim Mask can be adjusted.
+
+![Rim Mask](/img/shading/Rim-Lighting_Mask.png)
+
+*Rim Mask On/Off using a Noise texture.*
+
+### Bias Intensity
+
+Bias of the Mask Intensity.
+
+## Color & Blending
+
+### Rim Texture
+
+- `Type`: **Data** Texture (`sRGB: ON`)
+
+A texture overlaid on the mesh defining the color of the rim lighting.
+
+When expanded, the Rim Texture has options for **Tiling** and **Offset**. The assigned **UV Map** and the **Panning** of the Rim Texture can be adjusted.
+
+![Rim Texture](/img/shading/Rim-Lighting_Texture.png)
+
+*Rim Texture Off/On using a rainbow texture.*
+
+### Color
+
+- `Type`: **Color**
+
+The Color of your Rim Lighting. Blended with the base color.
+
+This color is blended multiplicatively with the Rim Texture, if defined.
+
+### Blend Mode
+
+### Blend Alpha
+
+### Mix Base Color
+
+### Brightness
+
+### Emission
+
+- `Type`: **Float**, Range: `0.0 - 20.0`
+
+Controls the emission value of the rim lighting color. Emission emulates a part of a material that produces light, and adds directly on top of the base color.
+
+Total emission values above 1 will generally cause glow in worlds with bloom.
+
+![Rim Lighting Emission](/img/shading/Rim-Lighting_Emission.png)
+
+*Rim Lighting Emission: 0 / 0.5 / 1 / 2 / 5*
+
+## Shape Controls
+
+### Width
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+Controls the width of the rim lighting. Affects how far from the edge (or center) the rim extends.
+
+![Rim Lighting Width](/img/shading/Rim-Lighting_Width.png)
+
+*Rim Lighting Width: 0.2 / 0.4 / 0.6 / 0.8 / 1.0*
+
+### Sharpness
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+Controls the sharpness of the transition between minimum and maximum rim lighting. At `0`, the rim will be a gradual transition, with the maximum color only present at the very outer edge. As **Rim Sharpness** increases, the maximum color extends further toward the edge (defined by the [**Rim Width**](##Rim-Width)). At `1`, there is a sharp transition between no rim lighting and rim lighting.
+
+![Rim Lighting Sharpness](/img/shading/Rim-Lighting_Sharpness.png)
+
+*Rim Lighting Sharpness: 0 / 0.25 / 0.5 / 0.75 / 1.0*
+
+### Rim Power
+
+### Normal Strength
+
+### Invert Rim
+
+- `Type`: **Checkbox**
+
+Inverts the sense of the rim lighting. When unchecked, rim lighting goes from "outside-in" (facing away from viewer has maximum intensity). When checked, rim lighting goes from "inside-out" (facing toward viewer has maximum intensity).
+
+![Rim Lighting Invert](/img/shading/Rim-Lighting_Invert.png)
+
+Inverted Rim Lighting: Off/On
+
+## Light Direction Mask
+
+### Light Falloff Type
+
+### Invert Shadow Mask
+
+### Shadow Mask Strength
+
+### Shrink In Shadow
+
+## Hue Shift
+
+### Shift Speed
+
+- `Type`: **Float**
+
+Sets the speed at which the rim color's hue value is shifted. At a value of `1`, it will go through a complete cycle of the color wheel once every 20 seconds.
+
+### Hue Shift
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+A fixed value by which to hue shift the material. At values of `0` and `1`, there will be no change to the material. In between, the hue will shift through the color wheel.
+
+## Alpha & Global Masking
+
+### Apply to Alpha
+
+### Apply to Alplha Blend
+
+### Global Mask
+
+### Apply to Global Mask
+
+## AudioLink
+
+:::info
+This section allows control of the Rim Lighting through [AudioLink](../audio-link/audio-link.md). It will only be exposed when AudioLink is activated on the Material.
+:::
+
+### Width Add Band
+
+#### Width Add
+
+### Emission Add Band
+
+#### Emission Add
+
+### Brightness Band
+
+#### Brightness Add
+
+-->

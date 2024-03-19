@@ -68,7 +68,13 @@ VRAM (Video Random Access Memory) usage is the amount of memory that will be use
 
 Textures are the largest contributors to VRAM usage. Reducing the size and amount of textures will reduce VRAM usage and make your avatar more performant.
 
-To determine the VRAM usage of an avatar, you can download Thry's VRCAvatarTools and use the Thry > Avatar > VRAM menu. This will show you the VRAM usage of your avatar, and what assets are using the most VRAM.
+To determine the VRAM usage of an avatar, you can download [Thry's VRC Avatar Performance Tools](https://github.com/Thryrallo/VRC-Avatar-Performance-Tools) and use the `Thry -> Avatar -> VRAM` menu. This will show you the VRAM usage of your avatar, and what assets are using the most VRAM.
+
+:::danger Save VRAM, Save Lives!
+Multiple Textures set above 2048px will consume a vast amount of VRAM, contributing to serious performance issues for both yourself and others. Saying that your PC is "perfectly fine using 4K textures everywhere" is no excuse to use High Res Textures.
+
+**Please do your part by avoiding the use of High Res Textures on your Avatar!**
+:::
 
 ### sRGB
 

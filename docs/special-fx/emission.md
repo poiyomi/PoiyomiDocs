@@ -48,11 +48,17 @@ Applies the base color as a map. Useful for adding highlights to a mesh, especia
 
 If enabled, the base color of the mesh will be replaced with the emission color (calculated from the combined strength of all the emission sections with Replace Base Color enabled). This means that the mesh, in areas with intense emission, will take on the color of the emission.
 
-## Hue Shift
+## Color Adjust
 
 - `Type`: **Checkbox**
 
 Enables hue shifting of the emission.
+
+### Saturation
+
+- `Type`: **Float**, Range: `-1.0 - 10.0`
+
+Adjust the Saturation of the Hue Shift.
 
 ### Hue Shift
 
@@ -212,7 +218,7 @@ An offset applied to the wave. This value is unitless, and depends on the veloci
 
 Enables or disables Emission AudioLink features.
 
-:::info
+:::info Requires AudioLink
 This section allows control of the Emission through [AudioLink](../audio-link/audio-link.md). It will only be exposed when AudioLink is activated on the Material.
 :::
 

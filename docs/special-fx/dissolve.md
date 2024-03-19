@@ -188,6 +188,20 @@ Speed of the hue shift cycling for the edge. A speed of 1 corresponds to a full 
 
 Fixed amount to shift the hue for the edge color only.
 
+## UV Tile Dissolve
+
+- `Type`: **Checkbox**
+
+Allows an alternative way to use UV Tile Discard with the use of Dissolve's effects instead.
+
+If you prefer to use UV Tile Discard in a way that allows a sleek animation transition, this is the section to do it.
+
+:::info Refer to UV Tile Documentation
+All the sliders listed for each Row will reflect the same locations as described in [UV Tile Discard](../special-fx/uv-tile-discard.md). Please refer to the documentation page to see what they are.
+
+Each Slider will control the [Dissolve Alpha](#dissolve-alpha) for the described Row and Column.
+:::
+
 ## Locked In Anim Sliders
 
 These sliders can be indepently marked as animated, and all function the same way as **Dissolve Alpha**. This is useful for situations where you want to animate a dissolve on one material but not another on the same renderer.

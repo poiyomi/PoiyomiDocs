@@ -6,6 +6,8 @@ import PoiVideo from '@site/src/components/PoiVideo'
 
 At the top of the shader, there is a dropdown called "Render Settings". This dropdown is critical to determining how a material will render, and it's important to know what options are available.
 
+**This is always the most important step in your Avatar creation journey!**
+
 ## Base Presets
 
 ### Opaque

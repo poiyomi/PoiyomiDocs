@@ -10,18 +10,6 @@ To learn more about the principles of PBR shading, guides are available from [Ad
 
 Reflections and Specular are heavily influenced by the lighting setup of the scene. For these features to look correct, the scene should have well-defined lighting and reflection probes.
 
-## Reflection Strength
-
-- `Type`: **Float**, Range: `0.0 - 1.0`
-
-How strong reflections should be across the material. These are blended with the base color of the material, and if a reflection mask is used, this value is multiplied with the reflection mask.
-
-## Specular Strength
-
-- `Type`: **Float**, Range: `0.0 - 1.0`
-
-How strong specular highlights should be across the material. These are blended with the base color of the material, and if a specular mask is used, this value is multiplied with the specular mask.
-
 ## Metallic
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
@@ -56,7 +44,7 @@ A tint color applied to the reflections. This is multiplied with the material's 
 
 A tint color applied to the specular. This is multiplied with the material's specular highlights, and is generally used to create a non-physically based stylized effect.
 
-## Maps
+## Packed Maps
 
 - `Type`: **Data** Texture (sRGB **OFF**)
 
@@ -66,29 +54,125 @@ This texture can be exported from programs like Adobe Substance Painter as a pre
 
 This tool can be used by expanding the Maps texture. Each channel will have its own texture slot, and the channel to be used can be selected. If no texture is defined, a fallback value can be selected for that channel; generally, this fallback should be kept at `1.0`, allowing the slider to control this value. Note that all textures will be combined to a single texture with certain default settings; be sure to check this texture's import settings for options like resolution and texture format once it has been saved.
 
-### R Metallic Map
+### Packed Maps Slots
+
+#### R Metallic Map
 
 - `Type`: **Data** Texture (sRGB **OFF**)
 
 The metallic map defines where the material should be metallic, and where it should be non-metallic (dielectric). This should generally be black or white, with few situations requiring in-between values.
 
-### G Smoothness Map
+#### G Smoothness Map
 
 - `Type`: **Data** Texture (sRGB **OFF**)
 
 The Smoothness map defines where the material should be smoother, and where it should be rougher. This value can vary smoothly between `0.0` and `1.0` according to variations and different parts of a material.
 
-### B Reflection Mask
+#### B Reflection Mask
 
 - `Type`: **Data** Texture (sRGB **OFF**)
 
 The reflection mask defines where reflections should be allowed, and where they should be disabled. This is mostly useful for stylized models, and for purely physically-based shading, this channel should be left at `1.0`.
 
-### A Specular Mask
+#### A Specular Mask
 
 - `Type`: **Data** Texture (sRGB **OFF**)
 
 The specular mask defines where specular highlights should be allowed, and where they should be disabled. This is mostly useful for stylized models, and for purely physically-based shading, this channel should be left at `1.0`.
+
+### Stochastic Sampling
+
+- `Type`: **Checkbox**
+
+Enables Stochastic Sampling in your Packed Maps.
+
+### Channel Overrides
+
+:::info
+Use these overrides if you are using an alternative workflow in your Metallic Smoothness Maps.
+:::
+
+#### Metallic Channel
+
+- `Type`: **Dropdown**, Options: `R`/`G`/`B`/`A`/`White`
+    - Default: `R`
+
+Channel Override for the Metallic Map.
+
+#### Smoothness Channel
+
+- `Type`: **Dropdown**, Options: `R`/`G`/`B`/`A`/`White`
+    - Default: `G`
+
+Channel Override for the Smoothness Map.
+
+#### Reflection Mask Channel
+
+- `Type`: **Dropdown**, Options: `R`/`G`/`B`/`A`/`White`
+    - Default: `B`
+
+Channel Override for the Reflection Mask.
+
+#### Specular Mask Channel
+
+- `Type`: **Dropdown**, Options: `R`/`G`/`B`/`A`/`White`
+    - Default: `A`
+
+Channel Override for the Specular Mask.
+
+### Invert Channel Overrides
+
+#### Invert Metallic
+
+- `Type`: **Checkbox**
+
+Flips the Metallic Channel to the opposite of it's value.
+
+#### Invert Smoothness
+
+- `Type`: **Checkbox**
+
+Flips the Smoothness Channel to the opposite of it's value.
+
+:::tip
+Use this `Invert Smoothness` checkbox if you defined a Roughness Map instead in your Packed Maps. This will flip the value of your Roughness Map to match the Unity Standard PBR Pipeline.
+:::
+
+#### Invert Reflection Mask
+
+- `Type`: **Checkbox**
+
+Flips the Reflection Mask to the opposite of it's value.
+
+#### Invert Specular Mask
+
+- `Type`: **Checkbox**
+
+Flips the Specular Mask to the opposite of it's value.
+
+## Reflection Visibility
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+How strong reflections should be across the material. These are blended with the base color of the material, and if a reflection mask is used, this value is multiplied with the reflection mask.
+
+## Specular Visibility
+
+- `Type`: **Float**, Range: `0.0 - 5.0`
+
+How strong specular highlights should be across the material. These are blended with the base color of the material, and if a specular mask is used, this value is multiplied with the specular mask.
+
+## Cubemap
+
+- `Type`: **Cubemap** Texture (sRGB **ON**)
+
+Fallback Cubemap to use if a Reflection Probe is not found in the World. This is used to provide a fallback reflection for maps, or areas of maps, that don't have a reflection probe defined.
+
+### Force Fallback
+
+- `Type`: **Checkbox**
+
+Forces the material to always use the fallback cubemap. This is useful for forcing a specific reflection for stylized models.
 
 ## Split Mask Sampling
 
@@ -133,18 +217,6 @@ Strength of the 2nd specular layer. This value scales the same way as Specular S
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
 Smoothness of the 2nd specular layer. This value scales the same way as Smoothness.
-
-## Fallback Cubemap
-
-- `Type`: **Cubemap** Texture (sRGB **ON**)
-
-Cubemap to use if a reflection probe is not defined. This is used to provide a fallback reflection for maps, or areas of maps, that don't have a reflection probe defined.
-
-### Force Fallback
-
-- `Type`: **Checkbox**
-
-Forces the material to always use the fallback cubemap. This is useful for forcing a specific reflection for stylized models.
 
 ### Lit Fallback
 
