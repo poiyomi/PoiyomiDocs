@@ -345,7 +345,7 @@ Shows the N Dot L result (Normal dot Light) from any Add Pass lighting across th
 Controls for the lighting behavior when used in a Scene with Global Illumination or Baked Lightmaps.
 
 :::caution World SDK users only!
-This section is only exposed when using the `.poiyomi/Poiyomi Toon World` Shader. If you are building a World with Poiyomi Materials, using `Poiyomi World` is required in order to include it with your lightmaps.
+This section is only exposed when using the `.poiyomi/Poiyomi Toon World` Shader. If you are building a World with Poiyomi Materials, using `Poiyomi World` is required in order to include it with your Global Illumination.
 :::
 
 ### GI Emission Multiplier

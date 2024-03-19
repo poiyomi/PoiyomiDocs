@@ -6,7 +6,13 @@ import PoiVideo from '@site/src/components/PoiVideo'
 
 RGBA Color Masking provides a flexible way to apply different color tints, textures, and normal maps with the main color. This does not affect the alpha of the material.
 
-By default, all 4 channels of RGBA color masking will be set to pure white and `1.0` alpha. Any unused channels should be set to `0.0` alpha.
+By default, all 4 channels of RGBA color masking will be set to pure white and `1.0` alpha. Any unused channels should be disabled.
+
+:::info Changes in 9.0
+RGBA Color Masking has been completely redone from scratch as of Poiyomi 9.0.
+
+If you are upgrading from previous versions, please take the time to go over the newly reorganized properties as documented below.
+:::
 
 ## Mask Type
 
