@@ -136,7 +136,9 @@ How much to shift the hue with surface angle. A value of `1` will give maximum h
 
 ## Audio Link
 
-These options are only available if the material has Audio Link enabled.
+:::info
+This section allows control of the Decals through [AudioLink](../audio-link/audio-link.md). It will only be exposed when AudioLink is activated on the Material.
+:::
 
 ### Scale
 

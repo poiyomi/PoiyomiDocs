@@ -39,7 +39,7 @@ When this feature activates, the following sections in Poiyomi Shaders will have
 Toggleable AudioLink checkbox. Used to enable and disable AudioLink effects on the fly.
 
 :::tip
-You can use this checkbox to turn AudioLink effects On or Off using Animations on the fly. See [Locking and Animation](https://www.poiyomi.com/general/locking#marking-properties-for-animation) for more information.
+Use this checkbox exclusively to turn AudioLink effects On or Off using Animations on the fly. See [Locking and Animation](https://www.poiyomi.com/general/locking#marking-properties-for-animation) for more information.
 :::
 
 ## Smoothing
@@ -135,11 +135,11 @@ Here are text instructions on how to set up AudioLink, as explained in the video
 
 As the audio plays, you can fiddle around with the AudioLink settings on your Material while the music is continuously playing in the background. As you do this, the changes should be instantly reflected on your Avatar.
 
-:::danger
+:::danger Only use Play Mode to test AudioLink!
 While in Play Mode, nothing will be saved other than your Materials. Make sure you exit Play Mode before you intend to do further edits to your Avatar!
 :::
 
-:::tip
+:::tip Change the Music
 If you are not a fan of the music that is playing, feel free to change it! To do this, expand the `AudioLinkAvatar` Object in your Hierarchy. Select the Object named `AudioLinkYtdlpPlayer`.
 
 You can then change the URL from the Inspector. Paste the new URL into the field as shown below. If you're already in Play Mode, click `Reload URL` to switch it.

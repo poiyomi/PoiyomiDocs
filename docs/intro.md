@@ -31,9 +31,13 @@ Poiyomi Toon is a **free**, feature-rich toon and PBR shader for Unity, with a s
 On the sidebar, you'll find documentation for different parts of the shader.
 
 :::caution
-*This documentation is geared towards* **Poiyomi 8.0+**.
+*This documentation is geared towards* **Poiyomi 8.0 and newer**.
 
-If you're using Poiyomi 7.0 or earlier, this documentation may not apply at all. [**An upgrade guide is available for moving from Poiyomi 7.0 to 8.0+**](/docs/general/v7-upgrade.md).
+If you're using Poiyomi 7.3 or earlier, this documentation may not apply at all. [**An upgrade guide is available for moving from Poiyomi 7.0 to 8.0+**](/docs/general/v7-upgrade.md).
+:::
+
+:::tip Upgrading to 9.0
+Poiyomi 9.0 is out now. If you are upgrading from 8.0 to 9.0, a lot of the existing documentation still applies to some extent. Notes are provided if otherwise. [**An upgrade guide is available for moving from Poiyomi 8.0 to 9.0+**](/docs/general/v8-to-v9-upgrade.md)
 :::
 
 ## Downloads
@@ -64,7 +68,7 @@ During the creation of this documentation, however, priority is placed on gettin
 | Color & Normals         | 📓  Text Complete    |
 | Shading                 | 📓  Text Complete    |
 | Outlines                | 📓  Text Complete    |
-| Audio Link              | ⚠️  Work-In-Progress |
+| Audio Link              | 📓  Text Complete    |
 | Special FX              | ⚠️  Work-In-Progress |
 | Modifiers               | ❌ Not Started       |
 | Post Processing         | 📓  Text Complete    |

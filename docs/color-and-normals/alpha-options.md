@@ -196,11 +196,17 @@ The angle (in degrees) at which the alpha multiplier should be 1 in the `Model F
 
 The minimum value of alpha for the Angular Alpha mode. This will prevent the alpha from going below a certain level.
 
-## Alpha Audio Link
+## Audio Link
+
+:::info
+This section allows control of the Alpha through [AudioLink](../audio-link/audio-link.md). It will only be exposed when AudioLink is activated on the Material.
+:::
+
+### Alpha Audio Link
 
 - `Type`: **Checkbox**
 
-With [Audio Link](../audio-link/audio-link.md) enabled, the alpha can be modified based on the audio level in a specific band.
+Enables AudioLink for Alpha Options. The Alpha can be modified based on the audio level in a specific band.
 
 ### Add Range
 

@@ -157,7 +157,7 @@ Clipping control of the Band's projection from the Right-edge.
 
 Enables the ability to provide a set amount of space between each Step for the `Band` or `Volume`, clipping whatever is in-between each step. Use this in conjunction with your [Volume Step Num](#volume-step-num-0--off) and [Band Step Num](#band-step-num-0--off) values to achieve a digital visualizer look.
 
-:::info
+:::info Works best with Steps
 Shape Clip requires a [Volume Step Num](#volume-step-num-0--off) or [Band Step Num](#band-step-num-0--off) with a value greater than `0` for this to appear correctly.
 :::
 

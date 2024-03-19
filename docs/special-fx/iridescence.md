@@ -4,8 +4,8 @@ title: Iridescence
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
-:::info
-Iridescence was merged with [matcap](../shading/matcap.md) in 9.0.5 Alpha. See: [UV Mode: Gradient](../shading/matcap.md#gradient).
+:::danger Deprecated Feature
+Iridescence was merged with [Matcap](../shading/matcap.md) in version 9.0. See: [UV Mode: Gradient](../shading/matcap.md#gradient).
 :::
 
 Iridescence is a feature that maps a gradient texture to a mesh using the angle between the viewer and the surface normal. This can create an effect similar to iridescence on a surface, as well as many stylized effects.

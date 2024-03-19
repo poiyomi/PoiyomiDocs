@@ -17,10 +17,6 @@ This section often uses some terms interchangeably.
 
 :::
 
-# Base Pass
-
-Options relating to the base pass shading. This affects shading from baked lighting in worlds.
-
 ## Base Pass Lighting Type
 
 - `Type`: **Dropdown**, Options: `TextureRamp`/`MathRamp`/`Wrapped`/`Skin`/`ShadeMap`/`Flat`/`Realistic`/`Cloth`
@@ -380,7 +376,7 @@ Flat Lighting is a toon lighting mode that uniformly lights the model at the sam
 Flat Light is useful for creating models that are highly robust to local lighting, but sacrifices detail.
 
 :::info
-*This lighting mode has no user-configurable options.*
+The `Flat` lighting mode has no user-configurable options.
 :::
 
 ### Realistic
@@ -489,32 +485,41 @@ This value is multiplied with the value of the Smoothness Map. If no smoothness 
 
 </details>
 
-## Add Pass Shading
+## Add Pass (Point & Spot Lights)
 
 These options affect how shading is performed in the Add pass. This pass is used for realtime lights like Point, Spot, and Directional lights.
 
-### Add Pass Lighting Type
+### Lighting Type
 
-- `Type`: **Dropdown**, Options: `Toon`/`Realistic`, `Wrapped` (future)
+- `Type`: **Dropdown**, Options: `Toon`/`Realistic`/`Same as Base Pass`
 
 Which lighting model to use for the Add pass.
 
-#### Toon
+### Toon
 
 Toon add pass lighting behaves somewhat like the math gradient lighting mode. It uses gradient settings to determine the start and end points of the added lighting.
 
-#### Realistic
+<details>
+<summary><b>Toon Options (Add Pass)</b></summary>
 
-Realistic add pass lighting uses a physically-based lighting model to determine the added lighting. It is appropriate for most non-heavily-styled models.
-
-### Gradient Start
+#### Gradient Start
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
 Start point of the ramp gradient. Any lighting below this point will be set to maximum lighting.
 
-### Gradient End
+#### Gradient End
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
 End point of the ramp gradient. Any lighting above this point will be set to minimum lighting.
+
+</details>
+
+### Realistic
+
+Realistic add pass lighting uses a physically-based lighting model to determine the added lighting. It is appropriate for most non-heavily-styled models.
+
+### Same as Base Pass
+
+Add Pass lighting that behaves close to your [Base Pass](#base-pass-lighting-type) settings.
