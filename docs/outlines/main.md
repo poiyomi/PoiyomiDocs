@@ -10,7 +10,7 @@ The Outlines feature creates outlines using a simplified pass with the mesh offs
 
 For smooth meshes, the inverted hull technique works well, but for hard-edged models, it can have noticable seams. To correct this, you can bake a version of the mesh with smoothed normals baked into the vertex color, using the Poi Vertex Color Baker. This will overwrite other vertex color data, and will create a unique version of the mesh.
 
-:::info
+:::info Changes in 9.0
 All Outline features have been reintroduced to the main Shader variant as of version 9.0 and newer. There is no need to select a separate variant in order to use Outlines.
 :::
 
@@ -178,7 +178,7 @@ For reference, a value of `1` will result in a full Hue Shift cycle every 20 sec
 
 When enabled, Distance Alpha can modify the Alpha value of the Outlines based on the distance from the Camera to the Object or Pixel.
 
-:::info
+:::info Requires Transparency
 Distance Alpha requires Transparency in order for it to work.
 :::
 
@@ -239,8 +239,8 @@ The width of the fixed outline size.
 
 How far away from the model to use the fixed size outlines in Unity Base Units. Beyond this distance, the outlines will properly scale accordingly.
 
-:::caution
-Keep your Max Distance value at a small number in order to ensure they scale correctly without blocking your Avatar's visibility when viewed at a distance!
+:::caution Avoid the "Thick Outlines" Problem
+Keep your Max Distance value at a small number in order to ensure they scale correctly without blocking your Avatar's visibility when viewed at a far distance!
 :::
 
 

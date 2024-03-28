@@ -4,136 +4,120 @@ title: RGBA Color Masking
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
-RGBA Color Masking provides a flexible way to apply different color tints, textures, and normal maps with the main color.
+RGBA Color Masking provides a flexible way to apply different color tints, textures, and normal maps with the main color. This does not affect the alpha of the material.
 
-RGBA Color masking does not affect the alpha of the material.
+By default, all 4 channels of RGBA color masking will be set to pure white and `1.0` alpha. Any unused channels should be disabled.
 
-By default, all 4 channels of RGBA color masking will be set to pure white and `1.0` alpha. Any unused channels should be set to `0.0` alpha.
+:::info Changes in 9.0
+RGBA Color Masking has been completely redone from scratch as of Poiyomi 9.0.
 
-## Use Vertex Colors
+If you are upgrading from previous versions, please take the time to go over the newly reorganized properties as documented below.
+:::
 
-- `Type`: **Checkbox**
+## Mask Type
 
-Whether to use the mesh's vertex colors to set the RGBA mask. If enabled, the Mask texture will not be used.
+- `Type`: **Dropdown**, Options: `Texture`/`Vertex Colors`
 
-## Multiplicative
+### Texture
 
-- `Type`: **Checkbox**
+Use a Texture Mask to set the RGBA Mask. If enabled, it exposes the Masks slot.
 
-Whether the channel textures should be appled multiplicatively to the base texture. If not enabled, the textures will be blended normally, with a replace function.
+### Vertex Colors
 
-## Mask
+Use the mesh's Vertex Colors to set the RGBA Mask.
 
-- `Type`: **Data** Texture (sRGB **OFF**)
+## Masks and Maps
 
-Texture used to mask the R, G, B, and A colors, textures, and normals. Each channel is treated independendently.
+### Masks
 
-Note that textures without an A channel will default that channel to pure white (1.0), so the A color/texture/normal will apply everywhere.
+- `Type`: **Data** Texture (`sRGB OFF`)
 
-## R Color
+Slot for the masks that you wish to use for your RGBA Masking. This will only be exposed when Mask Type is set to Texture.
 
-- `Type`: *Color*
+:::info
+This slot is only exposed when **Mask Type** is set to `Texture`.
+:::
 
-Color to use for the R masked area. This is blended multiplicatively with the R texture, and the resulting base color is blended with the main base color as defined by the **Multiplicative** setting.
+### Metallic Maps
 
-### R Texture
+- `Type`: **Data** Texture (`sRGB OFF`)
 
-- `Type`: **Color** Texture (sRGB **ON**)
+Slot to use for Metallics & Smoothness effect on your RGBA Masks. Use this for the Metallics mapping in each channel.
 
-Texture to use for the R masked area. This is pure white by default, if a texture is not defined.
+### Smoothness Maps
 
-## G Color
+- `Type`: **Data** Texture (`sRGB OFF`)
 
-- `Type`: *Color*
+Slot to use for Metallics & Smoothness effect on your RGBA Masks. Use this for the Smoothness mapping in each channel.
 
-Color to use for the G masked area. This is blended multiplicatively with the G texture, and the resulting base color is blended with the main base color as defined by the **Multiplicative** setting.
+## Channel Module
 
-### G Texture
+These following properties will appear for each Channel you are customizing. We will refer them to **"Channel"** on this Documentation. This means the word **Channel** would be the RGBA Mask Channel, such as `Red`, `Green`, `Blue`, or `Alpha`.
 
-- `Type`: **Color** Texture (sRGB **ON**)
+Please take the time to understand how these settings work and how to use them.
 
-Texture to use for the G masked area. This is pure white by default, if a texture is not defined.
-
-## B Color
-
-- `Type`: *Color*
-
-Color to use for the B masked area. This is blended multiplicatively with the B texture, and the resulting base color is blended with the main base color as defined by the **Multiplicative** setting.
-
-### B Texture
-
-- `Type`: **Color** Texture (sRGB **ON**)
-
-Texture to use for the B masked area. This is pure white by default, if a texture is not defined.
-
-## A Color
-
-- `Type`: *Color*
-
-Color to use for the A masked area. This is blended multiplicatively with the A texture, and the resulting base color is blended with the main base color as defined by the **Multiplicative** setting.
-
-### A Texture
-
-- `Type`: **Color** Texture (sRGB **ON**)
-
-Texture to use for the A masked area. This is pure white by default, if a texture is not defined.
-
-## Enable Normals
+### Channel
 
 - `Type`: **Checkbox**
 
-Enable normal maps for each of the 4 masked areas.
+Enables the mentioned Channel to be used.
 
-### Blend with Base
+### Blend Mode
+
+- `Type`: **Dropdown**, Options: `Replace`/`Darken`/`Multiply`/`Lighten`/`Screen`/`Subtract`/`Add`/`Overlay`/`Mixed`
+
+Choice of Blend mode you wish to use for this channel.
+
+### Color
+
+- `Type`: **Color**
+
+Set the Color of the Channel to use.
+
+### Texture
+
+- `Type`: **Data** Texture (`sRGB ON`)
+
+Texture to use for the **Channel** masked area. This is pure white by default, if a texture is not defined.
+
+### Normal
+
+- `Type`: **Normal Map** Texture (`sRGB OFF`)
+
+Normal Map texture to be used for the **Channel** masked area.
+
+#### Blend Mode
+
+- `Type`: **Dropdown**, Options: `Replace`/`Blend`
+
+Adjust how the Normal Map blends with the Base, also defined by your RGBA Mask. **Expand the Normal Texture Slot to see this property.**
+
+`Replace` is the default setting, overwriting the Normals already existing on your Base with the one defined instead.
+
+If set to `Blend`, it will combine the bump Normal with the Base Normal of your Material, if defined.
+
+### Normal Intensity
+
+- `Type`: **Float**, Range: `0.0 - 10.0`
+
+Intensity for the Normals in your mask, if defined.
+
+By default, a standard Normal intensity would be `1`, for reference.
+
+### Emission Strength
+
+- `Type`: **Float**, Range: `0.0 - 20.0`
+
+Set the Emission strength to the masked area. High values can create a "bloom" effect in worlds with Post Processing.
+
+### Metallics & Smoothness
 
 - `Type`: **Checkbox**
 
-Whether the normal maps should override the main and detail normal maps, or be blended on top of them.
+Enables the usage of your [Metallic Map](#metallic-maps) and [Smoothness Map](#smoothness-maps) to be used in the Channel, if defined.
 
-## R Normal
+#### Custom Sampling
 
-- `Type`: **Normal Map** Texture (sRGB **OFF**)
+- `Type`: **Checkbox**
 
-Normal Map texture to be used for the R masked area.
-
-### Intensity
-
-- `Type`: **Float**, Range: `0.0 - 10.0`
-
-Intensity of the R Normal.
-
-## G Normal
-
-- `Type`: **Normal Map** Texture (sRGB **OFF**)
-
-Normal Map texture to be used for the G masked area.
-
-### Intensity
-
-- `Type`: **Float**, Range: `0.0 - 10.0`
-
-Intensity of the G Normal.
-
-## B Normal
-
-- `Type`: **Normal Map** Texture (sRGB **OFF**)
-
-Normal Map texture to be used for the B masked area.
-
-### Intensity
-
-- `Type`: **Float**, Range: `0.0 - 10.0`
-
-Intensity of the B Normal.
-
-## A Normal
-
-- `Type`: **Normal Map** Texture (sRGB **OFF**)
-
-Normal Map texture to be used for the A masked area.
-
-### Intensity
-
-- `Type`: **Float**, Range: `0.0 - 10.0`
-
-Intensity of the A Normal.
+If enabled, exposes more options for sampling your Metallic Maps and Smoothness Maps.

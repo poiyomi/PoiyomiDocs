@@ -4,8 +4,10 @@ title: LTCGI
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
-:::info
 LTCGI is an optimized plug-and-play realtime area light solution using the linearly transformed cosine algorithm for standalone Unity and VRChat. For more information on LTCGI visit https://ltcgi.dev/
+
+:::caution Future Rework
+The LTCGI feature in Poiyomi Shaders is being reworked in a future version of Poiyomi Shaders. Everything here is subject to change at any time.
 :::
 
 <PoiVideo url='/vid/shading/ltcgi_demo.mp4'/>  
