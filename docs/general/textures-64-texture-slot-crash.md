@@ -9,7 +9,7 @@ Unity has a long-standing issue where the engine will crash when a single shader
 
 This can happen when you have a large number of materials using Poiyomi while unlocked, with many different sections enabled.
 
-To circumvent this issue, you can lock materials when not in use, as that will generate unique shaders for each material. You can also use different variants of Poiyomi, notably the "Outline" variant, which is the same as the base shader, but with the outline pass added.
+To circumvent this issue, you can lock materials when not in use, as that will generate unique shaders for each material.
 
 ## Texture crash on open
 

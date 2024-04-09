@@ -3,7 +3,11 @@ sidebar_position: 5
 title: Rim Lighting
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
+
+<!--
 # Rim Lighting
 
 **Rim Lighting** can be used to add a highlight or glow around the edges (or center) of a material. It uses the angle between your view and the normal of the surface to define the intensity of the effect.
@@ -126,7 +130,7 @@ Range: `0-1`
 
 A fixed value by which to hue shift the material. At values of `0` and `1`, there will be no change to the material. In between, the hue will shift through the color wheel.
 
-<!-- PROPOSED 9.0 UPDATE AREA, DO NOT COMMENT OUT
+-->
 
 # Rim Lighting
 
@@ -139,6 +143,28 @@ Rim Lighting is sometimes referred to in conjunction with or as Fresnel, in refe
 - `Type`: **Dropdown**, Options: `Poiyomi`/`UTS2`/`LilToon`
 
 Choose the style of Rim Lighting that you wish to use.
+
+<Tabs>
+
+<TabItem value="poiyomi" label="Poiyomi" default>
+
+### Poiyomi
+
+</TabItem>
+
+<TabItem value="uts2" label="UTS2">
+
+### UTS2
+
+</TabItem>
+
+<TabItem value="liltoon" label="LilToon">
+
+### LilToon
+
+</TabItem>
+
+</Tabs>
 
 ## Mask & Bias
 
@@ -285,5 +311,3 @@ This section allows control of the Rim Lighting through [AudioLink](../audio-lin
 ### Brightness Band
 
 #### Brightness Add
-
--->

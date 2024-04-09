@@ -1,5 +1,5 @@
 ---
-sidebar_position: 10
+sidebar_position: 2
 title: Global Themes
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
