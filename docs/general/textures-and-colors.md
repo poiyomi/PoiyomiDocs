@@ -140,7 +140,7 @@ This option has a caveat. For most textures, the wrap mode defined for the *Main
 
 Most colors in the shader are standard RGBA colors. This means they are stored as four floating point values, with each value ranging from 0 to 1.
 
-Most color pickers have the option to draw from a global [Theme Color](docs/color-and-normals/global-themes.md), or from a world's audiolink theme colors. This can be used to create an easy-to-change color palette for your avatar.
+Most color pickers have the option to draw from a global [Theme Color](../modifiers/global-themes.md), or from a world's audiolink theme colors. This can be used to create an easy-to-change color palette for your avatar.
 
 ### HDR Colors
 

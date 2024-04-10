@@ -38,7 +38,7 @@ Defines how sharply to transition from no edge to edge. At `0`, the material wil
 
 Defines the color used for the edge. Blended multiplicatively with the [**Edge Gradient**](##Edge-Gradient).
 
-This color can be set to a [Theme Color](docs/color-and-normals/global-themes.md).
+This color can be set to a [Theme Color](../modifiers/global-themes.md).
 
 ### Edge Gradient
 

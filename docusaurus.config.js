@@ -35,6 +35,10 @@ const config = {
             from: '/grab-pass/grabpass',
             to: '/grabpass/',
           },
+          {
+            from: '/color-and-normals/global-themes',
+            to: '/modifiers/global-themes',
+          }
           // Redirect from multiple old paths to the new path
           // {
           //   to: '/docs/newDoc2',

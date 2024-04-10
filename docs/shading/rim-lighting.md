@@ -42,7 +42,7 @@ Base color of the rim lighting. Blended with the base color and affected by [**R
 
 This color is blended multiplicatively with the [**Rim Texture**](##Rim-Texture), if defined.
 
-This color can be set to a [Theme Color](docs/color-and-normals/global-themes.md).
+This color can be set to a [Theme Color](../modifiers/global-themes.md).
 
 ## Rim Width
 
@@ -144,27 +144,17 @@ Rim Lighting is sometimes referred to in conjunction with or as Fresnel, in refe
 
 Choose the style of Rim Lighting that you wish to use.
 
-<Tabs>
-
-<TabItem value="poiyomi" label="Poiyomi" default>
-
 ### Poiyomi
 
-</TabItem>
-
-<TabItem value="uts2" label="UTS2">
+Uses the in-house Rim style made exclusively for Poiyomi Shaders.
 
 ### UTS2
 
-</TabItem>
-
-<TabItem value="liltoon" label="LilToon">
+Uses the Rim style that is known in Unity-Chan Toon Shader 2.
 
 ### LilToon
 
-</TabItem>
-
-</Tabs>
+Uses the Rim style that is well known in LilToon Shader.
 
 ## Mask & Bias
 
@@ -202,15 +192,35 @@ When expanded, the Rim Texture has options for **Tiling** and **Offset**. The as
 
 The Color of your Rim Lighting. Blended with the base color.
 
-This color is blended multiplicatively with the Rim Texture, if defined.
+This color is blended multiplicative with the Rim Texture, if defined.
+
+:::info
+This will instead be an HDR Color field if using `LilToon` Rim Lighting mode.
+:::
 
 ### Blend Mode
 
+- `Type`: **Dropdown**, Options: `Add`/`Replace`/`Multiply`/`Mixed`/`Screen`
+
+Choice of how the Rim Lighting will blend with the base texture.
+
 ### Blend Alpha
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+Controls the Alpha visibility of the Rim Lighting. `0` is invisible, while `1` is fully visible.
 
 ### Mix Base Color
 
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+Controls how much the Rim Lighting's Color will blend with the Base Color.
+
 ### Brightness
+
+- `Type`: **Float**, Range: `0.0 - 10.0`
+
+Controls how bright the Rim Lighting will be overall.
 
 ### Emission
 
@@ -248,13 +258,21 @@ Controls the sharpness of the transition between minimum and maximum rim lightin
 
 ### Rim Power
 
+- `Type`: **Float**, Range: `0.0 - 10.0`
+
+Controls how intense the Rim Lighting has an effect.
+
 ### Normal Strength
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+Controls how the Rim Lighting will blend with your Normals. A value of `0` ignores your Normals, while a value of `1` will fully blend within your Normals.
 
 ### Invert Rim
 
 - `Type`: **Checkbox**
 
-Inverts the sense of the rim lighting. When unchecked, rim lighting goes from "outside-in" (facing away from viewer has maximum intensity). When checked, rim lighting goes from "inside-out" (facing toward viewer has maximum intensity).
+Inverts the Rim Lighting direction. When unchecked, rim lighting goes from "outside-in" (facing away from viewer has maximum intensity). When checked, rim lighting goes from "inside-out" (facing toward viewer has maximum intensity).
 
 ![Rim Lighting Invert](/img/shading/Rim-Lighting_Invert.png)
 
@@ -288,7 +306,7 @@ A fixed value by which to hue shift the material. At values of `0` and `1`, ther
 
 ### Apply to Alpha
 
-### Apply to Alplha Blend
+### Apply to Alpha Blend
 
 ### Global Mask
 

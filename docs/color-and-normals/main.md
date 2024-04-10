@@ -20,7 +20,7 @@ The **Color & Normals** section defines fundamental attributes of a material, in
 
 A tint color that's blended multiplicatively with the base texture. If no Main Texture is specified, the material's base texture becomes this color.
 
-This color can be changed to a [Theme Color](docs/color-and-normals/global-themes.md).
+This color can be changed to a [Theme Color](../modifiers/global-themes.md).
 
 ### Main Texture
 
