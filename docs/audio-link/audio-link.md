@@ -70,7 +70,7 @@ Modifier for smoothing the Treble Band.
 
 ## Overrides
 
-Animatable sections that allow manual override of the Audio Bands against AudioLink data from the World.
+Properties that allow animated overrides of the Audio Bands against AudioLink data from the World.
 
 ### Band Overrides
 
