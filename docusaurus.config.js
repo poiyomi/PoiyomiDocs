@@ -37,8 +37,36 @@ const config = {
           },
           {
             from: '/color-and-normals/global-themes',
-            to: '/modifiers/global-themes',
-          }
+            to: '/modifiers/global-themes/',
+          },
+          {
+            from: '/outlines/main',
+            to: '/outlines/',
+          },
+          {
+            from: "/modifiers/distortion-uv",
+            to: "/modifiers/uvs/distortion-uv",
+          },
+          {
+            from: "/modifiers/panosphere-uv",
+            to: "/modifiers/uvs/panosphere-uv",
+          },
+          {
+            from: "/modifiers/polar-uv",
+            to: "/modifiers/uvs/polar-uv",
+          },
+          {
+            from: "/modifiers/parallax",
+            to: "/modifiers/uvs/parallax",
+          },
+          {
+            from: "/post-processing/pp-animations",
+            to: "/modifiers/post-processing/pp-animations",
+          },
+          {
+            from: "/post-processing/main",
+            to: "/modifiers/post-processing/main",
+          },
           // Redirect from multiple old paths to the new path
           // {
           //   to: '/docs/newDoc2',

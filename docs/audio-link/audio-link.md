@@ -23,7 +23,7 @@ When this feature activates, the following sections in Poiyomi Shaders will have
 - [Decals](../color-and-normals/decals.md)
 - [Matcap / Sphere Textures](../shading/matcap.md)
 - [Rim Lighting](../shading/rim-lighting.md)
-- [Outlines](../outlines/main.md)
+- [Outlines](../outlines/outlines.md)
 - [Dissolve](../special-fx/dissolve.md)
 - [Flipbook](../special-fx/flipbook.md)
 - [Emission](../special-fx/emission.md)
