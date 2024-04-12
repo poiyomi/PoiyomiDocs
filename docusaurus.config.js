@@ -36,8 +36,8 @@ const config = {
             to: '/grabpass/',
           },
           {
-            from: '/color-and-normals/global-themes',
-            to: '/modifiers/global-themes/',
+            from: "/color-and-normals/global-themes",
+            to: "/modifiers/global-themes",
           },
           {
             from: '/outlines/main',
