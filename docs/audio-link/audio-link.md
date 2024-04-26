@@ -19,11 +19,11 @@ If enabled, activates AudioLink features and exposes AudioLink parameter control
 When this feature activates, the following sections in Poiyomi Shaders will have their AudioLink properties exposed for you to use. Refer to their Documentation Entries for more information.
 - [Alpha Options](../color-and-normals/alpha-options)
 - [Vertex Options](../color-and-normals/vertex-options)
-- Vertex Glitcing
+- Vertex Glitching
 - [Decals](../color-and-normals/decals.md)
 - [Matcap / Sphere Textures](../shading/matcap.md)
 - [Rim Lighting](../shading/rim-lighting.md)
-- [Outlines](../outlines/main.md)
+- [Outlines](../outlines/outlines.md)
 - [Dissolve](../special-fx/dissolve.md)
 - [Flipbook](../special-fx/flipbook.md)
 - [Emission](../special-fx/emission.md)
@@ -39,7 +39,7 @@ When this feature activates, the following sections in Poiyomi Shaders will have
 Toggleable AudioLink checkbox. Used to enable and disable AudioLink effects on the fly.
 
 :::tip
-Use this checkbox exclusively to turn AudioLink effects On or Off using Animations on the fly. See [Locking and Animation](https://www.poiyomi.com/general/locking#marking-properties-for-animation) for more information.
+Use this checkbox exclusively to turn all AudioLink effects On or Off using Animations at any time. See [Locking and Animation](https://www.poiyomi.com/general/locking#marking-properties-for-animation) for more information.
 :::
 
 ## Smoothing
@@ -70,7 +70,7 @@ Modifier for smoothing the Treble Band.
 
 ## Overrides
 
-Animatable sections that allow manual override of the Audio Bands against AudioLink data from the World.
+Properties that allow animated overrides of the Audio Bands against AudioLink data from the World.
 
 ### Band Overrides
 

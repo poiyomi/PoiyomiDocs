@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 The Outlines feature creates outlines using a simplified pass with the mesh offset by a small amount. This is also known as an "Inverted Hull" outline.
 
-For smooth meshes, the inverted hull technique works well, but for hard-edged models, it can have noticable seams. To correct this, you can bake a version of the mesh with smoothed normals baked into the vertex color, using the Poi Vertex Color Baker. This will overwrite other vertex color data, and will create a unique version of the mesh.
+For smooth meshes, the inverted hull technique works well, but for hard-edged models, it can have noticeable seams. To correct this, you can bake a version of the mesh with smoothed normals baked into the vertex color, using the Poi Vertex Color Baker. This will overwrite other vertex color data, and will create a unique version of the mesh.
 
 :::info Changes in 9.0
 All Outline features have been reintroduced to the main Shader variant as of version 9.0 and newer. There is no need to select a separate variant in order to use Outlines.

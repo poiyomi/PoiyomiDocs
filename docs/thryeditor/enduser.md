@@ -2,7 +2,7 @@
 sidebar_position: 1
 title: End User
 ---
-# UI
+## UI
 
 ### Search
 Filter the properties by name. The UI will only show headers / properties with the searched name.
@@ -68,7 +68,24 @@ Options per texture slot:
 
 ![packer](/img/thryeditor/packer.png)
 
-# Settings
+### Cross Shader Editor
+The Cross Shader Editor is a panel that allows you to mass-edit your Poiyomi Materials, all at once. Anything you edit or change in this panel will be applied to all Materials that are referenced.
+
+There are many ways to use it. To summon the window, open `Thry -> Cross Shader Editor` from the Unity Menu. From there, add each Material to each Slot. Your changes in this Panel will affect all Materials that are referenced in the Panel.
+
+You can also summon the Cross Shader Editor via `Right Click` on your Avatar or GameObject in the Hierarchy, then clicking `Thry -> Materials -> Open All in Cross Shader Editor`. This will automatically add all Poiyomi Materials used on the Object into the Cross Shader Editor list, ready for you to directly edit.
+
+The above also works when multi-selecting your Materials that are in the same folder in your Project's Files.
+
+The Cross Shader Editor supports [Presets](#presets). If using a Preset, it will be applied to all the Materials referenced in the Cross Shader Editor.
+
+:::caution Use the same Shader Variant
+The Cross Shader Editor will only work if all Materials referenced are using the same exact Shader variant!
+:::
+
+![crossshadereditor](/img/thryeditor/crossshadereditor2.png)
+
+## Settings
 
 The `Settings UI` window can be opened via the `gears icon` in the top left corner of a material. Or using the menu item of the top bar `Thry -> Shader UI -> Settings`.
 
@@ -80,23 +97,36 @@ The languages are loaded from `thry_editor_locale.csv`. If you would like to con
 ![localization](/img/thryeditor/localization.png)
 
 ### Auto Set Anchor
-Pretext:
-Skinned Mesh Renderers have one position where they sample the light from. This is called the anchor.
-By default the anchor is the root of the gameobject. This can cause the lighting of different parts of the model to look different even if they use the
-same settings, because they sample the light from different positions.
+Skinned Mesh Renderers have one position where they sample the light from. This is called the Anchor.
 
-To prevent this you can set the anchor all skinned mesh renderers to the same position. A recommended position is the center of the model, e.g. the chest bone.
+By default the Anchor is the root of the GameObject. This can cause the lighting of different parts of the model to look different even if they use the same settings, because they sample the light from different positions.
 
-Auto Set Anchor will automatically fill empty anchor of skinned mesh renderers on Avatar upload.
+To prevent this, you can set the `Anchor Override` on all skinned mesh renderers to the same position. A recommended position is the center of the model, e.g. the `Chest` bone.
+
+Auto Set Anchor will automatically fill empty Anchor Overrides of Skinned Mesh Renderers on Avatar upload.
 `Auto Set Anchor`: Enable / Disable the feature.
 `Human Bone Anchor`: The bone to use as anchor. This is only works if the model is a humanoid.
 `Object Anchor Name`: The name of the object that is created as anchor.
+
+:::info First-Time Upload Dialogue
+When you begin to initiate an Upload for the first time, you will be greeted with a one-time message asking you to enable this feature.
+
+We highly recommend you click `Yes (Recommended)` if it shows up.
+:::
+
 ![anchor](/img/thryeditor/anchor.png)
-# Tools
+
+## Tools
 
 ### Fix Keywords
 `Thry -> Shader Tools -> Fix Keywords`
 Enables / Disables Keywords on all materials depending on the float value of their properties.
+
+:::info
+The latest versions of Poiyomi Shaders do a much better handling of Shader Keywords. Therefore, you shouldn't ever need to use this function.
+
+**You should only Fix Keywords if you know what you are doing, or have been instructed to use it.**
+:::
 
 ### Unlocked Material List
 Lists all materials in the project that are unlocked with an option to lock them.
@@ -108,7 +138,7 @@ Flipbooks can be used in shaders e.g. for animated textures.
 
 ![flipbook](/img/thryeditor/flipbook.png)
 
-# Add On Modules
+## Add On Modules
 Add-ons are modules that can be added to the shader UI to add additional features.
 They can be downloaded / removed via the `Settings UI`.
 
