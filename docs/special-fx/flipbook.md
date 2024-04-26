@@ -4,6 +4,14 @@ title: Flipbook
 ---
 import PoiVideo from '@site/src/components/PoiVideo' 
 
+Flipbook is a classic feature that allows images from a Texture Array to be played as an animation on the Material. This can be a way to play GIFs or a specific 2D animation that either animates in a loop or in a specified pattern.
+
+Flipbooks use a `Texture Array`, which is a special type of file that consists of a multiple set of images that are sorted in a specified sequence. They can be created in Unity using ThryEditor TextureArray Utility.
+
+:::caution
+Texture Arrays can quickly add up to your VRAM consumption depending on the resolution and the amount of images used in your array! Please keep this in mind when creating your Texture Arrays.
+:::
+
 ## Flipbook Controls Alpha
 
 - `Type`: **Checkbox**
