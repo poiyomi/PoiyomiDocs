@@ -80,13 +80,13 @@ All Outlines features have been reintroduced to the main shader variant `.poiyom
 
 ### Iridescence
 
-:::info
+:::danger Deprecated
 **Iridescence has been removed to save on compilation time. It has been replaced by Matcaps with the usage of the new `Gradient` UV Mode.**
 
 This is because Matcaps can technically do the same thing as Iridescence.
 :::
 
-To compensate for this, there are now 4 Matcap Modules for you to use. In addition, all AudioLink options that were available in Iridescence has been introduced to Matcaps.
+To compensate for this change, there are now 4 Matcap Modules for you to use. In addition, all AudioLink options that were available in Iridescence has been introduced to Matcaps.
 
 ## Known Issues
 

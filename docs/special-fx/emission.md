@@ -8,11 +8,27 @@ Emission is a function that allows adding brightness directly to the base color 
 
 There are 4 Emission Slots total, each with their own unique options. They are independent of each other. Emissions are always added with one another when overlapping.
 
+<a target="_blank" href="/img/special-fx/Emission_Example.png">
+<img src="/img/special-fx/Emission_Example.png" alt="Emission Example" width="700px"/>
+</a>
+
+*Example usage of Emission on the Eyes, Hair, Nose, Ears, and Paws.*
+
 ## Emission Mask
 
 - `Type`: **Data** Texture (sRGB **OFF**)
 
 Mask texture that defines where to place the emission effect. Black areas will not be affected by the emission, while white areas will be fully affected by the emission.
+
+### Global Mask
+
+- `Type`: **Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+
+Select which [Global Mask](../modifiers/global-masks.md) to use as the Emission Mask instead.
+
+:::note
+Expand the **Emission Mask** slot to see this property.
+:::
 
 ## Emission Color
 
@@ -208,7 +224,7 @@ How much distance there should be between each wave. This value is unitless, and
 
 - `Type`: **Float**
 
-An offset applied to the wave. This value is unitless, and depends on the velocity and interval values.\
+An offset applied to the wave. This value is unit-less, and depends on the velocity and interval values.
 
 <!---------- AudioLink Section ---------->
 
@@ -218,7 +234,7 @@ An offset applied to the wave. This value is unitless, and depends on the veloci
 
 Enables or disables Emission AudioLink features.
 
-:::info Requires AudioLink
+:::info
 This section allows control of the Emission through [AudioLink](../audio-link/audio-link.md). It will only be exposed when AudioLink is activated on the Material.
 :::
 

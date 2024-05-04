@@ -1,12 +1,12 @@
 ---
 sidebar_position: 8
-title: Clearcoat
+title: Clear Coat
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
-Clear coat (often referred to as one word, clearcoat) is an effect that simulates thin, often glossy layers on the outer surface of a material. It can be used to create the appearance of materials like automotive paint, lacquered wood, carbon fiber composite, and many others.
+Clear Coat (often referred to as one word, clearcoat) is an effect that simulates thin, often glossy layers on the outer surface of a material. It can be used to create the appearance of materials like automotive paint, lacquered wood, carbon fiber composite, and many others.
 
-## ClearCoat Strength
+## ClearCoat Visibility
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
@@ -22,7 +22,7 @@ Smoothness of the clearcoat surface. Lower values result in more blurred reflect
 
 This option scales the **Smoothness Map** if defined. If not defined, this option directly controls the smoothness of the clearcoat.
 
-## Reflections Strength
+## Reflections Visibility
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
@@ -30,7 +30,7 @@ Strength of the clearcoat layer's reflections.
 
 This option scales the **Reflection Mask** if defined. If not defined, this option directly controls the strength of clearcoat reflections.
 
-## Specular Strength
+## Specular Visibility
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
@@ -50,7 +50,7 @@ Tint color applied to the clearcoat reflections. This can be used to add a metal
 
 Tint color applied to the clearcoat specular highlights. This can be used to add a stylized look to the clearcoat layer.
 
-## Maps
+## Packed Maps
 
 The Maps texture is composed of 4 channels. These channels can be packed by adding individual textures to the packer. If you only have one mask or map to apply, the packer can be used to create a texture that defaults undefined channels to white, so their effects can be properly defined by the effect sliders. 
 

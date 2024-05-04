@@ -10,21 +10,45 @@ You can choose from a variety of blending modes when referencing a Global Mask c
 
 Global Masking expands the functionality of almost every part of the shader that supports it, and can be a powerful tool for optimization.
 
+![A visual principle of a Global Mask](/img/modifiers/PoiDocsGlobalMaskingHeader.png)
+
 # Using Global Masks
 
 Each Global Mask uses the `Red (R)`, `Green (G)`, `Blue (B)`, and `Alpha (A)` channels to define each Mask. Think of it as giving you 4 Masks in just 1 Texture. If used well, you can save yourself Texture Memory (VRAM) with a combined Global Mask Texture that represents 4 of your Masks.
 
 Since you have a total of 4 Global Masking slots, each providing 4 Color Channels, you can have up to 16 Color Channels to use for your Masks.
 
-These Global Masks can be created in two ways. For one, you can use the Thry Editor Texture Packer to combine your masks into your own custom Global Mask. This can be done in each Global Mask slot available to you.
+## Creating a Global Mask
 
-Another way of creating Global Masks is by the use of software, such as Substance 3D Painter, to pack your `User` channels into an `R + G + B + A` Textures way in advance. To do this, you would have to add the `User` channels and paint on those channels you specify. We offer an example Export Template that shows the usage of this, which you can download from [here](../general/substance-painter.md).
+These Global Masks can be created in two ways. You can use either the Thry Editor Texture Packer, or specify your own Global Mask.
 
-When used properly, you will instead select the Global Mask dropdown in supported sections in the Shader. This is where you select the **Mask Channel** you wish to use for that section. They will look something like this:
+### Method 1: Thry Texture Packer
+
+The easiest method to use Global Masks in Poiyomi Shaders is by using Masks you already use. You can utilize the Thry Editor Texture Packer integrated to combine your masks into your own custom Global Mask. This can be done in each Global Mask slot available to you.
+
+To merge your Maps, expand the Global Mask slot of your choice, insert your Masks in each Channel, then click `Confirm Merge`.
+
+<a target="_blank" href="/img/modifiers/GMTexturePacker.png">
+<img src="/img/modifiers/GMTexturePacker.png" alt="Global Mask Texture Packer" width="700px"/>
+</a>
+
+Once done, see how to use them in [Usage in the Shader](#usage-in-the-shader).
+
+### Method 2: Provide your own Texture
+
+Another way of creating Global Masks is by the use of software, such as Substance 3D Painter, to pack your `User` channels into an `R + G + B + A` Texture way in advance. To do this, you would have to add the `User` channels and paint on those channels you specify. We offer an example Export Template that shows the usage of this, which you can download from [here](../general/substance-painter.md).
+
+After exporting your `t_$textureSet_GlobalMask.png` file, slot it directly into one of the Global Mask slots. See [Usage in the Shader](#usage-in-the-shader) below to see how to use them.
+
+## Usage in the Shader
+
+Once you specify your Global Masks, you will instead select the **Global Mask Dropdown** in supported sections in the Shader. This is where you select the **Mask Channel** you wish to use for that section. They will look something like this:
 
 <a target="_blank" href="/img/modifiers/PoiDocsGlobalMaskSelect.png">
 <img src="/img/modifiers/PoiDocsGlobalMaskSelect.png" alt="Global Mask Selection"/>
 </a>
+
+The selection of your Global Masks use a naming scheme to identify which Global Mask to use. See the note below for more info.
 
 # Material Properties
 
@@ -42,33 +66,31 @@ Enables the Global Mask Textures feature.
 
 This is the flagship feature of Global Masks. Here, you can specify up to 4 Global Masks to use on your Material.
 
-:::note Integrated Texture Packer
-Each Global Mask Texture Slot has the Thry Editor [Texture Packer](https://www.poiyomi.com/thryeditor/enduser#texture-packer) integrated. You can optionally use this feature to manually assign each of your own texture mask to the chosen color channel in the Global Mask.
-:::
+**As a reminder, the Global Mask Slot you use will determine how you select it elsewhere in your Material.**
 
 ### Global Mask 1
 
 - `Type`: **Data** Texture (`sRGB OFF`)
 
-Texture Slot defining the first Global Mask.
+Texture Slot defining the first Global Mask. This will represent Global Masks `1R`, `1G`, `1B`, and `1A`.
 
 ### Global Mask 2
 
 - `Type`: **Data** Texture (`sRGB OFF`)
 
-Texture Slot defining the secondary Global Mask.
+Texture Slot defining the secondary Global Mask. This will represent Global Masks `2R`, `2G`, `2B`, and `2A`.
 
 ### Global Mask 3
 
 - `Type`: **Data** Texture (`sRGB OFF`)
 
-Texture Slot defining the tertiary Global Mask.
+Texture Slot defining the tertiary Global Mask. This will represent Global Masks `3R`, `3G`, `3B`, and `3A`.
 
 ### Global Mask 4
 
 - `Type`: **Data** Texture (`sRGB OFF`)
 
-Texture Slot defining the forth Global Mask.
+Texture Slot defining the forth Global Mask. This will represent Global Masks `4R`, `4G`, `4B`, and `4A`.
 
 ## Vertex Colors
 

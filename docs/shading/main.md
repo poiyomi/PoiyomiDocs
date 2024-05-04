@@ -36,13 +36,13 @@ Texture Ramp lighting is useful for creating cartoon-like lighting, especially w
 <details>
 <summary><b>TextureRamp Options</b></summary>
 
-#### **Shadow Tint**
+#### Shadow Tint
 
 - `Type`: **Color**
 
 Shadow Tint will tint the shadow map with a specific color, useful for creating a specific stylized shading effect. This color will be mixed with the Lighting Ramp and Ambient Color (if enabled) to produce the final shading.
 
-#### **Lighting Ramp**
+#### Lighting Ramp
 
 - `Type`: **Color Gradient** Texture (sRGB **ON**)
 
@@ -50,19 +50,19 @@ Ramp texture that controls the lighting. The lightmap is mapped from left-to-rig
 
 This texture can be edited using the Thry gradient editor by clicking the gradient slot.
 
-#### **Ramp Offset**
+#### Ramp Offset
 
 - `Type`: **Float**, Range: `-1.0 - 1.0`
 
 Offsets the ramp from left to right. Negative values will bias the lighting toward the left (darker) side, and positive values will bias the lighting toward the right (lighter) side.
 
-#### **Shadow Strength**
+#### Shadow Strength
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
 Determines how strong of a shadow is applied. A value of `0.0` will not apply any shadow, and a value of `1.0` will apply a full shadow.
 
-#### **Ignore Ambient Color**
+#### Ignore Indirect Shadow Color
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
@@ -79,97 +79,214 @@ On a basic level, Multilayer Math has three shadow layers, and a border. Not all
 <details>
 <summary><b>Multilayer Math Options</b></summary>
 
-#### **Shadow Color (Texture)**
+#### Shadow Layers
 
-- `Type`: **Color** Texture (sRGB **ON**)
+<details>
+<summary><b>Shadow Layer 1 Options</b></summary>
+
+#### Color Tex
+
+- `Type`: **Color** Texture (`sRGB = ON`)
 
 The Shadow Color texture, if defined, sets the base color of the shadow in different parts of the model. Will be tinted by the Shadow color.
 
-#### **Shadow Color**
+#### Color
 
 - `Type`: **Color**
 
 Defines the basic shadow color for the Multilayer Math shading model. This color must have a non-zero alpha value to take effect.
 
-#### **Border**
+#### Border
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
 Defines the position on the lightmap of the border between the shadow color and light. In other words, this sets where the edge of the shadow is.
 
-#### **Blur**
+#### Blur
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
 Defines how much to blur the shadow out from the border position. A value of `0.0` will not blur the shadow, and a value of `1.0` will blur the shadow to the edge of the lightmap.
 
-#### **2nd Color (Texture)**
+#### Receive Shadow
 
-- `Type`: **Color** Texture (sRGB **ON**)
+- `Type`: **Float**, Range: `0.0 - 1.0`
 
-If defined, sets the 2nd shadow color for the Multilayer Math shading model. Will be tinted by the 2nd color.
+How much this shadow layer should receive shadows.
 
-#### **2nd Color**
+</details>
+
+<details>
+<summary><b>Shadow Layer 2 Options</b></summary>
+
+#### Color Tex
+
+- `Type`: **Color** Texture (`sRGB = ON`)
+
+The Shadow Color texture, if defined, sets the base color of the shadow in different parts of the model. Will be tinted by the Shadow color.
+
+#### Color
 
 - `Type`: **Color**
 
-Defines the 2nd shadow color for the Multilayer Math shading model. This color must have a non-zero alpha value to take effect.
+Defines the basic shadow color for the Multilayer Math shading model. This color must have a non-zero alpha value to take effect.
 
-#### **2nd Border**
-
-- `Type`: **Float**, Range: `0.0 - 1.0`
-
-Defines the position on the lightmap of the border between the 2nd shadow and light. This is independent of where the base shadow border is.
-
-#### **2nd Blur**
+#### Border
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
-Defines how much to blur the 2nd shadow out from the border position. A value of `0.0` will not blur the shadow, and a value of `1.0` will blur the shadow to the edge of the lightmap.
+Defines the position on the lightmap of the border between the shadow color and light. In other words, this sets where the edge of the shadow is.
 
-#### **3rd Color (Texture)**
+#### Blur
 
-- `Type`: **Color** Texture (sRGB **ON**)
+- `Type`: **Float**, Range: `0.0 - 1.0`
 
-If defined, sets the 3rd shadow color for the Multilayer Math shading model. Will be tinted by the 3rd color.
+Defines how much to blur the shadow out from the border position. A value of `0.0` will not blur the shadow, and a value of `1.0` will blur the shadow to the edge of the lightmap.
 
-#### **3rd Color**
+#### Receive Shadow
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+How much this shadow layer should receive shadows.
+
+</details>
+
+<details>
+<summary><b>Shadow Layer 3 Options</b></summary>
+
+#### Color Tex
+
+- `Type`: **Color** Texture (`sRGB = ON`)
+
+The Shadow Color texture, if defined, sets the base color of the shadow in different parts of the model. Will be tinted by the Shadow color.
+
+#### Color
 
 - `Type`: **Color**
 
-Defines the 3rd shadow color for the Multilayer Math shading model. This color must have a non-zero alpha value to take effect.
+Defines the basic shadow color for the Multilayer Math shading model. This color must have a non-zero alpha value to take effect.
 
-#### **3rd Border**
-
-- `Type`: **Float**, Range: `0.0 - 1.0`
-
-Defines the position on the lightmap of the border between the 3rd shadow color and the ambient color. This is independent of where the other shadow borders are.
-
-#### **3rd Blur**
+#### Border
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
-Defines how much to blur the 3rd shadow out from the border position. A value of `0.0` will not blur the shadow, and a value of `1.0` will blur the shadow to the edge of the lightmap.
+Defines the position on the lightmap of the border between the shadow color and light. In other words, this sets where the edge of the shadow is.
 
-#### **Border Color**
+#### Blur
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+Defines how much to blur the shadow out from the border position. A value of `0.0` will not blur the shadow, and a value of `1.0` will blur the shadow to the edge of the lightmap.
+
+#### Receive Shadow
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+How much this shadow layer should receive shadows.
+
+</details>
+
+#### Border
+
+<details>
+<summary><b>Border Options</b></summary>
+
+#### Border Color
 
 - `Type`: **Color**
 
 The Border Color defines the color of a border, which is an extra color applied to the edge of the main shadow. This color must have a non-zero alpha value to take effect.
 
-#### **Border Range**
+#### Border Range
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
 How far off of the border the border color is applied. A value of `0.0` will apply the border color to the edge of the shadow, and a value of `1.0` will apply the border color to the dark edge of the lightmap.
 
-#### **Shadow Strength**
+</details>
+
+#### Shadow Border Map
+
+- `Type`: **Checkbox**
+
+Enables the Shadow Border Map feature, allowing control over AO-style shadow boundaries on Multilayer Math.
+
+<details>
+<summary><b>Shadow Border Map Options</b></summary>
+
+#### Shadow Border Map
+
+- `Type`: **Data** Texture (`sRGB = OFF`)
+
+#### Post AO
+
+- `Type`: **Checkbox**
+
+Enables Post Ambient-Occlusion on the Shadow Border Map.
+
+#### Border Map LOD
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+Amount of Level of Detail to use for the Border Map.
+
+#### 1st Min
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+Minimum amount from the Shadow Border to apply to Layer 1.
+
+#### 1st Max
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+Maximum amount from the Shadow Border to apply to Layer 1.
+
+#### 2nd Min
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+Minimum amount from the Shadow Border to apply to Layer 2.
+
+#### 2nd Max
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+Maximum amount from the Shadow Border to apply to Layer 2.
+
+#### 3rd Min
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+Minimum amount from the Shadow Border to apply to Layer 3.
+
+#### 3rd Max
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+Maximum amount from the Shadow Border to apply to Layer 3.
+
+</details>
+
+#### Non Linear Lightmap
+
+- `Type`: **Checkbox**
+
+If enabled, changes the shadow gradient direction to be non-linear.
+
+#### Base Color Blend
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+How much to blend the shadow gradients to the Base Color.
+
+#### Shadow Strength
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
 Determines how strong of a shadow is applied. A value of `0.0` will not apply any shadow, and a value of `1.0` will apply a full shadow.
 
-#### **Ignore Ambient Color**
+#### Ignore Indirect Shadow Color
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
@@ -190,19 +307,19 @@ Wrapped lighting will be updated in the future to use a more accurate method.
 <details>
 <summary><b>Wrapped Options</b></summary>
 
-#### **Shadow Tint**
+#### Shadow Tint
 
 - `Type`: **Color**
 
 Shadow Tint will tint the shadow map with a specific color, useful for creating a specific stylized shading effect. This color will be mixed with the Ambient Color (if enabled) to produce the final shading.
 
-#### **Wrap**
+#### Wrap
 
 - `Type`: **Float**, Range: `0.0 - 2.0`
 
 Determines how much to wrap the gradient around the edges of the model. A value of `0.0` will not wrap the gradient at all, producing a realistic, more aggressive shadow edge. Increase this value to wrap the gradient more significantly, producing a softer, more stylized shadow edge. At a value of `2.0` the gradient will produce an almost flat lit effect.
 
-#### **Normalization**
+#### Normalization
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
@@ -210,25 +327,25 @@ Normalization is a value that determines how much to darken the wrapped gradient
 
 How much this value applies depends on the Wrap value. At a Wrap of `0.0`, Normalization will have no effect at all. At increasing Wrap values, Normalization will have an increasingly important effect.
 
-#### **Gradient Start**
+#### Gradient Start
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
 Gradient Start controls the start point of the lightmap gradient that the wrap is applied to. Generally, this value is kept between `0.0 - 0.2`, with higher values resulting in more bright areas on the model.
 
-#### **Gradient End**
+#### Gradient End
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
 Gradient End controls the end point of the lightmap gradient that the wrap is applied to. Generally, this value is kept between `0.5 - 1.0`, with higher values resulting in less dark areas on the model. A wider range between the Gradient Start and Gradient End will result in a softer gradient, while a narrower range will result in a sharper gradient.
 
-#### **Shadow Strength**
+#### Shadow Strength
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
 Determines how strong of a shadow is applied. A value of `0.0` will not apply any shadow, and a value of `1.0` will apply a full shadow.
 
-#### **Ignore Ambient Color**
+#### Ignore Indirect Shadow Color
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
@@ -249,31 +366,31 @@ This lighting mode is experimental, and is not fully implemented yet, as it requ
 <details>
 <summary><b>Skin Options</b></summary>
 
-#### **LUT**
+#### LUT
 
 - `Type`: **Data** Texture (sRGB **OFF**)
 
 The LUT is used to determine the lighting ramp at various scales. This texture consists of a series of RGB values, with the horizontal axis representing the light level, and the vertical axis representing the thickness of the skin.
 
-#### **Shadow Tint**
+#### Shadow Tint
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
 Shadow Tint will tint the shadow with a specific color, useful for creating a specific stylized shading effect. This color will be mixed with the Ambient Color (if enabled) to produce the final shading.
 
-#### **Scale**
+#### Scale
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
 Scales the Subsurface Scattering (SSS) effect. A value of `0.0` will disable the SSS effect, and a value of `1.0` will apply the SSS effect at full strength.
 
-#### **Shadow Strength**
+#### Shadow Strength
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
 Determines how strong of a shadow is applied. A value of `0.0` will not apply any shadow, and a value of `1.0` will apply a full shadow.
 
-#### **Ignore Ambient Color**
+#### Ignore Indirect Shadow Color
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
@@ -295,73 +412,73 @@ This lighting mode uses the following options:
 <details>
 <summary><b>ShadeMap Options</b></summary>
 
-#### **1st ShadeColor**
+#### 1st ShadeColor
 
 - `Type`: **Color**
 
 Primary tint applied to the 1st ShadeMap. If ShadeMap texture is defined, this color will be mixed with the ShadeMap texture. If not, it should generally be set lighter than the 2nd ShadeColor.
 
-#### **1st ShadeMap**
+#### 1st ShadeMap
 
 - `Type`: **Color** Texture (sRGB **ON**)
 
 Shading map used for the 1st ShadeColor. If this is not defined, the 1st ShadeColor alone will be used. Shading maps define what the shadow should look like in this area.
 
-#### **Use BaseMap as 1st ShadeMap**
+#### Use BaseMap as 1st ShadeMap
 
 - `Type`: **Checkbox**
 
 Whether to use the BaseColor map as the 1st ShadeMap. With no 1st ShadeMap defined, this should generally be enabled.
 
-#### **2nd ShadeColor**
+#### 2nd ShadeColor
 
 - `Type`: **Color**
 
 Primary tint applied to the 1st ShadeMap. If ShadeMap texture is defined, this color will be mixed with the ShadeMap texture. If not, it should generally be set lighter than the 2nd ShadeColor.
 
-#### **2nd ShadeMap**
+#### 2nd ShadeMap
 
 - `Type`: **Color** Texture (sRGB **ON**)
 
 Shading map used for the 1st ShadeColor. If this is not defined, the 1st ShadeColor alone will be used.
 
-#### **Use BaseMap as 2nd ShadeMap**
+#### Use BaseMap as 2nd ShadeMap
 
 - `Type`: **Checkbox**
 
 Whether to use the BaseColor map as the 2nd ShadeMap. With no 2nd ShadeMap defined, this should generally be enabled.
 
-#### **BaseColor_Step**
+#### BaseColor_Step
 
 - `Type`: **Float**, Range: `0.01 - 1.0`
 
 Defines where the edge should lie between the base lit color and the 1st shadow. A value of `0.0` will result in a completely lit area, and a value of `1.0` will result in a completely shadowed area.
 
-#### **Base/Shade_Feather**
+#### Base/Shade_Feather
 
 - `Type`: **Float**, Range: `0.0001 - 1.0`
 
 How much to feather the edge of the base color and shading. A value of `0.0` will result in a sharp edge, and a value of `1.0` will result in a very smooth edge.
 
-#### **ShadeColor_Step**
+#### ShadeColor_Step
 
 - `Type`: **Float**, Range: `0.01 - 1.0`
 
 Defines where the edge should lie between the 1st shadow and the 2nd shadow. A value of `0.0` will result in no 2nd shadow, and a value of `1.0` will make the 2nd shadow dominate the overall shadow. This value is dependent on the BaseColor_Step value.
 
-#### **1st/2nd_Shades_Feather**
+#### 1st/2nd_Shades_Feather
 
 - `Type`: **Float**, Range: `0.0001 - 1.0`
 
 How much to feather the edge of the 1st shadow and the 2nd shadow. A value of `0.0` will result in a sharp edge, and a value of `1.0` will result in a very smooth edge.
 
-#### **Blend Mode**
+#### Blend Mode
 
 - `Type`: **Dropdown**, Options: `Replace`/`Multiply`
 
 Defines how the shadow should blend with the base color. Replace will replace the base color with the shadow, creating a more straightforward effect. Multiply will multiply the base color with the shadow, creating a more stylized effect.
 
-#### **Shadow Strength**
+#### Shadow Strength
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
@@ -386,13 +503,13 @@ Realistic lighting is a physically-based lighting model that behaves similar to 
 <details>
 <summary>Realistic Options</summary>
 
-#### **Shadow Tint**
+#### Shadow Tint
 
 - `Type`: **Color**
 
 Shadow Tint will tint the shadow with a specific color, useful for creating a specific stylized shading effect. This color will be mixed with the Ambient Color (if enabled) to produce the final shading.
 
-#### **Smoothness**
+#### Smoothness
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
@@ -411,13 +528,13 @@ Cloth Shading will be updated in the future to separate the specular into its ow
 <details>
 <summary><b>Cloth Options</b></summary>
 
-#### **Shadow Tint**
+#### Shadow Tint
 
 - `Type`: **Color**
 
 Shadow Tint will tint the shadow map with a specific color, useful for creating a specific stylized shading effect. This color will be mixed with the Ambient Color (if enabled) to produce the final shading.
 
-#### *MultScatter Cloth DFG*
+#### MultScatter Cloth DFG
 
 This is a built-in data texture that contains a pre-baked lookup table for the cloth model. It cannot be modified.
 
@@ -453,13 +570,13 @@ The reflectance mask defines the reflectivity of the model. Reflectivity is a ph
 
 The Smoothness map defines where the material should be smoother, and where it should be rougher. This value can vary smoothly between `0.0` and `1.0` according to variations and different parts of a material.
 
-#### **Clothmask Lerp**
+#### Clothmask Lerp
 
 - `Type`: **Checkbox**
 
 Clothmask Lerp defines whether the cloth mask should lerp (linearally interpolate) between the cloth shading and realistic shading. This should generally be left off.
 
-#### **Metallic**
+#### Metallic
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
@@ -467,13 +584,13 @@ How metallic the material should be. Metallic materials are usually used for (as
 
 This value is multiplied with the value of the Metallic Map. If no metallic map is defined, this setting is used directly.
 
-#### **Reflectance**
+#### Reflectance
 
 - `Type`: **Float**, Range: `0.35 - 1.0`
 
 Reflectivity is a physically-based-shading parameter that determines how much reflection a non-metallic surface will have. This heavily influences the look of the cloth shading, and will vary heavily according to different types of cloth.
 
-#### **Smoothness**
+#### Smoothness
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
