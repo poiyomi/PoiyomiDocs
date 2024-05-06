@@ -5,9 +5,15 @@ toc_max_heading_level: 4
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
-Decals are used to place images onto a uv with specific location, rotation, and blending. 4 independent decal sections are available, with extensive base and audio link options.
+Decals are used to place images onto a UV with specific location, rotation, and blending. 4 independent Decal sections are available, with extensive base and AudioLink options.
 
-They can be used to add high resolution designs and details onto a mesh without the base texture having to be higher resolution, or to replace base textures entirely.
+They can be used to add high resolution designs and details onto a mesh without the base texture having to be higher resolution, or to replace base textures entirely. This can allow fun and unique ways to decorate your Avatar with logos, shapes, stickers, or even as a blush emote toggle.
+
+<a target="_blank" href="/img/color-and-normals/Decal_Example.png">
+<img src="/img/color-and-normals/Decal_Example.png" alt="Decal Example" width="700px"/>
+</a>
+
+*Example of 3 Decals placed on this Avatar's Jacket; a Poiyomi Shaders wordmark, the Poi Logo, and a Snowflake.*
 
 ## Decal RGBA Mask
 
@@ -28,6 +34,16 @@ Each of the 4 decal sections (0, 1, 2, 3) have the following options listed belo
 :::
 
 ### Positioning
+
+:::tip
+Decals supports the **Raycast** feature, which allows you to visually position a Decal on your Model without having to second-guess it's exact UV coordinates.
+
+To use this feature, edit the Decal on your Material <u>directly from the Mesh</u> as shown here:
+
+<PoiVideo url='/vid/color-and-normals/Decals_RaycastDemo.mp4' width='300px'/>
+
+`Left-Click` on the **Raycast** button to enable the feature. Hover the Mouse over your Mesh to position it, then `Left-Click` again to finalize your placement.
+:::
 
 #### Position
 
@@ -99,8 +115,9 @@ These are the same blending operations used in Adobe Photoshop.
 
 ### Alpha Blend Mode
 
-- `Type`: **Dropdown**, Options: `Off`/`Replace`/`Multiply`/`Add`/`Subtract`/`Min`/`Max` AND `Everywhere`/`Decal Bounds`
-    - **Secondary Dropdown**, Options: `Everywhere`/`Decal Bounds`
+- `Type`: **Dropdown**
+    - Main Options: `Off`/`Replace`/`Multiply`/`Add`/`Subtract`/`Min`/`Max`
+    - Secondary Options: `Everywhere`/`Decal Bounds`
 
 Which blending operation to use from the Decal's Alpha channel.
 
