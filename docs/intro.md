@@ -70,7 +70,7 @@ During the creation of this documentation, however, priority is placed on gettin
 | Outlines                | 📓  Text Complete    |
 | Audio Link              | 📓  Text Complete    |
 | Special FX              | ⚠️  Work-In-Progress |
-| Modifiers               | ❌ Not Started       |
+| Modifiers               | ⚠️  Work-In-Progress |
 | Post Processing         | 📓  Text Complete    |
 | Rendering               | 📓  Text Complete    |
 | Grab Pass               | 📓  Text Complete    |

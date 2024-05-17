@@ -85,6 +85,26 @@ How large the width of the Spectrum should be across the projection.
     - `Top-edge = Full Audio`
     - `Bottom-edge = No Audio`
 
+### Circle Dimensions
+
+- `Type`: **Float4**
+    - Default: `X = 0`, `Y = 1`, `Z = 0`, `W = 1`
+
+Adjusts the radius and dimension of the Circle Spectrum, if used.
+
+:::info
+This property is only shown if the [UV Mode](#uv-mode) is set to `Circle`.
+:::
+
+<PoiVideo url='/vid/audio-link/ALSpect_CircleDimensions.mp4'/>
+
+| Axis | Function |
+| --- | --- |
+| X | Minimum size of the Circle Spectrum starting from the direct center of the projection |
+| Y | Maximum size of the Circle Spectrum |
+| Z | Minimum radial clipping of the Circle Spectrum |
+| W | Maximum radial clipping of the Circle Spectrum |
+
 ## Volume and Band
 
 Adjustment of the UV Space and it's appearance across the Spectrum.
@@ -157,8 +177,8 @@ Clipping control of the Band's projection from the Right-edge.
 
 Enables the ability to provide a set amount of space between each Step for the `Band` or `Volume`, clipping whatever is in-between each step. Use this in conjunction with your [Volume Step Num](#volume-step-num-0--off) and [Band Step Num](#band-step-num-0--off) values to achieve a digital visualizer look.
 
-:::info Works best with Steps
-Shape Clip requires a [Volume Step Num](#volume-step-num-0--off) or [Band Step Num](#band-step-num-0--off) with a value greater than `0` for this to appear correctly.
+:::tip Works best with Steps
+Shape Clip should use a [Volume Step Num](#volume-step-num-0--off) and [Band Step Num](#band-step-num-0--off) with a value greater than `0` for this to appear correctly.
 :::
 
 <PoiVideo url='/vid/audio-link/ALSpect_ShapeClip.mp4'/>

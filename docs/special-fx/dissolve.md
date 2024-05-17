@@ -106,6 +106,12 @@ Defines the main state of the dissolve effect. Animate this value to control the
 
 A black and white (single channel) mask that controls where to apply the dissolve. Black (`0``) will have no effect, while white will have 100% of the effect. Values in between will vary the strength of the dissolve effect.
 
+### Global Mask
+
+- `Type`: **Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+
+Select which [Global Mask](../modifiers/global-masks.md) to use as the Dissolve Mask instead.
+
 ### VertexColor.g Mask
 
 Uses the green channel of the mesh's vertex colors to mask the dissolve effect. `0` in this channel will make dissolve have 0 effect on that vertex, while `1.0`/`255` will let it fully affect that vertex.

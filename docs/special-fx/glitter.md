@@ -1,10 +1,17 @@
 ---
 sidebar_position: 5
-title: Glitter
+title: Glitter / Sparkle
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
-The glitter feature is a simple effect that adds a voronoi-based sparkle to the color of the mesh. It can be used to add a sparkle to a mesh, or to simulate specular lighting on a glittery surface.
+The Glitter feature is a simple effect that adds a voronoi-based sparkle to the color of the mesh. It can be used to add a sparkle to a mesh, or to simulate specular lighting on a glittery surface.
+
+:::info Changes in 9.0
+Glitter / Sparkle received a complete rewrite as of Poiyomi 9.0. Therefore, some features have been changed and reorganized.
+:::
+
+<PoiVideo url='/vid/special-fx/GlitterExample.mp4'/>
+<em>Example of the Glitter effect on this Clothing.</em>
 
 ## UV
 
@@ -235,7 +242,9 @@ Increasing this value will scale the brightness of the glitter based on the inte
 
 ### Global Mask
 
-Allows you to mask glitter effects using a Global Mask.
+- `Type`: **Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+
+Select which [Global Mask](../modifiers/global-masks.md) to use to mask the Glitter effects.
 
 ## Hue Shift
 
@@ -255,11 +264,15 @@ How much to constantly shift the hue with time. A value of 1 will result in a fu
 
 How much to shift the base color around the hue circle. This value is circular, and will have the same result at 0 and 1.
 
-## AudioLink 🎵
+## AudioLink
 
 - `Type`: **Boolean**
 
-Enables or Disables AudioLink effects for glitter.
+Enables or Disables AudioLink effects for Glitter.
+
+:::info
+This section allows control of the Glitter through [AudioLink](../audio-link/audio-link.md). It will only be exposed when AudioLink is activated on the Material.
+:::
 
 ### Alpha Band
 

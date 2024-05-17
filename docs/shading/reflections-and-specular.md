@@ -10,6 +10,12 @@ To learn more about the principles of PBR shading, guides are available from [Ad
 
 Reflections and Specular are heavily influenced by the lighting setup of the scene. For these features to look correct, the scene should have well-defined lighting and reflection probes.
 
+<a target="_blank" href="/img/shading/PoiPBRDemo.png">
+<img src="/img/shading/PoiPBRDemo.png" alt="Poiyomi PBR Demo" width="700px"/>
+</a>
+
+*Example of Reflections & Specular used on a Cube (left) and a Sphere (right). Notice how it's reflecting the Skybox.*
+
 ## Metallic
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
@@ -52,7 +58,11 @@ The map texture defines multiple settings of the Reflections and Specular across
 
 This texture can be exported from programs like Adobe Substance Painter as a pre-packed map, or packed using the inline packing tool included with the Poiyomi Shaders package.
 
-This tool can be used by expanding the Maps texture. Each channel will have its own texture slot, and the channel to be used can be selected. If no texture is defined, a fallback value can be selected for that channel; generally, this fallback should be kept at `1.0`, allowing the slider to control this value. Note that all textures will be combined to a single texture with certain default settings; be sure to check this texture's import settings for options like resolution and texture format once it has been saved.
+The inline **Thry Editor Texture Packer** can be used by expanding the Maps texture. Each channel will have its own texture slot, and the channel to be used can be selected. If no texture is defined, a fallback value can be selected for that channel; generally, this fallback should be kept at `1.0`, allowing the slider to control this value. Note that all textures will be combined to a single texture with certain default settings; be sure to check this texture's import settings for options like resolution and texture format once it has been saved.
+
+<a target="_blank" href="/img/shading/PBRPackedMaps.png">
+<img src="/img/shading/PBRPackedMaps.png" alt="PBR Packed Maps Section" width="700px"/>
+</a>
 
 ### Packed Maps Slots
 
@@ -67,6 +77,10 @@ The metallic map defines where the material should be metallic, and where it sho
 - `Type`: **Data** Texture (sRGB **OFF**)
 
 The Smoothness map defines where the material should be smoother, and where it should be rougher. This value can vary smoothly between `0.0` and `1.0` according to variations and different parts of a material.
+
+:::caution Warning: If using a Roughness Map
+If you use a **Roughness Map** as the `G Smoothness Map`, we urge you to checkmark `Inverted` in the Packer. This is so that it matches the Unity PBR Pipeline.
+:::
 
 #### B Reflection Mask
 
@@ -133,10 +147,6 @@ Flips the Metallic Channel to the opposite of it's value.
 - `Type`: **Checkbox**
 
 Flips the Smoothness Channel to the opposite of it's value.
-
-:::tip
-Use this `Invert Smoothness` checkbox if you defined a Roughness Map instead in your Packed Maps. This will flip the value of your Roughness Map to match the Unity Standard PBR Pipeline.
-:::
 
 #### Invert Reflection Mask
 
