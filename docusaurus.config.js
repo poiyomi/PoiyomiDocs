@@ -134,11 +134,15 @@ const config = {
             position: "left",
             label: "Docs",
           },
-          { to: "/blog", label: "Blog: Updates & Tips", position: "left" },
           {
-            to: "poiyomitoonvcc", 
-            label: "Poiyomi Toon VCC",
-            position: "left",
+            to: "/download",
+            label: "Download & Install",
+            position: "left"
+          },
+          {
+            to: "/blog",
+            label: "Blog: Updates & Tips",
+            position: "left"
           },
           {
             href: "https://twitter.com/poiyomi",

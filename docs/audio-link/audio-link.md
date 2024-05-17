@@ -29,7 +29,7 @@ When this feature activates, the following sections in Poiyomi Shaders will have
 - [Emission](../special-fx/emission.md)
 - [Glitter / Sparkle](../special-fx/glitter.md)
 - [Pathing](../special-fx/pathing.md)
-- Voroni
+- Voronoi
 :::
 
 ### Anim Toggle
@@ -144,6 +144,11 @@ If you are not a fan of the music that is playing, feel free to change it! To do
 
 You can then change the URL from the Inspector. Paste the new URL into the field as shown below. If you're already in Play Mode, click `Reload URL` to switch it.
 
-![AudioLinkAvatar Prefab](/img/audio-link/AudioLinkAvatarPrefabCap.png)
-![YtdlpPlayer Screenshot](/img/audio-link/theYtdlpPlayer.png)
+<a target="_blank" href="/img/audio-link/AudioLinkAvatarPrefabCap.png">
+<img src="/img/audio-link/AudioLinkAvatarPrefabCap.png" alt="AudioLinkAvatar Prefab Ytdlp Player" width="600px"/>
+</a>
+<br></br>
+<a target="_blank" href="/img/audio-link/theYtdlpPlayer.png">
+<img src="/img/audio-link/theYtdlpPlayer.png" alt="Ytdlp URL field" width="600px"/>
+</a>
 :::
