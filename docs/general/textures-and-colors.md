@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 title: Textures and Colors
 ---
 import PoiVideo from '@site/src/components/PoiVideo'

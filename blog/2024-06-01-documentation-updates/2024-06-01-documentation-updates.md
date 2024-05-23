@@ -35,8 +35,6 @@ Regardless, whichever method you use is up to you, but keep in mind that the lat
     - Two Methods with Instructions on how to install Poiyomi Shaders, either as a Unity Package or through the Creator Companion.
     - Download Links.
     - Info on the Pro Shader.
-- **Changed the Website Font to use `Inter`.**
-    - Inter is an open-source Font that looks great on all kinds of LCD displays with exceptional clarity at small sizes. With this change, the typography looks much more cleaner and easier to read. It also will look much more cleaner on smaller displays, such as Mobile Devices.
 - **Fixed a lot of Image and Video Sizing to be more consistent.**
     - For a while, this Documentation was not very mobile-friendly. I've implemented some changes to React JS that makes the embedded videos have more responsive width, regardless of display size. This eliminates an issue where the embedded videos would extend far beyond the width constrains on a Mobile Web Browser. By default, all Images and Videos will now be automatically responsive based on your browser's width, with some exceptions on certain Documentation entries.
 - Removed irrelevant information and old pages in favor of the new `Download & Install` page.

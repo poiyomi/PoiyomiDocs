@@ -6,9 +6,6 @@
 
 /* You can override the default Infima variables here. */
 
-/* Import Inter Font from source URL */
-@import url('https://rsms.me/inter/inter.css');
-
 :root {
   --ifm-color-primary: #1bb7e4;
   --ifm-color-primary-dark: #0087b2;
@@ -18,8 +15,6 @@
   --ifm-color-primary-lighter: #a3ffff;
   --ifm-color-primary-lightest: #d7ffff;
   --ifm-code-font-size: 95%;
-  /* Introduce Inter as the Base Font for the Documentation */
-  --ifm-font-family-base: 'Inter';
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */

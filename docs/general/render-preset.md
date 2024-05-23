@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 title: Rendering Preset
 ---
 import PoiVideo from '@site/src/components/PoiVideo'

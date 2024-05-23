@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 title: Upgrading from V7.x to V8.x
 ---
 import PoiVideo from '@site/src/components/PoiVideo' 
