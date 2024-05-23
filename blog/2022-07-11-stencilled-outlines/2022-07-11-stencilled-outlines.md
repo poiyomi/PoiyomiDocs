@@ -2,6 +2,7 @@
 slug: 2022-07-11-stencilled-outlines
 title: 'Quick Tips: Stencilled Outlines'
 description: How to use DX11 stencils to get more control over outlines.
+hide_table_of_contents: true
 authors:
   razgriz
 tags: [stencil, outline, tips]

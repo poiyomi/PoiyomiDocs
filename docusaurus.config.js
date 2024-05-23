@@ -67,6 +67,11 @@ const config = {
             from: "/post-processing/main",
             to: "/modifiers/post-processing/main",
           },
+          {
+            // Redirect old VCC Webpage to new "Download & Install" page.
+            from: "/poiyomitoonvcc",
+            to: "/download",
+          }
           // Redirect from multiple old paths to the new path
           // {
           //   to: '/docs/newDoc2',
@@ -145,8 +150,8 @@ const config = {
             position: "left"
           },
           {
-            href: "https://twitter.com/poiyomi",
-            label: "Twitter",
+            href: "https://x.com/poiyomi",
+            label: "Twitter / X",
             position: "right",
           },
           {

@@ -5,7 +5,7 @@ title: AudioLink
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-AudioLink is a system that analyzes and processes in-world audio into many different highly reactive data streams and exposes the data to VRChat Udon, world shaders, and avatar shaders. For more information on AudioLink visit https://audiolink.dev/
+AudioLink is a system that analyzes and processes in-world audio into many different highly reactive data streams and exposes the data to VRChat Udon, world shaders, and avatar shaders. For more information on AudioLink, visit the GitHub Repository at [https://github.com/llealloo/audiolink](https://github.com/llealloo/audiolink).
 
 There are various features in Poiyomi Shaders that support AudioLink effects. However, they will only be exposed when AudioLink is activated on the Material.
 

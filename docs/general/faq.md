@@ -1,6 +1,6 @@
 ---
 sidebar_position: 9
-title: FAQ
+title: Frequently Asked Questions
 hide_table_of_contents: true
 ---
 import TOCInline from '@theme/TOCInline';
@@ -21,6 +21,10 @@ If you download a package with 2 revision numbers, that package contains <u>all 
 
 For example, if you import 7.3-9.0, it will include all 7.3/8.0/8.1/9.0 versions.
 
+### If an Avatar Base asks for a specific version, will it still work if I import a version that is slightly newer?
+
+It is always recommended to use the latest version of the Shader. If an Avatar Base asks for something like 9.0.52 and you are importing 9.0.57, it is expected to still work perfectly fine as it's just a patch-version increase.
+
 ### I am receiving Errors when attempting to use Poiyomi Shaders. What should I do?
 
 If you are having issues with Poiyomi Shaders such as the Material Inspector not working properly, please follow these troubleshooting steps in the following order:
@@ -33,10 +37,6 @@ This should help solve most issues with the Shader not behaving as expected in U
 
 If you are still running into issues, post some screenshots in the [Discord](https://discord.gg/poiyomi) and we'll be happy to help you out.
 
-### If an Avatar Base asks for a specific version, will it still work if I import a version that is slightly newer?
-
-It is always recommended to use the latest version of the Shader. But if an Avatar Base asks for something like 9.0.52 and you are importing 9.0.57, it is expected to still work perfectly fine as it's just a patch-version increase.
-
 ### How do I upgrade Poiyomi Shaders to a newer version?
 
 To upgrade the shader, delete the `_PoiyomiShaders` folder in your assets. If you've changed import settings for any included textures, you can delete everything but the `Textures` folder in `_PoiyomiShaders`.
@@ -45,7 +45,9 @@ Sometimes when updating your locked materials may get stuck in the locked state.
 
 ### I'm trying to animate a property in the Material which kind of works, but it STOPS working when the Material gets Locked. What can I do?
 
-You need to mark properties that you are animating by `Right-Clicking` on them and selecting `Animated` or `Renamed Animated`, which are specific tags that ensure the property remains accessible when the Shader is locked. For more information, see the Documentation page [Locking and Animation](../general/locking.md#marking-properties-for-animation).
+You need to mark properties that you are animating by `Right-Clicking` on them and selecting `Animated` or `Renamed`, which are specific tags that ensure the property remains accessible when the Shader is locked. For more information, see the Documentation page [Locking and Animation](../general/locking.md#marking-properties-for-animation) for further reading.
+
+Keep in mind that properties marked as `Renamed` will only work when the Material is Locked. **Make sure you Lock the Material prior to recording your animations!**
 
 <a target="_blank" href="/img/general/locking_animated.png">
 <img src="/img/general/locking_animated.png" alt="Animation Tags" width="400px"/>
@@ -62,11 +64,9 @@ It is recommended to use a [Lighting Type](../shading/main.md#base-pass-lighting
 Height maps are generally used to change the shape of the surface of a material. Generally, if it's small displacements, 
 You can often get the same detail by using a Normal Map (make sure your shading is set to something other than Flat, though!). 
 
-If you have a height map but not a normal map, 
-You can convert it in Unity by setting the texture to a normal map and selecting "Convert from Grayscale".
+If you have a height map but not a normal map, you can convert it in Unity by setting the texture to a Normal map and selecting "Convert from Grayscale".
 
-If you need the displacement, you can use it with [Parallax Heightmapping](../modifiers/uvs/parallax.md), which creates a displacement-like effect. 
-You can also use a shader that tessellates, which will add geometry to create the height detail.
+If you need the displacement, you can use it with [Parallax Heightmapping](../modifiers/uvs/parallax.md), which creates a displacement-like effect. You can also use a shader that tessellates, which will add geometry to create the height detail.
 
 **Vertex Displacement** takes a height map, but it's limited to the vertex density on the mesh, and often will not provide the desired results.
 
@@ -78,7 +78,7 @@ You can invert it in an image editor or use the invert checkboxes.
 
 **For v8+**, Roughness goes in [Reflections & Specular](../shading/reflections-and-specular.md).
 
-Open Packed Maps by clicking on the triangle and place the Roughness in the [G Smoothness Map](../shading/reflections-and-specular.md#packed-maps) slot. It is important that you checkmark `Invert` so that it matches the Unity PBR Shading Pipeline. Refer to the Documentation Page for more info.
+Open Packed Maps by clicking on the triangle and place the Roughness in the [G Smoothness Map](../shading/reflections-and-specular.md#packed-maps) slot. It is important that you checkmark `Invert` so that it matches the Unity PBR Shading Pipeline. [Refer to the Documentation Page](../shading/reflections-and-specular.md#packed-maps) for more information.
 
 ### How do I test AudioLink in Poiyomi Shaders?
 
@@ -97,6 +97,12 @@ In order to preview animations from Poiyomi Materials (such as Glitter or contin
 Yes! However, make sure to select `.poiyomi/Poiyomi Toon World` as the shader so that it can receive and contribute to Global Illumination. This special shader variant includes all features in the Free version, with one minor difference; it exposes a category called `Shading -> Baked Lighting` that houses all the GI settings.
 
 You may want to consider setting it to Realistic Shading from the Shading settings so that it can look it’s best with Baked Lighting.
+
+### I've un-tagged a property that I don't want to be animated, but it still animates regardless. Why does it still animate while in Play Mode?
+
+You may have left the Material Unlocked. When a Material is Unlocked, all animated properties, regardless of it's animation tag, are still exposed in Play Mode.
+
+To test your Animator against animated properties that are no longer tagged with `A` or `RA`, Lock your Material(s) prior to starting Play Mode.
 
 ## Unity Editor
 

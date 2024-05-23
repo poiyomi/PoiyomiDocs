@@ -2,6 +2,7 @@
 slug: 2024-03-20-poiyomi-toon-9-release
 title: 'Poiyomi 9.0 Released'
 description: Information regarding the release of Poiyomi Shaders 9.0
+hide_table_of_contents: true
 authors:
   poiyomi
 tags: [shader, vrchat, major, updates]

@@ -1,12 +1,11 @@
 ---
 sidebar_position: 1
 title: Main
+hide_title: true
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
 # Color & Normals
-
-<PoiVideo url='/vid/color-and-normals/main_Loop.mp4'/>
 
 The **Color & Normals** section defines fundamental attributes of a material, including most options that affect the Base Color and per-pixel Normals of the material.
 

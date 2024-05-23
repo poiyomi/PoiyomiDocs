@@ -6,16 +6,19 @@ import PoiVideo from '@site/src/components/PoiVideo'
 
 # Shader Locking
 
-## Lock-in
+## Lock-In
 
-At the top of a shader, there's a button labeled **Lock In Optimized Shader**. Pressing this will lock the shader, graying out any options that have not been
-marked for animation. This may take a few seconds to complete.
+At the top of a shader, there's a button labeled `Lock In Optimized Shader`. Pressing this will lock the shader, graying out any options that have not been marked for animation. This may take a few seconds to complete.
 
-To unlock the shader, just press the button again. It'll be labelled **Unlock Shader**.
+To unlock the shader, just press the button again. It'll be labeled as `Unlock Shader`.
 
 Locked materials are *significantly* more optimized than their unlocked counterparts. For editor usage, unlocked materials having reduced performance is ok, but in usage all materials must be locked.
 
-For VRChat, the locking process happens automatically for any materials used in an Avatar or World when a build/upload is triggered. This prevents unlocked materials from being uploaded with the final asset.
+:::info Auto-Lock Feature
+When uploading to VRChat, the locking process happens automatically for any Materials used in an Avatar or World when a build/upload is triggered. This prevents unlocked materials from being uploaded with the final asset.
+
+**If you are uploading for the first time, a one-time message will appear informing you that the Auto-Lock is being initiated.**
+:::
 
 ## Marking Properties for Animation
 

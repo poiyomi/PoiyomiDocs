@@ -10,19 +10,21 @@ The latest version of Poiyomi Toon Shader can be installed in one of two ways. C
 
 <div style={{marginBottom: '20px'}}>
 
-<a class="button button--primary" href="https://discord.gg/poiyomi">Join the Discord</a> <a class="button button--outline button--primary" href="https://github.com/poiyomi/PoiyomiToonShader/releases/latest">Download from GitHub</a>
+<a class="button button--primary" href="https://discord.gg/poiyomi"> Join the Discord</a> <a class="button button--outline button--primary" href="https://github.com/poiyomi/PoiyomiToonShader/releases/latest"> Download from GitHub</a> <a class="button button--outline button--primary" href="https://poiyomi.booth.pm/items/4841309"> Download from BOOTH</a>
 
 </div>
 
-1. Join the [Poiyomi Discord Server](https://discord.gg/poiyomi) and Download the latest `.unitypackage` posted in `#free-shader` channel.
-    - A stable, but likely outdated version of Poiyomi Toon Shader is also available on [GitHub](https://github.com/poiyomi/PoiyomiToonShader).
+1. Join the [Poiyomi Discord Server](https://discord.gg/poiyomi) and download the latest `.unitypackage` posted in `#free-shader` channel.
+    - OR you can download a stable, but likely outdated version of Poiyomi Toon Shader from either [GitHub](https://github.com/poiyomi/PoiyomiToonShader/releases/latest) or [BOOTH](https://poiyomi.booth.pm/items/4841309).
 2. Import the Unity Package into your Unity Project from the Menu Bar via `Assets > Import Package > Custom Package`.
 3. Click `Import` when prompted.
 4. Done! Enjoy using Poiyomi Shaders.
 
-:::danger Do not import twice!
-When replacing or upgrading versions, you must first delete the `_PoiyomiShaders` folder PRIOR to importing the latest Unity Package!
+### Updating the Shader Unity Package
 
+When replacing or upgrading versions, you must first delete the `_PoiyomiShaders` folder PRIOR to importing the latest Unity Package.
+
+:::danger
 **DO NOT ATTEMPT to import Poiyomi Shaders over another, or your project may break!**
 :::
 
@@ -30,7 +32,7 @@ When replacing or upgrading versions, you must first delete the `_PoiyomiShaders
 
 <div style={{marginBottom: '20px'}}>
 
-<a class="button button--primary" href="vcc://vpm/addRepo?url=https%3A%2F%2Fpoiyomi.github.io/vpm/index.json">Add to VCC</a>
+<a class="button button--primary" href="vcc://vpm/addRepo?url=https%3A%2F%2Fpoiyomi.github.io/vpm/index.json"> Add to VCC</a>
 
 </div>
 
@@ -40,6 +42,8 @@ When replacing or upgrading versions, you must first delete the `_PoiyomiShaders
 3. In the list, make sure `Poiyomi's VPM Repo` is checkmarked.
 4. Find your Project in the VCC Project List, click `Manage Project`, then click the `+` button on `Poiyomi Toon Shader` to add it to your project.
 5. Done! Launch your Project after the Package is resolved. Enjoy using Poiyomi Shaders.
+
+### Updating the Shader via VCC
 
 To update the VCC Version later on, simply return to `Manage Project` and click the green-highlighted version to update to the specified version.
 

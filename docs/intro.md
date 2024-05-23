@@ -6,28 +6,14 @@ description: Official Documentation of Poiyomi Toon Shader, a free, feature-rich
 hide_title: true
 hide_table_of_contents: true
 ---
-import PoiVideo from '@site/src/components/PoiVideo'
+import PoiVideo from '@site/src/components/PoiVideo';
+import PoiyomiWordmark from '@site/static/img/Poiyomi-Wordmark.svg';
 
-<head>
-  <meta name="description" content="Official Documentation of Poiyomi Toon Shader, a free, feature-rich Toon and PBR shader for Unity, with a specific focus on usage with VRChat."/>
+<!-- ![Poiyomi Shaders Wordmark](/img/Poiyomi-Toon-Wordmark_NoBG.png) -->
 
-  <meta itemprop="name" content="Poiyomi Shaders Docs"/>
-  <meta itemprop="description" content="Official Documentation of Poiyomi Toon Shader, a free, feature-rich Toon and PBR shader for Unity, with a specific focus on usage with VRChat."/>
-  <meta itemprop="image" content="https://www.poiyomi.com/assets/images/CirclelogoBig-3d44028a616231563c23feda8225278a.png"/>
-
-  <meta property="og:url" content="https://www.poiyomi.com"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:title" content="Poiyomi Shaders Docs"/>
-  <meta property="og:description" content="Official Documentation of Poiyomi Toon Shader, a free, feature-rich Toon and PBR shader for Unity, with a specific focus on usage with VRChat."/>
-  <meta property="og:image" content="https://www.poiyomi.com/assets/images/CirclelogoBig-3d44028a616231563c23feda8225278a.png"/>
-
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Poiyomi Shaders Docs"/>
-  <meta name="twitter:description" content="Official Documentation of Poiyomi Toon Shader, a free, feature-rich Toon and PBR shader for Unity, with a specific focus on usage with VRChat."/>
-  <meta name="twitter:image" content="https://www.poiyomi.com/assets/images/CirclelogoBig-3d44028a616231563c23feda8225278a.png"/>
-</head>
-
-![Poiyomi Shaders Wordmark](/img/Poiyomi-Toon-Wordmark_NoBG.png)
+<div style={{textAlign: 'center', marginTop: '20px', marginBottom: '20px', marginLeft: '70px', marginRight: '70px'}}>
+<PoiyomiWordmark />
+</div>
 
 <h1 style={{textAlign: 'center', fontSize: '25px', margin: '2px', fontWeight: 'normal'}}>
 Feature-rich Toon and PBR Shader for Unity, with a specific focus on VRChat
@@ -43,9 +29,9 @@ AudioLink Support |
 and more!
 </h2>
 
-<div style={{textAlign: 'center', marginTop: '40px'}}>
+<div style={{textAlign: 'center', margin: '40px'}}>
 
-<a class="button button--lg button--outline button--primary" href="/download">Download Poiyomi Shaders</a> <a class="button button--lg button--link" href="https://discord.gg/poiyomi">Join the Discord</a>
+<a class="button button--lg button--primary" href="/download"> Download Poiyomi Shaders</a> <a class="button button--lg button--link" href="https://discord.gg/poiyomi"> Join the Discord</a>
 
 </div>
 
@@ -103,7 +89,7 @@ Poiyomi 9.0 is out now. If you are upgrading from 8.0 to 9.0, a lot of the exist
 ### Completion Status
 
 :::info
-This documentation is a work in progress! If you have any questions, or if you think you've found an issue, please [join the Discord](https://discord.gg/poiyomi) and ask! Our goal is to have a fully-fleshed out documentation site with rich visual examples and explanations for all of the shader features.
+This documentation is continuously being developed! If you have any questions, or if you think you've found an issue, please [join the Discord](https://discord.gg/poiyomi) and ask! Our goal is to have a fully-fleshed out documentation site with rich visual examples and explanations for all of the shader features.
 
 During the creation of this documentation, however, priority is placed on getting text-based documentation complete first, followed by images and videos, so don't panic if it seems like there's a lot of text for now!
 :::
