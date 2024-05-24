@@ -1,5 +1,5 @@
 ---
-sidebar_position: 6
+sidebar_position: 7
 title: Depth Rim Lighting
 ---
 import PoiVideo from '@site/src/components/PoiVideo'

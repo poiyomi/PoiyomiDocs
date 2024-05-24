@@ -14,11 +14,11 @@ For smooth meshes, the inverted hull technique works well, but for hard-edged mo
 All Outline features have been reintroduced to the main Shader variant as of version 9.0 and newer. There is no need to select a separate variant in order to use Outlines.
 :::
 
-<a target="_blank" href="/img/outlines/OutlinesExample.png">
-<img src="/img/outlines/OutlinesExample.png" alt="Outlines Example" width="700px"/>
+<a target="_blank" href="/img/outlines/PoiOutlinesDemo2.png">
+<img src="/img/outlines/PoiOutlinesDemo2.png" alt="Outlines Example"/>
 </a>
 
-*Example of the inverted hull technique on a Sphere, Capsule, and a Cube. Note the difference between objects with Smoothed vs. Sharp Faces.*
+*Example of the inverted hull Outline technique on two Material Spheres.*
 
 ## Mode
 
