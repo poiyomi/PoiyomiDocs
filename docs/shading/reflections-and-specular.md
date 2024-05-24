@@ -10,11 +10,11 @@ To learn more about the principles of PBR shading, guides are available from [Ad
 
 Reflections and Specular are heavily influenced by the lighting setup of the scene. For these features to look correct, the scene should have well-defined lighting and reflection probes.
 
-<a target="_blank" href="/img/shading/PoiPBRDemo.png">
-<img src="/img/shading/PoiPBRDemo.png" alt="Poiyomi PBR Demo" width="700px"/>
+<a target="_blank" href="/img/shading/PoiPBRDemo3.png">
+<img src="/img/shading/PoiPBRDemo2.png" alt="Poiyomi PBR Demo"/>
 </a>
 
-*Example of Reflections & Specular used on a Cube (left) and a Sphere (right). Notice how it's reflecting the Skybox.*
+*Example of Reflections & Specular used on two Material Spheres (Left: Color Only) (Right: with Copper-like Textures).*
 
 ## Metallic
 

@@ -9,12 +9,17 @@ import TabItem from '@theme/TabItem';
 
 The **Shading** section defines the base shading of the material. It controls how the material reflects light in a diffuse way, and how it is affected by other lighting. Options in the [Light Data](docs/../../shading/light-data) section heavily affect how shading is performed.
 
+<a target="_blank" href="/img/shading/Shading_All.png">
+<img src="/img/shading/Shading_All.png" alt="Various Shading Styles on multiple Material Spheres."/>
+</a>
+
+*Various Shading Styles applied on these multiple Material Spheres.*
+
 :::tip
 This section often uses some terms interchangeably.
 
 - **Lighting** and **Shading** are both talking about how the material is affected by light.
 - Ramp and Gradient are both terms for a 1-dimensional function, using one input and producing one output.
-
 :::
 
 ## Base Pass Lighting Type
@@ -32,6 +37,10 @@ This option cannot be animated at runtime - consider a material swap if you need
 TextureRamp is a Toon lighting method that uses a gradient texture to determine the lighting level. This texture can be edited using the Thry gradient editor by clicking the gradient slot.
 
 Texture Ramp lighting is useful for creating cartoon-like lighting, especially when specific color gradients are desired.
+
+<PoiVideo url='/vid/shading/Shading_TextureRamp.mp4'/>
+
+*Demonstration of Texture Ramp Shading using Thry Gradient Editor.*
 
 <details>
 <summary><b>TextureRamp Options</b></summary>
@@ -75,6 +84,10 @@ Determines whether or not to incorporate the full ambient color into the lightin
 Multilayer Math is a Toon Lighting method that uses mathematically defined gradients to determine the lighting level. These gradients can be edited using the defined settings, and set using colors or textures. Multilayer Math is similar to the lighting model used in the [lilToon](https://github.com/lilxyzw/lilToon) shader. Multilayer Math shading is useful for creating robust shading that performs well in most lighting conditions.
 
 On a basic level, Multilayer Math has three shadow layers, and a border. Not all layers need to be used, nor the border. In previous versions of the shader, the *Math Gradient* shading mode was used to create a similar effect, but this mode was removed in favor of the more flexible Multilayer Math.
+
+<PoiVideo url='/vid/shading/Shading_MultilayerMath.mp4'/>
+
+*Demonstration of Multilayer Math Shading with the Shadow Layers.*
 
 <details>
 <summary><b>Multilayer Math Options</b></summary>
@@ -300,9 +313,9 @@ Wrapped lighting is a semi-realistic lighting method that uses a mathematical gr
 
 For technical details of this method, see Jordan Stevens' [Lighting Models In Unity](https://www.jordanstevenstechart.com/lighting-models) (*Half-Lambert (Diffuse Wrap)* section), Stephen Hill's [Righting Wrap](https://blog.selfshadow.com/2011/12/31/righting-wrap-part-1/), or Steve McAuley's [Energy-Conserving Wrapped Diffuse](https://web.archive.org/web/20210228210901/http://blog.stevemcauley.com/2011/12/03/energy-conserving-wrapped-diffuse/).
 
-:::note
-Wrapped lighting will be updated in the future to use a more accurate method.
-:::
+<PoiVideo url='/vid/shading/Shading_Wrapped.mp4'/>
+
+*Demonstration of Wrapped Shading and the various adjustments.*
 
 <details>
 <summary><b>Wrapped Options</b></summary>
@@ -312,6 +325,12 @@ Wrapped lighting will be updated in the future to use a more accurate method.
 - `Type`: **Color**
 
 Shadow Tint will tint the shadow map with a specific color, useful for creating a specific stylized shading effect. This color will be mixed with the Ambient Color (if enabled) to produce the final shading.
+
+#### LightSide Color
+
+- `Type`: **Color**
+
+LightSide Color will tint the color of the side in Lighting.
 
 #### Wrap
 
@@ -360,17 +379,15 @@ Skin lighting is a semi-realistic lighting method that uses a Lookup table (LUT)
 Skin lighting is useful for achieving a realistic human skin lighting effect.
 
 :::note
-This lighting mode is experimental, and is not fully implemented yet, as it requires more data (thickness maps) to work fully. This will be improved in the future.
+This lighting mode is experimental and is not fully implemented yet, as it requires more data (thickness maps) to work fully. This will be improved in the future.
 :::
+
+<PoiVideo url='/vid/shading/Shading_Skin.mp4'/>
+
+*Demonstration of Skin Shading and how a Thickness Map is used with it.*
 
 <details>
 <summary><b>Skin Options</b></summary>
-
-#### LUT
-
-- `Type`: **Data** Texture (sRGB **OFF**)
-
-The LUT is used to determine the lighting ramp at various scales. This texture consists of a series of RGB values, with the horizontal axis representing the light level, and the vertical axis representing the thickness of the skin.
 
 #### Shadow Tint
 
@@ -378,11 +395,33 @@ The LUT is used to determine the lighting ramp at various scales. This texture c
 
 Shadow Tint will tint the shadow with a specific color, useful for creating a specific stylized shading effect. This color will be mixed with the Ambient Color (if enabled) to produce the final shading.
 
+#### LUT
+
+- `Type`: **Data** Texture (sRGB **OFF**)
+
+The LUT is used to determine the lighting ramp at various scales. This texture consists of a series of RGB values, with the horizontal axis representing the light level, and the vertical axis representing the thickness of the skin.
+
 #### Scale
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
 Scales the Subsurface Scattering (SSS) effect. A value of `0.0` will disable the SSS effect, and a value of `1.0` will apply the SSS effect at full strength.
+
+#### Thickness Map
+
+- `Type`: **Data** Texture (sRGB **OFF**)
+
+#### Thickness Power
+
+- `Type`: **Float**, Range: `0.0 - 3.0`
+
+Modifies the amount of influence the Thickness Map has on the LUT.
+
+#### Bump Blur
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+Sets how much to blur the Bumps from the Thickness Map.
 
 #### Shadow Strength
 
@@ -396,7 +435,6 @@ Determines how strong of a shadow is applied. A value of `0.0` will not apply an
 
 Determines whether or not to incorporate the full ambient color into the lighting calculation. A value of `0.0` will ignore the ambient color, and a value of `1.0` will fully tint the shadow with the ambient color.
 
-
 </details>
 
 ### ShadeMap
@@ -407,7 +445,9 @@ ShadeMap lighting is useful for creating highly stylized lighting effects. [It's
 
 For a basic ShadeMap shading setup, you can enable *Use BaseMap as 1st ShadeMap* and *Use BaseMap as 2nd ShadeMap*, set the *1st ShadeColor* and *2nd ShadeColor* to a lighter and darker tone respectively, and set the BaseColor Step and ShadeColor Step to a larger (`0.4 - 0.6`) and smaller (`0.1 - 0.3`), respectively.
 
-This lighting mode uses the following options:
+<PoiVideo url='/vid/shading/Shading_ShadeMap.mp4'/>
+
+*Demonstration of ShadeMap and it's properties.*
 
 <details>
 <summary><b>ShadeMap Options</b></summary>
@@ -496,9 +536,21 @@ Flat Light is useful for creating models that are highly robust to local lightin
 The `Flat` lighting mode has no user-configurable options.
 :::
 
+<a target="_blank" href="/img/shading/Shading_Flat.png">
+<img src="/img/shading/Shading_Flat.png" alt="Poiyomi Flat Shading"/>
+</a>
+
+*Flat Shading. Completely life-less.*
+
 ### Realistic
 
 Realistic lighting is a physically-based lighting model that behaves similar to the lighting found in the Unity Standard shader. It's useful for creating models that are realistic and perform well in many lighting conditions.
+
+<a target="_blank" href="/img/shading/Shading_Realistic.png">
+<img src="/img/shading/Shading_Realistic.png" alt="Poiyomi Realistic Shading"/>
+</a>
+
+*Realistic Shading.*
 
 <details>
 <summary>Realistic Options</summary>

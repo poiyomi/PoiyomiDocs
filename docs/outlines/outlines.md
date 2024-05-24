@@ -343,7 +343,7 @@ Determines whether the Outlines should write to the depth buffer. This should ty
 This section allows control of the Outlines through [AudioLink](../audio-link/audio-link.md). It will only be exposed when AudioLink is activated on the Material.
 :::
 
-<PoiVideo url='/vid/outlines/outlineALtest.mp4'/>
+<PoiVideo url='/vid/outlines/outlineALtest4.mp4'/>
 <em>Demonstration of the Bass Band controlling the Outline Size, Emission, and Color via AudioLink.</em>
 
 ### Size Band

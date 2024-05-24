@@ -6,6 +6,12 @@ import PoiVideo from '@site/src/components/PoiVideo'
 
 Clear Coat (often referred to as one word, clearcoat) is an effect that simulates thin, often glossy layers on the outer surface of a material. It can be used to create the appearance of materials like automotive paint, lacquered wood, carbon fiber composite, and many others.
 
+<a target="_blank" href="/img/shading/PoiClearCoatDemo.png">
+<img src="/img/shading/PoiClearCoatDemo.png" alt="Poiyomi Clear Coat Demo"/>
+</a>
+
+*Example of Clear Coat used on two Material Spheres.*
+
 ## ClearCoat Visibility
 
 - `Type`: **Float**, Range: `0.0 - 1.0`

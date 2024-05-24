@@ -10,6 +10,12 @@ The word Matcap is a portmanteau of **M**aterial **C**apture. The technique was 
 
 A total of 4 Matcap sections are provided in the shader.
 
+<a target="_blank" href="/img/shading/PoiMatcapDemo2.png">
+<img src="/img/shading/PoiMatcapDemo2.png" alt="Poiyomi Matcaps"/>
+</a>
+
+*Example of various Matcaps used on two Material Spheres.*
+
 :::tip Iridescence Users
 As Iridescence has been deprecated, new settings have been introduced to Matcap in order to account for this.
 
