@@ -70,7 +70,7 @@ const config = {
           {
             // Redirect old VCC Webpage to new "Download & Install" page.
             from: "/poiyomitoonvcc",
-            to: "/download",
+            to: "/download/",
           }
           // Redirect from multiple old paths to the new path
           // {
