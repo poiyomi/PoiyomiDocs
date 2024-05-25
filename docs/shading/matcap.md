@@ -8,19 +8,19 @@ Matcaps, or sphere textures, are textures that are mapped to an object based on 
 
 The word Matcap is a portmanteau of **M**aterial **C**apture. The technique was originally designed as a fast, low-overhead way to approximate the look of specific materials, baking in many details. With modern GPU performance and physically based shading techniques, matcaps are not as necessary for performance as they used to be.
 
-A total of 4 Matcap sections are provided in the shader.
+There are a total of 4 Matcap sections (0, 1, 2, 3) available to you, each being independent of each other.
+
+:::info Changes in 9.0
+To accommodate the deprecation of Iridescence, we have ported over many features from Iridescence into Matcap. This includes the introduction of the new `Gradient` UV Mode, which functions the same way as Iridescence.
+
+In addition, we have buffed the total amount of Matcap slots to 4.
+:::
 
 <a target="_blank" href="/img/shading/PoiMatcapDemo2.png">
 <img src="/img/shading/PoiMatcapDemo2.png" alt="Poiyomi Matcaps"/>
 </a>
 
 *Example of various Matcaps used on two Material Spheres.*
-
-:::tip Iridescence Users
-As Iridescence has been deprecated, new settings have been introduced to Matcap in order to account for this.
-
-To emulate Iridescence, change the Matcap [UV Mode](#uv-mode) to use `Gradient`.
-:::
 
 ## UV Mode
 
@@ -44,7 +44,9 @@ Double Sided uses the object's orientation and the reflection vectors to determi
 
 Allows you to configure a radial gradient to be used as your matcap texture. Click the rectangle to the right of the Matcap texture slot to open the gradient editor.
 
-This functionality replaces the previously seen Iridescence module.
+:::tip Iridescence Users
+`Gradient` replaces the previously seen Iridescence module.
+:::
 
 ## Color
 

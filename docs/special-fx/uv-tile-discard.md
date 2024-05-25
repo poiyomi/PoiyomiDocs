@@ -34,9 +34,18 @@ Defines how the discarding is performed. Generally, this should be set to `Verte
 
 - `Type`: **Checkboxes**
 
-Defines which UV tiles to discard. These are organized into 4 rows (v) of 4 tiles (u), defining a grid of 16 discard tiles. The bottom left is the origin, and the top right is the maximum. The bottom left tile (0,0) is where most UV mapping is performed.
+Defines which UV tiles to discard. These are organized into 4 rows (`v`) of 4 tiles (`u`), defining a grid of 16 discard tiles. The bottom left is the origin, and the top right is the maximum. The bottom left tile (`0,0`) is where most UV mapping is performed.
 
-When a box is checked, that tile is discarded. When animating these checkboxes, each one is its own independent property.
+When a box is checked, that tile is discarded. When animating these checkboxes, each one is it's own independent property.
+
+**Table Reference:**
+
+| Row | UV Tile | UV Tile | UV Tile | UV Tile |
+| :---: | :---: | :---: | :---: | :---: |
+| **v = 3** | `3,0` | `3,1` | `3,2` | `3,3` |
+| **v = 2** | `2,0` | `2,1` | `2,2` | `2,3` |
+| **v = 1** | `1,0` | `1,1` | `1,2` | `1,3` |
+| **v = 0** | `0,0` | `0,1` | `0,2` | `0,3` |
 
 
 ## UV Tile Setup
