@@ -5,7 +5,7 @@ description: Details on the major updates that have been implemented in the Poiy
 hide_table_of_contents: true
 authors:
   bluwizard
-tags: [shader, docs, documentation, updates, website]
+keywords: [shader, docs, documentation, updates, website]
 ---
 
 Greetings! My name is BluWizard. I've been one of the recent active contributors to the Poiyomi Shaders Documentation, bringing everything up-to-date with 9.0 and finishing up some areas that needed attention.

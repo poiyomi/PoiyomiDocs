@@ -28,7 +28,7 @@ This section often uses some terms interchangeably.
 
 Lighting mode to use. Each of these models uses the same lighting data in different ways to produce different lighting effects.
 
-:::caution
+:::warning
 This option cannot be animated at runtime - consider a material swap if you need to change the lighting mode for some reason!
 :::
 

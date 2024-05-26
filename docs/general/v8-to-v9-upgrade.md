@@ -31,7 +31,7 @@ Once you have installed the latest version of Poiyomi Shaders and are ready to u
 
 This function will automatically convert any of your existing properties to be 9.0-compatible.
 
-:::caution
+:::warning
 Do keep in mind not all will be converted perfectly, so we highly suggest you make a copy of your Materials before going forward with this.
 :::
 
@@ -39,7 +39,7 @@ Do keep in mind not all will be converted perfectly, so we highly suggest you ma
 
 All previous versions of Poiyomi Shaders are located underneath `.poiyomi/Old Versions` now. They are provided so that you can upgrade seamlessly.
 
-:::caution Only Upgrade from Old Versions
+:::warning Only Upgrade from Old Versions
 Please do not use Old Versions for new Materials other than to upgrade them.
 :::
 

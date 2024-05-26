@@ -122,7 +122,7 @@ Controls the width of the rim lighting. Affects how far from the edge (or center
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
-Controls the sharpness of the transition between minimum and maximum rim lighting. At `0`, the rim will be a gradual transition, with the maximum color only present at the very outer edge. As **Rim Sharpness** increases, the maximum color extends further toward the edge (defined by the [**Rim Width**](##Rim-Width)). At `1`, there is a sharp transition between no rim lighting and rim lighting.
+Controls the sharpness of the transition between minimum and maximum rim lighting. At `0`, the rim will be a gradual transition, with the maximum color only present at the very outer edge. As **Rim Sharpness** increases, the maximum color extends further toward the edge as defined by the [Rim Width](#width). At `1`, there is a sharp transition between no rim lighting and rim lighting.
 
 ### Rim Power
 

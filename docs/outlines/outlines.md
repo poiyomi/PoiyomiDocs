@@ -245,7 +245,7 @@ The width of the fixed outline size.
 
 How far away from the model to use the fixed size outlines in Unity Base Units. Beyond this distance, the outlines will properly scale accordingly.
 
-:::caution Avoid the "Thick Outlines" Problem
+:::warning Avoid the "Thick Outlines" Problem
 Keep your Max Distance value at a small number in order to ensure they scale correctly without blocking your Avatar's visibility when viewed at a far distance!
 :::
 

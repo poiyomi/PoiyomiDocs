@@ -55,6 +55,6 @@ The following text below only applies if you are using **Poiyomi Pro**, which co
 
 **ALL PAYMENTS ARE FINAL! NO REFUNDS!!**
 
-:::caution Warning
+:::warning
 If you are discovered to have illegally acquired a version of Poiyomi Pro without purchasing it, we reserve the right to invoke legal action against you, both via Patreon and through Discord.
 :::

@@ -165,7 +165,7 @@ Choose how the channel appears in Mirrors.
 
 Enables control of how your Global Masks appear in VRChat Cameras.
 
-:::caution VRChat-only Feature
+:::warning VRChat-only Feature
 Camera Masking will only exclusively work in VRChat.
 :::
 

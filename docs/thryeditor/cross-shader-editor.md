@@ -27,7 +27,7 @@ Once they're all linked up, anything you change on this Panel will directly affe
 
 In your Unity Hierarchy, you can `Right-Click` on your Avatar. In the context menu, go to `Thry -> Materials -> Open All in Cross-Shader Editor`. This will open ALL Poiyomi Materials and automatically list them in the Cross-Shader Editor Panel.
 
-:::caution
+:::warning
 This option does not work if your Avatar is using different Material Variants rather than a singular one! Make sure your Avatar is using the same Material Variant before using this method.
 :::
 

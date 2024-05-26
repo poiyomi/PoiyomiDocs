@@ -8,7 +8,7 @@ UV Tile Discard (previously known as UDIM Discard) provides an efficient way to 
 
 Traditionally, UDIMs are used to create a grid of tiles, with specific textures placed on different tiles. UV Tile Discard simply uses the concept of UV tiles, not doing anything with any textures. You can learn more about UV Tiles and UDIMs from [Foundry Learn](https://learn.foundry.com/modo/901/content/help/pages/uving/udim_workflow.html).
 
-:::caution Known Issues with Screen-Space AO
+:::warning Known Issues with Screen-Space AO
 UV Tile Discard can have some side-effects in Worlds that use a heavy amount of Screen-Space AO Post Processing. If a Tile is discarded in a World with this, heavy shadows will be visible around the discarded area.
 
 Although many Worlds in VRChat do not utilize Screen-Space AO, a small percentage still do. Keep this in mind when using this feature.

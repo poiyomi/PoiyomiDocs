@@ -5,7 +5,7 @@ description: Tips and guidelines for optimizing texture memory (VRAM) and filesi
 hide_table_of_contents: true
 authors:
   razgriz
-tags: [textures, optimization, tips, vrchat]
+keywords: [textures, optimization, tips, vrchat]
 ---
 
 import PoiVideo from '@site/src/components/PoiVideo'

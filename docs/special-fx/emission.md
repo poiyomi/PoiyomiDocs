@@ -255,7 +255,7 @@ Which band to use for the AudioLink Emission multiplier.
 
 How much to multiply the Emission Strength with Audio.
 
-:::caution
+:::warning
 This is a mathematical value. Your multiplier must be at least `1` or greater for AudioLink Emissions to work by default.
 
 If you change any of these to `0`, Emissions may not be visible since there's nothing being multiplied.

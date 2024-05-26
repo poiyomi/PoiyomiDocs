@@ -82,13 +82,13 @@ Which position to use to calculate distance.
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
-The alpha multiplier that will be applied at the [Min Distance](#Min-Distance). 
+The alpha multiplier that will be applied at the [Min Distance](#min-distance).
 
 ### Max Distance Alpha
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
-The alpha multiplier that will be applied at the [Max Distance](#Max-Distance). 
+The alpha multiplier that will be applied at the [Max Distance](#max-distance). 
 
 ### Min Distance
 

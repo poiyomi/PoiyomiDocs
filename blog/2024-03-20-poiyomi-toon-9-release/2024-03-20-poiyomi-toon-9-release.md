@@ -5,7 +5,7 @@ description: Information regarding the release of Poiyomi Shaders 9.0
 hide_table_of_contents: true
 authors:
   poiyomi
-tags: [shader, vrchat, major, updates]
+keywords: [shader, vrchat, major, updates]
 ---
 
 I am very excited to announce that version 9.0 of Poiyomi Shaders is now fully available!

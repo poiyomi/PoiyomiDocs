@@ -169,7 +169,7 @@ How much to shift the hue with surface angle. A value of `1` will give maximum h
 
 Enables Video Texture to project on the Decal.
 
-:::caution Warning
+:::warning
 This feature enables a Video Texture to appear on the Decal. It will only work if a Video Player is broadcasting a Global Video Texture property.
 :::
 

@@ -4,7 +4,7 @@ title: Grabpass
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
-:::caution
+:::warning
 Grabpass is an expensive feature - it has to take a screenshot every frame. This will always cause some amount of performance hit, so use it judiciously.
 :::
 

@@ -22,7 +22,7 @@ Defines the mode dissolve is operating in. In `Basic`, the 0-1 value of the [**D
 
 Range: `0-0.5`
 
-Defines the range over which the edge effects apply. The larger this is, the more area the edge will cover during the dissolve. Combines with [**Dissolve Noise**](##Dissolve-Noise) and its associated [**Dissolve Detail Strength**](##Dissolve-Detail-Strength) to produce the final edge.
+Defines the range over which the edge effects apply. The larger this is, the more area the edge will cover during the dissolve. Combines with [Dissolve Noise](#dissolve-noise) and its associated [Dissolve Detail Strength](#dissolve-detail-strength) to produce the final edge.
 
 This is a relative distance, and only applies in the **Basic** dissolve mode.
 
@@ -36,7 +36,7 @@ Defines how sharply to transition from no edge to edge. At `0`, the material wil
 
 ### Edge Color
 
-Defines the color used for the edge. Blended multiplicatively with the [**Edge Gradient**](##Edge-Gradient).
+Defines the color used for the edge. Blended multiplicatively with the [Edge Gradient](#edge-gradient).
 
 This color can be set to a [Theme Color](../modifiers/global-themes.md).
 

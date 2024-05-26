@@ -108,21 +108,7 @@ Options per texture slot:
 
 The Cross Shader Editor is a panel that allows you to mass-edit your Poiyomi Materials, all at once. Anything you edit or change in this panel will be applied to all Materials that are referenced.
 
-There are many ways to use it. To summon the window, open `Thry -> Cross Shader Editor` from the Unity Menu. From there, add each Material to each Slot. Your changes in this Panel will affect all Materials that are referenced in the Panel.
-
-You can also summon the Cross Shader Editor via `Right Click` on your Avatar or GameObject in the Hierarchy, then clicking `Thry -> Materials -> Open All in Cross Shader Editor`. This will automatically add all Poiyomi Materials used on the Object into the Cross Shader Editor list, ready for you to directly edit.
-
-The above also works when multi-selecting your Materials that are in the same folder in your Project's Files.
-
-The Cross Shader Editor supports [Presets](#presets). If using a Preset, it will be applied to all the Materials referenced in the Cross Shader Editor.
-
-:::caution Use the same Shader Variant
-The Cross Shader Editor will only work if all Materials referenced are using the same exact Shader variant!
-:::
-
-<a target="_blank" href="/img/thryeditor/crossshadereditor2.png">
-<img src="/img/thryeditor/crossshadereditor2.png" alt="Cross-Shader Editor" width="700px"/>
-</a>
+[Learn more about the Cross Shader Editor.](./cross-shader-editor.md)
 
 ## Settings
 

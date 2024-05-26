@@ -78,7 +78,7 @@ The metallic map defines where the material should be metallic, and where it sho
 
 The Smoothness map defines where the material should be smoother, and where it should be rougher. This value can vary smoothly between `0.0` and `1.0` according to variations and different parts of a material.
 
-:::caution Warning: If using a Roughness Map
+:::warning
 If you use a **Roughness Map** as the `G Smoothness Map`, we urge you to checkmark `Inverted` in the Packer. This is so that it matches the Unity PBR Pipeline.
 :::
 

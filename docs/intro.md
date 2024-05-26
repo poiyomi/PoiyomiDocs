@@ -77,7 +77,7 @@ and more!
 
 On the sidebar, you'll find Documentation for each different feature of the shader. All features of the Shader in the UI will redirect here for further reading.
 
-:::caution
+:::warning
 *This documentation is geared towards* **Poiyomi 8.0 and newer**.
 
 If you're using Poiyomi 7.3 or earlier, this documentation may not apply at all. [**An upgrade guide is available for moving from Poiyomi 7.0 to 8.0+**](/docs/general/v7-upgrade.md).
