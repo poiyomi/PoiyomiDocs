@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 6
 title: Drawers
 ---
 If no constructor is defined here the default constructor will be used. This you will not have to pass any parameters in those cases.

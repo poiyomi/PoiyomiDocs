@@ -130,8 +130,9 @@ const config = {
           alt: "Poiyomi Text Logo",
           src: "img/logo.svg",
           width: 44,
-          height: 32
+          height: 44,
         },
+        hideOnScroll: true,
         items: [
           {
             type: "doc",
@@ -170,6 +171,15 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      footer: {
+        logo: {
+          alt: "Poiyomi Logo",
+          src: "img/circle_logo.svg",
+          width: 80,
+          height: 80,
+        },
+        copyright: `Copyright © ${new Date().getFullYear()} Poiyomi Inc. All Rights Reserved. Built with Docusaurus.`,
+      }
     }),
 };
 
