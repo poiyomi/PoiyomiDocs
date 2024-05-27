@@ -10,7 +10,7 @@ The latest version of Poiyomi Toon Shader can be installed in one of two ways. C
 
 <div style={{marginBottom: '20px'}}>
 
-<a class="button button--primary" href="https://discord.gg/poiyomi"> Join the Discord</a> <a class="button button--outline button--primary" href="https://github.com/poiyomi/PoiyomiToonShader/releases/latest"> Download from GitHub</a> <a class="button button--outline button--primary" href="https://poiyomi.booth.pm/items/4841309"> Download from BOOTH</a>
+<a class="button button--primary" href="https://discord.gg/poiyomi" target="_blank"> Join the Discord</a>&nbsp;<a class="button button--outline button--primary" href="https://github.com/poiyomi/PoiyomiToonShader/releases/latest" target="_blank"> Download from GitHub</a>&nbsp;<a class="button button--outline button--primary" href="https://poiyomi.booth.pm/items/4841309" target="_blank"> Download from BOOTH</a>
 
 </div>
 

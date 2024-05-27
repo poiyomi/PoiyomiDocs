@@ -32,7 +32,7 @@ and more!
 
 <div style={{textAlign: 'center', margin: '40px'}}>
 
-<a class="button button--lg button--primary" href="/download"> Download Poiyomi Shaders</a> <a class="button button--lg button--link" href="https://discord.gg/poiyomi"> Join the Discord</a>
+<a class="button button--lg button--primary" href="/download"> Download Poiyomi Shaders</a>&nbsp;<a class="button button--lg button--link" href="https://discord.gg/poiyomi" target="_blank"> Join the Discord</a>
 
 </div>
 
