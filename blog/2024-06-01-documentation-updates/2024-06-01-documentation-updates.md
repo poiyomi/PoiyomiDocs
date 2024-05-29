@@ -40,6 +40,7 @@ Regardless, whichever method you use is up to you, but keep in mind that the lat
 - **Upgraded Docusaurus to v3.3.2.**
     - Docusaurus v3.3.2 introduces major improvements, bug fixes, and new features for us to use in the near future.
     - React, MDX, and Node.js have been updated as a result of the Docusaurus v3 Upgrade.
+    - The Light and Dark Theme will now automatically match the user's client by default.
 - Removed irrelevant information and old pages in favor of the new `Download & Install` page.
     - The `Poiyomi VCC Repo` Page is no longer necessary, as I've implemented a button in the `Download & Install` page for the VCC Version that directly opens the Creator Companion App, adding the Repository.
     - Redirects added to the website configuration to handle old links.
