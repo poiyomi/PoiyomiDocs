@@ -44,18 +44,24 @@ const config = {
             from: '/outlines/main',
             to: '/outlines/',
           },
-          {
-            from: "/modifiers/distortion-uv",
-            to: "/modifiers/uvs/distortion-uv",
-          },
-          {
-            from: "/modifiers/panosphere-uv",
-            to: "/modifiers/uvs/panosphere-uv",
-          },
-          {
-            from: "/modifiers/polar-uv",
-            to: "/modifiers/uvs/polar-uv",
-          },
+          //
+          // HIDDEN PAGES COMMENTED OUT. RE-EXPOSE THESE WHEN THESE PAGES ARE COMPLETE.
+          //
+          //{
+          //  from: "/modifiers/distortion-uv",
+          //  to: "/modifiers/uvs/distortion-uv",
+          //},
+          //{
+          //  from: "/modifiers/panosphere-uv",
+          //  to: "/modifiers/uvs/panosphere-uv",
+          //},
+          //{
+          //  from: "/modifiers/polar-uv",
+          //  to: "/modifiers/uvs/polar-uv",
+          //},
+          //
+          // END OF HIDDEN REDIRECTS
+          //
           {
             from: "/modifiers/parallax",
             to: "/modifiers/uvs/parallax",
