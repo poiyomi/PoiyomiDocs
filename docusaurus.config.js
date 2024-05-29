@@ -117,10 +117,13 @@ const config = {
       docs: {
         sidebar: {
           hideable: true,
+          autoCollapseCategories: true,
         },
       },
       colorMode: {
         defaultMode: "dark",
+        disableSwitch: false,
+        respectPrefersColorScheme: true,
       },
       tableOfContents: {
         minHeadingLevel: 2,
@@ -133,7 +136,6 @@ const config = {
           width: 44,
           height: 44,
         },
-        hideOnScroll: true,
         items: [
           {
             type: "doc",

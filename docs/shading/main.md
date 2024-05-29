@@ -666,7 +666,7 @@ Which lighting model to use for the Add pass.
 
 ### Toon
 
-Toon add pass lighting behaves somewhat like the math gradient lighting mode. It uses gradient settings to determine the start and end points of the added lighting.
+Toon add pass lighting behaves somewhat like the Multilayer Math lighting mode. It uses gradient settings to determine the start and end points of the added lighting.
 
 <details>
 <summary><b>Toon Options (Add Pass)</b></summary>
@@ -691,4 +691,4 @@ Realistic add pass lighting uses a physically-based lighting model to determine 
 
 ### Same as Base Pass
 
-Add Pass lighting that behaves close to your [Base Pass](#base-pass-lighting-type) settings.
+Makes the Add Pass Lighting match close to your [Base Pass](#base-pass-lighting-type) settings.

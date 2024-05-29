@@ -1,6 +1,6 @@
 ---
 sidebar_position: 9
-title: Frequently Asked Questions
+title: FAQ / Troubleshooting
 hide_table_of_contents: true
 ---
 import TOCInline from '@theme/TOCInline';
@@ -37,9 +37,20 @@ This should help solve most issues with the Shader not behaving as expected in U
 
 If you are still running into issues, post some screenshots in the [Discord](https://discord.gg/poiyomi) and we'll be happy to help you out.
 
+### When I Upload an Avatar, I get a message saying "Unlocked Shaders were found and will not be included in the build."
+
+This message indicates there was a problem with the Auto-Lock function. For context, your Materials must be locked in order to upload to VRChat in order to prevent unused features from being included.
+
+If this function fails to work and you get that message, ensure there are no scripts interfering with the Upload. Some tools and certain optimizers can interfere with this, even though they're not supposed to.
+- Remove any third-party tools and Packages you suspect are interfering until the message no longer appears when uploading. If you find the culprit issue, we encourage you to inform the creator of said scripts/utilities that are interfering with the Auto-Lock so that it doesn't happen again.
+
+:::tip Manual Lock-In
+**Try manually Locking your Materials before uploading.** You can do this by `Right-Click` on your Avatar in the Hierarchy, followed by `Thry -> Materials -> Lock All` in the context menu. This function will Lock ALL Poiyomi Materials found on your Avatar.
+:::
+
 ### How do I upgrade Poiyomi Shaders to a newer version?
 
-To upgrade the shader, delete the `_PoiyomiShaders` folder in your assets. If you've changed import settings for any included textures, you can delete everything but the `Textures` folder in `_PoiyomiShaders`.
+To upgrade the shader, refer to the instructions found in [Download & Install](../download/download.md) for the Method you used when you first installed the Shader.
 
 Sometimes when updating your locked materials may get stuck in the locked state. This happens because the name of the shader changed. Avoid this by unlocking materials before updating. To Fix this, reselect the correct Poiyomi shader for the broken materials.
 

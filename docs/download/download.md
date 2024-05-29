@@ -10,7 +10,7 @@ The latest version of Poiyomi Toon Shader can be installed in one of two ways. C
 
 <div style={{marginBottom: '20px'}}>
 
-<a class="button button--primary" href="https://discord.gg/poiyomi" target="_blank"> Join the Discord</a>&nbsp;<a class="button button--outline button--primary" href="https://github.com/poiyomi/PoiyomiToonShader/releases/latest" target="_blank"> Download from GitHub</a>&nbsp;<a class="button button--outline button--primary" href="https://poiyomi.booth.pm/items/4841309" target="_blank"> Download from BOOTH</a>
+<a class="button button--primary" href="https://discord.gg/poiyomi" target="_blank"><FAIcon icon="fa-brands fa-discord"/> Join the Discord</a>&nbsp;<a class="button button--outline button--secondary" href="https://github.com/poiyomi/PoiyomiToonShader/releases/latest" target="_blank"><FAIcon icon="fa-solid fa-circle-down"/> Download from GitHub</a>&nbsp;<a class="button button--outline button--secondary" href="https://poiyomi.booth.pm/items/4841309" target="_blank"><FAIcon icon="fa-solid fa-circle-down"/> Download from BOOTH</a>
 
 </div>
 
@@ -20,9 +20,13 @@ The latest version of Poiyomi Toon Shader can be installed in one of two ways. C
 3. Click `Import` when prompted.
 4. Done! Enjoy using Poiyomi Shaders.
 
-### Updating the Shader Unity Package
+### Upgrading the Shader Unity Package
 
-When replacing or upgrading versions, you must first delete the `_PoiyomiShaders` folder PRIOR to importing the latest Unity Package.
+When replacing or upgrading versions, you must do the following:
+1. Delete the `Assets/_PoiyomiShaders` folder in your Project. **DO NOT SKIP THIS STEP!**
+2. Import the newest Unity Package into your Project from the Menu Bar via `Assets > Import Package > Custom Package`.
+3. Click `Import` when prompted.
+4. Done! You are now on the latest version.
 
 :::danger
 **DO NOT ATTEMPT to import Poiyomi Shaders over another, or your project may break!**
@@ -32,7 +36,7 @@ When replacing or upgrading versions, you must first delete the `_PoiyomiShaders
 
 <div style={{marginBottom: '20px'}}>
 
-<a class="button button--primary" href="vcc://vpm/addRepo?url=https%3A%2F%2Fpoiyomi.github.io/vpm/index.json"> Add to VCC</a>
+<a class="button button--primary" href="vcc://vpm/addRepo?url=https%3A%2F%2Fpoiyomi.github.io/vpm/index.json"><FAIcon icon="fa-solid fa-square-arrow-up-right"/> Add to VCC</a>
 
 </div>
 
@@ -43,7 +47,7 @@ When replacing or upgrading versions, you must first delete the `_PoiyomiShaders
 4. Find your Project in the VCC Project List, click `Manage Project`, then click the `+` button on `Poiyomi Toon Shader` to add it to your project.
 5. Done! Launch your Project after the Package is resolved. Enjoy using Poiyomi Shaders.
 
-### Updating the Shader via VCC
+### Upgrading the Shader via VCC
 
 To update the VCC Version later on, simply return to `Manage Project` and click the green-highlighted version to update to the specified version.
 
@@ -51,9 +55,15 @@ To update the VCC Version later on, simply return to `Manage Project` and click 
 The VCC version of Poiyomi Shaders will automatically replace any existing copy of the `_PoiyomiShaders` folder in your Project's Assets in favor of the VCC Version, if it exists. Keep this in mind if you have any other versions, such as the Pro version, in your Project.
 :::
 
-## Download Poiyomi Pro (Paid)
+## Poiyomi Pro
 
-The Pro version of the shader (also known as Poiyomi Pro) is a Paid Version of the shader, available as a subscription model on the [Poiyomi Patreon](https://www.patreon.com/poiyomi).
+The Pro version of the shader (also known as Poiyomi Pro) is a Paid Version of the shader, available as a subscription model for $10/month on Patreon.
+
+<div style={{marginBottom: '20px'}}>
+
+<a class="button button--warning" href="https://www.patreon.com/poiyomi" target="_blank"><FAIcon icon="fa-brands fa-patreon"/> Subscribe on Patreon ($10/month)</a>&nbsp;<a class="button button--secondary" href="https://discord.gg/poiyomi" target="_blank"><FAIcon icon="fa-brands fa-discord"/> Join the Discord</a>
+
+</div>
 
 :::info Pro Shader is only available exclusively through Discord
 In order to download Poiyomi Pro, you must:
