@@ -3,7 +3,7 @@ sidebar_position: 1
 title: Overview
 ---
 
-Authored by [Thryrallo](https://github.com/Thryrallo), Thry Editor (short for "**Thry**rallo **Editor**") is the underlying framework that powers the User Interface of the Shader. It serves as the flagship Shader Inspector and Editor for the all the features used across Poiyomi Shaders.
+Authored by [Thryrallo](https://github.com/Thryrallo), Thry Editor (short for "**Thry**rallo **Editor**") is the underlying framework that powers the User Interface of the Shader. It serves as the core Shader Inspector and Editor for the all the features used across Poiyomi Shaders.
 
 Not only does it serve as the primary framework for the Material User Interface, there are also a few other features under the hood that are worth knowing about. This page will cover all the known features included with Thry Editor, with extended information on some larger features found on the sidebar.
 
@@ -121,3 +121,15 @@ The `Settings UI` window can be opened via the `gears icon` in the top left corn
 There are a few tools integrated into Unity for assistance on using certain Shader features. A few examples include `Fix Keywords`, `Unlocked Material List`, `Flipbooks Creator`, and more.
 
 [Learn more about Thry Editor's Integrated Tools.](./tools.md)
+
+## Unity Integrations
+
+Thry Editor integrates itself within the Unity Project from the Menu Bar and in context menus. Here are some of the hidden features you can find.
+
+### Lock / Unlock All
+
+You can quickly and efficiently Lock or Unlock ALL Poiyomi Materials found within an Avatar with just a few clicks. This can be helpful when ensuring things are properly locked prior to uploading.
+
+To access it, `Right-Click` on your Avatar. In the context menu, hover over `Thry -> Materials`, then click either `Lock All` or `Unlock All`.
+
+You can also do the same thing to Folders in your Unity Project by `Right-Clicking` on a Folder that contains Poiyomi Materials as well.

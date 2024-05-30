@@ -28,7 +28,7 @@ After doing so, simply follow the instructions found in [Download & Install](/do
 If you are a Game Developer or User wishing to use Poiyomi Shaders on a non-VRChat Project, here are the requirements:
 - Supported Unity Version: `2022.3`
 - Rendering Pipeline: `Built-in Render Pipeline (BIRP)`
-- Build Target: `Windows, Mac, Linux Standalone`
+- Build Target: `Windows, Mac, Linux`
 
 ## Documentation
 

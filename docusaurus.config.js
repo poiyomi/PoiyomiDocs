@@ -187,7 +187,121 @@ const config = {
           width: 80,
           height: 80,
         },
-        copyright: `Copyright © ${new Date().getFullYear()} Poiyomi Inc. All Rights Reserved. Built with Docusaurus.`,
+        links: [
+          {
+            title: "Docs",
+            items: [
+              {
+                label: "Introduction",
+                to: "/intro",
+              },
+              {
+                label: "Download & Install",
+                to: "/download",
+              },
+              {
+                label: "General Information",
+                to: "/general",
+              },
+              {
+                label: "Color & Normals",
+                to: "/color-and-normals",
+              },
+              {
+                label: "Shading",
+                to: "/shading",
+              },
+              {
+                label: "Outlines",
+                to: "/outlines",
+              },
+              {
+                label: "Special FX",
+                to: "/special-fx",
+              },
+              {
+                label: "AudioLink",
+                to: "/audio-link",
+              },
+              {
+                label: "Global Modifiers & Data",
+                to: "/modifiers",
+              },
+              {
+                label: "Grab Pass",
+                to: "/grabpass",
+              },
+              {
+                label: "Rendering",
+                to: "/rendering/main"
+              },
+              {
+                label: "Thry Editor",
+                to: "/thryeditor/enduser",
+              }
+            ],
+          },
+          {
+            title: "Community",
+            items: [
+              {
+                label: "Discord",
+                href: "https://discord.gg/poiyomi",
+              },
+              {
+                label: "Twitter / X",
+                href: "https://x.com/poiyomi",
+              },
+              {
+                label: "GitHub",
+                href: "https://github.com/poiyomi",
+              },
+              {
+                label: "BOOTH",
+                href: "https://poiyomi.booth.pm/",
+              },
+            ],
+          },
+          {
+            title: "Where to Download",
+            items: [
+              {
+                label: "GitHub Repository",
+                href: "https://github.com/poiyomi/PoiyomiToonShader",
+              },
+              {
+                label: "BOOTH Listing",
+                href: "https://poiyomi.booth.pm/items/4841309",
+              },
+              {
+                label: "VCC Repository",
+                href: "vcc://vpm/addRepo?url=https%3A%2F%2Fpoiyomi.github.io/vpm/index.json",
+              },
+            ],
+          },
+          {
+            title: "About",
+            items: [
+              {
+                label: "Blog",
+                to: "/blog",
+              },
+              {
+                label: "FAQ / Troubleshooting",
+                to: "/general/faq",
+              },
+              {
+                label: "Terms of Service",
+                to: "/terms-of-service",
+              },
+              {
+                label: "Credits",
+                to: "/credits",
+              },
+            ],
+          },
+        ],
+        copyright: `Copyright © ${new Date().getFullYear()} Poiyomi Inc. Built with Docusaurus.`,
       }
     }),
 };

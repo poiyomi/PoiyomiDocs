@@ -4,6 +4,8 @@ title: Global Masks
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
+# Global Masks
+
 Global Masks are shader-wide texture channels that can be used for masking effects in almost every part of the shader. Global Mask channels can use information from Textures, Vertex Colors, or from other sections of the shader, such as Dissolve.
 
 You can choose from a variety of blending modes when referencing a Global Mask channel, such as Replace, Multiply, Subtract, and more. Modifiers can be used to additionally restrict where effects are applied, such as Backface masking, Mirror/Camera masking, and Distance masking. 

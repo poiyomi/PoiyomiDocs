@@ -1,6 +1,6 @@
 ---
 slug: 2024-06-01-documentation-updates
-title: 'Major Revamp to Poiyomi Documentation'
+title: 'Major Revamps to the Poiyomi Documentation'
 description: Details on the major updates that have been implemented in the Poiyomi Documentation
 hide_table_of_contents: true
 authors:
@@ -14,9 +14,9 @@ I would like to talk about some of the major updates that I'm bringing to the Do
 
 ### Let's start of with the big one... A brand new Home Page!
 
-Instead of providing just mumbo jumbo on the home page, I made the Home Page look more presentable and professional. Not only it introduces what known features you can do with the Shader, but has two new Buttons that will redirect you where to `Download & Install` the shader, as well as a link to Join the Discord Server.
+Instead of providing just completion status, I made the Home Page look more presentable and professional. Not only it introduces what known features you can do with the Shader, but has two new Buttons that will redirect you where to `Download & Install` the shader, as well as a link to Join the Discord Server.
 
-If you scroll down further, I have appended some of the relevant information to the bottom of the page. It talks about how to navigate the Documentation, as well as our Completion Status. As for links to Download the Shader, it has been moved into an entirely dedicated page.
+I have appended some of the relevant information back to the Introduction page, which will now act as the Docs Hub. It talks about how to navigate the Documentation, as well as our Completion Status. As for links to Download the Shader, it has been moved into an entirely dedicated page.
 
 #### Speaking of, let's talk about the new Download & Install page!
 
@@ -44,3 +44,7 @@ Regardless, whichever method you use is up to you, but keep in mind that the lat
 - Removed irrelevant information and old pages in favor of the new `Download & Install` page.
     - The `Poiyomi VCC Repo` Page is no longer necessary, as I've implemented a button in the `Download & Install` page for the VCC Version that directly opens the Creator Companion App, adding the Repository.
     - Redirects added to the website configuration to handle old links.
+
+### Conclusion
+
+We are continuously working on improving the Documentation with as much information as possible in an easy-to-understand fashion. If you have any feedback, feel free to drop us a line in the Discord Server. Other than that, we hope you enjoy these new updates!
