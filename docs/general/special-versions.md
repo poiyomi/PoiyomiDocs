@@ -1,6 +1,8 @@
 ---
 sidebar_position: 9
 title: Special Shader Versions
+description: Information regarding the special alternate versions included in Poiyomi Shaders, such as Grab Pass and the World Shader.
+keywords: [two pass, two-pass, grab pass, outline, early, world, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
@@ -36,7 +38,7 @@ As Outline Early renders the Outline twice, it can have a slight performance imp
 
 The Grab Pass Shader is used for specialized effects that require taking a screenshot every frame in order for it to render. See [Grab Pass](../grabpass/grabpass.md) for more info.
 
-Because Poiyomi Grab Pass uses a Grab Pass, it has the strongest performance impact as it has to take a screenshot every frame to render.
+Because this shader version uses a Grab Pass, it has the strongest performance impact as it has to take a screenshot every frame to render.
 
 ## World
 

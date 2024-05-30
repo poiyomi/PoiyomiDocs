@@ -1,6 +1,8 @@
 ---
 sidebar_position: 5
 title: Cubemap
+description: Cubemap allows you to use a Cubemap texture to simulate reflections and other effects. It avoids some of the projection artifacts that can occur in other features, such as Matcaps.
+keywords: [cube, map, cubemap, reflection, skybox, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 

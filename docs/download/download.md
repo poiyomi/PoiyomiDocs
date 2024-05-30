@@ -1,6 +1,7 @@
 ---
 title: Download & Install
 description: Where to Download and Install Poiyomi Toon Shader.
+keywords: [download, install, update, poiyomi, shader]
 hide_table_of_contents: true
 ---
 

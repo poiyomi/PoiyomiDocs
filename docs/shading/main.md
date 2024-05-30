@@ -1,6 +1,8 @@
 ---
 sidebar_position: 2
 title: Shading
+description: The Shading section determines the primary base shading of the Material, controlling how the Material reflects light diffuse and how it is affected by other lighting.
+keywords: [shading, diffuse, lighting, base, style, stylized, base pass, add pass, texture ramp, math gradient, multilayer math, wrapped, skin, shademap, flat, realistic, cloth, toon, poiyomi, shader]
 toc_max_heading_level: 3
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
@@ -24,7 +26,7 @@ This section often uses some terms interchangeably.
 
 ## Base Pass Lighting Type
 
-- `Type`: **Dropdown**, Options: `TextureRamp`/`MathRamp`/`Wrapped`/`Skin`/`ShadeMap`/`Flat`/`Realistic`/`Cloth`
+- `Type`: **Dropdown**, Options: `TextureRamp`/`Multilayer Math`/`Wrapped`/`Skin`/`ShadeMap`/`Flat`/`Realistic`/`Cloth`
 
 Lighting mode to use. Each of these models uses the same lighting data in different ways to produce different lighting effects.
 

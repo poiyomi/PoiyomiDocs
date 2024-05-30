@@ -1,6 +1,8 @@
 ---
 sidebar_position: 4
 title: Matcap / Sphere Textures
+description: Matcaps are textures that are mapped to an object based on the relative angle of the view direction and the Material's normal direction.
+keywords: [matcap, material capture, angle, normal, direction, relative angle, texture, mapping, poiyomi, shader, iridescence]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 

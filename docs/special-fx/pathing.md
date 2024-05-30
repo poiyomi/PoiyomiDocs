@@ -1,6 +1,8 @@
 ---
 sidebar_position: 6
 title: Pathing
+description: Pathing enables a special effect that follows along a path defined from a gradient. It is used for complex effects, such as an Emission traveling across a Material.
+keywords: [pathing, gradient, special effect, special fx, effect, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 

@@ -1,23 +1,25 @@
 ---
 sidebar_position: 3
-title: Cross-Shader Editor
+title: Cross Shader Editor
+description: The Cross Shader Editor is a special tool included in Thry Editor that allows the user to easily edit multiple Poiyomi Materials, all at once.
+keywords: [cross shader editor, cross-shader, editor, cross, shader, thry, editor, thryeditor, poiyomi, shader]
 ---
 
-The Cross-Shader Editor, first introduced with Poiyomi 9.0, allows the user to easily edit multiple Poiyomi Materials all at once. It is a special panel that can be summoned either manually, directly, or indirectly.
+The Cross Shader Editor, first introduced with Poiyomi 9.0, allows the user to easily edit multiple Poiyomi Materials all at once. It is a special panel that can be summoned either manually, directly, or indirectly.
 
 ## Prerequisites
 
-**Before using the Cross-Shader Editor, you must know that any Materials you wish to multi-edit are using the same shader variant!** The Cross-Shader Editor does not support editing Materials that use a different shader than another. For example, if you reference Materials with some that use `.poiyomi/Poiyomi Toon` and `.poiyomi/Poiyomi Toon Grab Pass` on the list, the panel will NOT WORK.
+**Before using the Cross-Shader Editor, you must know that any Materials you wish to multi-edit are using the same shader variant!** The Cross Shader Editor does not support editing Materials that use a different shader than another. For example, if you reference Materials with some that use `.poiyomi/Poiyomi Toon` and `.poiyomi/Poiyomi Toon Grab Pass` on the list, the panel will NOT WORK.
 
 You MUST use the <u>same Shader Variant</u> for all the Materials that you wish to list in the Panel!
 
-## Opening the Cross-Shader Editor
+## Opening the Cross Shader Editor
 
-There are multiple ways to open the Cross-Shader Editor throughout Unity.
+There are multiple ways to open the Cross Shader Editor throughout Unity.
 
 ### Manually
 
-Navigate to `Thry -> Cross-Shader Editor` in the Unity Menu Bar to open the Panel.
+Navigate to `Thry -> Cross Shader Editor` in the Unity Menu Bar to open the Panel.
 
 By default, there will be nothing referenced. You need to add Materials of your choosing that is using Poiyomi Shaders by clicking `Add` and then selecting the ones you are using.
 
@@ -25,7 +27,7 @@ Once they're all linked up, anything you change on this Panel will directly affe
 
 ### From Your Avatar
 
-In your Unity Hierarchy, you can `Right-Click` on your Avatar. In the context menu, go to `Thry -> Materials -> Open All in Cross-Shader Editor`. This will open ALL Poiyomi Materials and automatically list them in the Cross-Shader Editor Panel.
+In your Unity Hierarchy, you can `Right-Click` on your Avatar. In the context menu, go to `Thry -> Materials -> Open All in Cross Shader Editor`. This will open ALL Poiyomi Materials and automatically list them in the Cross Shader Editor Panel.
 
 :::warning
 This option does not work if your Avatar is using different Material Variants rather than a singular one! Make sure your Avatar is using the same Material Variant before using this method.
@@ -33,7 +35,7 @@ This option does not work if your Avatar is using different Material Variants ra
 
 ### From Your Files
 
-In your Unity Project Files, you can use `Ctrl + Left-Click` to multi-select Materials. After doing so, you can `Right-Click` and do `Thry -> Materials -> Open in Cross-Shader Editor`. This will summon the Panel with all selected Materials already pre-added to the Editor.
+In your Unity Project Files, you can use `Ctrl + Left-Click` to multi-select Materials. After doing so, you can `Right-Click` and do `Thry -> Materials -> Open in Cross Shader Editor`. This will summon the Panel with all selected Materials already pre-added to the Editor.
 
 ## Usage
 
@@ -47,11 +49,11 @@ If you are editing Materials that have different settings between each one, the 
 <img src="/img/thryeditor/crossshadereditor2.png" alt="Cross Shader Editor" width="600px"/>
 </a>
 
-*Example of the Cross-Shader Editor's User Interface.*
+*Example of the Cross Shader Editor's User Interface.*
 
 ### Supported Functions
 
-Using the Cross-Shader Editor supports the following functions. Usage of these functions will affect ALL Materials currently referenced in the Editor:
+Using the Cross Shader Editor supports the following functions. Usage of these functions will affect ALL Materials currently referenced in the Editor:
 - Presets
 - Shader Translator
 - Unbound Properties

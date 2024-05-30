@@ -1,6 +1,8 @@
 ---
 sidebar_position: 2
 title: Dissolve
+description: Dissolve provides features for transitioning between a base appearance and a modified appearance in an aesthetically pleasing way.
+keywords: [dissolve, transition, special effect, special fx, effect, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 

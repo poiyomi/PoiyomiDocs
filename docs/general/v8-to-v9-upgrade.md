@@ -1,6 +1,8 @@
 ---
 sidebar_position: 6
 title: Upgrading from V8.x to V9.x
+description: Guide and Information on how to upgrade from v8 to v9.
+keywords: [v8, v9, 9.0, upgrade, major, update, guide, poiyomi, shader]
 ---
 
 Poiyomi Shaders received a plentiful of improvements and updates for 9.0. While most of everything may not look much different when compared to 8.0, it's worth noting that many areas have been significantly reorganized.

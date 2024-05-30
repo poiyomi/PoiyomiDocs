@@ -1,6 +1,8 @@
 ---
 sidebar_position: 1
 title: Rendering
+description: The Rendering section sets various low-level properties that control how the shader is rendered. It directly influences how the Graphics Driver will interpret Poiyomi Shaders at runtime.
+keywords: [render, rendering, cull, culling, ztest, zwrite, z, offset, instancing, gpu, early, early z, vrc, fallback, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 

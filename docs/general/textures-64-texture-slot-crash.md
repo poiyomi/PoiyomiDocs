@@ -1,7 +1,8 @@
 ---
 sidebar_position: 8
 title: 64 Texture Slot Crash
-description: Big time crashy boy uwu
+description: Big time crashy boy UwU
+keywords: [64, 64 crash, texture crash, crash]
 --- 
 
 <a target="_blank" href="/img/general/unity_crash2022.png">

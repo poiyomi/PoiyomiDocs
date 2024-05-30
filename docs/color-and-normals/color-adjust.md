@@ -1,6 +1,8 @@
 ---
 sidebar_position: 2
 title: Color Adjust
+description: Color Adjust provides options for modifying the base color of the material. This includes settings for adjusting the HUE and Color on your Material.
+keywords: [hue, color, saturation, gamma, hue shift, poiyomi]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 

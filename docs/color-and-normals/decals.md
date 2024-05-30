@@ -1,6 +1,8 @@
 ---
 sidebar_position: 9
 title: Decals
+description: In Poiyomi Shaders, Decals are used to place images onto your UV with specific location, rotation, and blending.
+keywords: [decal, decals, decorative, decoration, sticker, logo, shape, blush, poiyomi, shader]
 toc_max_heading_level: 4
 ---
 import PoiVideo from '@site/src/components/PoiVideo'

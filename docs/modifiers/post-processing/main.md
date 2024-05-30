@@ -1,6 +1,8 @@
 ---
 sidebar_position: 2
 title: Post Processing
+description: Post Processing provides advanced options for modifying the look of Poiyomi Shaders, in order to create a specific look or to be adjusted at runtime.
+keywords: [post, processing, postprocessing, advanced, look, HDR, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 

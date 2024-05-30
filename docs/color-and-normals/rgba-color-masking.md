@@ -1,6 +1,8 @@
 ---
 sidebar_position: 8
 title: RGBA Color Masking
+description: RGBA Color Masking provides flexible ways to apply different Color Tints, Textures, and Normals within the Material without affecting Alpha.
+keywords: [rgba, color, masking, tint, texture, normals, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 

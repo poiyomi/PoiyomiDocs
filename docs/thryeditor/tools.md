@@ -1,6 +1,8 @@
 ---
 sidebar_position: 5
 title: Tools
+description: Integrations available with Thry Editor for use in Poiyomi Shaders
+keywords: [keywords, fix, unlocked, locked, materials list, material list, list, flipbook creator, thry, editor, thryeditor, thryrallo, poiyomi, shader]
 ---
 
 Thry Editor includes some integrations that you may end up using while using Poiyomi Shaders. Here are a few known Tools available:

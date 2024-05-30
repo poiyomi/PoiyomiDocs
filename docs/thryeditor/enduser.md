@@ -1,7 +1,12 @@
 ---
 sidebar_position: 1
 title: Overview
+hide_title: true
+description: Thry Editor is the underlying framework that powers the User Interface known in Poiyomi Shaders, and serves as the core Shader Inspector and Editor.
+keywords: [thry, editor, thryeditor, thryrallo, ui, poiyomi, shader]
 ---
+
+# Thry Editor
 
 Authored by [Thryrallo](https://github.com/Thryrallo), Thry Editor (short for "**Thry**rallo **Editor**") is the underlying framework that powers the User Interface of the Shader. It serves as the core Shader Inspector and Editor for the all the features used across Poiyomi Shaders.
 

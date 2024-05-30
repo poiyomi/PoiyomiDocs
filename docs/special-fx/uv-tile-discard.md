@@ -1,6 +1,8 @@
 ---
 sidebar_position: 1
 title: UV Tile Discard
+description: UV Tile Discard provides an efficient way to toggle portions of a model on and off at runtime by placing portions of the Model on different UV Tiles.
+keywords: [uv, uv tile discard, uv tile, uv toggle, special fx, effect, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo' 
 

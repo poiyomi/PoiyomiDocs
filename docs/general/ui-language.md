@@ -1,6 +1,8 @@
 ---
 sidebar_position: 2
 title: UI Language
+description: Localization Options available in the Shader UI.
+keywords: [language, localization, english, german, japanese, translation, poiyomi, shader, ui]
 ---
 
 Nearby the top of the Shader, there is a dropdown that changes the Language of the Material UI to a supported language. It makes use of ThryEditor's translation scripts to help translate as many words as possible, with a few manual exceptions.

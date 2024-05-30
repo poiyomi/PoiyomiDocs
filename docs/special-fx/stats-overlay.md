@@ -1,6 +1,8 @@
 ---
 sidebar_position: 10
 title: Stats Overlay
+description: Stats Overlay displays a variety of unique statistics about the viewer, including the FPS, World Position, and Instance Time in Poiyomi Shaders.
+keywords: [stats, overlay, stats overlay, statistics, text, fps, position, time, special fx, effect, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 

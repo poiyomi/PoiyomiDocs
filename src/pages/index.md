@@ -1,8 +1,8 @@
 ---
 slug: /
 title: Home
-description: Official Documentation of Poiyomi Toon Shader, a free, feature-rich Toon and PBR shader for Unity, with a specific focus on usage with VRChat.
-keywords: [poiyomi, shader, shaders, docs, documentation, unity, vrchat]
+description: Official Website and Documentation for Poiyomi Shaders, a free, feature-rich Toon and PBR shader for Unity with a specific focus on VRChat.
+keywords: [poiyomi, shader, shaders, docs, documentation, unity, vrchat, vrc, pbr, toon, realistic, stylized, shading]
 hide_title: true
 hide_table_of_contents: true
 ---

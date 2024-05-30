@@ -1,6 +1,8 @@
 ---
 sidebar_position: 4
 title: Settings
+description: Configuration Settings for Thry Editor in Unity.
+keywords: [thry, editor, thryeditor, thryrallo, settings, ui, configuration, config, poiyomi, shader]
 ---
 
 The `Settings UI` window can be opened via the `gears icon` in the top left corner of a material. Or using the menu item of the top bar `Thry -> Shader UI -> Settings`.

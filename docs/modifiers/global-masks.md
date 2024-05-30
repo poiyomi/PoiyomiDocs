@@ -1,6 +1,8 @@
 ---
 sidebar_position: 1
 title: Global Masks
+description: Global Masks are shader-wide texture channels that are used for masking effects in almost every part of the shader, using Textures and Vertex Colors.
+keywords: [global, mask, global mask, masking, texture, vertex, color, vertex color, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 

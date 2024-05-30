@@ -1,6 +1,8 @@
 ---
 sidebar_position: 2
 title: Presets
+description: Thry Editor allows you to create, apply, and save Presets for Materials using Poiyomi Shaders.
+keywords: [thry, editor, thryeditor, thryrallo, presets, material preset, material, poiyomi, shader]
 ---
 
 Thry Editor allows you to create, apply, and save Presets for Materials using Poiyomi Shaders. Presets are fetched from Materials in a Project that are marked with `isPreset: true`.

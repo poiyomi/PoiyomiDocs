@@ -35,6 +35,8 @@ Regardless, whichever method you use is up to you, but keep in mind that the lat
     - Two Methods with Instructions on how to install Poiyomi Shaders, either as a Unity Package or through the Creator Companion.
     - Download Links.
     - Info on the Pro Shader.
+- **Improved SEO on various pages.**
+    - I have given many pages more descriptions and keywords for SEO (Search Engine Optimization), so that the Documentation and the website as a whole can appear clearly on Search Engines.
 - **Fixed a lot of Image and Video Sizing to be more consistent.**
     - For a while, this Documentation was not very mobile-friendly. I've implemented some changes to React JS that makes the embedded videos have more responsive width, regardless of display size. This eliminates an issue where the embedded videos would extend far beyond the width constrains on a Mobile Web Browser. By default, all Images and Videos will now be automatically responsive based on your browser's width, with some exceptions on certain Documentation entries.
 - **Upgraded Docusaurus to v3.3.2.**

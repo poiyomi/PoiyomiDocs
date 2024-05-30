@@ -1,6 +1,8 @@
 ---
 sidebar_position: 9
 title: Iridescence
+description: Iridescence was merged with Matcap in version 9.0 and newer. Use Matcap Gradient UV Mode instead.
+keywords: [iridescence, matcap, deprecated, special fx, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 

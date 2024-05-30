@@ -1,6 +1,8 @@
 ---
 sidebar_position: 10
 title: FAQ / Troubleshooting
+description: List of Frequently Asked Questions and Troubleshooting Information regarding Poiyomi Shaders.
+keywords: [faq, frequently, asked, questions, troubleshoot, troubleshooting, poiyomi, shader]
 hide_table_of_contents: true
 ---
 import TOCInline from '@theme/TOCInline';

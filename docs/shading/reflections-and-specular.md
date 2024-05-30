@@ -1,6 +1,8 @@
 ---
 sidebar_position: 9
 title: Reflections & Specular
+description: Reflections & Specular introduces the core component of a physically-based reflection (PBR) rendering model to Poiyomi Shaders, such as Metallics, Reflection, and Specular highlights.
+keywords: [reflections and specular, reflections, specular, metal, metallic, smoothness, roughness, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 

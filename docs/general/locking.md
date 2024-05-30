@@ -1,12 +1,12 @@
 ---
 sidebar_position: 1
 title: Locking and Animation
+description: Information regarding the Lock-In and Animation systems used in Poiyomi Shaders.
+keywords: [lock-in, lock, unlock, shader locking, mark animated, mark, animated, property, poiyomi, shader, thry, editor, thryeditor]
 ---
 import PoiVideo from '@site/src/components/PoiVideo' 
 
-# Shader Locking
-
-## Lock-In
+## Shader Locking
 
 At the top of a shader, there's a button labeled `Lock In Optimized Shader`. Pressing this will lock the shader, graying out any options that have not been marked for animation. This may take a few seconds to complete.
 
@@ -22,7 +22,7 @@ When uploading to VRChat, the locking process happens automatically for any Mate
 
 ## Marking Properties for Animation
 
-## Animated
+### Animated
 
 To animate a property on a locked shader, they need to be marked as animated. To do this, while the material is unlocked, *right click* the property and select **Animated (When Locked)**. This will add a green `A` next to the property (short for `A`nimated).
 

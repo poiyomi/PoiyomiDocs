@@ -2,6 +2,7 @@
 sidebar_position: 8
 title: Terms of Service
 description: Rules and Guidelines on the usage of Poiyomi Shaders.
+keywords: [terms of service, tos, rules, guidelines, mit, pro, poiyomi, shader]
 hide_table_of_contents: true
 ---
 

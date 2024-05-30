@@ -1,6 +1,8 @@
 ---
 sidebar_position: 1
 title: AudioLink
+description: AudioLink features for Poiyomi Toon Shader.
+keywords: [audiolink, audio, link, udon audiolink, poiyomi]
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

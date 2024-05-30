@@ -1,6 +1,8 @@
 ---
 sidebar_position: 8
 title: Depth FX
+description: Depth FX creates screen-space depth effects based on other meshes interacting with the Material. It is based on the distance between one object and another.
+keywords: [depth, fx, depth fx, buffer, texture, special fx, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 

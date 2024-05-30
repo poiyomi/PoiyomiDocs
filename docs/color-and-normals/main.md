@@ -1,11 +1,10 @@
 ---
 sidebar_position: 1
-title: Main
-hide_title: true
+title: Color & Normals
+description: The fundamental features of your Material in Poiyomi Shaders, including the Base Color, Main Texture, and Normal Mapping.
+keywords: [main, texture, normals, map, color, alpha, poiyomi, shader, unity]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
-
-# Color & Normals
 
 The **Color & Normals** section defines fundamental attributes of a material, including most options that affect the Base Color and per-pixel Normals of the material.
 
