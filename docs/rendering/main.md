@@ -82,6 +82,14 @@ Enables or disables GPU instancing for this material. GPU instancing allows for 
 
 Learn more at [Unity's documentation.](https://docs.unity3d.com/Manual/GPUInstancing.html)
 
+## Early Z
+
+- `Type`: **Checkbox**
+
+Enables Early Z mode on the Material. This makes the Mesh first only render to Depth, culling anything behind the main Front Face.
+
+This option is commonly used to solve Stacking Transparency problems.
+
 ## VRC Fallback
 
 - `Type`: **Dropdown**

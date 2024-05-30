@@ -1,5 +1,5 @@
 ---
-sidebar_position: 9
+sidebar_position: 10
 title: FAQ / Troubleshooting
 hide_table_of_contents: true
 ---
@@ -105,7 +105,7 @@ In order to preview animations from Poiyomi Materials (such as Glitter or contin
 
 ### Can I use Poiyomi Shaders in World Projects?
 
-Yes! However, make sure to select `.poiyomi/Poiyomi Toon World` as the shader so that it can receive and contribute to Global Illumination. This special shader variant includes all features in the Free version, with one minor difference; it exposes a category called `Shading -> Baked Lighting` that houses all the GI settings.
+Yes! Make sure to select `.poiyomi/Poiyomi Toon World` as the shader so that it can receive and contribute to Global Illumination. This special shader variant includes all features in the Free version, with one minor difference; it exposes a category called `Shading -> Baked Lighting` that houses all the GI settings.
 
 You may want to consider setting it to Realistic Shading from the Shading settings so that it can look it’s best with Baked Lighting.
 
