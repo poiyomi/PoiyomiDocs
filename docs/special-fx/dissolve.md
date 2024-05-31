@@ -211,6 +211,46 @@ At a value of 1, the dissolve will complete a full cycle (from `0` to `1` to `0`
 | 20  |   6.3 |
 | 50  |   2.5 |
 
+## AudioLink
+
+- `Type`: **Checkbox**
+
+Enables AudioLink to control Dissolve.
+
+:::info
+This section allows control of the Dissolve through [AudioLink](../audio-link/audio-link.md). It will only be exposed when AudioLink is activated on the Material.
+:::
+
+### Dissolve Alpha Band
+
+- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+
+Selection for which audio Band should control the Dissolve Alpha Mod.
+
+### Dissolve Alpha Mod
+
+- `Type`: **Vector2**
+
+| Channel | Function |
+| --- | --- |
+| Min | Amount Added or Subtracted from the Dissolve Alpha with no audio |
+| Max | Amount Added or Subtracted from the Dissolve Alpha with max audio |
+
+### Dissolve Detail Band
+
+- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+
+Selection for which audio Band should control the Dissolve Detail Strength.
+
+### Dissolve Detail Mod
+
+- `Type`: **Vector2**
+
+| Channel | Function |
+| --- | --- |
+| Min | Amount Added or Subtracted from the Dissolve Detail Strength with no audio |
+| Max | Amount Added or Subtracted from the Dissolve Detail Strength with max audio |
+
 ## Advanced Dissolve Settings
 
 :::info
