@@ -42,7 +42,7 @@ When a box is checked, that tile is discarded. When animating these checkboxes, 
 
 **Table Reference:**
 
-| Row | UV Tile | UV Tile | UV Tile | UV Tile |
+| Row | Column 0 | Column 1 | Column 2 | Column 3 |
 | :---: | :---: | :---: | :---: | :---: |
 | **v = 3** | `3,0` | `3,1` | `3,2` | `3,3` |
 | **v = 2** | `2,0` | `2,1` | `2,2` | `2,3` |

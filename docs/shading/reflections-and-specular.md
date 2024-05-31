@@ -233,6 +233,7 @@ Smoothness of the 2nd specular layer. This value scales the same way as Smoothne
 ### Lit Fallback
 
 - `Type`: **Checkbox**
+    - Default: `On`
 
 Lit Fallback applies the lighting of the map to the fallback cubemap. This allows the fallback cubemap to fit more closely with the environmental lighting.
 
