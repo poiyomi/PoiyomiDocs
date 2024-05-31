@@ -9,9 +9,7 @@ The Cross Shader Editor, first introduced with Poiyomi 9.0, allows the user to e
 
 ## Prerequisites
 
-**Before using the Cross-Shader Editor, you must know that any Materials you wish to multi-edit are using the same shader variant!** The Cross Shader Editor does not support editing Materials that use a different shader than another. For example, if you reference Materials with some that use `.poiyomi/Poiyomi Toon` and `.poiyomi/Poiyomi Toon Grab Pass` on the list, the panel will NOT WORK.
-
-You MUST use the <u>same Shader Variant</u> for all the Materials that you wish to list in the Panel!
+**Before using the Cross-Shader Editor, you must know that any Materials you wish to multi-edit are using Poiyomi Shaders!** The Cross Shader Editor does not support editing Materials that use a different shader than another.
 
 ## Opening the Cross Shader Editor
 
