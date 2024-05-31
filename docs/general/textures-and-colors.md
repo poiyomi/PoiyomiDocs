@@ -1,6 +1,8 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 title: Textures and Colors
+description: Knowledge on how to use Textures and Colors within Poiyomi Shaders.
+keywords: [texture, color, format, tiling, offset, vram, compression, size, mipmap, alpha, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
@@ -80,7 +82,7 @@ Multiple Textures set above 2048px will consume a vast amount of VRAM, contribut
 
 sRGB is a setting that determines whether the texture should be stored in [gamma-corrected](https://learnopengl.com/Advanced-Lighting/Gamma-Correction) space. This is necessary for color textures, but should always be off for data textures.
 
-:::caution Turn this OFF for Non-color Maps
+:::warning Turn this OFF for Non-color Maps
 It's **very** important to set the sRGB setting to `Off` for textures that are not being used directly as color. Any masks, non-color maps, or other data textures will have incorrect values if sRGB is enabled. Color Textures should keep sRGB `On`.
 :::
 
@@ -122,7 +124,7 @@ This setting determines the maximum resolution of the texture after Unity compre
 
 Mipmaps are a feature of Unity (and most modern game engines) that store shrunken versions of a texture alongside the full resolution. These are used to create less aliasing, and are essential for textures to look good. They also improve performance, as they allow the GPU to access smaller, more localized areas of the texture.
 
-:::caution
+:::warning
 **Don't turn mipmaps off!** While it does reduce VRAM usage a bit, much of the performance bump is mitigated by the GPU having to always access full-resolution textures.
 
 Turning off mipmaps should only be done for very specific data textures that should not be mipped.

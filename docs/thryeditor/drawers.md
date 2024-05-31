@@ -1,6 +1,8 @@
 ---
-sidebar_position: 3
+sidebar_position: 6
 title: Drawers
+description: Description of the Drawers available in the Thry Editor shader inspector.
+keywords: [drawers, shader, inspector, thry, editor, thryeditor, poiyomi, shader]
 ---
 If no constructor is defined here the default constructor will be used. This you will not have to pass any parameters in those cases.
 

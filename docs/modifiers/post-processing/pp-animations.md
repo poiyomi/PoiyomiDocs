@@ -1,6 +1,8 @@
 ---
 sidebar_position: 1
 title: PP Animations
+description: Post Processing Animations are a set of fields that can be used to modify the brightness of the Shader, adapting to the user's environment.
+keywords: [pp, animations, post, processing, postprocessing, lighting, brightness, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 

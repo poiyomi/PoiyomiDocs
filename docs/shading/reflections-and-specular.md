@@ -1,6 +1,8 @@
 ---
-sidebar_position: 7
+sidebar_position: 9
 title: Reflections & Specular
+description: Reflections & Specular introduces the core component of a physically-based reflection (PBR) rendering model to Poiyomi Shaders, such as Metallics, Reflection, and Specular highlights.
+keywords: [reflections and specular, reflections, specular, metal, metallic, smoothness, roughness, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
@@ -10,11 +12,11 @@ To learn more about the principles of PBR shading, guides are available from [Ad
 
 Reflections and Specular are heavily influenced by the lighting setup of the scene. For these features to look correct, the scene should have well-defined lighting and reflection probes.
 
-<a target="_blank" href="/img/shading/PoiPBRDemo.png">
-<img src="/img/shading/PoiPBRDemo.png" alt="Poiyomi PBR Demo" width="700px"/>
+<a target="_blank" href="/img/shading/PoiPBRDemo3.png">
+<img src="/img/shading/PoiPBRDemo2.png" alt="Poiyomi PBR Demo"/>
 </a>
 
-*Example of Reflections & Specular used on a Cube (left) and a Sphere (right). Notice how it's reflecting the Skybox.*
+*Example of Reflections & Specular used on two Material Spheres (Left: Color Only) (Right: with Copper-like Textures).*
 
 ## Metallic
 
@@ -78,7 +80,7 @@ The metallic map defines where the material should be metallic, and where it sho
 
 The Smoothness map defines where the material should be smoother, and where it should be rougher. This value can vary smoothly between `0.0` and `1.0` according to variations and different parts of a material.
 
-:::caution Warning: If using a Roughness Map
+:::warning
 If you use a **Roughness Map** as the `G Smoothness Map`, we urge you to checkmark `Inverted` in the Packer. This is so that it matches the Unity PBR Pipeline.
 :::
 
@@ -231,6 +233,7 @@ Smoothness of the 2nd specular layer. This value scales the same way as Smoothne
 ### Lit Fallback
 
 - `Type`: **Checkbox**
+    - Default: `On`
 
 Lit Fallback applies the lighting of the map to the fallback cubemap. This allows the fallback cubemap to fit more closely with the environmental lighting.
 

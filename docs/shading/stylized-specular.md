@@ -1,6 +1,8 @@
 ---
-sidebar_position: 10
+sidebar_position: 12
 title: Stylized Specular
+description: Stylized Specular applies a stylized Specular Highlight effect to the Material, useful for creating a more toon-like stylized effect.
+keywords: [stylized, specular, style, toon, effect, highlight, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 

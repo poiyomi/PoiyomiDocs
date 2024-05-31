@@ -1,9 +1,13 @@
 ---
-sidebar_position: 7
+sidebar_position: 8
 title: 64 Texture Slot Crash
+description: Big time crashy boy UwU
+keywords: [64, 64 crash, texture crash, crash]
 --- 
 
-![Big time crashy boy uwu](/img/general/unity_crash.png)
+<a target="_blank" href="/img/general/unity_crash2022.png">
+<img src="/img/general/unity_crash2022.png" alt="Big time crashy boy uwu" width="400px"/>
+</a>
 
 Unity has a long-standing issue where the engine will crash when a single shader is using more than 64 texture slots across all materials using that shader. These 64 slots are counted whether or not a texture is set in the slot.
 

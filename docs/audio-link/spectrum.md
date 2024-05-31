@@ -1,6 +1,8 @@
 ---
 sidebar_position: 2
 title: AL Spectrum
+description: Fancy visual spectrum features that react to AudioLink.
+keywords: [spectrum, visual, uv, poiyomi, audiolink]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 import Tabs from '@theme/Tabs';

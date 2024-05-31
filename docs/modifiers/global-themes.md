@@ -1,6 +1,8 @@
 ---
 sidebar_position: 2
 title: Global Themes
+description: Global Themes are a centralized place to change colors throughout the shader.
+keywords: [global, themes, theme, global themes, color, colors, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 

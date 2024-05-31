@@ -1,6 +1,8 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 title: Rendering Preset
+description: Rendering options in Poiyomi Shaders, such as Opaque, Cutout, and various Transparent Presets.
+keywords: [render, rendering, preset, opaque, cutout, transparent, transclipping, fade, additive, soft, multiplicative, blending, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 

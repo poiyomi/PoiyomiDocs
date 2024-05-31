@@ -1,6 +1,8 @@
 ---
 sidebar_position: 3
 title: Stencil
+description: Stencils control the behavior of the Stencil Buffer and other associated capabilities. It is used to create effects where one shader can only draw where another has rendered, or cannot render where another has already rendered.
+keywords: [stencil, stencils, buffer, render, rendering, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 

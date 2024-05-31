@@ -1,6 +1,8 @@
 ---
 sidebar_position: 4
 title: Emission
+description: Emission provides the ability to add brightness directly to the base color of a Mesh, and can be used to add highlights or a glow effect.
+keywords: [emission, emissions, glow, bloom, brightness, color, scrolling, center out, blinking, special fx, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo' 
 
@@ -9,7 +11,7 @@ Emission is a function that allows adding brightness directly to the base color 
 There are 4 Emission Slots total, each with their own unique options. They are independent of each other. Emissions are always added with one another when overlapping.
 
 <a target="_blank" href="/img/special-fx/Emission_Example.png">
-<img src="/img/special-fx/Emission_Example.png" alt="Emission Example" width="700px"/>
+<img src="/img/special-fx/Emission_Example.png" alt="Emission Example"/>
 </a>
 
 *Example usage of Emission on the Eyes, Hair, Nose, Ears, and Paws.*
@@ -255,7 +257,7 @@ Which band to use for the AudioLink Emission multiplier.
 
 How much to multiply the Emission Strength with Audio.
 
-:::caution
+:::warning
 This is a mathematical value. Your multiplier must be at least `1` or greater for AudioLink Emissions to work by default.
 
 If you change any of these to `0`, Emissions may not be visible since there's nothing being multiplied.

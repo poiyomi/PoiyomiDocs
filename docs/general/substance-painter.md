@@ -1,6 +1,8 @@
 ---
-sidebar_position: 6
+sidebar_position: 7
 title: Substance Painter
+description: Using Substance Painter's Export Templates for Poiyomi Shaders.
+keywords: [substance, 3d, painter, substance painter, export preset, export, preset, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 

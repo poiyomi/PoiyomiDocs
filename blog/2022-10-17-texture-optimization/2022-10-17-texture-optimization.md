@@ -2,9 +2,10 @@
 slug: 2022-10-17-texture-optimization
 title: 'Optimizing Texture Memory (VRAM) & Size'
 description: Tips and guidelines for optimizing texture memory (VRAM) and filesize for VRChat creation.
+hide_table_of_contents: true
 authors:
   razgriz
-tags: [textures, optimization, tips, vrchat]
+keywords: [textures, optimization, tips, vrchat]
 ---
 
 import PoiVideo from '@site/src/components/PoiVideo'

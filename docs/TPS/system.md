@@ -16,14 +16,14 @@ The normal light is placed 0.01 outwards from the orifice along its normal.
 
 Using different ranges like DPS channels or DPS multiples are not supported yet.
 
-More on the shader in the [Shader](#Shader) section.
+More on the shader in the Shader section.
 
 ### Contacts + Animator
 Multiple contact senders & recievers are placed for each orifice & penetrator. They are used to calculate penetration depth & penetrator size in the animators, then use those values to drive shapekeys or buffered depth.
 The contact recievers are optional, but the senders are required.
 Each contact has its own gameobject, so they can be animated individually.
 
-A more indepth explanation of the animator system can be found in the [Animator](#Animator) section.
+A more indepth explanation of the animator system can be found in the Animator section.
 
 # Shader
 

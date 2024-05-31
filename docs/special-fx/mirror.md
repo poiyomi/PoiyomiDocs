@@ -1,6 +1,8 @@
 ---
 sidebar_position: 7
 title: Mirror
+description: The Mirror section controls whether the shader should appear in VRChat Mirrors or not.
+keywords: [mirror, mirrors, appearance, special fx, effect, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 

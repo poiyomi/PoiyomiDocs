@@ -1,9 +1,11 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 title: Upgrading from V8.x to V9.x
+description: Guide and Information on how to upgrade from v8 to v9.
+keywords: [v8, v9, 9.0, upgrade, major, update, guide, poiyomi, shader]
 ---
 
-Poiyomi Shaders received a plentiful of improvments and updates for 9.0. While most of everything may not look much different when compared to 8.0, it's worth noting that many areas have been significantly reorganized.
+Poiyomi Shaders received a plentiful of improvements and updates for 9.0. While most of everything may not look much different when compared to 8.0, it's worth noting that many areas have been significantly reorganized.
 
 This page covers all the information you need to know when updating from 8.0 to 9.0.
 
@@ -11,8 +13,8 @@ This page covers all the information you need to know when updating from 8.0 to 
 Poiyomi 9.0 is specifically made to work with **Unity 2022**, as that is now the version required by VRChat. To see which specific version VRChat is using, please refer to their [Creators Documentation](https://creators.vrchat.com/sdk/upgrade/current-unity-version/).
 :::
 
-:::caution
-While Poiyomi 9.0 should still work in Unity 2019, we cannot guarantee it may be supported for long. **We highly recommend using Unity 2022 with Poiyomi 9.0 moving forward.**
+:::danger Deprecation of older Unity Versions
+As Unity 2019 is considered deprecated, we cannot guarantee long-term support of Poiyomi 9.0 in Unity 2019. **We highly recommend using Unity 2022 with Poiyomi 9.0 moving forward.**
 :::
 
 To upgrade the shader, delete the `_PoiyomiShaders` folder in your assets.
@@ -25,11 +27,13 @@ Sometimes when updating, your locked materials may get stuck in the locked state
 
 Once you have installed the latest version of Poiyomi Shaders and are ready to upgrade your Materials from 8.x to 9.x, change the shader to `.poiyomi/Poiyomi Toon` or similar. You should see this Green Button appear in the UI. Press it to Apply the Upgrades.
 
-![9.0 Upgrade Banner](/img/general/Poi9UpgradePic.png)
+<a target="_blank" href="/img/general/Poi9UpgradePic.png">
+<img src="/img/general/Poi9UpgradePic.png" alt="Poiyomi 9.0 Upgrade Button" width="900px"/>
+</a>
 
 This function will automatically convert any of your existing properties to be 9.0-compatible.
 
-:::caution
+:::warning
 Do keep in mind not all will be converted perfectly, so we highly suggest you make a copy of your Materials before going forward with this.
 :::
 
@@ -37,7 +41,7 @@ Do keep in mind not all will be converted perfectly, so we highly suggest you ma
 
 All previous versions of Poiyomi Shaders are located underneath `.poiyomi/Old Versions` now. They are provided so that you can upgrade seamlessly.
 
-:::caution Only Upgrade from Old Versions
+:::warning Only Upgrade from Old Versions
 Please do not use Old Versions for new Materials other than to upgrade them.
 :::
 
@@ -49,7 +53,9 @@ The entire Module has been redone completely from scratch, resulting in a better
 
 Please take the time to go over everything if you use this feature.
 
-![New RGBA Color Masking Panel](/img/general/9UpRGBAColMask.png)
+<a target="_blank" href="/img/general/9UpRGBAColMask.png">
+<img src="/img/general/9UpRGBAColMask.png" alt="New RGBA Color Masking Panel" width="600px"/>
+</a>
 
 ### Rim Lighting
 
@@ -58,19 +64,25 @@ The Rim Lighting `Blend Mode` Name was changed due to it having incompatibilitie
 - **IF Upgrading from 7.3:** The Default was set to `Replace`.
 - **IF Upgrading from 8.1:** The Default was set to `Add`.
 
-![Rim Lighting Blend Mode](/img/general/9UpRimBlend.png)
+<a target="_blank" href="/img/general/9UpRimBlend.png">
+<img src="/img/general/9UpRimBlend.png" alt="Rim Lighting Blend Mode" width="600px"/>
+</a>
 
 ### Matcaps
 
 Matcaps have introduced `Gradient` as a new UV Mode, which works similarly to Iridescence. Use the Matcap Slot for your gradient texture, or click the wide-open field next to the slot to use Thry Gradient Editor to customize your own gradient.
 
-![Matcap Gradient UV Mode](/img/general/MatcapGradient.png)
+<a target="_blank" href="/img/general/MatcapGradient.png">
+<img src="/img/general/MatcapGradient.png" alt="Matcap Gradient UV Mode" width="600px"/>
+</a>
 
 #### Matcap AudioLink
 
-For the first time ever, all Matcap slots now have AudioLink options available for you to use. This was added to accomodate those who are transitioning from using Iridescence.
+For the first time ever, all Matcap slots now have AudioLink options available for you to use. This was added to accommodate those who are transitioning from using Iridescence.
 
-![Matcap AudioLink](/img/general/MatcapAudioLink.png)
+<a target="_blank" href="/img/general/MatcapAudioLink.png">
+<img src="/img/general/MatcapAudioLink.png" alt="Matcap AudioLink" width="600px"/>
+</a>
 
 ### Outlines
 
@@ -98,4 +110,6 @@ You may have to re-assign your Alpha Map because the name was changed to better 
 
 It's possible that a Material set to use Opaque may have "holes" in it after upgrading. To fix this, simply click the `Rendering Preset` dropdown and re-select `Opaque`.
 
-![OpaqueRenderPreset](/img/general/9UpRe-selectOpaque.png)
+<a target="_blank" href="/img/general/9UpRe-selectOpaque.png">
+<img src="/img/general/9UpRe-selectOpaque.png" alt="Opaque Rendering Preset" width="600px"/>
+</a>

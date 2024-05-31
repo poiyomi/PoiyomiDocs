@@ -1,8 +1,10 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 title: Rim Lighting
+description: Rim Lighting is used to add a highlight or glow around the edges of a Material. It samples from the angle between your POV and the Normal of the surface to define the effect.
+keywords: [rim, lighting, rim lighting, highlight, glow, edge, edges, shading, poiyomi, shader]
 ---
-import PoiVideo from '@site/src/components/PoiVideo'
+import PoiVideo from '@site/src/components/PoiVideo';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -11,6 +13,12 @@ import TabItem from '@theme/TabItem';
 **Rim Lighting** can be used to add a highlight or glow around the edges (or center) of a material. It uses the angle between your view and the normal of the surface to define the intensity of the effect.
 
 Rim Lighting is sometimes referred to in conjunction with or as Fresnel, in reference to the [Fresnel Effect](https://docs.unity3d.com/Manual/StandardShaderFresnel.html).
+
+<a target="_blank" href="/img/shading/RL_Demo.png">
+<img src="/img/shading/RL_Demo.png" alt="Rim Lighting Demo"/>
+</a>
+
+*Demonstration of 3 different Rim Lighting effects with low sharpness (left), high sharpness (middle), and colored rim lighting (right).*
 
 ## Style
 
@@ -38,27 +46,23 @@ A texture overlaid on the mesh defining the intensity of the rim lighting at eac
 
 When expanded, the Rim Mask texture has options for **Tiling** and **Offset**. The assigned **UV Map** and the **Panning** of the Rim Mask can be adjusted.
 
-![Rim Mask](/img/shading/Rim-Lighting_Mask.png)
-
-*Rim Mask On/Off using a Noise texture.*
-
 ### Bias Intensity
 
 Bias of the Mask Intensity.
 
 ## Color & Blending
 
+<PoiVideo url='/vid/shading/RL_ColorBlending.mp4'/>
+
+*Demonstration of the Rim Lighting Color & Blending options.*
+
 ### Rim Texture
 
-- `Type`: **Data** Texture (`sRGB: ON`)
+- `Type`: **Color** Texture (`sRGB: ON`)
 
 A texture overlaid on the mesh defining the color of the rim lighting.
 
 When expanded, the Rim Texture has options for **Tiling** and **Offset**. The assigned **UV Map** and the **Panning** of the Rim Texture can be adjusted.
-
-![Rim Texture](/img/shading/Rim-Lighting_Texture.png)
-
-*Rim Texture Off/On using a rainbow texture.*
 
 ### Color
 
@@ -104,11 +108,11 @@ Controls the emission value of the rim lighting color. Emission emulates a part 
 
 Total emission values above 1 will generally cause glow in worlds with bloom.
 
-![Rim Lighting Emission](/img/shading/Rim-Lighting_Emission.png)
-
-*Rim Lighting Emission: 0 / 0.5 / 1 / 2 / 5*
-
 ## Shape Controls
+
+<PoiVideo url='/vid/shading/RL_ShapeControls.mp4'/>
+
+*Demonstration of the Rim Lighting Shape Controls.*
 
 ### Width
 
@@ -116,19 +120,11 @@ Total emission values above 1 will generally cause glow in worlds with bloom.
 
 Controls the width of the rim lighting. Affects how far from the edge (or center) the rim extends.
 
-![Rim Lighting Width](/img/shading/Rim-Lighting_Width.png)
-
-*Rim Lighting Width: 0.2 / 0.4 / 0.6 / 0.8 / 1.0*
-
 ### Sharpness
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
-Controls the sharpness of the transition between minimum and maximum rim lighting. At `0`, the rim will be a gradual transition, with the maximum color only present at the very outer edge. As **Rim Sharpness** increases, the maximum color extends further toward the edge (defined by the [**Rim Width**](##Rim-Width)). At `1`, there is a sharp transition between no rim lighting and rim lighting.
-
-![Rim Lighting Sharpness](/img/shading/Rim-Lighting_Sharpness.png)
-
-*Rim Lighting Sharpness: 0 / 0.25 / 0.5 / 0.75 / 1.0*
+Controls the sharpness of the transition between minimum and maximum rim lighting. At `0`, the rim will be a gradual transition, with the maximum color only present at the very outer edge. As **Rim Sharpness** increases, the maximum color extends further toward the edge as defined by the [Rim Width](#width). At `1`, there is a sharp transition between no rim lighting and rim lighting.
 
 ### Rim Power
 
@@ -147,10 +143,6 @@ Controls how the Rim Lighting will blend with your Normals. A value of `0` ignor
 - `Type`: **Checkbox**
 
 Inverts the Rim Lighting direction. When unchecked, rim lighting goes from "outside-in" (facing away from viewer has maximum intensity). When checked, rim lighting goes from "inside-out" (facing toward viewer has maximum intensity).
-
-![Rim Lighting Invert](/img/shading/Rim-Lighting_Invert.png)
-
-Inverted Rim Lighting: Off/On
 
 ## Light Direction Mask
 
@@ -223,6 +215,10 @@ Allows you to add the currently set Rim Lighting setup to be applied to an exist
 :::info
 This section allows control of the Rim Lighting through [AudioLink](../audio-link/audio-link.md). It will only be exposed when AudioLink is activated on the Material.
 :::
+
+<PoiVideo url='/vid/shading/RL_AudioLink.mp4'/>
+
+*Demonstration of the AudioLink Controls on the Bass Band for Rim Lighting.*
 
 ### Width Add Band
 

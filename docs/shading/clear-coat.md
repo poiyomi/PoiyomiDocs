@@ -1,10 +1,18 @@
 ---
-sidebar_position: 8
+sidebar_position: 10
 title: Clear Coat
+description: Clear Coat is an effect that simulates thin and often glossy layers on the outer surface of a Material. It is used to simulate the appearance of automotive paint, lacquered wood, carbon fiber, and many others.
+keywords: [clear, coat, clearcoat, glossy, reflective, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
 Clear Coat (often referred to as one word, clearcoat) is an effect that simulates thin, often glossy layers on the outer surface of a material. It can be used to create the appearance of materials like automotive paint, lacquered wood, carbon fiber composite, and many others.
+
+<a target="_blank" href="/img/shading/PoiClearCoatDemo.png">
+<img src="/img/shading/PoiClearCoatDemo.png" alt="Poiyomi Clear Coat Demo"/>
+</a>
+
+*Example of Clear Coat used on two Material Spheres.*
 
 ## ClearCoat Visibility
 

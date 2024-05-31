@@ -1,6 +1,8 @@
 ---
 sidebar_position: 1
 title: Outlines
+description: Outlines are created using a simplified pass with the mess offset by a small amount, also known as the "Inverted Hull" effect, available in Poiyomi Shaders.
+keywords: [outline, outlines, inverted hull, stencil, size, width, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 import Tabs from '@theme/Tabs';
@@ -14,11 +16,11 @@ For smooth meshes, the inverted hull technique works well, but for hard-edged mo
 All Outline features have been reintroduced to the main Shader variant as of version 9.0 and newer. There is no need to select a separate variant in order to use Outlines.
 :::
 
-<a target="_blank" href="/img/outlines/OutlinesExample.png">
-<img src="/img/outlines/OutlinesExample.png" alt="Outlines Example" width="700px"/>
+<a target="_blank" href="/img/outlines/PoiOutlinesDemo2.png">
+<img src="/img/outlines/PoiOutlinesDemo2.png" alt="Outlines Example"/>
 </a>
 
-*Example of the inverted hull technique on a Sphere, Capsule, and a Cube. Note the difference between objects with Smoothed vs. Sharp Faces.*
+*Example of the inverted hull Outline technique on two Material Spheres.*
 
 ## Mode
 
@@ -245,7 +247,7 @@ The width of the fixed outline size.
 
 How far away from the model to use the fixed size outlines in Unity Base Units. Beyond this distance, the outlines will properly scale accordingly.
 
-:::caution Avoid the "Thick Outlines" Problem
+:::warning Avoid the "Thick Outlines" Problem
 Keep your Max Distance value at a small number in order to ensure they scale correctly without blocking your Avatar's visibility when viewed at a far distance!
 :::
 
@@ -324,6 +326,16 @@ Which faces to cull. For the inverted hull technique, this should be set to `Fro
 
 Sets how the Outline Stencil should test the depth buffer. By default, the depth buffer is tested, and if the depth value is not less than or equal to the current value, the Outline is discarded.
 
+<!-- Exposed in a future version. Keep hidden until it's released.>
+
+### ZWrite
+
+- `Type`: **Dropdown**, Options: `Off`/`On`
+    - Default: `On`
+
+Determines whether the Outlines should write to the depth buffer. This should typically be on by default.
+
+-->
 
 <!---------- AudioLink Section ---------->
 
@@ -333,7 +345,7 @@ Sets how the Outline Stencil should test the depth buffer. By default, the depth
 This section allows control of the Outlines through [AudioLink](../audio-link/audio-link.md). It will only be exposed when AudioLink is activated on the Material.
 :::
 
-<PoiVideo url='/vid/outlines/outlineALtest.mp4'/>
+<PoiVideo url='/vid/outlines/outlineALtest4.mp4'/>
 <em>Demonstration of the Bass Band controlling the Outline Size, Emission, and Color via AudioLink.</em>
 
 ### Size Band

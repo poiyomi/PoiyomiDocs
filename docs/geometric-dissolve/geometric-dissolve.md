@@ -4,7 +4,7 @@ title: Geometric Dissolve
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
-Description
+# Geometric Dissolve
 
 :::tip
 **This is a patreon-only feature!** Subscribe to the [Patreon](https://www.patreon.com/poiyomi) at the $10 tier or higher to unlock it.

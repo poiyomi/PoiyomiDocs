@@ -1,6 +1,8 @@
 ---
 sidebar_position: 9
 title: Decals
+description: In Poiyomi Shaders, Decals are used to place images onto your UV with specific location, rotation, and blending.
+keywords: [decal, decals, decorative, decoration, sticker, logo, shape, blush, poiyomi, shader]
 toc_max_heading_level: 4
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
@@ -169,7 +171,7 @@ How much to shift the hue with surface angle. A value of `1` will give maximum h
 
 Enables Video Texture to project on the Decal.
 
-:::caution Warning
+:::warning
 This feature enables a Video Texture to appear on the Decal. It will only work if a Video Player is broadcasting a Global Video Texture property.
 :::
 

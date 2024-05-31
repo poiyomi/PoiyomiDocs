@@ -1,6 +1,8 @@
 ---
 sidebar_position: 4
 title: Details
+description: Details section provides options to apply additional textures and normals, often tiled, to the Material.
+keywords: [details, tile, tiling, normals, base color, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 

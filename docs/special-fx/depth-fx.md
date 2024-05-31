@@ -1,6 +1,8 @@
 ---
 sidebar_position: 8
 title: Depth FX
+description: Depth FX creates screen-space depth effects based on other meshes interacting with the Material. It is based on the distance between one object and another.
+keywords: [depth, fx, depth fx, buffer, texture, special fx, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
@@ -10,7 +12,7 @@ This effect relies on the [Depth Buffer/Depth Texture](https://docs.unity3d.com/
 
 To forcibly enable the depth buffer from an avatar, a reliable method is to add a realtime directional light to the scene, which will trigger the depth texture to be updated. A prefab called `DepthGet` is included in the Poiyomi Shaders package.
 
-:::caution
+:::warning
 Make sure to only enable the depth buffer when you need it! This can be a performance hit, and it's not always necessary.
 :::
 

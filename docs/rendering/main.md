@@ -1,10 +1,16 @@
 ---
 sidebar_position: 1
 title: Rendering
+description: The Rendering section sets various low-level properties that control how the shader is rendered. It directly influences how the Graphics Driver will interpret Poiyomi Shaders at runtime.
+keywords: [render, rendering, cull, culling, ztest, zwrite, z, offset, instancing, gpu, early, early z, vrc, fallback, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
-The rendering section provides various low-level options for controlling how the shader renders. Many of these options are set by the [Render Preset](/docs/general/render-preset.md) selected at the top of the shader, and need not be set manually, with the notable exception of Cull and VRC Fallback.
+The Rendering section provides various low-level options for controlling how the shader is rendered. This plays an important part in how the Graphics Driver will interpret the shader at runtime.
+
+:::info
+Many of the settings in this section are automatically-configured depending on which [Rendering Preset](/docs/general/render-preset.md) you select.
+:::
 
 ## Cull
 
@@ -78,16 +84,24 @@ Enables or disables GPU instancing for this material. GPU instancing allows for 
 
 Learn more at [Unity's documentation.](https://docs.unity3d.com/Manual/GPUInstancing.html)
 
+## Early Z
+
+- `Type`: **Checkbox**
+
+Enables Early Z mode on the Material. This makes the Mesh first only render to Depth, culling anything behind the main Front Face.
+
+This option is commonly used to solve Stacking Transparency problems.
+
 ## VRC Fallback
 
 - `Type`: **Dropdown**
 
 Defines what fallback shader to use if shaders are hidden on an avatar. This includes a large variety of shaders, with some of the more useful options being:
 
-- Hidden: Material disappears if shaders are hidden (useful for things that are hidden by shader!)
-- Standard/Opaque: Opaque standard shader material
-- Standard/Cutout: Cutout standard shader material, drawing from base texture alpha
-- Toon/Opaque: Opaque Toon-lit (flat lit) shader material
-- Toon/Cutout: Cutout Toon-lit (flat lit) shader material, drawing from base texture alpha
+- `Hidden`: Material disappears if shaders are hidden (useful for things that are hidden by shader!)
+- `Standard/Opaque`: Opaque standard shader material
+- `Standard/Cutout`: Cutout standard shader material, drawing from base texture alpha
+- `Toon/Opaque`: Opaque Toon-lit (flat lit) shader material
+- `Toon/Cutout`: Cutout Toon-lit (flat lit) shader material, drawing from base texture alpha
 
-For more information on VRC fallback shaders, including what specific properties will be copied to the fallback shader, see the [VRC documentation for the Shader Fallback System.](https://docs.vrchat.com/docs/shader-fallback-system)
+For more information on VRC fallback shaders, including what specific properties will be copied to the fallback shader, read the [VRC Creators Documentation for the Shader Fallback System](https://creators.vrchat.com/avatars/shader-fallback-system/).

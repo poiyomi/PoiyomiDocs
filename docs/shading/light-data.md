@@ -1,6 +1,8 @@
 ---
 sidebar_position: 1
 title: Light Data
+description: Light Data provides technical properties that change how Lighting affect the Material. It directly influences the functionality of your Shading settings.
+keywords: [light, data, light data, lighting, shading, ao, shadow, mapping, masks, color, grayscale, directional, influence, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 

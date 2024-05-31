@@ -1,24 +1,28 @@
 ---
 sidebar_position: 1
-title: Grabpass
+title: Grab Pass
+description: Grab Pass Transparency takes a screenshot of the scene every frame to create special effects, such as refraction and blur.
+keywords: [grab, pass, grabpass, transparency, refraction, blur, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
-:::caution
-Grabpass is an expensive feature - it has to take a screenshot every frame. This will always cause some amount of performance hit, so use it judiciously.
+Grab Pass transparency uses a Grab Pass, which takes a screenshot of the scene every frame to create special effects like refraction and blur. It's a powerful, but expensive feature that enables unique effects.
+
+To use Grab Pass, select the Shader variant `.poiyomi/Poiyomi Toon Grab Pass`. Included in this Shader variant, a new Grab Pass category will appear with the following settings shown below.
+
+:::warning
+Grab Pass is an expensive feature - it has to take a screenshot every frame. This will always cause some amount of performance hit, so use it judiciously!
 :::
 
-Grabpass transparency uses a grabpass, effectively a screenshot of the scene, to create special effects like refraction and blur. It's a powerful but expensive feature that enables unique effects.
+## Grab Pass Transparency
 
-## Grabpass Transparency
-
-The main section defines how the grabpass is blended with the scene.
+The main section defines how the Grab Pass is blended with the scene.
 
 ### Use Alpha
 
 - `Type`: **Checkbox**
 
-Directly uses the alpha of the material to define the blend amount (how much the grabpass color is blended with the base color).
+Directly uses the alpha of the material to define the blend amount (how much the Grab Pass color is blended with the base color).
 
 If enabled, **Blend Map** and **Blend Amount** will not be used.
 
@@ -26,13 +30,13 @@ If enabled, **Blend Map** and **Blend Amount** will not be used.
 
 - `Type`: **Data** Texture (sRGB **OFF**)
 
-Texture that defines where the grabpass should be blended. White means the grabpass is fully blended, black means the grabpass is not blended at all. Can be thought of as an inverse opacity map.
+Texture that defines where the Grab Pass should be blended. White means the Grab Pass is fully blended, black means the Grab Pass is not blended at all. Can be thought of as an inverse opacity map.
 
 ### Blend Amount
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
-Scaler for the blend amount. The grabpass color is blended with the base color by this amount. If a blend map is used, this should generally be set to 1.0.
+Scaler for the blend amount. The Grab Pass color is blended with the base color by this amount. If a blend map is used, this should generally be set to 1.0.
 
 ### Source/Destination Blend
 
@@ -48,7 +52,7 @@ For traditional transparent blending, `SrcFactor` should be set to `SrcAlpha` an
 
 Enables or disables refraction.
 
-Refraction is a special effect that makes the grabpass appear to be refracted by the surface. This is useful for things like glass, crystals, and water. 
+Refraction is a special effect that makes the Grab Pass appear to be refracted by the surface. This is useful for things like glass, crystals, and water. 
 
 ### Refraction
 
@@ -68,9 +72,9 @@ A refractive index of less than 1.0 is not physically accurate, but it can be us
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
-Defines how much chromatic abberation to add. In areas where there is more refraction, more chromatic aberration is added.
+Defines how much chromatic aberration to add. In areas where there is more refraction, more chromatic aberration is added.
 
-Chromatic abberation separates certain colors by different amounts. This recreates a physical phenomenon in imperfect lenses, and can be aesthetically pleasing.
+Chromatic aberration separates certain colors by different amounts. This recreates a physical phenomenon in imperfect lenses, and can be aesthetically pleasing.
 
 Note that if Chromatic Aberration is enabled, the Blur function will be disabled.
 

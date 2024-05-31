@@ -1,8 +1,9 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require("prism-react-renderer/themes/github");
-const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+const {themes} = require('prism-react-renderer');
+const lightTheme = themes.github;
+const darkTheme = themes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -43,18 +44,24 @@ const config = {
             from: '/outlines/main',
             to: '/outlines/',
           },
-          {
-            from: "/modifiers/distortion-uv",
-            to: "/modifiers/uvs/distortion-uv",
-          },
-          {
-            from: "/modifiers/panosphere-uv",
-            to: "/modifiers/uvs/panosphere-uv",
-          },
-          {
-            from: "/modifiers/polar-uv",
-            to: "/modifiers/uvs/polar-uv",
-          },
+          //
+          // HIDDEN PAGES COMMENTED OUT. RE-EXPOSE THESE WHEN THESE PAGES ARE COMPLETE.
+          //
+          //{
+          //  from: "/modifiers/distortion-uv",
+          //  to: "/modifiers/uvs/distortion-uv",
+          //},
+          //{
+          //  from: "/modifiers/panosphere-uv",
+          //  to: "/modifiers/uvs/panosphere-uv",
+          //},
+          //{
+          //  from: "/modifiers/polar-uv",
+          //  to: "/modifiers/uvs/polar-uv",
+          //},
+          //
+          // END OF HIDDEN REDIRECTS
+          //
           {
             from: "/modifiers/parallax",
             to: "/modifiers/uvs/parallax",
@@ -67,6 +74,11 @@ const config = {
             from: "/post-processing/main",
             to: "/modifiers/post-processing/main",
           },
+          {
+            // Redirect old VCC Webpage to new "Download & Install" page.
+            from: "/poiyomitoonvcc",
+            to: "/download/",
+          }
           // Redirect from multiple old paths to the new path
           // {
           //   to: '/docs/newDoc2',
@@ -111,10 +123,13 @@ const config = {
       docs: {
         sidebar: {
           hideable: true,
+          autoCollapseCategories: true,
         },
       },
       colorMode: {
         defaultMode: "dark",
+        disableSwitch: false,
+        respectPrefersColorScheme: true
       },
       tableOfContents: {
         minHeadingLevel: 2,
@@ -125,7 +140,7 @@ const config = {
           alt: "Poiyomi Text Logo",
           src: "img/logo.svg",
           width: 44,
-          height: 32
+          height: 44,
         },
         items: [
           {
@@ -134,15 +149,19 @@ const config = {
             position: "left",
             label: "Docs",
           },
-          { to: "/blog", label: "Blog: Updates & Tips", position: "left" },
           {
-            to: "poiyomitoonvcc", 
-            label: "Poiyomi Toon VCC",
-            position: "left",
+            to: "/download",
+            label: "Download & Install",
+            position: "left"
           },
           {
-            href: "https://twitter.com/poiyomi",
-            label: "Twitter",
+            to: "/blog",
+            label: "Blog: Updates & Tips",
+            position: "left"
+          },
+          {
+            href: "https://x.com/poiyomi",
+            label: "Twitter / X",
             position: "right",
           },
           {
@@ -158,9 +177,132 @@ const config = {
         ],
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: lightTheme,
+        darkTheme: darkTheme,
       },
+      footer: {
+        logo: {
+          alt: "Poiyomi Logo",
+          src: "img/circle_logo.svg",
+          width: 80,
+          height: 80,
+        },
+        links: [
+          {
+            title: "Docs",
+            items: [
+              {
+                label: "Introduction",
+                to: "/intro",
+              },
+              {
+                label: "Download & Install",
+                to: "/download",
+              },
+              {
+                label: "General Information",
+                to: "/general",
+              },
+              {
+                label: "Color & Normals",
+                to: "/color-and-normals",
+              },
+              {
+                label: "Shading",
+                to: "/shading",
+              },
+              {
+                label: "Outlines",
+                to: "/outlines",
+              },
+              {
+                label: "Special FX",
+                to: "/special-fx",
+              },
+              {
+                label: "AudioLink",
+                to: "/audio-link",
+              },
+              {
+                label: "Global Modifiers & Data",
+                to: "/modifiers",
+              },
+              {
+                label: "Grab Pass",
+                to: "/grabpass",
+              },
+              {
+                label: "Rendering",
+                to: "/rendering/main"
+              },
+              {
+                label: "Thry Editor",
+                to: "/thryeditor/enduser",
+              }
+            ],
+          },
+          {
+            title: "Community",
+            items: [
+              {
+                label: "Discord",
+                href: "https://discord.gg/poiyomi",
+              },
+              {
+                label: "Twitter / X",
+                href: "https://x.com/poiyomi",
+              },
+              {
+                label: "GitHub",
+                href: "https://github.com/poiyomi",
+              },
+              {
+                label: "BOOTH",
+                href: "https://poiyomi.booth.pm/",
+              },
+            ],
+          },
+          {
+            title: "Where to Download",
+            items: [
+              {
+                label: "GitHub Repository",
+                href: "https://github.com/poiyomi/PoiyomiToonShader",
+              },
+              {
+                label: "BOOTH Listing",
+                href: "https://poiyomi.booth.pm/items/4841309",
+              },
+              {
+                label: "VCC Repository",
+                href: "vcc://vpm/addRepo?url=https%3A%2F%2Fpoiyomi.github.io/vpm/index.json",
+              },
+            ],
+          },
+          {
+            title: "About",
+            items: [
+              {
+                label: "Blog",
+                to: "/blog",
+              },
+              {
+                label: "FAQ / Troubleshooting",
+                to: "/general/faq",
+              },
+              {
+                label: "Terms of Service",
+                to: "/terms-of-service",
+              },
+              {
+                label: "Credits",
+                to: "/credits",
+              },
+            ],
+          },
+        ],
+        copyright: `Copyright © ${new Date().getFullYear()} Poiyomi Inc. Built with Docusaurus.`,
+      }
     }),
 };
 

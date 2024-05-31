@@ -1,6 +1,8 @@
 ---
 sidebar_position: 1
 title: UV Tile Discard
+description: UV Tile Discard provides an efficient way to toggle portions of a model on and off at runtime by placing portions of the Model on different UV Tiles.
+keywords: [uv, uv tile discard, uv tile, uv toggle, special fx, effect, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo' 
 
@@ -8,7 +10,7 @@ UV Tile Discard (previously known as UDIM Discard) provides an efficient way to 
 
 Traditionally, UDIMs are used to create a grid of tiles, with specific textures placed on different tiles. UV Tile Discard simply uses the concept of UV tiles, not doing anything with any textures. You can learn more about UV Tiles and UDIMs from [Foundry Learn](https://learn.foundry.com/modo/901/content/help/pages/uving/udim_workflow.html).
 
-:::caution Known Issues with Screen-Space AO
+:::warning Known Issues with Screen-Space AO
 UV Tile Discard can have some side-effects in Worlds that use a heavy amount of Screen-Space AO Post Processing. If a Tile is discarded in a World with this, heavy shadows will be visible around the discarded area.
 
 Although many Worlds in VRChat do not utilize Screen-Space AO, a small percentage still do. Keep this in mind when using this feature.
@@ -34,9 +36,18 @@ Defines how the discarding is performed. Generally, this should be set to `Verte
 
 - `Type`: **Checkboxes**
 
-Defines which UV tiles to discard. These are organized into 4 rows (v) of 4 tiles (u), defining a grid of 16 discard tiles. The bottom left is the origin, and the top right is the maximum. The bottom left tile (0,0) is where most UV mapping is performed.
+Defines which UV tiles to discard. These are organized into 4 rows (`v`) of 4 tiles (`u`), defining a grid of 16 discard tiles. The bottom left is the origin, and the top right is the maximum. The bottom left tile (`0,0`) is where most UV mapping is performed.
 
-When a box is checked, that tile is discarded. When animating these checkboxes, each one is its own independent property.
+When a box is checked, that tile is discarded. When animating these checkboxes, each one is it's own independent property.
+
+**Table Reference:**
+
+| Row | Column 0 | Column 1 | Column 2 | Column 3 |
+| :---: | :---: | :---: | :---: | :---: |
+| **v = 3** | `3,0` | `3,1` | `3,2` | `3,3` |
+| **v = 2** | `2,0` | `2,1` | `2,2` | `2,3` |
+| **v = 1** | `1,0` | `1,1` | `1,2` | `1,3` |
+| **v = 0** | `0,0` | `0,1` | `0,2` | `0,3` |
 
 
 ## UV Tile Setup

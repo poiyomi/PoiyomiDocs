@@ -1,36 +1,40 @@
 ---
 sidebar_position: 0
-slug: /
-title: Intro
+title: Introduction
+description: Introduction to the Poiyomi Shaders Documentation.
+keywords: [poiyomi, shader, shaders, docs, documentation, unity, vrchat]
+hide_table_of_contents: true
 ---
-import PoiVideo from '@site/src/components/PoiVideo'
+import PoiVideo from '@site/src/components/PoiVideo';
 
-<head>
-  <meta name="description" content="Poiyomi Shader Docs!"/>
+Welcome! This website provides all the information you need to know about Poiyomi Shaders and how to use it. This includes Documentation on each feature, as well as other technical functions and utilities included.
 
-  <meta itemprop="name" content="Poiyomi Shaders"/>
-  <meta itemprop="description" content="Poiyomi Shader Docs!"/>
-  <meta itemprop="image" content="https://www.poiyomi.com/assets/images/CirclelogoBig-3d44028a616231563c23feda8225278a.png"/>
+:::info Heads Up
+Poiyomi Shaders is primarily built for usage in VRChat. However, it may be used in non-VRChat projects provided certain conditions are met. Read below for more information.
+:::
 
-  <meta property="og:url" content="https://www.poiyomi.com"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:title" content="Poiyomi Shaders"/>
-  <meta property="og:description" content="Poiyomi Shader Docs!"/>
-  <meta property="og:image" content="https://www.poiyomi.com/assets/images/CirclelogoBig-3d44028a616231563c23feda8225278a.png"/>
+## Getting Started
 
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Poiyomi Shaders"/>
-  <meta name="twitter:description" content="Poiyomi Shader Docs!"/>
-  <meta name="twitter:image" content="https://www.poiyomi.com/assets/images/CirclelogoBig-3d44028a616231563c23feda8225278a.png"/>
-</head>
+### VRChat
 
-## [✨ Join the Discord! ✨](https://discord.gg/poiyomi)
+Make sure you refer to the [VRChat Creators Documentation](https://creators.vrchat.com/sdk/) for setting up your Project and the SDK in Unity.
 
-Poiyomi Toon is a **free**, feature-rich toon and PBR shader for Unity, with a specific focus on usage with VRChat.
+After doing so, simply follow the instructions found in [Download & Install](/download) to learn how to begin using the Shader in your Project.
 
-On the sidebar, you'll find documentation for different parts of the shader.
+<a class="button button--primary" href="/download">Download & Install</a>
 
-:::caution
+### Other Games
+
+If you are a Game Developer or User wishing to use Poiyomi Shaders on a non-VRChat Project, here are the requirements:
+- Supported Unity Version: `2022.3`
+- Rendering Pipeline: `Built-in Render Pipeline (BIRP)`
+- Build Target: `Windows, Mac, Linux`
+
+## Documentation
+
+On the sidebar, you'll find Documentation for each different feature of the shader. All features of the Shader in the UI will redirect here for further reading.
+
+:::warning
 *This documentation is geared towards* **Poiyomi 8.0 and newer**.
 
 If you're using Poiyomi 7.3 or earlier, this documentation may not apply at all. [**An upgrade guide is available for moving from Poiyomi 7.0 to 8.0+**](/docs/general/v7-upgrade.md).
@@ -40,37 +44,8 @@ If you're using Poiyomi 7.3 or earlier, this documentation may not apply at all.
 Poiyomi 9.0 is out now. If you are upgrading from 8.0 to 9.0, a lot of the existing documentation still applies to some extent. Notes are provided if otherwise. [**An upgrade guide is available for moving from Poiyomi 8.0 to 9.0+**](/docs/general/v8-to-v9-upgrade.md)
 :::
 
-## Downloads
+### Completion Status
 
-### Free
-
-The latest version of Poiyomi Toon (free) is available in the [Poiyomi Discord server](https://discord.gg/poiyomi) in the #free-shader channel!
-
-A stable, but likely outdated version of Poiyomi Toon is available on [GitHub](https://github.com/poiyomi/PoiyomiToonShader).
-
-### [Patreon](https://www.patreon.com/poiyomi)
-
-The Pro version of the shader is available on the [Poiyomi Patreon](https://www.patreon.com/poiyomi).
-
-Features that are specific to the Pro version of the shader will be indicated on their respective pages.
-
-## Completion Status
-
-:::info
-This documentation is a work in progress! If you have any questions, or if you think you've found an issue, please [join the Discord](https://discord.gg/poiyomi) and ask! Our goal is to have a fully-fleshed out documentation site with rich visual examples and explanations for all of the shader features.
+This Documentation is continuously being developed! If you have any questions, or if you think you've found an issue, please [join the Discord](https://discord.gg/poiyomi) and ask! Our goal is to have a fully-fleshed out documentation site with rich visual examples and explanations for all of the shader features.
 
 During the creation of this documentation, however, priority is placed on getting text-based documentation complete first, followed by images and videos, so don't panic if it seems like there's a lot of text for now!
-:::
-
-| Section                 | Status              |
-| ----------------------- | ------------------- |
-| General Shader Settings | 📓  Text Complete    |
-| Color & Normals         | 📓  Text Complete    |
-| Shading                 | 📓  Text Complete    |
-| Outlines                | 📓  Text Complete    |
-| Audio Link              | 📓  Text Complete    |
-| Special FX              | ⚠️  Work-In-Progress |
-| Modifiers               | ⚠️  Work-In-Progress |
-| Post Processing         | 📓  Text Complete    |
-| Rendering               | 📓  Text Complete    |
-| Grab Pass               | 📓  Text Complete    |

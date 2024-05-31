@@ -1,12 +1,18 @@
 ---
-sidebar_position: 9
+sidebar_position: 11
 title: Environmental Rim
+description: Environmental Rim simulates low-angle reflections from the surrounding environment, drawing from the scene's reflection probes.
+keywords: [environment, environmental, rim, environmental rim, lighting, shading, reflection, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
-Environmental rim is a rim lighting effect that simulates low-angle reflections from the surrounding environment. It draws from the scene's reflection probes, and can be used to add a realistic edge lighting that reacts dynamically to the environment.
+Environmental Rim is a rim lighting effect that simulates low-angle reflections from the surrounding environment. It draws from the scene's reflection probes, and can be used to add a realistic edge lighting that reacts dynamically to the environment.
 
 This effect is similar to the rim glow seen in the realistic lighting mode and the Unity Standard Shader, especially at high Smoothness values.
+
+<PoiVideo url='/vid/shading/EnvironmentalRim.mp4'/>
+
+*Quick demonstration of Environmental Rim. Notice how with reduced Blur, it slightly shows a reflection from the World.*
 
 ## Mask
 

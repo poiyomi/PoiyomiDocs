@@ -1,8 +1,12 @@
 ---
 sidebar_position: 1
 title: Global Masks
+description: Global Masks are shader-wide texture channels that are used for masking effects in almost every part of the shader, using Textures and Vertex Colors.
+keywords: [global, mask, global mask, masking, texture, vertex, color, vertex color, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
+
+# Global Masks
 
 Global Masks are shader-wide texture channels that can be used for masking effects in almost every part of the shader. Global Mask channels can use information from Textures, Vertex Colors, or from other sections of the shader, such as Dissolve.
 
@@ -165,7 +169,7 @@ Choose how the channel appears in Mirrors.
 
 Enables control of how your Global Masks appear in VRChat Cameras.
 
-:::caution VRChat-only Feature
+:::warning VRChat-only Feature
 Camera Masking will only exclusively work in VRChat.
 :::
 

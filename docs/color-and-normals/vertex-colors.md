@@ -1,6 +1,8 @@
 ---
 sidebar_position: 6
 title: Vertex Colors
+description: Vertex Colors provide options for using Vertex Colors from your Mesh to affect the Base Color and Alpha.
+keywords: [vertex, colors, vertex colors, linear, alpha, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 

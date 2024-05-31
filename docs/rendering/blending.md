@@ -1,10 +1,12 @@
 ---
 sidebar_position: 2
 title: Blending
+description: Blending defines how the shader should blend on top of pixels that are already drawn, typically set by the Rendering Preset.
+keywords: [blending, render, rendering, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
-The Blending section defines how the shader should blend on top of pixels that are already drawn. These options are set by the [Render Preset](/docs/general/render-preset.md) selected at the top of the shader, and almost always need not be set manually.
+The Blending section defines how the shader should blend on top of pixels that are already drawn. These options are set by the [Rendering Preset](/docs/general/render-preset.md) selected at the top of the shader, and almost always need not be set manually.
 
 ## Blending Options
 
