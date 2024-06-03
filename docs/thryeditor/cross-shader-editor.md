@@ -9,7 +9,7 @@ The Cross Shader Editor, first introduced with Poiyomi 9.0, allows the user to e
 
 ## Prerequisites
 
-**Before using the Cross-Shader Editor, you must know that any Materials you wish to multi-edit are using Poiyomi Shaders!** The Cross Shader Editor does not support editing Materials that use a different shader than another.
+**Before using the Cross Shader Editor, you must know that any Materials you wish to multi-edit are using Poiyomi Shaders!** The Cross Shader Editor does not support editing Materials that use a different shader than another.
 
 ## Opening the Cross Shader Editor
 
@@ -28,12 +28,14 @@ Once they're all linked up, anything you change on this Panel will directly affe
 In your Unity Hierarchy, you can `Right-Click` on your Avatar. In the context menu, go to `Thry -> Materials -> Open All in Cross Shader Editor`. This will open ALL Poiyomi Materials and automatically list them in the Cross Shader Editor Panel.
 
 :::warning
-This option does not work if your Avatar is using different Material Variants rather than a singular one! Make sure your Avatar is using the same Material Variant before using this method.
+This option does not work if your Avatar is using different Shaders!
 :::
 
 ### From Your Files
 
 In your Unity Project Files, you can use `Ctrl + Left-Click` to multi-select Materials. After doing so, you can `Right-Click` and do `Thry -> Materials -> Open in Cross Shader Editor`. This will summon the Panel with all selected Materials already pre-added to the Editor.
+
+This also works if you `Right-Click` on a Folder and select the same option. It would open all Shaders inside the folder in the Cross Shader Editor.
 
 ## Usage
 
