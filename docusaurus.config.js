@@ -218,47 +218,51 @@ const config = {
         },
         links: [
           {
-            title: "Docs",
+            title: "Featured Pages",
             items: [
-              {
-                label: "Introduction",
-                to: "/intro",
-              },
               {
                 label: "Download & Install",
                 to: "/download",
               },
               {
-                label: "General Information",
-                to: "/general",
+                label: "Locking and Animation",
+                to: "/general/locking",
               },
               {
                 label: "Color & Normals",
-                to: "/color-and-normals",
+                to: "/color-and-normals/main",
               },
               {
                 label: "Shading",
-                to: "/shading",
+                to: "/shading/main",
+              },
+              {
+                label: "Reflections & Specular",
+                to: "/shading/reflections-and-specular",
               },
               {
                 label: "Outlines",
                 to: "/outlines",
               },
               {
-                label: "Special FX",
-                to: "/special-fx",
+                label: "UV Tile Discard",
+                to: "/special-fx/uv-tile-discard",
+              },
+              {
+                label: "Emission",
+                to: "/special-fx/emission",
+              },
+              {
+                label: "Glitter / Sparkle",
+                to: "/special-fx/glitter",
               },
               {
                 label: "AudioLink",
                 to: "/audio-link",
               },
               {
-                label: "Global Modifiers & Data",
-                to: "/modifiers",
-              },
-              {
-                label: "Extended Features",
-                to: "/extended-features",
+                label: "Global Masks",
+                to: "/modifiers/global-masks",
               },
               {
                 label: "Rendering",
