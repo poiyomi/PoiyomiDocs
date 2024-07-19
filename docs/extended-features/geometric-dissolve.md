@@ -1,13 +1,15 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 title: Geometric Dissolve
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
-# Geometric Dissolve
+# Geometric Dissolve <span class="badge badge--primary">Pro</span>
 
-:::tip
-**This is a patreon-only feature!** Subscribe to the [Patreon](https://www.patreon.com/poiyomi) at the $10 tier or higher to unlock it.
+Geometric Dissolve is an advanced feature that expands beyond a typical Dissolve in the main shader. It uses the 3D Mesh to manipulate the vertices, creating an advanced 3D dissolve animation.
+
+:::info Pro Only
+**This Feature is only available in Poiyomi Pro!** Subscribe to the [Patreon](https://www.patreon.com/poiyomi) at the $10 tier or higher to access it.
 :::
 
 # Shape Type

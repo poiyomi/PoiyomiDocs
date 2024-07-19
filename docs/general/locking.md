@@ -18,6 +18,10 @@ Locked materials are *significantly* more optimized than their unlocked counterp
 When uploading to VRChat, the locking process happens automatically for any Materials used in an Avatar or World when a build/upload is triggered. This prevents unlocked materials from being uploaded with the final asset.
 
 **If you are uploading for the first time, a one-time message will appear informing you that the Auto-Lock is being initiated.**
+
+<a target="_blank" href="/img/general/Auto-Lock.png">
+<img src="/img/general/Auto-Lock.png" alt="Auto-Lock Dialogue" width="400px"/>
+</a>
 :::
 
 ## Marking Properties for Animation

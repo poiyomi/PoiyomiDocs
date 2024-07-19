@@ -34,7 +34,15 @@ const config = {
           },
           {
             from: '/grab-pass/grabpass',
-            to: '/grabpass/',
+            to: '/extended-features/grabpass',
+          },
+          {
+            from: '/grabpass',
+            to: '/extended-features/grabpass',
+          },
+          {
+            from: '/geometric-dissolve',
+            to: '/extended-features/geometric-dissolve',
           },
           {
             from: "/color-and-normals/global-themes",
@@ -117,6 +125,23 @@ const config = {
     ],
   ],
 
+  themes: [
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+      {
+        indexDocs: true,
+        indexBlog: true,
+        indexPages: false,
+        docsRouteBasePath: "/",
+        blogRouteBasePath: "/blog",
+        language: "en",
+        hashed: true,
+        searchBarPosition: "auto",
+      },
+    ],
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -174,6 +199,10 @@ const config = {
             label: "GitHub",
             position: "right",
           },
+          {
+            type: "search",
+            position: "right",
+          },
         ],
       },
       prism: {
@@ -228,8 +257,8 @@ const config = {
                 to: "/modifiers",
               },
               {
-                label: "Grab Pass",
-                to: "/grabpass",
+                label: "Extended Features",
+                to: "/extended-features",
               },
               {
                 label: "Rendering",

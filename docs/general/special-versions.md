@@ -36,7 +36,7 @@ As Outline Early renders the Outline twice, it can have a slight performance imp
 
 - `.poiyomi/Poiyomi Toon Grab Pass`
 
-The Grab Pass Shader is used for specialized effects that require taking a screenshot every frame in order for it to render. See [Grab Pass](../grabpass/grabpass.md) for more info.
+The Grab Pass Shader is used for specialized effects that require taking a screenshot every frame in order for it to render. See [Grab Pass](../extended-features/grabpass.md) for more info.
 
 Because this shader version uses a Grab Pass, it has the strongest performance impact as it has to take a screenshot every frame to render.
 
@@ -47,7 +47,7 @@ Because this shader version uses a Grab Pass, it has the strongest performance i
 The Poiyomi World Shader includes the necessary Global Illumination components needed for it to render properly in Worlds with Baked Lighting. It is primarily targeted for those who intend to use features found in Poiyomi Shaders in their VRChat Worlds.
 
 :::tip Optimized for Worlds SDK users only
-Poiyomi World matches the same features as the normal Poiyomi Toon Shader, with the only difference being the inclusion of Baked Lighting.
+Poiyomi World matches the same features as the normal Poiyomi Toon Shader, with the only difference being that it includes Global Illumination support.
 
 We recommend only using this Shader if you are using the Worlds SDK.
 :::

@@ -6,7 +6,11 @@ description: Thry Editor is the underlying framework that powers the User Interf
 keywords: [thry, editor, thryeditor, thryrallo, ui, poiyomi, shader]
 ---
 
-# Thry Editor
+<div style={{textAlign: 'center', marginTop: '20px', marginBottom: '20px', marginLeft: '70px', marginRight: '70px'}}>
+<a target="_blank" href="/img/thryeditor/ThryEditor-Test-Logo.png">
+<img src="/img/thryeditor/ThryEditor-Test-Logo.png" alt="ThryEditor Placeholder Logo" width="600px"/>
+</a>
+</div>
 
 Authored by [Thryrallo](https://github.com/Thryrallo), Thry Editor (short for "**Thry**rallo **Editor**") is the underlying framework that powers the User Interface of the Shader. It serves as the core Shader Inspector and Editor for the all the features used across Poiyomi Shaders.
 
@@ -16,42 +20,44 @@ Not only does it serve as the primary framework for the Material User Interface,
 
 ### Search
 
-Filter the properties by name. Indicated by the Magnifying Glass icon. Click on it to expose a text input field.
+Filters the properties by name, indicated by the exposed text field on the top header. Start typing in the field to begin searching.
 
 When typing in a keyword, the UI will only show headers or properties with the searched name. The user interface will filter out any modules that do not match the keyword you search.
 
-<a target="_blank" href="/img/thryeditor/search.png">
-<img src="/img/thryeditor/search.png" alt="Search Feature" width="700px"/>
+<a target="_blank" href="/img/thryeditor/search-new.png">
+<img src="/img/thryeditor/search-new.png" alt="Search Feature" width="800px"/>
 </a>
+
+*Example of the Search feature, showing only the headers that match the word "matcap"*
 
 ### Presets
 
 Left click opens the presets UI. Here you can select a number of presets and see live how they change your material. Afterwards you can either apply the presets or discard the changes.
 
-<a target="_blank" href="/img/thryeditor/presets.png">
-<img src="/img/thryeditor/presets.png" alt="Presets Feature" width="700px"/>
+<a target="_blank" href="/img/thryeditor/Thry_PresetsList-new.png">
+<img src="/img/thryeditor/Thry_PresetsList-new.png" alt="Presets Feature" width="800px"/>
 </a>
 
-*Click the Presets Icon to open the Presets List.*
+*Click the Presets button to open the Presets List.*
 
-Right click opens the quick presets UI. Here you can only select one preset, which is applied immediately.
+Right Clicking opens the Quick Presets context menu. Here you can only select one preset, which is applied immediately.
 
-<a target="_blank" href="/img/thryeditor/presets2.png">
-<img src="/img/thryeditor/presets2.png" alt="Quick Presets Feature" width="700px"/>
+<a target="_blank" href="/img/thryeditor/Thry_QuickPresets.png">
+<img src="/img/thryeditor/Thry_QuickPresets.png" alt="Quick Presets Feature" width="700px"/>
 </a>
 
-*Right-Click the Presets Icon to quickly select a Preset.*
+*Right-Click the Presets button to quickly select a Preset.*
 
 You can also create your own Presets using this feature. [See the Documentation Page to learn more.](../thryeditor/presets)
 
 ### Shader Translator
 
-The shader translator is there to help you swap from one shader to an new one. Predefined property changes that map your settings from the old shader to the new one will adjust your material to match features as best as possible.
+The Shader Translator is there to help you swap from one shader to an new one. Predefined property changes that map your settings from the old shader to the new one will adjust your material to match features as best as possible.
 
-Simply click the button and select the old shader you changed from.
+[Shader Translator Information](./translator.md)
 
-<a target="_blank" href="/img/thryeditor/shadertranslator.png">
-<img src="/img/thryeditor/shadertranslator.png" alt="Shader Translator" width="700px"/>
+<a target="_blank" href="/img/thryeditor/Thry_Translator.png">
+<img src="/img/thryeditor/Thry_Translator.png" alt="Presets Feature" width="800px"/>
 </a>
 
 ### Material Linking
