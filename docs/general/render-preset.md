@@ -10,6 +10,10 @@ At the top of the shader, there is a dropdown called "Render Settings". This dro
 
 **This is always the most important step in your Avatar creation journey!**
 
+<a target="_blank" href="/img/general/RenderingPresets-new.png">
+<img src="/img/general/RenderingPresets-new.png" alt="Rendering Presets Dropdown Menu" width="700px"/>
+</a>
+
 ## Base Presets
 
 ### Opaque

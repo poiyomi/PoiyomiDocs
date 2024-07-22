@@ -92,7 +92,7 @@ This behavior is not a bug, it's behavior defined by Unity, beyond the control o
 
 | Property Name | Can be Renamed? | Property |
 |--|--|--|
-| `_Color`                  | ✔️ | [Main Color](docs/../../color-and-normals/main.md#color) |
+| `_Color`                  | ✔️ | [Main Color](docs/../../color-and-normals/main.md#color--alpha) |
 | `_MainTex_ST`             | ❌ | [Main Texture Tiling/Offset](docs/../../color-and-normals/main.md#main-texture) |
 | `_BumpMap_ST`             | ❌ | [Normal Map Tiling/Offset](docs/../../color-and-normals/main.md#normal-map) |
 | `_BumpScale`              | ✔️ | [Normal Map Intensity](docs/../../color-and-normals/main.md#normal-map) |
