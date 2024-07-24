@@ -25,20 +25,24 @@ By default the Anchor is the root of the GameObject. This can cause the lighting
 
 To prevent this, you can set the `Anchor Override` on all skinned mesh renderers to the same position. A recommended position is the center of the model, e.g. the `Chest` bone.
 
+<a target="_blank" href="/img/thryeditor/anchor.png">
+<img src="/img/thryeditor/anchor.png" alt="Anchor" width="700px"/>
+</a>
+
 Auto Set Anchor will automatically fill empty Anchor Overrides of Skinned Mesh Renderers on Avatar upload.
-`Auto Set Anchor`: Enable / Disable the feature.
-`Human Bone Anchor`: The bone to use as anchor. This is only works if the model is a humanoid.
-`Object Anchor Name`: The name of the object that is created as anchor.
+- `Auto Set Anchor`: Enable / Disable the feature.
+- `Human Bone Anchor`: The bone to use as anchor. This is only works if the model is a humanoid.
+- `Object Anchor Name`: The name of the object that is created as anchor.
 
 :::info First-Time Upload Dialogue
 When you begin to initiate an Upload for the first time, you will be greeted with a one-time message asking you to enable this feature.
 
-We highly recommend you click `Yes (Recommended)` if it shows up.
-:::
+We highly recommend you click `Yes (Recommended)` if this message shows up.
 
-<a target="_blank" href="/img/thryeditor/anchor.png">
-<img src="/img/thryeditor/anchor.png" alt="Anchor" width="700px"/>
+<a target="_blank" href="/img/general/bad-lighting-fix-message.png">
+<img src="/img/general/bad-lighting-fix-message.png" alt="ThryEditor Bad Lighting Auto-Fix Dialogue" width="400px"/>
 </a>
+:::
 
 ## Add On Modules
 

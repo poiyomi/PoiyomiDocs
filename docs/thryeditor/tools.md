@@ -12,7 +12,7 @@ Thry Editor includes some integrations that you may end up using while using Poi
 `Thry -> Shader Tools -> Fix Keywords`
 Enables / Disables Keywords on all materials depending on the float value of their properties.
 
-:::info
+:::warning
 The latest versions of Poiyomi Shaders do a much better handling of Shader Keywords. Therefore, you shouldn't ever need to use this function.
 
 **You should only Fix Keywords if you know what you are doing, or have been instructed to use it.**

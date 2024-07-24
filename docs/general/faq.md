@@ -43,7 +43,7 @@ If you are still running into issues, post some screenshots in the [Discord](htt
 
 This message indicates there was a problem with the Auto-Lock function. For context, your Materials must be locked in order to upload to VRChat in order to prevent unused features from being included.
 
-If this function fails to work and you get that message, ensure there are no scripts interfering with the Upload. Some tools and certain optimizers can interfere with this, even though they're not supposed to.
+If this function fails to work and you get that message, ensure there are no scripts interfering with the Upload. Some tools and certain optimizers can interfere with the optimizer, even though they're not supposed to.
 - Remove any third-party tools and Packages you suspect are interfering until the message no longer appears when uploading. If you find the culprit issue, we encourage you to inform the creator of said scripts/utilities that are interfering with the Auto-Lock so that it doesn't happen again.
 
 :::tip Manual Lock-In
@@ -107,15 +107,39 @@ In order to preview animations from Poiyomi Materials (such as Glitter or contin
 
 ### Can I use Poiyomi Shaders in World Projects?
 
-Yes! Make sure to select `.poiyomi/Poiyomi Toon World` as the shader so that it can receive and contribute to Global Illumination. This special shader variant includes all features in the Free version, with one minor difference; it exposes a category called `Shading -> Baked Lighting` that houses all the GI settings.
+Yes! Make sure to select `.poiyomi/Poiyomi Toon World` as the shader so that it can receive and contribute to Global Illumination. This special shader version includes all the same features in the Free version, but introduces the meta passes necessary for baking Global Illumination. Additionally, it exposes a category called `Shading -> Baked Lighting` that houses all the GI settings for the Material.
 
 You may want to consider setting it to Realistic Shading from the Shading settings so that it can look it’s best with Baked Lighting.
 
-### I've un-tagged a property that I don't want to be animated, but it still animates regardless. Why does it still animate while in Play Mode?
+### I've un-tagged a property that I don't want to be animated, but it still animates regardless when using an Emulator. Why does it still animate while in Play Mode?
 
-You may have left the Material Unlocked. When a Material is Unlocked, all animated properties, regardless of it's animation tag, are still exposed in Play Mode.
+You may have left the Material Unlocked! When a Material is Unlocked, all animated properties, regardless of it's animation tag, are still exposed in Play Mode.
 
 To test your Animator against animated properties that are no longer tagged with `A` or `RA`, Lock your Material(s) prior to starting Play Mode.
+
+### How can I quickly copy over the properties of a certain feature to a different Material?
+
+You can do this by clicking the 3 dots on the Header of the feature you wish to copy the properties of. Click on it, then hit `Copy`.
+
+<a target="_blank" href="/img/general/copy-module.png">
+<img src="/img/general/copy-module.png" alt="How to Copy a module's Properties" width="500px"/>
+</a>
+
+Then, go under the same sub-menu in your other material and hit `Paste` to apply the copied properties from the Unity clipboard.
+
+### Can I swap/animate texture slots?
+
+Due to Unity Editor limitations, you cannot do this as it can cause problems at runtime.
+
+While it is not possible to animate texture slots, Poiyomi Shaders has features that can make up for this. Try out using these modules:
+
+- [Decals](../color-and-normals/decals.md), a decorative feature. You can animate the `Alpha` slider to control the visibility of the Texture using a Decal.
+
+- [Dissolve](../special-fx/dissolve.md), a Special FX feature that can gradually introduce a different Texture through a visual transition.
+
+- [Geometric Dissove](../extended-features/geometric-dissolve.md). Like Dissolve, but uses your Mesh's Geometry to transition to a different Texture.
+
+- [UV Tile Discard](../special-fx/uv-tile-discard.md), to animate offsets when needed.
 
 ## Unity Editor
 
@@ -135,7 +159,13 @@ Without setting an `Anchor Override` on the meshes, Unity can sample the world's
 
 To fix this, we recommend assigning a Bone (such as the `Chest`) from your Armature into the `Anchor Override` on all Meshes.
 
-**ThryEditor will run this automatic fix to you if there's no Anchor Override set. A one-time "Bad Lighting Fix" message will appear when Uploading for the first time. We recommend you to keep it enabled when prompted.**
+:::tip
+ThryEditor will run this automatic fix to you if there's no Anchor Override set. A one-time "Bad Lighting Fix" message (Example below) will appear when Uploading for the first time. We recommend you to keep it enabled if prompted.
+
+<a target="_blank" href="/img/general/bad-lighting-fix-message.png">
+<img src="/img/general/bad-lighting-fix-message.png" alt="ThryEditor Bad Lighting Auto-Fix Dialogue" width="400px"/>
+</a>
+:::
 
 ### Why can't I use Poiyomi Shaders on Quest?
 
@@ -147,32 +177,32 @@ Quest and Android hardware is underpowered and doesn't support features that Poi
 
 ### What is the recommended SDK and Unity Version to use with Poiyomi Shaders?
 
-As of May 2024, we recommend `VRChat SDK v3.5.0 or newer` in order to use Poiyomi Shaders.
+As of May 2024, we recommend VRChat SDK `v3.5.0` or newer in order to use Poiyomi Shaders. Ensure the VRChat Creator Companion App is the latest version in order to access the latest SDKs.
 
 For the Unity Version, we currently actively support Unity 2022. To learn what specific version you should use, refer to the [VRC Creators Documentation](https://creators.vrchat.com/sdk/upgrade/current-unity-version/).
 
 ## Other Resourceful Info
 
-### How can I test my Lighting in the Unity Editor, without having to Upload and test in the VRChat Client?
+### How can I test my Lighting in the Unity Editor without having to Upload and test in the VRChat Client?
 
 We recommend **Haï Lightbox Viewer**, a Utility that simulates your Avatar's Shading and Lighting Behavior in various different Scenes, all at once. This is an excellent tool that can give a visual representation of how your Shading and Lighting setup is expected to be shown as in the client.
 
-[You can download Haï Lightbox Viewer here.](https://github.com/hai-vr/lightbox-viewer?tab=readme-ov-file#lightbox-viewer)
+[You can download Haï Lightbox Viewer here.](https://docs.hai-vr.dev/docs/products/lightbox-viewer)
 
 ### Why does my Avatar get super bright in some Worlds?
 
-This is generally because of additive lights which add up. If you want to set a max overall brightness for additive lights, hit the preset button at the top left and select maximum add intensity of 1. You can change the max value in the light data section.
+This is generally because of additive lights which add up. If you want to set a max overall brightness for additive lights, hit the `Presets` button at the top left of the Material UI and select `Maximum Add Intensity of 1`. You can change the max value in the `Light Data` section.
 
 ### Curated Tools
 
 Here is a list of recommended plugins and tools that we use when building our Avatars, with or without Poiyomi Toon Shader:
 
 **MUST HAVES:**
-- **Haï Lightbox Viewer:** Test your Avatar’s lighting behavior in the Unity Editor. Highly Recommended for testing Poiyomi’s lighting behavior in various conditions! [Download Haï Lightbox Viewer](https://github.com/hai-vr/lightbox-viewer)
+- **Haï Lightbox Viewer:** Test your Avatar’s lighting behavior in the Unity Editor. Highly Recommended for testing Poiyomi’s lighting behavior in various conditions! [Download Haï Lightbox Viewer](https://docs.hai-vr.dev/docs/products/lightbox-viewer)
 
 - **Gesture Manager:** A lightweight and powerful Emulator, allowing you to test your Avatar’s animations and toggles directly in the Editor. [Download Gesture Manager](https://github.com/BlackStartx/VRC-Gesture-Manager)
 
-- **Thry’s VRC Avatar Performance Tools:** Texture Memory calculator that measures the VRAM consumption of your Avatar’s Textures, exposing greater detail on how your Avatar impacts other users in VRChat. [Download VRC Avatar Performance Tools](https://github.com/Thryrallo/VRC-Avatar-Performance-Tools)
+- **Thry’s VRC Avatar Performance Tools:** Texture Memory calculator that measures the VRAM consumption of your Avatar’s Textures and Mesh, exposing greater detail on how your Avatar impacts other users in VRChat. [Download VRC Avatar Performance Tools](https://github.com/Thryrallo/VRC-Avatar-Performance-Tools)
 
 
 **Other Awesome Tools:**

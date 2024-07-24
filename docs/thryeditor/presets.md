@@ -9,10 +9,10 @@ Thry Editor allows you to create, apply, and save Presets for Materials using Po
 
 ## Using Presets
 
-The Presets List can be summoned by pressing the <FAIcon icon="fa-solid fa-sliders"/> Preset List Icon.
+The Presets List can be summoned by pressing the `Presets` button.
 
-<a target="_blank" href="/img/thryeditor/Thry_PresetsList.png">
-<img src="/img/thryeditor/Thry_PresetsList.png" alt="Thry Editor Presets" width="700px"/>
+<a target="_blank" href="/img/thryeditor/Thry_PresetsList-new.png">
+<img src="/img/thryeditor/Thry_PresetsList-new.png" alt="Thry Editor Presets" width="700px"/>
 </a>
 
 From here, you will see a few categories. Some of these are included by default. Any Presets you create will be listed in here as well.

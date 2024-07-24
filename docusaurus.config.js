@@ -34,7 +34,15 @@ const config = {
           },
           {
             from: '/grab-pass/grabpass',
-            to: '/grabpass/',
+            to: '/extended-features/grabpass',
+          },
+          {
+            from: '/grabpass',
+            to: '/extended-features/grabpass',
+          },
+          {
+            from: '/geometric-dissolve',
+            to: '/extended-features/geometric-dissolve',
           },
           {
             from: "/color-and-normals/global-themes",
@@ -117,6 +125,23 @@ const config = {
     ],
   ],
 
+  themes: [
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+      {
+        indexDocs: true,
+        indexBlog: true,
+        indexPages: false,
+        docsRouteBasePath: "/",
+        blogRouteBasePath: "/blog",
+        language: "en",
+        hashed: true,
+        searchBarPosition: "auto",
+      },
+    ],
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -174,6 +199,10 @@ const config = {
             label: "GitHub",
             position: "right",
           },
+          {
+            type: "search",
+            position: "right",
+          },
         ],
       },
       prism: {
@@ -189,47 +218,51 @@ const config = {
         },
         links: [
           {
-            title: "Docs",
+            title: "Featured Pages",
             items: [
-              {
-                label: "Introduction",
-                to: "/intro",
-              },
               {
                 label: "Download & Install",
                 to: "/download",
               },
               {
-                label: "General Information",
-                to: "/general",
+                label: "Locking and Animation",
+                to: "/general/locking",
               },
               {
                 label: "Color & Normals",
-                to: "/color-and-normals",
+                to: "/color-and-normals/main",
               },
               {
                 label: "Shading",
-                to: "/shading",
+                to: "/shading/main",
+              },
+              {
+                label: "Reflections & Specular",
+                to: "/shading/reflections-and-specular",
               },
               {
                 label: "Outlines",
                 to: "/outlines",
               },
               {
-                label: "Special FX",
-                to: "/special-fx",
+                label: "UV Tile Discard",
+                to: "/special-fx/uv-tile-discard",
+              },
+              {
+                label: "Emission",
+                to: "/special-fx/emission",
+              },
+              {
+                label: "Glitter / Sparkle",
+                to: "/special-fx/glitter",
               },
               {
                 label: "AudioLink",
                 to: "/audio-link",
               },
               {
-                label: "Global Modifiers & Data",
-                to: "/modifiers",
-              },
-              {
-                label: "Grab Pass",
-                to: "/grabpass",
+                label: "Global Masks",
+                to: "/modifiers/global-masks",
               },
               {
                 label: "Rendering",

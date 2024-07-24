@@ -18,6 +18,10 @@ Locked materials are *significantly* more optimized than their unlocked counterp
 When uploading to VRChat, the locking process happens automatically for any Materials used in an Avatar or World when a build/upload is triggered. This prevents unlocked materials from being uploaded with the final asset.
 
 **If you are uploading for the first time, a one-time message will appear informing you that the Auto-Lock is being initiated.**
+
+<a target="_blank" href="/img/general/Auto-Lock.png">
+<img src="/img/general/Auto-Lock.png" alt="Auto-Lock Dialogue" width="400px"/>
+</a>
 :::
 
 ## Marking Properties for Animation
@@ -88,7 +92,7 @@ This behavior is not a bug, it's behavior defined by Unity, beyond the control o
 
 | Property Name | Can be Renamed? | Property |
 |--|--|--|
-| `_Color`                  | ✔️ | [Main Color](docs/../../color-and-normals/main.md#color) |
+| `_Color`                  | ✔️ | [Main Color](docs/../../color-and-normals/main.md#color--alpha) |
 | `_MainTex_ST`             | ❌ | [Main Texture Tiling/Offset](docs/../../color-and-normals/main.md#main-texture) |
 | `_BumpMap_ST`             | ❌ | [Normal Map Tiling/Offset](docs/../../color-and-normals/main.md#normal-map) |
 | `_BumpScale`              | ✔️ | [Normal Map Intensity](docs/../../color-and-normals/main.md#normal-map) |

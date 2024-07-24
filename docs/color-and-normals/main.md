@@ -1,26 +1,27 @@
 ---
 sidebar_position: 1
-title: Color & Normals
+title: Overview
+hide_title: true
 description: The fundamental features of your Material in Poiyomi Shaders, including the Base Color, Main Texture, and Normal Mapping.
 keywords: [main, texture, normals, map, color, alpha, poiyomi, shader, unity]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
-The **Color & Normals** section defines fundamental attributes of a material, including most options that affect the Base Color and per-pixel Normals of the material.
+# Color & Normals
 
-![Main Options](/img/color-and-normals/main_Options.png)
+The **Color & Normals** section defines the fundamental attributes of a material, including many options that affect the Base Color and per-pixel Normals of the material. It is the first section that most users will utilize when editing the Material.
+
+<a target="_blank" href="/img/color-and-normals/main_Options.png">
+<img src="/img/color-and-normals/main_Options.png" alt="The main Color & Normals Section in Poiyomi Shaders" width="600px"/>
+</a>
 
 ## Color & Alpha
 
-### Color
+- `Type`: **Color**
 
-- `Type`: Color
+A tint Color that's blended multiplicative with the base texture. If no Main Texture is specified, this Color will be used instead overall.
 
-A tint color that's blended multiplicatively with the base texture. If no Main Texture is specified, the material's base texture becomes this color.
-
-This color can be changed to a [Theme Color](../modifiers/global-themes.md).
-
-### Main Texture
+## Main Texture
 
 - `Type`: **Color** Texture (sRGB **ON**)
 
@@ -66,7 +67,7 @@ The Alpha Map can be inverted with the **Invert** option.
 
 *Alpha Map Invert: Off/On*
 
-### Alpha Cutoff
+## Alpha Cutoff
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
