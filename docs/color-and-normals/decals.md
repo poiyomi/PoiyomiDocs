@@ -77,6 +77,24 @@ Scale of the decal, in UV space. `1.0, 1.0` would map the decal to the entire UV
 
 How much scale offset to define on each side of the decal.
 
+#### Mirrored UV Mode
+
+- `Type`: **Dropdown**, Options: `Off`/`Flip`/`Left Only`/`Right Only`/`Flip Right Only`
+
+This option allows you to place Decals on Meshes that have problematic overlapping UVs, where two or more UV islands stack above each other. Use this to put Decals on just one side, or flip them on one side as well.
+
+:::info
+If your Decals appear normally in the intended location without it appearing in another area, you shouldn't need to use this setting!
+
+While models with Overlapping UVs are becoming less and less common, there are still many models out there that suffer from this mistake. Only use this setting if this is the case on your end.
+:::
+
+#### Symmetry Mode
+
+- `Type`: **Dropdown**, Options: `Off`/`Symmetry`/`Flipped`
+
+This setting will divide the UV down the Center (at `X = 0.5`) and puts the Decal on Both Sides of the Symmetry, like a mirror. This only works on models that have a perfectly symmetrized UV layout.
+
 #### Tiled
 
 - `Type`: **Checkbox**
