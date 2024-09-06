@@ -4,7 +4,7 @@ title: Locking and Animation
 description: Information regarding the Lock-In and Animation systems used in Poiyomi Shaders.
 keywords: [lock-in, lock, unlock, shader locking, mark animated, mark, animated, property, poiyomi, shader, thry, editor, thryeditor]
 ---
-import PoiVideo from '@site/src/components/PoiVideo' 
+import PoiVideo from '@site/src/components/PoiVideo'
 
 ## Shader Locking
 
@@ -36,9 +36,19 @@ To animate a property on a locked shader, they need to be marked as animated. To
 
 ### Rename Animated
 
-By selecting **Renamed (when locked)**, upon locking, the property will have a *unique* suffix based on the material's name. It will also add a green `RA` next to the property (short for `R`ename `A`nimated) This means you can animate multiple materials with the same property *differently* on the same mesh. Remember to *lock the materials first* before recording animations for these renamed properties.
+By selecting **Renamed (when locked)**, upon locking, the property will have a *unique* suffix based on the material's name. It will also add a green `RA` next to the property (short for `R`ename `A`nimated) This means you can animate multiple materials with the same property *differently* on the same mesh.
 
-For example, you could use **Renamed (when locked)** hue shift properties to animate multiple different materials to have different hue shift values.
+Using **Renamed (when locked)** can be a way to animate multiple different Materials without affecting all Material Slots, such as separate Hue Shift values.
+
+:::warning Lock before Animating!
+Because `RA` properties are generated after the Material is optimized, it's important to first Lock Materials BEFORE recording any Properties marked as `RA` for your Animation.
+:::
+
+The unique suffix assigned for Properties marked as `RA` will depend on the name of the Material. *For Example: If you're animating the `Alpha` slider on Decal 0 in a Material named **Body Mat**, the suffix of this property would be the name of the Material itself.* If the name of the Material has space between each word, an underscore (`_`) will be appended between each word. See Example Table to reference how the Properties are treated:
+
+| Material Name | Property | `A` Property Name | `RA` Suffix | Renamed Property Name |
+| :---: | :---: | :---: | :---: | :---: |
+| **"Body Mat"** | Decal 0 -> Alpha | `_DecalBlendAlpha` | `_Body_Mat` | `_DecalBlendAlpha_Body_Mat` |
 
 ## Copying Properties for Animation
 
