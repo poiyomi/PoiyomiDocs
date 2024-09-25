@@ -68,6 +68,12 @@ Learn more at [Unity's documentation.](https://docs.unity3d.com/Manual/SL-Offset
 
 Creates a smaller clip distance for the material. This can be used to make geometry not disappear when very close to the camera.
 
+## Z Clip
+
+- `Type`: **Checkbox**
+
+If enabled, ignores the Near and Far Clip on Cameras when this Material is being rendered.
+
 ## Ignore Fog
 
 - `Type`: **Checkbox**
