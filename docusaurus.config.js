@@ -113,6 +113,8 @@ const config = {
 
         blog: {
           showReadingTime: true,
+          blogSidebarTitle: 'All Posts',
+          blogSidebarCount: 'ALL',
           // Please change this to your repo.
           // editUrl:
           // 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
