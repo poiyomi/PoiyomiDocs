@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 This module allows you to have a fancy spectrum of varying styles that appear with your Audio. It is projected onto the UV of your choice and is scaled to each end of your UV space by default.
 
 <PoiVideo url='/vid/audio-link/ALSpectrumDemo.mp4'/>
-<em>Demonstration of AL Spectrum projecting across a custom UV1 layout on the Suit.</em>
+<em>Demonstration of AL Spectrum projecting across a custom UV1 layout on the Suit. (Un-mute to hear sound)</em>
 
 ## Transform
 

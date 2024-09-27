@@ -1,31 +1,33 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 title: Rendering Preset
 description: Rendering options in Poiyomi Shaders, such as Opaque, Cutout, and various Transparent Presets.
 keywords: [render, rendering, preset, opaque, cutout, transparent, transclipping, fade, additive, soft, multiplicative, blending, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
-At the top of the shader, there is a dropdown called "Render Settings". This dropdown is critical to determining how a material will render, and it's important to know what options are available.
+At the top of the shader, there is a dropdown that may be labeled with something like `Opaque`, `Cutout`, `Transparent`, or something similar. It's located on the bottom-right from the Material Lock/Unlock button.
 
-**This is always the most important step in your Avatar creation journey!**
+When you click on this, the dropdown will show the options that are documented on this page. The option you select will automatically configure your [Rendering](/docs/rendering/main.md) settings to ensure they appear as intended.
 
 <a target="_blank" href="/img/general/RenderingPresets-new.png">
 <img src="/img/general/RenderingPresets-new.png" alt="Rendering Presets Dropdown Menu" width="700px"/>
 </a>
 
+This setting is critical to determining how a material will render, and it's important to know what options are available. **This is always the most important step in your Avatar creation journey!**
+
 ## Base Presets
 
 ### Opaque
 
-- Render queue: `2000` (Geometry)
+- Render Queue: `2000` (Geometry)
 - ZWrite: `On`
 
 Default rendering mode. Suitable for objects with no transparency at all.
 
 ### Cutout
 
-- Render queue: `2450` (AlphaTest)
+- Render Queue: `2450` (AlphaTest)
 - ZWrite: `On`
 
 Similar to Opaque, but allows a yes/no for whether a pixel should be rendered. This is suitable for objects with general transparency, like clothing with holes in it, hair using hair cards, etc.
@@ -51,24 +53,24 @@ To learn more about transparency issues, and how to mitigate some of them, check
 
 ### Fade
 
-- Render queue: `3000` (Transparent)
+- Render Queue: `3000` (Transparent)
 - ZWrite: `Off`
 
 Fade is a fully transparent preset, and allows an object to be completely faded away when its alpha value is 0. This is useful for things that need reliable partial transparency, but also need to disappear completely.
 
 ### Transparent
 
-- Render queue: `3000` (Transparent)
+- Render Queue: `3000` (Transparent)
 - ZWrite: `Off`
 
 Transparent is like fade, but will keep specular highlights and reflections, like real transparent materials. This is more useful for rendering transparent physically-based materials, like glass, water, etc.
 
 ### TransClipping
 
-- Render queue: `2450` (AlphaTest)
+- Render Queue: `2460` (AlphaTest+10)
 - ZWrite: `On`
 
-TransClipping is like Transparent, but will write to the z-buffer, and render on the AlphaTest queue. This can sometimes fix certain transparency issues, but may cause other issues.
+TransClipping is like Transparent, but will write to the Z-buffer and render on the AlphaTest queue +10. This can sometimes fix certain transparency issues, but may cause other issues.
 
 ## Color Blend Presets
 
@@ -76,7 +78,7 @@ These presets are transparent, but primarily use the color instead of the alpha 
 
 ### Additive
 
-- Render queue: `3000` (Transparent)
+- Render Queue: `3000` (Transparent)
 - ZWrite: `Off`
 
 Additive adds the color of the material to the background. This tends to brighten the background. Black areas will be fully transparent, while white areas will be most visible.
@@ -85,7 +87,7 @@ The additive preset will always either keep or brighten the background color, by
 
 ### Soft Additive
 
-- Render queue: `3000` (Transparent)
+- Render Queue: `3000` (Transparent)
 - ZWrite: `Off`
 
 Soft Additive is similar to Additive, but instead of using the material color directly, it uses the material color multiplied by one minus the background color. This means that when the destination color is very bright, the amount of blending will be very little. This prevents the additive blending from being too strong.
@@ -94,7 +96,7 @@ The soft additive preset will always either keep or brighten the background colo
 
 ### Multiplicative
 
-- Render queue: `3000` (Transparent)
+- Render Queue: `3000` (Transparent)
 - ZWrite: `Off`
 
 Multiplicative multiplies the background color by the material color. This tends to darken the background. It's useful for creating tinted effects. Black areas will be fully opaque, while white areas will be fully transparent.
@@ -103,7 +105,7 @@ The multiplicative preset will always either keep or darken the background color
 
 ### 2x Multiplicative
 
-- Render queue: `3000` (Transparent)
+- Render Queue: `3000` (Transparent)
 - ZWrite: `Off`
 
 2X Multiplicative is similar to Multiplicative, but instead of simply multiplying the material color by the background color, it ends up multiplying the result by 2. This means that it's capable of slightly brightening the background when white, but can still darken all the way to black.

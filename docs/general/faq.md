@@ -1,5 +1,5 @@
 ---
-sidebar_position: 10
+sidebar_position: 11
 title: FAQ / Troubleshooting
 description: List of Frequently Asked Questions and Troubleshooting Information regarding Poiyomi Shaders.
 keywords: [faq, frequently, asked, questions, troubleshoot, troubleshooting, poiyomi, shader]
@@ -140,6 +140,14 @@ While it is not possible to animate texture slots, Poiyomi Shaders has features 
 - [Geometric Dissove](../extended-features/geometric-dissolve.md). Like Dissolve, but uses your Mesh's Geometry to transition to a different Texture.
 
 - [UV Tile Discard](../special-fx/uv-tile-discard.md), to animate offsets when needed.
+
+### Why use OKLab for Hue Shift instead of HSV?
+
+OKLab has varying hue with constant lightness and chroma. It is more *even* in lightness for various hues. The reason for this is because OKLab takes the perceived lighting, including on how Green/Red and Blue/Yellow the color is, and calculates it to be a more accurate perception of the color being seen.
+
+This eliminates issues with noise and colors being washed out when changing the Hue.
+
+The usage of perceptual color space is desirable when using the Color Adjust feature. OKLab provides better perceptual properties that allow more accurate color changes, compared to the legacy HSV method. For more technical information on how this works, [see this external webpage](https://bottosson.github.io/posts/oklab/).
 
 ## Unity Editor
 

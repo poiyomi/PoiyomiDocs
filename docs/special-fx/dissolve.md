@@ -388,6 +388,14 @@ Determines the power factor of the CenterOut Dissolve.
 
 Enables/Disables hue shifting features for dissolve. Unlike most sections, this checkbox can be animated.
 
+### Color Space
+
+- `Type`: **Dropdown**, Options: `OKLab`/`HSV`
+
+Choice of Color Space to use for the Hue Shift. By default, it will be set to `OKLab`.
+
+Learn about the difference of Color Spaces as documented here in [Color Adjust](/docs/color-and-normals/color-adjust.md#oklab-vs-hsv).
+
 ### Dissolved Speed
 
 - `Type`: **Float**

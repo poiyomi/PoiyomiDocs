@@ -15,6 +15,7 @@ Many of the settings in this section are automatically-configured depending on w
 ## Cull
 
 - `Type`: **Dropdown**, Options: `Back`/`Front`/`Off`
+  - Default: `Back`
 
 Sets what faces should be culled. By default, back faces are culled, in order to improve performance. This can be set to `Off` in order to render both front and back faces. `Front` is useful for special effects.
 
@@ -34,7 +35,7 @@ Learn more at [Unity's documentation](https://docs.unity3d.com/Manual/SL-ZTest.h
 
 - `Type`: **Dropdown**, Options: `Off`/`On`
 
-Determines whether the shader should write to the depth buffer. For opaque presets, this is usually `On`, but for transparent presets, this is usually `Off`.
+Determines whether the shader should write to the depth buffer. For Opaque presets, this is usually `On`, but for Transparent presets, this is usually `Off`.
 
 Learn more at [Unity's documentation](https://docs.unity3d.com/Manual/SL-ZWrite.html).
 
@@ -71,8 +72,11 @@ Creates a smaller clip distance for the material. This can be used to make geome
 ## Z Clip
 
 - `Type`: **Checkbox**
+  - Default: `true`
 
-If enabled, ignores the Near and Far Clip on Cameras when this Material is being rendered.
+Enables or Disables the GPU's Depth Clip Mode, which determines how the GPU handles fragments of the Shader that are outside of the Near and Far Planes.
+
+Learn more at [Unity's documentation.](https://docs.unity3d.com/Manual/SL-ZClip.html)
 
 ## Ignore Fog
 
@@ -100,14 +104,22 @@ This option is commonly used to solve Stacking Transparency problems.
 
 ## VRC Fallback
 
-- `Type`: **Dropdown**
+- `Type`: **Dropdown**, Options: `None`/`Hidden`/`Standard`/`Toon`/`Unlit`/`VertexLit`/`Particle`/`Sprite`/`Matcap`/`MobileToon`
 
-Defines what fallback shader to use if shaders are hidden on an avatar. This includes a large variety of shaders, with some of the more useful options being:
+Defines what Fallback Shader to use if shaders are hidden on the Avatar. Fallback Shaders are seen when a Remote User is blocking your shaders via their own Safety Settings.
 
-- `Hidden`: Material disappears if shaders are hidden (useful for things that are hidden by shader!)
-- `Standard/Opaque`: Opaque standard shader material
-- `Standard/Cutout`: Cutout standard shader material, drawing from base texture alpha
-- `Toon/Opaque`: Opaque Toon-lit (flat lit) shader material
-- `Toon/Cutout`: Cutout Toon-lit (flat lit) shader material, drawing from base texture alpha
+This option includes a large variety of shaders, with some of the more useful options being:
 
-For more information on VRC fallback shaders, including what specific properties will be copied to the fallback shader, read the [VRC Creators Documentation for the Shader Fallback System](https://creators.vrchat.com/avatars/shader-fallback-system/).
+- `Hidden`: Material disappears if shaders are hidden (useful for things that are hidden by the shader, or to avoid opaque glasses lens).
+- `Standard/Opaque`: Opaque Standard shader material.
+- `Standard/Cutout`: Cutout Standard shader material, drawing from base texture alpha.
+- `Toon/Opaque`: Opaque Toon-lit (flat lit) shader material.
+- `Toon/Cutout`: Cutout Toon-lit (flat lit) shader material, drawing from base texture alpha.
+
+For more information on VRC Fallback Shaders, including what specific properties will be copied to the fallback shader, read the [VRC Creators Documentation for the Shader Fallback System](https://creators.vrchat.com/avatars/shader-fallback-system/).
+
+:::tip Test Fallback Shaders in-game
+You can test how the Fallback Shader setting behaves in-game by toggling a setting in the Action Menu!
+
+To do this, open the Action Menu, go to `Tools -> Avatar` and toggle the `Fallback Shaders` to preview. Make sure to turn this off when you're done!
+:::

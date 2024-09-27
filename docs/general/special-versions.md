@@ -1,6 +1,6 @@
 ---
-sidebar_position: 9
-title: Special Shader Versions
+sidebar_position: 10
+title: Alternate Versions
 description: Information regarding the special alternate versions included in Poiyomi Shaders, such as Grab Pass and the World Shader.
 keywords: [two pass, two-pass, grab pass, outline, early, world, poiyomi, shader]
 ---

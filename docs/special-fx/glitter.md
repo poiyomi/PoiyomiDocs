@@ -254,6 +254,14 @@ Select which [Global Mask](../modifiers/global-masks.md) to use to mask the Glit
 
 Enables or Disables the Hue Shift effect for glitter.
 
+### Color Space
+
+- `Type`: **Dropdown**, Options: `OKLab`/`HSV`
+
+Choice of Color Space to use for the Hue Shift. By default, it will be set to `OKLab`.
+
+Learn about the difference of Color Spaces as documented here in [Color Adjust](/docs/color-and-normals/color-adjust.md#oklab-vs-hsv).
+
 ### Shift Speed
 
 - `Type`: **Float**

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 7
+sidebar_position: 8
 title: Substance Painter
 description: Using Substance Painter's Export Templates for Poiyomi Shaders.
 keywords: [substance, 3d, painter, substance painter, export preset, export, preset, poiyomi, shader]

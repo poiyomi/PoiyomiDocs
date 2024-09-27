@@ -18,19 +18,19 @@ There are various features in Poiyomi Shaders that support AudioLink effects. Ho
 If enabled, activates AudioLink features and exposes AudioLink parameter controls for supported modules and effects.
 
 :::info
-When this feature activates, the following sections in Poiyomi Shaders will have their AudioLink properties exposed for you to use. Refer to their Documentation Entries for more information.
-- [Alpha Options](../color-and-normals/alpha-options)
-- [Vertex Options](../color-and-normals/vertex-options)
+When this feature activates, the following sections in Poiyomi Shaders will have their AudioLink properties exposed for you to use! Refer to each of their Documentation Entries for more information.
+- [Alpha Options](/docs/color-and-normals/alpha-options.md#audio-link)
+- [Vertex Options](/docs/color-and-normals//vertex-options.md#audio-link)
 - Vertex Glitching
-- [Decals](../color-and-normals/decals.md)
-- [Matcap / Sphere Textures](../shading/matcap.md)
-- [Rim Lighting](../shading/rim-lighting.md)
-- [Outlines](../outlines/outlines.md)
-- [Dissolve](../special-fx/dissolve.md)
-- [Flipbook](../special-fx/flipbook.md)
-- [Emission](../special-fx/emission.md)
-- [Glitter / Sparkle](../special-fx/glitter.md)
-- [Pathing](../special-fx/pathing.md)
+- [Decals](/docs/color-and-normals/decals.md#audiolink)
+- [Matcap / Sphere Textures](/docs/shading/matcap.md#audiolink)
+- [Rim Lighting](/docs/shading/rim-lighting.md#audiolink)
+- [Outlines](/docs/outlines/outlines.md#audiolink)
+- [Dissolve](/docs/special-fx/dissolve.md#audiolink)
+- [Flipbook](/docs/special-fx/flipbook.md#audio-link)
+- [Emission](/docs/special-fx/emission.md#audio-link)
+- [Glitter / Sparkle](/docs/special-fx/glitter.md#audiolink)
+- [Pathing](/docs/special-fx/pathing.md#audio-link)
 - Voronoi
 :::
 
@@ -129,7 +129,6 @@ Here are text instructions on how to set up AudioLink, as explained in the video
 3. Click the + Button on the listing for `AudioLink` to add it to your project.
     - *If you cannot use Creator Companion, you can alternatively download the AudioLink "Minimal" Unity Package and install it to your Project. Get it here: https://github.com/llealloo/vrc-udon-audio-link/releases*
 4. Launch Unity.
-    - *You may receive a dialogue asking to "Upgrade AudioLink compatible Shaders" or similar. It doesn't matter which one you select, but for now click `No Thanks`.*
 5. In Unity, on the Menu Bar, click `Tools -> AudioLink -> Add AudioLink Prefab to Scene`. A prefab named `AudioLinkAvatar` should be added to your Scene.
     - *Alternatively, you can add `AudioLinkAvatar.prefab` to your Scene by navigating in your Project Files to `Packages/AudioLink/Runtime`. You can then drag & drop the `AudioLinkAvatar.prefab` Prefab from there into your Scene's Hierarchy.*
 6. If you haven't already, activate AudioLink on your Poiyomi Material(s).

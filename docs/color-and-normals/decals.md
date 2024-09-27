@@ -163,6 +163,14 @@ How much parallax depth the decal should have. This can be used for layered para
 
 Enable or Disable hue shifting of the Decal.
 
+#### Color Space
+
+- `Type`: **Dropdown**, Options: `OKLab`/`HSV`
+
+Choice of Color Space to use for the Hue Shift. By default, it will be set to `OKLab`.
+
+Learn about the difference of Color Spaces as documented here in [Color Adjust](/docs/color-and-normals/color-adjust.md#oklab-vs-hsv).
+
 #### Shift Speed
 
 - `Type`: **Float**

@@ -172,6 +172,18 @@ Lowers the size of the Rim Light Width in the Masked area.
 
 ## Hue Shift
 
+- `Type:` **Checkbox**
+
+Enables the Hue Shift feature in Rim Lighting.
+
+### Color Space
+
+- `Type`: **Dropdown**, Options: `OKLab`/`HSV`
+
+Choice of Color Space to use for the Hue Shift. By default, it will be set to `OKLab`.
+
+Learn about the difference of Color Spaces as documented here in [Color Adjust](/docs/color-and-normals/color-adjust.md#oklab-vs-hsv).
+
 ### Shift Speed
 
 - `Type`: **Float**
