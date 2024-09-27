@@ -25,4 +25,4 @@ This translation function will assist in translating properties from previous 8.
 
 ### LilToon to Poiyomi
 
-Adapts settings that were used on a LilToon Material when it was changed to Poiyomi. When it is run, ThryEditor will do it's best to compare the functionality differences between LilToon vs. Poiyomi and convert the properties necessary to replicate the shading settings that were previously used.
+Adapts settings that were used on a LilToon Material when it was changed to Poiyomi. When it is run, ThryEditor will do it's best to compare the functionality differences between LilToon vs. Poiyomi and convert the properties necessary to replicate the shading settings that were previously used. [More information on this behavior is documented here](/docs/general/translation.md).
