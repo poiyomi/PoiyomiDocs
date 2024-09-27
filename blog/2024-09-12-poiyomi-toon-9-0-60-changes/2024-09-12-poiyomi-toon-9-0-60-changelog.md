@@ -54,7 +54,7 @@ You can also have it make a Copy of the Material(s) with the converted propertie
   - AudioLink/AL Volume Color
   - Global Modifiers & Data/Global Data & Masks/Global Mask
   - Global Modifiers & Data/UVs/Parallax Heightmapping
-- **You can now translate from lilToon to Poiyomi.** Right-Click your Avatar or any Material basically anywhere, then click `Poiyomi -> Materials -> Translate to Poiyomi Toon`.
+- **You can now translate from LilToon to Poiyomi.** Right-Click your Avatar or any Material basically anywhere, then click `Poiyomi -> Materials -> Translate to Poiyomi Toon`.
   - The `Translate to Poiyomi Toon` function will translate the Materials in-place.
   - If you select `Translate Copy to Poiyomi Toon`, the program will create copies of the Materials and then translate them. Use this if you want to preserve the original Materials.
   - *Pro Users: You can choose to `Translate to Poiyomi Pro` if you so wish.*
@@ -64,7 +64,10 @@ You can also have it make a Copy of the Material(s) with the converted propertie
 - **Shader:** Added `Symmetry Mode` to Decals.
   - If enabled, will put the Decal on both sides by dividing the UV down the center.
   - *Works only on Models with perfect Symmetrized UVs.*
-- **Shader:** Added `Z Clip` to Rendering. If enabled, ignores the Near and Far-plane clipping from the Camera.
+- **Shader:** Added `Z Clip` to Rendering, which commands the ZClip command in the Shader. [ZClip on Unity Documentation](https://docs.unity3d.com/Manual/SL-ZClip.html)
+- **Shader:** Added `Color Space` dropdown to various Color Adjust settings.
+  - `OKLab` provides better and more accurate perceptive color changes. This can eliminate issues with noise and colors being washed out when adjusting the Hue.
+  - `HSV` is the "legacy" method, reflecting how the Hue Shift behaved in 8.1 and older.
 - **Fix:** Fixed Alpha Offset being backwards when Alpha was inverted. It now functions the same way, inverted or not.
 - **Fix:** Grayscale for Cloth Shading now works as intended.
 - **Fix:** The first round of fixes for AMD computers have been implemented.
