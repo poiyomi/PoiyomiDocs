@@ -1,5 +1,5 @@
 ---
-sidebar_position: 6
+sidebar_position: 7
 title: Upgrading from V8.x to V9.x
 description: Guide and Information on how to upgrade from v8 to v9.
 keywords: [v8, v9, 9.0, upgrade, major, update, guide, poiyomi, shader]

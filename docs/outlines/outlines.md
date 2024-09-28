@@ -326,16 +326,12 @@ Which faces to cull. For the inverted hull technique, this should be set to `Fro
 
 Sets how the Outline Stencil should test the depth buffer. By default, the depth buffer is tested, and if the depth value is not less than or equal to the current value, the Outline is discarded.
 
-<!-- Exposed in a future version. Keep hidden until it's released.>
-
 ### ZWrite
 
 - `Type`: **Dropdown**, Options: `Off`/`On`
     - Default: `On`
 
-Determines whether the Outlines should write to the depth buffer. This should typically be on by default.
-
--->
+Determines whether the Outlines should write to the depth buffer. This should typically be ON by default.
 
 <!---------- AudioLink Section ---------->
 
@@ -346,7 +342,7 @@ This section allows control of the Outlines through [AudioLink](../audio-link/au
 :::
 
 <PoiVideo url='/vid/outlines/outlineALtest4.mp4'/>
-<em>Demonstration of the Bass Band controlling the Outline Size, Emission, and Color via AudioLink.</em>
+<em>Demonstration of the Bass Band controlling the Outline Size, Emission, and Color via AudioLink. (Un-mute to hear sound)</em>
 
 ### Size Band
 

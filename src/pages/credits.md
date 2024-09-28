@@ -53,7 +53,7 @@ A huge thanks to all the active contributors that have helped maintain this Docu
     <div class="avatar__intro">
         <div class="avatar__name" style={{marginTop: '5px'}}>BluWizard10</div>
         <small class="avatar__subtitle">
-            Writer, Contributor
+            Lead Writer, Contributor
         </small>
     </div>
 </div>
@@ -113,7 +113,7 @@ A huge thanks to all the active contributors that have helped maintain this Docu
     <div class="avatar__intro">
         <div class="avatar__name" style={{marginTop: '5px'}}>Tony Lewis</div>
         <small class="avatar__subtitle">
-            Community Helper, Contributor
+            Lead Community Helper
         </small>
     </div>
 </div>
@@ -128,7 +128,7 @@ A huge thanks to all the active contributors that have helped maintain this Docu
     <div class="avatar__intro">
         <div class="avatar__name" style={{marginTop: '5px'}}>Pumkin</div>
         <small class="avatar__subtitle">
-            Contributor
+            Shader Developer, Contributor
         </small>
     </div>
 </div>
@@ -144,6 +144,21 @@ A huge thanks to all the active contributors that have helped maintain this Docu
         <div class="avatar__name" style={{marginTop: '5px'}}>Riyshin</div>
         <small class="avatar__subtitle">
             Contributor
+        </small>
+    </div>
+</div>
+
+<div class="avatar avatar--vertical" style={{margin: '20px'}}>
+    <a
+        class="avatar__photo-link avatar__photo avatar__photo--xl"
+        href="https://github.com/ScruffyRules">
+        <img
+        src="https://github.com/ScruffyRules.png" />
+    </a>
+    <div class="avatar__intro">
+        <div class="avatar__name" style={{marginTop: '5px'}}>ScruffyRules</div>
+        <small class="avatar__subtitle">
+            Shader Developer, Contributor
         </small>
     </div>
 </div>

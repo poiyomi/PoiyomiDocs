@@ -12,7 +12,7 @@ poiyomi:
 
 bluwizard:
   name: BluWizard
-  title: Poiyomi Docs Contributor
+  title: Lead Poiyomi Docs Contributor
   url: https://github.com/bluwizard10
   image_url: https://github.com/bluwizard10.png
 
@@ -21,3 +21,9 @@ teeh:
   title: Contributor
   url: https://github.com/teehzero
   image_url: https://github.com/teehzero.png
+
+sacred:
+  name: Sacred
+  title: Contributor
+  url: https://github.com/sacred0
+  image_url: https://github.com/sacred0.png

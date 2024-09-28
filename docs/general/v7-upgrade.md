@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 title: Upgrading from V7.x to V8.x
 description: What to know before upgrading from v7 to v8.
 keywords: [upgrade, v7, v8, new, changes, poiyomi, shader]

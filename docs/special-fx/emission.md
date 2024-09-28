@@ -72,6 +72,14 @@ If enabled, the base color of the mesh will be replaced with the emission color 
 
 Enables hue shifting of the emission.
 
+### Color Space
+
+- `Type`: **Dropdown**, Options: `OKLab`/`HSV`
+
+Choice of Color Space to use for the Hue Shift. By default, it will be set to `OKLab`.
+
+Learn about the difference of Color Spaces as documented here in [Color Adjust](/docs/color-and-normals/color-adjust.md#oklab-vs-hsv).
+
 ### Saturation
 
 - `Type`: **Float**, Range: `-1.0 - 10.0`
