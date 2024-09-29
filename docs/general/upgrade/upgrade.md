@@ -10,10 +10,6 @@ Over the past few years, Poiyomi Shaders have receive major updates that have mo
 
 This page serves as a master guide towards upgrading from older versions (7.3 and older) to the latest versions (9.0). Read carefully to learn how to account for these changes.
 
-:::info Unity 2022 Recommended
-The latest versions of Poiyomi Shaders have been specifically made to work with **Unity 2022**, as that is now the version required by VRChat. To see which specific version VRChat is using, please refer to [this page](https://creators.vrchat.com/sdk/upgrade/current-unity-version/) on the Creators Documentation.
-:::
-
 ## Prepare to Upgrade
 
 :::warning
