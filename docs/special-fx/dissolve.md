@@ -127,6 +127,16 @@ An Emission multiplier for the Dissolved state. Will use the Dissolved texture i
 
 ## Transition
 
+### Dissolve Gradient
+
+- `Type`: **Data** Texture (`sRGB = Off`)
+
+A linear gradient map that defines the Dissolve Map. This tells the Shader the direction of the Dissolve on the UV when using a Basic Dissolve.
+
+:::info
+This texture slot is only exposed when [Dissolve Type](#dissolve-type) is set to `Basic`.
+:::
+
 ### Dissolve Noise
 
 - `Type`: **Data** Texture (`sRGB = Off`)

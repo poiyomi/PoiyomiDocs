@@ -1,7 +1,7 @@
 ---
-sidebar_position: 7
+sidebar_position: 3
 title: Upgrading from V8.x to V9.x
-description: Guide and Information on how to upgrade from v8 to v9.
+description: Guide and Information on how to upgrade from V8.x to V9.x.
 keywords: [v8, v9, 9.0, upgrade, major, update, guide, poiyomi, shader]
 ---
 
@@ -12,16 +12,6 @@ This page covers all the information you need to know when updating from 8.0 to 
 :::info Unity 2022 Recommended
 Poiyomi 9.0 is specifically made to work with **Unity 2022**, as that is now the version required by VRChat. To see which specific version VRChat is using, please refer to their [Creators Documentation](https://creators.vrchat.com/sdk/upgrade/current-unity-version/).
 :::
-
-:::danger Deprecation of older Unity Versions
-As Unity 2019 is considered deprecated, we cannot guarantee long-term support of Poiyomi 9.0 in Unity 2019. **We highly recommend using Unity 2022 with Poiyomi 9.0 moving forward.**
-:::
-
-To upgrade the shader, delete the `_PoiyomiShaders` folder in your assets.
-
-If you've changed import settings for any included textures, you can delete everything but the `Textures` folder in `_PoiyomiShaders`.
-
-Sometimes when updating, your locked materials may get stuck in the locked state. This happens because the name of the shader changed. Avoid this by unlocking materials before updating. To Fix this, reselect the correct Poiyomi shader for the broken materials.
 
 ## Automatic Upgrade
 

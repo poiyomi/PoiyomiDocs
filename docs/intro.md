@@ -35,13 +35,9 @@ If you are a Game Developer or User wishing to use Poiyomi Shaders on a non-VRCh
 On the sidebar, you'll find Documentation for each different feature of the shader. All features of the Shader in the UI will redirect here for further reading.
 
 :::warning
-*This documentation is geared towards* **Poiyomi 8.0 and newer**.
+*This documentation is geared towards* **Poiyomi 9.0 and newer**.
 
-If you're using Poiyomi 7.3 or earlier, this documentation may not apply at all. [**An upgrade guide is available for moving from Poiyomi 7.0 to 8.0+**](/docs/general/v7-upgrade.md).
-:::
-
-:::tip Upgrading to 9.0
-Poiyomi 9.0 is out now. If you are upgrading from 8.0 to 9.0, a lot of the existing documentation still applies to some extent. Notes are provided if otherwise. [**An upgrade guide is available for moving from Poiyomi 8.0 to 9.0+**](/docs/general/v8-to-v9-upgrade.md)
+If you're using older versions, this documentation may not apply at all. [**An upgrade guide is available in this article**](/docs/general/upgrade/upgrade.md).
 :::
 
 ### Completion Status

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 11
+sidebar_position: 8
 title: FAQ / Troubleshooting
 description: List of Frequently Asked Questions and Troubleshooting Information regarding Poiyomi Shaders.
 keywords: [faq, frequently, asked, questions, troubleshoot, troubleshooting, poiyomi, shader]
