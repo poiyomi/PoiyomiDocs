@@ -97,7 +97,7 @@ Depth FX was split into two sections, `Depth Bulge` and `Depth FX`. The same opt
 
 The `Panosphere` section was reworked as a UV option, which can be applied to almost any texture in the shader. This allows almost any feature to be used as a panosphere. To recreate the old panosphere section, a Decal or Emission slot can be used with the texture's UV set to Panosphere.
 
-To configure the behavior of Panosphere UVs, see the [Panosphere](/docs/modifiers/uvs/panosphere-uv.md) section located underneath `GLobal Modiffiers & Data`.
+To configure the behavior of Panosphere UVs, see the `Panosphere` section located underneath `Global Modifiers & Data`.
 
 ### Parallax/Parallax Heightmapping
 
