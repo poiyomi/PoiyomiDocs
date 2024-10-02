@@ -1,5 +1,5 @@
 ---
-sidebar_position: 9
+sidebar_position: 10
 title: Decals
 description: In Poiyomi Shaders, Decals are used to place images onto your UV with specific location, rotation, and blending.
 keywords: [decal, decals, decorative, decoration, sticker, logo, shape, blush, poiyomi, shader]
