@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 title: Glitter / Sparkle
 description: Glitter adds a voronoi-based sparkle to the color of the Mesh, and can be used to create sparkles or to simulate specular lighting on a glittery surface.
 keywords: [glitter, sparkle, voronoi, specular, special fx, effect, fx, poiyomi, shader]

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 8
+sidebar_position: 9
 title: Depth FX
 description: Depth FX creates screen-space depth effects based on other meshes interacting with the Material. It is based on the distance between one object and another.
 keywords: [depth, fx, depth fx, buffer, texture, special fx, poiyomi, shader]
@@ -14,6 +14,10 @@ To forcibly enable the depth buffer from an avatar, a reliable method is to add 
 
 :::warning
 Make sure to only enable the depth buffer when you need it! This can be a performance hit, and it's not always necessary.
+:::
+
+:::note
+Depth Bulge doesn't write to depth, which can break certain transparent effects like Custom Fog and Raymarching.
 :::
 
 ### Mask

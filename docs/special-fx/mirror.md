@@ -1,6 +1,6 @@
 ---
-sidebar_position: 7
-title: Mirror
+sidebar_position: 8
+title: Mirror/Camera Visibility
 description: The Mirror section controls whether the shader should appear in VRChat Mirrors or not.
 keywords: [mirror, mirrors, appearance, special fx, effect, poiyomi, shader]
 ---
