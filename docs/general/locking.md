@@ -14,8 +14,8 @@ To unlock the shader, just press the button again. It'll be labeled as `Unlock S
 
 Locked materials are *significantly* more optimized than their unlocked counterparts. For editor usage, unlocked materials having reduced performance is ok, but in usage all materials must be locked.
 
-:::info Auto-Lock Feature
-When uploading to VRChat, the locking process happens automatically for any Materials used in an Avatar or World when a build/upload is triggered. This prevents unlocked materials from being uploaded with the final asset.
+:::tip Auto-Lock Feature
+When uploading to VRChat, the Auto-Locking process runs automatically for any Poiyomi Materials found in an Avatar or World whenever a Build/Upload is triggered. This prevents unlocked materials from being uploaded with the final asset.
 
 **If you are uploading for the first time, a one-time message will appear informing you that the Auto-Lock is being initiated.**
 
@@ -26,29 +26,42 @@ When uploading to VRChat, the locking process happens automatically for any Mate
 
 ## Marking Properties for Animation
 
+When the Material Locks, properties that are not animated will be optimized. If you need to animate a Material Property for any reason (such as a Hue Shift), you need to mark them appropriately so that the Shader Optimizer can account for it. Read below to learn how to do so.
+
 ### Animated
 
-To animate a property on a locked shader, they need to be marked as animated. To do this, while the material is unlocked, *right click* the property and select **Animated (When Locked)**. This will add a green `A` next to the property (short for `A`nimated).
+To animate a property on a Locked Material, you need to be mark it as Animated. To do this, <u>while the Material is Unlocked</u>, `Right-Click` the property and select **Animated (When Locked)**. This will add a green `A` next to the property (short for `A`nimated).
 
-![Marking a property as animated](/img/general/locking_animated.png)
+<PoiVideo url='/vid/general/AnimatedPropertyExample.mp4'/>
 
-*Marking a property as animated*
+*Demonstration of Marking a Property as Animated.*
+
+In this above demonstration, we are attempting to animate the `_MainHueShift` property. Initially, it will not work because it was not tagged as such, and your Animator won't be able to touch it.
+
+So in order to fix this, we must tag it as `A`. This allows us to directly interact with the `_MainHueShift` property at any time with the Material Locked, thus granting your Animator to be able to interact with it again.
+
+:::tip Remember!
+When recording Animations that interact with a Material Property, don't forget to tag it to be Animated!
+:::
 
 ### Rename Animated
 
 By selecting **Renamed (when locked)**, upon locking, the property will have a *unique* suffix based on the material's name. It will also add a green `RA` next to the property (short for `R`ename `A`nimated) This means you can animate multiple materials with the same property *differently* on the same mesh.
 
-Using **Renamed (when locked)** can be a way to animate multiple different Materials without affecting all Material Slots, such as separate Hue Shift values.
+Using **Renamed (when locked)** can be a way to animate multiple different Materials on the same Mesh without affecting all Material Slots.
 
-:::warning Lock before Animating!
-Because `RA` properties are generated after the Material is optimized, it's important to first Lock Materials BEFORE recording any Properties marked as `RA` for your Animation.
+:::warning Always Lock before Animating!
+Because `RA` properties are generated after the Material is optimized, it's extremely important to first Lock Materials BEFORE recording any Properties marked as `RA` for your Animation!
 :::
 
-The unique suffix assigned for Properties marked as `RA` will depend on the name of the Material. *For Example: If you're animating the `Alpha` slider on Decal 0 in a Material named **Body Mat**, the suffix of this property would be the name of the Material itself.* If the name of the Material has space between each word, an underscore (`_`) will be appended between each word. See Example Table to reference how the Properties are treated:
+The unique suffix assigned for Properties marked as `RA` will depend on the name of the Material. *For Example: If you're animating the `Alpha` slider on Decal 0 in a Material named **Body Mat**, the suffix of this property would be the name of the Material itself.* If the name of the Material has space between each word, an underscore (`_`) will be appended between each word. Certain characters such as a dash (`-`) in Material Names may be treated differently. See Example Table below for reference on how the Properties are treated:
 
 | Material Name | Property | `A` Property Name | `RA` Suffix | Renamed Property Name |
 | :---: | :---: | :---: | :---: | :---: |
 | **"Body Mat"** | Decal 0 -> Alpha | `_DecalBlendAlpha` | `_Body_Mat` | `_DecalBlendAlpha_Body_Mat` |
+| **"Body Mat"** | Emission 0 -> Emission Strength | `_EmissionStrength` | `_Body_Mat` | `_EmissionStrength_Body_Mat` |
+| **"Suit Jacket"** | AudioLink -> Anim Toggle | `_AudioLinkAnimToggle` | `_Suit_Jacket` | `_AudioLinkAnimToggle_Suit_Jacket` | 
+| **"Outfit Shirt"** | Color Adjust -> Hue Shift -> Hue Shift | `_MainHueShift` | `_Outfit_Shirt` | `_MainHueShift_Outfit_Shirt` |
 
 ## Copying Properties for Animation
 
@@ -64,7 +77,7 @@ If the property is set to **Animated (when locked)**, the keyframe will be copie
 
 ### Property Name Options
 
-These options are mostly useful for shader debugging and development, as well as editor scripting.
+These options are mostly useful for shader debugging and development, as well as editor scripting. However, this will come in handy if you are using non-destructive editor tools that you program to interact with these material properties.
 
 #### **Copy Property Name**
 
@@ -113,21 +126,23 @@ This behavior is not a bug, it's behavior defined by Unity, beyond the control o
 | `_EmissionColor`          | ✔️ | [Emission 0 Color](/docs/special-fx/emission.md#emission-color) |
 | `_EmissionMap_ST`         | ❌ | [Emission 0 Map Tiling/Offset](/docs/special-fx/emission.md#emission-map) |
 
-### Non-Animatable Properties
+## Non-Animatable Properties
 
 Some properties cannot be animated at runtime in the same way as most, due to the way they function. You may be able to create keyframes that change these properties, but they will not work at runtime.
 
-To adjust these properties at runtime, you'll need to create different materials with the different settings. These can then be animated to change on the material, though be advised that there are issues with animating material slots on a renderer - notably, the slot labelled "Element 4" cannot be animated without the slot labelled "Material 2" changing[^2].
+To adjust these properties at runtime, you'll need to create different materials with the different settings. These can then be animated to change on the material, <s>though be advised that there are issues with animating material slots on a renderer - notably, the slot labeled "Element 4" cannot be animated without the slot labeled "Material 2" changing[^2].</s> ***As of Unity 2022, this issue has been fixed. You can do Material Swaps without issues in Unity 2022.***
 
-#### Section Header Checkboxes
+### Section Header Checkboxes
 
 ![Section Header Checkbox](/img/general/locking_section-header-checkbox.png)
 
-These section checkboxes signal the shader to add and remove code, and cannot be animated at runtime.
+These section checkboxes signal the shader to add and remove code. **Thus, they cannot be animated at runtime whatsoever**.
 
-If you want to toggle the effect of a section, use a property that controls the overall effect. For example, to disable **Color Adjust**, you could animate the settings to their default values. To disable a **Decal**, animate the *Alpha* value to `0`.
+If you want to toggle the effect of a section, use a property that controls the overall effect. For example,
+- To disable **Color Adjust**, you could animate the settings to their default values.
+- To disable a **Decal**, animate the *Alpha* value to `0`.
 
-#### Keyword Toggle Checkboxes
+### Keyword Toggle Checkboxes
 
 These include anything that toggles a [Keyword](https://docs.unity3d.com/Manual/shader-keywords.html), which is generally reserved for large changes in features, or the addition of texture slots. These also add and remove code from the shader, and cannot be animated at runtime.
 
@@ -137,9 +152,9 @@ These include anything that toggles a [Keyword](https://docs.unity3d.com/Manual/
 - Light Data: Debug
 - Shading: Lighting Type
 - Shading: (Cloth Mode) Clothmask Lerp
-- Matcap 1/2: Custom Normal
+- Matcap: Custom Normal
 
-#### Rendering/Low Level Options
+### Rendering/Low Level Options
 
 These options relate to low-level directives and settings that change how the graphics driver interprets the shader, and generally cannot be adjusted at runtime.
 
