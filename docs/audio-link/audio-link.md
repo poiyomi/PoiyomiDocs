@@ -21,7 +21,7 @@ If enabled, activates AudioLink features and exposes AudioLink parameter control
 When this feature activates, the following sections in Poiyomi Shaders will have their AudioLink properties exposed for you to use! Refer to each of their Documentation Entries for more information.
 - [Alpha Options](/docs/color-and-normals/alpha-options.md#audio-link)
 - [Vertex Options](/docs/color-and-normals//vertex-options.md#audio-link)
-- Vertex Glitching
+- [Vertex Glitching](/docs/color-and-normals/vertex-glitching.md#audio-link)
 - [Decals](/docs/color-and-normals/decals.md#audiolink)
 - [Matcap / Sphere Textures](/docs/shading/matcap.md#audiolink)
 - [Rim Lighting](/docs/shading/rim-lighting.md#audiolink)
@@ -31,7 +31,7 @@ When this feature activates, the following sections in Poiyomi Shaders will have
 - [Emission](/docs/special-fx/emission.md#audio-link)
 - [Glitter / Sparkle](/docs/special-fx/glitter.md#audiolink)
 - [Pathing](/docs/special-fx/pathing.md#audio-link)
-- Voronoi
+- [Voronoi](/docs/special-fx/voronoi.md#audio-link)
 :::
 
 ### Anim Toggle

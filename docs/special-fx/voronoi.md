@@ -121,3 +121,160 @@ Minimum and Maximum range of Saturation to apply to each randomized Voronoi Cell
 - `Type`: **Clamped Float**, Range: `0.0 - 1.0`
 
 Minimum and Maximum range of Brightness to apply to each randomized Voronoi Cell.
+
+## Audio Link
+
+:::info
+This section allows control of the Voronoi through [AudioLink](/docs/audio-link/audio-link.md). It will only be exposed when AudioLink is activated on the Material.
+:::
+
+### Inner Emission Band
+
+- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+
+Which band to use for the Inner Emission Mod.
+
+### Inner Emission Mod
+
+- `Type`: **Vector2**
+
+How much to add or subtract from the Inner Emission.
+
+| Modifier | Function |
+| --- | --- |
+| Min | Amount changed to Inner Emission with No Audio in Size Band |
+| Max | Amount changed to Inner Emission with Max Audio in Size Band |
+
+### Outer Emission Band
+
+- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+
+Which band to use for the Outer Emission Mod.
+
+### Outer Emission Mod
+
+- `Type`: **Vector2**
+
+How much to add or subtract from the Outer Emission.
+
+| Modifier | Function |
+| --- | --- |
+| Min | Amount changed to Outer Emission with No Audio in Size Band |
+| Max | Amount changed to Outer Emission with Max Audio in Size Band |
+
+### Gradient Min Band
+
+- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+
+Which band to use for the Gradient Min Add
+
+### Gradient Min Add
+
+- `Type`: **Float**
+
+How much to add or subtract from the Gradient Min value.
+
+### Gradient Max Band
+
+- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+
+Which band to use for the Gradient Max Add
+
+### Gradient Max Add
+
+- `Type`: **Float**
+
+How much to add or subtract from the Gradient Max value.
+
+### Speed X Motion Type
+
+- `Type`: **Dropdown**
+
+Which motion type to use for the Speed X.
+
+<details>
+<summary><b>Speed X Motion Type Options</b></summary>
+
+- Motion Increases as intensity of the band increases
+- Above but Smooth
+- Motion moves back and forth as a function of intensity
+- Above but Smoooth
+- Fixed Speed Increase when the band is dark Stationary when light
+- Above but Smooooth
+- Fixed Speed Increase when the band is dark Fixed speed decrease when light
+
+</details>
+
+### Speed X Band
+
+- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+
+Which band to use for the Speed X.
+
+### Speed X
+
+- `Type`: **Float**
+
+How much to add or subtract from the Speed X value.
+
+### Speed Y Motion Type
+
+- `Type`: **Dropdown**
+
+Which motion type to use for the Speed Y.
+
+<details>
+<summary><b>Speed Y Motion Type Options</b></summary>
+
+- Motion Increases as intensity of the band increases
+- Above but Smooth
+- Motion moves back and forth as a function of intensity
+- Above but Smoooth
+- Fixed Speed Increase when the band is dark Stationary when light
+- Above but Smooooth
+- Fixed Speed Increase when the band is dark Fixed speed decrease when light
+
+</details>
+
+### Speed Y Band
+
+- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+
+Which band to use for the Speed Y.
+
+### Speed Y
+
+- `Type`: **Float**
+
+How much to add or subtract from the Speed Y value.
+
+### Speed Z Motion Type
+
+- `Type`: **Dropdown**
+
+Which motion type to use for the Speed Z.
+
+<details>
+<summary><b>Speed Z Motion Type Options</b></summary>
+
+- Motion Increases as intensity of the band increases
+- Above but Smooth
+- Motion moves back and forth as a function of intensity
+- Above but Smoooth
+- Fixed Speed Increase when the band is dark Stationary when light
+- Above but Smooooth
+- Fixed Speed Increase when the band is dark Fixed speed decrease when light
+
+</details>
+
+### Speed Z Band
+
+- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+
+Which band to use for the Speed Z.
+
+### Speed Z
+
+- `Type`: **Float**
+
+How much to add or subtract from the Speed Z value.
