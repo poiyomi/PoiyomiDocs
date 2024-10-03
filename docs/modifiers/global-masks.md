@@ -40,7 +40,7 @@ Once done, see how to use them in [Usage in the Shader](#usage-in-the-shader).
 
 ### Method 2: Provide your own Texture
 
-Another way of creating Global Masks is by the use of software, such as Substance 3D Painter, to pack your `User` channels into an `R + G + B + A` Texture way in advance. To do this, you would have to add the `User` channels and paint on those channels you specify. We offer an example Export Template that shows the usage of this, which you can download from [here](../general/substance-painter.md).
+Another way of creating Global Masks is by the use of software, such as Substance 3D Painter, to pack your `User` channels into an `R + G + B + A` Texture way in advance. To do this, you would have to add the `User` channels and paint on those channels you specify. We offer an example Export Template that shows the usage of this, which you can download from [here](/docs/general/substance-painter.md).
 
 After exporting your `t_$textureSet_GlobalMask.png` file, slot it directly into one of the Global Mask slots. See [Usage in the Shader](#usage-in-the-shader) below to see how to use them.
 

@@ -6,7 +6,7 @@ keywords: [light, data, light data, lighting, shading, ao, shadow, mapping, mask
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
-The Light Data section provides options for changing features relating to the data used for lighting and shading the material. Options here significantly influence the functionality of the [Shading](docs/../../shading/main) section.
+The Light Data section provides options for changing features relating to the data used for lighting and shading the material. Options here significantly influence the functionality of the [Shading](/docs/shading/main.md) section.
 
 ## AO Maps
 

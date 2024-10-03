@@ -1,5 +1,5 @@
 ---
-sidebar_position: 8
+sidebar_position: 9
 title: RGBA Color Masking
 description: RGBA Color Masking provides flexible ways to apply different Color Tints, Textures, and Normals within the Material without affecting Alpha.
 keywords: [rgba, color, masking, tint, texture, normals, poiyomi, shader]

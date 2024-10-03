@@ -1,5 +1,5 @@
 ---
-sidebar_position: 11
+sidebar_position: 8
 title: FAQ / Troubleshooting
 description: List of Frequently Asked Questions and Troubleshooting Information regarding Poiyomi Shaders.
 keywords: [faq, frequently, asked, questions, troubleshoot, troubleshooting, poiyomi, shader]
@@ -15,7 +15,7 @@ This is a list of Frequently Asked Questions regarding Poiyomi Shaders. If you a
 
 ### What is the Poiyomi Shaders Terms of Service?
 
-A dedicated page is available which shows important information about the usage of the Shader. Please see [Terms of Service](../terms-of-service) for more details.
+A dedicated page is available which shows important information about the usage of the Shader. Please see [Terms of Service](/docs/terms-of-service/terms-of-service.md) for more details.
 
 ### I'm trying to import a version that's in-between the versions the Unity Package specifies. How do I install them?
 
@@ -52,13 +52,17 @@ If this function fails to work and you get that message, ensure there are no scr
 
 ### How do I upgrade Poiyomi Shaders to a newer version?
 
-To upgrade the shader, refer to the instructions found in [Download & Install](../download/download.md) for the Method you used when you first installed the Shader.
+To upgrade the shader, refer to the instructions found in [Download & Install](/docs/download/download.md) for the Method you used when you first installed the Shader.
 
 Sometimes when updating your locked materials may get stuck in the locked state. This happens because the name of the shader changed. Avoid this by unlocking materials before updating. To Fix this, reselect the correct Poiyomi shader for the broken materials.
 
+:::warning
+If you are jumping from much older versions (7.3 or older) to the latest, [please refer to this documentation to learn how to account for these major changes](/docs/general/upgrade/upgrade.md).
+:::
+
 ### I'm trying to animate a property in the Material which kind of works, but it STOPS working when the Material gets Locked. What can I do?
 
-You need to mark properties that you are animating by `Right-Clicking` on them and selecting `Animated` or `Renamed`, which are specific tags that ensure the property remains accessible when the Shader is locked. For more information, see the Documentation page [Locking and Animation](../general/locking.md#marking-properties-for-animation) for further reading.
+You need to mark properties that you are animating by `Right-Clicking` on them and selecting `Animated` or `Renamed`, which are specific tags that ensure the property remains accessible when the Shader is locked. For more information, see the Documentation page [Locking and Animation](/docs/general/locking.md#marking-properties-for-animation) for further reading.
 
 Keep in mind that properties marked as `Renamed` will only work when the Material is Locked. **Make sure you Lock the Material prior to recording your animations!**
 
@@ -68,9 +72,9 @@ Keep in mind that properties marked as `Renamed` will only work when the Materia
 
 ### Where do AO Maps go in Poiyomi Shaders?
 
-Place AO (Ambient Occlusion) Maps in the [AO Maps](../shading/light-data.md#ao-maps) Texture Slot, located in `Shading -> Light Data`.'
+Place AO (Ambient Occlusion) Maps in the [AO Maps](/docs/shading/light-data.md#ao-maps) Texture Slot, located in `Shading -> Light Data`.
 
-It is recommended to use a [Lighting Type](../shading/main.md#base-pass-lighting-type) that supports AO Maps. Most of them (except for `Flat`) will work with AO Maps.
+It is recommended to use a [Lighting Type](/docs/shading/main.md#lighting-type) that supports AO Maps. Most of them (except for `Flat`) will work with AO Maps.
 
 ### Where does Height Maps go in Poiyomi Shaders?
 
@@ -79,7 +83,7 @@ You can often get the same detail by using a Normal Map (make sure your shading 
 
 If you have a height map but not a normal map, you can convert it in Unity by setting the texture to a Normal map and selecting "Convert from Grayscale".
 
-If you need the displacement, you can use it with [Parallax Heightmapping](../modifiers/uvs/parallax.md), which creates a displacement-like effect. You can also use a shader that tessellates, which will add geometry to create the height detail.
+If you need the displacement, you can use it with [Parallax Heightmapping](/docs/modifiers/uvs/parallax.md), which creates a displacement-like effect. You can also use a shader that tessellates, which will add geometry to create the height detail.
 
 **Vertex Displacement** takes a height map, but it's limited to the vertex density on the mesh, and often will not provide the desired results.
 
@@ -89,13 +93,13 @@ Roughness and Smoothness have the same information, just flipped!
 
 You can invert it in an image editor or use the invert checkboxes.
 
-**For v8+**, Roughness goes in [Reflections & Specular](../shading/reflections-and-specular.md).
+**For v8+**, Roughness goes in [Reflections & Specular](/docs/shading/reflections-and-specular.md).
 
-Open Packed Maps by clicking on the triangle and place the Roughness in the [G Smoothness Map](../shading/reflections-and-specular.md#packed-maps) slot. It is important that you checkmark `Invert` so that it matches the Unity PBR Shading Pipeline. [Refer to the Documentation Page](../shading/reflections-and-specular.md#packed-maps) for more information.
+Open Packed Maps by clicking on the triangle and place the Roughness in the [G Smoothness Map](/docs/shading/reflections-and-specular.md#packed-maps) slot. It is important that you checkmark `Invert` so that it matches the Unity PBR Shading Pipeline. [Refer to the Documentation Page](/docs/shading/reflections-and-specular.md#packed-maps) for more information.
 
 ### How do I test AudioLink in Poiyomi Shaders?
 
-You will need to install the AudioLink Package into your Project. [Read the Documentation Page for instructions here.](../audio-link/audio-link.md#how-to-test-audiolink-using-poiyomi-shaders)
+You will need to install the AudioLink Package into your Project. [Read the Documentation Page for instructions here.](/docs/audio-link/audio-link.md#how-to-test-audiolink-using-poiyomi-shaders)
 
 ### I am using a feature that is supposed to animate, but it doesn't show it's animating. Why is that?
 
@@ -133,13 +137,13 @@ Due to Unity Editor limitations, you cannot do this as it can cause problems at 
 
 While it is not possible to animate texture slots, Poiyomi Shaders has features that can make up for this. Try out using these modules:
 
-- [Decals](../color-and-normals/decals.md), a decorative feature. You can animate the `Alpha` slider to control the visibility of the Texture using a Decal.
+- [Decals](/docs/color-and-normals/decals.md), a decorative feature. You can animate the `Alpha` slider to control the visibility of the Texture using a Decal.
 
-- [Dissolve](../special-fx/dissolve.md), a Special FX feature that can gradually introduce a different Texture through a visual transition.
+- [Dissolve](/docs/special-fx/dissolve.md), a Special FX feature that can gradually introduce a different Texture through a visual transition.
 
-- [Geometric Dissove](../extended-features/geometric-dissolve.md). Like Dissolve, but uses your Mesh's Geometry to transition to a different Texture.
+- [Geometric Dissove](/docs/extended-features/geometric-dissolve.md). Like Dissolve, but uses your Mesh's Geometry to transition to a different Texture.
 
-- [UV Tile Discard](../special-fx/uv-tile-discard.md), to animate offsets when needed.
+- [UV Tile Discard](/docs/special-fx/uv-tile-discard.md), to animate offsets when needed.
 
 ### Why use OKLab for Hue Shift instead of HSV?
 
@@ -159,7 +163,7 @@ This can happen when you have a large number of materials using Poiyomi while un
 
 To circumvent this issue, you can lock materials when not in use, as that will generate unique shaders for each material.
 
-More information documented [here](../general/textures-64-texture-slot-crash.md).
+More information documented [here](/docs/general/textures-64-texture-slot-crash.md).
 
 ### Why does lighting change randomly while moving in a World?
 

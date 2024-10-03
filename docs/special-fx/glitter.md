@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 title: Glitter / Sparkle
 description: Glitter adds a voronoi-based sparkle to the color of the Mesh, and can be used to create sparkles or to simulate specular lighting on a glittery surface.
 keywords: [glitter, sparkle, voronoi, specular, special fx, effect, fx, poiyomi, shader]
@@ -246,7 +246,7 @@ Increasing this value will scale the brightness of the glitter based on the inte
 
 - `Type`: **Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-Select which [Global Mask](../modifiers/global-masks.md) to use to mask the Glitter effects.
+Select which [Global Mask](/docs/modifiers/global-masks.md) to use to mask the Glitter effects.
 
 ## Hue Shift
 
@@ -281,7 +281,7 @@ How much to shift the base color around the hue circle. This value is circular, 
 Enables or Disables AudioLink effects for Glitter.
 
 :::info
-This section allows control of the Glitter through [AudioLink](../audio-link/audio-link.md). It will only be exposed when AudioLink is activated on the Material.
+This section allows control of the Glitter through [AudioLink](/docs/audio-link/audio-link.md). It will only be exposed when AudioLink is activated on the Material.
 :::
 
 ### Alpha Band

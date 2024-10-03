@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 title: Emission
 description: Emission provides the ability to add brightness directly to the base color of a Mesh, and can be used to add highlights or a glow effect.
 keywords: [emission, emissions, glow, bloom, brightness, color, scrolling, center out, blinking, special fx, poiyomi, shader]
@@ -26,7 +26,7 @@ Mask texture that defines where to place the emission effect. Black areas will n
 
 - `Type`: **Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-Select which [Global Mask](../modifiers/global-masks.md) to use as the Emission Mask instead.
+Select which [Global Mask](/docs/modifiers/global-masks.md) to use as the Emission Mask instead.
 
 :::note
 Expand the **Emission Mask** slot to see this property.
@@ -245,7 +245,7 @@ An offset applied to the wave. This value is unit-less, and depends on the veloc
 Enables or disables Emission AudioLink features.
 
 :::info
-This section allows control of the Emission through [AudioLink](../audio-link/audio-link.md). It will only be exposed when AudioLink is activated on the Material.
+This section allows control of the Emission through [AudioLink](/docs/audio-link/audio-link.md). It will only be exposed when AudioLink is activated on the Material.
 :::
 
 ### Strength Multiplier

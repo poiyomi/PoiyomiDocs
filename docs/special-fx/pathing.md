@@ -1,5 +1,5 @@
 ---
-sidebar_position: 6
+sidebar_position: 7
 title: Pathing
 description: Pathing enables a special effect that follows along a path defined from a gradient. It is used for complex effects, such as an Emission traveling across a Material.
 keywords: [pathing, gradient, special effect, special fx, effect, poiyomi, shader]
@@ -119,6 +119,10 @@ How much to offset the time by, in terms of path cycles. This can be used whethe
 How many segments to split the path into. At a value of `0`, this defaults to the texture precision. If set to a value greater than `0`, the path will be split into that many segments - for most paths, this will be `255` by default, so lower values can be used to break up the path into blockier segments.
 
 ## Audio Link
+
+:::info
+This section allows control of Pathing through [AudioLink](/docs/audio-link/audio-link.md). It will only be exposed when AudioLink is activated on the Material.
+:::
 
 For any audio link values with a **Vector2** offset, the **X** represents the value to add when the audio is at minimum (no audio), and the **Y** represents the value to add when the audio is at maximum (full audio).
 

@@ -1,6 +1,6 @@
 ---
-sidebar_position: 10
-title: Alternate Versions
+sidebar_position: 6
+title: Special Versions
 description: Information regarding the special alternate versions included in Poiyomi Shaders, such as Grab Pass and the World Shader.
 keywords: [two pass, two-pass, grab pass, outline, early, world, poiyomi, shader]
 ---
@@ -14,6 +14,18 @@ For those who need to use Poiyomi Shaders for very specific purposes, read on fo
 
 :::warning
 Some of these alternate Shader versions are not recommended for daily usage as they can have a performance impact, unless otherwise noted. Use them judiciously!
+:::
+
+## World
+
+- `.poiyomi/Poiyomi Toon World`
+
+The Poiyomi World Shader includes the necessary Global Illumination components needed for it to render properly in Worlds with Baked Lighting. It is primarily targeted for those who intend to use features found in Poiyomi Shaders in their VRChat Worlds.
+
+:::tip Optimized for Worlds SDK users only
+Poiyomi World matches the same features as the normal Poiyomi Toon Shader, with the only difference being that it includes Global Illumination support.
+
+We recommend only using this Shader if you are using the Worlds SDK.
 :::
 
 ## Two Pass
@@ -36,18 +48,16 @@ As Outline Early renders the Outline twice, it can have a slight performance imp
 
 - `.poiyomi/Poiyomi Toon Grab Pass`
 
-The Grab Pass Shader is used for specialized effects that require taking a screenshot every frame in order for it to render. See [Grab Pass](../extended-features/grabpass.md) for more info.
+The Grab Pass Shader is used for specialized effects that require taking a screenshot every frame in order for it to render. See [Grab Pass](/docs/extended-features/grabpass.md) for more info.
 
-Because this shader version uses a Grab Pass, it has the strongest performance impact as it has to take a screenshot every frame to render.
+Because this shader version uses a Grab Pass, it has the <u>strongest performance impact</u> as it has to take a screenshot every frame to render. If you wish to use this feature, use it judiciously!
 
-## World
+## Geometric Dissolve <span class="badge badge--primary">Pro</span>
 
-- `.poiyomi/Poiyomi Toon World`
+Poiyomi Pro Geometric Dissolve is an advanced version in Poiyomi Pro that expands beyond the features of what a typical Dissolve can offer. It uses the 3D Mesh to manipulate the vertices, creating an advanced 3D Dissolve animation. See [Geometric Dissolve](/docs/extended-features/geometric-dissolve.md) for more info.
 
-The Poiyomi World Shader includes the necessary Global Illumination components needed for it to render properly in Worlds with Baked Lighting. It is primarily targeted for those who intend to use features found in Poiyomi Shaders in their VRChat Worlds.
+## Fur <span class="badge badge--primary">Pro</span>
 
-:::tip Optimized for Worlds SDK users only
-Poiyomi World matches the same features as the normal Poiyomi Toon Shader, with the only difference being that it includes Global Illumination support.
+Poiyomi Pro Fur is a system in Poiyomi Pro that uses a height-based technique to enable simulation of fabrics and hairs. It can look similar to how fur is simulated in animated films but with some differences. See [Fur](/docs/extended-features/fur.md) for more info.
 
-We recommend only using this Shader if you are using the Worlds SDK.
-:::
+Fur simulation is a very expensive feature, as it must render every frame in order to simulate the effect. As such, this will cause a huge performance impact when used.

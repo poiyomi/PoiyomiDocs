@@ -9,7 +9,7 @@ import PoiVideo from '@site/src/components/PoiVideo'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The **Shading** section defines the base shading of the material. It controls how the material reflects light in a diffuse way, and how it is affected by other lighting. Options in the [Light Data](docs/../../shading/light-data) section heavily affect how shading is performed.
+The **Shading** section defines the base shading of the material. It controls how the material reflects light in a diffuse way, and how it is affected by other lighting. Options in the [Light Data](/docs/shading/light-data.md) section heavily affect how shading is performed.
 
 <a target="_blank" href="/img/shading/Shading_All.png">
 <img src="/img/shading/Shading_All.png" alt="Various Shading Styles on multiple Material Spheres."/>
@@ -24,7 +24,7 @@ This section often uses some terms interchangeably.
 - Ramp and Gradient are both terms for a 1-dimensional function, using one input and producing one output.
 :::
 
-## Base Pass Lighting Type
+## Lighting Type
 
 - `Type`: **Dropdown**, Options: `TextureRamp`/`Multilayer Math`/`Wrapped`/`Skin`/`ShadeMap`/`Flat`/`Realistic`/`Cloth`
 
@@ -83,7 +83,7 @@ Determines whether or not to incorporate the full ambient color into the lightin
 
 ### Multilayer Math
 
-Multilayer Math is a Toon Lighting method that uses mathematically defined gradients to determine the lighting level. These gradients can be edited using the defined settings, and set using colors or textures. Multilayer Math is similar to the lighting model used in the [lilToon](https://github.com/lilxyzw/lilToon) shader. Multilayer Math shading is useful for creating robust shading that performs well in most lighting conditions.
+Multilayer Math is a Toon Lighting method that uses mathematically defined gradients to determine the lighting level. These gradients can be edited using the defined settings, and set using colors or textures. Multilayer Math is similar to the lighting model used in the [LilToon](https://github.com/lilxyzw/lilToon) shader. Multilayer Math shading is useful for creating robust shading that performs well in most lighting conditions.
 
 On a basic level, Multilayer Math has three shadow layers, and a border. Not all layers need to be used, nor the border. In previous versions of the shader, the *Math Gradient* shading mode was used to create a similar effect, but this mode was removed in favor of the more flexible Multilayer Math.
 
@@ -660,7 +660,7 @@ This value is multiplied with the value of the Smoothness Map. If no smoothness 
 
 These options affect how shading is performed in the Add pass. This pass is used for realtime lights like Point, Spot, and Directional lights.
 
-### Lighting Type
+### Lighting Type (Add Pass)
 
 - `Type`: **Dropdown**, Options: `Toon`/`Realistic`/`Same as Base Pass`
 
@@ -693,4 +693,4 @@ Realistic add pass lighting uses a physically-based lighting model to determine 
 
 ### Same as Base Pass
 
-Makes the Add Pass Lighting match close to your [Base Pass](#base-pass-lighting-type) settings.
+Makes the Add Pass Lighting match close to your [Lighting Type (Base Pass)](#lighting-type) settings.

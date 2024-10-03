@@ -1,5 +1,5 @@
 ---
-sidebar_position: 9
+sidebar_position: 7
 title: 64 Texture Slot Crash
 description: Big time crashy boy UwU
 keywords: [64, 64 crash, texture crash, crash]

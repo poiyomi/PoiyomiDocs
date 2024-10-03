@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 4
 title: Localization
 description: Localization Options available in the Shader UI.
 keywords: [language, localization, english, german, japanese, translation, poiyomi, shader, ui]

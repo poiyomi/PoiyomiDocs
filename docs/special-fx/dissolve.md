@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 title: Dissolve
 description: Dissolve provides features for transitioning between a base appearance and a modified appearance in an aesthetically pleasing way.
 keywords: [dissolve, transition, special effect, special fx, effect, poiyomi, shader]
@@ -106,7 +106,7 @@ A color tint blended multiplicative with the dissolved texture.
 :::tip
 If you set the Alpha channel of this color to `A = 0`, the Dissolve can transition from the base color to Transparency.
 
-**Keep in mind this only works if you set your [Rendering Preset](../general/render-preset.md) to Cutout or a Transparent Preset.**
+**Keep in mind this only works if you set your [Rendering Preset](/docs/general/render-preset.md) to Cutout or a Transparent Preset.**
 :::
 
 <PoiVideo url='/vid/special-fx/Dissolve_DissolvedColor.mp4'/>
@@ -126,6 +126,16 @@ The Texture to Dissolve to. If not defined, the Base Color will be used instead.
 An Emission multiplier for the Dissolved state. Will use the Dissolved texture if defined, otherwise it will use the existing Base Color.
 
 ## Transition
+
+### Dissolve Gradient
+
+- `Type`: **Data** Texture (`sRGB = Off`)
+
+A linear gradient map that defines the Dissolve Map. This tells the Shader the direction of the Dissolve on the UV when using a Basic Dissolve.
+
+:::info
+This texture slot is only exposed when [Dissolve Type](#dissolve-type) is set to `Basic`.
+:::
 
 ### Dissolve Noise
 
@@ -177,19 +187,19 @@ A black and white (single channel) mask that controls where to apply the dissolv
 
 - `Type`: **Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-Select which [Global Mask](../modifiers/global-masks.md) to use as the Dissolve Mask instead.
+Select which [Global Mask](/docs/modifiers/global-masks.md) to use as the Dissolve Mask instead.
 
 ### Dissolved to Global Mask
 
 - `Type`: **Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-This allows you to select which [Global Mask](../modifiers/global-masks.md) to affect when it is fully Dissolved.
+This allows you to select which [Global Mask](/docs/modifiers/global-masks.md) to affect when it is fully Dissolved.
 
 ### Undissolved to Global Mask
 
 - `Type`: **Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-This allows you to select which [Global Mask](../modifiers/global-masks.md) to affect when it is NOT Dissolved whatsoever.
+This allows you to select which [Global Mask](/docs/modifiers/global-masks.md) to affect when it is NOT Dissolved whatsoever.
 
 ### VertexColor Mask
 
@@ -218,7 +228,7 @@ At a value of 1, the dissolve will complete a full cycle (from `0` to `1` to `0`
 Enables AudioLink to control Dissolve.
 
 :::info
-This section allows control of the Dissolve through [AudioLink](../audio-link/audio-link.md). It will only be exposed when AudioLink is activated on the Material.
+This section allows control of the Dissolve through [AudioLink](/docs/audio-link/audio-link.md). It will only be exposed when AudioLink is activated on the Material.
 :::
 
 ### Dissolve Alpha Band
@@ -435,7 +445,7 @@ Allows an alternative way to use UV Tile Discard with the use of Dissolve's effe
 If you prefer to use UV Tile Discard in a way that allows a sleek animation transition, this is the section to do it.
 
 :::info Refer to UV Tile Documentation
-All the sliders listed for each Row will reflect the same locations as described in [UV Tile Discard](../special-fx/uv-tile-discard.md). Please refer to the documentation page to see what they are.
+All the sliders listed for each Row will reflect the same locations as described in [UV Tile Discard](/docs/special-fx/uv-tile-discard.md). Please refer to the documentation page to see what they are.
 
 Each Slider will control the [Dissolve Alpha](#dissolve-alpha) for the described Row and Column.
 :::
@@ -457,7 +467,7 @@ Enforces the Dissolve Tiles to be discarded once a UV Tile Dissolve reaches `1` 
 
 - `Type`: **Float**, Range: `-1.0 - 1.0`
 
-This property will appear for each Row and Column for UV Tile Dissolve. Below is a table reference matching the same positions as described in [UV Tile Discard](../special-fx/uv-tile-discard.md), named to each field shown in UV Tile Dissolve.
+This property will appear for each Row and Column for UV Tile Dissolve. Below is a table reference matching the same positions as described in [UV Tile Discard](/docs/special-fx/uv-tile-discard.md), named to each field shown in UV Tile Dissolve.
 
 |  | Column 0 | Column 1 | Column 2 | Column 3 |
 | :---: | :---: | :---: | :---: | :---: |

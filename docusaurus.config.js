@@ -86,6 +86,14 @@ const config = {
             // Redirect old VCC Webpage to new "Download & Install" page.
             from: "/poiyomitoonvcc",
             to: "/download/",
+          },
+          {
+            from: '/general/v7-upgrade',
+            to: '/general/upgrade/v7-upgrade',
+          },
+          {
+            from: '/general/v8-to-v9-upgrade',
+            to: '/general/upgrade/v8-upgrade',
           }
           // Redirect from multiple old paths to the new path
           // {

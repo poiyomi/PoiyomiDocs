@@ -1,5 +1,5 @@
 ---
-sidebar_position: 9
+sidebar_position: 10
 title: Decals
 description: In Poiyomi Shaders, Decals are used to place images onto your UV with specific location, rotation, and blending.
 keywords: [decal, decals, decorative, decoration, sticker, logo, shape, blush, poiyomi, shader]
@@ -279,18 +279,18 @@ Choice of where the Decal should appear on your Normals. You can choose it to ap
 
 - `Type`: **Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-Select which [Global Mask](../modifiers/global-masks.md) to apply directly onto the Decal.
+Select which [Global Mask](/docs/modifiers/global-masks.md) to apply directly onto the Decal.
 
 #### Apply To Global Mask
 
 - `Type`: **Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-Select which [Global Mask](../modifiers/global-masks.md) to send your Decal's effects onto the specified Global Mask.
+Select which [Global Mask](/docs/modifiers/global-masks.md) to send your Decal's effects onto the specified Global Mask.
 
 ## AudioLink
 
 :::info
-This section allows control of the Decals through [AudioLink](../audio-link/audio-link.md). It will only be exposed when AudioLink is activated on the Material.
+This section allows control of the Decals through [AudioLink](/docs/audio-link/audio-link.md). It will only be exposed when AudioLink is activated on the Material.
 :::
 
 ### Scale Band

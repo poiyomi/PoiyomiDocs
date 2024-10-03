@@ -295,8 +295,8 @@ How much to Blend the result.
 
 Enables AudioLink to influence the Matcap.
 
-:::info Requires AudioLink
-This section allows control of the Matcap through [AudioLink](../audio-link/audio-link.md). It will only be exposed when AudioLink is activated on the Material.
+:::info
+This section allows control of the Matcap through [AudioLink](/docs/audio-link/audio-link.md). It will only be exposed when AudioLink is activated on the Material.
 :::
 
 ### Alpha Band

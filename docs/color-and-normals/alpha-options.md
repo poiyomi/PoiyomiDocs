@@ -8,7 +8,7 @@ import PoiVideo from '@site/src/components/PoiVideo'
 
 The **Alpha Options** section provides options for modifying how the material treats alpha.
 
-The effects of these options are heavily influenced by the [Render Preset](../general/render-preset.md) and other render settings.
+The effects of these options are heavily influenced by the [Render Preset](/docs/general/render-preset.md) and other render settings.
 
 ## Force Opaque
 
@@ -110,7 +110,7 @@ The distance (in meters) at which the Max Distance Alpha multiplier will be appl
 
 Enable or Disable the Fresnel Alpha effect. Fresnel Alpha uses the angle between the viewer (camera) and the object's normal to modify the alpha.
 
-This can be used to simulate materials that are more opaque at shallow angles, such as transluscent fabric (used for tights or stockings). It can be thought of as analagous to [Rim Lighting](../shading/rim-lighting.md), but for alpha instead of color.
+This can be used to simulate materials that are more opaque at shallow angles, such as transluscent fabric (used for tights or stockings). It can be thought of as analagous to [Rim Lighting](/docs/shading/rim-lighting.md), but for alpha instead of color.
 
 ### Intensity
 
@@ -201,7 +201,7 @@ The minimum value of alpha for the Angular Alpha mode. This will prevent the alp
 ## Audio Link
 
 :::info
-This section allows control of the Alpha through [AudioLink](../audio-link/audio-link.md). It will only be exposed when AudioLink is activated on the Material.
+This section allows control of the Alpha through [AudioLink](/docs/audio-link/audio-link.md). It will only be exposed when AudioLink is activated on the Material.
 :::
 
 ### Alpha Audio Link

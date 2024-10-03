@@ -1,5 +1,5 @@
 ---
-sidebar_position: 6
+sidebar_position: 7
 title: Vertex Colors
 description: Vertex Colors provide options for using Vertex Colors from your Mesh to affect the Base Color and Alpha.
 keywords: [vertex, colors, vertex colors, linear, alpha, poiyomi, shader]
@@ -18,10 +18,10 @@ Whether to convert the mesh vertex colors from gamma space to linear space.
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
-How much to blend vertex colors with the base color. Colors are blended multiplicatively with the base color.
+How much to blend vertex colors with the base color. Colors are blended multiplicative with the base color.
 
 ## Use Vertex Color Alpha
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
-How much to blend vertex alpha with the base alpha. Alpha is blended multiplicatively with the base alpha.
+How much to blend vertex alpha with the base alpha. Alpha is blended multiplicative with the base alpha.
