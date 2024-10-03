@@ -8,7 +8,7 @@ import PoiVideo from '@site/src/components/PoiVideo'
 
 Over the past few years, Poiyomi Shaders have receive major updates that have modernized almost all the features the shader has to offer, and for good reason.
 
-This page serves as a master guide towards upgrading from older versions (7.3 and older) to the latest versions (9.0). Read carefully to learn how to account for these changes.
+This page serves as a master guide towards upgrading from older versions (7.3/8.0 and older) to the latest versions (9.0). Read carefully to learn how to account for these changes.
 
 ## Prepare to Upgrade
 

@@ -142,7 +142,7 @@ This option has a caveat. For most textures, the wrap mode defined for the *Main
 
 Most colors in the shader are standard RGBA colors. This means they are stored as four floating point values, with each value ranging from 0 to 1.
 
-Most color pickers have the option to draw from a global [Theme Color](../modifiers/global-themes.md), or from a world's audiolink theme colors. This can be used to create an easy-to-change color palette for your avatar.
+Most color pickers have the option to draw from a global [Theme Color](/docs/modifiers/global-themes.md), or from a world's AudioLink theme colors. This can be used to create an easy-to-change color palette for your avatar.
 
 ### HDR Colors
 
@@ -150,7 +150,7 @@ HDR colors are similar to standard colors, but they can contain much higher inte
 
 ### Alpha
 
-The alpha channel is used to store opacity. It is a floating point value from 0 to 1. Generally, this is used to determine how much an effect or a part of an effect. For example, in [RGBA Masking](docs/color-and-normals/rgba-color-masking.md), the alpha channel is used to determine how much of a channel's texture should be used.
+The alpha channel is used to store opacity. It is a floating point value from 0 to 1. Generally, this is used to determine how much an effect or a part of an effect. For example, in [RGBA Masking](/docs/color-and-normals/rgba-color-masking.md), the alpha channel is used to determine how much of a channel's texture should be used.
 
 One notable exception is the base color, where the alpha channel is used to determine the opacity of the material.
 
@@ -160,4 +160,4 @@ Vertex colors are colors stored on each vertex of a mesh. They can be used to co
 
 ### Color Blending/Tinting
 
-In most cases, feature colors are blended with their respective texture multiplicatively. For example, a black and white noise map used as an emission map will be tinted with the Emission Color. This is perceptually equivalent to "Tinting" the texture with the color. Note that this can *only* darken a texture.
+In most cases, feature colors are blended with their respective texture multiplicative. For example, a black and white noise map used as an emission map will be tinted with the Emission Color. This is perceptually equivalent to "Tinting" the texture with the color. Note that this can *only* darken a texture.

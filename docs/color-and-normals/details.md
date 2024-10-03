@@ -24,13 +24,13 @@ A texture that defines how and where to apply different detail textures.
 
 - `Type`: **Color**
 
-A tint color that's blended multiplicatively with the Detail Texture.
+A tint color that's blended multiplicative with the Detail Texture.
 
 ## Detail Texture
 
 - `Type`: **Color** Texture (sRGB **ON**)
 
-Texture used to add detail to the base color. This texture is blended multiplicatively with the base color.
+Texture used to add detail to the base color. This texture is blended multiplicative with the base color.
 
 ## Detail Tex Intensity
 
@@ -54,4 +54,4 @@ A normal map texture that's blended with the base normal map.
 
 - `Type`: **Float**, Range: `0.0 - 10.0`
 
-Intensity multipler for the detail normal map.
+Intensity multiplier for the detail normal map.

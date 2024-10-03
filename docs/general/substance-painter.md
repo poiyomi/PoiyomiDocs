@@ -42,12 +42,12 @@ Alternatively, place these presets in your exports folder. For most people, this
 
 Textures have a specific prefix when exported: `t_$textureSet_`. `t` indicates it's a texture (and groups textures together when sorted), `$textureSet` which the name of the Material set set being used. At the end of the filename is the type of texture, which will be one of the following:
 
-- `BaseColor`: Place in the [`Main Texture`](docs/color-and-normals/main.md#main-texture) slot in [Color & Normals](docs/color-and-normals/main.md).
-- `NormalMap`: Place in the [`Normal Map`](docs/color-and-normals/main.md#normal-map) texture slot in [Color & Normals](docs/color-and-normals/main.md). Make sure to mark it as a normal map in the texture import settings.
-- `AmbientOcclusion`: Place in the [`AO`](docs/shading/light-data.md#ao-maps) texture slot in [Light Data](docs/shading/light-data.md). Make sure to **uncheck sRGB** in the texture import settings.
-- `MetallicSmoothnessMaps`: Place in the [`Packed Maps`](docs/shading/reflections-and-specular.md#packed-maps) texture slot in [Reflections & Specular](docs/shading/reflections-and-specular.md). Make sure to **uncheck sRGB** in the texture import settings, and that all of your sliders are set to 1.0, which uses the map's value. Note that this uses `User0` and `User1` channels in Substance Painter for the Reflection and Specular masks respectively, which can be hand-authored to control the amount of reflection and specular.
-- `EmissionMap`: Place in the [`Emission Map`](docs/special-fx/emission.md#emission-map) texture slot in [`Emission`](docs/special-fx/emission.md).
-- `GlobalMask`: Place in one of the Global Mask texture slots in [`Global Mask`](docs/modifiers/global-masks.md). Make sure to **uncheck sRGB** in the texture import settings. Note that this uses the custom **User channels** in Substance for your Masks. This Template is programmed to use `User10` for the `R` channel, `User11` for the `G` channel, `User12` for the `B` channel, and `User13` for the `A` channel.
+- `BaseColor`: Place in the [`Main Texture`](/docs/color-and-normals/main.md#main-texture) slot in [Color & Normals](/docs/color-and-normals/main.md).
+- `NormalMap`: Place in the [`Normal Map`](/docs/color-and-normals/main.md#normal-map) texture slot in [Color & Normals](/docs/color-and-normals/main.md). Make sure to mark it as a normal map in the texture import settings.
+- `AmbientOcclusion`: Place in the [`AO`]/(docs/shading/light-data.md#ao-maps) texture slot in [Light Data](/docs/shading/light-data.md). Make sure to **uncheck sRGB** in the texture import settings.
+- `MetallicSmoothnessMaps`: Place in the [`Packed Maps`](/docs/shading/reflections-and-specular.md#packed-maps) texture slot in [Reflections & Specular](/docs/shading/reflections-and-specular.md). Make sure to **uncheck sRGB** in the texture import settings, and that all of your sliders are set to 1.0, which uses the map's value. Note that this uses `User0` and `User1` channels in Substance Painter for the Reflection and Specular masks respectively, which can be hand-authored to control the amount of reflection and specular.
+- `EmissionMap`: Place in the [`Emission Map`](/docs/special-fx/emission.md#emission-map) texture slot in [`Emission`](/docs/special-fx/emission.md).
+- `GlobalMask`: Place in one of the Global Mask texture slots in [`Global Mask`](/docs/modifiers/global-masks.md). Make sure to **uncheck sRGB** in the texture import settings. Note that this uses the custom **User channels** in Substance for your Masks. This Template is programmed to use `User10` for the `R` channel, `User11` for the `G` channel, `User12` for the `B` channel, and `User13` for the `A` channel.
 
 <a target="_blank" href="/img/general/substance_texturelocations.png">
 <img src="/img/general/substance_texturelocations.png" alt="V8 Export Texture Locations"/>
@@ -59,9 +59,9 @@ Textures have a specific prefix when exported: `t_$textureSet_`. `t` indicates i
 
 PBR textures look best when paired with realistic lighting. To take best advantage of this, good [Shading](docs/shading/main.md) settings are recommended. Some good starting points include:
 
-- [Realistic](docs/shading/main.md#realistic) shading
-- [Multilayer Math](docs/shading/main.md#multilayer-math) shading, using only the first layer with a Border between `0.4` and `0.7` and a Blur of `0.4-0.6`
-- [Wrapped](docs/shading/main.md#wrapped) shading with a wrap of around `1.0` and a normalization of around `0.5`
+- [Realistic](/docs/shading/main.md#realistic) shading
+- [Multilayer Math](/docs/shading/main.md#multilayer-math) shading, using only the first layer with a Border between `0.4` and `0.7` and a Blur of `0.4-0.6`
+- [Wrapped](/docs/shading/main.md#wrapped) shading with a wrap of around `1.0` and a normalization of around `0.5`
 
 Matcaps are not recommended, as they don't respond to the lighting environment the way metallics and specular do.
 

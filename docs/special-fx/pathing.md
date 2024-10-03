@@ -120,6 +120,10 @@ How many segments to split the path into. At a value of `0`, this defaults to th
 
 ## Audio Link
 
+:::info
+This section allows control of Pathing through [AudioLink](/docs/audio-link/audio-link.md). It will only be exposed when AudioLink is activated on the Material.
+:::
+
 For any audio link values with a **Vector2** offset, the **X** represents the value to add when the audio is at minimum (no audio), and the **Y** represents the value to add when the audio is at maximum (full audio).
 
 ### Time Offset

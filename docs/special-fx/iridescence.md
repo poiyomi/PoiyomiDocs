@@ -7,7 +7,7 @@ keywords: [iridescence, matcap, deprecated, special fx, poiyomi, shader]
 import PoiVideo from '@site/src/components/PoiVideo'
 
 :::danger Deprecated Feature
-Iridescence was merged with [Matcap](../shading/matcap.md) in version 9.0. See: [UV Mode: Gradient](../shading/matcap.md#gradient).
+Iridescence was merged with [Matcap](/docs/shading/matcap.md) in version 9.0. See: [UV Mode: Gradient](/docs/shading/matcap.md#uv-mode).
 :::
 
 Iridescence is a feature that maps a gradient texture to a mesh using the angle between the viewer and the surface normal. This can create an effect similar to iridescence on a surface, as well as many stylized effects.

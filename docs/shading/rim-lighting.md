@@ -214,7 +214,7 @@ Controls how much to Apply the Rim to your Alpha.
 
 - `Type`: **Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-Choose to use a [Global Mask](../modifiers/global-masks.md) to constrain the Rim Lighting to the specified Mask instead. Overrides [Mask & Bias](#mask--bias).
+Choose to use a [Global Mask](/docs/modifiers/global-masks.md) to constrain the Rim Lighting to the specified Mask instead. Overrides [Mask & Bias](#mask--bias).
 
 ### Apply to Global Mask
 
@@ -225,7 +225,7 @@ Allows you to add the currently set Rim Lighting setup to be applied to an exist
 ## AudioLink
 
 :::info
-This section allows control of the Rim Lighting through [AudioLink](../audio-link/audio-link.md). It will only be exposed when AudioLink is activated on the Material.
+This section allows control of the Rim Lighting through [AudioLink](/docs/audio-link/audio-link.md). It will only be exposed when AudioLink is activated on the Material.
 :::
 
 <PoiVideo url='/vid/shading/RL_AudioLink.mp4'/>

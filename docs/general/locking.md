@@ -102,16 +102,16 @@ This behavior is not a bug, it's behavior defined by Unity, beyond the control o
 
 | Property Name | Can be Renamed? | Property |
 |--|--|--|
-| `_Color`                  | ✔️ | [Main Color](docs/../../color-and-normals/main.md#color--alpha) |
-| `_MainTex_ST`             | ❌ | [Main Texture Tiling/Offset](docs/../../color-and-normals/main.md#main-texture) |
-| `_BumpMap_ST`             | ❌ | [Normal Map Tiling/Offset](docs/../../color-and-normals/main.md#normal-map) |
-| `_BumpScale`              | ✔️ | [Normal Map Intensity](docs/../../color-and-normals/main.md#normal-map) |
-| `_Cutoff`                 | ✔️ | [Alpha Cutoff](docs/../../color-and-normals/main.md#alpha-cutoff) |
-| `_DetailMask_ST`          | ❌ | [Detail Mask Tiling/Offset](docs/../../color-and-normals/details.md#detail-mask) |
-| `_DetailNormalMap_ST`     | ❌ | [Detail Mask Tiling/Offset](docs/../../color-and-normals/details.md#detail-normal) |
-| `_DetailNormalMapScale`   | ✔️ | [Detail Mask Tiling/Offset](docs/../../color-and-normals/details.md#detail-normal-intensity) |
-| `_EmissionColor`          | ✔️ | [Emission 0 Color](docs/../../special-fx/emission.md#emission-color) |
-| `_EmissionMap_ST`         | ❌ | [Emission 0 Map Tiling/Offset](docs/../../special-fx/emission.md#emission-map) |
+| `_Color`                  | ✔️ | [Main Color](/docs/color-and-normals/main.md#color--alpha) |
+| `_MainTex_ST`             | ❌ | [Main Texture Tiling/Offset](/docs/color-and-normals/main.md#main-texture) |
+| `_BumpMap_ST`             | ❌ | [Normal Map Tiling/Offset](/docs/color-and-normals/main.md#normal-map) |
+| `_BumpScale`              | ✔️ | [Normal Map Intensity](/docs/color-and-normals/main.md#normal-map) |
+| `_Cutoff`                 | ✔️ | [Alpha Cutoff](/docs/color-and-normals/main.md#alpha-cutoff) |
+| `_DetailMask_ST`          | ❌ | [Detail Mask Tiling/Offset](/docs/color-and-normals/details.md#detail-mask) |
+| `_DetailNormalMap_ST`     | ❌ | [Detail Mask Tiling/Offset](/docs/color-and-normals/details.md#detail-normal) |
+| `_DetailNormalMapScale`   | ✔️ | [Detail Mask Tiling/Offset](/docs/color-and-normals/details.md#detail-normal-intensity) |
+| `_EmissionColor`          | ✔️ | [Emission 0 Color](/docs/special-fx/emission.md#emission-color) |
+| `_EmissionMap_ST`         | ❌ | [Emission 0 Map Tiling/Offset](/docs/special-fx/emission.md#emission-map) |
 
 ### Non-Animatable Properties
 
@@ -172,7 +172,7 @@ These options relate to low-level directives and settings that change how the gr
 
 The locking feature uses an optimization procedure developed by [Kaj](https://github.com/DarthShader/Kaj-Unity-Shaders). When the shader is locked in, a unique version is generated that removes unused code, defines fixed values for non-animated shader properties, and defined unused texture slots to be fixed values.
 
-This significantly improves performance, helps mitigate the [64 texture slot crash](docs/../../general/textures-64-texture-slot-crash) sometimes seen when many complex materials with lots of modules enabled are present in a scene.
+This significantly improves performance, helps mitigate the [64 texture slot crash](/docs/general/textures-64-texture-slot-crash.md) sometimes seen when many complex materials with lots of modules enabled are present in a scene.
 
 [^1]: For a more complete list, see the [List of some "Illegal Property Renames"](https://github.com/Thryrallo/ThryEditor/blob/master/Editor/ShaderOptimizer.cs#L227)
 

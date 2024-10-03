@@ -72,7 +72,7 @@ How much to constantly shift the hue with time. A value of 1 will result in a fu
 
 - `Type`: **Float**, Range: `0.0 - 5.0`
 
-Detail Intensity backface multiplier for detail textures in the [Details](details.md) section.
+Detail Intensity backface multiplier for detail textures in the [Details](/docs/color-and-normals/details.md) section.
 
 ### Replace Alpha
 
