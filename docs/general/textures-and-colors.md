@@ -96,7 +96,9 @@ For most color and data textures, it's simplest to use DXT1. This is what Unity 
 
 To have full control over what format Unity uses, you can select the tab to the right of the "Default" tab of compression options, and select "Override for PC, Mac, & Linux Standalone". This will give you a full list of available compression options.
 
-To learn more about the different compression formats, visit the [Unity documentation](https://docs.unity3d.com/Manual/class-TextureImporterOverride.html).
+> Community member **Zanariyo** has compiled an excellent document that explains some of the most common texture formats in Unity and when it's appropriate to use them for your Avatar. [You can view the document here](https://docs.google.com/document/d/1WvgJ2lzyNXJuzFa1cr1YKC8xu5-L124VXQ4JI11wJoc).
+
+To learn more about the different compression formats in further detail, visit the [Unity Documentation](https://docs.unity3d.com/Manual/class-TextureImporterOverride.html).
 
 #### Crunch Compression
 
@@ -125,9 +127,22 @@ This setting determines the maximum resolution of the texture after Unity compre
 Mipmaps are a feature of Unity (and most modern game engines) that store shrunken versions of a texture alongside the full resolution. These are used to create less aliasing, and are essential for textures to look good. They also improve performance, as they allow the GPU to access smaller, more localized areas of the texture.
 
 :::warning
-**Don't turn mipmaps off!** While it does reduce VRAM usage a bit, much of the performance bump is mitigated by the GPU having to always access full-resolution textures.
+**DO NOT turn mipmaps off!** While it does reduce VRAM usage a bit, much of the performance bump is mitigated by the GPU having to always access full-resolution textures.
 
 Turning off mipmaps should only be done for very specific data textures that should not be mipped.
+:::
+
+#### Mipmap Filtering
+
+When using mipmaps, there is a choice on the type of filtering to use.  In Unity, you can choose `Box` or `Kaiser`. It specifies which method Unity should use when filtering mipmaps to optimize image quality.
+
+- `Box`: Makes mipmap levels smoother as they decrease in dimension size.
+- `Kaiser`: Runs a sharpening algorithm on mipmaps as they decrease in dimension size.
+
+:::tip VRChat Recommends Kaiser
+As of VRChat SDK 3.7.1 and newer, VRChat now recommends you use `Kaiser`. This is due to a new Detail Preserving Image Downscaling (DPID) algorithm introduced in the SDK, that expands on Kaiser by focusing on the perception by intentionally over-emphasizing pixels. This makes Textures look far more legible and sharp from a distance.
+
+In order to take advantage of this feature, you must set your **Mipmap Filtering** settings to `Kaiser` on all of your Textures.
 :::
 
 ### Wrap Mode
