@@ -1,22 +1,12 @@
 # Website
 
-This website is built using [Docusaurus 3](https://docusaurus.io/), a modern static website generator.
+This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
 ### Installation
 
 ```
 $ yarn
 ```
-
-On Windows machines, you might encounter a security error when running `yarn`:
-
-> You cannot run this script on the current system. For more information about running scripts and setting execution policy, see about_Execution_Policies at https:/go.microsoft.com/fwlink/?LinkID=135170.
-
-```powershell
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-```
-
-This sets the execution policy to "Bypass" for the current session and allows the installation to proceed without errors on Windows.
 
 ### Local Development
 
