@@ -6,7 +6,7 @@ keywords: [reflections and specular, reflections, specular, metal, metallic, smo
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
-The Reflections & Specular section adds physically-based reflection and specular highlights to a material. This is a core component of a physically-based rendering (PBR) material.
+The Reflections & Specular section adds physically-based reflection and specular highlights to a material. Reflections & Specular allows the user to create metallic-like surfaces such as aluminum, copper, chromium, and steel, with varying smoothness and intensity. This is a core component of a Physically-Based Rendering (PBR) material.
 
 To learn more about the principles of PBR shading, guides are available from [Adobe Substance](https://substance3d.adobe.com/tutorials/courses/the-pbr-guide-part-1) and [Google Filament](https://google.github.io/filament/Materials.html#materialmodels/litmodel).
 

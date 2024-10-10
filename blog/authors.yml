@@ -3,27 +3,34 @@ razgriz:
   title: Poiyomi Docs Author
   url: https://github.com/rrazgriz
   image_url: https://github.com/rrazgriz.png
+  page: true
 
 poiyomi:
   name: Poiyomi
   title: Shader Developer
   url: https://github.com/poiyomi
   image_url: https://github.com/poiyomi.png
+  page: true
+  socials:
+    github: poiyomi
+    x: poiyomi
 
 bluwizard:
   name: BluWizard
   title: Lead Poiyomi Docs Contributor
   url: https://github.com/bluwizard10
   image_url: https://github.com/bluwizard10.png
+  page: true
+  socials:
+    github: bluwizard10
+    x: bluwizard10
 
 teeh:
   name: Teeh
   title: Contributor
   url: https://github.com/teehzero
   image_url: https://github.com/teehzero.png
-
-sacred:
-  name: Sacred
-  title: Contributor
-  url: https://github.com/sacred0
-  image_url: https://github.com/sacred0.png
+  page: true
+  socials:
+    github: teehzero
+    x: teehexploder
