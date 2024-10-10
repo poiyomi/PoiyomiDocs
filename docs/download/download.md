@@ -82,3 +82,43 @@ You must uninstall Poiyomi Toon from the VCC prior to importing Poiyomi Pro!
 
 **DO NOT ATTEMPT TO IMPORT BOTH VERSIONS OR YOUR PROJECT MAY BREAK!**
 :::
+
+### Patreon Features Chart
+
+To see the different features offered between the Free vs. Pro version, refer to the table below:
+
+| Role Access | Public | $2/month | $5/month | $10/month | $20/month | $50/month |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Toon/Pro Features** | | Nano | Micro | Mega | Giga | Tera |
+| [Flipbook](/docs/special-fx/flipbook.md), [Dissolve](/docs/special-fx/dissolve.md), Panosphere, [Glitter](/docs/special-fx/glitter.md), [Voronoi](/docs/special-fx/voronoi.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Text Overlay, [Mirror](/docs/special-fx/mirror.md), [Distance/Angular Fade](/docs/color-and-normals/alpha-options.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| UV Distortion, [Vertex Glitching](/docs/color-and-normals/vertex-glitching.md), Black Light Mask | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [AudioLink](/docs/audio-link/audio-link.md), [Global Themes](/docs/modifiers/global-themes.md) and [Global Masks](/docs/modifiers/global-masks.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [UV Tile Discard](/docs/special-fx/uv-tile-discard.md), [Depth Bulge/FX](/docs/special-fx/depth-bulge.md), [Pathing](/docs/special-fx/pathing.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [Stats Overlay](/docs/special-fx/stats-overlay.md), [Proximity Color](/docs/special-fx/proximity-color.md), [Internal Parallax](/docs/special-fx/internal-parallax.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [Video Effects](/docs/special-fx/video-effects.md), Stochastic Sampling, UV Options+ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [Grab Pass](/docs/extended-features/grabpass.md), [LTCGI](/docs/shading/ltcgi.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [Parallax Heightmapping](/docs/modifiers/uvs/parallax.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [RGBA Color Masking](/docs/color-and-normals/rgba-color-masking.md), [Decals](/docs/color-and-normals/decals.md), [Color Adjust (Hue Shift)](/docs/color-and-normals/color-adjust.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Opaque, Cutout, TransClipping, Fade, Transparent | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Additive, Soft Additive, Multiplicative, 2x Multiplicative | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| **Pro Features** | | | | | | |
+| Screen-Space Ambient Occlusion (Coming Soon) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| Two-Pass Transparency | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| Custom Modules | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| [Geometric Dissolve](/docs/extended-features/geometric-dissolve.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| [Fur and World Fur](/docs/extended-features/fur.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| Shatterwave | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| Tessellated | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| Tessellated Geometric | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| Wireframe | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| DPS/TPS | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| NameTag | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| Cubed | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| EyeFX | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| Particle2 (7.3 Only) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| Spawn In (7.3 Only) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| **Extras** | | | | | | |
+| StencilInvis | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Can Request a New Feature | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Prioritized Features and Shader Request | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ |
