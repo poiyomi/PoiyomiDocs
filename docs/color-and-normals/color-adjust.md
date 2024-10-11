@@ -6,7 +6,12 @@ keywords: [hue, color, saturation, gamma, hue shift, poiyomi]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
-The **Color Adjust** section provides options for modifying the base color of the material. This is applied directly after the main **Color and Normals** section, and will not affect other sections that modify the base color.
+The Color Adjust section provides options for modifying the base color of the material. This is applied directly after the main [Color and Normals](/docs/color-and-normals/main.md) section, and will not affect any other sections that modify the Base Color.
+
+Color Adjust can be used to quickly change the colors presented from the main texture to a different hue of color either directly or indirectly. The results of the hue shift can vary depending on which [Color Space](#color-space) is chosen, and how much [Saturation](#saturation) and [Brightness](#brightness) is set by the user.
+
+<PoiVideo url='/vid/color-and-normals/ColorAdjustDemo.mp4'/>
+<em>Demonstration of the Color Adjust feature on this Avatar's Jacket. Watch how the Saturation and Brightness can also influence how shifting the Hue will look.</em>
 
 ## Mask
 
@@ -23,6 +28,7 @@ A texture that defines where to apply the color adjustments. If this texture is 
 ## Saturation
 
 - `Type`: **Float**, Range: `-1.0 - 10.0`
+  - Normal: `0.0`
 
 Adjusts the saturation of the base color. 
 
@@ -33,6 +39,7 @@ This is implemented as a lerp between the base color and a grayscale version of 
 ## Brightness
 
 - `Type`: **Float**, Range: `-1.0 - 1.0`
+  - Normal: `0.0`
 
 Adjusts the brightness of the base color. 
 
@@ -52,6 +59,9 @@ Choice of Color Space to use for the Hue Shift. By default, it will be set to `O
 
 The usage of perceptual color space is desirable when using the Color Adjust feature. OKLab provides better perceptual properties that allow more accurate color changes, compared to the legacy HSV method. For more technical information on how this works, [see this external webpage](https://bottosson.github.io/posts/oklab/).
 
+<details>
+<summary><b>Differences between OKLab vs. HSV</b></summary>
+
 #### OKLab vs. HSV
 
 OKLab has varying hue with constant lightness and chroma. It is more *even* in lightness for various hues. The reason for this is because OKLab takes the perceived lighting, including on how Green/Red and Blue/Yellow the color is, and calculates it to be a more accurate perception of the color being seen. When you compare this to HSV, the results are more worse when using HSV.
@@ -68,6 +78,8 @@ On Legacy HSV, you will see that it makes the color look more washed out. This c
 
 **We highly recommend using OKLab when setting up a Hue Shift system for your Avatar.** In addition, consider using the Saturation and Brightness options that are available to you alongside your Hue Shift for more accurate results.
 
+</details>
+
 ### Hue Replace
 
 - `Type`: **Checkbox**
@@ -81,6 +93,7 @@ If disabled, the base color will be directly hue shifted, with the amount of hue
 ### Hue Shift
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
+  - Normal: `0.0`
 
 How much to shift the base color around the hue circle. 
 
@@ -96,7 +109,11 @@ How much to constantly shift the hue with time. A value of 1 will result in a fu
 
 - `Type`: **Checkbox**
 
-With [Audio Link](/docs/audio-link/audio-link.md) enabled, hue shift can be controlled with Audio Link chronotensity.
+If enabled, allows the Hue Shift to be controlled with Audio Link chronotensity.
+
+:::info
+This property allows control of the Hue Shift through [AudioLink](/docs/audio-link/audio-link.md). It will only be exposed when AudioLink is activated on the Material.
+:::
 
 #### Band
 
