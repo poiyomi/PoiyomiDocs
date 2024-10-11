@@ -90,9 +90,21 @@ For all these options you can either list them in the output console or remove t
 <img src="/img/thryeditor/unbound.png" alt="Unbound Properties" width="700px"/>
 </a>
 
+### VRAM Estimated Consumption
+
+In each Texture Slot, a number will appear on the right-hand side of the Texture Slot field. It shows a value in either KB (Kilobytes) or MB (Megabytes).
+
+This number informs the user on how much Texture Memory (VRAM) that the assigned Texture is expected to consume. The amount indicated can greatly impact how other users load your Avatar's texture when it is being rendered on their end.
+
+To learn more about how Texture Memory impacts performance, [see this page](/docs/general/textures-and-colors.md#vram-usage).
+
+<a target="_blank" href="/img/thryeditor/TextureVRAMText.png">
+<img src="/img/thryeditor/TextureVRAMText.png" alt="Estimated VRAM on the assigned Texture" width="700px"/>
+</a>
+
 ### VRC Fallback Shader
 
-The Fallback Shader option generates a tag for the material that informs VRChat which shader to use when your shaders are hidden.
+The Fallback Shader option generates a tag for the material that informs VRChat which shader to use when your shaders are hidden. See [Rendering: VRC Fallback](/docs/rendering/main.md#vrc-fallback) for more details.
 
 <a target="_blank" href="/img/thryeditor/fallback.png">
 <img src="/img/thryeditor/fallback.png" alt="VRC Fallback Selector" width="700px"/>
