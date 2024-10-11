@@ -319,19 +319,19 @@ How much to offset the Camera Z Position when Rendering the Outlines. This is us
 
 Which faces to cull. For the inverted hull technique, this should be set to `Front`.
 
-### ZTest
-
-- `Type`: **Dropdown**, Options: `Disabled`/`Never`/`Less`/`Equal`/`LessEqual`/`Greater`/`NotEqual`/`GreaterEqual`/`Always`
-    - Default: `LessEqual`
-
-Sets how the Outline Stencil should test the depth buffer. By default, the depth buffer is tested, and if the depth value is not less than or equal to the current value, the Outline is discarded.
-
 ### ZWrite
 
 - `Type`: **Dropdown**, Options: `Off`/`On`
     - Default: `On`
 
 Determines whether the Outlines should write to the depth buffer. This should typically be ON by default.
+
+### ZTest
+
+- `Type`: **Dropdown**, Options: `Disabled`/`Never`/`Less`/`Equal`/`LessEqual`/`Greater`/`NotEqual`/`GreaterEqual`/`Always`
+    - Default: `LessEqual`
+
+Sets how the Outline Stencil should test the depth buffer. By default, the depth buffer is tested, and if the depth value is not less than or equal to the current value, the Outline is discarded.
 
 <!---------- AudioLink Section ---------->
 
