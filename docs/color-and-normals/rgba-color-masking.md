@@ -22,11 +22,15 @@ If you are upgrading from previous versions, please take the time to go over the
 
 ### Texture
 
-Use a Texture Mask to set the RGBA Mask. If enabled, it exposes the Masks slot.
+Use a Texture Mask to set the RGBA Mask. If enabled, it exposes the [Masks](#masks) slot.
 
 ### Vertex Colors
 
-Use the mesh's Vertex Colors to set the RGBA Mask.
+Use the mesh's [Vertex Colors](/docs/color-and-normals/vertex-colors.md) to set the RGBA Mask.
+
+:::note Linear Vertex Colors Recommended
+When using Vertex Colors as the RGBA Mask, make sure the Color Attributes on the Mesh are in **Linear** Color so that the shader can accurately read them.
+:::
 
 ## Masks and Maps
 

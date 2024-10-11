@@ -66,7 +66,9 @@ These settings can be found when clicking on a texture in the project view, and 
 
 ### VRAM Usage
 
-VRAM (Video Random Access Memory) usage is the amount of memory that will be used by a texture when it is loaded. All assets used by the GPU must be loaded into VRAM before they can be used, and there's only a limited amount of VRAM available on a given card. When the GPU is running out of VRAM, it will start to move textures into system memory, which causes latency and slows down the game.
+VRAM (Video Random Access Memory) usage is the amount of memory that will be used by a texture when it is loaded. In VRChat, this is referred to as "Texture Memory."
+
+All assets used by the GPU must be loaded into VRAM before they can be used, and there's only a limited amount of VRAM available on a given card. When the GPU is running out of VRAM, it will start to move textures into system memory, which causes latency and slows down the game.
 
 Textures are the largest contributors to VRAM usage. Reducing the size and amount of textures will reduce VRAM usage and make your avatar more performant.
 

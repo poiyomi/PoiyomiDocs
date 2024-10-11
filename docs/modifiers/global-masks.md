@@ -98,13 +98,14 @@ Texture Slot defining the forth Global Mask. This will represent Global Masks `4
 
 ## Vertex Colors
 
-This section allows you to use Vertex Colors on your Mesh as a Global Mask.
+This section allows you to use [Vertex Colors](/docs/color-and-normals/vertex-colors.md) on your Mesh as a Global Mask.
 
 ### Linear Colors
 
 - `Type`: **Checkbox**
+  - Default: `On`
 
-Enable to use Linear Colors from your Vertex Colors.
+Enable to use Linear Colors from your Vertex Colors. This is typically recommended so that the shader can accurately read them.
 
 ### Red
 
