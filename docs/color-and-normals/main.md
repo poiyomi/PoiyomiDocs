@@ -11,8 +11,8 @@ import PoiVideo from '@site/src/components/PoiVideo'
 
 The **Color & Normals** section defines the fundamental attributes of a material, including many options that affect the Base Color and per-pixel Normals of the material. It is the first section that most users will utilize when editing the Material.
 
-<a target="_blank" href="/img/color-and-normals/main_Options.png">
-<img src="/img/color-and-normals/main_Options.png" alt="The main Color & Normals Section in Poiyomi Shaders" width="600px"/>
+<a target="_blank" href="/img/color-and-normals/ColorAndNormalsSection.png">
+<img src="/img/color-and-normals/ColorAndNormalsSection.png" alt="The main Color & Normals Section in Poiyomi Shaders" width="600px"/>
 </a>
 
 ## Color & Alpha
