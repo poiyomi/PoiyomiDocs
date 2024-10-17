@@ -8,7 +8,12 @@ import PoiVideo from '@site/src/components/PoiVideo'
 
 Pathing is a powerful and flexible way to create effects that follow along paths defined using gradients. It can be used for complex effects like emissions traveling across a material, or selectively showing an underlying texture based on a defined path.
 
-Options in this section labelled "R/G/B/A" each correspond to a common option with separate values for each different channel of the gradient.
+:::note Documentation Info
+Options in this section labeled **"R/G/B/A"** each correspond to a common option with separate values for each different channel of the gradient.
+:::
+
+<PoiVideo url='/vid/special-fx/PathingExample.mp4' width='300px'/>
+<em>Example of a simple Path used on this Avatar's Whiskers.</em>
 
 ## Gradient Type
 
@@ -25,35 +30,40 @@ Determines whether to sample the Path Map texture. There are two modes:
 
 If enabled, multiplies the base alpha of the material with the Path's final alpha.
 
-## RGB Path Map
+## RGBA Path Map
 
-- `Type`: **Data** Texture (sRGB **OFF**)
+- `Type`: **Data** Texture (`sRGB = Off`)
 
 Defines the gradients for the path. If using `Split Channels` mode, this texture should consist of between 1 and 4 channels of gradient data, with each channel representing a different path. Each channel used will flow between a value of `1` to a value of `255` (in 0-255 range), and should be defined from linear textures. 
 
-When expanded, 4 slots will be visible, one for each path. You can define individual gradient paths for each channel, and press "Confirm Merge" to create a single merged gradient.
+When expanded, 4 slots will be visible, one for each path. This is an integrated [Thry Texture Packer](/docs/thryeditor/enduser.md#texture-packer), which you can use to define gradient paths for each channel.
 
-If using `Merged Channels` mode, this texture should be the output of the Poiyomi Pathing tool. The 4 channels will be sampled in order, from R -> G -> B -> A.
+If using `Merged Channels` mode, this texture should be the output of the Poiyomi Pathing tool. The 4 channels will be sampled in order, from `R -> G -> B -> A`.
 
 ## Color & Mask
 
-- `Type`: **Color** Texture (sRGB **ON**)
+- `Type`: **Color** Texture (`sRGB = On`)
 
 Defines the underlying color for the paths, and a mask for the paths. Both the RGB Color and the Alpha Mask will apply to all paths.
 
 The RGB Color can be used to show textures or colors where the path is active. The Alpha Mask can be used to define where the path is shown, and is very useful for creating clean paths, by creating "wider" paths on the path map, and masking out the edges (which often cause artifacts).
 
-## R/G/B/A Path Types
+## R/G/B/A Path Type
 
 - `Type`: **Dropdown**, Options: `Fill`/`Path`/`Loop`
 
 Defines the path type for each path channel.
 
-`Fill`: The path will fill the gradient from `0-255`, then restart.
-`Path`: The path will follow the gradient from `0-255` and will completely disappear before re-appearing at the beginning.
-`Loop`: The path will follow the gradient from `0-255` and will immediately start showing at the beginning while the end disappears.
+<details>
+<summary><b>R/G/B/A Path Type Options</b></summary>
 
-## R/G/B/A Path Colors
+- `Fill`: The path will fill the gradient from `0-255`, then restart.
+- `Path`: The path will follow the gradient from `0-255` and will completely disappear before re-appearing at the beginning.
+- `Loop`: The path will follow the gradient from `0-255` and will immediately start showing at the beginning while the end disappears.
+
+</details>
+
+## R/G/B/A Path Color
 
 - `Type`: **HDR Color**
 
@@ -63,44 +73,39 @@ The **Alpha** value of these colors determines the strength of the path. Path ch
 
 ## Path Settings
 
-Each of these settings has 4 slots, one for each path channel. They correspond as such:
+Each of these settings below has 4 fields, one for each path channel. They are labeled accordingly as `R`, `G`, `B`, and `A`, referring to their respective channels.
 
-- `X` = `R`
-- `Y` = `G`
-- `Z` = `B`
-- `W` = `A`
+## Emission Strength
 
-### Emission Strength
-
-- `Type`: **Float** (4)
+- `Type`: **Float4**
 
 How strong the emission of the active part of the path should be.
 
 ### Softness
 
-- `Type`: **Float** (4)
+- `Type`: **Float4**
 
 How sharp the edges of the active path segment should be. This smooths and softens the appearance of the path.
 
 ### Speed
 
-- `Type`: **Float** (4)
+- `Type`: **Float4**
 
 How fast the path should move from minimum to maximum along the gradient. A value of `1` will result in a complete path cycle every `20` seconds.
 
 ### Length
 
-- `Type`: **Float** (4)
+- `Type`: **Float4**
 
 How long the path should be, relative to the gradient. A value of `1` will result in a path that extends across the entire gradient.
 
 ## Timing Options
 
-Each of these settings has 4 slots, one for each path channel.
+Each of these settings has 4 fields, one for each path channel.
 
 ### Manual Timing
 
-- `Type`: **Float** (4)
+- `Type`: **Float4**
 
 Determines whether to use manual timing, useful for animating a path in response to avatar parameters.
 
@@ -108,13 +113,13 @@ A value of `-999` will result in automatic timing; any other value will offset i
 
 ### Timing Offset
 
-- `Type`: **Float** (4)
+- `Type`: **Float4**
 
 How much to offset the time by, in terms of path cycles. This can be used whether automatic or manual timing is active.
 
 ### Path Segments
 
-- `Type`: **Float** (4)
+- `Type`: **Float4**
 
 How many segments to split the path into. At a value of `0`, this defaults to the texture precision. If set to a value greater than `0`, the path will be split into that many segments - for most paths, this will be `255` by default, so lower values can be used to break up the path into blockier segments.
 
