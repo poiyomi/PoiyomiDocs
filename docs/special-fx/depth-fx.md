@@ -17,7 +17,7 @@ Make sure to only enable the depth buffer when you need it! This can be a perfor
 :::
 
 :::note
-Depth Bulge doesn't write to depth, which can break certain transparent effects like Custom Fog and Raymarching.
+Depth FX doesn't write to depth, which can break certain transparent effects like Custom Fog and Raymarching.
 :::
 
 ### Mask
