@@ -198,7 +198,7 @@ How much to shift the hue with surface angle. A value of `1` will give maximum h
 Enables Video Texture to project on the Decal.
 
 :::warning
-This feature enables a Video Texture to appear on the Decal. It will only work if a Video Player is broadcasting a Global Video Texture property.
+This feature enables a Video Texture to appear on the Decal. It will only work if a Video Player is broadcasting an `_Udon_VideoTex` Global Render Texture in the instance.
 :::
 
 #### Aspect Ratio
