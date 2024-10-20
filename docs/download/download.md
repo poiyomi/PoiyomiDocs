@@ -103,7 +103,7 @@ To see the different features offered between the Free vs. Pro version, refer to
 | Opaque, Cutout, TransClipping, Fade, Transparent | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Additive, Soft Additive, Multiplicative, 2x Multiplicative | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | **Pro Features** | | | | | | |
-| Screen-Space Ambient Occlusion (Coming Soon) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| [Screen Space Ambient Occlusion](/docs/shading/ssao.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | Two-Pass Transparency | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | Custom Modules | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | [Geometric Dissolve](/docs/extended-features/geometric-dissolve.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
