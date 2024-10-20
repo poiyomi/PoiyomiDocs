@@ -104,6 +104,19 @@ Enables the Color Mask texture slot for SSAO.
 
 Color Mask allows the user to mask out certain areas from being affected by color.
 
+### HSVG
+
+- `Type`: **Float4**
+
+Color Adjust fields for SSAO. Refers to Hue, Saturation, Brightness, and Gamma.
+
+| Channel | Function |
+| --- | --- |
+| H | Hue |
+| S | Saturation |
+| V | Brightness |
+| G | Gamma |
+
 ### Color
 
 - `Type`: **Color**
