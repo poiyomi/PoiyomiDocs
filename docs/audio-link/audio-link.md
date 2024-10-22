@@ -34,6 +34,7 @@ When this feature activates, the following sections in Poiyomi Shaders will have
 - [Glitter / Sparkle](/docs/special-fx/glitter.md#audiolink)
 - [Pathing](/docs/special-fx/pathing.md#audio-link)
 - [Voronoi](/docs/special-fx/voronoi.md#audio-link)
+- [Truchet](/docs/special-fx/truchet.md#audiolink)
 :::
 
 ### Anim Toggle
