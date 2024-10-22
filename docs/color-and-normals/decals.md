@@ -354,7 +354,7 @@ Which band to use for the Audio Link Rotation adjustment.
 
 - `Type`: **Vector2**
 
-How much to modify (mod) the rotation of the decal, in degrees.
+How much to modify the rotation of the decal, in degrees.
 
 | Channel | Function |
 | --- | --- |
@@ -371,7 +371,7 @@ Which band to use for the Audio Link Alpha adjustment.
 
 - `Type`: **Vector2**
 
-How much to modify (mod) the alpha of the decal, in degrees.
+How much to modify the alpha of the decal.
 
 | Channel | Function |
 | --- | --- |
@@ -388,7 +388,7 @@ Which band to use for the Audio Link Emission adjustment.
 
 - `Type`: **Vector2**
 
-How much to modify (mod) the alpha of the decal.
+How much to modify the Emission of the decal.
 
 | Channel | Function |
 | --- | --- |
