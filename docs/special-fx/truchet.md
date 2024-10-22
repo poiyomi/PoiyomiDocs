@@ -2,7 +2,7 @@
 sidebar_position: 15
 title: Truchet
 description: Truchet creates a pattern of non-rotationally symmetric tiles consisting of a quarter-circle pattern.
-keywords: [ambient occlusion, ao, ambient, occlusion, shader effect, shading, screen space ambient occlusion, screen space ao, screen space]
+keywords: [truchet, smith tiles, special effect, special fx]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
