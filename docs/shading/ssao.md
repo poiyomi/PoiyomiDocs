@@ -10,16 +10,16 @@ import PoiVideo from '@site/src/components/PoiVideo'
 
 Screen Space Ambient Occlusion (SSAO) is a feature that allows simulation of shadow details to be brought out from the model through the use of the Screen-Space. This allows more rich shadows and details to be brought out more instead of using Textures or World Post Processing to create a suitable AO effect.
 
+:::info Pro Only
+**This Feature is only available in Poiyomi Pro!** Subscribe to the [Patreon](https://www.patreon.com/poiyomi) at the $10 tier or higher in order to see this module.
+:::
+
 :::warning Requires Depth Buffer
 SSAO requires Depth in order for it to render in all Worlds! Therefore, the World needs to support the Depth Buffer.
 
 To preview the effect in Unity, you will need to use the `DepthGet` Prefab found in the `Assets/_PoiyomiShaders/Prefabs` folder and place it directly into your Scene.
 
 ***If you upload your Avatar with the `DepthGet` Prefab included for it to work in ALL Worlds, please note that this will risk dropping your Performance Rank down to POOR!***
-:::
-
-:::info Pro Only
-**This Feature is only available in Poiyomi Pro!** Subscribe to the [Patreon](https://www.patreon.com/poiyomi) at the $10 tier or higher in order to see this module.
 :::
 
 ## Animatable Toggle
