@@ -161,7 +161,7 @@ Whether the Fresnel Alpha effect should increase in intensity from the outside-i
 
 - `Type`: **Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-Select which [Global Mask](/docs/modifiers/global-masks.md) to only affect the Fresnal Alpha effect onto.
+Select which [Global Mask](/docs/modifiers/global-masks.md) to only affect the Fresnel Alpha effect onto.
 
 ## Angular Alpha
 
