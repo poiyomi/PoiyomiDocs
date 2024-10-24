@@ -147,13 +147,13 @@ How much to hide the SSAO under bright lighting conditions.
 
 - `Type`: **Float**
 
-The Starting Point of the AO Quality Falloff.
+The Starting Range of the AO Falloff.
 
 ### Quality Falloff End
 
 - `Type`: **Float**
 
-The End POint of the AO Quality Falloff.
+The Ending Range of the AO Falloff.
 
 ### Max Distance Falloff
 
