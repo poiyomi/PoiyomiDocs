@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 3
 title: Global Masks
 description: Global Masks are shader-wide texture channels that are used for masking effects in almost every part of the shader, using Textures and Vertex Colors.
 keywords: [global, mask, global mask, masking, texture, vertex, color, vertex color, poiyomi, shader]
@@ -52,7 +52,7 @@ Once you specify your Global Masks, you will instead select the **Global Mask Dr
 <img src="/img/modifiers/PoiDocsGlobalMaskSelect.png" alt="Global Mask Selection"/>
 </a>
 
-The selection of your Global Masks use a naming scheme to identify which Global Mask to use. See the note below for more info.
+The selection of your Global Masks use a naming scheme to identify which Global Mask to use. To understand how they are used, the first number refers to the Global Mask Slot, while the Letter represents the Channel in that specific Global Mask. See the note below for more information.
 
 # Material Properties
 
