@@ -4,14 +4,18 @@ title: AudioLink
 description: AudioLink features for Poiyomi Toon Shader.
 keywords: [audiolink, audio, link, udon audiolink, poiyomi]
 ---
+import PoiVideo from '@site/src/components/PoiVideo'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 AudioLink is a system that analyzes and processes in-world audio into many different highly reactive data streams and exposes the data to both Udon and custom shaders. For Avatars, this allows the ability to create a wide variety of visual effects that react to in-world audio in real time.
 
-*For more information on AudioLink, visit the website at [https://audiolink.dev/](https://audiolink.dev/) or view the [GitHub Repository](https://github.com/llealloo/audiolink).*
+*For more information on AudioLink, visit the website at [https://audiolink.dev/ <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://audiolink.dev/) or view the [GitHub Repository <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/llealloo/audiolink)*
 
-In Poiyomi Shaders, there are various features that support AudioLink. However, they will only be exposed when AudioLink is activated on the Material.
+In Poiyomi Shaders, there are various features that support AudioLink. However, they will only be available when [AudioLink is activated on the Material](#audiolink).
+
+<PoiVideo url='/vid/audio-link/ALDemo-MoveYourBody-Short.mp4'/>
+<em>Demonstration of various AudioLink effects on this Avatar, with the AudioLink Controller on the left. (Un-mute to hear sound)</em>
 
 ## AudioLink
 
