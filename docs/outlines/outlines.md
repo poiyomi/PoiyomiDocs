@@ -141,31 +141,38 @@ Determines if you want the Outlines to blend in a way that is similar to Unity-C
 
 Enables the ability to modify the Outline Color in a similar fashion to [Color Adjust](../color-and-normals/color-adjust.md). This is applied directly after the main [Outline Color](#color), and will not affect other sections that modify the base Outline Color.
 
+:::warning This area is a Float4 Property!
+This means each of these Color Adjust properties **cannot be animated independently of each other!** You must choose only one to animate at at time.
+:::
+
+<details>
+<summary>Color Adjust Options</summary>
+
 ### Hue
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- Range: `0.0 - 1.0`
 
 How much to shift the Outline Color around the Hue Circle.
 
 ### Saturation
 
-- `Type`: **Float**, Range: `0.0 - 2.0`
+- Range: `-1.0 - 1.0`
 
 Adjusts the saturation of the Outline Color.
 
-- A value of `0` will make the Oultine Color fully desaturate (Grayscale).
+- A value of `0` will make the Oultine Color fully de-saturate (Grayscale).
 - A value of `1` will not alter the color at all.
 - A value greater than `1` will increase the Saturation of the outline Color.
 
 ### Value
 
-- `Type`: **Float**, Range: `0.0 - 2.0`
+- Range: `-1.0 - 1.0`
 
 Adjusts the influence of the HSV Color Model.
 
 ### Gamma
 
-- `Type`: **Float**, Range: `0.0 - 2.0`
+- Range: `-1.0 - 1.0`
 
 Adjusts the Brightness of the Color.
 
@@ -177,6 +184,7 @@ How much to constantly shift the hue with time.
 
 For reference, a value of `1` will result in a full Hue Shift cycle every 20 seconds.
 
+</details>
 
 <!---------- Distance Alpha Section ---------->
 
