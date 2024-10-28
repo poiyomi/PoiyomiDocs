@@ -145,18 +145,15 @@ Enables the ability to modify the Outline Color in a similar fashion to [Color A
 This means each of these Color Adjust properties **cannot be animated independently of each other!** You must choose only one to animate at a time.
 :::
 
-<details>
-<summary>Color Adjust Options</summary>
-
 ### Hue
 
-- Range: `0.0 - 1.0`
+- `H`, Range: `0.0 - 1.0`
 
 How much to shift the Outline Color around the Hue Circle.
 
 ### Saturation
 
-- Range: `-1.0 - 1.0`
+- `S`, Range: `-1.0 - 1.0`
 
 Adjusts the saturation of the Outline Color.
 
@@ -166,13 +163,13 @@ Adjusts the saturation of the Outline Color.
 
 ### Value
 
-- Range: `-1.0 - 1.0`
+- `V`, Range: `-1.0 - 1.0`
 
 Adjusts the influence of the HSV Color Model.
 
 ### Gamma
 
-- Range: `-1.0 - 1.0`
+- `G`, Range: `-1.0 - 1.0`
 
 Adjusts the Brightness of the Color.
 
@@ -183,8 +180,6 @@ Adjusts the Brightness of the Color.
 How much to constantly shift the hue with time.
 
 For reference, a value of `1` will result in a full Hue Shift cycle every 20 seconds.
-
-</details>
 
 <!---------- Distance Alpha Section ---------->
 

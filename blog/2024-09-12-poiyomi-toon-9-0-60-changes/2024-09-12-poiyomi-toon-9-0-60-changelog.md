@@ -12,7 +12,9 @@ Hi! I'm Teeh. After a long wait, a new version of Poiyomi Shaders is finally rea
 
 See the video patch notes below for more information.
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/5xrYYcP4EkE?si=TO5iXVR7NWWw4xNw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<div class="videobox">
+<iframe class="iframe-element" src="https://www.youtube-nocookie.com/embed/5xrYYcP4EkE?si=TO5iXVR7NWWw4xNw" title="YouTube Video Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
 
 ## Major Changes
 

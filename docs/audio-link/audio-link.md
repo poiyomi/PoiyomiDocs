@@ -125,7 +125,10 @@ How much to override the Treble Band. A value greater than `0` will override the
 In order to see how AudioLink functions on your Material, you must set up the AudioLink package in Unity.
 
 Below is a Video Tutorial on how to set it up, courtesy of Community Member **Teeh**.
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Gp1woO9RzGY?si=TO5iXVR7NWWw4xNw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<div class="videobox">
+<iframe class="iframe-element" src="https://www.youtube-nocookie.com/embed/Gp1woO9RzGY?si=TO5iXVR7NWWw4xNw" title="YouTube Video Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
 
 ### Instructions
 

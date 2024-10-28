@@ -6,7 +6,7 @@ keywords: [rgba, color, masking, tint, texture, normals, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
-RGBA Color Masking provides a flexible way to apply different color tints, textures, and normal maps with the main color. This does not affect the alpha of the material.
+RGBA Color Masking provides a flexible way to apply different color tints, textures, and normal maps with the main color. This allows the user to seamlessly blend between Materials for situations where the need for blending vertex colors is necessary and for consolidating Detail Normals for greater efficiency.
 
 By default, all 4 channels of RGBA color masking will be set to pure white and `1.0` alpha. Any unused channels should be disabled.
 
@@ -15,6 +15,18 @@ RGBA Color Masking has been completely redone from scratch as of Poiyomi 9.0.
 
 If you are upgrading from previous versions, please take the time to go over the newly reorganized properties as documented below.
 :::
+
+## Using RGBA Color Masking
+
+Usage of RGBA Color Masking can greatly increase efficiency for various types of usage scenarios. Community member **Teeh** has put together this video that demonstrates how to use RGBA Color Masking, which you can watch below:
+
+<div class="videobox">
+<iframe class="iframe-element" src="https://www.youtube-nocookie.com/embed/3efrO8dauec?si=TO5iXVR7NWWw4xNw" title="YouTube Video Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
+# Material Properties
+
+Below are the list of properties available to use in RGBA Color Masking.
 
 ## Mask Type
 

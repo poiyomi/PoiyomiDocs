@@ -38,3 +38,24 @@ html[data-theme="dark"] {
 html[data-theme="dark"] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
 }
+
+/* CUSTOM CSS FOR IFRAME CONTAINER - DO NOT DELETE!! */
+.videobox {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 56.25%;
+  margin-bottom: 50px;
+}
+
+/* CUSTOM CSS FOR YOUTUBE EMBEDDED IFRAME - DO NOT DELETE!! */
+.iframe-element {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
