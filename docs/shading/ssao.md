@@ -38,7 +38,7 @@ Determines how intensely AO will be blended.
 
 - `Type`: **Float**, Range: `0.0001 - 0.02`
 
-Determines the radius tested for hemispheric visibility check. This controls how far AO shadows can spread out.
+This controls how far AO shadows can spread out.
 
 ## AO Quality
 
@@ -163,7 +163,7 @@ The distance from the camera, in meters, beyond which AO will be completely disa
 
 - `Type`: **Float2**
 
-Description needed
+Reduce these if your AO looks like it's "reaching too far". X determines the difference in depth (beyond the radius) beyond which AO shadows will begin to attenuate. Y determines the difference in depth (beyond the radius) beyond which AO shadows will completely terminate.
 
 ### Apply From Global Mask
 
