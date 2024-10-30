@@ -38,7 +38,7 @@ Determines how intensely AO will be blended.
 
 - `Type`: **Float**, Range: `0.0001 - 0.02`
 
-This controls how far AO shadows can spread out.
+Determines the radius tested for hemispheric visibility check. This controls how far AO shadows can spread out.
 
 ## AO Quality
 
