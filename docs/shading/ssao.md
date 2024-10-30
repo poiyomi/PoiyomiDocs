@@ -116,10 +116,10 @@ Color Adjust fields for SSAO. Refers to Hue, Saturation, Brightness, and Gamma.
 
 | Channel | Function |
 | --- | --- |
-| H | Hue |
-| S | Saturation |
-| V | Brightness |
-| G | Gamma |
+| X | Hue |
+| Y | Saturation |
+| Z | Value/Brightness |
+| W | Gamma |
 
 ### Color
 
