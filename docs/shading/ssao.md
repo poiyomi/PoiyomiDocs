@@ -151,19 +151,19 @@ Stylistically hide SSAO under bright lighting conditions.
 
 - `Type`: **Float**
 
-The Starting Range of the AO Falloff.
+The distance from the camera, in meters, beyond which AO will steadily reduce quality to improve performance.
 
 ### Quality Falloff End
 
 - `Type`: **Float**
 
-The Ending Range of the AO Falloff.
+The distance from the camera, in meters, beyond which AO will be completely disabled to improve performance.
 
 ### Max Distance Falloff
 
 - `Type`: **Float2**
 
-Maximum distance of the AO Falloff.
+Description needed
 
 ### Apply From Global Mask
 
