@@ -8,41 +8,45 @@ import PoiVideo from '@site/src/components/PoiVideo'
 
 # Screen Space Ambient Occlusion <span class="badge badge--primary">Pro</span>
 
-Screen Space Ambient Occlusion (SSAO) is a feature that allows simulation of shadow details to be brought out from the model through the use of the Screen-Space. This allows more rich shadows and details to be brought out more instead of using Textures or World Post Processing to create a suitable AO effect.
+In 3D graphics, ambient occlusion is a global illumination term that measures how much ambient light can reach a surface. Poiyomi SSAO is an approximation of this shadowing that is useful for adding depth and crisp detail shadows.
 
 :::info Pro Only
 **This Feature is only available in Poiyomi Pro!** Subscribe to the [Patreon](https://www.patreon.com/poiyomi) at the $10 tier or higher in order to see this module.
 :::
 
 :::warning Requires Depth Buffer
-SSAO requires Depth in order for it to render in all Worlds! Therefore, the World needs to support the Depth Buffer.
+In order to use SSAO, you will need to place the `DepthGet` Prefab found in the `Assets/_PoiyomiShaders/Prefabs` on your avatar.
+:::
 
-To preview the effect in Unity, you will need to use the `DepthGet` Prefab found in the `Assets/_PoiyomiShaders/Prefabs` folder and place it directly into your Scene.
-
-***If you upload your Avatar with the `DepthGet` Prefab included for it to work in ALL Worlds, please note that this will risk dropping your Performance Rank down to POOR!***
+:::info Recommended Toggle Setup
+SSAO is a performance heavy effect, so use it mindfully. Add a toggle for SSAO and a toggle for DepthGet. Both should be disabled by default and unsaved. In some worlds you can get away without activating your depth light!
 :::
 
 ## Animatable Toggle
 
 - `Type`: Checkbox
 
-Toggleable SSAO checkbox. Use this to exclusively animate the visibility of SSAO.
+Animate this to toggle SSAO.
 
 ## AO Intensity
 
 - `Type`: **Float**, Range: `0.0 - 5.0`
 
-Controls the intensity of the SSAO effect. Higher values will yield more deeper results.
+Determines how intensely AO will be blended.
 
 ## AO Radius
 
 - `Type`: **Float**, Range: `0.0001 - 0.02`
 
-Determines the radius tested fo hemispheric visibility check. This controls how far AO shadows can spread out.
+Determines the radius tested for hemispheric visibility check. This controls how far AO shadows can spread out.
 
 ## AO Quality
 
 - `Type`: **Float**, Range: `2.0 - 10.0`
+
+:::warning Performance
+This directly controls how many samples from the depth buffer AO takes for each pixel it is run on. If you fill your display with SSAO pixels (common when cuddling, for example) this performance cost adds up. Try starting at 4, and adding .05 jitter. Make sure you evaluate changes in-game and in VR - artifacting isn't generally as noticeable in motion.
+:::
 
 Determines how many samples are taken and how they're distributed, whether that would be sharper or smoothened.
 
@@ -52,7 +56,7 @@ Lower Values will make it look more like a cel-shader, while Higher Values will 
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
-Sets the weight of the shadow towards center samples. This can make the falloff more softer, if desired.
+Weights shadows towards the source of occlusion, making shadow falloff more gradual.
 
 ## Depth Bias
 
@@ -64,19 +68,19 @@ Clips away the least intense shadows to help reduce visual artifacts.
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
-Reduces shadowing on geometry that isn't actually occluded, instead of bias.
+Reduces shadowing on geometry that isn't actually occluded. Generally, you should use this instead of Depth bias.
 
 ## Random Jitter
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
-Adds noise and animated jitter to the SSAO effect. This is only useful for very stylized looks.
+Adds a dithered jitter effect which can help mask lower sample counts.
 
 ## Use Normals
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
-Samples from the main [Normal Map](/docs/color-and-normals/main.md#normal-map) when calculating the SSAO.
+0 uses vertex normals, 1 uses per-pixel normals when calculating the SSAO.
 
 ## Color and Masking
 
@@ -90,7 +94,7 @@ Enables the Color Map texture slot for SSAO.
 
 - `Type`: **Color** Texture (`sRGB = On`)
 
-Color Map allows the user to determine a Texture that will define how the SSAO colors will be rendered on the Material.
+Color Map allows the user to map SSAO shadow color using a texture.
 
 ### Use Color Mask?
 
@@ -102,7 +106,7 @@ Enables the Color Mask texture slot for SSAO.
 
 - `Type`: **Data** Texture (`sRGB = Off`)
 
-Color Mask allows the user to mask out certain areas from being affected by color.
+Color Mask allows the user to mask out certain areas from being affected by SSAO.
 
 ### HSVG
 
@@ -121,7 +125,7 @@ Color Adjust fields for SSAO. Refers to Hue, Saturation, Brightness, and Gamma.
 
 - `Type`: **Color**
 
-Main Color of SSAO. By default, it will be Black.
+SSAO shadow color. Black by default.
 
 ### Use Surface Color
 
@@ -141,7 +145,7 @@ Which blending operation to use for the SSAO color.
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
-How much to hide the SSAO under bright lighting conditions.
+Stylistically hide SSAO under bright lighting conditions.
 
 ### Quality Falloff Start
 
@@ -165,10 +169,10 @@ Maximum distance of the AO Falloff.
 
 - `Type`: **Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-Select which [Global Mask](/docs/modifiers/global-masks.md) to apply directly onto SSAO.
+Select which [Global Mask](/docs/modifiers/global-masks.md) to apply to SSAO.
 
 ### Apply To Global Mask
 
 - `Type`: **Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-Select which [Global Mask](/docs/modifiers/global-masks.md) to send your SSAO's effects onto the specified Global Mask.
+Select which [Global Mask](/docs/modifiers/global-masks.md) SSAO writes to.
