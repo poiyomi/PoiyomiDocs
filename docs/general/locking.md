@@ -28,6 +28,12 @@ When uploading to VRChat, the Auto-Locking process runs automatically for any Po
 
 When the Material Locks, properties that are not animated will be optimized. If you need to animate a Material Property for any reason (such as a Hue Shift), you need to mark them appropriately so that the Shader Optimizer can account for it. Read below to learn how to do so.
 
+:::tip Remember!
+You can only animate Materials <u>via the Hierarchy</u>!
+
+Due to the way Unity works, make sure you always edit and interact with Materials <u>directly on the Avatar's Skinned Mesh Renderers</u> when creating your animations.
+:::
+
 ### Animated
 
 To animate a property on a Locked Material, you need to be mark it as Animated. To do this, <u>while the Material is Unlocked</u>, `Right-Click` the property and select **Animated (When Locked)**. This will add a green `A` next to the property (short for `A`nimated).
