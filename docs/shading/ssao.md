@@ -116,10 +116,10 @@ Color Adjust fields for SSAO. Refers to Hue, Saturation, Brightness, and Gamma.
 
 | Channel | Function |
 | --- | --- |
-| H | Hue |
-| S | Saturation |
-| V | Brightness |
-| G | Gamma |
+| X | Hue |
+| Y | Saturation |
+| Z | Value/Brightness |
+| W | Gamma |
 
 ### Color
 
@@ -151,19 +151,19 @@ Stylistically hide SSAO under bright lighting conditions.
 
 - `Type`: **Float**
 
-The Starting Range of the AO Falloff.
+The distance from the camera, in meters, beyond which AO will steadily reduce quality to improve performance.
 
 ### Quality Falloff End
 
 - `Type`: **Float**
 
-The Ending Range of the AO Falloff.
+The distance from the camera, in meters, beyond which AO will be completely disabled to improve performance.
 
 ### Max Distance Falloff
 
 - `Type`: **Float2**
 
-Maximum distance of the AO Falloff.
+Reduce these if your AO looks like it's "reaching too far". X determines the difference in depth (beyond the radius) beyond which AO shadows will begin to attenuate. Y determines the difference in depth (beyond the radius) beyond which AO shadows will completely terminate.
 
 ### Apply From Global Mask
 
