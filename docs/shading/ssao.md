@@ -18,7 +18,7 @@ In 3D graphics, ambient occlusion is a global illumination term that measures ho
 In order to use SSAO, you will need to place the `DepthGet` Prefab found in the `Assets/_PoiyomiShaders/Prefabs` on your avatar.
 :::
 
-:::info Recommended Toggle Setup
+:::tip Recommended Toggle Setup
 SSAO is a performance heavy effect, so use it mindfully. Add a toggle for SSAO and a toggle for DepthGet. Both should be disabled by default and unsaved. In some worlds you can get away without activating your depth light!
 :::
 
