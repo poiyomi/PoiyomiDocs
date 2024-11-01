@@ -31,7 +31,7 @@ When the Material Locks, properties that are not animated will be optimized. If 
 :::tip Remember!
 You can only animate Materials <u>via the Hierarchy</u>!
 
-Due to the way Unity works, make sure you always edit and interact with Materials <u>directly on the Avatar's Skinned Mesh Renderers</u> when creating your animations.
+Due to the way Unity works, make sure you always edit and interact with Materials <u>directly on the Avatar's Mesh Renderers</u> when creating your animations.
 :::
 
 ### Animated
@@ -145,8 +145,9 @@ To adjust these properties at runtime, you'll need to create different materials
 These section checkboxes signal the shader to add and remove code. **Thus, they cannot be animated at runtime whatsoever**.
 
 If you want to toggle the effect of a section, use a property that controls the overall effect. For example,
-- To disable **Color Adjust**, you could animate the settings to their default values.
-- To disable a **Decal**, animate the *Alpha* value to `0`.
+- To disable [Color Adjust](/docs/color-and-normals/color-adjust.md), you could animate the settings to their default values.
+- To disable a [Decal](/docs/color-and-normals/decals.md), animate it's `Alpha` value to `0`.
+- To disable [AudioLink](/docs/audio-link/audio-link.md), animate the `Anim Toggle` to be *un-checked*.
 
 ### Keyword Toggle Checkboxes
 
