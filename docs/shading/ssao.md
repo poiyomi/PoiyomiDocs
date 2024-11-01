@@ -19,17 +19,15 @@ In order to use SSAO, you will need to place the `DepthGet` Prefab found in the 
 :::
 
 :::tip Recommended Toggle Setup
-SSAO is a performance heavy effect, so use it mindfully. Add a toggle for [Animatable Toggle](#animatable-toggle) and for toggling the `DepthGet` object. Both should be disabled by default and unsaved. In some Worlds, you can get away without activating your depth light!
+SSAO is a performance heavy effect, so use it mindfully. Add a toggle for [Animatable Toggle](#animatable-toggle) below, and for toggling the `DepthGet` object. Both should be disabled by default and unsaved. In some Worlds, you can get away without activating your depth light!
 :::
 
 ## Animatable Toggle
 
 - `Type`: Checkbox
 
-Animate this to toggle SSAO.
-
 :::tip
-Use this checkbox to toggle SSAO on the Shader!
+Use this checkbox to toggle SSAO on this Material.
 :::
 
 ## AO Intensity
