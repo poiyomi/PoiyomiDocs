@@ -146,7 +146,7 @@ These section checkboxes signal the shader to add and remove code. **Thus, they 
 
 If you want to toggle the effect of a section, use a property that controls the overall effect. For example,
 - To disable [Color Adjust](/docs/color-and-normals/color-adjust.md), you could animate the settings to their default values.
-- To disable a [Decal](/docs/color-and-normals/decals.md), animate it's `Alpha` value to `0`.
+- To disable a [Decal](/docs/color-and-normals/decals.md), animate its `Alpha` value to `0`.
 - To disable [AudioLink](/docs/audio-link/audio-link.md), animate the `Anim Toggle` to be *un-checked*.
 
 ### Keyword Toggle Checkboxes
