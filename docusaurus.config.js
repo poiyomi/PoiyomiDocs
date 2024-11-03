@@ -252,6 +252,10 @@ const config = {
                 to: "/shading/reflections-and-specular",
               },
               {
+                label: "Screen Space Ambient Occlusion",
+                to: "/shading/ssao",
+              },
+              {
                 label: "Outlines",
                 to: "/outlines",
               },
