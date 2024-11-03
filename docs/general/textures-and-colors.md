@@ -72,7 +72,7 @@ All assets used by the GPU must be loaded into VRAM before they can be used, and
 
 Textures are the largest contributors to VRAM usage. Reducing the size and amount of textures will reduce VRAM usage and make your avatar more performant.
 
-To determine the VRAM usage of an avatar, you can download [Thry's VRC Avatar Performance Tools](https://github.com/Thryrallo/VRC-Avatar-Performance-Tools) and use the `Thry -> Avatar -> VRAM` menu. This will show you the VRAM usage of your avatar, and what assets are using the most VRAM.
+To determine the VRAM usage of an avatar, you can download [Thry's VRC Avatar Performance Tools <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/Thryrallo/VRC-Avatar-Performance-Tools) and use the `Thry -> Avatar -> VRAM` menu. This will show you the VRAM usage of your avatar, and what assets are using the most VRAM.
 
 :::danger Save VRAM, Save Lives!
 Multiple Textures set above 2048px will consume a vast amount of VRAM, contributing to serious performance issues for both yourself and others.
@@ -82,7 +82,7 @@ Multiple Textures set above 2048px will consume a vast amount of VRAM, contribut
 
 ### sRGB
 
-sRGB is a setting that determines whether the texture should be stored in [gamma-corrected](https://learnopengl.com/Advanced-Lighting/Gamma-Correction) space. This is necessary for color textures, but should always be off for data textures.
+sRGB is a setting that determines whether the texture should be stored in [gamma-corrected <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://learnopengl.com/Advanced-Lighting/Gamma-Correction) space. This is necessary for color textures, but should always be off for data textures.
 
 :::warning Turn this OFF for Non-color Maps
 It's **very** important to set the sRGB setting to `Off` for textures that are not being used directly as color. Any masks, non-color maps, or other data textures will have incorrect values if sRGB is enabled. Color Textures should keep sRGB `On`.
@@ -94,21 +94,21 @@ Unity re-encodes all textures into formats that are more efficient for the GPU. 
 
 Most of the formats Unity uses have a fixed amount of bits per pixel. This means that, for a texture of a given resolution, it will always have the same size in video memory (VRAM). This is important to note for performance and memory usage, as VRAM usage can be a major factor for avatar performance.
 
-For most color and data textures, it's simplest to use DXT1. This is what Unity uses when set to "Normal" compression. When set to "High" quality, it will use BC7, which is a higher quality format, but will always store an alpha channel even if it's not present in the source texture. This can result in higher VRAM usage than DXT1.
+For most color and data textures, it's simplest to use `DXT1`. This is what Unity uses when set to "Normal" compression. When set to "High" quality, it will use `BC7`, which is a higher quality format, but will always store an alpha channel even if it's not present in the source texture. This can result in higher VRAM usage than `DXT1`.
 
-To have full control over what format Unity uses, you can select the tab to the right of the "Default" tab of compression options, and select "Override for PC, Mac, & Linux Standalone". This will give you a full list of available compression options.
+To have full control over what format Unity uses, you can select the tab to the right of the `Default` tab of compression options, and select `Override for PC, Mac, & Linux Standalone`. This will give you a full list of available compression options.
 
-> Community member **Zanariyo** has compiled an excellent document that explains some of the most common texture formats in Unity and when it's appropriate to use them for your Avatar. [You can view the document here](https://docs.google.com/document/d/1WvgJ2lzyNXJuzFa1cr1YKC8xu5-L124VXQ4JI11wJoc).
+> Community member **Zanariyo** has compiled an excellent document that explains some of the most common texture formats in Unity and when it's appropriate to use them for your Avatar. [You can view the document here <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.google.com/document/d/1WvgJ2lzyNXJuzFa1cr1YKC8xu5-L124VXQ4JI11wJoc).
 
 To learn more about the different compression formats in further detail, visit the [Unity Documentation](https://docs.unity3d.com/Manual/class-TextureImporterOverride.html).
 
 #### Crunch Compression
 
-Crunch compression is an aggressive compression algorithm that is often used for color textures. It is a highly lossy algorithm, and will result in some amount of quality degredation. Unity reports that filesize is decreased with crunch compression, but it's important to note that asset bundles are generally compressed already, mitigating much of the benefit of crunch compression.
+Crunch compression is an aggressive compression algorithm that is often used for color textures. It is a highly lossy algorithm, and will result in some amount of quality degradation. Unity reports that file size is decreased with crunch compression, but it's important to note that asset bundles are generally compressed already, mitigating much of the benefit of crunch compression.
 
 Crunch compression will not reduce the size of the texture in VRAM, as it has to be decompressed before it can be loaded and accessed by the GPU.
 
-Hai-vr has written some notes about crunch compression on [their Notion](https://hai-vr.notion.site/Crunch-Compression-2119cc1366574068809250fafedbe27a), which outline some of the controversies and limitations of crunch compression.
+Hai-vr has written some notes about crunch compression on [their Notion <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://hai-vr.notion.site/Crunch-Compression-2119cc1366574068809250fafedbe27a), which outline some of the controversies and limitations of crunch compression.
 
 Consider carefully before using crunch compression for your textures, and always look at the actual differences in visual quality.
 
@@ -122,7 +122,13 @@ If you are an Avatar Creator, consider leaving this OFF in your Packages.
 
 This setting determines the maximum resolution of the texture after Unity compresses it. Texture resolution is the biggest driver of VRAM usage, and it's important to keep your textures as low resolution as they can be while maintaining acceptable visual quality.
 
-4096px and 8192px square textures, in particular, use large amounts of VRAM. Where possible, make your textures smaller, and use features like RGBA masking, alternate UV maps, decals, etc. to reduce the need for large, high resolution textures.
+4096px and 8192px square textures, in particular, use large amounts of VRAM. Where possible, make your textures smaller, and use features like [RGBA Color Masking](/docs/color-and-normals/rgba-color-masking.md), alternate UV maps, [Decals](/docs/color-and-normals/decals.md), etc., to reduce the need for large, high resolution textures.
+
+:::info VRChat Avatar Size Limits
+Make sure to keep the Max Size of your textures <u>as low as you can</u>, as it will greatly contribute to the final **Download Size** and **Uncompressed Size** of your Avatar. Failure to take this into account may prevent VRChat from even loading your Avatar at all!
+
+To see the Size Limits that are currently enforced for both PC and Mobile Platforms, refer to the VRChat Creators Documentation on [Avatar Size Limits <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://creators.vrchat.com/avatars/avatar-size-limits).
+:::
 
 ### Mipmaps
 
