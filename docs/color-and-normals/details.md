@@ -6,7 +6,9 @@ keywords: [details, tile, tiling, normals, base color, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
-The Details section provides options to apply additional textures (often tiled) to the base color and normals.
+The Details section provides options to apply additional textures (often tiled) to the base color and normals. When tiled, this feature can grant the user to bring out additional small details on the model without sacrificing quality.
+
+When coming from other shaders, Details can sometimes be referred to as *2nd Normal*.
 
 ## Detail Mask
 
