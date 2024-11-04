@@ -2,49 +2,53 @@
 sidebar_position: 3
 title: Textures and Colors
 description: Knowledge on how to use Textures and Colors within Poiyomi Shaders.
-keywords: [texture, color, format, tiling, offset, vram, compression, size, mipmap, alpha, poiyomi, shader]
+keywords: [texture, size, color, format, tiling, offset, vram, compression, size, mipmap, alpha, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
-Textures and Colors are used everywhere in the shader, so it's important to understand how they work.
+Textures and Colors are used everywhere in the shader, so it's important to understand how they work. Much of the information explained on this page can greatly impact the final appearance of your Textures.
 
 ## Textures
 
-A texture is a 2D image containing multiple channels of data. Textures are used to define how a material looks, how it responds to light, where effects are applied and what they look like, and more.
+A texture is a 2D image (typically a square-shaped image) containing multiple channels of data. Textures are used to define how a material looks, how it responds to light, where effects are applied, what they look like, and more.
 
 ### Source Texture Formats
 
 Unity supports a wide range of texture import formats, including PNG, TGA, BMP, DDS, PSD, and more. These textures are re-encoded by Unity for use in-game, so it's best to keep them in a lossless format.
 
-:::danger
-**Never use JPG/JPEG for textures!** While Unity does support it, JPG is a *lossy* format, meaning that your source files aren't kept at full quality. Use lossless formats like PNG, TGA, or PSD instead.
+:::danger Never use JPG/JPEG for textures!
+While Unity does support it, JPG is a *lossy* format, meaning that your source files aren't kept at full quality. Use lossless formats like PNG, TGA, or PSD instead.
 :::
 
 ### Source Texture Resolution
 
-Your texture resolution is the number of pixels in each direction. For most cases, you want your textures to be square (or rectangular with integer multipliers on dimensions), and have dimensions that are a power of two - 256, 512, 1024, 2048, etc. This is because Unity works best when textures are powers of two, especially when resizing textures.
+Your texture resolution is the number of pixels in each direction. For most cases, you want your textures to be square (or rectangular with integer multipliers on dimensions), and have dimensions that are a power-of-two; 256, 512, 1024, 2048, etc. This is because Unity works best when textures are powers of two, especially when resizing textures.
 
 You can author and store your textures at high resolution, and downscale them to a lower resolution with the texture import settings.
 
 :::tip
-**Use a power-of-two resolution (256, 512, 1024, 2048, 4096) whenever possible!** Saving your source texture files at a non-power-of-two resolution can result in blurry results when resizing to a power-of-two resolution.
+**Use a power-of-two resolution (16, 32, 64, 128, 256, 512, 1024, 2048, 4096) whenever possible!** Saving your source texture files at a non-power-of-two resolution can result in blurry results when resizing to a power-of-two resolution.
 :::
 
 ### UV Maps
 
 Textures need a way to know how to map their texels (texture pixels) to the object. Most often, this is done with UV maps. The name UV comes from the dimensions - U for horizontal, V for vertical.
 
-UV maps are stored in and defined by the mesh. In poiyomi, the first 4 UV maps (UV0, UV1, UV2, UV3) can be directly used for almost any texture.
+<!-- COMMENTED OUT
+*To understand how a UV map works in a more simplistic term, [think about how a piece of wrapped chocolate candy is made <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://www.reddit.com/r/blender/comments/18xnl6l/show_this_to_those_who_havent_yet_understood_uv/?utm_source=share&utm_medium=mweb3x&utm_name=mweb3xcss&utm_term=1&utm_content=share_button). When you fully unwrap the paper to get to the chocolate, laying the unwrapped paper flat on the table would be considered the UV layout.* 
+-->
 
-Poiyomi also has a number of modified UV maps that can be used for various effects, including panosphere mapping, polar UV, UV distortion, and more.
+UV maps are stored in and defined by the mesh you are using. In Unity, a mesh can contain a maximum amount of 4 UV layouts. When used in Poiyomi, all of the first 4 UV maps (`UV0`, `UV1`, `UV2`, `UV3`) can be directly used for almost any texture. Although most commonly, the main primary UV map (`UV0`), also known as the default UV, would be used for the Main Texture.
+
+Poiyomi also has a number of modified UV maps that can be used for various effects, including Panosphere mapping, Polar UV, UV Distortion, and more.
 
 ### Tiling and Offset
 
 Tiling and Offset are used to determine how a texture should repeat and where it should sit on a UV map.
 
-Tiling is simply how many times a texture should repeat in a direction on its UV mapping. A value of 2 would result in the texture repeating twice, while 0.5 would result in only half the texture showing.
+**Tiling** is simply how many times a texture should repeat in a direction on its UV mapping. A value of 2 would result in the texture repeating twice, while 0.5 would result in only half the texture showing.
 
-Offset is used to shift the texture on its UV mapping. This can be used to fine tune the location of a texture, or adjust it at runtime.
+**Offset** is used to shift the texture on its UV mapping. This can be used to fine tune the location of a texture, or adjust it at runtime.
 
 ### Panning
 
@@ -54,9 +58,9 @@ Panning is an option available on most textures. It will move the texture at a c
 
 Textures store their data in multiple channels. In unity, these are the Red, Green, Blue, and Alpha channels. These channels are independent of each other, and can be used to store different data.
 
-For most color textures, R, G, and B channels are used for color, and the A channel, if present is used for opacity.
+For most color textures, `R`, `G`, and `B` channels are used for color. If the `A` channel is present, it will be used for opacity.
 
-For data textures, different channels can be used for different purposes. For example, in most masks, the R channel is used for the mask, and the other channels go unused. In the Reflections and Specular maps, the R and G channels are used for the metallic and glossiness maps, while the B and A channels are used for reflection and specular masking.
+For data textures, different channels can be used for different purposes. For example, in most masks, the `R` channel is used for the mask, and the other channels go unused. In the Reflections and Specular maps, the `R` and `G` channels are used for the metallic and glossiness maps, while the `B` and `A` channels are used for reflection and specular masking.
 
 Channels not present in a texture's encoding are set to 1 (white).
 
@@ -66,16 +70,18 @@ These settings can be found when clicking on a texture in the project view, and 
 
 ### VRAM Usage
 
-VRAM (Video Random Access Memory) usage is the amount of memory that will be used by a texture when it is loaded. In VRChat, this is referred to as "Texture Memory."
+<!-- EDITOR'S NOTE: To coincide with VRChat Glossary, I will have the term "VRAM" be referred to as "Texture Memory" instead. -BluWizard10 -->
+
+VRAM (Video Random Access Memory) usage is the amount of memory that will be used by a texture when it is loaded. In VRChat, this is referred to as *Texture Memory*.
 
 All assets used by the GPU must be loaded into VRAM before they can be used, and there's only a limited amount of VRAM available on a given card. When the GPU is running out of VRAM, it will start to move textures into system memory, which causes latency and slows down the game.
 
 Textures are the largest contributors to VRAM usage. Reducing the size and amount of textures will reduce VRAM usage and make your avatar more performant.
 
-To determine the VRAM usage of an avatar, you can download [Thry's VRC Avatar Performance Tools <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/Thryrallo/VRC-Avatar-Performance-Tools) and use the `Thry -> Avatar -> VRAM` menu. This will show you the VRAM usage of your avatar, and what assets are using the most VRAM.
+To determine the Texture Memory usage of an avatar, you can download [Thry's VRC Avatar Performance Tools <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/Thryrallo/VRC-Avatar-Performance-Tools) and use the `Thry -> Avatar -> VRAM` menu. This will show you the amount of VRAM consumption of your avatar, and what assets are using the most VRAM.
 
 :::danger Save VRAM, Save Lives!
-Multiple Textures set above 2048px will consume a vast amount of VRAM, contributing to serious performance issues for both yourself and others.
+Multiple Textures set at or above 2048px will consume a vast amount of Texture Memory, contributing to serious performance issues for both yourself and others.
 
 **Please do your part by avoiding the use of High Res Textures on your Avatar!**
 :::
@@ -100,7 +106,7 @@ To have full control over what format Unity uses, you can select the tab to the 
 
 > Community member **Zanariyo** has compiled an excellent document that explains some of the most common texture formats in Unity and when it's appropriate to use them for your Avatar. [You can view the document here <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.google.com/document/d/1WvgJ2lzyNXJuzFa1cr1YKC8xu5-L124VXQ4JI11wJoc).
 
-To learn more about the different compression formats in further detail, visit the [Unity Documentation](https://docs.unity3d.com/Manual/class-TextureImporterOverride.html).
+To learn more about the different compression formats in further detail, visit the [Unity Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/class-TextureImporterOverride.html).
 
 #### Crunch Compression
 
@@ -120,9 +126,9 @@ If you are an Avatar Creator, consider leaving this OFF in your Packages.
 
 ### Max Size
 
-This setting determines the maximum resolution of the texture after Unity compresses it. Texture resolution is the biggest driver of VRAM usage, and it's important to keep your textures as low resolution as they can be while maintaining acceptable visual quality.
+This setting determines the maximum resolution of the texture after Unity compresses it. Texture resolution is the biggest driver of VRAM (Texture Memory) consumption, and it's important to keep your textures as low resolution as they can be while maintaining acceptable visual quality.
 
-4096px and 8192px square textures, in particular, use large amounts of VRAM. Where possible, make your textures smaller, and use features like [RGBA Color Masking](/docs/color-and-normals/rgba-color-masking.md), alternate UV maps, [Decals](/docs/color-and-normals/decals.md), etc., to reduce the need for large, high resolution textures.
+4096px and 8192px square textures, in particular, **use large amounts of VRAM**. Where possible, make your textures smaller, and use features like [RGBA Color Masking](/docs/color-and-normals/rgba-color-masking.md), alternate UV maps, [Decals](/docs/color-and-normals/decals.md), etc., to reduce the need for large, high resolution textures. Using those features can both help improve performance and cut down on VRAM consumption.
 
 :::info VRChat Avatar Size Limits
 Make sure to keep the Max Size of your textures <u>as low as you can</u>, as it will greatly contribute to the final **Download Size** and **Uncompressed Size** of your Avatar. Failure to take this into account may prevent VRChat from even loading your Avatar at all!
@@ -155,7 +161,13 @@ In order to take advantage of this feature, you must set your **Mipmap Filtering
 
 ### Wrap Mode
 
-Wrap Mode defines how a texture should repeat when it is tiled. This has various options including Repeat (repeats the texture), Clamp (stretches the edges of the texture), and Mirror (mirrors the texture).
+Wrap Mode defines how a texture should repeat when it is tiled. This has various options,
+
+**Repeat** is self-explanatory. It will repeat (tile) the texture infinitely.
+
+**Clamp** will stretch the edges of the texture to each end of the UV's boundaries.
+
+**Mirror** will simply flip the texture in reverse as if it was inside a mirror.
 
 This option has a caveat. For most textures, the wrap mode defined for the *Main Texture* will be used. This is due to a limitation within the DirectX Graphics API, which limits the amount of samplers that can be defined.
 
@@ -165,22 +177,24 @@ This option has a caveat. For most textures, the wrap mode defined for the *Main
 
 Most colors in the shader are standard RGBA colors. This means they are stored as four floating point values, with each value ranging from 0 to 1.
 
-Most color pickers have the option to draw from a global [Theme Color](/docs/modifiers/global-themes.md), or from a world's AudioLink theme colors. This can be used to create an easy-to-change color palette for your avatar.
+Most color pickers have the option to draw from a [Global Theme](/docs/modifiers/global-themes.md), or from a world's AudioLink theme colors. This can be used to create an easy-to-change color palette for your avatar.
 
 ### HDR Colors
 
 HDR colors are similar to standard colors, but they can contain much higher intensity values. Intensities above 1 act similarly to emission, and accordingly, these colors are generally used for modules like emission.
 
+In the Unity Standard Shader, the HDR Color `Intensity` slider serves as the Emission Intensity by itself.
+
 ### Alpha
 
-The alpha channel is used to store opacity. It is a floating point value from 0 to 1. Generally, this is used to determine how much an effect or a part of an effect. For example, in [RGBA Masking](/docs/color-and-normals/rgba-color-masking.md), the alpha channel is used to determine how much of a channel's texture should be used.
+The Alpha channel is used to store opacity. It is a floating point value from 0 to 1. Generally, this is used to determine how much an effect or a part of an effect. For example, in [RGBA Color Masking](/docs/color-and-normals/rgba-color-masking.md), the Alpha channel is used to determine how much of a channel's texture should be used.
 
-One notable exception is the base color, where the alpha channel is used to determine the opacity of the material.
+One notable exception is the base color, where the Alpha channel is used to determine the amount of opacity for the material.
 
 ### Vertex Colors
 
-Vertex colors are colors stored on each vertex of a mesh. They can be used to color the mesh, or to store data about the mesh, like each vertex's position, or smoothed vertex normals, both of which can be baked into the mesh using the **Poi** > **Vertex Color Baker** tool.
+[Vertex Colors](/docs/color-and-normals/vertex-colors) are colors stored on each vertex of a mesh. They can be used to color the mesh, or to store data about the mesh, like each vertex's position, or smoothed vertex normals, both of which can be baked into the mesh using the `Poi -> Vertex Color Baker` tool.
 
 ### Color Blending/Tinting
 
-In most cases, feature colors are blended with their respective texture multiplicative. For example, a black and white noise map used as an emission map will be tinted with the Emission Color. This is perceptually equivalent to "Tinting" the texture with the color. Note that this can *only* darken a texture.
+In most cases, feature colors are blended multiplicative with their respective texture. For example, a black and white noise map used as an emission map will be tinted with the Emission Color. This is perceptually equivalent to "Tinting" the texture with the color. Note that this can *only* darken a texture.
