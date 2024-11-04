@@ -34,7 +34,7 @@ You can author and store your textures at high resolution, and downscale them to
 
 Textures need a way to know how to map their texels (texture pixels) to the object. Most often, this is done with UV maps. The name UV comes from the dimensions - U for horizontal, V for vertical.
 
-<!-- COMMENTED OUT
+<!-- EASTER EGG
 *To understand how a UV map works in a more simplistic term, [think about how a piece of wrapped chocolate candy is made <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://www.reddit.com/r/blender/comments/18xnl6l/show_this_to_those_who_havent_yet_understood_uv/?utm_source=share&utm_medium=mweb3x&utm_name=mweb3xcss&utm_term=1&utm_content=share_button). When you fully unwrap the paper to get to the chocolate, laying the unwrapped paper flat on the table would be considered the UV layout.* 
 -->
 
@@ -193,7 +193,7 @@ One notable exception is the base color, where the Alpha channel is used to dete
 
 ### Vertex Colors
 
-[Vertex Colors](/docs/color-and-normals/vertex-colors) are colors stored on each vertex of a mesh. They can be used to color the mesh, or to store data about the mesh, like each vertex's position, or smoothed vertex normals, both of which can be baked into the mesh using the `Poi -> Vertex Color Baker` tool.
+[Vertex Colors](/docs/color-and-normals/vertex-colors.md) are colors stored on each vertex of a mesh. They can be used to color the mesh, or to store data about the mesh, like each vertex's position, or smoothed vertex normals, both of which can be baked into the mesh using the `Poi -> Vertex Color Baker` tool.
 
 ### Color Blending/Tinting
 
