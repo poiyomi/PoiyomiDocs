@@ -225,7 +225,7 @@ Allows you to add the currently set Rim Lighting setup to be applied to an exist
 ## AudioLink
 
 :::info
-This section allows control of the Rim Lighting through [AudioLink](/docs/audio-link/audio-link.md). It will only be exposed when AudioLink is activated on the Material.
+The settings in this section will only be visible when [AudioLink](/docs/audio-link/audio-link.md) is activated on the Material.
 :::
 
 <PoiVideo url='/vid/shading/RL_AudioLink.mp4'/>

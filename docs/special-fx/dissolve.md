@@ -228,7 +228,7 @@ At a value of 1, the dissolve will complete a full cycle (from `0` to `1` to `0`
 Enables AudioLink to control Dissolve.
 
 :::info
-This section allows control of the Dissolve through [AudioLink](/docs/audio-link/audio-link.md). It will only be exposed when AudioLink is activated on the Material.
+The settings in this section will only be visible when [AudioLink](/docs/audio-link/audio-link.md) is activated on the Material.
 :::
 
 ### Dissolve Alpha Band

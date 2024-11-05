@@ -6,6 +6,10 @@ keywords: [iridescence, matcap, deprecated, special fx, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
+<!-- EDITOR'S NOTE: This page is planned to be deleted sometime in the near future as it's a deprecated feature. To account for this, I intend to create a redirect of this page to forward to `/docs/shading/matcap.md`, which will be configured in `docusaurus.config.js`.
+
+For any contributors that heed this message, please do not make any new changes to this page whatsoever. -BluWizard10 -->
+
 :::danger Deprecated Feature
 Iridescence was merged with [Matcap](/docs/shading/matcap.md) in version 9.0. See: [UV Mode: Gradient](/docs/shading/matcap.md#uv-mode).
 :::

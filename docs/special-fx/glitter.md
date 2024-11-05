@@ -281,7 +281,7 @@ How much to shift the base color around the hue circle. This value is circular, 
 Enables or Disables AudioLink effects for Glitter.
 
 :::info
-This section allows control of the Glitter through [AudioLink](/docs/audio-link/audio-link.md). It will only be exposed when AudioLink is activated on the Material.
+The settings in this section will only be visible when [AudioLink](/docs/audio-link/audio-link.md) is activated on the Material.
 :::
 
 ### Alpha Band

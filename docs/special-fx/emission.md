@@ -245,7 +245,7 @@ An offset applied to the wave. This value is unit-less, and depends on the veloc
 Enables or disables Emission AudioLink features.
 
 :::info
-This section allows control of the Emission through [AudioLink](/docs/audio-link/audio-link.md). It will only be exposed when AudioLink is activated on the Material.
+The settings in this section will only be visible when [AudioLink](/docs/audio-link/audio-link.md) is activated on the Material.
 :::
 
 ### Strength Multiplier

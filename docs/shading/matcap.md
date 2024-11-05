@@ -1,21 +1,19 @@
 ---
 sidebar_position: 4
-title: Matcap / Sphere Textures
+title: Matcap
 description: Matcaps are textures that are mapped to an object based on the relative angle of the view direction and the Material's normal direction.
 keywords: [matcap, material capture, angle, normal, direction, relative angle, texture, mapping, poiyomi, shader, iridescence]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
-Matcaps, or sphere textures, are textures that are mapped to an object based on the relative angle of the view direction and the material's normal direction. This means that areas that are pointing up will be mapped to the top center of the matcap texture, areas pointing down and right will be mapped to the bottom right of the texture, and so on.
+Matcaps, or "Sphere Textures," are textures that are mapped to an object based on the relative angle of the view direction and the material's normal direction. This means that areas that are pointing up will be mapped to the top center of the matcap texture, areas pointing down and right will be mapped to the bottom right of the texture, and so on.
 
 The word Matcap is a portmanteau of **M**aterial **C**apture. The technique was originally designed as a fast, low-overhead way to approximate the look of specific materials, baking in many details. With modern GPU performance and physically based shading techniques, matcaps are not as necessary for performance as they used to be.
 
 There are a total of 4 Matcap sections (0, 1, 2, 3) available to you, each being independent of each other.
 
 :::info Changes in 9.0
-To accommodate the deprecation of Iridescence, we have ported over many features from Iridescence into Matcap. This includes the introduction of the new `Gradient` UV Mode, which functions the same way as Iridescence.
-
-In addition, we have buffed the total amount of Matcap slots to 4.
+All features from the deprecated **Iridescence** section has been merged into Matcap as the [Gradient](#gradient) UV Mode. This mode functions the same way as Iridescence.
 :::
 
 <a target="_blank" href="/img/shading/PoiMatcapDemo2.png">
@@ -46,8 +44,8 @@ Double Sided uses the object's orientation and the reflection vectors to determi
 
 Allows you to configure a radial gradient to be used as your matcap texture. Click the rectangle to the right of the Matcap texture slot to open the gradient editor.
 
-:::tip Iridescence Users
-`Gradient` replaces the previously seen Iridescence module.
+:::tip For Iridescence Users
+`Gradient` replicates the effect used in the old Iridescence feature in older versions of Poiyomi Shaders.
 :::
 
 ## Color
@@ -293,10 +291,10 @@ How much to Blend the result.
 
 - `Type`: **Checkbox**
 
-Enables AudioLink to influence the Matcap.
+Allows AudioLink to influence the Matcap.
 
 :::info
-This section allows control of the Matcap through [AudioLink](/docs/audio-link/audio-link.md). It will only be exposed when AudioLink is activated on the Material.
+The settings in this section will only be visible when [AudioLink](/docs/audio-link/audio-link.md) is activated on the Material.
 :::
 
 ### Alpha Band

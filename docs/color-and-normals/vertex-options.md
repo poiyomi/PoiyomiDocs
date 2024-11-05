@@ -69,7 +69,7 @@ Defines the interval for vertex rounding. This is defined as the distance betwee
 ## Audio Link
 
 :::info
-This section allows control of the Vertex Options through [AudioLink](/docs/audio-link/audio-link.md). It will only be exposed when AudioLink is activated on the Material.
+The settings in this section will only be visible when [AudioLink](/docs/audio-link/audio-link.md) is activated on the Material.
 :::
 
 ## Local Translate Band

@@ -72,7 +72,7 @@ Enables the ability to choose where the glitching should appear.
 Enables the ability to use AudioLink to control the Glitching Intensity.
 
 :::info
-This section allows control of Vertex Glitching through [AudioLink](/docs/audio-link/audio-link.md). It will only be exposed when AudioLink is activated on the Material.
+The settings in this section will only be visible when [AudioLink](/docs/audio-link/audio-link.md) is activated on the Material.
 :::
 
 ### Glitch Band

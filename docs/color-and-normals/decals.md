@@ -290,7 +290,7 @@ Select which [Global Mask](/docs/modifiers/global-masks.md) to send your Decal's
 ## AudioLink
 
 :::info
-This section allows control of the Decals through [AudioLink](/docs/audio-link/audio-link.md). It will only be exposed when AudioLink is activated on the Material.
+The settings in this section will only be visible when [AudioLink](/docs/audio-link/audio-link.md) is activated on the Material.
 :::
 
 ### Scale Band

@@ -174,6 +174,10 @@ This value is circular, and will have the same result at 0 and 1.
 
 ## Audio Link
 
+:::info
+The settings in this section will only be visible when [AudioLink](/docs/audio-link/audio-link.md) is activated on the Material.
+:::
+
 ### Scale
 
 #### Scale Band

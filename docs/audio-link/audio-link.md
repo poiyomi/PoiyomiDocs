@@ -29,7 +29,7 @@ When this feature activates, the following sections in Poiyomi Shaders will have
 - [Vertex Options](/docs/color-and-normals/vertex-options.md#audio-link)
 - [Vertex Glitching](/docs/color-and-normals/vertex-glitching.md#audio-link)
 - [Decals](/docs/color-and-normals/decals.md#audiolink)
-- [Matcap / Sphere Textures](/docs/shading/matcap.md#audiolink)
+- [Matcap](/docs/shading/matcap.md#audiolink)
 - [Rim Lighting](/docs/shading/rim-lighting.md#audiolink)
 - [Outlines](/docs/outlines/outlines.md#audiolink)
 - [Dissolve](/docs/special-fx/dissolve.md#audiolink)
@@ -45,10 +45,12 @@ When this feature activates, the following sections in Poiyomi Shaders will have
 
 - `Type`: **Checkbox**
 
-Toggleable AudioLink checkbox. Used to enable and disable AudioLink effects on the fly.
+<!-- 
+EDITORS NOTE: This H2 Header only has this Message Box below. Adding additional words above or below it may make it look repetitive. -BluWizard10
+-->
 
 :::tip
-Use this checkbox exclusively to turn all AudioLink effects On or Off using Animations at any time. See [Locking and Animation](/docs/general/locking.md#marking-properties-for-animation) for more information.
+Animate this checkbox when creating toggles for AudioLink on this Material. Animating the [Section Header](/docs/general/locking.md#section-header-checkboxes) will not work!
 :::
 
 ## Smoothing

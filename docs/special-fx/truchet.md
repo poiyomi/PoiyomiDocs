@@ -104,7 +104,7 @@ If enabled, will override the Alpha/Transparency from the Base, if Transparency 
 ## AudioLink
 
 :::info
-This section allows control of Truchet through [AudioLink](/docs/audio-link/audio-link.md). It will only be exposed when AudioLink is activated on the Material.
+The settings in this section will only be visible when [AudioLink](/docs/audio-link/audio-link.md) is activated on the Material.
 :::
 
 ### Hide When No AL
