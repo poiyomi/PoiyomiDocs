@@ -70,7 +70,7 @@ Defines how to calculate the light color. These will generally exhibit small dif
 
 Poi Custom light color uses a custom light calculation to better handle adverse lighting conditions, such as those often encountered in user-created content.
 
-Poi Custom light color mode adds the **Indirect uses Normals** option.
+Poi Custom light color mode adds the [Indirect uses Normals](#indirect-uses-normals] option.
 
 #### Standard
 
@@ -80,7 +80,7 @@ Standard light color uses a light calculation that more closely matches the Unit
 
 UTS2 (UnityChan Toon Shader 2) light color uses a calculation that produces a result that's generally consistent, but often incoherent with the environmental lighting conditions. 
 
-This mode adds the **Unlit Intensity** option.
+This mode adds the [Unlit Intensity](#unlit-intensity) option.
 
 #### OpenLit (lilToon)
 
@@ -122,13 +122,13 @@ Technically, this option calculates the light direction as the sum of the World-
 
 Forced Local Direction forces the light direction to a specific vector. This vector is kept constant relative to the model's coordinate system. 
 
-This option adds the **Forced Direction** option. 
+This option adds the [Forced Direction](#forced-direction) option. 
 
 #### Forced World Direction
 
 Forced World Direction forces the light direction to a specific vector. This vector is kept constant relative to the world coordinate system. 
 
-This option adds the **Forced Direction** option. 
+This option adds the [Forced Direction](#forced-direction) option. 
 
 #### UTS2 (Light Direction)
 
@@ -145,14 +145,14 @@ Uses the light direction mode unique to lilToon.
 What direction to force the lighting to.
 
 :::info
-This option is only visible when **Light Direction Mode** is set to `Forced Local Direction` or `Forced World Direction`.
+This option is only visible when [Light Direction Mode](#light-direction-mode) is set to [Forced Local Direction](#forced-local-direction) or [Forced World Direction](#forced-world-direction).
 :::
 
 ### Force Light Color
 
 - `Type`: **Checkbox**
 
-Whether to force the light color to a specific color. Enabling this option adds the **Forced Color** option.
+Whether to force the light color to a specific color. Enabling this option adds the [Forced Color](#forced-color) option below.
 
 #### Forced Color
 
@@ -161,7 +161,7 @@ Whether to force the light color to a specific color. Enabling this option adds 
 What color the light should be forced to.
 
 :::info
-This option is only visible when **Force Light Color** is enabled.
+This option is only visible when [Force Light Color](#force-light-color) is enabled.
 :::
 
 ### Unlit Intensity
@@ -171,23 +171,23 @@ This option is only visible when **Force Light Color** is enabled.
 How much the model should be lit, even in the absence of direct lighting.
 
 :::info
-This option is only visible when **Light Color Mode** is set to `UTS2`.
+This option is only visible when [Light Color Mode](#light-color-mode) is set to `UTS2`.
 :::
 
 ### Limit Brightness
 
 - `Type`: **Checkbox**
 
-Whether to cap the brightness value to a specific maximum. Enabling this option adds the **Max Brightness** option.
+Whether to cap the brightness value to a specific maximum. Enabling this option adds the [Max Brightness](#max-brightness) option.
 
 ### Max Brightness
 
 - `Type`: **Float**, Range: `0.0 - 10.0`
 
-If **Limit Brightness** is enabled, the brightness due to base pass lighting calculations will never go above this value. Add pass lighting or emission can cause the final color to exceed this value.
+If [Limit Brightness](#limit-brightness) is enabled, the brightness due to base pass lighting calculations will never go above this value. Add pass lighting or emission can cause the final color to exceed this value.
 
 :::info
-This option is only visible when **Limit Brightness** is enabled.
+This option is only visible when [Limit Brightness](#limit-brightness) is enabled.
 :::
 
 ### Min Brightness
@@ -203,7 +203,7 @@ Sets the minimum value for direct lighting. This can be useful for preventing a 
 Defines how much to use normals when calculating indirect lighting direction. If not enabled, the indirect lighting will be sampled using the 0-vector. 
 
 :::info
-This option is only visible when **Light Color Mode** is set to `Poi Custom`.
+This option is only visible when [Light Color Mode](#light-color-mode) is set to `Poi Custom`.
 :::
 
 ### Receieve Casted Shadows
@@ -232,29 +232,37 @@ Enables Vertex Lights to be used in Mirrors. Because VRChat interprets vertex li
 
 ## Add Pass (Point & Spot Lights)
 
-Options relating to lighting performed in the add pass. The add pass is used for any realtime point lights or directional lights beyond the first in a scene.
+Options relating to lighting performed in the Add Pass. The Add Pass is used for any Realtime Lights beyond the first in a scene. This includes Realtime Point, Spot, and Directional Lights.
+
+:::tip Recommended Graphics Setting
+In order to see Pixel Lights accurately render on this Material in-game, it is highly recommended to change your VRChat **Graphics Settings** in-game to `Pixel Light Count: High`.
+:::
 
 ### Pixel Lights (Important)
 
 - `Type`: **Checkbox**
 
-Enables or disables add pass lighting in general.
+Enables or disables Add Pass Lighting in general.
 
 ### Ignore Directional
 
 - `Type`: **Checkbox**
 
-Ignore directional lights in the add pass.
+Ignore directional lights in the Add Pass. <!-- Note that if the World only contains one Directional Light, it is treated as the "Sun" as part of the Base Pass, and therefore is unaffected by this setting, as it only ignores extra Directional Lights in the Add Pass.
+
+EDITOR'S NOTE: This above info inside the comment needs to be fact-checked. -BluWizard10 -->
+
+This is enabled by default to counteract bad lighting setups in some VRChat Worlds.
 
 :::info
-This option is only shown if **Pixel Lights (Important)** is enabled.
+This option is only shown if [Pixel Lights (Important)](#pixel-lights-important) is enabled.
 :::
 
 ### Limit Brightness
 
 - `Type`: **Checkbox**
 
-Whether to limit the brightness of add pass lights. Enabling this adds the **Max Brightness** option.
+Whether to limit the brightness of add pass lights. Enabling this adds the [Max Brightness](#max-brightness-1) option.
 
 ### Max Brightness
 
@@ -263,7 +271,7 @@ Whether to limit the brightness of add pass lights. Enabling this adds the **Max
 Defines the maximum allowed brightness resulting from the add pass.
 
 :::info
-This option is only shown if **Limit Brightness** is enabled.
+This option is only shown if [Limit Brightness](#limit-brightness-1) is enabled.
 :::
 
 ### Receieve Casted Shadows (Add Pass)
