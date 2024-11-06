@@ -70,7 +70,7 @@ Defines how to calculate the light color. These will generally exhibit small dif
 
 Poi Custom light color uses a custom light calculation to better handle adverse lighting conditions, such as those often encountered in user-created content.
 
-Poi Custom light color mode adds the [Indirect uses Normals](#indirect-uses-normals] option.
+Poi Custom light color mode adds the [Indirect uses Normals](#indirect-uses-normals) option.
 
 #### Standard
 
