@@ -232,19 +232,27 @@ Enables Vertex Lights to be used in Mirrors. Because VRChat interprets vertex li
 
 ## Add Pass (Point & Spot Lights)
 
-Options relating to lighting performed in the add pass. The add pass is used for any realtime point lights or directional lights beyond the first in a scene.
+Options relating to lighting performed in the Add Pass. The Add Pass is used for any Realtime Lights beyond the first in a scene. This includes Realtime Point, Spot, and Directional Lights.
+
+:::tip Recommended Graphics Setting
+In order to see Pixel Lights accurately render on this Material in-game, it is recommended to change your VRChat **Graphics Settings** in-game to `Pixel Light Count: High`.
+:::
 
 ### Pixel Lights (Important)
 
 - `Type`: **Checkbox**
 
-Enables or disables add pass lighting in general.
+Enables or disables Add Pass lighting in general.
 
 ### Ignore Directional
 
 - `Type`: **Checkbox**
 
 Ignore directional lights in the add pass.
+
+<!-- EDITOR'S NOTE: This part needs further explanation. -BluWizard10 -->
+
+This is enabled by default in order to counteract bad lighting setups in some VRChat Worlds.
 
 :::info
 This option is only shown if **Pixel Lights (Important)** is enabled.
