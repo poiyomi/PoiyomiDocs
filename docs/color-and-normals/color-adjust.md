@@ -45,6 +45,19 @@ Adjusts the brightness of the base color.
 
 This adds brightness directly on top of the existing color, without regard for its hue or tone. 
 
+<!-- DRAFT: Upcoming Feature in v9.2. Un-comment this area when it's released on the Public Version.
+
+## Gamma
+
+- `Type`: **Float**, Range: `0.0 - 5.0`
+  - Normal: `1.0`
+
+Adjusts the gamma of the base color.
+
+This can lerp the brightness of the color in regards to its hue or tone. Lower values are more lighter, while higher values are more bolder.
+
+END OF HIDDEN COMMENT -->
+
 ## Hue Shift
 
 - `Type`: **Checkbox**
@@ -79,6 +92,25 @@ On Legacy HSV, you will see that it makes the color look more washed out. This c
 **We highly recommend using OKLab when setting up a Hue Shift system for your Avatar.** In addition, consider using the Saturation and Brightness options that are available to you alongside your Hue Shift for more accurate results.
 
 </details>
+
+<!-- DRAFT: Upcoming Feature in v9.2. Un-comment this area when it's released on the Public Version.
+
+### Select or Shift
+
+- `Type`: **Dropdown**, Options: `Hue Select`/`Hue Shift`
+  - Default: `Hue Shift`
+
+This dropdown allows you to select how the Color Adjustment should behave when the Hue Shift is used. By default, this will be set to `Hue Shift`.
+
+<details>
+<summary><b>Select or Shift Options</b></summary>
+
+- `Hue Select`: Directly applies the selected Hue as an override to the entire Base Color.
+- `Hue Shift`: Only tints the Base Color based on the lerped value. This is the default behavior.
+
+</details>
+
+END OF HIDDEN COMMENT -->
 
 ### Hue Replace
 
