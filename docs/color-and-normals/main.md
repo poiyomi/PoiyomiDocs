@@ -59,7 +59,7 @@ You must ensure that your creation program, whether that would be Substance 3D P
 
 *Comparison of a Bump and a Hole in OpenGL vs. DirectX. As you can see above, the DirectX format is the opposite of OpenGL.*
 
-To learn more about Normals, see the video below on Normals.
+To learn more about Normals, see the video below.
 
 <div class="videobox">
 <iframe class="iframe-element" src="https://www.youtube-nocookie.com/embed/spuF6j87kPU?si=TO5iXVR7NWWw4xNw" title="YouTube Video Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
