@@ -22,6 +22,12 @@ Each Global Mask uses the `Red (R)`, `Green (G)`, `Blue (B)`, and `Alpha (A)` ch
 
 Since you have a total of 4 Global Masking slots, each providing 4 Color Channels, you can have up to 16 Color Channels to use for your Masks.
 
+*Below is a video introduction to Global Masking, courtesy of community member Teeh. This also briefly covers it's sister feature [Global Themes](/docs/modifiers/global-themes.md) as well.*
+
+<div class="videobox">
+<iframe class="iframe-element" src="https://www.youtube-nocookie.com/embed/ng780niVSzA?si=TO5iXVR7NWWw4xNw" title="YouTube Video Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
 ## Creating a Global Mask
 
 These Global Masks can be created in two ways. You can use either the Thry Editor Texture Packer, or specify your own Global Mask.
