@@ -8,41 +8,41 @@ import PoiVideo from '@site/src/components/PoiVideo'
 
 The **Vertex Options** section provides options related to the position of model vertices, and can be used to modify a material's vertices in various ways without actually modifying the mesh.
 
+This section can be described by Poiyomi as *"the silly options"* due to the way you can use these features.
+
 ## Local Translation
 
 - `Type`: **Vector3**
 
-How much to move the vertices of the mesh (in base units of meters) with respect to its local coordinate system, on a per-axis basis. This means that it will line up with the mesh regardless of the mesh's rotation, and will be scaled with the scaling of the mesh's axes.
-
-## Local Rotation
-
-- `Type`: **Vector3**
-
-How much to rotate the vertices of the mesh (in units of degrees) with respect to its local coordinate system, on a per-axis basis.
-
-## Local Rotation Speed
-
-- `Type`: **Vector3**
-
-How much constant rotation speed to apply to the vertices of the mesh, on a per-axis basis. This is defined in degrees per `20` seconds, so a value of `360` will complete one rotation in `20` seconds, while a value of `7200` would complete one rotation per second.
-
-## Local Scale
-
-- `Type`: **Vector4**
-
-How much to scale the mesh relative to its local coordinate system, on a per-axis basis. The **X**, **Y**, and **Z** value affect their respective axes, while the **W** value scales all axes uniformly.
+How much to move the vertices of the mesh (in units of meters) with respect to its local coordinate system, on a per-axis basis. This means that it will line up with the mesh regardless of the mesh's rotation, and will be scaled with the scaling of the mesh's axes.
 
 ## World Translation
 
 - `Type`: **Vector3**
 
-How much to move the vertices of the mesh (in units of meters) with respect to the world coordinate system, on a per-axis basis. This means that it will not necissarily line up with the mesh if the mesh is rotated, and will always uniformly move the mesh regardless of the mesh's scaling.
+How much to move the vertices of the mesh (in units of meters) with respect to the world coordinate system, on a per-axis basis. This means that it will not necessarily line up with the mesh if the mesh is rotated, and will always uniformly move the mesh regardless of the mesh's scaling.
 
-## Vertex Height
+## Scale
 
-- `Type`: **Float**
+- `Type`: **Vector4**
 
-How much to offset the vertices of the mesh (in units of meters) along the vertex normals. This will apply a constant value regardless of the mesh's scaling. The modified height is scaled by the Height Map and modified by the Mask Bias.
+How much to scale the mesh relative to its local coordinate system, on a per-axis basis. The **X**, **Y**, and **Z** value affect their respective axes, while the **W** value scales all axes uniformly.
+
+## Rotation
+
+- `Type`: **Vector3**
+
+How much to rotate the vertices of the mesh (in units of degrees) with respect to its local coordinate system, on a per-axis basis.
+
+## Rotation Speed
+
+- `Type`: **Vector3**
+
+How much constant rotation speed to apply to the vertices of the mesh, on a per-axis basis. This is defined in degrees per `20` seconds, so a value of `360` will complete one rotation in `20` seconds, while a value of `7200` would complete one rotation per second.
+
+<!-- Height Map Section -->
+
+## Height Map
 
 ### Height Map
 
@@ -50,192 +50,381 @@ How much to offset the vertices of the mesh (in units of meters) along the verte
 
 A texture used to modify the vertex height adjustment. This represents the low and high points of to be used for vertex modification.
 
-### Mask Bias
+### Height
+
+- `Type`: **Float**
+
+How much to offset the vertices of the mesh (in units of meters) along the vertex normals. This will apply a constant value regardless of the mesh's scaling. The modified height is scaled by the Height Map and modified by the Mask Bias.
+
+### Map Bias
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
 How much to offset the vertex height for the mask. A value of `0` will mean that the vertex height will only move up from the unmodified position. A value of `0.5` will mean the vertex height will go down by half the vertex height where the mask is pure black, up by half the vertex height where the mask is pure white. A value of `1.0` means the vertex height will only move down from the unmodified position.
 
-## Rounding Enabled
+<!-- Vertex Rounding Section -->
+
+## Vertex Rounding (Blocky/PS1)
 
 - `Type`: **Checkbox**
 
-Vertex Rounding snaps vertices to specific intervals in the world coordinate system. The amount of snap interval is defined by the Rounding Interval. This option can be used to create retro effects, or pixelization.
+Vertex Rounding snaps vertices to specific intervals in the world coordinate system. The amount of snap interval is defined by the Rounding Interval. This option can be used to create retro effects, or pixelation.
+
+### Rounding Space
+
+- `Type`: **Dropdown**, Options: `Local`/`World`
+
+Defines where to calculate the Rounding Interval from. If `Local`, will use the Local axis. If set to `World`, will use the World's axis.
 
 ### Rounding Interval
 
 Defines the interval for vertex rounding. This is defined as the distance between points in local space, in base units of meters. For example, a value of `0.1` will round vertices to the nearest tenth of a meter (if the object is scaled uniformly).
 
+<!-- Barrel Distortion Section -->
+
+## Barrel Distortion
+
+- `Type`: **Checkbox**
+
+Barrel Distortion allows the vertices to snap and morph the mesh into a cylinder/barrel-shape form.
+
+### Barrel Width
+
+- `Type`: **Float**
+
+The width of the Barrel in world space, measured in meters.
+
+### Barrel Alpha
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+Determines how much to distort and morph into the barrel-shape.
+
+### Barrel Height
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+Determines how much to stretch the edges of the "barrel" outside of the shape.
+
+<!-- Sphere Distortion Section -->
+
+## Sphere Distortion
+
+- `Type`: **Checkbox**
+
+Enables the ability to snap and morph the mesh into a spherical shape and form.
+
+### Sphere Radius
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+Determines how circular the spherical shape is morphed into.
+
+### Sphere Height
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+Determines how tall the spherical shape is morphed.
+
+### Sphere Alpha
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+Main slider. Determines how much to distort and morph into a spherical shape and form.
+
+### Sphere Center
+
+- `Type`: **Vector3**
+
+Determines the center origin of the morphed spherical shape and form in the local axis.
+
+<!-- Tornado Section -->
+
+## Tornado
+
+- `Type`: **Checkbox**
+
+Enables the ability to morph the mesh into an animated swirling funnel, or a "Tornado" effect.
+
+### Radius
+
+- `Type`: **Float**
+
+Determines the maximum width of the funnel.
+
+### Spiral Intensity
+
+- `Type`: **Float**
+
+Determines the visual intensity of the funnel. Lower values are less intensive and can emulate a funky water effect, while values over `100` will intensify the swirl even further to emulate a twister.
+
+### Rotation Speed
+
+- `Type`: **Float**
+
+How fast should each swirl rotate. The higher the value, the faster the swirl.
+
+### Top Height
+
+- `Type`: **Float**
+
+Determines the top height of the funnel.
+
+### Bottom Height
+
+- `Type`: **Float**
+
+Determines the bottom lower height of the funnel.
+
+<!-- AudioLink Section -->
+
 ## Audio Link
+
+- `Type`: **Checkbox**
+
+Enables the ability to manipulate the Vertex Options in response to AudioLink.
 
 :::info
 The settings in this section will only be visible when [AudioLink](/docs/audio-link/audio-link.md) is activated on the Material.
 :::
 
-## Local Translate Band
+### Local Translation
+
+Options for adjusting the local translation in response to AudioLink bands.
+
+#### Band
 
 - `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
 
 Audio Link band to use for local translation adjustments.
 
-### Local Translate Min
+#### Translation Min
 
 - `Type`: **Vector3**
 
 Translation adjustment used when Local Translate Band has no audio.
 
-### Local Translate Max
+#### Translation Max
 
 - `Type`: **Vector3**
 
 Translation adjustment used when Local Translate Band has max audio.
 
-## Rotation
+### Local Rotation
 
-Options for rotating directly in response to audio link bands.
+Options for rotating directly in response to AudioLink bands.
 
-### Rotation Band X
+#### Band X
 
 - `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
 
 Audio Link band to use for rotation in X.
 
-### Rotation Band Y
+#### Band Y
 
 - `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
 
 Audio Link band to use for rotation in Y.
 
-### Rotation Band Z
+#### Band Z
 
 - `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
 
 Audio Link band to use for rotation in Z.
 
-### Rotation
+#### Rotation
 
 - `Type`: **Vector3**
 
 How much the rotation to apply to the vertices of the mesh, on a per-axis basis, for the given band. 
 
-## Chronotensity Rotation
+### Continuous Rotation
 
-Options for rotating continuously in response to audio link bands.
+Options for rotating continuously in response to AudioLink bands.
 
-### Band X
-
-- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
-
-Audio Link band to use for chronotensity rotation in X.
-
-### Motion Type X
-
-- `Type`: **Dropdown**
-
-Which chronotensity motion mode to use for the X rotation. These are somewhat self descriptive, but more information is available in the [Audio Link Docs](https://github.com/llealloo/vrc-udon-audio-link/tree/master/Docs#alpass_chronotensity).
-
-### Band Y
+#### Band X
 
 - `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
 
-Audio Link band to use for chronotensity rotation in Y.
+Audio Link band to use for continuous rotation in X.
 
-### Motion Type Y
+#### Motion Type X
 
 - `Type`: **Dropdown**
 
-Which chronotensity motion mode to use for the Y rotation.
+Which continuous motion mode to use for the X rotation.
 
-### Band Z
+<details>
+<summary><b>Motion Type X Options</b></summary>
+
+- Motion Increases as intensity of the band increases
+- Above but Smooth
+- Motion moves back and forth as a function of intensity
+- Above but Smoooth
+- Fixed Speed Increase when the band is dark Stationary when light
+- Above but Smooooth
+- Fixed Speed Increase when the band is dark Fixed speed decrease when light
+
+</details>
+
+#### Band Y
 
 - `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
 
-Audio Link band to use for chronotensity rotation in Z.
+Audio Link band to use for continuous rotation in Y.
 
-### Motion Type Z
+#### Motion Type Y
 
 - `Type`: **Dropdown**
 
-Which chronotensity motion mode to use for the Z rotation.
+Which continuous motion mode to use for the Y rotation.
 
-### Rotation Speed
+<details>
+<summary><b>Motion Type Y Options</b></summary>
+
+- Motion Increases as intensity of the band increases
+- Above but Smooth
+- Motion moves back and forth as a function of intensity
+- Above but Smoooth
+- Fixed Speed Increase when the band is dark Stationary when light
+- Above but Smooooth
+- Fixed Speed Increase when the band is dark Fixed speed decrease when light
+
+</details>
+
+#### Band Z
+
+- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+
+Audio Link band to use for continuous rotation in Z.
+
+#### Motion Type Z
+
+- `Type`: **Dropdown**
+
+Which continuous motion mode to use for the Z rotation.
+
+<details>
+<summary><b>Motion Type Z Options</b></summary>
+
+- Motion Increases as intensity of the band increases
+- Above but Smooth
+- Motion moves back and forth as a function of intensity
+- Above but Smoooth
+- Fixed Speed Increase when the band is dark Stationary when light
+- Above but Smooooth
+- Fixed Speed Increase when the band is dark Fixed speed decrease when light
+
+</details>
+
+#### Rotation
 
 - `Type`: **Vector3**
 
-Scaler for chronotensity rotation for each axis.
+Scaler for continuous rotation on each axis.
 
-## Scale
+### Vertex Scale
 
-Options for local vertex scaling in response to audio link.
+Options for local vertex scaling in response to AudioLink.
 
-### Scale Band
+#### Band
 
 - `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
 
 Audio Link band to use for vertex scale.
 
-### Scale Min
+#### Scale Min
 
 - `Type`: **Vector3**
 
 Scale state used when Scale Band has no audio.
 
-### Scale Max
+#### Scale Max
 
 - `Type`: **Vector3**
 
 Scale state used when Scale Band has max audio.
 
-## World Translation
+### World Translation
 
-Options for world translation in response to audio link.
+Options for world translation in response to AudioLink.
 
-### World Translation Band
+#### Band
 
 - `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
 
 Audio Link band to use for World Translation.
 
-### World Translation Min
+#### World Translation Min
 
 - `Type`: **Vector3**
 
 World Translation state used when Scale Band has no audio.
 
-### World Translation Max
+#### World Translation Max
 
 - `Type`: **Vector3**
 
 World Translation state used when Scale Band has max audio.
 
-## Vertex Height
+### Vertex Height
 
-Options for vertex height in response to audio link.
+Options for vertex height in response to AudioLink.
 
-### Vertex Height Band
+#### Band
 
 - `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
 
 Audio Link band to use for World Translation.
 
-### Vertex Height
+#### Height
 
 - `Type`: **Vector2**
 
 How much to add (or subtract) from vertex height. The **X** value is the height added with no volume in the Vertex Height Band, and the **Y** value is the height added with maximum volume.
 
-## Rounding
+### Vertex Rounding
 
-Options for rounding in response to audio link.
+Options for rounding in response to AudioLink.
 
-### Rounding Band
+#### Band
 
 - `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
 
 Audio Link band to use for World Translation.
 
-### Rounding Range
+#### Range
 
 - `Type`: **Vector2**
 
 How much to add (or subtract) from vertex rounding. The **X** value is the height added with no volume in the Vertex Height Band, and the **Y** value is the height added with maximum volume.
+
+### Spectrum Motion
+
+- `Type`: **Checkbox**
+
+Enables a very interesting effect where the entirety of the Mesh is morphed to look like a visualizer in response to AudioLink.
+
+#### UV
+
+- `Type`: **Dropdown**, Options: `UV0`/`UV1`/`UV2`/`UV3`
+
+Selection of UV to use. This selection will determine which vertices the Spectrum Motion will affect.
+
+#### UV Direction
+
+- `Type`: **Dropdown**, Options: `X`/`Y`
+
+Which direction on the UV will Spectrum Motion be manipulated from. `X` will be the left-right direction of the UV, while `Y` will be the up-down direction of the UV.
+
+#### Offset Min
+
+- `Type`: **Vector4**
+
+How much to offset the Spectrum Motion when no audio is present.
+
+#### Offset Max
+
+- `Type` **Vector4**
+
+How much to offset the Spectrum Motion when full audio from AudioLink peaks.
