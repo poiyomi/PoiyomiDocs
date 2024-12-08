@@ -128,7 +128,7 @@ This behavior is not a bug, it's behavior defined by Unity, beyond the control o
 | `_Cutoff`                 | ✔️ | [Alpha Cutoff](/docs/color-and-normals/main.md#alpha-cutoff) |
 | `_DetailMask_ST`          | ❌ | [Detail Mask Tiling/Offset](/docs/color-and-normals/details.md#detail-mask) |
 | `_DetailNormalMap_ST`     | ❌ | [Detail Mask Tiling/Offset](/docs/color-and-normals/details.md#detail-normal) |
-| `_DetailNormalMapScale`   | ✔️ | [Detail Mask Tiling/Offset](/docs/color-and-normals/details.md#detail-normal-intensity) |
+| `_DetailNormalMapScale`   | ✔️ | [Detail Mask Tiling/Offset](/docs/color-and-normals/details.md#normal-intensity) |
 | `_EmissionColor`          | ✔️ | [Emission 0 Color](/docs/special-fx/emission.md#emission-color) |
 | `_EmissionMap_ST`         | ❌ | [Emission 0 Map Tiling/Offset](/docs/special-fx/emission.md#emission-map) |
 
