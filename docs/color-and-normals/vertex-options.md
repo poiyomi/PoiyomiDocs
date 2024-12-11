@@ -6,9 +6,12 @@ keywords: [vertex, vertices, options, offset, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
-The **Vertex Options** section provides options related to the position of model vertices, and can be used to modify a material's vertices in various ways without actually modifying the mesh.
+**Vertex Options** provides options related to the position of model vertices, and can be used to manipulate a material's vertices in various ways without actually modifying the mesh.
 
-This section can be described by Poiyomi as *"the silly options"* due to the way you can use these features.
+This section can be described by Poiyomi as *"the silly options"* due to the amount of weird and unusual things that can be accomplished in here.
+
+<PoiVideo url='/vid/color-and-normals/VertexOptionsDemo.mp4'/>
+<em>Demonstration of two Material Spheres being manipulated by various settings.</em>
 
 ## Local Translation
 
@@ -68,13 +71,16 @@ How much to offset the vertex height for the mask. A value of `0` will mean that
 
 - `Type`: **Checkbox**
 
-Vertex Rounding snaps vertices to specific intervals in the world coordinate system. The amount of snap interval is defined by the Rounding Interval. This option can be used to create retro effects, or pixelation.
+Vertex Rounding snaps vertices to specific intervals in the world coordinate system. The amount of snap interval is defined by the Rounding Interval. This option can be used to create retro effects or pixelation.
+
+<PoiVideo url='/vid/color-and-normals/VertexOptionsPS1Mode.mp4'/>
+<em>Example of how adjusting the Rounding Interval can influence how many pixelation is performed.</em>
 
 ### Rounding Space
 
 - `Type`: **Dropdown**, Options: `Local`/`World`
 
-Defines where to calculate the Rounding Interval from. If `Local`, will use the Local axis. If set to `World`, will use the World's axis.
+Defines where to calculate the Rounding Interval from. If set to `Local`, it will calculate from the scale of the Mesh it's using. If set to `World`, it will calculate from the World's scale.
 
 ### Rounding Interval
 
@@ -87,6 +93,9 @@ Defines the interval for vertex rounding. This is defined as the distance betwee
 - `Type`: **Checkbox**
 
 Barrel Distortion allows the vertices to snap and morph the mesh into a cylinder/barrel-shape form.
+
+<PoiVideo url='/vid/color-and-normals/VertexOptionsBarrelAMOGUS.mp4'/>
+<em>Example of what Barrel Distortion will do to the mesh. Notice how it makes it shape close to a cylinder.</em>
 
 ### Barrel Width
 
@@ -113,6 +122,9 @@ Determines how much to stretch the edges of the "barrel" outside of the shape.
 - `Type`: **Checkbox**
 
 Enables the ability to snap and morph the mesh into a spherical shape and form.
+
+<PoiVideo url='/vid/color-and-normals/VertexOptionsSphere.mp4'/>
+<em>Example of Sphere Distortion. Notice how adjusting the settings can make it morph closer to an actual Sphere, based on the Sphere Center defined.</em>
 
 ### Sphere Radius
 
@@ -145,6 +157,13 @@ Determines the center origin of the morphed spherical shape and form in the loca
 - `Type`: **Checkbox**
 
 Enables the ability to morph the mesh into an animated swirling funnel, or a "Tornado" effect.
+
+:::note Follows Y-axis
+The location of the [Top Height](#top-height) and [Bottom Height](#bottom-height) is determined by the current direction of the Y-axis on the mesh.
+:::
+
+<PoiVideo url='/vid/color-and-normals/VertexOptionsTornado.mp4'/>
+<em>Example of the swirling funnel effect created by the Tornado function.</em>
 
 ### Radius
 
@@ -188,15 +207,18 @@ Enables the ability to manipulate the Vertex Options in response to AudioLink.
 The settings in this section will only be visible when [AudioLink](/docs/audio-link/audio-link.md) is activated on the Material.
 :::
 
+<PoiVideo url='/vid/color-and-normals/VertexOptionsAudioLink.mp4'/>
+<em>Example of AudioLink making two sides of the Sphere look like a Subwoofer by using the Local Translation modifier. (Un-mute to hear Audio)</em>
+
 ### Local Translation
 
-Options for adjusting the local translation in response to AudioLink bands.
+Options for adjusting the Local Translation in response to AudioLink bands.
 
 #### Band
 
 - `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
 
-Audio Link band to use for local translation adjustments.
+AudioLink Band to use for Local Translation adjustments.
 
 #### Translation Min
 
