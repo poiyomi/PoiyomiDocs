@@ -8,7 +8,7 @@ import PoiVideo from '@site/src/components/PoiVideo'
 
 **Vertex Options** provides options related to the position of model vertices, and can be used to manipulate a material's vertices in various ways without actually modifying the mesh.
 
-This section can be described by Poiyomi as *"the silly options"* due to the amount of weird and unusual things that can be accomplished in here.
+This section can be described by Poiyomi as *"the silly options"* due to the amount of weird and strange things that can be accomplished with Vertex Options.
 
 <PoiVideo url='/vid/color-and-normals/VertexOptionsDemo.mp4'/>
 <em>Demonstration of two Material Spheres being manipulated by various settings.</em>
