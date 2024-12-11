@@ -131,7 +131,7 @@ How much Emission to apply from the Decal's Base Color. Higher values will yield
 
 Which blending operation to use for the Decal's base color.
 
-These are the same blending operations used in Adobe Photoshop.
+These are the same blending operators that are used in Adobe Photoshop.[^1]
 
 ### Alpha Blend Mode
 
@@ -452,3 +452,5 @@ Which motion type to use for the Chrono Rotation. Chronotensity is an Audio Link
 - `Type`: **Float**
 
 How much chronotensity should affect the rotation of the decal. Good starting values are `0.1 - 0.5`.
+
+[^1]: [Blending modes in Adobe Photoshop](https://helpx.adobe.com/photoshop/using/blending-modes.html)
