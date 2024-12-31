@@ -12,8 +12,8 @@ Pathing is a powerful and flexible way to create effects that follow along paths
 Options in this section labeled **"R/G/B/A"** each correspond to a common option with separate values for each different channel of the gradient.
 :::
 
-<PoiVideo url='/vid/special-fx/PathingExample.mp4' width='300px'/>
-<em>Example of a simple Path used on this Avatar's Whiskers.</em>
+<PoiVideo url='/vid/special-fx/4paths.mp4' width='300px'/>
+<em>Example of Paths used on the lines of this Jacket. Notice the timing of each Path as they animate.</em>
 
 ## Gradient Type
 
