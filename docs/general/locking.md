@@ -17,11 +17,13 @@ Locked materials are *significantly* more optimized than their unlocked counterp
 :::tip Auto-Lock Feature
 When uploading to VRChat, the Auto-Locking process runs automatically for any Poiyomi Materials found in an Avatar or World whenever a Build/Upload is triggered. This prevents unlocked materials from being uploaded with the final asset.
 
-**If you are uploading for the first time, a one-time message will appear informing you that the Auto-Lock is being initiated.**
+**If you are uploading for the first time, a one-time message will appear informing you that the Materials are being automatically locked. It may look like this:**
 
 <a target="_blank" href="/img/general/Auto-Lock.png">
 <img src="/img/general/Auto-Lock.png" alt="Auto-Lock Dialogue" width="400px"/>
 </a>
+
+If this above message appears, click `OK` to continue the Upload.
 :::
 
 ## Marking Properties for Animation
