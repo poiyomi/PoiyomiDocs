@@ -1,6 +1,6 @@
 {
   "name": "poiyomidocs",
-  "version": "9.2.0",
+  "version": "9.3.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
@@ -14,39 +14,35 @@
     "write-heading-ids": "docusaurus write-heading-ids"
   },
   "dependencies": {
-    "@docusaurus/core": "3.5.2",
-    "@docusaurus/plugin-client-redirects": "3.5.2",
-    "@docusaurus/preset-classic": "3.5.2",
-    "@docusaurus/theme-mermaid": "3.5.2",
-    "@fortawesome/fontawesome-svg-core": "^6.5.2",
-    "@fortawesome/free-brands-svg-icons": "^6.5.2",
-    "@fortawesome/free-regular-svg-icons": "^6.5.2",
-    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@docusaurus/core": "3.7.0",
+    "@docusaurus/plugin-client-redirects": "3.7.0",
+    "@docusaurus/preset-classic": "3.7.0",
+    "@docusaurus/theme-mermaid": "3.7.0",
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/free-regular-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
-    "@iconify/react": "^4.1.1",
-    "@mdx-js/react": "^3.0.0",
-    "autoprefixer": "^10.4.16",
-    "clsx": "^1.2.1",
-    "postcss": "^8.4.38",
-    "prism-react-renderer": "^2.4.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "@iconify/react": "^5.2.0",
+    "@mdx-js/react": "^3.1.0",
+    "autoprefixer": "^10.4.20",
+    "clsx": "^2.1.1",
+    "postcss": "^8.4.49",
+    "prism-react-renderer": "^2.4.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "react-player": "^2.16.0",
-    "@easyops-cn/docusaurus-search-local": "0.44.5"
+    "@easyops-cn/docusaurus-search-local": "0.47.0"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "3.5.2",
-    "@docusaurus/types": "3.5.2"
+    "@docusaurus/module-type-aliases": "3.7.0",
+    "@docusaurus/types": "3.7.0"
   },
   "engines": {
     "node": ">=18.0"
   },
   "browserslist": {
-    "production": [
-      ">0.5%",
-      "not dead",
-      "not op_mini all"
-    ],
+    "production": [">0.5%", "not dead", "not op_mini all"],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",

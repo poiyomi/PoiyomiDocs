@@ -4,6 +4,8 @@ razgriz:
   url: https://github.com/rrazgriz
   image_url: https://github.com/rrazgriz.png
   page: true
+  socials:
+    github: rrazgriz
 
 poiyomi:
   name: Poiyomi
@@ -13,7 +15,9 @@ poiyomi:
   page: true
   socials:
     github: poiyomi
+    bluesky: poiyomi.com
     x: poiyomi
+    youtube: poiyomi
 
 bluwizard:
   name: BluWizard
@@ -23,7 +27,8 @@ bluwizard:
   page: true
   socials:
     github: bluwizard10
-    x: bluwizard10
+    bluesky: bluwizard.net
+    youtube: BluWizard
 
 teeh:
   name: Teeh
@@ -33,4 +38,5 @@ teeh:
   page: true
   socials:
     github: teehzero
+    bluesky: teeh.me
     x: teehexploder

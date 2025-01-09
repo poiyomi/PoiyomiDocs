@@ -70,7 +70,7 @@ Enable or Disable the Hue Shifting functionality. Turn this ON to enable the Hue
 
 Choice of Color Space to use for the Hue Shift. By default, it will be set to `OKLab`.
 
-The usage of perceptual color space is desirable when using the Color Adjust feature. OKLab provides better perceptual properties that allow more accurate color changes, compared to the legacy HSV method. For more technical information on how this works, [see this external webpage](https://bottosson.github.io/posts/oklab/).
+The usage of perceptual color space is desirable when using the Color Adjust feature. OKLab provides better perceptual properties that allow more accurate color changes, compared to the legacy HSV method. For more technical information on how this works, [see this external webpage <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://bottosson.github.io/posts/oklab/).
 
 <details>
 <summary><b>Differences between OKLab vs. HSV</b></summary>
