@@ -12,7 +12,9 @@ At the top of a shader, there's a button labeled `Lock In Optimized Shader`. Pre
 
 To unlock the shader, just press the button again. It'll be labeled as `Unlock Shader`.
 
-Locked materials are *significantly* more optimized than their unlocked counterparts. For editor usage, unlocked materials having reduced performance is ok, but in usage all materials must be locked.
+Locked materials are *significantly* more optimized than their unlocked counterparts. The reason for this is because Locked Materials do not contain features that the creator isn't using. This essentially gives  headroom for the shader to render quickly and more efficiently at runtime.
+
+For Editor usage, unlocked materials have reduced performance due to all features being exposed. While this is acceptable for the creator editing their Materials, it's better that the Materials are Locked in the end. The more Materials you have unlocked, the higher the performance impact it will have in the Editor.
 
 :::tip Auto-Lock Feature
 When uploading to VRChat, the Auto-Locking process runs automatically for any Poiyomi Materials found in an Avatar or World whenever a Build/Upload is triggered. This prevents unlocked materials from being uploaded with the final asset.
