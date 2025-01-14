@@ -12,7 +12,7 @@ At the top of a shader, there's a button labeled `Lock In Optimized Shader`. Pre
 
 To unlock the shader, just press the button again. It'll be labeled as `Unlock Shader`.
 
-Locked materials are *significantly* more optimized than their unlocked counterparts. The reason for this is because Locked Materials do not contain features that the creator isn't using. This essentially gives  headroom for the shader to render quickly and more efficiently at runtime.
+Locked materials are *significantly* more optimized than their unlocked counterparts. The reason for this is because Locked Materials do not contain features that the creator isn't using. This essentially gives headroom for the shader to render quickly and more efficiently at runtime.
 
 For Editor usage, unlocked materials have reduced performance due to all features being exposed. While this is acceptable for the creator editing their Materials, it's better that the Materials are Locked in the end. The more Materials you have unlocked, the higher the performance impact it will have in the Editor.
 
