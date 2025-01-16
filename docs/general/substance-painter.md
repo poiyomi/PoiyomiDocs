@@ -8,15 +8,15 @@ import PoiVideo from '@site/src/components/PoiVideo'
 
 [Adobe Substance Painter](https://www.adobe.com/products/substance3d-painter.html) is frequently used for authoring PBR (Physically Based Rendering) texture maps, and works well for creating realistic looking textures. Provided on this page are some project settings and export presets for Substance Painter that can be used to easily export textures for use in a Poiyomi Material.
 
-# Project Settings
+## Project Settings
 
 For the most part, you'll be using whichever default Substance Shader was assigned in your Project. Usually that would be `pbr-metal-rough` or `asm-metal-rough`, etc.
 
-Most, if not all Shaders in Substance Painter, should work when previewing the Material. However, if you plan to use `Opacity` to control levels of transparency, choose a version that supports it. If you are painting areas for things such as Glass, you would want to use something like `pbr-metal-rough-with-alpha-blending` or similar.
-
 To ensure you are using whichever one you prefer, click `Window -> Views -> Shading settings` from the Menu Bar in Substance Painter.
 
-# Export Presets
+Most, if not all Shaders in Substance Painter, should work when previewing the Material. However, if you plan to use `Opacity` to control levels of transparency, choose a version that supports it. If you are painting areas for things such as Glass, you would want to use something like `pbr-metal-rough-with-alpha-blending` or similar. *In Substance Painter v9.1.0 and newer versions, `asm-metal-rough` added support for transparency, which can be enabled in the Shading settings by toggling `Enable alpha test` or `Enable alpha blending`.*
+
+## Export Presets
 
 :::info Recently Updated!
 These templates were updated to include new workflows that were introduced between 8.0 and 9.0. However, the naming of the Texture files have been changed for simplicity.
@@ -29,7 +29,7 @@ Alternatively, place these presets in your exports folder. For most people, this
 - **v7.2 and newer:** `C:\Users\*UserName*\Documents\Adobe\Adobe Substance 3D Painter\assets\export-presets`
 - **Legacy Versions:** `C:\Users\*UserName*\Documents\Substance 3D Painter\shelf\export-presets`
 
-### Download
+## Download
 
 :::tip Latest 9.0+ Export Templates
 <h3> 📥 <a target="_blank" href="/assets/substance/Unity Poiyomi V9 r2024-03-20.spexp" download="Unity Poiyomi V9 r2024-03-20.spexp"><b><code>Unity Poiyomi V9 r2024-03-20.spexp</code></b></a></h3>

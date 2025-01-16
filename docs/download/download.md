@@ -41,7 +41,7 @@ When replacing or upgrading versions, you must do the following:
 
 </div>
 
-1. Click the `Add to VCC` button above to add Poiyomi Toon Shader to the Creator Companion. The button will open the Creator Companion App.
+1. Click the `Add to VCC` button above to add Poiyomi Toon Shader to the Creator Companion. The button will open the Creator Companion App of your choice.
     - Didn't work? In the VCC, go to `Settings > Packages > Add Repository`, type in `https://poiyomi.github.io/vpm/index.json` and then click `Add`.
 2. When Prompted, click the button labeled `I Understand, Add Respository`.
 3. In the list, make sure `Poiyomi's VPM Repo` is checkmarked.

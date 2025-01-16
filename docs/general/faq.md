@@ -211,13 +211,12 @@ Here is a list of recommended plugins and tools that we use when building our Av
 
 **MUST HAVES:**
 - **Haï Lightbox Viewer:** Test your Avatar’s lighting behavior in the Unity Editor. Highly Recommended for testing Poiyomi’s lighting behavior in various conditions! [Download Haï Lightbox Viewer](https://docs.hai-vr.dev/docs/products/lightbox-viewer)
-
 - **Gesture Manager:** A lightweight and powerful Emulator, allowing you to test your Avatar’s animations and toggles directly in the Editor. [Download Gesture Manager](https://github.com/BlackStartx/VRC-Gesture-Manager)
-
 - **Thry’s VRC Avatar Performance Tools:** Texture Memory calculator that measures the VRAM consumption of your Avatar’s Textures and Mesh, exposing greater detail on how your Avatar impacts other users in VRChat. [Download VRC Avatar Performance Tools](https://github.com/Thryrallo/VRC-Avatar-Performance-Tools)
-
 
 **Other Awesome Tools:**
 - **Pumkin’s Tools:** Avatar Component Copier and in-editor tool for capturing screenshots directly from your Scene. [Download Pumkin's Avatar Tools](https://github.com/rurre/PumkinsAvatarTools) | [Download Editor Screenshot](https://github.com/rurre/Editor-Screenshot)
-
 - **Avatars 3.0 Manager:** Manages your Avatar Descriptor, including editing, merging and copying your Animators, Menus, and Parameters. [Download Avatars 3.0 Manager](https://github.com/VRLabs/Avatars-3.0-Manager)
+
+**Honorable Mention:**
+- **ALCOM:** An excellent and *faster* alternative to the VRChat Creator Companion App (VCC). Works on both Windows and Linux. [Download ALCOM](https://vrc-get.anatawa12.com/en/alcom/)
