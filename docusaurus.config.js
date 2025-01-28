@@ -143,7 +143,7 @@ const config = {
       {
         indexDocs: true,
         indexBlog: true,
-        indexPages: false,
+        indexPages: true,
         docsRouteBasePath: "/",
         blogRouteBasePath: "/blog",
         language: "en",
@@ -196,8 +196,8 @@ const config = {
             position: "left"
           },
           {
-            href: "https://x.com/poiyomi",
-            label: "Twitter / X",
+            href: "https://bsky.app/profile/poiyomi.com",
+            label: "Bluesky",
             position: "right",
           },
           {
