@@ -297,6 +297,10 @@ const config = {
                 href: "https://discord.gg/poiyomi",
               },
               {
+                label: "Bluesky",
+                href: "https://bsky.app/profile/poiyomi.com",
+              },
+              {
                 label: "Twitter / X",
                 href: "https://x.com/poiyomi",
               },
