@@ -232,7 +232,7 @@ This feature enables a Video Texture to appear on the Decal. It will only work i
 
 **REMEMBER: Global Video Texture is <u>NOT</u> a part of AudioLink and is only provided as a convenience!**
 
-*It's also worth knowing that there are not many Worlds out there support this feature. Currently, only Worlds that utilize the latest versions of [ProTV <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://protv.dev/) 3.0 are able to broadcast Video Textures to shaders.*
+*It's also worth knowing that there are not many Worlds out there supporting this feature. Currently, only Worlds that utilize the latest versions of [ProTV <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://protv.dev/) 3.0 are able to broadcast Video Textures to shaders.*
 
 </details>
 
