@@ -23,7 +23,7 @@ This setting is critical to determining how a material will render, and it's imp
 - Render Queue: `2000` (Geometry)
 - ZWrite: `On`
 
-Default rendering mode. Suitable for objects with no transparency at all.
+The default rendering mode in Unity. Suitable for objects with no transparency at all, such as concrete, wood, solid plastic, etc.
 
 ### Cutout
 
@@ -40,7 +40,7 @@ By default, cutout is binary: it either renders or it doesn't. You can use certa
 :::tip
 You can enable MSAA in your Unity project by going to **Edit** > **Project Settings** > **Quality** and finding the *Anti Aliasing* options, and setting them to *MSAA 4x*.
 
-Alternatively, the [VRWorldToolkit](https://github.com/oneVR/VRWorldToolkit) can set up post-processing for you, which enables MSAA, even in avatar projects!
+Alternatively, [VRWorldToolkit](https://github.com/oneVR/VRWorldToolkit) can set up post-processing for you, which enables MSAA, even in avatar projects!
 :::
 
 ## Transparent Presets
@@ -140,14 +140,14 @@ This simple equation can be used to create a wide range of blending effects. To 
 
 Here's a summary of the blend modes used in each preset:
 
-| Preset              | Source Factor       | Distance Factor   | Effect Summary
-| ------------------- | ------------------- | ----------------- | ----------------- |
-| Opaque              | `One`               | `Zero`            | Opaque Blending |
-| Cutout              | `One`               | `Zero`            | Opaque but with Cutouts |
-| Fade                | `SrcAlpha`          | `OneMinusSrcAlpha`| Fully alpha-driven transparency |
-| Transparent         | `One`               | `OneMinusSrcAlpha`| Alpha-driven transparency keeping reflections/highlights visible |
-| TransClipping       | `SrcAlpha`          | `OneMinusSrcAlpha`| Fade, but with z-writing |
-| Additive            | `One`               | `One`             | Color-based additive blending |
-| Soft Additive       | `OneMinusDstColor`  | `One`             | Color-based additive blending that takes background color into account |
-| Multiplicative      | `DstColor`          | `Zero`            | Color-based multiplicative blending (tinting) |
-| 2x Multiplicative   | `DstColor`          | `SrcColor`        | Color-based multiplicative blending (tinting) that can brighten  |
+| Preset              | Source Factor       | Destination Factor | Effect Summary |
+| :------------------ | :------------------ | :----------------- | :--- |
+| Opaque              | `One`               | `Zero`             | Opaque Blending |
+| Cutout              | `One`               | `Zero`             | Opaque but with Cutouts |
+| Fade                | `SrcAlpha`          | `OneMinusSrcAlpha` | Fully alpha-driven transparency |
+| Transparent         | `One`               | `OneMinusSrcAlpha` | Alpha-driven transparency keeping reflections/highlights visible |
+| TransClipping       | `SrcAlpha`          | `OneMinusSrcAlpha` | Fade, but with Z-writing |
+| Additive            | `One`               | `One`              | Color-based additive blending |
+| Soft Additive       | `OneMinusDstColor`  | `One`              | Color-based additive blending that takes background color into account |
+| Multiplicative      | `DstColor`          | `Zero`             | Color-based multiplicative blending (tinting) |
+| 2x Multiplicative   | `DstColor`          | `SrcColor`         | Color-based multiplicative blending (tinting) that can brighten |

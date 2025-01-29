@@ -6,6 +6,8 @@ keywords: [lock-in, lock, unlock, shader locking, mark animated, mark, animated,
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
+Poiyomi Shaders includes some back-end systems that are built with the intention of keeping your workflow optimized in Unity. This page will explain the importance of the Shader Locking feature, as well as how to animate Material Properties on your terms.
+
 ## Shader Locking
 
 At the top of a shader, there's a button labeled `Lock In Optimized Shader`. Pressing this will lock the shader, graying out any options that have not been marked for animation. This may take a few seconds to complete.

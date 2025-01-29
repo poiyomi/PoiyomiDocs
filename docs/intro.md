@@ -7,10 +7,16 @@ hide_table_of_contents: true
 ---
 import PoiVideo from '@site/src/components/PoiVideo';
 
-Welcome! This website provides all the information you need to know about Poiyomi Shaders and how to use it. This includes Documentation on each feature, as well as other technical functions and utilities included.
+Welcome to the Poiyomi Shaders Documentation! This website provides detailed information about the features currently offered in Poiyomi Shaders and how to utilize them.
 
-:::info Heads Up
-Poiyomi Shaders is primarily built for usage in VRChat. However, it may be used in non-VRChat projects provided certain conditions are met. Read below for more information.
+Each category and feature documented on the left-hand Sidebar is organized and sorted in descending order, based on the order of appearance in the Shader's User Interface.
+
+:::note Shader UI Redirects
+All features in the Shader UI will redirect here for further reading. They are indicated by the <FAIcon icon="fa-solid fa-circle-question"/> icon on the category header. When clicked on, it will redirect you to the appropriate page on this website.
+
+<a target="_blank" href="/img/general/UIRedirect.png">
+<img src="/img/general/UIRedirect.png" alt="Redirect Icon on the Shader UI" width="600px"/>
+</a>
 :::
 
 ## Getting Started
@@ -30,17 +36,17 @@ If you are a Game Developer or User wishing to use Poiyomi Shaders on a non-VRCh
 - Rendering Pipeline: `Built-in Render Pipeline`
 - Build Target: `Windows`
 
-## Documentation
-
-On the sidebar, you'll find Documentation for each different feature of the shader. All features of the Shader in the UI will redirect here for further reading.
-
-:::warning
-*This documentation is geared towards **Poiyomi 9.0 and newer***.
-
-If you're using an older version, this documentation may not apply at all. [**An upgrade guide is available in this article**](/docs/general/upgrade/upgrade.md).
+:::info Heads Up
+Poiyomi Shaders is primarily built for usage in VRChat. However, it may be used in non-VRChat projects provided certain conditions are met. Read below for more information.
 :::
 
-### Completion Status
+## Version 9.x
+
+All information in this documentation is currently matching the latest publicly-accessible version of Poiyomi Shaders, version `9.0.61` and newer. Therefore, this documentation may not apply at all if you are using a version older than the one indicated here.
+
+If you are on an older version of Poiyomi Shaders, we highly suggest that you read [**our upgrading guidelines**](/docs/general/upgrade/upgrade.md) in order to ensure you are fully up-to-date on the latest features that are documented here.
+
+## Completion Status
 
 This Documentation is continuously being developed! If you have any questions, or if you think you've found an issue, please [join the Discord](https://discord.gg/poiyomi) and ask! Our goal is to have a fully-fleshed out documentation site with rich visual examples and explanations for all of the shader features.
 

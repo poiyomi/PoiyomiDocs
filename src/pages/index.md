@@ -15,7 +15,7 @@ import PoiyomiWordmark from '@site/static/img/Poiyomi-Wordmark.svg';
 <PoiyomiWordmark />
 </div>
 
-<h1 style={{textAlign: 'center', fontSize: '25px', margin: '2px', fontWeight: 'normal'}}>
+<h1 style={{textAlign: 'center', fontSize: '25px', margin: '2px', fontWeight: 'bold'}}>
 Feature-rich Toon and PBR Shader for Unity, with a specific focus on VRChat
 </h1>
 
@@ -31,7 +31,7 @@ and more!
 
 <div style={{textAlign: 'center', margin: '40px'}}>
 
-<a class="button button--lg button--primary" href="/intro">Get Started</a>&nbsp;<a class="button button--lg button--link" href="/download">Download & Install</a>
+<a class="button button--lg button--primary" href="/intro">Documentation</a>&nbsp;<a class="button button--lg button--link" href="/download">Download & Install</a>
 
 </div>
 
