@@ -222,6 +222,20 @@ Enables Video Texture to project on the Decal.
 This feature enables a Video Texture to appear on the Decal. It will only work if a Video Player is broadcasting an `_Udon_VideoTex` Global Render Texture in the instance.
 :::
 
+<details>
+<summary><b>How to test Decal Video Textures</b></summary>
+
+1. Ensure you have the `AudioLinkAvatar` Prefab in your Scene, as described [here](/docs/audio-link/audio-link.md#how-to-test-audiolink-using-poiyomi-shaders).
+2. Inside the `AudioLinkAvatar` Prefab, expand it and select the object `AudioLinkYtdlpPlayer`. *This is the same place where you specify a YouTube video to use when testing AudioLink.*
+3. On the bottom line, **enable** the checkmark called `Enable Global Video Texture`.
+4. The Decal Video Texture can now be tested and debugged in the Unity Editor while in Play Mode.
+
+**REMEMBER: Global Video Texture is <u>NOT</u> a part of AudioLink and is only provided as a convenience!**
+
+*It's also worth knowing that there are not many Worlds out there support this feature. Currently, only Worlds that utilize the latest versions of [ProTV <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://protv.dev/) 3.0 are able to broadcast Video Textures to shaders.*
+
+</details>
+
 #### Aspect Ratio
 
 - `Type`: **Dropdown**, Options: `Shrink2Fit`/`Grow2Fit`/`Off`
