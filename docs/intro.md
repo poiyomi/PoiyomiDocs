@@ -42,12 +42,12 @@ If you are a Game Developer or User wishing to use Poiyomi Shaders on a non-VRCh
 
 ## Version 9.x
 
-All information in this documentation is currently matching the latest publicly-accessible version of Poiyomi Shaders, version `9.0.61` and newer. Therefore, this documentation may not apply at all if you are using a version older than the one indicated here.
+All information in this documentation is geared towards `9.0` and newer. Therefore, this documentation may not apply at all if you are using older versions.
 
 If you are on an older version of Poiyomi Shaders, we highly suggest that you read [**our upgrading guidelines**](/docs/general/upgrade/upgrade.md) in order to ensure you are fully up-to-date on the latest features that are documented here.
 
 ## Completion Status
 
-This Documentation is continuously being developed! If you have any questions, or if you think you've found an issue, please [join the Discord](https://discord.gg/poiyomi) and ask! Our goal is to have a fully-fleshed out documentation site with rich visual examples and explanations for all of the shader features.
+As of January 30, 2025, this Documentation has been greatly updated to match version `9.0.61` of the Shader. We have been hard at work ensuring that all information has been properly addressed and detailed. Not only that, but plenty of new images and rich visual examples have been added! It's a lot better than what it has been since we initially launched this website!
 
-During the creation of this documentation, however, priority is placed on getting text-based documentation complete first, followed by images and videos, so don't panic if it seems like there's a lot of text for now!
+If you have any questions or if you think you've found an issue, please [join the Discord](https://discord.gg/poiyomi) and ask! The Documentation is continuously being edited, updated, and proofread by our contributors, so please don't hesitate to reach out!
