@@ -32,13 +32,15 @@ After doing so, simply follow the instructions found in [Download & Install](/do
 ### Other Games
 
 :::info
-Poiyomi Shaders is primarily built for usage in VRChat. However, it may be used in non-VRChat projects provided certain conditions are met. See below for details.
+Poiyomi Shaders is primarily built for usage in VRChat. Therefore, limitations may apply when used for other purposes.
 :::
 
-If you are a Game Developer or User wishing to use Poiyomi Shaders on a non-VRChat Project, here are the requirements:
+If you are a Game Developer or hobbyist wishing to use Poiyomi Shaders on a non-VRChat Project, here are the requirements:
 - Supported Unity Versions: `2019.4`, `2021.3`, `2022.3 (Recommended)`
 - Rendering Pipeline: `Built-in Render Pipeline`
 - Build Target: `Windows`
+
+Please note that this information above are **strict** requirements. We do NOT support the Universal Render Pipeline (URP) or High Definition Render Pipeline (HDRP) in Unity whatsoever.
 
 ## Version 9.x
 
