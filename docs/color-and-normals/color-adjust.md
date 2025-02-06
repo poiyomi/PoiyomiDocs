@@ -45,8 +45,6 @@ Adjusts the brightness of the base color.
 
 This adds brightness directly on top of the existing color, without regard for its hue or tone. 
 
-<!-- DRAFT: Upcoming Feature in v9.2. Un-comment this area when it's released on the Public Version.
-
 ## Gamma
 
 - `Type`: **Float**, Range: `0.0 - 5.0`
@@ -55,8 +53,6 @@ This adds brightness directly on top of the existing color, without regard for i
 Adjusts the gamma of the base color.
 
 This can lerp the brightness of the color in regards to its hue or tone. Lower values are more lighter, while higher values are more bolder.
-
-END OF HIDDEN COMMENT -->
 
 ## Hue Shift
 

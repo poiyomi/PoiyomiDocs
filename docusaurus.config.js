@@ -94,6 +94,11 @@ const config = {
           {
             from: '/general/v8-to-v9-upgrade',
             to: '/general/upgrade/v8-upgrade',
+          },
+          {
+            // Stylized Specular renamed to Stylized Reflections in 9.2.10
+            from: '/shading/stylized-specular',
+            to: '/shading/stylized-reflections'
           }
           // Redirect from multiple old paths to the new path
           // {

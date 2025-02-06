@@ -51,7 +51,7 @@ By opening up the [Packed Maps](/docs/shading/reflections-and-specular.md#packed
 
 ### Specular Highlights 1/2 -> Stylized Specular/Anisotropics
 
-The custom specular highlights mode has been reworked into a new feature called [Stylized Specular](/docs/shading/stylized-specular.md), and Anisotropic reflections have been reworked into a new feature called [Anisotropics](/docs/shading/anisotropics.md).
+The custom specular highlights mode has been reworked into a new feature called [Stylized Reflections](/docs/shading/stylized-reflections.md), and Anisotropic reflections have been reworked into a new feature called [Anisotropics](/docs/shading/anisotropics.md).
 
 ## Color & Normals
 

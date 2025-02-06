@@ -50,6 +50,6 @@ If you are on an older version of Poiyomi Shaders, we highly suggest that you re
 
 ## Completion Status
 
-As of January 30, 2025, this Documentation has been greatly updated to match version `9.0.61` of the Shader. We have been hard at work ensuring that all information has been properly addressed and detailed. Not only that, but plenty of new images and rich visual examples have been added! It's a lot better than what it has been since we initially launched this website!
+As of January 30, 2025, this Documentation has been greatly updated to match version `9.1.20` of the Shader. We have been hard at work ensuring that all information has been properly addressed and detailed. Not only that, but plenty of new images and rich visual examples have been added! It's a lot better than what it has been since we initially launched this website!
 
 If you have any questions or if you think you've found an issue, please [join the Discord](https://discord.gg/poiyomi) and ask! The Documentation is continuously being edited, updated, and proofread by our contributors, so please don't hesitate to reach out!
