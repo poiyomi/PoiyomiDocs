@@ -171,8 +171,6 @@ Choice of Color Space to use for the Hue Shift. By default, it will be set to `O
 
 Learn about the difference of Color Spaces as documented here in [Color Adjust](/docs/color-and-normals/color-adjust.md#oklab-vs-hsv).
 
-<!-- DRAFT: Upcoming Feature in v9.2. Un-comment this area when it's released on the Public Version.
-
 #### Select or Shift
 
 - `Type`: **Dropdown**, Options: `Hue Select`/`Hue Shift`
@@ -183,12 +181,10 @@ This dropdown allows you to select how the Color Adjustment should behave when t
 <details>
 <summary><b>Select or Shift Options</b></summary>
 
-- `Hue Select`: Directly applies the selected Hue as an override to the entire Base Color.
-- `Hue Shift`: Only tints the Base Color based on the lerped value. This is the default behavior.
+- `Hue Select`: Directly applies the selected Hue as an override to the entire Decal.
+- `Hue Shift`: Only tints the Decal based on the lerped value. This is the default behavior.
 
 </details>
-
-END OF HIDDEN COMMENT -->
 
 #### Shift Speed
 
@@ -215,8 +211,6 @@ How much to shift the hue with surface angle. A value of `1` will give maximum h
 - `Type`: **Checkbox**
 
 Enables Video Texture to project on the Decal.
-
-<!-- EDITOR'S NOTE: There needs to be something in here (or a link) that explains how to test Video Textures in Unity, without taking up a lot of space! -BluWizard10 -->
 
 :::warning
 This feature enables a Video Texture to appear on the Decal. It will only work if a Video Player is broadcasting an `_Udon_VideoTex` Global Render Texture in the instance.

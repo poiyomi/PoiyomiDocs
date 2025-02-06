@@ -406,6 +406,21 @@ Choice of Color Space to use for the Hue Shift. By default, it will be set to `O
 
 Learn about the difference of Color Spaces as documented here in [Color Adjust](/docs/color-and-normals/color-adjust.md#oklab-vs-hsv).
 
+### Select or Shift
+
+- `Type`: **Dropdown**, Options: `Hue Select`/`Hue Shift`
+  - Default: `Hue Shift`
+
+This dropdown allows you to select how the Color Adjustment should behave when the Hue Shift is used. By default, this will be set to `Hue Shift`.
+
+<details>
+<summary><b>Select or Shift Options</b></summary>
+
+- `Hue Select`: Directly applies the selected Hue as an override to the entire Dissolve.
+- `Hue Shift`: Only tints the Dissolve based on the lerped value. This is the default behavior.
+
+</details>
+
 ### Dissolved Speed
 
 - `Type`: **Float**
@@ -422,7 +437,30 @@ Fixed amount to shift the hue for the dissolved state only.
 
 - `Type`: **Checkbox**
 
-Enables or disables hue shifting of the the dissolve edge color. This checkbox can be animated.
+Enables or disables hue shifting of the the dissolve edge color.
+
+### Edge Color Space
+
+- `Type`: **Dropdown**, Options: `OKLab`/`HSV`
+
+Choice of Color Space to use for the Hue Shift. By default, it will be set to `OKLab`.
+
+Learn about the difference of Color Spaces as documented here in [Color Adjust](/docs/color-and-normals/color-adjust.md#oklab-vs-hsv).
+
+### Edge Select or Shift
+
+- `Type`: **Dropdown**, Options: `Hue Select`/`Hue Shift`
+  - Default: `Hue Shift`
+
+This dropdown allows you to select how the Color Adjustment should behave when the Hue Shift is used. By default, this will be set to `Hue Shift`.
+
+<details>
+<summary><b>Select or Shift Options</b></summary>
+
+- `Hue Select`: Directly applies the selected Hue as an override to the entire Edge.
+- `Hue Shift`: Only tints the Edge based on the lerped value. This is the default behavior.
+
+</details>
 
 ### Edge Speed
 
