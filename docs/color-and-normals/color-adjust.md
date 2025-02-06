@@ -89,8 +89,6 @@ On Legacy HSV, you will see that it makes the color look more washed out. This c
 
 </details>
 
-<!-- DRAFT: Upcoming Feature in v9.2. Un-comment this area when it's released on the Public Version.
-
 ### Select or Shift
 
 - `Type`: **Dropdown**, Options: `Hue Select`/`Hue Shift`
@@ -105,8 +103,6 @@ This dropdown allows you to select how the Color Adjustment should behave when t
 - `Hue Shift`: Only tints the Base Color based on the lerped value. This is the default behavior.
 
 </details>
-
-END OF HIDDEN COMMENT -->
 
 ### Hue Replace
 
