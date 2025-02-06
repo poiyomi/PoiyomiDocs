@@ -12,7 +12,7 @@ This update contains a significant amount of improvements, bug fixes, and some m
 
 ### Added
 - Added `Gamma` to **Color Adjust**, which lerps the brightness of the color in regards to it's Hue and tone. Lower values are more lighter, while higher values are more bolder.
-- Added `Select or Shift` dropdown to **Color Adjust** and **Emission**.
+- Added `Select or Shift` dropdown to **Color Adjust** and all various other areas of the shader using Hue Shift.
   - This dropdown allows the user to select how the Hue Shift should behave. `Hue Shift` is the default normal setting, while `Hue Select` will override the set Hue to the entire Base Color.
 - Added `Color Space` selection to all areas of the Shader using Hue Shift.
 - Added `Lil Reflections` mode to **Stylized Reflections**, which matches the features of LilToon's Reflection.
