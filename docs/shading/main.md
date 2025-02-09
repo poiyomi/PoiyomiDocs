@@ -399,7 +399,7 @@ Shadow Tint will tint the shadow with a specific color, useful for creating a sp
 
 #### LUT
 
-- `Type`: **Data** Texture (sRGB **OFF**)
+- `Type`: **Data** Texture (`sRGB = OFF`)
 
 The LUT is used to determine the lighting ramp at various scales. This texture consists of a series of RGB values, with the horizontal axis representing the light level, and the vertical axis representing the thickness of the skin.
 
@@ -411,7 +411,7 @@ Scales the Subsurface Scattering (SSS) effect. A value of `0.0` will disable the
 
 #### Thickness Map
 
-- `Type`: **Data** Texture (sRGB **OFF**)
+- `Type`: **Data** Texture (`sRGB = OFF`)
 
 #### Thickness Power
 
@@ -462,7 +462,7 @@ Primary tint applied to the 1st ShadeMap. If ShadeMap texture is defined, this c
 
 #### 1st ShadeMap
 
-- `Type`: **Color** Texture (sRGB **ON**)
+- `Type`: **Color** Texture (`sRGB = ON`)
 
 Shading map used for the 1st ShadeColor. If this is not defined, the 1st ShadeColor alone will be used. Shading maps define what the shadow should look like in this area.
 
@@ -480,7 +480,7 @@ Primary tint applied to the 1st ShadeMap. If ShadeMap texture is defined, this c
 
 #### 2nd ShadeMap
 
-- `Type`: **Color** Texture (sRGB **ON**)
+- `Type`: **Color** Texture (`sRGB = ON`)
 
 Shading map used for the 1st ShadeColor. If this is not defined, the 1st ShadeColor alone will be used.
 
@@ -575,8 +575,8 @@ Smoothness is a baked-in value determining how much additional reflection the ma
 
 Cloth shading is a physically-based lighting model that draws from the Cloth shading model used in [Google's Filament engine](https://google.github.io/filament/Materials.html#materialmodels/clothmodel). It uses a packed mask to determine physically-based components of the lighting.
 
-:::note
-Cloth Shading will be updated in the future to separate the specular into its own module. Currently, it's not recommended to use both Cloth shading and Reflections & Specular.
+:::warning
+Due to the unique properties used in Cloth shading, it's <u>not recommended</u> to use both Cloth shading and Reflections & Specular at the same time!
 :::
 
 <details>
@@ -594,7 +594,7 @@ This is a built-in data texture that contains a pre-baked lookup table for the c
 
 #### Maps
 
-- `Type`: **Data** Texture (sRGB **OFF**)
+- `Type`: **Data** Texture (`sRGB = OFF`)
 
 The map texture defines multiple settings of the Cloth lighting across different parts of the material. These maps are *packed* into a single texture, which increases performance and reduces memory usage.
 
@@ -602,25 +602,25 @@ This texture can be exported from programs like Adobe Substance Painter as a pre
 
 ##### Metallic Map
 
-- `Type`: **Data** Texture (sRGB **OFF**)
+- `Type`: **Data** Texture (`sRGB = OFF`)
 
 The metallic map defines where the material should be metallic, and where it should be non-metallic (dielectric). This should generally be black or white, with few situations requiring in-between values.
 
 ##### Cloth Mask
 
-- `Type`: **Data** Texture (sRGB **OFF**)
+- `Type`: **Data** Texture (`sRGB = OFF`)
 
 The cloth mask defines where there should be standard specular and diffuse lighting, and where the cloth model should be rendered. This should generally be black or white, with white representing the cloth model, and black representing the standard specular and diffuse lighting.
 
 ##### Reflectance
 
-- `Type`: **Data** Texture (sRGB **OFF**)
+- `Type`: **Data** Texture (`sRGB = OFF`)
 
 The reflectance mask defines the reflectivity of the model. Reflectivity is a physically-based-shading parameter that determines how much reflection a non-metallic surface will have. This can often be left white, but can be used to create a more realistic look.
 
 ##### Smoothness
 
-- `Type`: **Data** Texture (sRGB **OFF**)
+- `Type`: **Data** Texture (`sRGB = OFF`)
 
 The Smoothness map defines where the material should be smoother, and where it should be rougher. This value can vary smoothly between `0.0` and `1.0` according to variations and different parts of a material.
 
@@ -677,7 +677,7 @@ Shadow Tint will tint the shadow with a specific color, useful for creating a sp
 
 #### SDF
 
-- `Type`: **Data** Texture (`sRGB = Off`)
+- `Type`: **Data** Texture (`sRGB = OFF`)
 
 Defines the Signed Distance Field to use for the shading.
 
