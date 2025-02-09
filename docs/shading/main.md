@@ -656,6 +656,63 @@ This value is multiplied with the value of the Smoothness Map. If no smoothness 
 
 </details>
 
+### SDF
+
+SDF (Signed Distance Field) is a complex shading style that defines how shadows should act based on the direction of light. This can create cell-looking shadows in a way similar to how Mihoyoverse renders their models (Genshin Impact, Zenless Zone Zero, etc.)
+
+:::warning SDF is NOT universal!
+In a similar fashion to having a [Shadow Map](/docs/shading/light-data.md#shadow-map), SDF requires a specialized data texture, specific to your model, in order for the appearance of SDF to appear as intended.
+
+Therefore, the results will appear "flat" if there is no texture defined.
+:::
+
+<details>
+<summary><b>SDF Options</b></summary>
+
+#### Shadow Tint
+
+- `Type`: **Color**
+
+Shadow Tint will tint the shadow with a specific color, useful for creating a specific stylized shading effect. This color will be mixed with the Ambient Color (if enabled) to produce the final shading.
+
+#### SDF
+
+- `Type`: **Data** Texture (`sRGB = Off`)
+
+Defines the Signed Distance Field to use for the shading.
+
+#### Blur
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+Defines how much to blur the shadow out from the SDF's borders. A value of `0.0` will not blur the shadow, and a value of `1.0` will blur the shadow to the edge of the lightmap.
+
+#### Forward Direction
+
+- `Type`: **Float3**
+
+Defines the direction of the shading in the forward direction, in `X` `Y` and `Z` coordinates.
+
+#### Left Direction
+
+- `Type`: **Float3**
+
+Defines the direction of the shading in the leftward direction, in `X` `Y` and `Z` coordinates.
+
+#### Shadow Strength
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+Determines how strong of a shadow is applied. A value of `0.0` will not apply any shadow, and a value of `1.0` will apply a full shadow.
+
+#### Ignore Indirect Shadow Color
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+Determines whether or not to incorporate the full ambient color into the lighting calculation. A value of `0.0` will ignore the ambient color, and a value of `1.0` will fully tint the shadow with the ambient color.
+
+</details>
+
 ## Add Pass (Point & Spot Lights)
 
 These options affect how shading is performed in the Add pass. This pass is used for realtime lights like Point, Spot, and Directional lights.

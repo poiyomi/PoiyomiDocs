@@ -10,8 +10,6 @@ import PoiVideo from '@site/src/components/PoiVideo'
 
 Stylized Reflections is a module that applies a stylized specular highlight or reflective effect to the material. It's useful for creating a more toon-like, stylized effect than the standard specular highlights or reflections from [Reflections & Specular](/docs/shading/reflections-and-specular.md).
 
-<!--
-
 ## Mode
 
 - `Type`: **Dropdown**, Options: `UnityChan`/`lilToon`
@@ -28,7 +26,7 @@ This page is split into two separate sections, as each of the Modes vastly diffe
 
 ## Unity Chan Specular
 
--->
+Unity Chan Specular is the default style, applying specular highlight effects to the material in a toon-like fashion.
 
 ### Specular Map
 
@@ -122,72 +120,109 @@ Ignores shadows on the Specular results.
 
 Ignores casted shadows on the Specular results.
 
-<!--
-
 ## Lil Reflections
+
+In Lil Reflections mode, this creates the appearance of metallic or smooth surfaces as if it was in a cartoon. It closely matches the Reflections feature in LilToon shader.
 
 ### sReflection
 
-- `Type`: **Float**
+- `Type`: **Checkbox**
+
+Enables Lil Reflections.
 
 ### Smoothness
 
 - `Type`: **Data** Texture (`sRGB = OFF`)
   - Float, Range: `0.0 - 1.0`
 
+How smooth Lil Reflections should be. Smoothness is a value that controls how diffuse, or blurred, highlights and reflections are. A value of `0.0` means that the material is completely diffuse, meaning reflections will be highly blurred, and specular reflections will be large and not very bright. A value of `1.0` means that the material is completely smooth, and will have very small and concentrated specular.
+
+This value is multiplied with the value of the Smoothness Map. If no smoothness map is defined, this setting is used directly.
+
 ### GSAA
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
+
+GSAA (Geometric Specular Anti-Aliasing) is a technique that improves the quality of specular reflections. It uses the geometry of the model to modify the specular reflections in order to reduce Specular Aliasing, which is a visible artifact that occurs at high smoothness levels, especially with highly detailed models or normal maps.
 
 ### Metallic
 
 - `Type`: **Data** Texture (`sRGB = OFF`)
   - Float, Range: `0.0 - 1.0`
 
+How metallic Lil Reflections should be. Metallics are usually used for (as would be expected) metals. However,The defining feature of metallic surfaces is that reflections are tinted with the color of the material. For non-metallic, the reflections are not tinted.
+
+This value is multiplied with the value of the Metallic Map. If no metallic map is defined, this setting is used directly.
+
 ### Color / Mask
 
 - `Type`: **Color**
+
+Defines the Color and Tint of the surface used for Lil Reflections.
 
 ### Reflectance
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
+Defines the intensity of the reflectivity.
+
 ### Specular
 
 - `Type`: **Checkbox**
+
+Creates a toon-style specular appearance on the Material.
 
 #### Specular Mode
 
 - `Type`: **Dropdown**, Options: `Toon`/`Realistic`
 
+Specular mode provides different options for how the specular highlight should be calculated. This modifies the options available for each layer, and how these options are used.
+
+- `Toon`: Uses a simplified specular highlight calculation that provides direct control over the edge smoothness and size.
+- `Realistic`: The standard specular highlight calculation. This is essentially equivalent to the specular highlights from Reflections & Specular.
+
 #### Normal Strength
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
+
+How much to blend the speculars with the Normals of your Material.
 
 #### Border
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
+Defines the border of the specular.
+
 #### Blur
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
+
+Blurs the border of the specular. Lower values are more sharper, while higher values are more soft.
 
 #### MultiLight Specular
 
 - `Type`: **Checkbox**
 
+Allows MultiLight specular to be used.
+
 ### Environmental Reflections
 
 - `Type`: **Checkbox**
+
+Enables the ability to render Environmental Reflections from the World onto the specular reflections.
 
 #### Normal Strength
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
+How much to blend the Environmental Reflections with the Normals of your Material.
+
 #### Color
 
 - `Type`: **Color**
   - **Color** Texture (`sRGB = ON`)
+
+Tints the color of the environmental reflections.
 
 #### Cubemap Fallback
 
@@ -197,16 +232,22 @@ Ignores casted shadows on the Specular results.
 
 - `Type`: **Checkbox**
 
+If enabled, will strictly enforce the Cubemap Fallback to always be used regardless.
+
 #### Enable Lighting Fallback
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
+
+Enables the Lighting Fallback in a variable value.
 
 #### Apply Transparency
 
 - `Type`: **Checkbox**
 
+If enabled, will apply transparency to the material.
+
 #### Blend Modes
 
 - `Type`: **Dropdown**, Options: `Replace`/`Add`/`Screen`/`Multiply`
 
--->
+Choice of blending operations to use.

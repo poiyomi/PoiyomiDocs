@@ -52,6 +52,21 @@ Choice of Color Space to use for the Hue Shift. By default, it will be set to `O
 
 Learn about the difference of Color Spaces as documented here in [Color Adjust](/docs/color-and-normals/color-adjust.md#oklab-vs-hsv).
 
+### Select or Shift
+
+- `Type`: **Dropdown**, Options: `Hue Select`/`Hue Shift`
+  - Default: `Hue Shift`
+
+This dropdown allows you to select how the Color Adjustment should behave when the Hue Shift is used. By default, this will be set to `Hue Shift`.
+
+<details>
+<summary><b>Select or Shift Options</b></summary>
+
+- `Hue Select`: Directly applies the selected Hue as an override to the entire Backface.
+- `Hue Shift`: Only tints the Backface based on the lerped value. This is the default behavior.
+
+</details>
+
 ### Shift
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
