@@ -10,7 +10,7 @@ import PoiVideo from '@site/src/components/PoiVideo'
 EDITOR'S NOTE: This page was written based on an old Tutorial Video by Poiyomi. Some information may not be totally accurate as this module has completely changed since then. -BluWizard10
 -->
 
-BlackLight Masking allows you to create distance-based effects that appear based on specific set of Keys. It works by only showing effects when a specific Light Source (set to the Color **Black**) has it's `Range` set to the `Key` as defined in the BlackLight Masking to show the effect.
+BlackLight Masking allows you to create distance-based effects that appear based on specific set of Keys. It works by only showing effects when a specific Light Source (set to the Color **Black**) has it's `Intensity` set to match the `Key` as defined in the BlackLight Masking to show the effect.
 
 There are 4 BlackLight Masks permissible per Material.
 
