@@ -576,7 +576,7 @@ Smoothness is a baked-in value determining how much additional reflection the ma
 Cloth shading is a physically-based lighting model that draws from the Cloth shading model used in [Google's Filament engine](https://google.github.io/filament/Materials.html#materialmodels/clothmodel). It uses a packed mask to determine physically-based components of the lighting.
 
 :::warning
-Due to the unique properties used in Cloth shading, it's <u>not recommended</u> to use both Cloth shading and Reflections & Specular at the same time!
+Due to the unique properties used in Cloth shading, it's <u>not recommended</u> to use both Cloth shading and [Reflections & Specular](/docs/shading/reflections-and-specular.md) at the same time!
 :::
 
 <details>
@@ -660,7 +660,7 @@ This value is multiplied with the value of the Smoothness Map. If no smoothness 
 
 SDF (Signed Distance Field) is a complex shading style that defines how shadows should act based on the direction of light. This can create cell-looking shadows in a way similar to how Mihoyoverse renders their models (Genshin Impact, Zenless Zone Zero, etc.)
 
-:::warning SDF is NOT universal!
+:::warning SDF is NOT universal
 In a similar fashion to having a [Shadow Map](/docs/shading/light-data.md#shadow-map), SDF requires a specialized data texture, specific to your model, in order for the appearance of SDF to appear as intended.
 
 Therefore, the results will appear "flat" if there is no texture defined.

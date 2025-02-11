@@ -17,7 +17,7 @@ Many of the settings in this section are automatically-configured depending on w
 - `Type`: **Dropdown**, Options: `Back`/`Front`/`Off`
   - Default: `Back`
 
-Sets what faces should be culled. By default, back faces are culled, in order to improve performance. This can be set to `Off` in order to render both front and back faces. `Front` is useful for special effects.
+Sets what faces should be culled. By default, back faces are culled, in order to improve performance. This can be set to `Off` in order to render both front and back faces. `Front` is only useful for special effects.
 
 :::tip
 This option is usually the only one in this section that should be adjusted by most users.
@@ -26,77 +26,93 @@ This option is usually the only one in this section that should be adjusted by m
 ## ZTest
 
 - `Type`: **Dropdown**, Options: `Disabled`/`Never`/`Less`/`Equal`/`LessEqual`/`Greater`/`NotEqual`/`GreaterEqual`/`Always`
+  - Default: `LessEqual`
 
 Sets how the shader should test the depth buffer. By default, the depth buffer is tested, and if the depth value is not less than or equal to the current value, the pixel is discarded.
 
-Learn more at [Unity's documentation](https://docs.unity3d.com/Manual/SL-ZTest.html).
+Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-ZTest.html).
 
 ## ZWrite
 
 - `Type`: **Dropdown**, Options: `Off`/`On`
+  - Default: Determined by [Rendering Preset](/docs/general/render-preset.md)
 
 Determines whether the shader should write to the depth buffer. For Opaque presets, this is usually `On`, but for Transparent presets, this is usually `Off`.
 
-Learn more at [Unity's documentation](https://docs.unity3d.com/Manual/SL-ZWrite.html).
+Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-ZWrite.html).
 
 ## Color Mask
 
 - `Type`: **Dropdown**
+  - Default: `RGBA`
 
 Color Mask determines which color channels should be rendered. By default, this is set to `RGBA`, which means that all colors are rendered. All permutations of color channels are available.
 
-Learn more at [Unity's documentation](https://docs.unity3d.com/Manual/SL-ColorMask.html).
+Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-ColorMask.html).
 
 ## Offset Factor
 
 - `Type`: **Float**
+  - Default: `0`
 
-Offset factor moves where a polygon is rendered in screenspace. This doesn't change the visual appearance of the polygon, but can be used to specially modify the depth value of the polygon.
+Offset factor moves where a polygon is rendered in screen-space. This doesn't change the visual appearance of the polygon, but can be used to specially modify the depth value of the polygon.
 
-Learn more at [Unity's documentation.](https://docs.unity3d.com/Manual/SL-Offset.html)
+Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-Offset.html).
 
 ## Offset Units
 
 - `Type`: **Float**
+  - Default: `0`
 
 A fixed value to move the polygon away from or toward the camera, while keeping it visually the same size.
 
-Learn more at [Unity's documentation.](https://docs.unity3d.com/Manual/SL-Offset.html)
+Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-Offset.html).
 
 ## Reduce Clip Distance
 
 - `Type`: **Checkbox**
+  - Default: `Off`
 
 Creates a smaller clip distance for the material. This can be used to make geometry not disappear when very close to the camera.
 
 ## Z Clip
 
 - `Type`: **Checkbox**
-  - Default: `true`
+  - Default: `On`
 
 Enables or Disables the GPU's Depth Clip Mode, which determines how the GPU handles fragments of the Shader that are outside of the Near and Far Planes.
 
-Learn more at [Unity's documentation.](https://docs.unity3d.com/Manual/SL-ZClip.html)
+Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-ZClip.html).
 
 ## Ignore Fog
 
 - `Type`: **Checkbox**
+  - Default: `Off`
 
 If checked, this material will not be affected by fog, if present in the scene.
 
-Learn more at [Unity's documentation.](https://docs.unity3d.com/2018.3/Documentation/Manual/PostProcessing-Fog.html)
+Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/2018.3/Documentation/Manual/PostProcessing-Fog.html).
+
+## Flip Backface Normals
+
+- `Type`: **Checkbox**
+  - Default: `On`
+
+If enabled, inverts the normal vectors of the mesh if you're looking at a backface. This ensures it renders correctly when the camera is looking towards the backface.
 
 ## Enable GPU Instancing
 
 - `Type`: **Checkbox**
+  - Default: `Off`
 
 Enables or disables GPU instancing for this material. GPU instancing allows for rendering multiple copies of the same mesh with the same material, given some specific conditions are met. This can be used to create more efficient rendering of objects with multiple copies.
 
-Learn more at [Unity's documentation.](https://docs.unity3d.com/Manual/GPUInstancing.html)
+Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/GPUInstancing.html).
 
 ## Early Z
 
 - `Type`: **Checkbox**
+  - Default: `Off`
 
 Enables Early Z mode on the Material. This makes the Mesh first only render to Depth, culling anything behind the main Front Face.
 
@@ -105,6 +121,7 @@ This option is commonly used to solve Stacking Transparency problems.
 ## VRC Fallback
 
 - `Type`: **Dropdown**, Options: `None`/`Hidden`/`Standard`/`Toon`/`Unlit`/`VertexLit`/`Particle`/`Sprite`/`Matcap`/`MobileToon`
+  - Default: `Standard/Opaque/OneSided`
 
 Defines what Fallback Shader to use if shaders are hidden on the Avatar. Fallback Shaders are seen when a Remote User is blocking your shaders via their own Safety Settings.
 
@@ -116,7 +133,7 @@ This option includes a large variety of shaders, with some of the more useful op
 - `Toon/Opaque`: Opaque Toon-lit (flat lit) shader material.
 - `Toon/Cutout`: Cutout Toon-lit (flat lit) shader material, drawing from base texture alpha.
 
-For more information on VRC Fallback Shaders, including what specific properties will be copied to the fallback shader, read the [VRC Creators Documentation for the Shader Fallback System](https://creators.vrchat.com/avatars/shader-fallback-system/).
+For more information on VRC Fallback Shaders, including what specific properties will be copied to the fallback shader, read the [VRC Creators Documentation for the Shader Fallback System <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://creators.vrchat.com/avatars/shader-fallback-system/).
 
 :::tip Test Fallback Shaders in-game
 You can test how the Fallback Shader setting behaves in-game by toggling a setting in the Action Menu!
