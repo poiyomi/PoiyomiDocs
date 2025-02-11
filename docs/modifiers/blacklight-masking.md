@@ -10,13 +10,13 @@ import PoiVideo from '@site/src/components/PoiVideo'
 EDITOR'S NOTE: This page was written based on an old Tutorial Video by Poiyomi. Some information may not be totally accurate as this module has completely changed since then. -BluWizard10
 -->
 
-BlackLight Masking allows you to create distance-based effects that appear based on specific set of Keys. It works by only showing effects when a specific Light Source (set to the Color **Black**) has it's `Range` set to the `Key` as defined in the BlackLight Masking to show the effect.
+BlackLight Masking allows you to create distance-based effects that appear based on specific set of Keys. It works by only showing effects when a specific Light Source (set to the Color **Black**) has it's `Intensity` set to match the `Key` as defined in the BlackLight Masking to show the effect.
 
 There are 4 BlackLight Masks permissible per Material.
 
 :::warning Required Setup
 To use BlackLight Masking, you must set the following on a **Point Light Source** that you intend to use to react to the BlackLight Mask:
-- `Range`, which will act as your **Key**.
+- `Intensity`, which will act as your **Key**.
 - `Color` set to **Black**.
 - `Mode` set to **Realtime**.
 - `Render Mode` set to **Not Important**. *If this is not set, the BlackLight Mask will not work!*
@@ -34,7 +34,7 @@ Enables BlackLight Masking on the Material.
 
 - `Type`: **Float**
 
-Which `Key` should be used for BlackLight Mask One. This should match the same value as the specific Light Source's `Range` value.
+Which `Key` should be used for BlackLight Mask One. This should match the same value as the specific Light Source's `Intensity` value.
 
 ### Range
 
@@ -59,7 +59,7 @@ Select which [Global Mask](/docs/modifiers/global-masks.md) to apply the BlackLi
 
 - `Type`: **Float**
 
-Which `Key` should be used for BlackLight Mask Two. This should match the same value as the specific Light Source's `Range` value.
+Which `Key` should be used for BlackLight Mask Two. This should match the same value as the specific Light Source's `Intensity` value.
 
 ### Range
 
@@ -84,7 +84,7 @@ Select which [Global Mask](/docs/modifiers/global-masks.md) to apply the BlackLi
 
 - `Type`: **Float**
 
-Which `Key` should be used for BlackLight Mask Three. This should match the same value as the specific Light Source's `Range` value.
+Which `Key` should be used for BlackLight Mask Three. This should match the same value as the specific Light Source's `Intensity` value.
 
 ### Range
 
@@ -109,7 +109,7 @@ Select which [Global Mask](/docs/modifiers/global-masks.md) to apply the BlackLi
 
 - `Type`: **Float**
 
-Which `Key` should be used for BlackLight Mask Four. This should match the same value as the specific Light Source's `Range` value.
+Which `Key` should be used for BlackLight Mask Four. This should match the same value as the specific Light Source's `Intensity` value.
 
 ### Range
 
