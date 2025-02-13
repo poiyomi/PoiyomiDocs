@@ -112,19 +112,18 @@ The Fallback Shader option generates a tag for the material that informs VRChat 
 
 ### Texture Packer
 
-The texture packer is a builtin tool to combine multiple textures into one or rearrange its channels.
-Shaders can specifiy which textures should be represented by a texture packer.
-So under some textures (mostly masks) you will find shown dropdown with texture slots for source textures, a `Confirm` button and a `Revert` button.
-While editing the settings you can see a preview of the result in realtime. However your changes will not be correctly applied until you click the `Confirm` button.
+The Texture Packer is a builtin tool to combine multiple textures into one or rearrange its channels, and is integrated into many **Data** Texture Slots in Poiyomi Shaders.
+
+Shaders can specify which textures should be represented by a texture packer. So under some textures (mostly masks) you will find shown dropdown with texture slots for source textures, a `Confirm` button and a `Revert` button. While configuring, you can see a preview of the result in realtime. However your changes will not be correctly applied until you click the `Confirm` button.
 
 Options per texture slot:
 - `Texture Slot`: Source texture
 - `Fallback`: Value to use if the source texture is not set
 - `Inverted`: Invert the value
-- `Channel`: Select the channel to use. The `max` channel uses the max value of RGB channels.
+- `Channel`: Select the channel to use. The `Max` channel uses the max value of RGB channels.
 
-<a target="_blank" href="/img/thryeditor/packer.png">
-<img src="/img/thryeditor/packer.png" alt="Texture Packer" width="700px"/>
+<a target="_blank" href="/img/thryeditor/packer_new.png">
+<img src="/img/thryeditor/packer_new.png" alt="Texture Packer" width="700px"/>
 </a>
 
 ### Cross Shader Editor

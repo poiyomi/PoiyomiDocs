@@ -16,7 +16,7 @@ Stylized Reflections is a module that applies a stylized specular highlight or r
 
 Choice of which style of Stylized Reflections that you wish to use.
 
-The default mode is `UnityChan`, which reflects all the features of "Stylized Specular," used in previous versions of Poiyomi Shaders prior to 9.2.10.
+The default mode is `UnityChan`, which reflects all the features of "Stylized Specular," used in previous versions of Poiyomi Shaders prior to 9.1.20.
 
 The mode `lilToon` adds both specular and environmental reflections in a more stylized fashion, a feature commonly found in lilToon.
 

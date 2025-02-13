@@ -17,13 +17,15 @@ Color Adjust can be used to quickly change the colors presented from the main te
 
 - `Type`: **Data** Texture (`sRGB = OFF`)
 
-A texture that defines where to apply the color adjustments. If this texture is not defined, the adjustments will apply everywhere.
+Texture Slot that defines where to specifically apply the color adjustments to. If this texture is not defined, the adjustments will apply everywhere.
+
+This slot has the [Texture Packer](/docs/thryeditor/enduser.md#texture-packer) integrated for convenience.
 
 | Channel | Mask |
-|--|--|
-| Red | Hue |
-| Green |  Brightness  |
-| Blue | Saturation |
+| :---: | :---: |
+| R | Hue |
+| G | Brightness |
+| B | Saturation |
 
 ## Saturation
 
@@ -124,15 +126,15 @@ If disabled, the base color will be directly hue shifted, with the amount of hue
 - `Type`: **Float**, Range: `0.0 - 1.0`
   - Normal: `0.0`
 
-How much to shift the base color around the hue circle. 
+Determines how much to shift the base color around the hue circle. **This is the main hue shifting slider.**
 
-This value is circular, and will have the same result at 0 and 1. 
+This value is circular, and will have the same result at `0.0` and `1.0`.
 
 ### Hue Shift Speed
 
 - `Type`: **Float**
 
-How much to constantly shift the hue with time. A value of 1 will result in a full hue shift cycle every 20 seconds.
+If set, will constantly shift the hue with time. A value of `1` will result in a full hue shift cycle every 20 seconds.
 
 ### Hue Shift Audio Link
 
