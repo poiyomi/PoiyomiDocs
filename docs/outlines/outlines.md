@@ -142,7 +142,7 @@ Determines if you want the Outlines to blend in a way that is similar to Unity-C
 Enables the ability to modify the Outline Color in a similar fashion to [Color Adjust](../color-and-normals/color-adjust.md). This is applied directly after the main [Outline Color](#color), and will not affect other sections that modify the base Outline Color.
 
 :::warning This area is a Float4 Property!
-This means each of these Color Adjust properties **cannot be animated independently of each other!** You must choose only one to animate at a time.
+This means each of these Color Adjust properties **cannot be animated independently of each other!** You must choose **only one** to animate.
 :::
 
 ### Hue

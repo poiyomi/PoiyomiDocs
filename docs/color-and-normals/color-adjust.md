@@ -8,10 +8,10 @@ import PoiVideo from '@site/src/components/PoiVideo'
 
 The Color Adjust section provides options for modifying the base color of the material. This is applied directly after the main [Color and Normals](/docs/color-and-normals/main.md) section, and will not affect any other sections that modify the Base Color.
 
-Color Adjust can be used to quickly change the colors presented from the main texture to a different hue of color either directly or indirectly. The results of the hue shift can vary depending on which [Color Space](#color-space) is chosen, and how much [Saturation](#saturation) and [Brightness](#brightness) is set by the user.
+Color Adjust can be used to quickly change the colors presented from the main texture to a different hue of color either directly or indirectly. The results of the hue shift can vary depending on which [Color Space](#color-space) is chosen, and how much [Saturation](#saturation), [Brightness](#brightness), and [Gamma](#gamma), is set by the user.
 
-<PoiVideo url='/vid/color-and-normals/ColorAdjustDemo.mp4'/>
-<em>Demonstration of the Color Adjust feature on this Avatar's Jacket. Watch how the Saturation and Brightness can also influence how shifting the Hue will look.</em>
+<PoiVideo url='/vid/color-and-normals/ColorAdjustDemo2.mp4'/>
+<em>Demonstration of the Color Adjust feature on this Avatar's Suit. Watch how the Saturation, Brightness, and Gamma, can influence how shifting the Hue will look.</em>
 
 ## Mask
 
@@ -63,6 +63,7 @@ Enable or Disable the Hue Shifting functionality. Turn this ON to enable the Hue
 ### Color Space
 
 - `Type`: **Dropdown**, Options: `OKLab`/`HSV`
+  - Default: `OKLab`
 
 Choice of Color Space to use for the Hue Shift. By default, it will be set to `OKLab`.
 
@@ -85,7 +86,7 @@ As you can see above, the difference is quite obvious. OKLab is better at changi
 
 On Legacy HSV, you will see that it makes the color look more washed out. This can lead to very undesirable results.
 
-**We highly recommend using OKLab when setting up a Hue Shift system for your Avatar.** In addition, consider using the Saturation and Brightness options that are available to you alongside your Hue Shift for more accurate results.
+**We strongly recommend using OKLab when setting up a Hue Shift system for your Avatar.** In addition, consider using the Saturation, Brightness, and Gamma options that are available to you alongside your Hue Shift for more accurate results.
 
 </details>
 
@@ -99,14 +100,18 @@ This dropdown allows you to select how the Color Adjustment should behave when t
 <details>
 <summary><b>Select or Shift Options</b></summary>
 
-- `Hue Select`: Directly applies the selected Hue as an override to the entire Base Color.
+- `Hue Select`: Directly applies the selected Hue as an override. If there are multiple colors, this will also directly override them to your selected Hue.
 - `Hue Shift`: Only tints the Base Color based on the lerped value. This is the default behavior.
 
 </details>
 
+<PoiVideo url='/vid/color-and-normals/HueSelectShiftDemo.mp4'/>
+<em>Demonstration of the Select and Shift behavior. Pay attention to how multiple colors are treated when using Select instead of Shift.</em>
+
 ### Hue Replace
 
 - `Type`: **Checkbox**
+  - Default: `On`
 
 Changes how the hue shift is applied when a hue shift mask is present. 
 
@@ -136,7 +141,7 @@ How much to constantly shift the hue with time. A value of 1 will result in a fu
 If enabled, allows the Hue Shift to be controlled with Audio Link chronotensity.
 
 :::info
-This property allows control of the Hue Shift through [AudioLink](/docs/audio-link/audio-link.md). It will only be exposed when AudioLink is activated on the Material.
+The settings in this section will only be visible when [AudioLink](/docs/audio-link/audio-link.md) is activated on the Material.
 :::
 
 #### Band
