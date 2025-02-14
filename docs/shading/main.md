@@ -26,7 +26,7 @@ This section often uses some terms interchangeably.
 
 ## Lighting Type
 
-- `Type`: **Dropdown**, Options: `TextureRamp`/`Multilayer Math`/`Wrapped`/`Skin`/`ShadeMap`/`Flat`/`Realistic`/`Cloth`
+- `Type`: **Dropdown**, Options: `TextureRamp`/`Multilayer Math`/`Wrapped`/`Skin`/`ShadeMap`/`Flat`/`Realistic`/`Cloth`/`SDF`
 
 Lighting mode to use. Each of these models uses the same lighting data in different ways to produce different lighting effects.
 

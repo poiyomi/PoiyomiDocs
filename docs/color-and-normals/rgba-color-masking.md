@@ -70,9 +70,9 @@ Slot to use for Metallics & Smoothness effect on your RGBA Masks. Use this for t
 
 ## Channel Module
 
-These following properties will appear for each Channel you are customizing. We will refer them to **"Channel"** on this Documentation. This means the word **Channel** would be the RGBA Mask Channel, such as `Red`, `Green`, `Blue`, or `Alpha`.
-
-Please take the time to understand how these settings work and how to use them.
+:::info Documentation Info
+The following properties below will appear for each Channel you are customizing. We will refer to them as **"Channel"** on this Documentation. This means the word **"Channel"** would be the RGBA Mask Channel, such as `Red`, `Green`, `Blue`, or `Alpha`.
+:::
 
 ### Channel
 

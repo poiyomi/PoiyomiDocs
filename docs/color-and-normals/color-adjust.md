@@ -34,7 +34,7 @@ This slot has the [Texture Packer](/docs/thryeditor/enduser.md#texture-packer) i
 
 Adjusts the saturation of the base color. 
 
-A value of -1 will make the base color fully de-saturate (grayscale). A value of 0 will not alter the color at all. A value greater than 0 will increase the saturation of the base color.
+A value of `-1` will make the base color fully de-saturate (grayscale). A value of `0` will not alter the color at all. A value greater than 0 will increase the saturation of the base color.
 
 This is implemented as a lerp between the base color and a grayscale version of the base color.
 
@@ -45,7 +45,7 @@ This is implemented as a lerp between the base color and a grayscale version of 
 
 Adjusts the brightness of the base color. 
 
-This adds brightness directly on top of the existing color, without regard for its hue or tone. 
+This increases or decreases brightness directly on top of the existing color, without regard for it's hue or tone.
 
 ## Gamma
 
@@ -54,13 +54,13 @@ This adds brightness directly on top of the existing color, without regard for i
 
 Adjusts the gamma of the base color.
 
-This can lerp the brightness of the color in regards to its hue or tone. Lower values are more lighter, while higher values are more bolder.
+This can lerp the brightness of the color in regards to it's hue or tone. Lower values are more lighter, while higher values are more bolder.
 
 ## Hue Shift
 
 - `Type`: **Checkbox**
 
-Enable or Disable the Hue Shifting functionality. Turn this ON to enable the Hue Shifting feature.
+Enable or Disable the Hue Shifting functionality. **Turn this ON to enable the Hue Shifting feature.**
 
 ### Color Space
 
