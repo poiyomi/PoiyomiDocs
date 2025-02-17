@@ -244,15 +244,15 @@ In order to see Pixel Lights accurately render on this Material in-game, it is r
 
 Enables or disables Add Pass lighting in general.
 
-### Ignore Directional
+### Ignore Directional Lights
 
 - `Type`: **Checkbox**
 
-Ignore directional lights in the add pass.
+Ignores Directional Lights in the Add Pass.
 
-<!-- EDITOR'S NOTE: This part needs further explanation. -BluWizard10 -->
+This is enabled by default in order to counteract bad lighting setups in some VRChat Worlds that have way too many Directional Lights.
 
-This is enabled by default in order to counteract bad lighting setups in some VRChat Worlds.
+If the World contains only one Directional Light, it is treated as the "Sun" and is unaffected by this setting. This only ignores additional Directional Lights in the World, if there are any.
 
 :::info
 This option is only shown if **Pixel Lights (Important)** is enabled.
