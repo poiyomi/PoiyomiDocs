@@ -33,11 +33,23 @@ This color will be blended multiplicatively with LTCGI to tint the lighting. Use
 
 This color will be blended multiplicatively with LTCGI to tint the reflection. Use shades of gray to darken reflections as desired.
 
-## Use R&S's Smoothness
+## Use Reflection and Specular
 
 - `Type`: **Checkbox**
 
-When enabled, will sample smoothness and metallicity values defined in [Reflections & Specular](./reflections-and-specular.md)
+When enabled, will sample the metallicity and smoothness values from [Reflections & Specular](/docs/shading/reflections-and-specular.md) for LTCGI.
+
+:::info
+If **Reflections & Specular** module is turned off, the sliders below will appear and serve as a fallback.
+
+These sliders will also appear if you turn off this checkbox.
+:::
+
+## Metallic
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+Determines how metallic the surface is.
 
 ## Smoothness
 
