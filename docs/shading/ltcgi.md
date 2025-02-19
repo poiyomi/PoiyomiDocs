@@ -6,32 +6,40 @@ keywords: [ltcgi, realtime, area, lighting, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
-LTCGI is an optimized plug-and-play realtime area light solution using the linearly transformed cosine algorithm for standalone Unity and VRChat. For more information on LTCGI visit https://ltcgi.dev/
+LTCGI is an optimized plug-and-play realtime area lighting solution using the linearly transformed cosine algorithm for standalone Unity and VRChat. When enabled in Poiyomi Shaders, it can dynamically illuminate your mesh and sample realtime reflections from a World that is actively producing LTCGI.
+
+For more detailed information on this system, [visit the LTCGI Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://ltcgi.dev/).
 
 :::warning Future Rework
-The LTCGI feature in Poiyomi Shaders is being reworked in a future version of Poiyomi Shaders. Everything here is subject to change at any time.
+The LTCGI feature in Poiyomi Shaders is planned to be reworked in a future version of Poiyomi Shaders. Everything here is subject to change at any time.
 :::
 
 <PoiVideo url='/vid/shading/ltcgi_demo.mp4'/>  
-<em>In this demonstration, the video player reflecting off of the avatar's eye, and the light dynamically illuminating the face and environment are produced by LTCGI.</em>
+<em>In this demonstration, the video player is reflecting off of the avatar's eye, and the light is dynamically illuminating the face and the environment from LTCGI.</em>
 
 ## Anim Toggle
 
 - `Type`: **Checkbox**
 
-A checkbox you can animate to enable/disable LTCGI lighting and reflections.
+<!-- 
+EDITORS NOTE: This H2 Header only has this Message Box below. Adding additional words above or below it may make it look repetitive. -BluWizard10
+-->
+
+:::tip
+Animate this checkbox when creating toggles for LTCGI on this Material. Animating the [Section Header](/docs/general/locking.md#section-header-checkboxes) will not work!
+:::
 
 ## Diffuse Tint
 
-- `Type`: **Color** (RGBA)
+- `Type`: **Color**
 
-This color will be blended multiplicatively with LTCGI to tint the lighting. Use shades of gray to darken lighting as desired.
+Color to blend multiplicatively with LTCGI to tint the lighting. Use shades of gray to darken lighting as desired.
 
 ## Specular Tint
 
-- `Type`: **Color** (RGBA)
+- `Type`: **Color**
 
-This color will be blended multiplicatively with LTCGI to tint the reflection. Use shades of gray to darken reflections as desired.
+Color to blend multiplicatively with LTCGI to tint the reflection. Use shades of gray to darken reflections as desired.
 
 ## Use Reflection and Specular
 
