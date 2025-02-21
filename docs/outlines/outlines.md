@@ -165,13 +165,13 @@ Adjusts the saturation of the Outline Color.
 
 - `Type`: **Float**, Range: `-1.0 - 1.0`
 
-Adjusts the influence (or Brightness) of the Color.
+Adjusts the influence (or Brightness) of the color without regard to it's hue or tone.
 
 ### Gamma
 
 - `Type`: **Float**, Range: `-1.0 - 1.0`
 
-Adjusts the Brightness of the Color.
+Lerps the brightness of the color in regards to it's hue or tone.
 
 ### Shift Speed
 
