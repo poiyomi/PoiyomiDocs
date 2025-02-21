@@ -25,6 +25,7 @@ If enabled, activates AudioLink features and exposes AudioLink parameter control
 
 :::info
 When this feature activates, the following sections in Poiyomi Shaders will have their AudioLink properties exposed for you to use! Refer to each of their Documentation Entries for more information.
+- [Color Adjust](/docs/color-and-normals/color-adjust.md#hue-shift-audio-link)
 - [Alpha Options](/docs/color-and-normals/alpha-options.md#alpha-audio-link)
 - [Vertex Options](/docs/color-and-normals/vertex-options.md#audio-link)
 - [Vertex Glitching](/docs/color-and-normals/vertex-glitching.md#audio-link)

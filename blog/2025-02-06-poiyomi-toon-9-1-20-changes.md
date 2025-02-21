@@ -1,14 +1,14 @@
 ---
 slug: 2025-02-06-poiyomi-toon-9-1-20-changelog
-title: 'Poiyomi Toon 9.1.20 Changelog'
-description: Information regarding the release of Poiyomi Shaders version 9.1.20.
+title: 'Poiyomi Toon 9.1.20 & Pro 9.2.11 Changelog'
+description: Information regarding the release of Poiyomi Toon 9.1.20 & Pro 9.2.11.
 hide_table_of_contents: true
 authors:
   poiyomi
 keywords: [shader, vrchat, updates, update]
 ---
 
-This update contains a significant amount of improvements, bug fixes, and some minor new features. It is now available in the VCC Repository, GitHub, and on BOOTH.
+This update contains a significant amount of improvements, bug fixes, and some major new features. The Toon version is now available in the VCC Repository, GitHub, and on BOOTH.
 
 ### Added
 - Added `Gamma` to **Color Adjust**, which lerps the brightness of the color in regards to it's Hue and tone. Lower values are more lighter, while higher values are more bolder.
@@ -47,6 +47,15 @@ This update contains a significant amount of improvements, bug fixes, and some m
 - Fixed Anisotropic Specular Hide in Shadow for Realistic and Cloth shading.
 - Fixed the Shader Inspector sometimes not appearing.
 - Fixed some Thry UI issues involving multi-float properties.
+- An assortment of small things!
+
+### Pro Changes
+
+*Grab the latest package of Pro from the Discord Server.*
+
+- Updated SSAO Presets.
+- Improved SSAO sampling methods.
+- Implemented screen-space Interleaved Gradient Noise for SSAO Jitter.
 
 ### ThryEditor Changes
 - Speedup in initialization and drawing of the UI.

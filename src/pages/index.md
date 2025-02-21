@@ -26,6 +26,7 @@ Stylized Shading |
 PBR Features |
 Global Masking |
 AudioLink Support |
+LTCGI Support |
 and more!
 </h2>
 
@@ -35,22 +36,24 @@ and more!
 
 </div>
 
-## Features
+## Feature Highlights
 - **Various Shading Styles**
   - Stylized Toon Shading presets with customizable options, such as Texture Ramp, Multilayer Math, and ShadeMap.
   - Realistic Shading presets, such as Wrapped, Skin, Realistic, and Cloth.
-  - Sophisticated Light Data settings for changing how the lighting and shading is influenced on your Material.
+  - Sophisticated Light Data settings for changing how the lighting and shading is influenced on the Material.
   - Outline features for adding cartoon-style outer stencils to your Model, using the inverse-hull effect.
   - Grab Pass features, available as a separate shader variant.
 - **Easy to Use**
   - User Interface with sophisticated organization and layout that sets it apart from other Toon shaders.
-- **Fun, Decorative Functions**
-  - Decals, for fun and unique ways to decorate your Avatar with logos, shapes, stickers, and patterns.
-  - Details, allowing you to apply (often tiled textures) to your Base Color and Normals.
-  - Up to 4 Matcaps for creating fast and approximate looks from a spherical texture.
+- **Fun, Decorative, and Powerful Features**
+  - Up to 4 Decals, for fun and unique ways to decorate an Avatar with logos, shapes, stickers, and patterns.
+  - Details, allowing you to apply (often tiled textures) to the Base Color and Normals.
+  - Up to 4 Matcaps for creating fast and approximate looks from a spherical texture, can often add to a shading style.
+  - UV Tile Discard support.
   - Cubemaps, for simulating reflections and other effects using an HDR cubemap texture.
   - Flipbooks, providing support for Texture Arrays that can be played as an animation on the Material.
   - Up to 4 Emission Slots, each with independent unique options for adding highlights or glow effects.
+  - Dissolve effects with various transition styles. Also supports UV Tile Discarding using Dissolve.
   - Glitter, providing voronoi-based sparkles to the color of the mesh that can create glittery surfaces with specular lighting.
   - Various UV options such as support for UV0, UV1, UV2, UV3, Distortion, Panosphere, and Polar UV.
 - **PBR Features**
@@ -58,11 +61,11 @@ and more!
   - Clear Coat, creating glossy appearances that can be compared to automotive paint or carbon fiber composite.
   - Up to 2 Rim Lighting effects, allowing for fresnel-like highlights or glows around the edges of a Material.
   - Environmental Rim, simulating low-angle reflections from the surrounding environment.
-- **Highly-acclaimed Masking Features**
-  - Vertex Colors and various Masking support for advanced customization.
+- **Advanced Masking Features**
+  - Vertex Colors support and various masking support for advanced customization.
   - RGBA Color Masking for applying different color tints, textures, and normal maps with the main color.
   - Signature Global Masking support, allowing for up to 16 Color Channels to use from up to 4 Global Masks across the Material.
-- **The most advanced Material User Interface for a Toon Shader**
+- **The most advanced Material User Interface**
   - Integrated Texture Packers for merging Masks and Color Channels in various features.
   - Use Presets to easily apply features from a Material onto another Material.
   - Search functionality, allowing ease of access to common features.
@@ -71,3 +74,5 @@ and more!
 - **Full AudioLink Support**
   - Over 10+ modules in Poiyomi Shaders supporting various AudioLink effects!
   - AL Spectrum, projecting a waveform-like effect that react to the World's music onto the UV.
+- **LTCGI Support**
+  - Supports receiving LTCGI diffuse and specular lighting from Worlds actively producing LTCGI.
