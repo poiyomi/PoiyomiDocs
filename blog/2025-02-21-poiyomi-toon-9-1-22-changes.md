@@ -10,7 +10,7 @@ tags: [shader, vrchat, updates, update]
 
 This update contains a significant amount of bug fixes and is recommended for all users. The Toon version is now available in the VCC Repository, GitHub, and on BOOTH.
 
-[See the previous blog post](/blog/2025-02-06-poiyomi-toon-9-1-20-changes.md) for an assortment of major features that were added in the last update.
+See the previous blog post for an assortment of major features that were added in the last update.
 
 ### Changes
 - The Color Grading texture now has a Thry Gradient Editor UI.
