@@ -49,7 +49,7 @@ This increases or decreases brightness directly on top of the existing color, wi
 
 ## Gamma
 
-- `Type`: **Float**, Range: `0.0 - 5.0`
+- `Type`: **Float**, Range: `0.01 - 5.0`
   - Normal: `1.0`
 
 Adjusts the gamma of the base color.

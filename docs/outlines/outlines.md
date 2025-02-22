@@ -153,7 +153,7 @@ How much to shift the Outline Color around the Hue Circle.
 
 ### Saturation
 
-- `Type`: **Float**, Range: `-1.0 - 1.0`
+- `Type`: **Float**, Range: `0.0 - 2.0`
 
 Adjusts the saturation of the Outline Color.
 
@@ -163,13 +163,13 @@ Adjusts the saturation of the Outline Color.
 
 ### Value
 
-- `Type`: **Float**, Range: `-1.0 - 1.0`
+- `Type`: **Float**, Range: `0.0 - 2.0`
 
 Adjusts the influence (or Brightness) of the Color.
 
 ### Gamma
 
-- `Type`: **Float**, Range: `-1.0 - 1.0`
+- `Type`: **Float**, Range: `0.01 - 2.0`
 
 Adjusts the Brightness of the Color.
 
