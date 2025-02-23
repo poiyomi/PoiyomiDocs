@@ -88,3 +88,14 @@ h5,
 h6 {
   font-family: "Mona Sans", sans-serif;
 }
+
+/* SVGs set to this class will keep it contained within the page (no clipping or overlapping) */
+.vectorimage, .vectorimagelight {
+  max-width: 100%
+}
+
+/* Used in Global Masks page to ensure the SVG presented looks good on Light and Dark Themes. */
+[data-theme='light'] .vectorimage,
+[data-theme='dark'] .vectorimagelight {
+  display: none;
+}

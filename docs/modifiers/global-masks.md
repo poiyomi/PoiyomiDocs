@@ -5,6 +5,8 @@ description: Global Masks are shader-wide texture channels that are used for mas
 keywords: [global, mask, global mask, masking, texture, vertex, color, vertex color, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
+import GlobalMaskConcept from '@site/static/img/modifiers/GlobalMaskingConcept.drawio.svg';
+import GlobalMaskConceptLight from '@site/static/img/modifiers/GlobalMaskingConcept_L.drawio.svg';
 
 # Global Masks
 
@@ -14,7 +16,11 @@ You can choose from a variety of blending modes when referencing a Global Mask c
 
 Global Masking expands the functionality of almost every part of the shader that supports it, and can be a powerful tool for optimization.
 
-![A visual principle of a Global Mask](/img/modifiers/PoiDocsGlobalMaskingHeader.png)
+<GlobalMaskConcept className="vectorimage"/>
+
+<GlobalMaskConceptLight className="vectorimagelight"/>
+
+*This diagram above is a general idea of how a Global Mask can be used.*
 
 # Using Global Masks
 

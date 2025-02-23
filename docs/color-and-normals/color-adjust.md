@@ -26,6 +26,7 @@ This slot has the [Texture Packer](/docs/thryeditor/enduser.md#texture-packer) i
 | R | Hue |
 | G | Brightness |
 | B | Saturation |
+| A | Gamma |
 
 ## Saturation
 
@@ -203,3 +204,9 @@ Choice of which Global Mask channel to use for the Saturation.
 - `Type`: **Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
 Choice of which Global Mask channel to use for the Brightness.
+
+### Gamma
+
+- `Type`: **Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+
+Choice of which Global Mask channel to use for the Gamma.
