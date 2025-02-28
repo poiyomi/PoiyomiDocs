@@ -102,9 +102,9 @@ To see the different features offered between the Free vs. Pro version, refer to
 | [RGBA Color Masking](/docs/color-and-normals/rgba-color-masking.md), [Decals](/docs/color-and-normals/decals.md), [Color Adjust (Hue Shift)](/docs/color-and-normals/color-adjust.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Opaque, Cutout, TransClipping, Fade, Transparent | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Additive, Soft Additive, Multiplicative, 2x Multiplicative | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Two Pass Transparency | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | **Pro Features** | | | | | | |
 | [Screen Space Ambient Occlusion](/docs/shading/ssao.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
-| Two-Pass Transparency | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | Custom Modules | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | [Geometric Dissolve](/docs/extended-features/geometric-dissolve.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | [Fur and World Fur](/docs/extended-features/fur.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
