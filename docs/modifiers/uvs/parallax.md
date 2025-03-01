@@ -10,7 +10,7 @@ Parallax Heightmapping is a feature that can simulate large bumps and protrusion
 This feature is similar to the Height Map function found in the Unity Standard Shader, but with some more options available for additional tweaks.
 
 :::caution
-Parallax Heightmapping is an expensive feature due to the way it works. Because of this, we recommend you utilize the [Normal Map](https://www.poiyomi.com/color-and-normals/main#normal-map) feature instead as it is both more performance-friendly and higher quality.
+Parallax Heightmapping is an expensive feature. We recommend you use [Normal Maps](https://www.poiyomi.com/color-and-normals/main#normal-map) instead.
 :::
 
 ## Applies To
