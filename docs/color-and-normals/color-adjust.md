@@ -70,6 +70,10 @@ Enable or Disable the Hue Shifting functionality. **Turn this ON to enable the H
 
 Choice of Color Space to use for the Hue Shift. By default, it will be set to `OKLab`.
 
+:::warning Upgrading from 8.1 or earlier
+If you are upgrading your Material from 8.1 or earlier to 9.1 or newer, this will be set to `HSV` by default.
+:::
+
 The usage of perceptual color space is desirable when using the Color Adjust feature. OKLab provides better perceptual properties that allow more accurate color changes, compared to the legacy HSV method. For more technical information on how this works, [see this external webpage <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://bottosson.github.io/posts/oklab/).
 
 <details>
@@ -127,9 +131,13 @@ If disabled, the base color will be directly hue shifted, with the amount of hue
 - `Type`: **Float**, Range: `0.0 - 1.0`
   - Normal: `0.0`
 
-Determines how much to shift the base color around the hue circle. **This is the main hue shifting slider.**
+Determines how much to shift the base color around the Color Wheel. **This is the main hue shifting slider.**
 
-This value is circular, and will have the same result at `0.0` and `1.0`.
+This value is circular, starting at the Top-Middle of the Color Wheel (see below image) and rotating <u>clockwise</u>. It will have the same result at `0.0` and `1.0`.
+
+<a target="_blank" href="/img/color-and-normals/ColorWheel.png">
+<img src="/img/color-and-normals/ColorWheel.png" alt="Decal Example" width="200px"/>
+</a>
 
 ### Hue Shift Speed
 

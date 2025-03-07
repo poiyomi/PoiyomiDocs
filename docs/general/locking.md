@@ -75,6 +75,8 @@ The unique suffix assigned for Properties marked as `RA` will depend on the name
 | **"Suit Jacket"** | AudioLink -> Anim Toggle | `_AudioLinkAnimToggle` | `_Suit_Jacket` | `_AudioLinkAnimToggle_Suit_Jacket` | 
 | **"Outfit Shirt"** | Color Adjust -> Hue Shift -> Hue Shift | `_MainHueShift` | `_Outfit_Shirt` | `_MainHueShift_Outfit_Shirt` |
 
+If you enable [Allow custom renaming for locking](/docs/thryeditor/settings.md#allow-custom-renaming-for-locking) under ThryEditor settings, the unique suffix will instead use whichever one you have typed in the field.
+
 ## Copying Properties for Animation
 
 ### Copy Property as Keyframe

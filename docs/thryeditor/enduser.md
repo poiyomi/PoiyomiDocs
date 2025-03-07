@@ -102,6 +102,10 @@ To learn more about how Texture Memory impacts performance, [see this page](/doc
 <img src="/img/thryeditor/TextureVRAMText.png" alt="Estimated VRAM on the assigned Texture" width="700px"/>
 </a>
 
+### Asterisk Indicator
+
+Configurable in ThryEditor Settings, an asterisk (`*`) will appear next to a Material Property that has deviated away from it's default value. This is useful to see which values are not at it's default, and can assist with debugging issues in the Editor.
+
 ### VRC Fallback Shader
 
 The Fallback Shader option generates a tag for the material that informs VRChat which shader to use when your shaders are hidden. See [Rendering: VRC Fallback](/docs/rendering/main.md#vrc-fallback) for more details.
@@ -126,7 +130,7 @@ Options per texture slot:
 <img src="/img/thryeditor/packer_new.png" alt="Texture Packer" width="700px"/>
 </a>
 
-### Cross Shader Editor
+## Cross Shader Editor
 
 The Cross Shader Editor is a panel that allows you to mass-edit your Poiyomi Materials, all at once. Anything you edit or change in this panel will be applied to all Materials that are referenced.
 
@@ -134,7 +138,7 @@ The Cross Shader Editor is a panel that allows you to mass-edit your Poiyomi Mat
 
 ## Settings
 
-The `Settings UI` window can be opened via the `gears icon` in the top left corner of a material. Or using the menu item of the top bar `Thry -> Shader UI -> Settings`. This includes `Localization`, `Auto-Set Anchor`, and a few more settings.
+The Settings window can be opened via the Gear <FAIcon icon="fa-solid fa-gear"/> icon in the top left corner of a material inspector. Or using the menu item of the top bar `Thry -> Shader UI -> Settings`. This includes `Localization`, `Auto-Set Anchor`, and a few more settings.
 
 [Learn more about Thry Editor Settings.](./settings.md)
 
