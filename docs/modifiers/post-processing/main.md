@@ -64,7 +64,7 @@ How much to move the final color towards its HDR equivalent color. This is a ver
 
 ## Posterization
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Enables or disables Posterization. Posterization is a technique that converts the final color to a limited number of colors.
 

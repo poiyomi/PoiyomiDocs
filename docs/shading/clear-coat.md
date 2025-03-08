@@ -68,73 +68,73 @@ Note that all channels/textures in the packed Maps texture will use the same tex
 
 ### ClearCoat Mask
 
-- `Type`: **Data** Texture (sRGB **OFF**)
+- `Type`: **Data** Texture (`sRGB = OFF`)
 
 Defines how much intensity to apply the clearcoat with at different areas on the material. This can be useful for only applying the clearcoat in specific areas.
 
 ### Smoothness Map
 
-- `Type`: **Data** Texture (sRGB **OFF**)
+- `Type`: **Data** Texture (`sRGB = OFF`)
 
 Defines the clearcoat smoothness at different areas on the material.
 
 ### Reflection Mask
 
-- `Type`: **Data** Texture (sRGB **OFF**)
+- `Type`: **Data** Texture (`sRGB = OFF`)
 
 Defines how much to apply reflections at different areas on the material.
 
 ### Specular Mask
 
-- `Type`: **Data** Texture (sRGB **OFF**)
+- `Type`: **Data** Texture (`sRGB = OFF`)
 
 Defines how much to apply specular highlights at different areas on the material.
 
 ### Invert ClearCoat Mask
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Defines whether the clearcoat mask channel should be inverted.
 
 ### Invert Smoothness
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Defines whether the clearcoat smoothness channel should be inverted. Useful for reusing Roughness masks.
 
 ### Invert Reflection Mask
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Defines whether the clearcoat reflection mask channel should be inverted.
 
 ### Invert Specular Mask
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Defines whether the clearcoat specular mask channel should be inverted.
 
 ## Fallback Cubemap
 
-- `Type`: **Cubemap** Texture (sRGB **ON**)
+- `Type`: **Cubemap** Texture (`sRGB = ON`)
 
 A cubemap that can be used in cases where no reflection probe is present in the scene. This is useful for maps that have not been set up with proper reflection probes.
 
 ## Force Fallback
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Whether to use the fallback at all times instead of just when no reflection probe is defined.
 
 ## Lit Fallback
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Whether the fallback cubemap should be lit according to the environment when used. Useful for preventing the fallback from appearing too bright in dark world areas.
 
 ## GSAA
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 GSAA (Geometric Specular Anti-Aliasing) is a corrective option that prevents high-smoothness specular highlights from disappearing on surfaces with sharp changes. This is especially useful on surfaces with sharp or sudden edges (hard-surfaced edges), or on surfaces with intense, high detail normal maps.
 

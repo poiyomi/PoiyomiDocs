@@ -16,19 +16,19 @@ Texture Arrays can quickly add up to your VRAM consumption depending on the reso
 
 ## Flipbook Controls Alpha
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Toggles whether the flipbook alpha should override the final alpha of the material. This allows the flipbook to be rendered on top of the material, even if the material is transparent.
 
 ## Intensity Controls Alpha
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Toggles whether the alpha's intensity (determined by the max value of any of the color channels) should be used to determine the flipbook's blending alpha. This allows black to be used as a no-render color, allowing the flipbook to be rendered cleanly without using the "Add" blend mode.
 
 ## Color Replaces Flipbook
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Determines if the flipbook's color should be replaced with the color from Color & Alpha, instead of being tinted.
 
@@ -82,7 +82,7 @@ The first two values the left and right offsets, and the second two are the top 
 
 ## Tiled
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Determines if the flipbook should be tiled. If this is enabled, the flipbook will tile across the selected UV.
 
@@ -128,7 +128,7 @@ Adds the base color and the flipbook together. This generally brightens the colo
 
 ## Manual Frame Control
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Determines whether the flipbook should be manually controlled. If this is enabled, the flipbook will not play automatically, and the frame must manually advance via animations. This is useful for dynamically controlling the speed of the flipbook, or using the flipbook to show specific frames.
 
@@ -140,7 +140,7 @@ Determines which frame to show. Only visible when "Manual Frame Control" is enab
 
 ## Crossfade
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Enables or disables crossfading. This is used to smoothly transition between frames, which can be useful for reducing the number of frames needed in the flipbook.
 
@@ -152,7 +152,7 @@ Determines how much to crossfade the flipbook between frames. Defined by a start
 
 ## Hue Shift
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Enable or Disable the Hue Shifting functionality.
 

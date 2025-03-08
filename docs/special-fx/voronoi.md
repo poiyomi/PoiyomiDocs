@@ -28,7 +28,7 @@ Chooses how you want the Voronoi to Blend with the Material.
 
 ## Affects Material Alpha
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 If enabled, the Voronoi will also affect the Material's Alpha.
 
@@ -106,7 +106,7 @@ How fast to move the Voronoi effect among the simulated space.
 
 ## Voronoi Random Cell Color
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Enables the ability to apply random saturation and brightness to each Voronoi cell simulated.
 

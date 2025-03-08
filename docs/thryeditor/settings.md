@@ -34,21 +34,21 @@ Changes the size of Texture Slots in the Material UI.
 
 ### Show Render Queue
 
-- `Setting`: **Checkbox**
+- `Setting`: **Boolean**
   - Default: `On`
 
-Shows the `Render Queue` field on the bottom of the Material UI. This checkbox gives you the option to hide it if you wish.
+Shows the `Render Queue` field on the bottom of the Material UI. This boolean checkbox gives you the option to hide it if you wish.
 
 ### Show Colorspace Warnings
 
-- `Setting`: **Checkbox**
+- `Setting`: **Boolean**
   - Default: `On`
 
 Shows in-field warnings on specified Textures in various Texture Slots that aren't following the recommended Linear or sRGB setting for that specific Texture Slot.
 
 ### Show which values are not default
 
-- `Setting`: **Checkbox**
+- `Setting`: **Boolean**
   - Default: `On`
 
 Shows an asterisk (`*`) on any property that has deviated away from it's default value. Useful for seeing which values are not at it's default, and can assist with debugging.
@@ -57,14 +57,14 @@ Shows an asterisk (`*`) on any property that has deviated away from it's default
 
 ### Automatically mark animated properties
 
-- `Setting`: **Checkbox**
+- `Setting`: **Boolean**
   - Default: `On`
 
 Enabled by default, ThryEditor will attempt to automatically mark properties as Animated (`A`) when you interact with the properties while Recording.
 
 ### Allow custom renaming for locking
 
-- `Setting`: **Checkbox**
+- `Setting`: **Boolean**
   - Default: `Off`
 
 Allows a custom suffix to be used on properties that are marked Renamed Animated (`RA`), overriding the default naming as outlined [here](/docs/general/locking.md#rename-animated).
@@ -80,7 +80,7 @@ Defines the naming scheme to use when auto-saving generated Gradients used in th
 
 ### Auto Set Anchor Overrides (Bad Lighting Fix)
 
-- `Setting`: **Checkbox**
+- `Setting`: **Boolean**
   - Default: `On`
 
 If enabled, will automatically fill empty Anchor Overrides of Skinned Mesh Renderers on Avatar upload.
@@ -149,7 +149,7 @@ Configures the compression algorithm to use on generated Gradients in the Materi
 
 ### Enable Crunch Compression
 
-- `Setting`: **Checkbox**
+- `Setting`: **Boolean**
   - Default: `Off`
 
 Enables Crunch Compression on generated packed Textures in the Material UI. Disabled by default.
@@ -165,21 +165,21 @@ Defines the save location of merged textures generated from the Inline Texture P
 
 ### Force Async Compilation In Preview
 
-- `Setting`: **Checkbox**
+- `Setting`: **Boolean**
   - Default: `On`
 
 Speeds up compilation time and doesn't block UI during compilation. Requires Restart of Unity if changing this setting.
 
 ### Save after lock/unlock
 
-- `Setting`: **Checkbox**
+- `Setting`: **Boolean**
   - Default: `On`
 
 Prevents cyan thumbnails when using Async Compilation.
 
 ### Fix Keywords When Locking
 
-- `Setting`: **Checkbox**
+- `Setting`: **Boolean**
   - Default: `On`
 
 Automatically fixes certain locking errors relating to keywords being missing. This should remain enabled at all times.
@@ -190,13 +190,13 @@ The settings below is only intended for Thryrallo. Use these settings at your ow
 
 ### Show Manual Reload Button
 
-- `Setting`: **Checkbox**
+- `Setting`: **Boolean**
 
 Shows a button that forces the Material UI to reload on command.
 
 ### Developer Mode
 
-- `Setting`: **Checkbox**
+- `Setting`: **Boolean**
 
 Enables Developer Mode, exposing additional (and possibly risky settings) that should only be used for debugging purposes.
 

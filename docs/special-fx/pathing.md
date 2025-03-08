@@ -26,7 +26,7 @@ Determines whether to sample the Path Map texture. There are two modes:
 
 ## Override Alpha
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 If enabled, multiplies the base alpha of the material with the Path's final alpha.
 
@@ -133,7 +133,7 @@ For any audio link values with a **Vector2** offset, the **X** represents the va
 
 ### Time Offset
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Time Offset adds an offset to the time based on the audio. This can be used to make the path "bounce" in response to the audio.
 
@@ -151,7 +151,7 @@ How much time offset to apply to the path based on audio.
 
 ### Emission Offset
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Emission Offset adds emission strength to the path based on the audio. This can be used to make the path "glow" in response to the audio.
 
@@ -169,7 +169,7 @@ How much emission offset to apply to the path based on audio.
 
 ### Width Offset
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Width Offset adds width to the path based on the audio. This can be used to make the path "thicken" in response to the audio.
 
@@ -187,7 +187,7 @@ How much width offset to apply to the path based on audio.
 
 ### History
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 History applies a mask on top of the path that corresponds to the history of the audio in the selected channel. This consists of about a second of audio data.
 
@@ -201,13 +201,13 @@ Band to use for history masking.
 
 #### R/G/B/A History
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Whether to apply history masking to the path.
 
 ### Chrono Time
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Chrono (Chronotensity) Time is a very useful feature for advancing the path based on audio, while maintaining how far the path has already progressed.
 
@@ -244,7 +244,7 @@ How much to incorporate the chronotensity adjustment into the path timing. Good 
 
 ### Auto Correlator
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Whether to apply the autocorrelator as a mask along the path. Autocorrelatior roughly corresponds to the intensity of the audio at various frequencies.
 
@@ -256,6 +256,6 @@ Autocorrelator mode to use for the autocorrelator mask in each channel. `Mirrore
 
 ### R/G/B/A Color Chord Strip
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Color Chord assigns a color to each segment of the path based on the audio. This can be used to create a unique colorful rainbow effect.

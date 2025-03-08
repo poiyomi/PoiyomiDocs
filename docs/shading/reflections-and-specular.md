@@ -98,7 +98,7 @@ The specular mask defines where specular highlights should be allowed, and where
 
 ### Stochastic Sampling
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Enables Stochastic Sampling in your Packed Maps.
 
@@ -140,25 +140,25 @@ Channel Override for the Specular Mask.
 
 #### Invert Metallic
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Flips the Metallic Channel to the opposite of it's value.
 
 #### Invert Smoothness
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Flips the Smoothness Channel to the opposite of it's value.
 
 #### Invert Reflection Mask
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Flips the Reflection Mask to the opposite of it's value.
 
 #### Invert Specular Mask
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Flips the Specular Mask to the opposite of it's value.
 
@@ -182,13 +182,13 @@ Fallback Cubemap to use if a Reflection Probe is not found in the World. This is
 
 ### Force Fallback
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Forces the material to always use the fallback cubemap. This is useful for forcing a specific reflection for stylized models.
 
 ## Split Mask Sampling
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Split Mask Sampling defines whether to differentiate the Metallic/Smoothness components of the packed map texture from the Reflection/Specular mask components. This is useful when using highly tiled or panned metallic and smoothness maps, while keeping the masks un-tiled, or on a separate UV map.
 
@@ -214,7 +214,7 @@ X/Y Panning for the Reflection and Specular masks, if Split Mask Sampling is ena
 
 ## 2nd Specular
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 2nd Specular enables an additional specular reflection. This can be used to create a multi-layered specular effect, with a different smoothness for each layer.
 
@@ -232,14 +232,14 @@ Smoothness of the 2nd specular layer. This value scales the same way as Smoothne
 
 ### Lit Fallback
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
     - Default: `On`
 
 Lit Fallback applies the lighting of the map to the fallback cubemap. This allows the fallback cubemap to fit more closely with the environmental lighting.
 
 ## GSAA
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 GSAA (Geometric Specular Anti-Aliasing) is a technique that improves the quality of specular reflections. It uses the geometry of the model to modify the specular reflections in order to reduce Specular Aliasing, which is a visible artifact that occurs at high smoothness levels, especially with highly detailed models or normal maps.
 

@@ -15,7 +15,7 @@ Vertex Colors can also be used as Masks in different parts of the Shader, such a
 
 ## Linear Colors
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Whether to convert the mesh vertex colors from gamma space to linear space.
 

@@ -94,7 +94,7 @@ How much to blend the Surface of the Internal Parallax to the Base Color.
 
 ## Hue Shift
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Enables the Hue Shift feature of the Internal Parallax.
 

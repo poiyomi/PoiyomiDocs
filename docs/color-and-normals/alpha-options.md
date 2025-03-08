@@ -12,7 +12,7 @@ These properties below can allow you to further modify how you want the Alpha to
 
 ## Force Opaque
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 This option forces the material to have an alpha value of 1. Generally, this will result in any transparency being disabled.
 
@@ -30,7 +30,7 @@ Select which [Global Mask](/docs/modifiers/global-masks.md) to use for the Alpha
 
 ## Alpha To Coverage
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Enable or Disable Alpha to Coverage. This affects how the shader is sampled by functions that read the coverage of a fragment. 
 
@@ -38,7 +38,7 @@ Alpha to Coverage can be enabled in the cutout render mode to provide transparen
 
 ### Sharpened A2C
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Sharpened Alpha to Coverage (A2C) rescales the alpha value using the mipmaps. 
 
@@ -52,7 +52,7 @@ How much to use the mipmaps to rescale the alpha value. Only used when Sharpened
 
 ## Dithering
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Enable or disable alpha dithering.
 
@@ -72,7 +72,7 @@ The range bias of the gradient to apply dithering over.
 
 ## Distance Alpha / Distance Fade
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Enable or Disable Distance Alpha. Distance Alpha can modify the alpha value based on the distance from the viewer (camera) to the object/pixel.
 
@@ -127,7 +127,7 @@ Select which [Global Mask](/docs/modifiers/global-masks.md) to only affect the D
 
 ## Fresnel Alpha
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Enable or Disable the Fresnel Alpha effect. Fresnel Alpha uses the angle between the viewer (camera) and the object's normal to modify the alpha.
 
@@ -153,7 +153,7 @@ How wide the Fresnel Alpha effect should be.
 
 ### Invert
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Whether the Fresnel Alpha effect should increase in intensity from the outside-in or the inside-out.
 
@@ -165,7 +165,7 @@ Select which [Global Mask](/docs/modifiers/global-masks.md) to only affect the F
 
 ## Angular Alpha
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Angular Alpha uses the angle between a specified direction and the object or vertex position to modify the material alpha. 
 
@@ -257,7 +257,7 @@ Select which [Global Mask](/docs/modifiers/global-masks.md) to only affect the A
 
 ## Alpha Audio Link
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Enables AudioLink for Alpha Options. The Alpha can be modified based on the audio level in a specific band.
 
@@ -283,7 +283,7 @@ If audio link is not present in a world, no value will be added. Using this beha
 
 ### Alpha Premultiply
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 With Alpha Premultiply enabled, the shader will multiply the base color by the alpha value after all base color operations, but before lighting and emission calculations. This results in a different appearance for transparent materials.
 

@@ -222,7 +222,7 @@ How far off of the border the border color is applied. A value of `0.0` will app
 
 #### Shadow Border Map
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Enables the Shadow Border Map feature, allowing control over AO-style shadow boundaries on Multilayer Math.
 
@@ -235,7 +235,7 @@ Enables the Shadow Border Map feature, allowing control over AO-style shadow bou
 
 #### Post AO
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Enables Post Ambient-Occlusion on the Shadow Border Map.
 
@@ -285,7 +285,7 @@ Maximum amount from the Shadow Border to apply to Layer 3.
 
 #### Non Linear Lightmap
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 If enabled, changes the shadow gradient direction to be non-linear.
 
@@ -468,7 +468,7 @@ Shading map used for the 1st ShadeColor. If this is not defined, the 1st ShadeCo
 
 #### Use BaseMap as 1st ShadeMap
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Whether to use the BaseColor map as the 1st ShadeMap. With no 1st ShadeMap defined, this should generally be enabled.
 
@@ -486,7 +486,7 @@ Shading map used for the 1st ShadeColor. If this is not defined, the 1st ShadeCo
 
 #### Use BaseMap as 2nd ShadeMap
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Whether to use the BaseColor map as the 2nd ShadeMap. With no 2nd ShadeMap defined, this should generally be enabled.
 
@@ -626,7 +626,7 @@ The Smoothness map defines where the material should be smoother, and where it s
 
 #### Clothmask Lerp
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Clothmask Lerp defines whether the cloth mask should lerp (linearally interpolate) between the cloth shading and realistic shading. This should generally be left off.
 

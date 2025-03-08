@@ -69,7 +69,7 @@ How much to offset the vertex height for the mask. A value of `0` will mean that
 
 ## Vertex Rounding (Blocky/PS1)
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Vertex Rounding snaps vertices to specific intervals in the world coordinate system. The amount of snap interval is defined by the Rounding Interval. This option can be used to create retro effects or pixelation.
 
@@ -90,7 +90,7 @@ Defines the interval for vertex rounding. This is defined as the distance betwee
 
 ## Barrel Distortion
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Barrel Distortion allows the vertices to snap and morph the mesh into a cylinder/barrel-shape form.
 
@@ -119,7 +119,7 @@ Determines how much to stretch the edges of the "barrel" outside of the shape.
 
 ## Sphere Distortion
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Enables the ability to snap and morph the mesh into a spherical shape and form.
 
@@ -154,7 +154,7 @@ Determines the center origin of the morphed spherical shape and form in the loca
 
 ## Tornado
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Enables the ability to morph the mesh into an animated swirling funnel, or a "Tornado" effect.
 
@@ -199,7 +199,7 @@ Determines the bottom lower height of the funnel.
 
 ## Audio Link
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Enables the ability to manipulate the Vertex Options in response to AudioLink.
 
@@ -423,7 +423,7 @@ How much to add (or subtract) from vertex rounding. The **X** value is the heigh
 
 ### Spectrum Motion
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Enables a very interesting effect where the entirety of the Mesh is morphed to look like a visualizer in response to AudioLink.
 

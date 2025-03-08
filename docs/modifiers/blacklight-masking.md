@@ -24,7 +24,7 @@ To use BlackLight Masking, you must set the following on a **Point Light Source*
 
 ## BlackLight Masking
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Enables BlackLight Masking on the Material.
 

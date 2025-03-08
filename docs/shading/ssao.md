@@ -24,14 +24,14 @@ SSAO is a performance heavy effect, so use it mindfully. Add a toggle for [Anima
 
 ## Animatable Toggle
 
-- `Type`: Checkbox
+- `Type`: Boolean
 
 <!-- 
 EDITORS NOTE: This H2 Header only has this Message Box below. Adding additional words above or below it may make it look repetitive. Let's avoid that. -BluWizard10
 -->
 
 :::tip
-Animate this checkbox when creating toggles for SSAO on this Material. Animating the [Section Header](/docs/general/locking.md#section-header-checkboxes) will not work!
+Animate this boolean (checkbox) when creating toggles for SSAO on this Material. Animating the [Section Header](/docs/general/locking.md#section-header-checkboxes) will not work!
 :::
 
 ## AO Intensity
@@ -92,7 +92,7 @@ Adds a dithered jitter effect which can help mask lower sample counts.
 
 ### Use Color Texture?
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Enables the Color Map texture slot for SSAO.
 
@@ -104,7 +104,7 @@ Color Map allows the user to map SSAO shadow color using a texture.
 
 ### Use Color Mask?
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Enables the Color Mask texture slot for SSAO.
 

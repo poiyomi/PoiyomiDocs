@@ -20,7 +20,7 @@ The main section defines how the Grab Pass is blended with the scene.
 
 ### Use Alpha
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Directly uses the alpha of the material to define the blend amount (how much the Grab Pass color is blended with the base color).
 
@@ -48,7 +48,7 @@ For traditional transparent blending, `SrcFactor` should be set to `SrcAlpha` an
 
 ## Refraction
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Enables or disables refraction.
 

@@ -94,7 +94,7 @@ Which normal to use if custom normals are not selected. `Pixel` normals are norm
 
 ## Hue Shift
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Enables hue shifting of the cubemap texture.
 

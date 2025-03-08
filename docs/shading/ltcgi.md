@@ -19,14 +19,14 @@ The LTCGI feature in Poiyomi Shaders is planned to be reworked in a future versi
 
 ## Anim Toggle
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 <!-- 
 EDITORS NOTE: This H2 Header only has this Message Box below. Adding additional words above or below it may make it look repetitive. -BluWizard10
 -->
 
 :::tip
-Animate this checkbox when creating toggles for LTCGI on this Material. Animating the [Section Header](/docs/general/locking.md#section-header-checkboxes) will not work!
+Animate this boolean (checkbox) when creating toggles for LTCGI on this Material. Animating the [Section Header](/docs/general/locking.md#section-header-checkboxes) will not work!
 :::
 
 ## Diffuse Tint
@@ -43,7 +43,7 @@ Color to blend multiplicatively with LTCGI to tint the reflection. Use shades of
 
 ## Use Reflection and Specular
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 When enabled, will sample the metallicity and smoothness values from [Reflections & Specular](/docs/shading/reflections-and-specular.md) for LTCGI.
 

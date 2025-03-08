@@ -128,7 +128,7 @@ How much the [Outline Color](#color) should be blended with your Texture.
 
 ## UTS2 style Blend
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Determines if you want the Outlines to blend in a way that is similar to Unity-Chan Toon Shader 2 (UTS2).
 
@@ -137,7 +137,7 @@ Determines if you want the Outlines to blend in a way that is similar to Unity-C
 
 ## Color Adjust
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Enables the ability to modify the Outline Color in a similar fashion to [Color Adjust](/docs/color-and-normals/color-adjust.md). This is applied directly after the main [Outline Color](#color), and will not affect other sections that modify the base Outline Color.
 
@@ -185,7 +185,7 @@ For reference, a value of `1` will result in a full Hue Shift cycle every 20 sec
 
 ## Distance Alpha
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 When enabled, Distance Alpha can modify the Alpha value of the Outlines based on the distance from the Camera to the Object or Pixel.
 
@@ -231,7 +231,7 @@ The distance (in meters) at which the [Max Distance Alpha](#max-distance-alpha) 
 
 ## Fixed Size Over Distance
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
     - Default: `true`
 
 Enables a fixed screen-space size for outlines. This can allow control of the outlines to not get smaller when moving away from the model.
@@ -259,7 +259,7 @@ Keep your Max Distance value at a small number in order to ensure they scale cor
 
 ## Lighting
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
     - Default: `true`
 
 Enables lighting for the Outline. This darkens the outline color in shadowed areas.
@@ -277,7 +277,7 @@ Shadow intensity of the Outlines.
 
 ### Vertex Color Normals
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Use the vertex colors of the model, if they've been specially prepared. The (smoothed) vertex colors are used as the normal data.
 
@@ -294,7 +294,7 @@ Choose which Color channel to use in your Mask for the Vertex Colors.
 
 ### Clip 0 Width
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Enables clipping of the outline if a vertex has `0` outline thickness.
 
@@ -304,7 +304,7 @@ If using an [Outline Size Mask](#outline-size-mask), all areas that are marked i
 
 ### Override Base Alpha
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Sets the base fragment Alpha to the Outline's Alpha value.
 
@@ -383,7 +383,7 @@ How much to add to or subtract from the Outline Emission Intensity with Audio.
 
 ### Color
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Enables the ability to change the Outline Color with Audio.
 

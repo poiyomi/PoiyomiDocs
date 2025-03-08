@@ -27,7 +27,7 @@ This texture defaults to pure white, so no masking will be applied with no textu
 
 ## Decal Slot
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Enables the mentioned Decal slot.
 
@@ -97,7 +97,7 @@ This setting will divide the UV down the Center (at `X = 0.5`) and puts the Deca
 
 #### Tiled
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Whether or not the decal texture should be tiled. By default, decals are not tiled.
 
@@ -159,7 +159,7 @@ How much parallax depth the decal should have. This can be used for layered para
 
 ### Hue Shift
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Enable or Disable hue shifting of the Decal.
 
@@ -208,7 +208,7 @@ How much to shift the hue with surface angle. A value of `1` will give maximum h
 
 ### Video Texture
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Enables Video Texture to project on the Decal.
 
@@ -238,19 +238,19 @@ Determines the Aspect Ratio of the Video Texture. You can specify to either fit 
 
 #### Fit To Scale
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Changes the sizing of the Video Texture to fit to the Scale of the Decal.
 
 #### Use Decal Alpha
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Uses the Alpha of the Decal for the Video Texture.
 
 #### Only Show Video
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 If enabled, will show ONLY the Video on the Decal.
 
@@ -262,7 +262,7 @@ Adjusts the Emissive effect of the Video Texture. Higher values will yield a blo
 
 ### Chromatic Aberration
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Enables a feature that turns the specified Decal into a Chromatic Aberration effect, which splits the colors alongside a specified angle.
 
@@ -292,7 +292,7 @@ Adjusts the direction of the aberration.
 
 #### Premultiply Alpha
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Enables pre-multiplying the Alpha of your Decal for Chromatic Aberration.
 
@@ -426,7 +426,7 @@ How much to modify the Emission of the decal.
 
 ### CC Strip
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Enables or disables the ColorChord strip. ColorChord strip is a strip of colors that vary based on the audio, producing specific consistent colors for given chords.
 

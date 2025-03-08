@@ -44,7 +44,7 @@ When this feature activates, the following sections in Poiyomi Shaders will have
 
 ### Anim Toggle
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 <!-- 
 EDITORS NOTE: This H2 Header only has this Message Box below. Adding additional words above or below it may make it look repetitive. -BluWizard10
@@ -86,7 +86,7 @@ Properties that allow animated overrides of the Audio Bands against AudioLink da
 
 ### Band Overrides
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Enables the Band Overrides function. These sliders will manually override the mentioned Band as if music is playing, except that now you're manually animating it's values.
 

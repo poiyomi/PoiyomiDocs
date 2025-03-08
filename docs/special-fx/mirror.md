@@ -25,37 +25,37 @@ These settings below will show if [Mode](#mode) is set to `VRC`.
 
 ### Normal (Outside Mirror/Camera)
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Toggles the visibility of the shader in a normal situation, without the requirement of a Mirror or a Camera.
 
 ### Mirror (VR)
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Toggles the visibility of the shader in the Mirror in VR.
 
 ### Mirror (Desktop)
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Toggles the visibility of the shader in the Mirror while on Desktop Mode.
 
 ### Camera (VR)
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Toggles the visibility of the shader in Cameras in VR.
 
 ### Camera (Desktop)
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Toggles the visibility of the shader in Cameras while on Desktop Mode.
 
 ### Screenshot
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Toggles the visibility of the shader in Screenshots.
 
@@ -80,7 +80,7 @@ Mode to use for the mirror visibility.
 
 ## Mirror Texture & Color
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Enables the ability to change the Main Texture or Color when the shader is shown in a Mirror.
 
@@ -104,9 +104,9 @@ Texture shown in the Mirror. The base color of the material in the Mirror is set
 
 ### Test
 
-- `Type` **Checkbox**
+- `Type` **Boolean**
 
-Checkbox used to debug your results, assuming it's being seen in a Mirror or Camera right now.
+Boolean checkbox used to debug your results, assuming it's being seen in a Mirror or Camera right now.
 
 :::danger Debugging Only
 The `Test` checkbox is designed for debugging the result of your Mirror Texture & Color settings!

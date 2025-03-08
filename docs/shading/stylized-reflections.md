@@ -72,7 +72,7 @@ Controls the strength of the Stylized Specular Highlight. Generally, the `0-1` r
 
 ### Use Light Color
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Determines whether the Stylized Specular Highlight should use the light color or the color defined with the specular map and tint. This is useful for creating a more toon-like effect by forcing a specific color.
 
@@ -104,19 +104,19 @@ Strength of the individual highlight layer. This is used to scale the highlight 
 
 #### Show on Back
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Shows the Specular result on the backface.
 
 #### Ignore Shadow
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Ignores shadows on the Specular results.
 
 #### Ignore Casted Shadows
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Ignores casted shadows on the Specular results.
 
@@ -126,7 +126,7 @@ In Lil Reflections mode, this creates the appearance of metallic or smooth surfa
 
 ### sReflection
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Enables Lil Reflections.
 
@@ -168,7 +168,7 @@ Defines the intensity of the reflectivity.
 
 ### Specular
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Creates a toon-style specular appearance on the Material.
 
@@ -201,13 +201,13 @@ Blurs the border of the specular. Lower values are more sharper, while higher va
 
 #### MultiLight Specular
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Allows MultiLight specular to be used.
 
 ### Environmental Reflections
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Enables the ability to render Environmental Reflections from the World onto the specular reflections.
 
@@ -230,7 +230,7 @@ Tints the color of the environmental reflections.
 
 #### Override
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 If enabled, will strictly enforce the Cubemap Fallback to always be used regardless.
 
@@ -242,7 +242,7 @@ Enables the Lighting Fallback in a variable value.
 
 #### Apply Transparency
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 If enabled, will apply transparency to the material.
 

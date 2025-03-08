@@ -46,7 +46,7 @@ Distance from the camera at which the [Max Color](#max-color) should be applied.
 
 ## Force BackFace Color
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 If enabled, applies the above set [Min Color](#min-color) to show on the Back Face, as if the Camera is going inside the mesh.
 

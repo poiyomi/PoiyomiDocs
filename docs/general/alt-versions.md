@@ -1,12 +1,12 @@
 ---
 sidebar_position: 6
-title: Special Versions
+title: Alternate Versions
 description: Information regarding the special alternate versions included in Poiyomi Shaders, such as Grab Pass and the World Shader.
 keywords: [two pass, two-pass, grab pass, outline, early, world, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
-Poiyomi Shaders has some special Shader versions included that are made for very specific purposes. These can have different performance impacts and should only be used when the need arises for it.
+Poiyomi Shaders has some alterative Shader versions included that are made for very specific purposes, some of which have extended features. These can have different performance impacts and should only be used when the need arises for it.
 
 Typically you'll only be using `.poiyomi/Poiyomi Toon` on a daily basis, as it's the most optimized. If you are planning on only using the normal Shader version, you can stop reading here.
 
@@ -54,9 +54,13 @@ Because this shader version uses a Grab Pass, it has the <u>strongest performanc
 
 ## Geometric Dissolve <span class="badge badge--primary">Pro</span>
 
+- `.poiyomi/Poiyomi Pro Geometric Dissolve`
+
 Poiyomi Pro Geometric Dissolve is an advanced version in Poiyomi Pro that expands beyond the features of what a typical Dissolve can offer. It uses the 3D Mesh to manipulate the vertices, creating an advanced 3D Dissolve animation. See [Geometric Dissolve](/docs/extended-features/geometric-dissolve.md) for more info.
 
 ## Fur <span class="badge badge--primary">Pro</span>
+
+- `.poiyomi/Poiyomi Pro Fur`
 
 Poiyomi Pro Fur is a system in Poiyomi Pro that uses a height-based technique to enable simulation of fabrics and hairs. It can look similar to how fur is simulated in animated films but with some differences. See [Fur](/docs/extended-features/fur.md) for more info.
 

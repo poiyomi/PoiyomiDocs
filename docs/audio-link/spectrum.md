@@ -175,7 +175,7 @@ Clipping control of the Band's projection from the Right-edge.
 
 ## Shape Clip
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 Enables the ability to provide a set amount of space between each Step for the `Band` or `Volume`, clipping whatever is in-between each step. Use this in conjunction with your [Volume Step Num](#volume-step-num-0--off) and [Band Step Num](#band-step-num-0--off) values to achieve a digital visualizer look.
 

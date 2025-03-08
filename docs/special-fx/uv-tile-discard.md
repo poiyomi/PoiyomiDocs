@@ -34,11 +34,11 @@ Defines how the discarding is performed. Generally, this should be set to `Verte
 
 ## Discard Coordinates
 
-- `Type`: **Checkboxes**
+- `Type`: **Booleans**
 
 Defines which UV tiles to discard. These are organized into 4 rows (`v`) of 4 tiles (`u`), defining a grid of 16 discard tiles. The bottom left is the origin, and the top right is the maximum. The bottom left tile (`0,0`) is where most UV mapping is performed.
 
-When a box is checked, that tile is discarded. When animating these checkboxes, each one is it's own independent property.
+When a box is checked, that tile is discarded. When animating these boolean checkboxes, each one is it's own independent property.
 
 **Table Reference:**
 

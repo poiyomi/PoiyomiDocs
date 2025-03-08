@@ -70,14 +70,14 @@ Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-r
 
 ## Reduce Clip Distance
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
   - Default: `Off`
 
 Creates a smaller clip distance for the material. This can be used to make geometry not disappear when very close to the camera.
 
 ## Z Clip
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
   - Default: `On`
 
 Enables or Disables the GPU's Depth Clip Mode, which determines how the GPU handles fragments of the Shader that are outside of the Near and Far Planes.
@@ -86,7 +86,7 @@ Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-r
 
 ## Ignore Fog
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
   - Default: `Off`
 
 If checked, this material will not be affected by fog, if present in the scene.
@@ -95,14 +95,14 @@ Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-r
 
 ## Flip Backface Normals
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
   - Default: `On`
 
 If enabled, inverts the normal vectors of the mesh if you're looking at a backface. This ensures it renders correctly when the camera is looking towards the backface.
 
 ## Enable GPU Instancing
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
   - Default: `Off`
 
 Enables or disables GPU instancing for this material. GPU instancing allows for rendering multiple copies of the same mesh with the same material, given some specific conditions are met. This can be used to create more efficient rendering of objects with multiple copies.
@@ -111,7 +111,7 @@ Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-r
 
 ## Early Z
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
   - Default: `Off`
 
 Enables Early Z mode on the Material. This makes the Mesh first only render to Depth, culling anything behind the main Front Face.
