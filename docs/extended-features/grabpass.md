@@ -8,7 +8,7 @@ import PoiVideo from '@site/src/components/PoiVideo'
 
 Grab Pass transparency uses a Grab Pass, which takes a screenshot of the scene every frame to create special effects like refraction and blur. It's a powerful, but expensive feature that enables unique effects.
 
-To use Grab Pass, select the Shader variant `.poiyomi/Poiyomi Toon Grab Pass`. Included in this Shader variant, a new Grab Pass category will appear with the following settings shown below.
+To use Grab Pass, select the Shader version `.poiyomi/Poiyomi Toon Grab Pass`. Included in this Shader version, a new Grab Pass category will appear with the following settings shown below.
 
 :::warning
 Grab Pass is an expensive feature - it has to take a screenshot every frame. This will always cause some amount of performance hit, so use it judiciously!

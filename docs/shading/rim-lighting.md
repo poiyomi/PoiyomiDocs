@@ -235,7 +235,7 @@ Choose to use a [Global Mask](/docs/modifiers/global-masks.md) to constrain the 
 
 - `Type`: **Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-Allows you to add the currently set Rim Lighting setup to be applied to an existing Global Mask of your choice.
+Allows you to add the currently set Rim Lighting setup to be applied to an existing [Global Mask](/docs/modifiers/global-masks.md) of your choice.
 
 ## AudioLink
 

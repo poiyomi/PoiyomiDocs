@@ -1,14 +1,14 @@
 ---
 sidebar_position: 14
-title: Screen Space Ambient Occlusion
+title: Screen Space Ambient Occlusion (Pro)
 description: Simulates Ambient Occlusion in the Screen-Space with custom colors and effects.
 keywords: [ambient occlusion, ao, ambient, occlusion, shader effect, shading, screen space ambient occlusion, screen space ao, screen space]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
-# Screen Space Ambient Occlusion <span class="badge badge--primary">Pro</span>
+# Screen Space Ambient Occlusion
 
-In 3D graphics, ambient occlusion is a global illumination term that measures how much ambient light can reach a surface. Poiyomi SSAO is an approximation of this shadowing that is useful for adding depth and crisp detail shadows.
+In 3D graphics, ambient occlusion is a global illumination term that measures how much ambient light can reach a surface. Poiyomi's Screen-Space Ambient Occlusion (SSAO) is an approximation of this shadowing that is useful for adding depth and crisp detail shadows.
 
 :::info Pro Only
 **This Feature is only available in Poiyomi Pro!** Subscribe to the [Patreon](https://www.patreon.com/poiyomi) at the $10 tier or higher in order to see this module.

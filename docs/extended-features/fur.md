@@ -1,20 +1,22 @@
 ---
 sidebar_position: 3
-title: Fur
+title: Fur (Pro)
 description: The Poiyomi Fur Shader enables simulation of fabrics and hairs using a specialized technique similar to Height, at a notable performance cost.
 keywords: [fur, fur shader, poiyomi fur, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
-# Fur <span class="badge badge--primary">Pro</span>
+# Fur
 
 The Poiyomi Fur Shader is a system that uses a height-based technique to enable simulation of fabrics and hairs. It can look similar to how fur is simulated in animated films but with some differences.
+
+To use Poiyomi Fur, select the shader version `.poiyomi/Poiyomi Pro Fur`. This exposes the Fur category with the following settings shown below.
 
 :::info Pro Only
 **This Feature is only available in Poiyomi Pro!** Subscribe to the [Patreon](https://www.patreon.com/poiyomi) at the $10 tier or higher to access it.
 :::
 
-:::warning
+:::danger
 Poiyomi Fur is a very expensive feature, as it must render every frame in order to simulate the effect. As such, this will cause a huge performance impact, so use it carefully!
 :::
 

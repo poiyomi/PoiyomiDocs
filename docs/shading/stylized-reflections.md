@@ -10,23 +10,27 @@ import PoiVideo from '@site/src/components/PoiVideo'
 
 Stylized Reflections is a module that applies a stylized specular highlight or reflective effect to the material. It's useful for creating a more toon-like, stylized effect than the standard specular highlights or reflections from [Reflections & Specular](/docs/shading/reflections-and-specular.md).
 
+:::info Changes in 9.1
+All features of the previously-named module, Stylized Specular, was merged into the [UnityChan](#unity-chan-specular) Mode documented below.
+:::
+
 ## Mode
 
 - `Type`: **Dropdown**, Options: `UnityChan`/`lilToon`
 
 Choice of which style of Stylized Reflections that you wish to use.
 
-The default mode is `UnityChan`, which reflects all the features of "Stylized Specular," used in previous versions of Poiyomi Shaders prior to 9.1.20.
+The default mode is `UnityChan`, which creates a cartoon-styled specular highlight in a style that is similar to Unity-Chan Toon Shader.
 
-The mode `lilToon` adds both specular and environmental reflections in a more stylized fashion, a feature commonly found in lilToon.
+The mode `lilToon` adds both specular and environmental reflections in a more stylized fashion, a feature commonly found in lilToon Shader.
 
-:::info Documentation Info
+:::note Documentation Info
 This page is split into two separate sections, as each of the Modes vastly differ from each other. Use the Table of Contents to navigate.
 :::
 
-## Unity Chan Specular
+## Unity-Chan Specular
 
-Unity Chan Specular is the default style, applying specular highlight effects to the material in a toon-like fashion.
+Unity-Chan Specular is the default style, applying specular highlight effects to the material in a toon-like fashion.
 
 ### Specular Map
 
