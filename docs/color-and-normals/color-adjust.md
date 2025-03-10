@@ -175,7 +175,7 @@ How fast the audio link chronotensity should cycle the hue shift.
 
 ## Color Grading
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 If enabled, uses a `Gradation Map` as reference to determine how the Color Adjust should appear with the defined Color Grading style.
 
