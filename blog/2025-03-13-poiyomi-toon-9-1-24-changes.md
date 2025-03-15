@@ -18,7 +18,7 @@ See the previous blog posts for an assortment of major features and fixes that w
 - Added Shader Translation parameters for Multilayer Math AO.
 ### Fixes
 - Fixed an issue with the Outlines Section Header being marked as Animated, even though it's not supposed to be.
-  - If you are attempting to animate Outlines, please animate the properties instead! As a reminder, see [Locking & Animation](/docs/general/locking.md) for more information.
+  - If you are attempting to animate Outlines, please animate the properties instead!
 - Fixed a shader translation inconsistency with **Outlines** and `Clip 0 Width`.
 - Fixed a problem with AudioLink options in **Vertex Options** unable to have access to the `Volume` and `Smoothing` Bands and modifiers.
 - Fixed a bug causing **Decal** `Alpha` to be applied twice after being translated.
