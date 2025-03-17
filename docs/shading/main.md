@@ -259,59 +259,70 @@ This slider only shows when Map Type is set to `Flat`.
 
 </details>
 
+#### Shadow Border Map
+
+- `Type`: **Boolean**
+
+Enables the Shadow Border Map feature, allowing control over AO-style Shadow boundaries on Multilayer Math.
+
+<details>
+<summary><b>Shadow Border Map Options</b></summary>
+
 #### AO Map
 
 - `Type`: **Data** Texture (`sRGB = OFF`)
 
 Defines the AO (Ambient Occlusion) texture to use in Multilayer Math.
 
-##### Border Map LOD
+#### Border Map LOD
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
 Amount of Level of Detail to use for the Border Map.
 
-##### Ignore Border Properties
+#### Ignore Border Properties
 
 - `Type`: **Boolean**
 
 If enabled, ignores the properties set in [Border](#border-3).
 
-##### 1st Min
+#### 1st Min
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
 Minimum amount from the Shadow Border to apply to Layer 1.
 
-##### 1st Max
+#### 1st Max
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
 Maximum amount from the Shadow Border to apply to Layer 1.
 
-##### 2nd Min
+#### 2nd Min
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
 Minimum amount from the Shadow Border to apply to Layer 2.
 
-##### 2nd Max
+#### 2nd Max
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
 Maximum amount from the Shadow Border to apply to Layer 2.
 
-##### 3rd Min
+#### 3rd Min
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
 Minimum amount from the Shadow Border to apply to Layer 3.
 
-##### 3rd Max
+#### 3rd Max
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
 Maximum amount from the Shadow Border to apply to Layer 3.
+
+</details>
 
 #### Blur Map
 
