@@ -16,6 +16,7 @@ See the previous blog posts for an assortment of major features and fixes that w
 - `Clip 0 Width` in **Outlines** is now enabled by default.
   - As per the Documentation, `Clip 0 Width` removes the Outline from being drawn when the Width is set to `0`.
 - Added Shader Translation parameters for Multilayer Math AO.
+  - As a side-effect, new properties have been exposed in Multilayer Math to support this.
 ### Fixes
 - Fixed an issue with the Outlines Section Header being marked as Animated, even though it's not supposed to be.
   - If you are attempting to animate Outlines, please animate the properties instead!

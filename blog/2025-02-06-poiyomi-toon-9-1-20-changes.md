@@ -8,7 +8,9 @@ authors:
 keywords: [shader, vrchat, updates, update]
 ---
 
-This update contains a significant amount of improvements, bug fixes, and some major new features. The Toon version is now available in the VCC Repository, GitHub, and on BOOTH.
+It is time to introduce Poiyomi 9.1, a major update containing a significant amount of new features, improvements, as well as bug fixes. This is the first release of the publicly-accessible version of Poiyomi 9.1.
+
+The Toon version is now available in the VCC Repository, GitHub, and on BOOTH.
 
 ### Added
 - Added `Gamma` to **Color Adjust**, which lerps the brightness of the color in regards to it's Hue and tone. Lower values are more lighter, while higher values are more bolder.

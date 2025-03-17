@@ -220,68 +220,104 @@ How far off of the border the border color is applied. A value of `0.0` will app
 
 </details>
 
-#### Shadow Border Map
-
-- `Type`: **Boolean**
-
-Enables the Shadow Border Map feature, allowing control over AO-style shadow boundaries on Multilayer Math.
+#### Shadow Map
 
 <details>
-<summary><b>Shadow Border Map Options</b></summary>
+<summary><b>Shadow Map Options</b></summary>
 
-#### Shadow Border Map
+#### Map Type
+
+- `Type`: **Dropdown**, Options: `Strength`/`Flat`
+
+Choice of what Shadow Map type should be used. `Strength` will go by the strength values determined by the map, while `Flat` will enable customized sliders to determine the appearance.
+
+#### Color Tex
+
+- `Type`: **Color** Texture (`sRGB = ON`)
+
+Texture Slot that determines the Shadow Map.
+
+#### Border
+
+- `Type`: **Float**, Range: `-2.0 - 2.0`
+
+Border intensity of the shadow map.
+
+:::note
+This slider only shows when Map Type is set to `Flat`.
+:::
+
+#### Blur
+
+- `Type`: **Float**, Range: `0.001 - 2.0`
+
+How much to blur the border of the shadow map.
+
+:::note
+This slider only shows when Map Type is set to `Flat`.
+:::
+
+</details>
+
+#### AO Map
 
 - `Type`: **Data** Texture (`sRGB = OFF`)
 
-#### Post AO
+Defines the AO (Ambient Occlusion) texture to use in Multilayer Math.
 
-- `Type`: **Boolean**
-
-Enables Post Ambient-Occlusion on the Shadow Border Map.
-
-#### Border Map LOD
+##### Border Map LOD
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
 Amount of Level of Detail to use for the Border Map.
 
-#### 1st Min
+##### Ignore Border Properties
+
+- `Type`: **Boolean**
+
+If enabled, ignores the properties set in [Border](#border-3).
+
+##### 1st Min
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
 Minimum amount from the Shadow Border to apply to Layer 1.
 
-#### 1st Max
+##### 1st Max
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
 Maximum amount from the Shadow Border to apply to Layer 1.
 
-#### 2nd Min
+##### 2nd Min
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
 Minimum amount from the Shadow Border to apply to Layer 2.
 
-#### 2nd Max
+##### 2nd Max
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
 Maximum amount from the Shadow Border to apply to Layer 2.
 
-#### 3rd Min
+##### 3rd Min
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
 Minimum amount from the Shadow Border to apply to Layer 3.
 
-#### 3rd Max
+##### 3rd Max
 
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
 Maximum amount from the Shadow Border to apply to Layer 3.
 
-</details>
+#### Blur Map
+
+- `Type`: **Data** Texture (`sRGB = OFF`)
+
+Texture Slot to define the Blur Map of Multilayer Math.
 
 #### Non Linear Lightmap
 
@@ -294,6 +330,12 @@ If enabled, changes the shadow gradient direction to be non-linear.
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
 How much to blend the shadow gradients to the Base Color.
+
+#### Env Strength on Shadow Color
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+Determines how strong the environmental influences the shadow color.
 
 #### Shadow Strength
 
