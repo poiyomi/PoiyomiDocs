@@ -17,7 +17,7 @@ To use Poiyomi Fur, select the shader version `.poiyomi/Poiyomi Pro Fur`. This e
 :::
 
 :::danger
-Poiyomi Fur is a very expensive feature, as it must render every frame in order to simulate the effect. As such, this will cause a huge performance impact, so use it carefully!
+Poiyomi Fur is an expensive feature, each layer increases the number of times your mesh much be rendered. Use it conservatively!
 :::
 
 ## Layer Count
