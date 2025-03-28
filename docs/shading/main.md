@@ -811,10 +811,10 @@ Makes the Add Pass Lighting match close to your [Lighting Type (Base Pass)](#lig
 
 - `Type`: **Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-If set, will send the LightMap data from the Shading to a [Global Mask](/docs/modifiers/global-masks.md) of your choice.
+If set, will send the Lighting data to a [Global Mask](/docs/modifiers/global-masks.md) of your choice as a mask. This will make the data written to the Global Mask appear based on it's illumination from the environment.
 
 ### Inversed LightMap to Global Mask
 
 - `Type`: **Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-If set, will send inverted data of the LightMap from the Shading to a [Global Mask](/docs/modifiers/global-masks.md) of your choice.
+If set, will send inverted Lighting data to a [Global Mask](/docs/modifiers/global-masks.md) of your choice as a mask. This is similar to the above option, but it will invert the data instead.
