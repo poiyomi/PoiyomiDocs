@@ -174,6 +174,12 @@ How strong reflections should be across the material. These are blended with the
 
 How strong specular highlights should be across the material. These are blended with the base color of the material, and if a specular mask is used, this value is multiplied with the specular mask.
 
+## Fresnel Strength
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+How strong the low-angle reflective rim should affect the material. This is similar to Unity Standard's fresnel effect by default, but allows further control of how intense it should be.
+
 ## Cubemap
 
 - `Type`: **Cubemap** Texture (sRGB **ON**)

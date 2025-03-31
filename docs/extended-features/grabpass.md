@@ -14,38 +14,6 @@ To use Grab Pass, select the Shader version `.poiyomi/Poiyomi Toon Grab Pass`. I
 Grab Pass is an expensive feature - it has to take a screenshot every frame. This will always cause some amount of performance hit, so use it judiciously!
 :::
 
-## Grab Pass Transparency
-
-The main section defines how the Grab Pass is blended with the scene.
-
-### Use Alpha
-
-- `Type`: **Boolean**
-
-Directly uses the alpha of the material to define the blend amount (how much the Grab Pass color is blended with the base color).
-
-If enabled, **Blend Map** and **Blend Amount** will not be used.
-
-### Blend Map
-
-- `Type`: **Data** Texture (sRGB **OFF**)
-
-Texture that defines where the Grab Pass should be blended. White means the Grab Pass is fully blended, black means the Grab Pass is not blended at all. Can be thought of as an inverse opacity map.
-
-### Blend Amount
-
-- `Type`: **Float**, Range: `0.0 - 1.0`
-
-Scaler for the blend amount. The Grab Pass color is blended with the base color by this amount. If a blend map is used, this should generally be set to 1.0.
-
-### Source/Destination Blend
-
-- `Type`: **Dropdown**
-
-Blend factor to use for the source and destination factors, respectively.
-
-For traditional transparent blending, `SrcFactor` should be set to `SrcAlpha` and `DstFactor` should be set to `OneMinusSrcAlpha`. Other factors can be used for other effects. Try some of the combinations listed in [Render Presets](/docs/general/render-preset.md#blending).
-
 ## Refraction
 
 - `Type`: **Boolean**
@@ -78,7 +46,17 @@ Chromatic aberration separates certain colors by different amounts. This recreat
 
 Note that if Chromatic Aberration is enabled, the Blur function will be disabled.
 
+### Fresnel Power
+
+- `Type`: **Float**, Range: `0.0 - 10.0`
+
+Controls the distortion of the Refraction.
+
 ## Blur
+
+- `Type`: **Boolean**
+
+If enabled, creates a realtime Gaussian Blur effect on the Material.
 
 ### Blur Distance
 
@@ -88,12 +66,80 @@ How much blur to apply. The higher this value is, the blurrier the transparency 
 
 ### Blur Quality
 
-- `Type`: **Integer**, Range: `0 - 10`
+- `Type`: **Integer**, Range: `1 - 20`
 
 How many samples to draw for the blur. The higher this number, the more accurate the blur, but the more expensive it is to render. Good compromise values for quality are between 3 and 6, with higher values being more necessary for higher **Blur Distance**.
 
 ### Blur Directions
 
-- `Type`: **Integer**, Range: `0 - 10`
+- `Type`: **Integer**, Range: `1 - 10`
 
 How many directions to sample for the blur. The higher this number, the more accurate the blur, but the more expensive it is to render. Good compromise values for quality are between 4 and 8, with higher values being more necessary for higher **Blur Distance**.
+
+### Use Smoothness
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+Applies a Smoothness modifier to the Blur.
+
+### Center Importance
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+Determines the importance of the Gaussian Blur of Opaque objects visible behind the Material.
+
+## Color
+
+### Color
+
+- `Type`: **Color**
+
+Color used for multiplicative and additive brightness of the Grab Pass
+
+### Multiplicative Brightness
+
+- `Type`: **Float**
+
+Controls the multiplication value of the Grab Pass Color.
+
+### Additive Brightness
+
+- `Type`: **Float**
+
+Controls the additive of additional brightness of the Grab Pass Color.
+
+## Advanced
+
+### Use Material Alpha
+
+- `Type`: **Boolean**
+
+Directly uses the alpha of the material to define the blend amount (how much the Grab Pass color is blended with the base color).
+
+If enabled, the below **Blend Map** and **Blend Amount** settings will be ignored.
+
+### Blend Map
+
+- `Type`: **Data** Texture (`sRGB = OFF`)
+
+Texture that defines where the Grab Pass should be blended. White means the Grab Pass is fully blended, black means the Grab Pass is not blended at all. Can be thought of as an inverse opacity map.
+
+### Blend Amount
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+Scaler for the blend amount. The Grab Pass color is blended with the base color by this amount. If a blend map is used, this should generally be set to 1.0.
+
+### Global Mask
+
+- `Type`: **Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+
+Select which [Global Mask](/docs/modifiers/global-masks.md) should be used as the Blend Map.
+
+### Source/Destination Blend
+
+- `Type`: **Dropdown**, Options: `Zero`/`One`/`DstColor`/`SrcColor`/`OneMinusDstColor`/`SrcAlpha`/`OneMinusSrcColor`/`DstAlpha`/`OneMinusDstAlpha`/`SrcAlphaSaturate`/`OneMinusSrcAlpha`
+
+Blend factor to use for the source and destination factors, respectively.
+
+For traditional transparent blending, `Source Blend` should be set to `SrcAlpha` and `Destination Blend` should be set to `OneMinusSrcAlpha`. Other factors can be used for other effects. Try some of the combinations listed in [Render Presets](/docs/general/render-preset.md#blending).

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: Geometric Dissolve (Pro)
+title: Geometric Dissolve
 description: Geometric Dissolve manipulates the 3D mesh's vertices to create an advanced Dissolve effect..
 keywords: [geometric dissolve, geometric, dissolve, advanced dissolve, 3d dissolve, poiyomi, shader]
 ---

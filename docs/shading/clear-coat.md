@@ -46,6 +46,12 @@ Strength of the clearcoat layer's specular highlights.
 
 This option scales the **Reflection Mask** if defined. If not defined, this option directly controls the strength of clearcoat specular highlights.
 
+## Fresnel Strength
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+How strong the low-angle reflective rim should affect the material. This is similar to Unity Standard's fresnel effect by default, but allows further control of how intense it should be.
+
 ## Reflection Tint
 
 - `Type`: **Color**
