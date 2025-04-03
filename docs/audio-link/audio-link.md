@@ -19,12 +19,12 @@ In Poiyomi Shaders, there are various features that support AudioLink. However, 
 
 ## AudioLink
 
-- `Type`: **Checkbox**
+- `Type`: **Boolean**
 
 If enabled, activates AudioLink features and exposes AudioLink parameter controls for supported modules and effects.
 
 :::info
-When this feature activates, the following sections in Poiyomi Shaders will have their AudioLink properties exposed for you to use! Refer to each of their Documentation Entries for more information.
+When this feature activates, the following sections in Poiyomi Shaders will have their AudioLink properties exposed for you to use. Refer to each of their Documentation Entries for more information.
 - [Color Adjust](/docs/color-and-normals/color-adjust.md#hue-shift-audio-link)
 - [Alpha Options](/docs/color-and-normals/alpha-options.md#alpha-audio-link)
 - [Vertex Options](/docs/color-and-normals/vertex-options.md#audio-link)
@@ -153,7 +153,8 @@ As the audio plays, you can fiddle around with the AudioLink settings on your Ma
 While in Play Mode, nothing will be saved other than your Materials. Make sure you exit Play Mode before you intend to do further edits to your Avatar!
 :::
 
-:::tip Change the Music
+### Changing the Music
+
 If you are not a fan of the music that is playing, feel free to change it! To do this, expand the `AudioLinkAvatar` Object in your Hierarchy. Select the Object named `AudioLinkYtdlpPlayer`.
 
 You can then change the URL from the Inspector. Paste the new URL into the field as shown below. If you're already in Play Mode, click `Reload URL` to switch it.
@@ -165,4 +166,19 @@ You can then change the URL from the Inspector. Paste the new URL into the field
 <a target="_blank" href="/img/audio-link/theYtdlpPlayer.png">
 <img src="/img/audio-link/theYtdlpPlayer.png" alt="Ytdlp URL field" width="600px"/>
 </a>
+
+### Using a Custom YTDL Location
+
+The `AudioLinkAvatar` Prefab uses the [yt-dlp](https://github.com/yt-dlp) plugin from VRChat's installation files in order to test AudioLink in Unity. However oftentimes, the plugin provided by VRChat may sometimes break due to YouTube's destructive changes to the format. In cases where this happens, you can manually download the latest `yt-dlp.exe` and use it as the executable instead of the potentially outdated version provided by VRChat.
+
+:::warning Only do this if AudioLink is not working!
+Setting a Custom YTDL Location is intended for Advanced Users. You do not need to do this if AudioLink is already working normally!
 :::
+
+1. Download the latest version of the `yt-dlp.exe` executable from the [GitHub Repository](https://github.com/yt-dlp/yt-dlp/releases).
+2. Place it in a location somewhere on your Computer that you'll remember.
+3. In Unity, navigate to the Menu option `Tools -> AudioLink -> Select Custom YTDL Location`. This will open a pop-up window asking you to locate the `yt-dlp.exe` program that you downloaded.
+4. If successful, the Menu option `Select Custom YTDL Location` will show a checkmark. This is indicating it's now using the custom `yt-dlp.exe` you've chosen.
+5. Enter Play Mode and cross your fingers!
+
+If later on you wish to go back to using VRChat's provided `yt-dlp.exe` instead, click the option `Tools -> AudioLink -> Select Custom YTDL Location` again to disable it.
