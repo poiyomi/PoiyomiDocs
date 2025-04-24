@@ -7,15 +7,9 @@ keywords: [translator, shader translator, thryeditor, thryrallo, thry, editor, s
 
 The Shader Translator is there to help you swap from one shader to an new one. Predefined property changes that map your settings from the old shader to the new one will adjust your material to match features as best as possible.
 
-This system also allows easy upgrading from prior versions of Poiyomi, or to convert a Material from using a different Toon Shader to Poiyomi instead. The function can be accessed at any time by clicking the Shader Icon.
-
-<a target="_blank" href="/img/thryeditor/Thry_Translator.png">
-<img src="/img/thryeditor/Thry_Translator.png" alt="Presets Feature" width="800px"/>
-</a>
-
-## Automatic Suggestion
-
-When you change a Material from a recognized Shader to Poiyomi, a Green Button will appear suggesting you to run the Shader Translator. It is recommended you click on it when prompted, so that certain properties are correctly translated to work in Poiyomi Shaders.
+:::info
+Most shader translation features are not run automatically. To use the feature, it must be activated manually.
+:::
 
 ## Current Functions
 
@@ -23,6 +17,10 @@ When you change a Material from a recognized Shader to Poiyomi, a Green Button w
 
 This translation function will assist in translating properties from previous 8.0 versions of Poiyomi Shaders to be 9.0-compliant.
 
+To use it, switch the Material from 8.0 to a 9.0 version. A green button will appear on the header. Click it to run the upgrade.
+
 ### LilToon to Poiyomi
 
-Adapts settings that were used on a LilToon Material when it was changed to Poiyomi. When it is run, the Script will run a scan of all the properties in the LilToon Material and translate them to matching features in Poiyomi Shaders.
+Adapts settings that were used on a LilToon Material. When it is run, the Script will translate recognized properties supported in Poiyomi Shaders to their respective values.
+
+To use this feature, `Right-Click` on the Avatar in the Hierarchy and then click `Poiyomi -> Materials -> Translate Copy to Poiyomi Toon`.

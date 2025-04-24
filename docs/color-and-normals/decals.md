@@ -461,4 +461,6 @@ Which motion type to use for the Chrono Rotation. Chronotensity is an Audio Link
 
 How much chronotensity should affect the rotation of the decal. Good starting values are `0.1 - 0.5`.
 
+## Footnotes
+
 [^1]: [Blending modes in Adobe Photoshop](https://helpx.adobe.com/photoshop/using/blending-modes.html)
