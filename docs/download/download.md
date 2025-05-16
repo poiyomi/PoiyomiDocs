@@ -92,7 +92,7 @@ To see the different features offered between the Free vs. Pro version, refer to
 | **Toon/Pro Features** | | Nano | Micro | Mega | Giga | Tera |
 | [Flipbook](/docs/special-fx/flipbook.md), [Dissolve](/docs/special-fx/dissolve.md), Panosphere, [Glitter](/docs/special-fx/glitter.md), [Voronoi](/docs/special-fx/voronoi.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Text Overlay, [Mirror](/docs/special-fx/mirror.md), [Distance/Angular Fade](/docs/color-and-normals/alpha-options.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| UV Distortion, [Vertex Glitching](/docs/color-and-normals/vertex-glitching.md), Black Light Mask | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| UV Distortion, Vertex Options, Black Light Mask | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | [AudioLink](/docs/audio-link/audio-link.md), [Global Themes](/docs/modifiers/global-themes.md) and [Global Masks](/docs/modifiers/global-masks.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | [UV Tile Discard](/docs/special-fx/uv-tile-discard.md), [Depth Bulge/FX](/docs/special-fx/depth-bulge.md), [Pathing](/docs/special-fx/pathing.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | [Stats Overlay](/docs/special-fx/stats-overlay.md), [Proximity Color](/docs/special-fx/proximity-color.md), [Internal Parallax](/docs/special-fx/internal-parallax.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
@@ -105,6 +105,7 @@ To see the different features offered between the Free vs. Pro version, refer to
 | Two Pass Transparency | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | **Pro Features** | | | | | | |
 | [Screen Space Ambient Occlusion](/docs/shading/ssao.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| Vertex Options -> LookAt | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | Custom Modules | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | [Geometric Dissolve](/docs/extended-features/geometric-dissolve.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | [Fur and World Fur](/docs/extended-features/fur.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |

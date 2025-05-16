@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 title: Alpha Options
 description: Properties for modifying how your Material treats Alpha in Poiyomi Shaders.
 keywords: [alpha, options, properties, poiyomi, shader]

@@ -110,7 +110,7 @@ Texture Slot defining the forth Global Mask. This will represent Global Masks `4
 
 ## Vertex Colors
 
-This section allows you to use [Vertex Colors](/docs/color-and-normals/vertex-colors.md) on your Mesh as a Global Mask.
+This section allows you to use [Vertex Colors](/docs/vertex-options/vertex-colors.md) on your Mesh as a Global Mask.
 
 ### Linear Colors
 

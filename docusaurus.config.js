@@ -8,7 +8,7 @@ const darkTheme = themes.dracula;
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Poiyomi Shaders",
-  tagline: "Free Shaders for Unity and VRChat",
+  tagline: "Toon Shaders for Unity and VRChat",
   url: "https://poiyomi.vercel.app",
   baseUrl: "/",
   onBrokenLinks: "throw",
@@ -99,6 +99,21 @@ const config = {
             // Stylized Specular renamed to Stylized Reflections in 9.2.10
             from: '/shading/stylized-specular',
             to: '/shading/stylized-reflections'
+          },
+          {
+            // Vertex Options moved to new category in 9.3 release cycle.
+            from: '/colors-and-normals/vertex-options',
+            to: '/vertex-options/basics'
+          },
+          {
+            // Vertex Glitching moved to new category in 9.3 release cycle.
+            from: '/colors-and-normals/vertex-glitching',
+            to: '/vertex-options/glitching'
+          },
+          {
+            // Vertex Colors moved to new category in 9.3 release cycle.
+            from: '/colors-and-normals/vertex-colors',
+            to: '/vertex-options/vertex-colors'
           }
           // Redirect from multiple old paths to the new path
           // {

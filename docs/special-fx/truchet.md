@@ -6,15 +6,9 @@ keywords: [truchet, smith tiles, special effect, special fx]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
-# Truchet <span class="badge badge--primary">Pro</span>
-
 Truchet is a feature that generates a pattern of non-rotationally symmetric tiles consisting of multiple two-diametrically opposed quarter-circle (Smith) tiles.
 
 [Read More about Truchet Tiles on this external page <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://questionsindataviz.com/2021/03/03/what-are-truchet-tiles/)
-
-:::info Pro Only
-**This Feature is only available in Poiyomi Pro!** Subscribe to the [Patreon](https://www.patreon.com/poiyomi) at the $10 tier or higher to access it.
-:::
 
 ## UV
 

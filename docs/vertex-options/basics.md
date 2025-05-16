@@ -1,12 +1,12 @@
 ---
-sidebar_position: 5
-title: Vertex Options
-description: Vertex Options provides various properties related to the position of your Mesh's Vertices.
-keywords: [vertex, vertices, options, offset, poiyomi, shader]
+sidebar_position: 0
+title: Basics & Fun
+description: Basic properties that can manipulate the Mesh's Vertices.
+keywords: [vertex, vertices, options, offset, vertex options, poiyomi, shader]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
-**Vertex Options** provides options related to the position of model vertices, and can be used to manipulate a material's vertices in various ways without actually modifying the mesh.
+**Vertex Options** provides properties related to the position of a model vertices, and can be used to manipulate a material's vertices in various ways without actually modifying the mesh.
 
 This section can be described by Poiyomi as *"the silly options"* due to the amount of weird and strange things that can be accomplished with Vertex Options.
 

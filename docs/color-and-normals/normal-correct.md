@@ -1,5 +1,5 @@
 ---
-sidebar_position: 11
+sidebar_position: 8
 title: Normal Correct
 description: Normal Correct is used to force normals of the mesh to point towards a specific direction.
 keywords: [normals, normal, normal correction, correction]

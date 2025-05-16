@@ -1,5 +1,5 @@
 ---
-sidebar_position: 7
+sidebar_position: 3
 title: Vertex Colors
 description: Vertex Colors provide options for using Vertex Colors from your Mesh to affect the Base Color and Alpha.
 keywords: [vertex, colors, vertex colors, linear, alpha, poiyomi, shader]

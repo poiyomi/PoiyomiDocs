@@ -120,9 +120,19 @@ How much emission to apply to the matcap.
 
 ## Base Color Mix
 
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
 How much to blend with the Base Color or Main Texture.
 
+## Light Color Mix
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+How much to blend with the Light color.
+
 ## Normal Strength
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
 
 How much to blend with the Normals of your Material.
 
@@ -139,6 +149,29 @@ Mask that defines where to apply the Matcap effect. Black indicates where the ma
 - `Type`: **Float**, Range: `0.0 - 1.0`
 
 How much to hide the matcap effect in shadowed areas of the mesh.
+
+### Circle Mask
+
+- `Type`: **Boolean**
+
+Enables the Circle Mask option for the Matcap, allowing the ability to have smaller matcaps without having them repeat.
+
+<details>
+<summary><b>Circle Mask Options</b></summary>
+
+#### Radius
+
+- `Type`: **Float**, Range: `0.0 - 0.5`
+
+Sets the Radius of the Circle Mask.
+
+#### Blur
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+Sets the Blurriness of the Circle Mask's edge.
+
+</details>
 
 ### Global Mask
 
