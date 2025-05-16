@@ -178,7 +178,10 @@ Setting a Custom YTDL Location is intended for Advanced Users. You do not need t
 1. Download the latest version of the `yt-dlp.exe` executable from the [GitHub Repository](https://github.com/yt-dlp/yt-dlp/releases).
 2. Place it in a location somewhere on your Computer that you'll remember.
 3. In Unity, navigate to the Menu option `Tools -> AudioLink -> Select Custom YTDL Location`. This will open a pop-up window asking you to locate the `yt-dlp.exe` program that you downloaded.
+   - *Keep in mind, this is a global setting! It will apply to ALL Unity Projects!*
 4. If successful, the Menu option `Select Custom YTDL Location` will show a checkmark. This is indicating it's now using the custom `yt-dlp.exe` you've chosen.
 5. Enter Play Mode and cross your fingers!
+
+To debug if it's pointing to the custom location, select the `AudioLinkYtdlpPlayer` GameObject in the Scene and a Info message should appear in the Console. It may say something like, "`[AudioLink:ytdlp] Custom YTDL location found: J:/ytdlp.exe`"
 
 If later on you wish to go back to using VRChat's provided `yt-dlp.exe` instead, click the option `Tools -> AudioLink -> Select Custom YTDL Location` again to disable it.
