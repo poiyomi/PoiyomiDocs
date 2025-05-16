@@ -1,6 +1,6 @@
 ---
-sidebar_position: 4
-title: Details
+sidebar_position: 3
+title: Detail Normals & Texture
 description: Details section provides options to apply additional textures and normals, often tiled, to the Material.
 keywords: [details, tile, tiling, normals, base color, poiyomi, shader]
 ---

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 8
+sidebar_position: 6
 title: Back Face
 description: Back Face properties of the Material in Poiyomi Shaders.
 keywords: [backface, back, face, inverted normal, poiyomi, shader, material]

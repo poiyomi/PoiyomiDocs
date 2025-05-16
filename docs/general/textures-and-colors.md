@@ -193,7 +193,7 @@ One notable exception is the base color, where the Alpha channel is used to dete
 
 ### Vertex Colors
 
-[Vertex Colors](/docs/color-and-normals/vertex-colors.md) are colors stored on each vertex of a mesh. They can be used to color the mesh, or to store data about the mesh, like each vertex's position, or smoothed vertex normals, both of which can be baked into the mesh using the `Poi -> Vertex Color Baker` tool.
+[Vertex Colors](/docs/vertex-options/vertex-colors.md) are colors stored on each vertex of a mesh. They can be used to color the mesh, or to store data about the mesh, like each vertex's position, or smoothed vertex normals, both of which can be baked into the mesh using the `Poi -> Vertex Color Baker` tool.
 
 ### Color Blending/Tinting
 

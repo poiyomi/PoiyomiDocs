@@ -1,5 +1,5 @@
 ---
-sidebar_position: 9
+sidebar_position: 7
 title: RGBA Color Masking
 description: RGBA Color Masking provides flexible ways to apply different Color Tints, Textures, and Normals within the Material without affecting Alpha.
 keywords: [rgba, color, masking, tint, texture, normals, poiyomi, shader]
@@ -38,7 +38,7 @@ Use a Texture Mask to set the RGBA Mask. If enabled, it exposes the [Masks](#mas
 
 ### Vertex Colors
 
-Use the mesh's [Vertex Colors](/docs/color-and-normals/vertex-colors.md) to set the RGBA Mask.
+Use the mesh's [Vertex Colors](/docs/vertex-options/vertex-colors.md) to set the RGBA Mask.
 
 :::note Linear Vertex Colors Recommended
 When using Vertex Colors as the RGBA Mask, make sure the Color Attributes on the Mesh are in **Linear** Color so that the shader can accurately read them.
@@ -80,6 +80,20 @@ The following properties below will appear for each Channel you are customizing.
 
 Enables the mentioned Channel to be used.
 
+### Scale & Offset
+
+- `Type`: **Float4**
+  - Default: `X = 1`, `Y = 1`, `Z = 0`, `W = 0`
+
+Determines both the Scale and Offset of the affected area.
+
+| Coordinate | Function |
+| --- | --- |
+| X | Scale on the X-axis |
+| Y | Scale on the Y-axis |
+| Z | Offset value on the X-axis |
+| W | Offset value on the Y-axis |
+
 ### Blend Mode
 
 - `Type`: **Dropdown**, Options: `Replace`/`Darken`/`Multiply`/`Lighten`/`Screen`/`Subtract`/`Add`/`Overlay`/`Mixed`
@@ -106,13 +120,15 @@ Normal Map texture to be used for the **Channel** masked area.
 
 #### Blend Mode
 
-- `Type`: **Dropdown**, Options: `Replace`/`Blend`
+- `Type`: **Dropdown**, Options: `Replace`/`Blend All`/`Blend Base Normal`
 
 Adjust how the Normal Map blends with the Base, also defined by your RGBA Mask. **Expand the Normal Texture Slot to see this property.**
 
 `Replace` is the default setting, overwriting the Normals already existing on your Base with the one defined instead.
 
-If set to `Blend`, it will combine the bump Normal with the Base Normal of your Material, if defined.
+If set to `Blend Base Normal`, it will combine the bump Normal with the Base Normal of your Material, if defined.
+
+If set to `Blend All`, it will combine the bump Normal with ALL Normals of your Material.
 
 ### Normal Intensity
 
