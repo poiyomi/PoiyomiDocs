@@ -1,14 +1,14 @@
 ---
-slug: poiyomi-toon-9-2-31-changes
-title: 'Poiyomi Toon 9.2.31 & Pro 9.3.1 Changelog'
-description: Information regarding the release of Poiyomi Toon 9.2.31 & Pro 9.3.1.
+slug: poiyomi-toon-9-2-36-changes
+title: 'Poiyomi Toon 9.2.36 Changelog'
+description: Information regarding the release of Poiyomi Toon 9.2.36.
 hide_table_of_contents: true
 authors:
   poiyomi
-tags: [shader, vrchat, updates, update]
+tags: [shader, vrchat, updates, update, major update]
 ---
 
-Introducing Poiyomi 9.2.31, a major update containing a significant amount of UI updates, improvements, as well as bug fixes! This is the first release of the publicly-accessible version of Poiyomi 9.2.
+Introducing Poiyomi 9.2.36, a major update containing a significant amount of UI updates, improvements, as well as bug fixes! This is the first release of the publicly-accessible version of Poiyomi 9.2.
 
 The Toon version is now available in the VCC Repository, GitHub, and on BOOTH.
 
@@ -25,6 +25,7 @@ Documentation has been updated to match this change.
 - Added an option to mask parts of your Material via UDIM as blocking volumes, for dealing with Worlds that have Post Processing Ambient Occlusion. You can use this to prevent your eyes from turning black.
 - Added **Truchet** tiling feature.
 - Added the ability to write notes on headers. To use it, Right-Click the 3 Dots on the right side for the option.
+- Added Light Volume support.
 
 ### Changes
 - **ALL Vertex Options have been renamed and reorganized into a dedicated section.** You can find this new section located <u>in-between</u> **AudioLink** and **Global Modifiers & Data** sections.
@@ -48,6 +49,3 @@ Documentation has been updated to match this change.
 - Fixed missing labels in UV Tile Discard.
 - Fixed a bug with RGBA Color Masking breaking due to latest changes.
 - Fixed a bug causing Color Themes to not work with LilToon-style Rim Lighting.
-
-### Pro Changes
-- Added **LookAt** as a Vertex Option, allowing you to orient your Mesh to face the Camera.
