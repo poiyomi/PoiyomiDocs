@@ -1,12 +1,12 @@
 ---
-sidebar_position: 6
-title: Vertex Glitching
+sidebar_position: 2
+title: Glitching
 description: Distorts the mesh for brief moments to give it a "glitchy" look.
 keywords: [vertex, glitching, vertex glitching]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
-Vertex Glitching is a shader effect that distorts the mesh for brief moments to give it a "glitchy" look.
+**Vertex Glitching** is a shader effect that distorts the mesh for brief moments to give it a "glitchy" look.
 
 Each Glitch is triggered through a rolling [sine wave](https://mathematicalmysteries.org/sine-wave/), whereas the Interval is the wavelength and the Threshold is the amplitude of the frequency.
 

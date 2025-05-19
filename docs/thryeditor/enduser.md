@@ -130,6 +130,12 @@ Options per texture slot:
 <img src="/img/thryeditor/packer_new.png" alt="Texture Packer" width="700px"/>
 </a>
 
+### Notes
+
+Notes is a basic feature allowing the user to add text to the Shader's module. This can be useful to help you remember what you are using the module for. The Note is only applied per Material.
+
+To add or edit a Note, press the Context Menu (3 dots icon) and click `Set Note`.
+
 ## Cross Shader Editor
 
 The Cross Shader Editor is a panel that allows you to mass-edit your Poiyomi Materials, all at once. Anything you edit or change in this panel will be applied to all Materials that are referenced.

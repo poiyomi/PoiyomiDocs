@@ -118,6 +118,22 @@ Enables Early Z mode on the Material. This makes the Mesh first only render to D
 
 This option is commonly used to solve Stacking Transparency problems.
 
+## World AO Blocker
+
+- `Type`: **Boolean**
+
+In worlds with Ambient Occlusion Post Processing, it can have negative effects on the Mesh (especially on the Eyes) when being rendered. This feature can counteract against that by creating a blocking volume on the UV channel.
+
+:::info
+Meshes in this UV space render only to depth and act as a blocking volume for effects like Ambient Occlusion. This section affects the UV Tile directly to the left of the default UV. (U -1->0, V 0->1)
+:::
+
+### UV Channel
+
+- `Type`: **Dropdown**, Options: `UV0`/`UV1`/`UV2`/`UV3`
+
+Choice of UV channel to use as the blocking volume.
+
 ## VRC Fallback
 
 - `Type`: **Dropdown**, Options: `None`/`Hidden`/`Standard`/`Toon`/`Unlit`/`VertexLit`/`Particle`/`Sprite`/`Matcap`/`MobileToon`
