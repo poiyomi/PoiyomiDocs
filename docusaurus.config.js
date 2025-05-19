@@ -102,18 +102,18 @@ const config = {
           },
           {
             // Vertex Options moved to new category in 9.3 release cycle.
-            from: "/colors-and-normals/vertex-options",
-            to: "/vertex-options/basics"
+            from: '/colors-and-normals/vertex-options',
+            to: '/vertex-options/basics'
           },
           {
             // Vertex Glitching moved to new category in 9.3 release cycle.
-            from: "/colors-and-normals/vertex-glitching",
-            to: "/vertex-options/glitching"
+            from: '/colors-and-normals/vertex-glitching',
+            to: '/vertex-options/glitching'
           },
           {
             // Vertex Colors moved to new category in 9.3 release cycle.
-            from: "/colors-and-normals/vertex-colors",
-            to: "/vertex-options/vertex-colors"
+            from: '/colors-and-normals/vertex-colors',
+            to: '/vertex-options/vertex-colors'
           }
           // Redirect from multiple old paths to the new path
           // {
