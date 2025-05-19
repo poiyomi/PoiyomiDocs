@@ -52,40 +52,22 @@ const config = {
             from: '/outlines/main',
             to: '/outlines/',
           },
-          //
-          // HIDDEN PAGES COMMENTED OUT. RE-EXPOSE THESE WHEN THESE PAGES ARE COMPLETE.
-          //
-          //{
-          //  from: "/modifiers/distortion-uv",
-          //  to: "/modifiers/uvs/distortion-uv",
-          //},
-          //{
-          //  from: "/modifiers/panosphere-uv",
-          //  to: "/modifiers/uvs/panosphere-uv",
-          //},
-          //{
-          //  from: "/modifiers/polar-uv",
-          //  to: "/modifiers/uvs/polar-uv",
-          //},
-          //
-          // END OF HIDDEN REDIRECTS
-          //
           {
-            from: "/modifiers/parallax",
-            to: "/modifiers/uvs/parallax",
+            from: '/modifiers/parallax',
+            to: '/modifiers/uvs/parallax',
           },
           {
-            from: "/post-processing/pp-animations",
-            to: "/modifiers/post-processing/pp-animations",
+            from: '/post-processing/pp-animations',
+            to: '/modifiers/post-processing/pp-animations',
           },
           {
-            from: "/post-processing/main",
-            to: "/modifiers/post-processing/main",
+            from: '/post-processing/main',
+            to: '/modifiers/post-processing/main',
           },
           {
             // Redirect old VCC Webpage to new "Download & Install" page.
-            from: "/poiyomitoonvcc",
-            to: "/download/",
+            from: '/poiyomitoonvcc',
+            to: '/download/',
           },
           {
             from: '/general/v7-upgrade',
@@ -98,22 +80,22 @@ const config = {
           {
             // Stylized Specular renamed to Stylized Reflections in 9.2.10
             from: '/shading/stylized-specular',
-            to: '/shading/stylized-reflections'
+            to: '/shading/stylized-reflections',
           },
           {
             // Vertex Options moved to new category in 9.3 release cycle.
-            from: '/colors-and-normals/vertex-options',
-            to: '/vertex-options/basics'
+            from: '/color-and-normals/vertex-options',
+            to: '/vertex-options/basics',
           },
           {
             // Vertex Glitching moved to new category in 9.3 release cycle.
-            from: '/colors-and-normals/vertex-glitching',
-            to: '/vertex-options/glitching'
+            from: '/color-and-normals/vertex-glitching',
+            to: '/vertex-options/glitching',
           },
           {
             // Vertex Colors moved to new category in 9.3 release cycle.
-            from: '/colors-and-normals/vertex-colors',
-            to: '/vertex-options/vertex-colors'
+            from: '/color-and-normals/vertex-colors',
+            to: '/vertex-options/vertex-colors',
           }
           // Redirect from multiple old paths to the new path
           // {
