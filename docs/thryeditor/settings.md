@@ -83,18 +83,18 @@ Defines the naming scheme to use when auto-saving generated Gradients used in th
 - `Setting`: **Boolean**
   - Default: `On`
 
-If enabled, will automatically fill empty Anchor Overrides of Skinned Mesh Renderers on Avatar upload.
+If enabled, this option automatically fills empty Anchor Overrides slots of Mesh and Skinned Mesh Renderers on Avatar upload. This happens during avatar upload and only affects a copy of your avatar. Your original avatar remains untouched.
+
 
 <details>
 <summary><b>Explanation of the Anchor Override</b></summary>
+Renderers use a point in space, called an Anchor, to sample lighting and reflection information from. They do this by searching for the closest Light Probe (and Reflection Probe) to this achor point. By default, this point is at the center of the Renderer's Bounding Box.
 
-Skinned Mesh Renderers have one position where they sample the light from. This is called the Anchor.
+Since by default each renderer's bounding box encompasses only the mesh of it's renderer, the anchor point often differs wildly between the meshes of an avatar. As a result, this often causes the lighting of different parts of the model to flicker or look different even when using the same settings. How much an avatar is affected by this entirely depends on the world it's in and how light probes were scattered around by the world's creator.
 
-By default the Anchor is the root of the GameObject. This can cause the lighting of different parts of the model to look different even if they use the same settings, because they sample the light from different positions.
+Regardless, to prevent issues with this, you can override the anchor point by setting the `Anchor Override` on all renderers to the same object. This ensures all meshes sample the exact same lighting and reflection information. A recommended position is around the upper center of the model, e.g. the `Chest` bone.
 
-To prevent this, you can set the `Anchor Override` on all skinned mesh renderers to the same position. A recommended position is the center of the model, e.g. the `Spine` or `Chest` bone.
-
-Enabling the Auto Set Anchor Override will allow ThryEditor to automatically configure this for you when you Upload your Avatar.
+Enabling the Auto Set Anchor Override will allow ThryEditor to automatically set this up for you during the avatar upload process.
 
 </details>
 
@@ -106,6 +106,10 @@ We highly recommend you click `Yes (Recommended)` if this message shows up.
 <a target="_blank" href="/img/general/bad-lighting-fix-message.png">
 <img src="/img/general/bad-lighting-fix-message.png" alt="ThryEditor Bad Lighting Auto-Fix Dialogue" width="400px"/>
 </a>
+:::
+
+:::info Disabling this Setting per Avatar
+This setting can be individually disabled per avatar by creating an object named `AutoAnchorDisabled` anywhere on the avatar.
 :::
 
 ### Human Bone Anchor
