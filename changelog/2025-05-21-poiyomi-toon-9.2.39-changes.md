@@ -10,7 +10,7 @@ tags: [shader, vrchat, updates, update]
 
 This update contains some critical bug fixes and is recommended for all users. The Toon version is now available in the VCC Repository, GitHub, and on BOOTH.
 
-### Fixed
+### Fixes
 - Realistic shaded Light Volumes now respect `Max Brightness`.
 - Fixed some wacky problem with various things failing to lock under specific circumstances.
 
