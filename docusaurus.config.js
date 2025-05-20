@@ -105,6 +105,20 @@ const config = {
         ],
       },
     ],
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        id: 'second-blog',
+        routeBasePath: 'changelog',
+        path: './changelog',
+        blogTitle: 'Changelog',
+        blogDescription: 'All Changelogs from the latest versions of Poiyomi Shaders.',
+        showReadingTime: true,
+        blogSidebarTitle: 'All Changelogs',
+        blogSidebarCount: 'ALL',
+        onUntruncatedBlogPosts: 'ignore',
+      },
+    ],
   ],
 
   presets: [
@@ -195,6 +209,11 @@ const config = {
           {
             to: "/blog",
             label: "Blog: Updates & Tips",
+            position: "left"
+          },
+          {
+            to: "/changelog",
+            label: "Changelogs",
             position: "left"
           },
           {

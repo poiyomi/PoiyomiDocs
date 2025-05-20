@@ -6,13 +6,12 @@ keywords: [ambient occlusion, ao, ambient, occlusion, shader effect, shading, sc
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
-# Screen Space Ambient Occlusion
-
 In 3D graphics, ambient occlusion is a global illumination term that measures how much ambient light can reach a surface. Poiyomi's Screen-Space Ambient Occlusion (SSAO) is an approximation of this shadowing that is useful for adding depth and crisp detail shadows.
 
-:::info Pro Only
-**This Feature is only available in Poiyomi Pro!** Subscribe to the [Patreon](https://www.patreon.com/poiyomi) at the $10 tier or higher in order to see this module.
-:::
+<!-- POIYOMI PRO LABEL -->
+<a target="_blank" href="https://www.patreon.com/poiyomi">
+<img src="/img/Poiyomi-Pro-Label.png" alt="Pro Feature" width="600px"/>
+</a>
 
 :::warning Requires Depth Buffer
 In order to use SSAO, you will need to place the `DepthGet` Prefab found in the `Assets/_PoiyomiShaders/Prefabs` on your avatar.
@@ -51,7 +50,7 @@ Determines the radius tested for hemispheric visibility check. This controls how
 - `Type`: **Float**, Range: `2.0 - 10.0`
 
 :::warning Performance
-This directly controls how many samples from the depth buffer AO takes for each pixel it is run on. If you fill your display with SSAO pixels (common when cuddling, for example) this performance cost adds up. Try starting at 4, and adding .05 jitter. Make sure you evaluate changes in-game and in VR - artifacting isn't generally as noticeable in motion.
+This directly controls how many samples from the depth buffer AO takes for each pixel it is run on. If you fill your display with SSAO pixels (common when cuddling, for example) this performance cost adds up. Try starting at 4, and adding .05 jitter. Make sure you evaluate changes in-game and in VR - artifacts isn't generally as noticeable in motion.
 :::
 
 Determines how many samples are taken and how they're distributed, whether that would be sharper or smoothened.

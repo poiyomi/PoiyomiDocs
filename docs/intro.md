@@ -14,7 +14,7 @@ Each category and feature documented on the left-hand Sidebar is organized and s
 :::note Shader UI Redirects
 All features in the Shader UI will redirect here for further reading. They are indicated by the <FAIcon icon="fa-solid fa-circle-question"/> icon on the category header. When clicked on, it will redirect you to the appropriate page on this website.
 
-<a target="_blank" href="/img/general/UIRedirect.png">
+<a>
 <img src="/img/general/UIRedirect.png" alt="Redirect Icon on the Shader UI" width="600px"/>
 </a>
 :::
