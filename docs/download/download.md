@@ -83,7 +83,7 @@ You must uninstall Poiyomi Toon from the VCC prior to importing Poiyomi Pro!
 **DO NOT ATTEMPT TO IMPORT BOTH VERSIONS OR YOUR PROJECT MAY BREAK!**
 :::
 
-### Patreon Features Chart
+### Features Chart
 
 To see the different features offered between the Free vs. Pro version, refer to the table below:
 
@@ -103,6 +103,7 @@ To see the different features offered between the Free vs. Pro version, refer to
 | Opaque, Cutout, TransClipping, Fade, Transparent | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Additive, Soft Additive, Multiplicative, 2x Multiplicative | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Two Pass Transparency | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [VRC Light Volumes <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/REDSIM/VRCLightVolumes) Support | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | **Pro Features** | | | | | | |
 | [Screen Space Ambient Occlusion](/docs/shading/ssao.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | Vertex Options -> LookAt | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
