@@ -10,10 +10,6 @@ LTCGI is an optimized plug-and-play realtime area lighting solution using the li
 
 For more detailed information on this system, [visit the LTCGI Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://ltcgi.dev/).
 
-:::warning Future Rework
-The LTCGI feature in Poiyomi Shaders is planned to be reworked in a future version of Poiyomi Shaders. Everything here is subject to change at any time.
-:::
-
 <PoiVideo url='/vid/shading/ltcgi_demo.mp4'/>  
 <em>In this demonstration, the video player is reflecting off of the avatar's eye, and the light is dynamically illuminating the face and the environment from LTCGI.</em>
 
