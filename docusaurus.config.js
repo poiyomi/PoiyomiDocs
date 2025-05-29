@@ -17,6 +17,11 @@ const config = {
   organizationName: "poiyomi", // Usually your GitHub org/user name.
   projectName: "PoiyomiToonShader", // Usually your repo name.
 
+  future: {
+    experimental_faster: true,
+    v4: true,
+  },
+
   plugins: [
     [
       require.resolve("@docusaurus/plugin-client-redirects"),
