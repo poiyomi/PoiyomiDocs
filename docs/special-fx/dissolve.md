@@ -205,7 +205,7 @@ This allows you to select which [Global Mask](/docs/modifiers/global-masks.md) t
 
 - `Type`: **Dropdown**, Options: `Off`/`Red`/`Green`/`Blue`/`Alpha`
 
-Uses the green channel of the mesh's vertex colors to mask the dissolve effect. `0` in this channel will make dissolve have 0 effect on that vertex, while `1.0`/`255` will let it fully affect that vertex.
+Uses the selected channel of the mesh's vertex colors to mask the dissolve effect.
 
 ### Continuous Dissolve Speed
 
