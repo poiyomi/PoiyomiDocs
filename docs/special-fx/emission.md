@@ -66,6 +66,16 @@ Applies the base color as a map. Useful for adding highlights to a mesh, especia
 
 If enabled, the base color of the mesh will be replaced with the emission color (calculated from the combined strength of all the emission sections with Replace Base Color enabled). This means that the mesh, in areas with intense emission, will take on the color of the emission.
 
+## Fluorescence
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+This slider controls the "glow in the dark" factor of your Emissions. If set to `0` (default), your Emissions will glow normally. Although if set to `1`, the Emissions will only show in complete darkness.
+
+:::tip Light Based Recommendation
+Fluorescence is a very basic slider. For more advanced control of Emission behavior in bright or dark environments, we recommend using the [Light Based](#light-based) Emission settings.
+:::
+
 ## Color Adjust
 
 - `Type`: **Boolean**

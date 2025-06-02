@@ -106,7 +106,6 @@ To see the different features offered between the Free vs. Pro version, refer to
 | [VRC Light Volumes <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/REDSIM/VRCLightVolumes) Support | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | **Pro Features** | | | | | | |
 | [Screen Space Ambient Occlusion](/docs/shading/ssao.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
-| Vertex Options -> LookAt | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | Custom Modules | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | [Geometric Dissolve](/docs/extended-features/geometric-dissolve.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | [Fur and World Fur](/docs/extended-features/fur.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
