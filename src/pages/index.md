@@ -2,6 +2,7 @@
 slug: /
 title: Home
 description: Official Website and Documentation for Poiyomi Shaders, a free, feature-rich Toon and PBR shader for Unity with a specific focus on VRChat.
+image: /img/Poiyomi-Thumbnail-Basic.png
 keywords: [poiyomi, shader, shaders, docs, documentation, unity, vrchat, vrc, pbr, toon, realistic, stylized, shading]
 hide_title: true
 hide_table_of_contents: true
@@ -76,3 +77,5 @@ and more!
   - AL Spectrum, projecting a waveform-like effect that react to the World's music onto the UV.
 - **LTCGI Support**
   - Supports receiving LTCGI diffuse and specular lighting from Worlds actively producing LTCGI.
+- **VRC Light Volumes Support**
+  - Supports receiving volumetric and balanced lighting from Worlds baked with VRC Light Volumes.

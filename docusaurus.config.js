@@ -9,13 +9,13 @@ const darkTheme = themes.dracula;
 const config = {
   title: "Poiyomi Shaders",
   tagline: "Toon Shaders for Unity and VRChat",
-  url: "https://poiyomi.vercel.app",
+  url: "https://www.poiyomi.com",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
   organizationName: "poiyomi", // Usually your GitHub org/user name.
-  projectName: "PoiyomiToonShader", // Usually your repo name.
+  projectName: "PoiyomiDocs", // Usually your repo name.
 
   future: {
     experimental_faster: true,
@@ -177,6 +177,44 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      metadata: [
+        // Place global <meta> tags here!
+        {name: 'keywords', content: 'poiyomi, shaders, shader, vrchat, poiyomi shaders, blog, docs, documentation, toon, realistic, unity'}, // IMPORTANT SEO KEYWORDS! DO NOT REMOVE!
+        {name: 'twitter:card', content: 'summary_large_image'}, // Used for Twitter Cards.
+        {name: 'apple-mobile-web-app-title', content: 'Poiyomi'}, // Used for Apple Devices.
+      ],
+      headTags: [
+        // Place global <link> tags here!
+        {
+          tagName: 'link',
+          attributes: {
+            rel: 'preconnect', // Hints to Browsers to preload resources from the origin during search.
+            href: 'https://www.poiyomi.com',
+          },
+        },
+        {
+          tagName: 'link',
+          attributes: {
+            rel: 'canonical', // Broadcasts the canonical URL of the website.
+            href: 'https://www.poiyomi.com',
+          },
+        },
+        {
+          tagName: 'link',
+          attributes: {
+            rel: 'apple-touch-icon', // Used for Apple Devices because Apple is very petty with their WebKit.
+            sizes: '180x180',
+            href: '/img/apple-touch-icon.png',
+          }
+        },
+        {
+          tagName: 'link',
+          attributes: {
+            rel: 'manifest', // Used for Favicon Manifest. Common on Android.
+            href: '/img/site.webmanifest',
+          },
+        },
+      ],
       docs: {
         sidebar: {
           hideable: true,
