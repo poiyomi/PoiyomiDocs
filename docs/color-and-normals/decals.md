@@ -2,6 +2,7 @@
 sidebar_position: 5
 title: Decals
 description: In Poiyomi Shaders, Decals are used to place images onto your UV with specific location, rotation, and blending.
+image: /img/color-and-normals/Thumb-Decals.png
 keywords: [decal, decals, decorative, decoration, sticker, logo, shape, blush, poiyomi, shader]
 toc_max_heading_level: 4
 ---
@@ -11,7 +12,7 @@ Decals are used to place images onto a UV with specific location, rotation, and 
 
 They can be used to add high resolution designs and details onto a mesh without the base texture having to be higher resolution, or to replace base textures entirely. This can allow fun and unique ways to decorate your Avatar with logos, shapes, stickers, or even as a blush emote toggle.
 
-<a target="_blank" href="/img/color-and-normals/Decal_Example.png">
+<a>
 <img src="/img/color-and-normals/Decal_Example.png" alt="Decal Example" width="700px"/>
 </a>
 
