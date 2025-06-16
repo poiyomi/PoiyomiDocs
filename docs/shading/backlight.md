@@ -10,7 +10,7 @@ Backlight is a shading feature that is used to express lighting from *behind* a 
 
 While it may seem similar to some form of Rim Lighting, it's instead rendered quite differently. Lights can receive shadows and follow the light source, which can be effective when the light hits from behind. This feature behaves in a similar fashion to LilToon's Backlighting.
 
-<a target="_blank" href="/img/shading/backlight_demo.png">
+<a>
 <img src="/img/shading/backlight_demo.png" alt="Example of the Backlight Effect."/>
 </a>
 

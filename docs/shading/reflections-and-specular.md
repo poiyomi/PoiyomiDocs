@@ -12,7 +12,7 @@ To learn more about the principles of PBR shading, guides are available from [Ad
 
 Reflections and Specular are heavily influenced by the lighting setup of the scene. For these features to look correct, the scene should have well-defined lighting and reflection probes.
 
-<a target="_blank" href="/img/shading/PoiPBRDemo3.png">
+<a>
 <img src="/img/shading/PoiPBRDemo2.png" alt="Poiyomi PBR Demo"/>
 </a>
 

@@ -10,7 +10,7 @@ Emission is a function that allows adding brightness directly to the base color 
 
 There are 4 Emission Slots total, each with their own unique options. They are independent of each other. Emissions are always added with one another when overlapping.
 
-<a target="_blank" href="/img/special-fx/Emission_Example.png">
+<a>
 <img src="/img/special-fx/Emission_Example.png" alt="Emission Example"/>
 </a>
 

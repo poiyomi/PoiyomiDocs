@@ -159,11 +159,11 @@ If you are not a fan of the music that is playing, feel free to change it! To do
 
 You can then change the URL from the Inspector. Paste the new URL into the field as shown below. If you're already in Play Mode, click `Reload URL` to switch it.
 
-<a target="_blank" href="/img/audio-link/AudioLinkAvatarPrefabCap.png">
+<a>
 <img src="/img/audio-link/AudioLinkAvatarPrefabCap.png" alt="AudioLinkAvatar Prefab Ytdlp Player" width="600px"/>
 </a>
 <br></br>
-<a target="_blank" href="/img/audio-link/theYtdlpPlayer.png">
+<a>
 <img src="/img/audio-link/theYtdlpPlayer.png" alt="Ytdlp URL field" width="600px"/>
 </a>
 

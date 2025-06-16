@@ -6,6 +6,11 @@ description: Thry Editor is the underlying framework that powers the User Interf
 keywords: [thry, editor, thryeditor, thryrallo, ui, poiyomi, shader]
 ---
 
+<!-- FIXES SEO TITLE. DO NOT REMOVE! -->
+<head>
+    <title>Thry Editor | Poiyomi Shaders</title>
+</head>
+
 <div style={{textAlign: 'center', marginTop: '20px', marginBottom: '20px', marginLeft: '70px', marginRight: '70px'}}>
 <a target="_blank" href="/img/thryeditor/ThryEditor-Test-Logo.png">
 <img src="/img/thryeditor/ThryEditor-Test-Logo.png" alt="ThryEditor Placeholder Logo" width="600px"/>
@@ -24,7 +29,7 @@ Filters the properties by name, indicated by the exposed text field on the top h
 
 When typing in a keyword, the UI will only show headers or properties with the searched name. The user interface will filter out any modules that do not match the keyword you search.
 
-<a target="_blank" href="/img/thryeditor/search-new.png">
+<a>
 <img src="/img/thryeditor/search-new.png" alt="Search Feature" width="800px"/>
 </a>
 
@@ -34,7 +39,7 @@ When typing in a keyword, the UI will only show headers or properties with the s
 
 Left click opens the presets UI. Here you can select a number of presets and see live how they change your material. Afterwards you can either apply the presets or discard the changes.
 
-<a target="_blank" href="/img/thryeditor/Thry_PresetsList-new.png">
+<a>
 <img src="/img/thryeditor/Thry_PresetsList-new.png" alt="Presets Feature" width="800px"/>
 </a>
 
@@ -42,7 +47,7 @@ Left click opens the presets UI. Here you can select a number of presets and see
 
 Right Clicking opens the Quick Presets context menu. Here you can only select one preset, which is applied immediately.
 
-<a target="_blank" href="/img/thryeditor/Thry_QuickPresets.png">
+<a>
 <img src="/img/thryeditor/Thry_QuickPresets.png" alt="Quick Presets Feature" width="700px"/>
 </a>
 
@@ -56,7 +61,7 @@ The Shader Translator is there to help you swap from one shader to an new one. P
 
 [Shader Translator Information](./translator.md)
 
-<a target="_blank" href="/img/thryeditor/Thry_Translator.png">
+<a>
 <img src="/img/thryeditor/Thry_Translator.png" alt="Presets Feature" width="800px"/>
 </a>
 
@@ -71,7 +76,7 @@ Afterwards you can change the properties of one material and the linked material
 You can also drag and drop materials from the asset view.
 3. Click the `Done` button.
 
-<a target="_blank" href="/img/thryeditor/linking.png">
+<a>
 <img src="/img/thryeditor/linking.png" alt="Material Linking" width="700px"/>
 </a>
 
@@ -86,7 +91,7 @@ Using the `Tools` icon you get options for unbound properties.
 
 For all these options you can either list them in the output console or remove them from the material.
 
-<a target="_blank" href="/img/thryeditor/unbound.png">
+<a>
 <img src="/img/thryeditor/unbound.png" alt="Unbound Properties" width="700px"/>
 </a>
 
@@ -98,7 +103,7 @@ This number informs the user on how much Texture Memory (VRAM) that the assigned
 
 To learn more about how Texture Memory impacts performance, [see this page](/docs/general/textures-and-colors.md#vram-usage).
 
-<a target="_blank" href="/img/thryeditor/TextureVRAMText.png">
+<a>
 <img src="/img/thryeditor/TextureVRAMText.png" alt="Estimated VRAM on the assigned Texture" width="700px"/>
 </a>
 
@@ -110,7 +115,7 @@ Configurable in ThryEditor Settings, an asterisk (`*`) will appear next to a Mat
 
 The Fallback Shader option generates a tag for the material that informs VRChat which shader to use when your shaders are hidden. See [Rendering: VRC Fallback](/docs/rendering/main.md#vrc-fallback) for more details.
 
-<a target="_blank" href="/img/thryeditor/fallback.png">
+<a>
 <img src="/img/thryeditor/fallback.png" alt="VRC Fallback Selector" width="700px"/>
 </a>
 
@@ -126,7 +131,7 @@ Options per texture slot:
 - `Inverted`: Invert the value
 - `Channel`: Select the channel to use. The `Max` channel uses the max value of RGB channels.
 
-<a target="_blank" href="/img/thryeditor/packer_new.png">
+<a>
 <img src="/img/thryeditor/packer_new.png" alt="Texture Packer" width="700px"/>
 </a>
 

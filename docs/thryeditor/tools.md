@@ -22,7 +22,7 @@ The latest versions of Poiyomi Shaders do a much better handling of Shader Keywo
 
 Lists all materials in the project that are unlocked with an option to lock them.
 
-<a target="_blank" href="/img/thryeditor/unlocked.png">
+<a>
 <img src="/img/thryeditor/unlocked.png" alt="unlocked" width="700px"/>
 </a>
 
@@ -32,6 +32,6 @@ Has options to convert a series of textures or a gif into a Flipbook. Flipbooks 
 
 Using this option requires multi-selecting the file or image sequence, followed by `Right-Click`, navigating to `Thry -> Flipbooks` and choosing an option.
 
-<a target="_blank" href="/img/thryeditor/flipbook.png">
+<a>
 <img src="/img/thryeditor/flipbook.png" alt="flipbook maker" width="700px"/>
 </a>

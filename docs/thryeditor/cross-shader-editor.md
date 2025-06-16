@@ -43,7 +43,7 @@ Once you opened the Cross Shader Editor and added your Materials, the UI will sh
 If you are editing Materials that have different settings between each one, the Floats and Checkmarks will be indicated with a `-` character. If you change properties that show that, it will override the setting on all of them.
 :::
 
-<a target="_blank" href="/img/thryeditor/crossshadereditor2.png">
+<a>
 <img src="/img/thryeditor/crossshadereditor2.png" alt="Cross Shader Editor" width="600px"/>
 </a>
 

@@ -14,7 +14,7 @@ import TabItem from '@theme/TabItem';
 
 Rim Lighting is sometimes referred to in conjunction with or as Fresnel, in reference to the [Fresnel Effect](https://docs.unity3d.com/Manual/StandardShaderFresnel.html).
 
-<a target="_blank" href="/img/shading/RL_Demo.png">
+<a>
 <img src="/img/shading/RL_Demo.png" alt="Rim Lighting Demo"/>
 </a>
 

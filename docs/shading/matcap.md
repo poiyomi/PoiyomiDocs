@@ -16,7 +16,7 @@ There are a total of 4 Matcap sections (0, 1, 2, 3) available to you, each being
 All features from the deprecated **Iridescence** section has been merged into Matcap as the [Gradient](#gradient) UV Mode. This mode functions the same way as Iridescence.
 :::
 
-<a target="_blank" href="/img/shading/PoiMatcapDemo2.png">
+<a>
 <img src="/img/shading/PoiMatcapDemo2.png" alt="Poiyomi Matcaps"/>
 </a>
 

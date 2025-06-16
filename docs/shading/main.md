@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 The **Shading** section defines the base shading of the material. It controls how the material reflects light in a diffuse way, and how it is affected by other lighting. Options in the [Light Data](/docs/shading/light-data.md) section heavily affect how shading is performed.
 
-<a target="_blank" href="/img/shading/Shading_All.png">
+<a>
 <img src="/img/shading/Shading_All.png" alt="Various Shading Styles on multiple Material Spheres."/>
 </a>
 

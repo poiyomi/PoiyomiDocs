@@ -8,7 +8,7 @@ import PoiVideo from '@site/src/components/PoiVideo'
 
 The Cubemap section is similar to the Matcap section, but allows you to use a [cubemap](https://docs.unity3d.com/Manual/class-Cubemap.html) texture instead of a matcap texture. Cubemaps can be used to simulate reflections and other effects, and avoid some of the projection artifacts that occur with matcaps.
 
-<a target="_blank" href="/img/shading/PoiCubemapDemo.png">
+<a>
 <img src="/img/shading/PoiCubemapDemo.png" alt="Poiyomi Cubemap"/>
 </a>
 

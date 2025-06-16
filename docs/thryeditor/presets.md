@@ -11,7 +11,7 @@ Thry Editor allows you to create, apply, and save Presets for Materials using Po
 
 The Presets List can be summoned by pressing the **Presets** button.
 
-<a target="_blank" href="/img/thryeditor/Thry_PresetsList-new.png">
+<a>
 <img src="/img/thryeditor/Thry_PresetsList-new.png" alt="Thry Editor Presets" width="700px"/>
 </a>
 
@@ -21,13 +21,13 @@ From here, you will see a few categories. Some of these are included by default.
 
 To apply a Preset to your Material, click the Checkbox next to the name of the Preset in the list. When you do this, the Material will update with a preview of your changes.
 
-<a target="_blank" href="/img/thryeditor/Thry_SelectPreset2.png">
+<a>
 <img src="/img/thryeditor/Thry_SelectPreset2.png" alt="Selecting a Preset" width="700px"/>
 </a>
 
 *In this example, we are selecting a Preset called `Toon Hard Shadow` located in a category under `Lighting`. This Preset in particular adjusts some Shading settings.*
 
-<a target="_blank" href="/img/thryeditor/Thry_ConfirmPreset.png">
+<a>
 <img src="/img/thryeditor/Thry_ConfirmPreset.png" alt="Confirm your new settings" width="300px"/>
 </a>
 
@@ -46,14 +46,14 @@ It is recommended you use a Material **you are NOT using on your Avatar** for yo
 1. Begin by creating a fresh Material in your files by `Right-Click` in your Project Files, name it, then change the Shader to `.poiyomi/Poiyomi Toon`.
 2. On your newly-created Poiyomi Material, Click on the <FAIcon icon="fa-solid fa-screwdriver-wrench"/> **Tools** icon and checkmark the option `Is Preset`.
 
-<a target="_blank" href="/img/thryeditor/Thry_newMarkAsPreset.png">
+<a>
 <img src="/img/thryeditor/Thry_newMarkAsPreset.png" alt="Marking a Material as a Preset" width="700px"/>
 </a>
 
-3. After doing so, you should now see some fields appear. A green text explaining "This material is a preset" will appear.
-4. Name your Preset in the `Preset Name` field. This determines how it appears in the Preset List. Forward slashes "`/`" will indicate sub-categories.
+1. After doing so, you should now see some fields appear. A green text explaining "This material is a preset" will appear.
+2. Name your Preset in the `Preset Name` field. This determines how it appears in the Preset List. Forward slashes "`/`" will indicate sub-categories.
 
-<a target="_blank" href="/img/thryeditor/Thry_newPresetName.png">
+<a>
 <img src="/img/thryeditor/Thry_newPresetName.png" alt="Naming your Preset" width="700px"/>
 </a>
 
@@ -63,7 +63,7 @@ Once you reach this part, you are now ready to start marking properties on the M
 
 In a similar manner to [Marking Properties as Animated](/docs/general/locking.md#marking-properties-for-animation), `Right-Click` and in the context menu you will instead click `Is part of preset`. When you do this, a Light Blue colored `P` symbol will appear to the left next to it. This indicates that the property will be used in your Preset. Do this for each Property that you wish to use in your Preset.
 
-<a target="_blank" href="/img/thryeditor/Thry_MarkingPresets.png">
+<a>
 <img src="/img/thryeditor/Thry_MarkingPresets.png" alt="Tagging Properties as part of the Preset" width="400px"/>
 </a>
 
@@ -81,7 +81,7 @@ Optionally, you have the ability to make separate Sections of the Material serve
 
 When enabled, the Material will now include it's own `Preset Name` field near the top of each individual Section.
 
-<a target="_blank" href="/img/thryeditor/Thry_PresetsPerSection.png">
+<a>
 <img src="/img/thryeditor/Thry_PresetsPerSection.png" alt="Using per Section Presets" width="400px"/>
 </a>
 

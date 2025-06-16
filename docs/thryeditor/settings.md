@@ -7,7 +7,7 @@ keywords: [thry, editor, thryeditor, thryrallo, settings, ui, configuration, con
 
 The Settings window can be opened via the Gear <FAIcon icon="fa-solid fa-gear"/> icon in the top left corner of a material inspector. Or using the menu item of the top bar `Thry -> Shader UI -> Settings`.
 
-<a target="_blank" href="/img/thryeditor/ThryEditorSettingsLocation.png">
+<a>
 <img src="/img/thryeditor/ThryEditorSettingsLocation.png" alt="ThryEditor Settings" width="800px"/>
 </a>
 
@@ -88,6 +88,7 @@ If enabled, this option automatically fills empty Anchor Overrides slots of Mesh
 
 <details>
 <summary><b>Explanation of the Anchor Override</b></summary>
+
 Renderers use a point in space, called an Anchor, to sample lighting and reflection information from. They do this by searching for the closest Light Probe (and Reflection Probe) to this achor point. By default, this point is at the center of the Renderer's Bounding Box.
 
 Since by default each renderer's bounding box encompasses only the mesh of it's renderer, the anchor point often differs wildly between the meshes of an avatar. As a result, this often causes the lighting of different parts of the model to flicker or look different even when using the same settings. How much an avatar is affected by this entirely depends on the world it's in and how light probes were scattered around by the world's creator.
@@ -103,7 +104,7 @@ When you begin to initiate an Upload for the first time, you will be greeted wit
 
 We highly recommend you click `Yes (Recommended)` if this message shows up.
 
-<a target="_blank" href="/img/general/bad-lighting-fix-message.png">
+<a>
 <img src="/img/general/bad-lighting-fix-message.png" alt="ThryEditor Bad Lighting Auto-Fix Dialogue" width="400px"/>
 </a>
 :::
