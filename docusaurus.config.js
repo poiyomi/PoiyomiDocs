@@ -230,7 +230,12 @@ const config = {
         minHeadingLevel: 2,
         maxHeadingLevel: 3,
       },
-      // announcementBar: { id: 'global_message', content: 'Type your global Announcement Message here.', backgroundColor: '#fafbfc', textColor: '#091E42', isCloseable: true, },
+      announcementBar: {
+        id: 'alert_critical',
+        content: 'Version 9.2.49 has been pulled due to a critical bug removing Rendering Presets from the UI. This will be fixed soon in an upcoming patch. We apologize for the inconvenience!',
+        backgroundColor: '#ff0033',
+        textColor: '#ffffff',
+        isCloseable: false, },
       navbar: {
         title: "Poiyomi Shaders",
         logo: {
@@ -239,7 +244,6 @@ const config = {
           width: 44,
           height: 44,
         },
-        hideOnScroll: true,
         items: [
           {
             type: "doc",

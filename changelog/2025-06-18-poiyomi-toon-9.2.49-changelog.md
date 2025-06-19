@@ -8,6 +8,12 @@ authors:
 tags: [shader, vrchat, updates, update]
 ---
 
+:::danger
+This version has been pulled due to a critical UI bug causing the Rendering Presets to disappear! A patch will be released soon to fix this.
+
+If you have upgraded to this version, please downgrade back to version `9.2.43` in the meantime. We apologize for the inconvenience!
+:::
+
 This update includes some general improvements to the shader and is recommended for all users. The Toon version is now available in the VCC Repository, GitHub, and on BOOTH.
 
 ### Added
