@@ -235,7 +235,7 @@ const config = {
         content: 'Version 9.2.49 has been pulled due to a critical bug removing Rendering Presets from the UI. This will be fixed soon in an upcoming patch. We apologize for the inconvenience!',
         backgroundColor: '#ff0033',
         textColor: '#ffffff',
-        isCloseable: false, },
+        isCloseable: true, },
       navbar: {
         title: "Poiyomi Shaders",
         logo: {
