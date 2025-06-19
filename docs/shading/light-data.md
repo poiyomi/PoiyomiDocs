@@ -230,6 +230,15 @@ Enables Vertex Lights to be used. Vertex lighting allows realtime lights set to 
 
 Enables Vertex Lights to be used in Mirrors. Because VRChat interprets vertex lighting a little bit differently when looked at through a Mirror, this option enables correct handling of those vertex lights in the mirror.
 
+### Light Volumes
+
+- `Type`: **Boolean**
+  - Default: `true`
+
+Enables support for [VRC Light Volumes <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/REDSIM/VRCLightVolumes), a voxel-based Light Probes replacement used in some VRChat Worlds. It allows for more natural lighting and balanced illumination to appear on your Material from an environment using VRC Light Volumes.
+
+The results of this setting can be easily noticeable in Worlds that use it. For more information on this system as well as a list of Worlds to test this effect in, view the [GitHub Repository <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/REDSIM/VRCLightVolumes).
+
 ## Add Pass (Point & Spot Lights)
 
 Options relating to lighting performed in the Add Pass. The Add Pass is used for any Realtime Lights beyond the first in a scene. This includes Realtime Point, Spot, and Directional Lights.

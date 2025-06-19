@@ -12,6 +12,7 @@ const config = {
   url: "https://www.poiyomi.com",
   baseUrl: "/",
   onBrokenLinks: "throw",
+  onBrokenAnchors: "warn",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
   organizationName: "poiyomi", // Usually your GitHub org/user name.
@@ -203,7 +204,6 @@ const config = {
           tagName: 'link',
           attributes: {
             rel: 'apple-touch-icon', // Used for Apple Devices because Apple is very petty with their WebKit.
-            sizes: '180x180',
             href: '/img/apple-touch-icon.png',
           }
         },
@@ -230,13 +230,16 @@ const config = {
         minHeadingLevel: 2,
         maxHeadingLevel: 3,
       },
+      // announcementBar: { id: 'global_message', content: 'Type your global Announcement Message here.', backgroundColor: '#fafbfc', textColor: '#091E42', isCloseable: true, },
       navbar: {
+        title: "Poiyomi Shaders",
         logo: {
-          alt: "Poiyomi Text Logo",
-          src: "img/logo.svg",
+          alt: "Poiyomi Circle Logo",
+          src: "img/circle_logo.svg",
           width: 44,
           height: 44,
         },
+        hideOnScroll: true,
         items: [
           {
             type: "doc",

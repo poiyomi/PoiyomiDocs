@@ -12,12 +12,12 @@ keywords: [thry, editor, thryeditor, thryrallo, ui, poiyomi, shader]
 </head>
 
 <div style={{textAlign: 'center', marginTop: '20px', marginBottom: '20px', marginLeft: '70px', marginRight: '70px'}}>
-<a target="_blank" href="/img/thryeditor/ThryEditor-Test-Logo.png">
-<img src="/img/thryeditor/ThryEditor-Test-Logo.png" alt="ThryEditor Placeholder Logo" width="600px"/>
-</a>
+    <a>
+        <img src="/img/thryeditor/ThryEditor-Test-Logo.png" alt="ThryEditor Placeholder Logo" width="600px"/>
+    </a>
 </div>
 
-Authored by [Thryrallo](https://github.com/Thryrallo), Thry Editor (short for "**Thry**rallo **Editor**") is the underlying framework that powers the User Interface of the Shader. It serves as the core Shader Inspector and Editor for the all the features used across Poiyomi Shaders.
+Authored by [Thryrallo](https://github.com/Thryrallo), Thry Editor (short for "**Thry**rallo **Editor**") is the underlying framework that powers the User Interface of the Shader. It serves as the core Shader Inspector and Editor for all the features used across Poiyomi Shaders.
 
 Not only does it serve as the primary framework for the Material User Interface, there are also a few other features under the hood that are worth knowing about. This page will cover all the known features included with Thry Editor, with extended information on some larger features found on the sidebar.
 
