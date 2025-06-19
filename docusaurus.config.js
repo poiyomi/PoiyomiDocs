@@ -232,7 +232,7 @@ const config = {
       },
       announcementBar: {
         id: 'alert_critical',
-        content: 'Version 9.2.49 has been pulled due to a critical bug removing Rendering Presets from the UI. This will be fixed soon in an upcoming patch. We apologize for the inconvenience!',
+        content: 'Version 9.2.49 and 9.2.50 have critical bugs causing issues with Rendering Presets and Material Lock In. We are working to fix this as soon as possible. Until then, please downgrade your version back to 9.2.43. We apologize for the inconvenience!',
         backgroundColor: '#ff0033',
         textColor: '#ffffff',
         isCloseable: true, },
