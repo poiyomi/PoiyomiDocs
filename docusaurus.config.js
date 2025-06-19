@@ -230,12 +230,13 @@ const config = {
         minHeadingLevel: 2,
         maxHeadingLevel: 3,
       },
-      announcementBar: {
-        id: 'alert_critical',
-        content: 'Version 9.2.49 and 9.2.50 have critical bugs causing issues with Rendering Presets and Material Lock In. We are working to fix this as soon as possible. Until then, please downgrade your version back to 9.2.43. We apologize for the inconvenience!',
-        backgroundColor: '#ff0033',
-        textColor: '#ffffff',
-        isCloseable: true, },
+      // announcementBar: {
+      //  id: 'alert_critical',
+      //  content: 'Global Announcement goes here.',
+      //  backgroundColor: '#ff0033',
+      //  textColor: '#ffffff',
+      //  isCloseable: true,
+      // },
       navbar: {
         title: "Poiyomi Shaders",
         logo: {
