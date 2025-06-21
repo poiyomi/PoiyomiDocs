@@ -40,3 +40,4 @@ This update includes some general improvements to the shader and is recommended 
 - Fixed Vertex Colors targeting the wrong channels in Dissolve.
 - Fixed a million warnings being thrown when using the Material Inspector.
 - Fixed an issue where Emission settings were being applied after lighting, causing the color to be unlit even when Emission was `0`.
+  - *This was resolved by properly applying Emission Color to the surface prior to lighting. This means things using Emission Override will be darker in the dark now since Emission isn't being applied twice.*
