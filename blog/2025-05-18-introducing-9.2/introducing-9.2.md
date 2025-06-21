@@ -30,7 +30,7 @@ As you can see, the results can be very obvious! The Material appears more evenl
 
 Since VRC Light Volumes was created since earlier this year, you should begin to notice more and more Worlds adopt this system. Adding support for VRC Light Probes can make the shader future-proof to newer Worlds that plan to take advantage of this new lighting system.
 
-**The best part of all this? You don't have to do anything to your Materials!** It's automatically enabled in the back-end. All you need to do is make sure to update to the latest version of Poiyomi Shaders and just simply set your Materials to use the latest version.
+**The best part of all this? You don't have to do anything to your Materials!** It's automatically enabled by default. All you need to do is make sure to update to the latest version of Poiyomi Shaders and just simply set your Materials to use the latest version.
 
 ## Vertex Options Reorganized
 
