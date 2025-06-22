@@ -1,7 +1,7 @@
 ---
-slug: poiyomi-toon-9-2-51-changes
-title: 'Poiyomi Toon 9.2.51 Changelog'
-description: Information regarding the release of Poiyomi Toon 9.2.51.
+slug: poiyomi-toon-9-2-52-changes
+title: 'Poiyomi Toon 9.2.52 Changelog'
+description: Information regarding the release of Poiyomi Toon 9.2.52.
 hide_table_of_contents: true
 authors:
   poiyomi
