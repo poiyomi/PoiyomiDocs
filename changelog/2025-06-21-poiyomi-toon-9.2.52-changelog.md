@@ -13,3 +13,6 @@ This patch resolves a typo found in the Shader and updates Thry Editor version t
 ### Fixes
 - Fixed a typo in the Toon 9.1 shaders being named as `oiyomi Toon` instead of `Poiyomi Toon`.
 - Updated Thry Editor to v2.66.7.
+
+### Known Issues
+- Entire Material Presets may be unstable for certain setups. [Thry Editor Issue #143](https://github.com/Thryrallo/ThryEditor/issues/143).
