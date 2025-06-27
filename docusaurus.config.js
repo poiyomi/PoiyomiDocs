@@ -241,7 +241,7 @@ const config = {
         title: "Poiyomi Shaders",
         logo: {
           alt: "Poiyomi Circle Logo",
-          src: "img/circle_logo.svg",
+          src: "img/logo.svg",
           width: 44,
           height: 44,
         },
