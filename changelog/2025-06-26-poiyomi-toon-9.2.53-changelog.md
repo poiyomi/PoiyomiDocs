@@ -8,10 +8,10 @@ authors:
 tags: [shader, vrchat, updates, update]
 ---
 
-This update introduces support for the upcoming VRC Light Volumes 2.0 update. The Toon version is now available in the VCC Repository, GitHub, and on BOOTH.
+This update introduces initial support for the upcoming VRC Light Volumes 2.0 update. The Toon version is now available in the VCC Repository, GitHub, and on BOOTH.
 
 ### Improvements & Fixes
-- Support for VRC Light Volumes v2.0.0.
+- Initial support for VRC Light Volumes v2.0.0.
 - Fixed a shadow pass bug breaking d4rk Avatar Optimizer.
 
 ### Known Issues
