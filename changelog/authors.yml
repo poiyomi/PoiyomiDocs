@@ -40,3 +40,13 @@ teeh:
     github: teehzero
     bluesky: teeh.me
     x: teehexploder
+
+rurre:
+  name: Pumkin
+  title: Contributor
+  url: https://github.com/rurre
+  image_url: https://github.com/rurre.png
+  page: true
+  socials:
+    github: rurre
+    bluesky: pumkin.bsky.social
