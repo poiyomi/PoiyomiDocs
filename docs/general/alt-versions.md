@@ -23,7 +23,7 @@ Some of these alternate Shader versions are not recommended for daily usage as t
 The Poiyomi World Shader includes the necessary Global Illumination components needed for it to render properly in Worlds with Baked Lighting. It is primarily targeted for those who intend to use features found in Poiyomi Shaders in their VRChat Worlds.
 
 :::tip Optimized for Worlds SDK users only
-Poiyomi World matches the same features as the normal Poiyomi Toon Shader, with the only difference being that it includes Global Illumination support.
+Poiyomi World matches the same features as the normal Poiyomi Toon Shader, with the only difference being that it includes standard Global Illumination support.
 
 We recommend only using this Shader if you are using the Worlds SDK.
 :::
@@ -52,16 +52,30 @@ The Grab Pass Shader is used for specialized effects that require taking a scree
 
 Because this shader version uses a Grab Pass, it has the <u>strongest performance impact</u> as it has to take a screenshot every frame to render. If you wish to use this feature, use it judiciously!
 
-## Geometric Dissolve <span class="badge badge--primary">Pro</span>
+## Geometric Dissolve
 
 - `.poiyomi/Poiyomi Pro Geometric Dissolve`
 
 Poiyomi Pro Geometric Dissolve is an advanced version in Poiyomi Pro that expands beyond the features of what a typical Dissolve can offer. It uses the 3D Mesh to manipulate the vertices, creating an advanced 3D Dissolve animation. See [Geometric Dissolve](/docs/extended-features/geometric-dissolve.md) for more info.
 
-## Fur <span class="badge badge--primary">Pro</span>
+## Fur
 
 - `.poiyomi/Poiyomi Pro Fur`
 
 Poiyomi Pro Fur is a system in Poiyomi Pro that uses a height-based technique to enable simulation of fabrics and hairs. It can look similar to how fur is simulated in animated films but with some differences. See [Fur](/docs/extended-features/fur.md) for more info.
 
 Fur simulation is a very expensive feature, as it must render every frame in order to simulate the effect. As such, this will cause a huge performance impact when used.
+
+## ShatterWave
+
+- `.poiyomi/Poiyomi Pro ShatterWave`
+
+Poiyomi Pro ShatterWave is an advanced special effect that uses the mesh's vertices to create a wavy effect across the mesh in variation. It functions similar to Geometric Dissolve, but does it in a wavy pattern instead. See [Tessellated](/docs/extended-features/tessellated.md) for more info.
+
+## Tessellated
+
+- `.poiyomi/Poiyomi Pro Tessellated`
+
+The Tessellated shader includes a shading process that subdivides triangles into a more realistic structure for certain realistic effects. See [Tessellated](/docs/extended-features/tessellated.md) for more info.
+
+Tessellated shaders are extremely expensive and will greatly hinder your computer's performance, even on the most powerful hardware out there. Please exercise caution if using it.

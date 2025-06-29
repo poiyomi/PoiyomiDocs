@@ -258,29 +258,46 @@ const config = {
             position: "left"
           },
           {
-            to: "/blog",
-            label: "Blog: Updates & Tips",
-            position: "left"
+            type: "dropdown",
+            label: "Blog & Updates",
+            position: "left",
+            items: [
+              {
+                label: "Blog: Tips & Tricks",
+                to: "/blog",
+              },
+              {
+                label: "Changelogs",
+                to: "/changelog",
+              },
+            ],
           },
           {
-            to: "/changelog",
-            label: "Changelogs",
-            position: "left"
-          },
-          {
-            href: "https://bsky.app/profile/poiyomi.com",
-            label: "Bluesky",
+            type: "dropdown",
+            label: "Community",
             position: "right",
-          },
-          {
-            href: "https://discord.gg/poiyomi",
-            label: "Discord",
-            position: "right",
-          },
-          {
-            href: "https://github.com/poiyomi/PoiyomiToonShader",
-            label: "GitHub",
-            position: "right",
+            items: [
+              {
+                label: "Discord",
+                href: "https://discord.gg/poiyomi",
+              },
+              {
+                label: "Bluesky",
+                href: "https://bsky.app/profile/poiyomi.com",
+              },
+              {
+                label: "Twitter / X",
+                href: "https://x.com/poiyomi",
+              },
+              {
+                label: "GitHub",
+                href: "https://github.com/poiyomi/PoiyomiToonShader",
+              },
+              {
+                label: "BOOTH",
+                href: "https://poiyomi.booth.pm/",
+              }
+            ],
           },
           {
             type: "search",

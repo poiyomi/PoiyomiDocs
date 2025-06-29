@@ -1,6 +1,6 @@
 {
   "name": "poiyomidocs",
-  "version": "2025.5.28",
+  "version": "2025.6.28",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
