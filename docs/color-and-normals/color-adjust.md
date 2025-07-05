@@ -7,7 +7,7 @@ keywords: [hue, color, saturation, gamma, hue shift, poiyomi]
 ---
 import PoiVideo from '@site/src/components/PoiVideo'
 
-The Color Adjust section provides options for modifying the base color of the material. This is applied directly after the main [Color and Normals](/docs/color-and-normals/main.md) section, and will not affect any other sections that modify the Base Color.
+The Color Adjust section provides options for modifying the base color of the material. This is applied directly after the main [Color and Normals](/docs/color-and-normals/color-and-normals.md) section, and will not affect any other sections that modify the Base Color.
 
 Color Adjust can be used to quickly change the colors presented from the main texture to a different hue of color either directly or indirectly. The results of the hue shift can vary depending on which [Color Space](#color-space) is chosen, and how much [Saturation](#saturation), [Brightness](#brightness), and [Gamma](#gamma), is set by the user.
 

@@ -42,8 +42,8 @@ Alternatively, place these presets in your exports folder. For most people, this
 
 Textures have a specific prefix when exported: `t_$textureSet_`. `t` indicates it's a texture (and groups textures together when sorted), `$textureSet` which the name of the Material set set being used. At the end of the filename is the type of texture, which will be one of the following:
 
-- `BaseColor`: Place in the [`Main Texture`](/docs/color-and-normals/main.md#main-texture) slot in [Color & Normals](/docs/color-and-normals/main.md).
-- `NormalMap`: Place in the [`Normal Map`](/docs/color-and-normals/main.md#normal-map) texture slot in [Color & Normals](/docs/color-and-normals/main.md). Make sure to mark it as a normal map in the texture import settings.
+- `BaseColor`: Place in the [`Main Texture`](/docs/color-and-normals/color-and-normals.md#main-texture) slot in [Color & Normals](/docs/color-and-normals/color-and-normals.md).
+- `NormalMap`: Place in the [`Normal Map`](/docs/color-and-normals/color-and-normals.md#normal-map) texture slot in [Color & Normals](/docs/color-and-normals/color-and-normals.md). Make sure to mark it as a normal map in the texture import settings.
 - `AmbientOcclusion`: Place in the [`AO`](docs/shading/light-data.md#ao-maps) texture slot in [Light Data](/docs/shading/light-data.md). Make sure to **uncheck sRGB** in the texture import settings.
 - `MetallicSmoothnessMaps`: Place in the [`Packed Maps`](/docs/shading/reflections-and-specular.md#packed-maps) texture slot in [Reflections & Specular](/docs/shading/reflections-and-specular.md). Make sure to **uncheck sRGB** in the texture import settings, and that all of your sliders are set to 1.0, which uses the map's value. Note that this uses `User0` and `User1` channels in Substance Painter for the Reflection and Specular masks respectively, which can be hand-authored to control the amount of reflection and specular.
 - `EmissionMap`: Place in the [`Emission Map`](/docs/special-fx/emission.md#emission-map) texture slot in [`Emission`](/docs/special-fx/emission.md).

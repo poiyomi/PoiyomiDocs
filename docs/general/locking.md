@@ -129,11 +129,11 @@ This behavior is not a bug, it's behavior defined by Unity, beyond the control o
 
 | Property Name | Can be Renamed? | Property |
 |--|--|--|
-| `_Color`                  | ✔️ | [Main Color](/docs/color-and-normals/main.md#color--alpha) |
-| `_MainTex_ST`             | ❌ | [Main Texture Tiling/Offset](/docs/color-and-normals/main.md#main-texture) |
-| `_BumpMap_ST`             | ❌ | [Normal Map Tiling/Offset](/docs/color-and-normals/main.md#normal-map) |
-| `_BumpScale`              | ✔️ | [Normal Map Intensity](/docs/color-and-normals/main.md#normal-map) |
-| `_Cutoff`                 | ✔️ | [Alpha Cutoff](/docs/color-and-normals/main.md#alpha-cutoff) |
+| `_Color`                  | ✔️ | [Main Color](/docs/color-and-normals/color-and-normals.md#color--alpha) |
+| `_MainTex_ST`             | ❌ | [Main Texture Tiling/Offset](/docs/color-and-normals/color-and-normals.md#main-texture) |
+| `_BumpMap_ST`             | ❌ | [Normal Map Tiling/Offset](/docs/color-and-normals/color-and-normals.md#normal-map) |
+| `_BumpScale`              | ✔️ | [Normal Map Intensity](/docs/color-and-normals/color-and-normals.md#normal-map) |
+| `_Cutoff`                 | ✔️ | [Alpha Cutoff](/docs/color-and-normals/color-and-normals.md#alpha-cutoff) |
 | `_DetailMask_ST`          | ❌ | [Detail Mask Tiling/Offset](/docs/color-and-normals/details.md#detail-mask) |
 | `_DetailNormalMap_ST`     | ❌ | [Detail Mask Tiling/Offset](/docs/color-and-normals/details.md#detail-normal) |
 | `_DetailNormalMapScale`   | ✔️ | [Detail Mask Tiling/Offset](/docs/color-and-normals/details.md#normal-intensity) |

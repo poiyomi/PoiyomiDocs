@@ -31,77 +31,81 @@ const config = {
         redirects: [
           // /docs/oldDoc -> /docs/newDoc
           {
-            from: "/special-fx/udim-discard",
             to: "/special-fx/uv-tile-discard",
+            from: "/special-fx/udim-discard",
           },
           {
-            from: "/general/substance-export",
             to: "/general/substance-painter",
+            from: "/general/substance-export",
           },
           {
+            to: '/extended-features/grabpass',
             from: '/grab-pass/grabpass',
-            to: '/extended-features/grabpass',
           },
           {
+            to: '/extended-features/grabpass',
             from: '/grabpass',
-            to: '/extended-features/grabpass',
           },
           {
-            from: '/geometric-dissolve',
             to: '/extended-features/geometric-dissolve',
+            from: '/geometric-dissolve',
           },
           {
-            from: "/color-and-normals/global-themes",
             to: "/modifiers/global-themes",
+            from: "/color-and-normals/global-themes",
           },
           {
-            from: '/outlines/main',
             to: '/outlines/',
+            from: '/outlines/main',
           },
           {
-            from: '/modifiers/parallax',
             to: '/modifiers/uvs/parallax',
+            from: '/modifiers/parallax',
           },
           {
-            from: '/post-processing/pp-animations',
             to: '/modifiers/post-processing/pp-animations',
+            from: '/post-processing/pp-animations',
           },
           {
-            from: '/post-processing/main',
             to: '/modifiers/post-processing/main',
+            from: '/post-processing/main',
           },
           {
             // Redirect old VCC Webpage to new "Download & Install" page.
-            from: '/poiyomitoonvcc',
             to: '/download/',
+            from: '/poiyomitoonvcc',
           },
           {
-            from: '/general/v7-upgrade',
             to: '/general/upgrade/v7-upgrade',
+            from: '/general/v7-upgrade',
           },
           {
-            from: '/general/v8-to-v9-upgrade',
             to: '/general/upgrade/v8-upgrade',
+            from: '/general/v8-to-v9-upgrade',
           },
           {
             // Stylized Specular renamed to Stylized Reflections in 9.2.10
-            from: '/shading/stylized-specular',
             to: '/shading/stylized-reflections',
+            from: '/shading/stylized-specular',
           },
           {
             // Vertex Options moved to new category in 9.3 release cycle.
-            from: '/color-and-normals/vertex-options',
             to: '/vertex-options/basics',
+            from: '/color-and-normals/vertex-options',
           },
           {
             // Vertex Glitching moved to new category in 9.3 release cycle.
-            from: '/color-and-normals/vertex-glitching',
             to: '/vertex-options/glitching',
+            from: '/color-and-normals/vertex-glitching',
           },
           {
             // Vertex Colors moved to new category in 9.3 release cycle.
-            from: '/color-and-normals/vertex-colors',
             to: '/vertex-options/vertex-colors',
+            from: '/color-and-normals/vertex-colors',
+          },
+          {
+            to: '/color-and-normals/',
+            from: '/color-and-normals/main'
           }
           // Redirect from multiple old paths to the new path
           // {
@@ -330,7 +334,7 @@ const config = {
               },
               {
                 label: "Color & Normals",
-                to: "/color-and-normals/main",
+                to: "/color-and-normals",
               },
               {
                 label: "Shading",
