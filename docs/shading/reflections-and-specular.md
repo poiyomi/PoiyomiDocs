@@ -54,7 +54,7 @@ A tint color applied to the specular. This is multiplied with the material's spe
 
 ## Packed Maps
 
-- `Type`: **Data** Texture (sRGB **OFF**)
+- `Type`: **Data** Texture (`sRGB = Off`)
 
 The map texture defines multiple settings of the Reflections and Specular across different parts of the material. These maps are *packed* into a single texture, which increases performance and reduces memory usage.
 
@@ -182,15 +182,65 @@ How strong the low-angle reflective rim should affect the material. This is simi
 
 ## Cubemap
 
-- `Type`: **Cubemap** Texture (sRGB **ON**)
+- `Type`: **Cubemap** Texture (`sRGB = On`)
 
 Fallback Cubemap to use if a Reflection Probe is not found in the World. This is used to provide a fallback reflection for maps, or areas of maps, that don't have a reflection probe defined.
 
-### Force Fallback
+## Force Fallback
 
 - `Type`: **Boolean**
 
-Forces the material to always use the fallback cubemap. This is useful for forcing a specific reflection for stylized models.
+Forces the material to always use the above specified Fallback Cubemap in Reflections & Specular. This is useful for forcing a specific reflection for stylized models.
+
+## Anisotropics
+
+- `Type`: **Boolean**
+
+Enables Anisotropy effects in Reflections & Specular, which can emulate an effect similar to silk and/or polyester.
+
+Using Anisotrophy in Reflections & Specular can be useful for matching your PBR textures and settings, especially when creating stylized hair.
+
+### Anisotropy Map
+
+- `Type`: **Data** Texture (`sRGB = Off`)
+
+Texture Map to use for the anisotrophic effects.
+
+### Anisotropy
+
+- `Type`: **Float**, Range: `-1.0 - 1.0`
+
+Adjusts the angle of the Anisotrophic effect.
+
+### Reflection Strength
+
+- `Type`: **Float**, Range: `1.0 - 5.0`
+
+Adjusts the intensity of the Anisotropic reflections.
+
+### Roughness Anisotropy
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+Adjusts how rough the Anisotrophy effect is.
+
+## 2nd Specular
+
+- `Type`: **Boolean**
+
+2nd Specular enables an additional specular reflection. This can be used to create a multi-layered specular effect, with a different smoothness for each layer.
+
+### Strength
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+Strength of the 2nd specular layer. This value scales the same way as Specular Strength.
+
+### Smoothness
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+Smoothness of the 2nd specular layer. This value scales the same way as Smoothness.
 
 ## Split Mask Sampling
 
@@ -218,32 +268,28 @@ UV selection for the Reflection and Specular masks, if Split Mask Sampling is en
 
 X/Y Panning for the Reflection and Specular masks, if Split Mask Sampling is enabled.
 
-## 2nd Specular
-
-- `Type`: **Boolean**
-
-2nd Specular enables an additional specular reflection. This can be used to create a multi-layered specular effect, with a different smoothness for each layer.
-
-### Strength
-
-- `Type`: **Float**, Range: `0.0 - 1.0`
-
-Strength of the 2nd specular layer. This value scales the same way as Specular Strength.
-
-### Smoothness
-
-- `Type`: **Float**, Range: `0.0 - 1.0`
-
-Smoothness of the 2nd specular layer. This value scales the same way as Smoothness.
+## GSAA & Advanced Controls
 
 ### Lit Fallback
 
 - `Type`: **Boolean**
     - Default: `On`
 
-Lit Fallback applies the lighting of the map to the fallback cubemap. This allows the fallback cubemap to fit more closely with the environmental lighting.
+Lit Fallback applies the lighting of the map to the fallback cubemap. This allows the fallback cubemap to fit more closely with the environmental lighting, so it's recommended to keep this property enabled.
 
-## GSAA
+### Ignore Casted Shadows
+
+- `Type`: **Boolean**
+
+If enabled, ignores shadows casted from the mesh in Reflections & Specular.
+
+### Pixel Normal Mix
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+Adjusts the Normal Mix of Reflections & Specular.
+
+### GSAA
 
 - `Type`: **Boolean**
 

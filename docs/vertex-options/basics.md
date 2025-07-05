@@ -10,6 +10,10 @@ import PoiVideo from '@site/src/components/PoiVideo'
 
 This section can be described by Poiyomi as *"the silly options"* due to the amount of weird and strange things that can be accomplished with Vertex Options.
 
+:::note Known Z-fighting Issues
+Vertex Options can cause nasty Z-fighting issues when seen against projection-based shaders, as they re-render the mesh using a shader of their own. This is a known limitation in Unity.
+:::
+
 <PoiVideo url='/vid/color-and-normals/VertexOptionsDemo.mp4'/>
 <em>Demonstration of two Material Spheres being manipulated by various settings.</em>
 
