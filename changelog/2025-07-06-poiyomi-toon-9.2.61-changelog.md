@@ -8,7 +8,10 @@ authors:
 tags: [shader, vrchat, updates, update]
 ---
 
-This update includes a great speed increase in shader compilation times during Upload and is recommended to all users. The Toon version is now available in the VCC Repository, GitHub, and on BOOTH.
+This update includes a great speed increase compilation times during upload and is recommended to all users. You can expect the total shader compilation time to be cut in half in comparison to previous versions.
 
-### Changes & Fixes
-- About ~66% speed increase for upload compile times.
+The Toon version is now available in the VCC Repository, GitHub, and on BOOTH.
+
+### Removed
+- Removed Unity Fog variants to improve shader compile times.
+  - *This should account for a ~66% speed increase for upload compile times.*
