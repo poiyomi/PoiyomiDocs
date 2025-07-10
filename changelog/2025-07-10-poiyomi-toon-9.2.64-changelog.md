@@ -10,5 +10,5 @@ tags: [shader, vrchat, updates, update]
 
 This update includes a last-minute fix to the shader... now I should hopefully get some sleep. The Toon version is now available in the VCC Repository, GitHub, and on BOOTH.
 
-### Fixed
+### Fixes
 - Fixed a bug in Pathing.
