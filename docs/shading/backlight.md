@@ -17,60 +17,60 @@ While it may seem similar to some form of Rim Lighting, it's instead rendered qu
 
 ## Color
 
-- `Type`: **HDR Color**
+- `Type`: <PropertyIcon name="hdrcolor" />**HDR Color**
 
 Color of the light background.
 
 ## Texture
 
-- `Type`: **Color** Texture (`sRGB: ON`)
+- `Type`: <PropertyIcon name="texture" />**Color** Texture (`sRGB: ON`)
 
 Texture that can be used as the Color of the Backlight.
 
 ## Main Color Blend
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to blend the color of the Backlight with the Base Color.
 
 ## Normal Strength
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to blend the lighting with the Normals on your Model or Material.
 
 ## Border
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 The range of light that can be used with the Backlight.
 
 ## Blur
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 The amount of blur on the Backlight.
 
 ## Directivity
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 Determines the amount of brightness *in degrees* that change according to the direction of the light source.
 
 ## View Direction Strength
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 The *degree* to which the brightness is changed according to the direction of light.
 
 ## Receive Shadow
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 If enabled, receive Shadows from other objects.
 
 ## Backface Mask
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables/Disables the visibility of the backlight's light on the backface.

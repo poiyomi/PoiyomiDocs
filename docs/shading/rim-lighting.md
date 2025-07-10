@@ -21,7 +21,7 @@ Rim Lighting is sometimes referred to in conjunction with or as Fresnel, in refe
 
 ## Style
 
-- `Type`: **Dropdown**, Options: `Poiyomi`/`UTS2`/`LilToon`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Poiyomi`/`UTS2`/`LilToon`
 
 Choose the style of Rim Lighting that you wish to use.
 
@@ -39,7 +39,7 @@ Uses the Rim style that is well known in LilToon Shader.
 
 ## Mask & Bias
 
-- `Type`: **Data** Texture (`sRGB: OFF`)
+- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB: OFF`)
 
 A texture overlaid on the mesh defining the intensity of the rim lighting at each point. It should generally be black and white, as only its value (specifically the red channel value) will be used, not the color.
 
@@ -57,7 +57,7 @@ Bias of the Mask Intensity.
 
 ### Rim Texture
 
-- `Type`: **Color** Texture (`sRGB: ON`)
+- `Type`: <PropertyIcon name="texture" />**Color** Texture (`sRGB: ON`)
 
 A texture overlaid on the mesh defining the color of the rim lighting.
 
@@ -65,7 +65,7 @@ When expanded, the Rim Texture has options for **Tiling** and **Offset**. The as
 
 ### Color
 
-- `Type`: **Color**
+- `Type`: <PropertyIcon name="color" />**Color**
 
 The Color of your Rim Lighting. Blended with the base color.
 
@@ -77,31 +77,31 @@ This will instead be an HDR Color field if using `LilToon` Rim Lighting mode.
 
 ### Blend Mode
 
-- `Type`: **Dropdown**, Options: `Add`/`Replace`/`Multiply`/`Mixed`/`Screen`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Add`/`Replace`/`Multiply`/`Mixed`/`Screen`
 
 Choice of how the Rim Lighting will blend with the base texture.
 
 ### Blend Alpha
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Controls the Alpha visibility of the Rim Lighting. `0` is invisible, while `1` is fully visible.
 
 ### Mix Base Color
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Controls how much the Rim Lighting's Color will blend with the Base Color.
 
 ### Brightness
 
-- `Type`: **Float**, Range: `0.0 - 10.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 10.0`
 
 Controls how bright the Rim Lighting will be overall.
 
 ### Emission
 
-- `Type`: **Float**, Range: `0.0 - 20.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 20.0`
 
 Controls the emission value of the rim lighting color. Emission emulates a part of a material that produces light, and adds directly on top of the base color.
 
@@ -115,69 +115,73 @@ Total emission values above 1 will generally cause glow in worlds with bloom.
 
 ### Width
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Controls the width of the rim lighting. Affects how far from the edge (or center) the rim extends.
 
 ### Sharpness
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Controls the sharpness of the transition between minimum and maximum rim lighting. At `0`, the rim will be a gradual transition, with the maximum color only present at the very outer edge. As **Rim Sharpness** increases, the maximum color extends further toward the edge as defined by the [Rim Width](#width). At `1`, there is a sharp transition between no rim lighting and rim lighting.
 
 ### Rim Power
 
-- `Type`: **Float**, Range: `0.0 - 10.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 10.0`
 
 Controls how intense the Rim Lighting has an effect.
 
 ### Normal Strength
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Controls how the Rim Lighting will blend with your Normals. A value of `0` ignores your Normals, while a value of `1` will fully blend within your Normals.
 
 ### Invert Rim
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="floatrange" />**Toggle**
 
 Inverts the Rim Lighting direction. When unchecked, rim lighting goes from "outside-in" (facing away from viewer has maximum intensity). When checked, rim lighting goes from "inside-out" (facing toward viewer has maximum intensity).
 
 ## Light Direction Mask
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables the ability to mask the Rim Lighting to a Lighting Direction Mask, whether that would be Custom or to use the Shadow Map.
 
 ### Light Falloff Type
 
-- `Type`: **Dropdown**, Options: `Shadow Map`/`Custom`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Shadow Map`/`Custom`
 
 Choice of the Light Falloff Map it's going to use as a Mask.
 
 ### Invert Shadow Mask
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Inverts the values of the Shadow Mask
 
 ### Shadow Mask Strength
 
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+
 Controls the intensity of that Mask.
 
 ### Shrink In Shadow
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Lowers the size of the Rim Light Width in the Masked area.
 
 ## Hue Shift
 
-- `Type:` **Toggle**
+- `Type:` <PropertyIcon name="toggle" />**Toggle**
 
 Enables the Hue Shift feature in Rim Lighting.
 
 ### Color Space
 
-- `Type`: **Dropdown**, Options: `OKLab`/`HSV`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `OKLab`/`HSV`
 
 Choice of Color Space to use for the Hue Shift. By default, it will be set to `OKLab`.
 
@@ -185,7 +189,7 @@ Learn about the difference of Color Spaces as documented here in [Color Adjust](
 
 ### Select or Shift
 
-- `Type`: **Dropdown**, Options: `Hue Select`/`Hue Shift`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Hue Select`/`Hue Shift`
   - Default: `Hue Shift`
 
 This dropdown allows you to select how the Color Adjustment should behave when the Hue Shift is used. By default, this will be set to `Hue Shift`.
@@ -200,13 +204,13 @@ This dropdown allows you to select how the Color Adjustment should behave when t
 
 ### Shift Speed
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 Sets the speed at which the rim color's hue value is shifted. At a value of `1`, it will go through a complete cycle of the color wheel once every 20 seconds.
 
 ### Hue Shift
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 A fixed value by which to hue shift the material. At values of `0` and `1`, there will be no change to the material. In between, the hue will shift through the color wheel.
 
@@ -214,25 +218,25 @@ A fixed value by which to hue shift the material. At values of `0` and `1`, ther
 
 ### Apply to Alpha
 
-- `Type`: **Dropdown**, Options: `Off`/`Add`/`Multiply`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`Add`/`Multiply`
 
 Choice to apply the Rim Lighting to the Material Alpha.
 
 ### Apply to Alpha Blend
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Controls how much to Apply the Rim to your Alpha.
 
 ### Global Mask
 
-- `Type`: **Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
 Choose to use a [Global Mask](/docs/modifiers/global-masks.md) to constrain the Rim Lighting to the specified Mask instead. Overrides [Mask & Bias](#mask--bias).
 
 ### Apply to Global Mask
 
-- `Type`: **Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
 Allows you to add the currently set Rim Lighting setup to be applied to an existing [Global Mask](/docs/modifiers/global-masks.md) of your choice.
 
@@ -248,13 +252,13 @@ The settings in this section will only be visible when [AudioLink](/docs/audio-l
 
 ### Width Add Band
 
-- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
 
 Which Band to use for the Width.
 
 #### Width Add
 
-- `Type`: **Vector2**
+- `Type`: <PropertyIcon name="float2" />**Vector2**
 
 How much to add to or subtract from the Rim Lighting Width with Audio.
 
@@ -265,13 +269,13 @@ How much to add to or subtract from the Rim Lighting Width with Audio.
 
 ### Emission Add Band
 
-- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
 
 Which Band to use for the Rim Emission.
 
 #### Emission Add
 
-- `Type`: **Vector2**
+- `Type`: <PropertyIcon name="float2" />**Vector2**
 
 How much to add to or subtract from the Rim Lighting Emission with Audio.
 
@@ -282,13 +286,13 @@ How much to add to or subtract from the Rim Lighting Emission with Audio.
 
 ### Brightness Band
 
-- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
 
 Which Band to use for the Rim Brightness.
 
 #### Brightness Add
 
-- `Type`: **Vector2**
+- `Type`: <PropertyIcon name="float2" />**Vector2**
 
 How much to add to or subtract from the Rim Lighting Brightness with Audio.
 

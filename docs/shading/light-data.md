@@ -9,7 +9,7 @@ The Light Data section provides options for changing features relating to the da
 
 ## AO Maps
 
-- `Type`: **Data** Texture (sRGB **OFF**)
+- `Type`: <PropertyIcon name="texture" />**Data** Texture (sRGB **OFF**)
 
 A texture used to define the Ambient Occlusion (AO) for different areas on the material. Ambient occlusion darkens the lighting provided by ambient (indirect) lighting, an effect frequently seen in physical environments. This texture is generally baked in a 3d program like Blender or Substance Painter.
 
@@ -19,13 +19,13 @@ Generally, if only a single map is being used (such as in the case of a black an
 
 ### AO Map R/G/B/A Strength
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Intensity of each AO map channel.
 
 ## Shadow Map
 
-- `Type`: **Data** Texture (sRGB **OFF**)
+- `Type`: <PropertyIcon name="texture" />**Data** Texture (sRGB **OFF**)
 
 A texture used to define the Detail Shadows for different areas on the material. Detail Shadows darken the lighting provided by direct lighting. In some cases, this texture is similar to (or identical to) the AO texture. 
 
@@ -37,13 +37,13 @@ Generally, if only a single map is being used (such as in the case of a black an
 
 ### Shadow Map R/G/B/A Intensity
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Intensity of each Detail Shadow map channel.
 
 ## Shadow Masks
 
-- `Type`: **Data** Texture (sRGB **OFF**)
+- `Type`: <PropertyIcon name="texture" />**Data** Texture (sRGB **OFF**)
 
 A texture used to define the shadow mask on different areas of the material. Shadow Masks reduce the influence of shadows, and can be used to to create stylized models and appearances.
 
@@ -51,7 +51,7 @@ The Shadow Mask texture reads all 4 RGBA channels independently, allowing differ
 
 ### Shadow Mask R/G/B/A Intensity
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Intensity of each Shadow mask channel.
 
@@ -61,9 +61,12 @@ Options controlling the lighting in the base pass. The base pass is used for bas
 
 ### Light Color Mode
 
-- `Type`: **Dropdown**, Options: `Poi Custom`/`Standard`/`UTS2`/`OpenLit (lilToon)`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Poi Custom`/`Standard`/`UTS2`/`OpenLit (lilToon)`
 
 Defines how to calculate the light color. These will generally exhibit small differences under simple or ideal lighting, but will diverge in more complex or adverse lighting conditions.
+
+<details>
+<summary><b>Light Color Mode Options</b></summary>
 
 #### Poi Custom (Light Color)
 
@@ -85,13 +88,16 @@ This mode adds the **Unlit Intensity** option.
 
 Uses the Light Coloring mode used by lilToon.
 
+</details>
+
 ### Light Map Mode
 
-- `Type`: **Dropdown**, Options: `Poi Custom`/`Normalized NDotL`/`Saturated NDotL`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Poi Custom`/`Normalized NDotL`/`Saturated NDotL`
 
 Changes how the light map is calculated.
 
-This option may be removed in future versions of the shader.
+<details>
+<summary><b>Light Map Mode Options</b></summary>
 
 #### Poi Custom (Light Map)
 
@@ -105,11 +111,16 @@ Normalized NDotL uses the dot product between the mesh normal and the light dire
 
 Normalized NDotL uses the dot product between the mesh normal and the light direction, saturated at `0` and `1`.
 
+</details>
+
 ### Light Direction Mode
 
-Options: `Poi Custom`/`Forced Local Direction`/`Forced World Direction`/`UTS2`/`OpenLit (lilToon)`/`View Direction`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Poi Custom`/`Forced Local Direction`/`Forced World Direction`/`UTS2`/`OpenLit (lilToon)`/`View Direction`
 
 Defines how the light direction should be calculated. This can be used to emulate the look of other shaders, or to force a certain appearance while still remaining lit.
+
+<details>
+<summary><b>Light Direction Mode Options</b></summary>
 
 #### Poi Custom (Light Direction)
 
@@ -137,9 +148,11 @@ UTS2 calculates the light direction the same as the Unity Standard Shader, but w
 
 Uses the light direction mode unique to lilToon.
 
+</details>
+
 ### Forced Direction
 
-- `Type`: **Vector3**
+- `Type`: <PropertyIcon name="float" />**Vector3**
 
 What direction to force the lighting to.
 
@@ -149,13 +162,13 @@ This option is only visible when **Light Direction Mode** is set to `Forced Loca
 
 ### Force Light Color
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Whether to force the light color to a specific color. Enabling this option adds the **Forced Color** option.
 
 #### Forced Color
 
-- `Type`: **Color**
+- `Type`: <PropertyIcon name="color" />**Color**
 
 What color the light should be forced to.
 
@@ -165,7 +178,7 @@ This option is only visible when **Force Light Color** is enabled.
 
 ### Unlit Intensity
 
-- `Type`: **Float**, Range: `0.001-4`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.001 - 4`
 
 How much the model should be lit, even in the absence of direct lighting.
 
@@ -175,13 +188,13 @@ This option is only visible when **Light Color Mode** is set to `UTS2`.
 
 ### Limit Brightness
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Whether to cap the brightness value to a specific maximum. Enabling this option adds the **Max Brightness** option.
 
 ### Max Brightness
 
-- `Type`: **Float**, Range: `0.0 - 10.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 10.0`
 
 If **Limit Brightness** is enabled, the brightness due to base pass lighting calculations will never go above this value. Add pass lighting or emission can cause the final color to exceed this value.
 
@@ -191,13 +204,13 @@ This option is only visible when **Limit Brightness** is enabled.
 
 ### Min Brightness
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Sets the minimum value for direct lighting. This can be useful for preventing a model from getting too dark in adverse lighting conditions.
 
 ### Indirect Uses Normals
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Defines how much to use normals when calculating indirect lighting direction. If not enabled, the indirect lighting will be sampled using the 0-vector. 
 
@@ -207,31 +220,31 @@ This option is only visible when **Light Color Mode** is set to `Poi Custom`.
 
 ### Receieve Casted Shadows
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Defines how much to apply Unity's built-in casted shadows to the model. These can look good under certain conditions, but often will look blocky or otherwise produce undesirable results.
 
 ### Grayscale Lighting
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Defines how much to desaturate the base pass lighting color. This keeps the perceptual luminance the same, but reduces the saturation.
 
 ### Vertex Lights (Non-Important)
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables Vertex Lights to be used. Vertex lighting allows realtime lights set to non-important to perform their lighting calculations on a per-vertex basis instead of a per-pixel basis. This results in these lights being much lighter to process at runtime.
 
 ### Mirror Vertex Lights (Non-Important)
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables Vertex Lights to be used in Mirrors. Because VRChat interprets vertex lighting a little bit differently when looked at through a Mirror, this option enables correct handling of those vertex lights in the mirror.
 
 ### Light Volumes
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
   - Default: `true`
 
 Enables support for [VRC Light Volumes <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/REDSIM/VRCLightVolumes), a voxel-based Light Probes replacement used in some VRChat Worlds. It allows for more natural lighting and balanced illumination to appear on your Material from an environment using VRC Light Volumes.
@@ -248,13 +261,13 @@ In order to see Pixel Lights accurately render on this Material in-game, it is r
 
 ### Pixel Lights (Important)
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables or disables Add Pass lighting in general.
 
 ### Ignore Directional Lights
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Ignores Directional Lights in the Add Pass.
 
@@ -268,13 +281,13 @@ This option is only shown if **Pixel Lights (Important)** is enabled.
 
 ### Limit Brightness
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Whether to limit the brightness of add pass lights. Enabling this adds the **Max Brightness** option.
 
 ### Max Brightness
 
-- `Type`: **Float**, Range: `0.0 - 10.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 10.0`
 
 Defines the maximum allowed brightness resulting from the add pass.
 
@@ -284,19 +297,19 @@ This option is only shown if **Limit Brightness** is enabled.
 
 ### Receieve Casted Shadows (Add Pass)
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Defines how much to apply Unity's built-in casted shadows to the model. These can look good under certain conditions, but often will look blocky or otherwise produce undesirable results.
 
 ### Grayscale Lighting
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Defines how much to desaturate the add pass lighting color. This keeps the perceptual luminance the same, but reduces the saturation.
 
 ### Point Light Passthrough
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to apply realtime point lighting to the indirect color.
 
@@ -306,13 +319,16 @@ Debug visualization provides visualizations of the results of lighting data sett
 
 ### Debug
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enable or Disable debug view.
 
 :::danger DO NOT LEAVE THIS ON!
 This section is only meant to visualize and debug your Light Data settings. Make sure to turn it off prior to finalizing your Material!
 :::
+
+<details>
+<summary><b>Debug Options</b></summary>
 
 #### Direct Color
 
@@ -358,6 +374,8 @@ Shows the shadow map from any Add Pass lighting across the model.
 
 Shows the N Dot L result (Normal dot Light) from any Add Pass lighting across the model.
 
+</details>
+
 ## Baked Lighting
 
 Controls for the lighting behavior when used in a Scene with Global Illumination or Baked Lightmaps.
@@ -368,19 +386,19 @@ This section is only exposed when using the `.poiyomi/Poiyomi Toon World` Shader
 
 ### GI Emission Multiplier
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="floatrange" />**Float**
 
 Sets the Global Illumination Multiplier for the Emission's influence on your baked meshes.
 
 ### Double Sided Global Illumination
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 If enabled, allows the Global Illumination to be baked on both faces.
 
 ### Global Illumination
 
-- `Type`: **Dropdown**, Options: `None`/`Baked`/`Realtime`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `None`/`Baked`/`Realtime`
 
 Sets the behavior of how your Material is treated in your environment.
 

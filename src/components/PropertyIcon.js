@@ -7,6 +7,7 @@ import Icon_Float2 from '@site/static/img/property-icons/Icon_Float2D.svg';
 import Icon_Float3 from '@site/static/img/property-icons/Icon_Float3D.svg';
 import Icon_Float4 from '@site/static/img/property-icons/Icon_Float4D.svg';
 import Icon_FloatRange from '@site/static/img/property-icons/Icon_FloatRangeD.svg';
+import Icon_FloatClamped from '@site/static/img/property-icons/Icon_FloatClampedD.svg';
 import Icon_HDRColor from '@site/static/img/property-icons/Icon_HDRColorD.svg';
 import Icon_Slider from '@site/static/img/property-icons/Icon_SliderD.svg';
 import Icon_Texture from '@site/static/img/property-icons/Icon_TextureD.svg';
@@ -20,6 +21,7 @@ const iconMap = {
     float3: Icon_Float3,
     float4: Icon_Float4,
     floatrange: Icon_FloatRange,
+    floatclamped: Icon_FloatClamped,
     hdrcolor: Icon_HDRColor,
     slider: Icon_Slider,
     texture: Icon_Texture,

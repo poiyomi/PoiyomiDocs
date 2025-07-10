@@ -11,43 +11,43 @@ While this may look similar to a Silk Shader found in other rendering engines, t
 
 ## Color & Offset
 
-- `Type`: **Color** Texture (`sRGB = ON`)
+- `Type`: <PropertyIcon name="texture" />**Color** Texture (`sRGB = ON`)
 
 Texture Slot that defines the main RGB Color of your Anisotropics. The Alpha channel can be used to define the offset.
 
 ## Replace Blending
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to replace the Anisotropic from the Base Color.
 
 ## Add Blending
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to add the Anisotropic to the Base Color.
 
 ## Hide In Shadow
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to hide the Anisotropic in Shadows.
 
 ## Mix Light Color
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to mix the Light Color to the Anisotropic.
 
 ## Mix Base Color
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to mix the Base Color to the Anisotropic.
 
 ## Global Mask
 
-- `Type`: **Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
 Option to use a Global Mask for the Anisotropics.
 
@@ -55,43 +55,43 @@ Option to use a Global Mask for the Anisotropics.
 
 ### Power
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Amount of power the Top Layer is applied to the Anisotropic.
 
 ### Strength
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How strong the Top Layer apples to the Anisotropic.
 
 ### Offset
 
-- `Type`: **Float**, Range: `-10.0 - 10.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-10.0 - 10.0`
 
 The offset amount of the Top Layer.
 
 ### Map Offset Strength
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Amount of strength to the offset.
 
 ### Tint
 
-- `Type`: **Color**
+- `Type`: <PropertyIcon name="color" />**Color**
 
 The Color Tint of the Top Layer.
 
 ### Switch Direction
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 If enabled, flips the direction of the Top Layer.
 
 ### Stylized Mode
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables Edge and Blur adjustment sliders for the Top Layer.
 
@@ -100,13 +100,13 @@ Enables Edge and Blur adjustment sliders for the Top Layer.
 
 #### Edge
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to adjust the Edge of the Top Layer.
 
 #### Blur
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to Blur the Edge of the Top Layer.
 
@@ -116,43 +116,43 @@ How much to Blur the Edge of the Top Layer.
 
 ### Power
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Amount of power the Bottom Layer is applied to the Anisotropic.
 
 ### Strength
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How strong the Bottom Layer apples to the Anisotropic.
 
 ### Offset
 
-- `Type`: **Float**, Range: `-10.0 - 10.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-10.0 - 10.0`
 
 The offset amount of the Bottom Layer.
 
 ### Map Offset Strength
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Amount of strength to the offset.
 
 ### Tint
 
-- `Type`: **Color**
+- `Type`: <PropertyIcon name="color" />**Color**
 
 The Color Tint of the Bottom Layer.
 
 ### Switch Direction
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 If enabled, flips the direction of the Bottom Layer.
 
 ### Stylized Mode
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables Edge and Blur adjustment sliders for the Bottom Layer.
 
@@ -161,13 +161,13 @@ Enables Edge and Blur adjustment sliders for the Bottom Layer.
 
 #### Edge
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to adjust the Edge of the Bottom Layer.
 
 #### Blur
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to Blur the Edge of the Bottom Layer.
 

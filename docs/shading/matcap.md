@@ -23,7 +23,7 @@ All features from the deprecated **Iridescence** section has been merged into Ma
 
 ## UV Mode
 
-- `Type`: **Dropdown**, Options: `UTS Style`/`Top Pinch`/`Double Sided`/`Gradient`
+- `Type`: <PropertyIcon name="matcap" />**Dropdown**, Options: `UTS Style`/`Top Pinch`/`Double Sided`/`Gradient`
   
 Defines how to apply the UV to the normals of the model.
 
@@ -49,13 +49,13 @@ Allows you to configure a radial gradient to be used as your matcap texture. Cli
 
 ## Color
 
-- `Type`: **Color**
+- `Type`: <PropertyIcon name="color" />**Color**
 
 Tint color applied to the matcap texture. This color is multiplied with the matcap texture.
 
 ## Matcap
 
-- `Type`: **Color** Texture (sRGB **ON**)
+- `Type`: <PropertyIcon name="texture" />**Color** Texture (sRGB **ON**)
 
 Texture used for the matcap. This can be any color texture, but is typically a sphere texture.
 
@@ -64,25 +64,25 @@ Texture used for the matcap. This can be any color texture, but is typically a s
 
 ### UV To Blend
 
-- `Type`: **Dropdown**, Options: `UV0`/`UV1`/`UV2`/`UV3`/`Panosphere`/`World Pos`/`Local Pos`/`Polar UV`/`Distorted UV`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `UV0`/`UV1`/`UV2`/`UV3`/`Panosphere`/`World Pos`/`Local Pos`/`Polar UV`/`Distorted UV`
 
 Choice of UV to use for the Matcap.
 
 ### Blend UV X
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to blend on the UV's X-axis.
 
 ### Blend UV Y
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to blend on the UV's Y-axis.
 
 ### Panning
 
-- `Type`: **Vector2**
+- `Type`: <PropertyIcon name="float2" />**Vector2**
 
 How much to continuously pan the Matcap on the UV's X-axis and Y-axis.
 
@@ -93,13 +93,13 @@ How much to continuously pan the Matcap on the UV's X-axis and Y-axis.
 
 ### Border
 
-- `Type`: **Float**, Range: `0.0 - 0.5`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 0.5`
 
 How far toward the edge the matcap texture should be applied. At 0.0, it would only project the very center. At 0.5, it would project all the way to the edge. This option defaults to `0.43`.
 
 ### Rotation
 
-- `Type`: **Float**, Range: `-1.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
 
 How much to rotate the Matcap texture.
 
@@ -107,31 +107,31 @@ How much to rotate the Matcap texture.
 
 ## Intensity
 
-- `Type`: **Float**, Range: `0.0 - 5.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 5.0`
 
 A scaling factor for the matcap texture. This is useful for making the matcap texture more or less visible, and defaults to `1.0`. Values above `1.0` will make the matcap brighter.
 
 ## Emission Strength
 
-- `Type`: **Float**, Range: `0.0 - 20.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 20.0`
 
 How much emission to apply to the matcap.
 
 ## Base Color Mix
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to blend with the Base Color or Main Texture.
 
 ## Light Color Mix
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to blend with the Light color.
 
 ## Normal Strength
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to blend with the Normals of your Material.
 
@@ -139,19 +139,19 @@ How much to blend with the Normals of your Material.
 
 ### Mask
 
-- `Type`: **Data** Texture (sRGB **OFF**)
+- `Type`: <PropertyIcon name="texture" />**Data** Texture (sRGB **OFF**)
 
 Mask that defines where to apply the Matcap effect. Black indicates where the matcap should not be applied, and white indicates where it should be applied.
 
 ### Hide in Shadow
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to hide the matcap effect in shadowed areas of the mesh.
 
 ### Circle Mask
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables the Circle Mask option for the Matcap, allowing the ability to have smaller matcaps without having them repeat.
 
@@ -160,13 +160,13 @@ Enables the Circle Mask option for the Matcap, allowing the ability to have smal
 
 #### Radius
 
-- `Type`: **Float**, Range: `0.0 - 0.5`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 0.5`
 
 Sets the Radius of the Circle Mask.
 
 #### Blur
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Sets the Blurriness of the Circle Mask's edge.
 
@@ -180,31 +180,31 @@ Use a Global Mask to define where to apply the Matcap effect.
 
 ### Replace
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Replaces the base color with the matcap. At `1.0`, the base color is completely replaced with the matcap. At `0.0`, the base color is completely unaffected. Values in between will blend the base color with the matcap.
 
 ### Multiply
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Multiplies the base color with the matcap. This generally darkens the base color. Black areas of the matcap will always darken, white areas will not affect the base color, and colored areas will darken if the base color doesn't match the matcap color in that area.
 
 ### Add
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Adds the matcap to the base color. This generally brightens the base color. Black areas will be unaffected, while white areas will brighten. Colors are simply added on top of the base color.
 
 ### Mixed
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Mixes the Matcap to the base color. This generally changes certain areas of the base color by mixing colors together.
 
 ### Screen
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Blends the Matcap with the base color by looking at each channel's color information and multiplies the inverse of the blend and base color. This results in always a lighter color, although areas with black leaves the color unchanged and white will produce white.
 
@@ -212,37 +212,37 @@ This is in a similar way to how various Photo Editing programs does it, such as 
 
 ### Unlit Add
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Same as Add, but instead blends an unlit/unshaded version of the Texture.
 
 ## Custom Normal Map
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables the ability to use a bump Normal Map with your Matcap.
 
 ### Normal Map
 
-- `Type`: **Normal Map** Texture (sRGB **OFF**)
+- `Type`: <PropertyIcon name="texture" />**Normal Map** Texture (sRGB **OFF**)
 
 Normal map texture to apply when Custom Normal is enabled. 
 
 ### Intensity
 
-- `Type`: **Float**, Range: `0.0 - 10.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 10.0`
 
 How much to scale the normal map. This option is visible in the Normal Map dropdown.
 
 ## Hue Shift
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables hue shifting of the matcap texture.
 
 ### Color Space
 
-- `Type`: **Dropdown**, Options: `OKLab`/`HSV`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `OKLab`/`HSV`
 
 Choice of Color Space to use for the Hue Shift. By default, it will be set to `OKLab`.
 
@@ -250,7 +250,7 @@ Learn about the difference of Color Spaces as documented here in [Color Adjust](
 
 ### Select or Shift
 
-- `Type`: **Dropdown**, Options: `Hue Select`/`Hue Shift`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Hue Select`/`Hue Shift`
   - Default: `Hue Shift`
 
 This dropdown allows you to select how the Color Adjustment should behave when the Hue Shift is used. By default, this will be set to `Hue Shift`.
@@ -265,13 +265,13 @@ This dropdown allows you to select how the Color Adjustment should behave when t
 
 ### Shift Speed
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 How much to constantly shift the hue with time. A value of 1 will result in a full hue shift cycle every 20 seconds.
 
 ### Hue Shift
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to shift the base color around the hue circle.
 
@@ -281,19 +281,19 @@ This value is circular, and will have the same result at 0 and 1.
 
 ### Smoothness
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to smooth the Matcap.
 
 ### Apply Mask for Smoothness
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Allows you to apply a Mask for your Smoothness value.
 
 ### Mask Channel for Smoothness
 
-- `Type`: **Dropdown**, Options: `R`/`G`/`B`/`A`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `R`/`G`/`B`/`A`
 
 Which Channel to use for the Smoothness Mask.
 
@@ -301,13 +301,13 @@ Which Channel to use for the Smoothness Mask.
 
 ### Override Alpha
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to override the alpha channel of the base color. At `1.0`, this will fully replace the base alpha with the matcap mask.
 
 ### Intensity to Alpha
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables a section that allows you to Blend the intensity of your Matcap to the Alpha.
 
@@ -316,19 +316,19 @@ Enables a section that allows you to Blend the intensity of your Matcap to the A
 
 ### Source Blend
 
-- `Type`: **Dropdown**, Options: `Greyscale`/`Max`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Grayscale`/`Max`
 
 Which Source to use when blending to Alpha.
 
 ### Blend Type
 
-- `Type`: **Dropdown**, Options: `Add`/`Multiply`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Add`/`Multiply`
 
 Which Blending style to use for the Alpha.
 
 ### Blending
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to Blend the result.
 
@@ -336,7 +336,7 @@ How much to Blend the result.
 
 ## AudioLink
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Allows AudioLink to influence the Matcap.
 
@@ -346,13 +346,13 @@ The settings in this section will only be visible when [AudioLink](/docs/audio-l
 
 ### Alpha Band
 
-- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
 
 Which band to use to change the Alpha modifier of this Matcap.
 
 ### Alpha Mod
 
-- `Type`: **Vector2**
+- `Type`: <PropertyIcon name="float2" />**Vector2**
 
 How much to add to or subtract from the Alpha Modifier with Audio.
 
@@ -363,13 +363,13 @@ How much to add to or subtract from the Alpha Modifier with Audio.
 
 ### Emission Band
 
-- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
 
 Which band to use to change the Emisison modifier of this Matcap.
 
 ### Emission Mod
 
-- `Type`: **Vector2**
+- `Type`: <PropertyIcon name="float2" />**Vector2**
 
 How much to add to or subtract from the Matcap Emission with Audio.
 
@@ -380,13 +380,13 @@ How much to add to or subtract from the Matcap Emission with Audio.
 
 ### Intensity Band
 
-- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
 
 Which band to use to change the Intensity modifier with Audio.
 
 ### Intensity Mod
 
-- `Type`: **Vector2**
+- `Type`: <PropertyIcon name="float2" />**Vector2**
 
 How much to add to or subtract from the Intensity with Audio.
 

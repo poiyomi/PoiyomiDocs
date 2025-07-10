@@ -14,7 +14,7 @@ For more detailed information on this system, [visit the LTCGI Documentation <FA
 
 ## Anim Toggle
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 <!-- 
 EDITORS NOTE: This H2 Header only has this Message Box below. Adding additional words above or below it may make it look repetitive. -BluWizard10
@@ -26,19 +26,20 @@ Animate this Toggle (checkbox) when creating toggles for LTCGI on this Material.
 
 ## Diffuse Tint
 
-- `Type`: **Color**
+- `Type`: <PropertyIcon name="color" />**Color**
 
 Color to blend multiplicatively with LTCGI to tint the lighting. Use shades of gray to darken lighting as desired.
 
 ## Specular Tint
 
-- `Type`: **Color**
+- `Type`: <PropertyIcon name="color" />**Color**
 
 Color to blend multiplicatively with LTCGI to tint the reflection. Use shades of gray to darken reflections as desired.
 
 ## Use Reflection and Specular
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+  - Default: `On`
 
 When enabled, will sample the metallicity and smoothness values from [Reflections & Specular](/docs/shading/reflections-and-specular.md) for LTCGI.
 
@@ -50,12 +51,12 @@ These sliders will also appear if you turn off this checkbox.
 
 ## Metallic
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Determines how metallic the surface is.
 
 ## Smoothness
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Determines how rough or smooth the specular reflections are.
