@@ -259,23 +259,6 @@ This slider only shows when Map Type is set to `Flat`.
 
 </details>
 
-<details>
-<summary><b>Shadow Map Options</b></summary>
-
-#### Map Type
-
-- `Type`: **Dropdown**, Options: `Strength`/`Flat`
-
-Sets how the Shadow Map should be treated in Multilayer Math.
-
-#### Color Tex
-
-- `Type`: **Color** Texture (`sRGB = ON`)
-
-Sets the Color Texture for the Shadow Map.
-
-</details>
-
 #### Shadow Border Map
 
 - `Type`: **Toggle**
