@@ -91,7 +91,7 @@ This slider can be used to control the main appearance of the Truchet.
 
 ## Override Alpha
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 If enabled, will override the Alpha/Transparency from the Base, if Transparency exists.
 
@@ -103,13 +103,13 @@ The settings in this section will only be visible when [AudioLink](/docs/audio-l
 
 ### Hide When No AL
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 If enabled, the Truchet will be completely hidden when there's NO AudioLink whatsoever.
 
 ### AL Emission
 
-- `TYpe`: **Boolean**
+- `TYpe`: **Toggle**
 
 Enables the ability to control the Truchet Emission using AudioLink.
 
@@ -132,7 +132,7 @@ How much to modify the Emission of the Truchet.
 
 ### AL Alpha
 
-- `TYpe`: **Boolean**
+- `TYpe`: **Toggle**
 
 Enables the ability to control the Truchet Alpha using AudioLink.
 
@@ -155,7 +155,7 @@ How much to multiply the Alpha of the Truchet.
 
 ### Chrono Pan
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables the ability to use Chronotensity timing on the Truchet.
 

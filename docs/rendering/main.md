@@ -70,14 +70,14 @@ Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-r
 
 ## Reduce Clip Distance
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
   - Default: `Off`
 
 Creates a smaller clip distance for the material. This can be used to make geometry not disappear when very close to the camera.
 
 ## Z Clip
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
   - Default: `On`
 
 Enables or Disables the GPU's Depth Clip Mode, which determines how the GPU handles fragments of the Shader that are outside of the Near and Far Planes.
@@ -86,7 +86,7 @@ Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-r
 
 ## Ignore Fog
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
   - Default: `Off`
 
 If checked, this material will not be affected by fog, if present in the scene.
@@ -95,14 +95,14 @@ Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-r
 
 ## Flip Backface Normals
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
   - Default: `On`
 
 If enabled, inverts the normal vectors of the mesh if you're looking at a backface. This ensures it renders correctly when the camera is looking towards the backface.
 
 ## Enable GPU Instancing
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
   - Default: `Off`
 
 Enables or disables GPU instancing for this material. GPU instancing allows for rendering multiple copies of the same mesh with the same material, given some specific conditions are met. This can be used to create more efficient rendering of objects with multiple copies.
@@ -111,7 +111,7 @@ Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-r
 
 ## Early Z
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
   - Default: `Off`
 
 Enables Early Z mode on the Material. This makes the Mesh first only render to Depth, culling anything behind the main Front Face.
@@ -120,7 +120,7 @@ This option is commonly used to solve Stacking Transparency problems.
 
 ## World AO Blocker
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 In worlds with Ambient Occlusion Post Processing, it can have negative effects on the Mesh (especially on the Eyes) when being rendered. This feature can counteract against that by creating a blocking volume on the UV channel.
 

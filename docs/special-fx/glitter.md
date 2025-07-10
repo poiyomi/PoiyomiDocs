@@ -88,7 +88,7 @@ How much to blend the surface color with the glitter color. This creates a somew
 
 ### Random Color
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Applies random colors to glitter.
 
@@ -126,13 +126,13 @@ How fast the glitter particles should move across the **Glitter UV**. This is a 
 
 ### Random Position
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Applies random positional offset to glitter.
 
 ### Random Size
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Applies random size to glitter.
 
@@ -206,7 +206,7 @@ Only visible when **Shape** is set to `Square`.
 
 ### Random Offset
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Applies random rotation offsets to glitter cells.
 
@@ -250,7 +250,7 @@ Select which [Global Mask](/docs/modifiers/global-masks.md) to use to mask the G
 
 ## Hue Shift
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables or Disables the Hue Shift effect for glitter.
 
@@ -291,7 +291,7 @@ How much to shift the base color around the hue circle. This value is circular, 
 
 ## AudioLink
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables or Disables AudioLink effects for Glitter.
 

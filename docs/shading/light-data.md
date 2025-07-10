@@ -150,7 +150,7 @@ This option is only visible when **Light Direction Mode** is set to `Forced Loca
 
 ### Force Light Color
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Whether to force the light color to a specific color. Enabling this option adds the **Forced Color** option.
 
@@ -176,7 +176,7 @@ This option is only visible when **Light Color Mode** is set to `UTS2`.
 
 ### Limit Brightness
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Whether to cap the brightness value to a specific maximum. Enabling this option adds the **Max Brightness** option.
 
@@ -220,19 +220,19 @@ Defines how much to desaturate the base pass lighting color. This keeps the perc
 
 ### Vertex Lights (Non-Important)
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables Vertex Lights to be used. Vertex lighting allows realtime lights set to non-important to perform their lighting calculations on a per-vertex basis instead of a per-pixel basis. This results in these lights being much lighter to process at runtime.
 
 ### Mirror Vertex Lights (Non-Important)
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables Vertex Lights to be used in Mirrors. Because VRChat interprets vertex lighting a little bit differently when looked at through a Mirror, this option enables correct handling of those vertex lights in the mirror.
 
 ### Light Volumes
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
   - Default: `true`
 
 Enables support for [VRC Light Volumes <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/REDSIM/VRCLightVolumes), a voxel-based Light Probes replacement used in some VRChat Worlds. It allows for more natural lighting and balanced illumination to appear on your Material from an environment using VRC Light Volumes.
@@ -249,13 +249,13 @@ In order to see Pixel Lights accurately render on this Material in-game, it is r
 
 ### Pixel Lights (Important)
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables or disables Add Pass lighting in general.
 
 ### Ignore Directional Lights
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Ignores Directional Lights in the Add Pass.
 
@@ -269,7 +269,7 @@ This option is only shown if **Pixel Lights (Important)** is enabled.
 
 ### Limit Brightness
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Whether to limit the brightness of add pass lights. Enabling this adds the **Max Brightness** option.
 
@@ -307,7 +307,7 @@ Debug visualization provides visualizations of the results of lighting data sett
 
 ### Debug
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enable or Disable debug view.
 
@@ -375,7 +375,7 @@ Sets the Global Illumination Multiplier for the Emission's influence on your bak
 
 ### Double Sided Global Illumination
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 If enabled, allows the Global Illumination to be baked on both faces.
 

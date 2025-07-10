@@ -34,11 +34,11 @@ Defines how the discarding is performed. Generally, this should be set to `Verte
 
 ## Discard Coordinates
 
-- `Type`: **Booleans**
+- `Type`: **Toggles**
 
 Defines which UV tiles to discard. These are organized into 4 rows (`v`) of 4 tiles (`u`), defining a grid of 16 discard tiles. The bottom left is the origin, and the top right is the maximum. The bottom left tile (`0,0`) is where most UV mapping is performed.
 
-When a box is checked, that tile is discarded. When animating these boolean checkboxes, each one is it's own independent property.
+When a box is checked, that tile is discarded. When animating these Toggle checkboxes, each one is it's own independent property.
 
 **Table Reference:**
 
@@ -51,7 +51,7 @@ When a box is checked, that tile is discarded. When animating these boolean chec
 
 ## Face Discard
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Face Discard is a granular alternative to the [Cull](/docs/rendering/main.md#cull) rendering option, providing control over which faces of a mesh to discard. It utilizes the pixel mode of UV Tile Discard to apply face discarding selectively, instead of applying global face culling across the entire material.
 
@@ -73,7 +73,7 @@ Sets what faces should be discarded. By default, this is set to `Back`. `Front` 
 
 ### Discard Coordinates
 
-- `Type`: **Booleans**
+- `Type`: **Toggles**
 
 These coordinates work in the same manner as the primary [Discard Coordinates](#discard-coordinates) option.
 

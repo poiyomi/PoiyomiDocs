@@ -86,13 +86,13 @@ The Color Tint of the Top Layer.
 
 ### Switch Direction
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 If enabled, flips the direction of the Top Layer.
 
 ### Stylized Mode
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables Edge and Blur adjustment sliders for the Top Layer.
 
@@ -147,13 +147,13 @@ The Color Tint of the Bottom Layer.
 
 ### Switch Direction
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 If enabled, flips the direction of the Bottom Layer.
 
 ### Stylized Mode
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables Edge and Blur adjustment sliders for the Bottom Layer.
 

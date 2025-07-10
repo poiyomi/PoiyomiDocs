@@ -57,7 +57,7 @@ Allows you to add the currently set ShatterWave setup to be applied to an existi
 
 ## Show Under Wave
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 If enabled, shows the underneath mesh area beneath the affected ShatterWave area.
 
@@ -113,7 +113,7 @@ Measures how dense the waves are in tiled coordinates.
 
 ## AudioLink
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables AudioLink to manipulate the ShatterWave.
 

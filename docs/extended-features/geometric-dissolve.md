@@ -106,7 +106,7 @@ Defines the delay of time between the main states of the Geometric Dissolve effe
 
 #### Vertex Color Position
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 If enabled, will use the Vertex Colors of your Mesh to define the positions for the Geometric Dissolve.
 
@@ -124,7 +124,7 @@ Defines the ending position of the Gradient in XYZ coordinates.
 
 #### Visualize
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Changes the Geometric Dissolve effect to show a visualization of the effect, ignoring other shader effects rendered on top.
 
@@ -269,7 +269,7 @@ Values between `Min` and `Max` will fade smoothly. `Min` may be larger than `Max
 
 ## Wireframe
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables the wireframe to show during the Geometric Dissolve.
 
@@ -293,25 +293,25 @@ Timing offset for the Geometric Dissolve's wireframe during the animation.
 
 ### Extend Base Color
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Extends the wireframe to the Base Color.
 
 ### Extend Emission
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Extends the wireframe to the Emission.
 
 ### Wireframe Only
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Shows only the Wireframe.
 
 ## UV Tile Geo Dissolve
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Allows an alternative way to use UV Tile Discard with the use of Geometric Dissolve's advanced effects instead.
 

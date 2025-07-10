@@ -152,7 +152,7 @@ How much to hide the matcap effect in shadowed areas of the mesh.
 
 ### Circle Mask
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables the Circle Mask option for the Matcap, allowing the ability to have smaller matcaps without having them repeat.
 
@@ -219,7 +219,7 @@ Same as Add, but instead blends an unlit/unshaded version of the Texture.
 
 ## Custom Normal Map
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables the ability to use a bump Normal Map with your Matcap.
 
@@ -237,7 +237,7 @@ How much to scale the normal map. This option is visible in the Normal Map dropd
 
 ## Hue Shift
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables hue shifting of the matcap texture.
 
@@ -288,7 +288,7 @@ How much to smooth the Matcap.
 
 ### Apply Mask for Smoothness
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Allows you to apply a Mask for your Smoothness value.
 
@@ -308,7 +308,7 @@ How much to override the alpha channel of the base color. At `1.0`, this will fu
 
 ### Intensity to Alpha
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables a section that allows you to Blend the intensity of your Matcap to the Alpha.
 
@@ -337,7 +337,7 @@ How much to Blend the result.
 
 ## AudioLink
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Allows AudioLink to influence the Matcap.
 

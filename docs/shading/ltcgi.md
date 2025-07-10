@@ -15,14 +15,14 @@ For more detailed information on this system, [visit the LTCGI Documentation <FA
 
 ## Anim Toggle
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 <!-- 
 EDITORS NOTE: This H2 Header only has this Message Box below. Adding additional words above or below it may make it look repetitive. -BluWizard10
 -->
 
 :::tip
-Animate this boolean (checkbox) when creating toggles for LTCGI on this Material. Animating the [Section Header](/docs/general/locking.md#section-header-checkboxes) will not work!
+Animate this Toggle (checkbox) when creating toggles for LTCGI on this Material. Animating the [Section Header](/docs/general/locking.md#section-header-checkboxes) will not work!
 :::
 
 ## Diffuse Tint
@@ -39,7 +39,7 @@ Color to blend multiplicatively with LTCGI to tint the reflection. Use shades of
 
 ## Use Reflection and Specular
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 When enabled, will sample the metallicity and smoothness values from [Reflections & Specular](/docs/shading/reflections-and-specular.md) for LTCGI.
 

@@ -140,13 +140,13 @@ Controls how the Rim Lighting will blend with your Normals. A value of `0` ignor
 
 ### Invert Rim
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Inverts the Rim Lighting direction. When unchecked, rim lighting goes from "outside-in" (facing away from viewer has maximum intensity). When checked, rim lighting goes from "inside-out" (facing toward viewer has maximum intensity).
 
 ## Light Direction Mask
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables the ability to mask the Rim Lighting to a Lighting Direction Mask, whether that would be Custom or to use the Shadow Map.
 
@@ -158,7 +158,7 @@ Choice of the Light Falloff Map it's going to use as a Mask.
 
 ### Invert Shadow Mask
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Inverts the values of the Shadow Mask
 
@@ -172,7 +172,7 @@ Lowers the size of the Rim Light Width in the Masked area.
 
 ## Hue Shift
 
-- `Type:` **Boolean**
+- `Type:` **Toggle**
 
 Enables the Hue Shift feature in Rim Lighting.
 

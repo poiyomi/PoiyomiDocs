@@ -36,7 +36,7 @@ How sharp the edge of the rim should be. Generally, at higher sharpness, the rim
 
 ## Hide In Shadow
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Hides the rim in shadowed areas.
 

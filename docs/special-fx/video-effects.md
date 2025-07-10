@@ -57,7 +57,7 @@ Controls the total brightness of the display.
 
 ## Emission Enabled
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 If enabled, will pass the brightness to the Emissive pass.
 
@@ -88,7 +88,7 @@ Determines the pixel density of the Video Texture effect in order to replicate a
 
 ### Pixelate to Resolution
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 If enabled, will pixelate the display to the Resolution depending on viewing distance.
 

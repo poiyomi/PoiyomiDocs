@@ -98,25 +98,25 @@ Defines how much to apply specular highlights at different areas on the material
 
 ### Invert ClearCoat Mask
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Defines whether the clearcoat mask channel should be inverted.
 
 ### Invert Smoothness
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Defines whether the clearcoat smoothness channel should be inverted. Useful for reusing Roughness masks.
 
 ### Invert Reflection Mask
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Defines whether the clearcoat reflection mask channel should be inverted.
 
 ### Invert Specular Mask
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Defines whether the clearcoat specular mask channel should be inverted.
 
@@ -128,19 +128,19 @@ A cubemap that can be used in cases where no reflection probe is present in the 
 
 ## Force Fallback
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Whether to use the fallback at all times instead of just when no reflection probe is defined.
 
 ## Lit Fallback
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Whether the fallback cubemap should be lit according to the environment when used. Useful for preventing the fallback from appearing too bright in dark world areas.
 
 ## GSAA
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 GSAA (Geometric Specular Anti-Aliasing) is a corrective option that prevents high-smoothness specular highlights from disappearing on surfaces with sharp changes. This is especially useful on surfaces with sharp or sudden edges (hard-surfaced edges), or on surfaces with intense, high detail normal maps.
 

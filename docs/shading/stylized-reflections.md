@@ -76,7 +76,7 @@ Controls the strength of the Stylized Specular Highlight. Generally, the `0-1` r
 
 ### Use Light Color
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Determines whether the Stylized Specular Highlight should use the light color or the color defined with the specular map and tint. This is useful for creating a more toon-like effect by forcing a specific color.
 
@@ -108,19 +108,19 @@ Strength of the individual highlight layer. This is used to scale the highlight 
 
 #### Show on Back
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Shows the Specular result on the backface.
 
 #### Ignore Shadow
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Ignores shadows on the Specular results.
 
 #### Ignore Casted Shadows
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Ignores casted shadows on the Specular results.
 
@@ -130,7 +130,7 @@ In Lil Reflections mode, this creates the appearance of metallic or smooth surfa
 
 ### sReflection
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables Lil Reflections.
 
@@ -172,7 +172,7 @@ Defines the intensity of the reflectivity.
 
 ### Specular
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Creates a toon-style specular appearance on the Material.
 
@@ -205,13 +205,13 @@ Blurs the border of the specular. Lower values are more sharper, while higher va
 
 #### MultiLight Specular
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Allows MultiLight specular to be used.
 
 ### Environmental Reflections
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables the ability to render Environmental Reflections from the World onto the specular reflections.
 
@@ -234,7 +234,7 @@ Tints the color of the environmental reflections.
 
 #### Override
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 If enabled, will strictly enforce the Cubemap Fallback to always be used regardless.
 
@@ -246,7 +246,7 @@ Enables the Lighting Fallback in a variable value.
 
 #### Apply Transparency
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 If enabled, will apply transparency to the material.
 

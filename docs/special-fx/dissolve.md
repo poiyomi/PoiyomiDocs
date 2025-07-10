@@ -223,7 +223,7 @@ At a value of 1, the dissolve will complete a full cycle (from `0` to `1` to `0`
 
 ## AudioLink
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables AudioLink to control Dissolve.
 
@@ -301,7 +301,7 @@ The 3D Point to end the dissolve at. For avatars, this should be set far enough 
 
 #### Clamp Dissolve
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 If set to True, this ensures that the whole material is clamped to the set value. This means if the dissolve Alpha is at `1` or `0`, they will never be partially dissolved or partially visible. This can fix issues where portions of your Material have visibility issues at certain poses with those values.
 
@@ -330,13 +330,13 @@ Determines the size of the Spherical Dissolve.
 
 #### Invert
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Inverts the Spherical Dissolve to implode instead of expand from the center.
 
 #### Clamp Dissolve
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 If set to True, this ensures that the whole material is clamped to the set value. This means if the dissolve Alpha is at `1` or `0`, they will never be partially dissolved or partially visible. This can fix issues where portions of your Material have visibility issues at certain poses with those values.
 
@@ -376,7 +376,7 @@ This property is only exposed if you chose `Custom Direction` as the CenterOut M
 
 #### Invert
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Inverts the direction of the CenterOut to implode instead of expand for the Dissolve.
 
@@ -394,9 +394,9 @@ Determines the power factor of the CenterOut Dissolve.
 
 ## Hue Shift
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
-Enables/Disables hue shifting features for dissolve. Unlike most sections, this boolean can be animated.
+Enables/Disables hue shifting features for dissolve. Unlike most sections, this Toggle can be animated.
 
 ### Color Space
 
@@ -435,7 +435,7 @@ Fixed amount to shift the hue for the dissolved state only.
 
 ### Edge Enabled
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables or disables hue shifting of the the dissolve edge color.
 
@@ -476,7 +476,7 @@ Fixed amount to shift the hue for the edge color only.
 
 ## UV Tile Dissolve
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Allows an alternative way to use UV Tile Discard with the use of Dissolve's effects instead.
 
@@ -496,7 +496,7 @@ Choice of which UV to use for the Tile Dissolve.
 
 ### Discard Tiles At Max
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
     - Default: `On`
 
 Enforces the Dissolve Tiles to be discarded once a UV Tile Dissolve reaches `1` on the slider.

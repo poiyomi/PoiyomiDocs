@@ -76,7 +76,7 @@ Keep in mind how the names are used. For example: if the channel is `2G`, it mea
 
 ## Textures
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables the Global Mask Textures feature.
 
@@ -114,7 +114,7 @@ This section allows you to use [Vertex Colors](/docs/vertex-options/vertex-color
 
 ### Linear Colors
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
   - Default: `On`
 
 Enable to use Linear Colors from your Vertex Colors. This is typically recommended so that the shader can accurately read them.
@@ -145,7 +145,7 @@ Specify which Vertex Colors from the Alpha Channel to be applied to your Global 
 
 ## Backface Masking
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables control on how your Global Masks appear on the Backface.
 
@@ -160,7 +160,7 @@ By default, `Both` will be set.
 
 ## Mirror Masking
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables control of how your Global Masks appear on Mirrors in VRChat.
 
@@ -178,7 +178,7 @@ Choose how the channel appears in Mirrors.
 
 ## Camera Masking
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables control of how your Global Masks appear in VRChat Cameras.
 
@@ -194,13 +194,13 @@ Choose how the channel appears in Cameras.
 
 ## Distance Masking
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables Distance Masking, which controls how the Global Mask appears based on the Camera's distance to the Mesh this Material is used on.
 
 ### Mask Channel
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables the Mask Channel to be used with your Distance Masking.
 

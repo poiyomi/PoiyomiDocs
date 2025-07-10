@@ -51,7 +51,7 @@ Texture pattern to use as the fur.
 
 ## Apply Fur Texture to Skin
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 If enabled, applies the Fur Texture to the skin's surface.
 
@@ -87,7 +87,7 @@ Determines the intensity of the AO range.
 
 ## Hue Shift
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables options to change the Hue of the fur color using the Animator.
 
@@ -132,7 +132,7 @@ This value is circular, and will have the same result at 0 and 1.
 
 ### Vertex Color Normals
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 If enabled, uses Vertex Color Normals for the Fur surface.
 

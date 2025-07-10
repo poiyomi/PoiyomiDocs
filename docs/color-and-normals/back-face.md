@@ -40,7 +40,7 @@ How much Emission to add to the backface. Draws from the backface color.
 
 ## Hue Shift
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enable or Disable Hue Shift for the backface base color.
 
@@ -91,7 +91,7 @@ Detail Intensity backface multiplier for detail textures in the [Details](/docs/
 
 ### Replace Alpha
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Whether to replace the alpha value for the backface with the alpha calculated from the Backface Texture and Alpha settings.
 

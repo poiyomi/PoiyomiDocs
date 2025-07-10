@@ -261,7 +261,7 @@ This slider only shows when Map Type is set to `Flat`.
 
 #### Shadow Border Map
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables the Shadow Border Map feature, allowing control over AO-style Shadow boundaries on Multilayer Math.
 
@@ -282,7 +282,7 @@ Amount of Level of Detail to use for the Border Map.
 
 #### Ignore Border Properties
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 If enabled, ignores the properties set in [Border](#border-3).
 
@@ -332,7 +332,7 @@ Texture Slot to define the Blur Map of Multilayer Math.
 
 #### Non Linear Lightmap
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 If enabled, changes the shadow gradient direction to be non-linear.
 
@@ -521,7 +521,7 @@ Shading map used for the 1st ShadeColor. If this is not defined, the 1st ShadeCo
 
 #### Use BaseMap as 1st ShadeMap
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Whether to use the BaseColor map as the 1st ShadeMap. With no 1st ShadeMap defined, this should generally be enabled.
 
@@ -539,7 +539,7 @@ Shading map used for the 1st ShadeColor. If this is not defined, the 1st ShadeCo
 
 #### Use BaseMap as 2nd ShadeMap
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Whether to use the BaseColor map as the 2nd ShadeMap. With no 2nd ShadeMap defined, this should generally be enabled.
 
@@ -679,7 +679,7 @@ The Smoothness map defines where the material should be smoother, and where it s
 
 #### Clothmask Lerp
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Clothmask Lerp defines whether the cloth mask should lerp (linearally interpolate) between the cloth shading and realistic shading. This should generally be left off.
 

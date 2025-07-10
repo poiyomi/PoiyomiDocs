@@ -16,7 +16,7 @@ Grab Pass is an expensive feature - it has to take a screenshot every frame. Thi
 
 ## Refraction
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables or disables refraction.
 
@@ -54,7 +54,7 @@ Controls the distortion of the Refraction.
 
 ## Blur
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 If enabled, creates a realtime Gaussian Blur effect on the Material.
 
@@ -112,7 +112,7 @@ Controls the additive of additional brightness of the Grab Pass Color.
 
 ### Use Material Alpha
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Directly uses the alpha of the material to define the blend amount (how much the Grab Pass color is blended with the base color).
 

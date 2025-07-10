@@ -76,7 +76,7 @@ The following properties below will appear for each Channel you are customizing.
 
 ### Channel
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables the mentioned Channel to be used.
 
@@ -146,12 +146,12 @@ Set the Emission strength to the masked area. High values can create a "bloom" e
 
 ### Metallics & Smoothness
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables the usage of your [Metallic Map](#metallic-maps) and [Smoothness Map](#smoothness-maps) to be used in the Channel, if defined.
 
 #### Custom Sampling
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 If enabled, exposes more options for sampling your Metallic Maps and Smoothness Maps.

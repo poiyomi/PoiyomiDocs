@@ -37,7 +37,7 @@ Sets the intensity of the glitching effect.
 
 ## Glitch Texture
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables the ability to use a Texture for the glitching effect.
 
@@ -61,7 +61,7 @@ How much to pan the Glitch Map for the effect.
 
 ## Mirror
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables the ability to choose where the glitching should appear.
 
@@ -71,7 +71,7 @@ Enables the ability to choose where the glitching should appear.
 
 ## Audio Link
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables the ability to use AudioLink to control the Glitching Intensity.
 
@@ -87,6 +87,6 @@ Choice of which music band to use when triggering Vertex Glitching.
 
 ### Override Glitch Intensity with AudioLink
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 If enabled, will override the [Glitch Strength](#glitch-strength) with the selected music band in AudioLink.

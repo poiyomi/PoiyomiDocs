@@ -19,7 +19,7 @@ In Poiyomi Shaders, there are various features that support AudioLink. However, 
 
 ## AudioLink
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 If enabled, activates AudioLink features and exposes AudioLink parameter controls for supported modules and effects.
 
@@ -44,7 +44,7 @@ When this feature activates, the following sections in Poiyomi Shaders will have
 
 ### Anim Toggle
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 <!-- 
 EDITORS NOTE: This H2 Header only has this Message Box below. Adding additional words above or below it may make it look repetitive. -BluWizard10
@@ -86,7 +86,7 @@ Properties that allow animated overrides of the Audio Bands against AudioLink da
 
 ### Band Overrides
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables the Band Overrides function. These sliders will manually override the mentioned Band as if music is playing, except that now you're manually animating it's values.
 

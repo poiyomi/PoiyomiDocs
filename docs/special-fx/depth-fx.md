@@ -28,7 +28,7 @@ Mask that defines where and where not to apply the depth effect. Black will not 
 
 ## Color & Emission
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables or disables changing the color and emission of the material based on depth.
 
@@ -90,7 +90,7 @@ Color blend amount to use when the object is at or farther than the Max Depth. B
 
 ## Alpha
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables or disables changing the alpha of the material based on depth. This allows "cutting out" or "fading out" as objects intersect.
 

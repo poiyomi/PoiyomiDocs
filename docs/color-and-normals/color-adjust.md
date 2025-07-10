@@ -60,7 +60,7 @@ This can lerp the brightness of the color in regards to it's hue or tone. Lower 
 
 ## Hue Shift
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enable or Disable the Hue Shifting functionality. **Turn this ON to enable the Hue Shifting feature.**
 
@@ -118,7 +118,7 @@ This dropdown allows you to select how the Color Adjustment should behave when t
 
 ### Hue Replace
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
   - Default: `On`
 
 Changes how the hue shift is applied when a hue shift mask is present. 
@@ -148,7 +148,7 @@ If set, will constantly shift the hue with time. A value of `1` will result in a
 
 ### Hue Shift Audio Link
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 If enabled, allows the Hue Shift to be controlled with Audio Link chronotensity.
 
@@ -176,7 +176,7 @@ How fast the audio link chronotensity should cycle the hue shift.
 
 ## Color Grading
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 If enabled, uses a `Gradation Map` as reference to determine how the Color Adjust should appear with the defined Color Grading style.
 

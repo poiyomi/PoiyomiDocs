@@ -33,7 +33,7 @@ Pixel range to use to sample the edge of the font SDF. Can generally be left at 
 
 ## FPS
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables or Disables the FPS counter.
 
@@ -81,7 +81,7 @@ How much additional padding to remove from the edges of the FPS Counter text. Th
 
 ## Position
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables or Disables the World Position display.
 
@@ -129,7 +129,7 @@ How much additional padding to remove from the edges of the World Position text.
 
 ## Instance Time
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables or Disables display of the time in the instance.
 

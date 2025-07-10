@@ -66,12 +66,12 @@ The *degree* to which the brightness is changed according to the direction of li
 
 ## Receive Shadow
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 If enabled, receive Shadows from other objects.
 
 ## Backface Mask
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables/Disables the visibility of the backlight's light on the backface.

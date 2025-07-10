@@ -56,13 +56,13 @@ Generally, this value should be set between `0.0` and `1.0` for a normal effect,
 
 ## Use Base Colors
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Applies the base color as a map. Useful for adding highlights to a mesh, especially in combination with an emission mask.
 
 ## Override Base Color
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 If enabled, the base color of the mesh will be replaced with the emission color (calculated from the combined strength of all the emission sections with Replace Base Color enabled). This means that the mesh, in areas with intense emission, will take on the color of the emission.
 
@@ -78,7 +78,7 @@ Fluorescence is a very basic slider. For more advanced control of Emission behav
 
 ## Color Adjust
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables hue shifting of the emission.
 
@@ -127,7 +127,7 @@ How much to constantly shift the hue with time. A value of 1 will result in a fu
 
 ## Center Out
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Whether to change the emission mode to center out. This will make the emission move from the center of the mesh to the edges of the mesh, relative to the view direction and the mesh's normal. The emission map is used to create the center out map.
 
@@ -139,7 +139,7 @@ How fast the center out effect should move.
 
 ## Light Based
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables Light Based emission. This allows modifying the emission based on the light intensity at different points on the mesh, or based on the world lighting.
 
@@ -177,7 +177,7 @@ Lighting intensity at which to use the *Max Emission Multiplier*.
 
 ## Blinking
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables Blinking of the emission. This allows the emission to blink at a certain rate without needing to explicitly animate it.
 
@@ -207,13 +207,13 @@ Offset of the blink cycle in time. Useful for offsetting the blink cycle of diff
 
 ## Scrolling
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables a scrolling emission effect. This creates a wave (or other pattern defined by a Curve) that travels in world space.
 
 ### Use Curve
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables the use of a Curve to define the scrolling wave shape.
 
@@ -225,7 +225,7 @@ Curve texture that defines the scrolling wave shape. By clicking the horizontal 
 
 ### VColor as position
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Whether to use the vertex color to determine the position of the wave. If disabled, the position will be determined by world-space coordinates.
 
@@ -265,7 +265,7 @@ An offset applied to the wave. This value is unit-less, and depends on the veloc
 
 ## Audio Link
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Enables or disables Emission AudioLink features.
 
