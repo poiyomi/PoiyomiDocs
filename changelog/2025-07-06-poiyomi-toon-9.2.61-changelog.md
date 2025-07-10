@@ -13,5 +13,5 @@ This update includes a great speed increase compilation times during upload and 
 The Toon version is now available in the VCC Repository, GitHub, and on BOOTH.
 
 ### Removed
-- Removed Unity Fog variants to improve shader compile times.
+- Improved shader compilation times.
   - *This should account for a ~66% speed increase for upload compile times.*
