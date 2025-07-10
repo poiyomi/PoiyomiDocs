@@ -4,7 +4,6 @@ title: Voronoi
 description: Generates a voronoi noise pattern, either in 2D or 3D.
 keywords: [voronoi, noise, pattern, special fx, effect, poiyomi, shader]
 ---
-import PoiVideo from '@site/src/components/PoiVideo'
 
 Voronoi is an effect that generates a noise pattern across the Material, either in 2D or 3D, making for very interesting stylized effects.
 

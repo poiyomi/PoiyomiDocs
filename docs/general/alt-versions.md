@@ -4,7 +4,6 @@ title: Alternate Versions
 description: Information regarding the special alternate versions included in Poiyomi Shaders, such as Grab Pass and the World Shader.
 keywords: [two pass, two-pass, grab pass, outline, early, world, poiyomi, shader]
 ---
-import PoiVideo from '@site/src/components/PoiVideo'
 
 Poiyomi Shaders has some alterative Shader versions included that are made for very specific purposes, some of which have extended features. These can have different performance impacts and should only be used when the need arises for it.
 

@@ -4,7 +4,6 @@ title: LTCGI
 description: Poiyomi Shaders support the use of LTCGI, which provides optimized plug-and-play realtime area lighting solutions for Unity and VRChat.
 keywords: [ltcgi, realtime, area, lighting, poiyomi, shader]
 ---
-import PoiVideo from '@site/src/components/PoiVideo'
 
 LTCGI is an optimized plug-and-play realtime area lighting solution using the linearly transformed cosine algorithm for standalone Unity and VRChat. When enabled in Poiyomi Shaders, it can dynamically illuminate your mesh and sample realtime reflections from a World that is actively producing LTCGI.
 

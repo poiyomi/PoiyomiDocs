@@ -4,7 +4,6 @@ title: Basics & Fun
 description: Basic properties that can manipulate the Mesh's Vertices.
 keywords: [vertex, vertices, options, offset, vertex options, poiyomi, shader]
 ---
-import PoiVideo from '@site/src/components/PoiVideo'
 
 **Vertex Options** provides properties related to the position of a model vertices, and can be used to manipulate a material's vertices in various ways without actually modifying the mesh.
 

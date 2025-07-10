@@ -4,7 +4,6 @@ title: Textures and Colors
 description: Knowledge on how to use Textures and Colors within Poiyomi Shaders.
 keywords: [texture, size, color, format, tiling, offset, vram, compression, size, mipmap, alpha, poiyomi, shader]
 ---
-import PoiVideo from '@site/src/components/PoiVideo'
 
 Textures and Colors are used everywhere in the shader, so it's important to understand how they work. Much of the information explained on this page can greatly impact the final appearance of your Textures.
 

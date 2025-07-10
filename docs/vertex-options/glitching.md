@@ -4,7 +4,6 @@ title: Glitching
 description: Distorts the mesh for brief moments to give it a "glitchy" look.
 keywords: [vertex, glitching, vertex glitching]
 ---
-import PoiVideo from '@site/src/components/PoiVideo'
 
 **Vertex Glitching** is a shader effect that distorts the mesh for brief moments to give it a "glitchy" look.
 

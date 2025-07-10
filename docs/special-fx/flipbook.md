@@ -4,7 +4,6 @@ title: Flipbook
 description: Flipbook allows images from a Texture Array to be played as an animation on the Material.
 keywords: [flipbook, texture array, texture, array, gif, 2d, animation, animated, special fx, poiyomi, shader]
 ---
-import PoiVideo from '@site/src/components/PoiVideo' 
 
 Flipbook is a classic feature that allows images from a Texture Array to be played as an animation on the Material. This can be a way to play GIFs or a specific 2D animation that either animates in a loop or in a specified pattern.
 

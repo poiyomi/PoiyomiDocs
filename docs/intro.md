@@ -5,7 +5,6 @@ description: Introduction to the Poiyomi Shaders Documentation.
 keywords: [poiyomi, shader, shaders, docs, documentation, unity, vrchat]
 hide_table_of_contents: true
 ---
-import PoiVideo from '@site/src/components/PoiVideo';
 
 Welcome to the Poiyomi Shaders Documentation! This website provides detailed information about the features currently offered in Poiyomi Shaders and how to utilize them.
 

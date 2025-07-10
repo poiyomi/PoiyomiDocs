@@ -4,7 +4,6 @@ title: Outlines
 description: Outlines are created using a simplified pass with the mess offset by a small amount, also known as the "Inverted Hull" effect, available in Poiyomi Shaders.
 keywords: [outline, outlines, inverted hull, stencil, size, width, poiyomi, shader]
 ---
-import PoiVideo from '@site/src/components/PoiVideo'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

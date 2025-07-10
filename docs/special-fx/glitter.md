@@ -4,7 +4,6 @@ title: Glitter / Sparkle
 description: Glitter adds a voronoi-based sparkle to the color of the Mesh, and can be used to create sparkles or to simulate specular lighting on a glittery surface.
 keywords: [glitter, sparkle, voronoi, specular, special fx, effect, fx, poiyomi, shader]
 ---
-import PoiVideo from '@site/src/components/PoiVideo'
 
 The Glitter feature is a simple effect that adds a voronoi-based sparkle to the color of the mesh. It can be used to add a sparkle to a mesh, or to simulate specular lighting on a glittery surface.
 

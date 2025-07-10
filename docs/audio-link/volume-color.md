@@ -4,7 +4,6 @@ title: AL Volume Color
 description: Waveform UV colors through AudioLink.
 keywords: [waveform, uv, volume, color, audiolink, poiyomi]
 ---
-import PoiVideo from '@site/src/components/PoiVideo'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

@@ -4,7 +4,6 @@ title: Video Effects
 description: Simulates a display panel on the Material, like an LCD or an OLED panel.
 keywords: [video effects, video fx, video, lcd, oled, display, special fx, effect, poiyomi, shader]
 ---
-import PoiVideo from '@site/src/components/PoiVideo'
 
 The Video Effects feature simulates a specified display panel of your choice, such as LCD or OLED screens by adding sub-pixels and other effects on top, depending on which type is chosen.
 

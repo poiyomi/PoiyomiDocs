@@ -4,7 +4,6 @@ title: ShatterWave
 description: Poiyomi ShatterWave is an advanced special effect that uses the mesh's vertices to create a wavy effect.
 keywords: [shatterwave, poiyomi, shader]
 ---
-import PoiVideo from '@site/src/components/PoiVideo'
 
 ShatterWave is an advanced special effect that uses the mesh's vertices to create a wavy effect across the mesh in variation. This effect is very similar to [Geometric Dissolve](/docs/extended-features/geometric-dissolve.md) with the exception of it being animated in an ocean wave-like effect instead.
 

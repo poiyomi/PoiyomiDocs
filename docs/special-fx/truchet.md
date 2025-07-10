@@ -4,7 +4,6 @@ title: Truchet
 description: Truchet creates a pattern of non-rotationally symmetric tiles consisting of a quarter-circle pattern.
 keywords: [truchet, smith tiles, special effect, special fx]
 ---
-import PoiVideo from '@site/src/components/PoiVideo'
 
 Truchet is a feature that generates a pattern of non-rotationally symmetric tiles consisting of multiple two-diametrically opposed quarter-circle (Smith) tiles.
 

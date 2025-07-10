@@ -4,7 +4,6 @@ title: Back Face
 description: Back Face properties of the Material in Poiyomi Shaders.
 keywords: [backface, back, face, inverted normal, poiyomi, shader, material]
 ---
-import PoiVideo from '@site/src/components/PoiVideo'
 
 Back Face provides options for modifying the base color, emission, and alpha for the backfaces of a mesh.
 
@@ -16,37 +15,37 @@ To use this section, [Cull](/docs/rendering/main.md#cull) must be set to `Off` i
 
 ## Color
 
-- `Type`: **Color**
+- `Type`: <PropertyIcon name="color" />**Color**
 
 Tint color to multiply the backface by.
 
 ## Texture
 
-- `Type`: **Color** Texture (`sRGB = ON`)
+- `Type`: <PropertyIcon name="color" />**Color** Texture (`sRGB = ON`)
 
 Texture to override the backface base color with instead.
 
 ## Mask
 
-- `Type`: **Data** Texture (`sRGB = OFF`)
+- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = OFF`)
 
 Texture used to mask the effect of backface color, texture, emission, and alpha modifiers.
 
 ## Emission Strength
 
-- `Type`: **Float**, Range: `0.0 - 20.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 20.0`
 
 How much Emission to add to the backface. Draws from the backface color.
 
 ## Hue Shift
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enable or Disable Hue Shift for the backface base color.
 
 ### Color Space
 
-- `Type`: **Dropdown**, Options: `OKLab`/`HSV`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `OKLab`/`HSV`
 
 Choice of Color Space to use for the Hue Shift. By default, it will be set to `OKLab`.
 
@@ -54,7 +53,7 @@ Learn about the difference of Color Spaces as documented here in [Color Adjust](
 
 ### Select or Shift
 
-- `Type`: **Dropdown**, Options: `Hue Select`/`Hue Shift`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Hue Select`/`Hue Shift`
   - Default: `Hue Shift`
 
 This dropdown allows you to select how the Color Adjustment should behave when the Hue Shift is used. By default, this will be set to `Hue Shift`.
@@ -69,7 +68,7 @@ This dropdown allows you to select how the Color Adjustment should behave when t
 
 ### Shift
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to shift the backface base color around the hue circle. 
 
@@ -77,7 +76,7 @@ This value is circular, and will have the same result at 0 and 1.
 
 ### Shift Speed
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 How much to constantly shift the hue with time. A value of 1 will result in a full hue shift cycle every 20 seconds.
 
@@ -85,18 +84,18 @@ How much to constantly shift the hue with time. A value of 1 will result in a fu
 
 ### Detail Intensity
 
-- `Type`: **Float**, Range: `0.0 - 5.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 5.0`
 
 Detail Intensity backface multiplier for detail textures in the [Details](/docs/color-and-normals/details.md) section.
 
 ### Replace Alpha
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Whether to replace the alpha value for the backface with the alpha calculated from the Backface Texture and Alpha settings.
 
 ### Global Emission Multiplier
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 Custom Multiplier to limit the [Emissions](/docs/special-fx/emission.md) shown on the backface.

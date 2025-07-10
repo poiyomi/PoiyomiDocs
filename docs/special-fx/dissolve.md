@@ -5,7 +5,6 @@ description: Dissolve provides features for transitioning between a base appeara
 keywords: [dissolve, transition, special effect, special fx, effect, poiyomi, shader]
 toc_max_heading_level: 4
 ---
-import PoiVideo from '@site/src/components/PoiVideo'
 
 The Dissolve module provides features for transitioning between a base appearance and a modified appearance in an aesthetically pleasing way. It can be used to transition from one base texture to another, or from the base color to a transparent appearance.
 

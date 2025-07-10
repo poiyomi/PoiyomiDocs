@@ -4,16 +4,32 @@ title: Pathing
 description: Pathing enables a special effect that follows along a path defined from a gradient. It is used for complex effects, such as an Emission traveling across a Material.
 keywords: [pathing, gradient, special effect, special fx, effect, poiyomi, shader]
 ---
-import PoiVideo from '@site/src/components/PoiVideo'
 
 Pathing is a powerful and flexible way to create effects that follow along paths defined using gradients. It can be used for complex effects like emissions traveling across a material, or selectively showing an underlying texture based on a defined path.
 
-:::note Documentation Info
-Options in this section labeled **"R/G/B/A"** each correspond to a common option with separate values for each different channel of the gradient.
+:::info Documentation Info
+Options in this section will be labeled as **"R/G/B/A"**, each corresponding to a common option with separate values for each different channel of the gradient.
+
+For example, "`R Path Type`" will be documented here as "`R/G/B/A Path Type`" instead.
 :::
 
 <PoiVideo url='/vid/special-fx/4paths.mp4' width='300px'/>
 <em>Example of Paths used on the lines of this Jacket. Notice the timing of each Path as they animate.</em>
+
+## Path Source
+
+- `Type`: **Dropdown**, Options: `Tex Gradient`/`UV Gradient`
+
+Choice of what Path Gradient should be used.
+
+- `Tex Gradient`: Uses a Texture to fetch the Gradient.
+- `UV Gradient`: Fetches the gradient from the UV of the mesh.
+
+## Blend Mode
+
+- `Type`: **Dropdown**, Options: `Replace`/`Add`/`Multiply`
+
+Choice of blending operator to use for the Pathing gradient.
 
 ## Gradient Type
 
@@ -24,13 +40,33 @@ Determines whether to sample the Path Map texture. There are two modes:
 - `Split Channels`: Samples the Path Map texture independently for each channel of the gradient. Makes 4 separate paths, with each being able to be independently set up or disabled.
 - `Merged Channels`: Samples the Path Map texture as a single channel. This makes each channel use the same extended path, with four times the path levels available, allowing for more precise effects. This mode should generally be created with the help of the Poiyomi Pathing tool.
 
+:::info
+The Gradient Type setting is only visible with [Path Source](#path-source) set to `Tex Gradient`.
+:::
+
+## UV
+
+- `Type`: **Dropdown**, Options: `UV0`/`UV1`/`UV2`/`UV3`/`Panosphere`/`World Pos`/`Local Pos`/`Polar UV`/`Distorted UV`
+
+Determines which UV to sample the Path Map from.
+
+:::info
+The UV setting is only visible with [Path Source](#path-source) set to `UV Gradient`.
+:::
+
+## Point Sampling
+
+- `Type`: **Toggle**
+
+If enabled, will sample the Path from points.
+
 ## Override Alpha
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 If enabled, multiplies the base alpha of the material with the Path's final alpha.
 
-## RGBA Path Map
+## RGBA Path Gradient / Mask
 
 - `Type`: **Data** Texture (`sRGB = Off`)
 
@@ -48,9 +84,11 @@ Defines the underlying color for the paths, and a mask for the paths. Both the R
 
 The RGB Color can be used to show textures or colors where the path is active. The Alpha Mask can be used to define where the path is shown, and is very useful for creating clean paths, by creating "wider" paths on the path map, and masking out the edges (which often cause artifacts).
 
-## R/G/B/A Path Type
+## Path Types
 
-- `Type`: **Dropdown**, Options: `Fill`/`Path`/`Loop`
+### R/G/B/A Path Type
+
+- `Type`: **Dropdown**, Options: `Fill`/`Path`/`Loop`/`Dashed`/`Off`
 
 Defines the path type for each path channel.
 
@@ -60,10 +98,14 @@ Defines the path type for each path channel.
 - `Fill`: The path will fill the gradient from `0-255`, then restart.
 - `Path`: The path will follow the gradient from `0-255` and will completely disappear before re-appearing at the beginning.
 - `Loop`: The path will follow the gradient from `0-255` and will immediately start showing at the beginning while the end disappears.
+- `Dashed`: The path will follow the gradient from `0-255` and will continue to fire every Gap specified.
+- `Off`: The path will be disabled.
 
 </details>
 
-## R/G/B/A Path Color
+## Path Colors
+
+### R/G/B/A Color
 
 - `Type`: **HDR Color**
 
@@ -71,11 +113,11 @@ Colors for each path channel. This is overlain on the `Color` texture, if define
 
 The **Alpha** value of these colors determines the strength of the path. Path channels can be disabled by setting their colors' alpha to `0`.
 
-## Path Settings
+## Path Appearance
 
 Each of these settings below has 4 fields, one for each path channel. They are labeled accordingly as `R`, `G`, `B`, and `A`, referring to their respective channels.
 
-## Emission Strength
+### Emission Strength
 
 - `Type`: **Float4**
 
@@ -98,6 +140,16 @@ How fast the path should move from minimum to maximum along the gradient. A valu
 - `Type`: **Float4**
 
 How long the path should be, relative to the gradient. A value of `1` will result in a path that extends across the entire gradient.
+
+### Gap Length
+
+- `Type`: **Float4**
+
+Determines the Gap in between each Path fired when [R/G/B/A Path Type](#rgba-path-type) is set to `Dashed`.
+
+:::info
+This option is only visible when any [R/G/B/A Path Type](#rgba-path-type) is set to `Dashed`.
+:::
 
 ## Timing Options
 
@@ -123,6 +175,18 @@ How much to offset the time by, in terms of path cycles. This can be used whethe
 
 How many segments to split the path into. At a value of `0`, this defaults to the texture precision. If set to a value greater than `0`, the path will be split into that many segments - for most paths, this will be `255` by default, so lower values can be used to break up the path into blockier segments.
 
+## Path Remapping
+
+- `Type`: **Toggle**
+
+Enables Path Remapping, allowing the ability to change the entire range of the Path to a clamped range instead. This is especially useful when using `UV Gradient` as the [Path Source](#path-source).
+
+### R/G/B/A Range
+
+- `Type`: **Clamped Float**, Range: `0.0 - 1.0`
+
+Adjusts the mapping range of the specified Path.
+
 ## Audio Link
 
 :::info
@@ -133,7 +197,7 @@ For any audio link values with a **Vector2** offset, the **X** represents the va
 
 ### Time Offset
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Time Offset adds an offset to the time based on the audio. This can be used to make the path "bounce" in response to the audio.
 
@@ -151,7 +215,7 @@ How much time offset to apply to the path based on audio.
 
 ### Emission Offset
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Emission Offset adds emission strength to the path based on the audio. This can be used to make the path "glow" in response to the audio.
 
@@ -169,7 +233,7 @@ How much emission offset to apply to the path based on audio.
 
 ### Width Offset
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Width Offset adds width to the path based on the audio. This can be used to make the path "thicken" in response to the audio.
 
@@ -187,11 +251,23 @@ How much width offset to apply to the path based on audio.
 
 ### History
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 History applies a mask on top of the path that corresponds to the history of the audio in the selected channel. This consists of about a second of audio data.
 
 This is often useful when applied to a path that's completely filled, which can be achieved by setting `Softness` to `0`, `Speed` to `0`, and `Length` to `1`.
+
+#### History Mode
+
+- `Type`: **Dropdown**, Options: `Mask`/`Override`
+
+Sets the History pattern mode.
+
+#### R/G/B/A History
+
+- `Type`: **Toggle**
+
+Whether to apply history masking to the path.
 
 #### R/G/B/A Band
 
@@ -199,15 +275,15 @@ This is often useful when applied to a path that's completely filled, which can 
 
 Band to use for history masking.
 
-#### R/G/B/A History
+#### R/G/B/A Range
 
-- `Type`: **Boolean**
+- `Type`: **Clamped Float**, Range: `0.0 - 1.0`
 
-Whether to apply history masking to the path.
+Sets the range of the history masking in the path.
 
 ### Chrono Time
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Chrono (Chronotensity) Time is a very useful feature for advancing the path based on audio, while maintaining how far the path has already progressed.
 
@@ -244,9 +320,15 @@ How much to incorporate the chronotensity adjustment into the path timing. Good 
 
 ### Auto Correlator
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
 
 Whether to apply the autocorrelator as a mask along the path. Autocorrelatior roughly corresponds to the intensity of the audio at various frequencies.
+
+#### Autocorrelator Mode
+
+- `Type`: **Dropdown**, Options: `Mask`/`Override`
+
+Sets the autocorrelator mode.
 
 #### R/G/B/A Type
 
@@ -254,8 +336,14 @@ Whether to apply the autocorrelator as a mask along the path. Autocorrelatior ro
 
 Autocorrelator mode to use for the autocorrelator mask in each channel. `Mirrored` will mirror the autocorrelator mask to the other side of the path.
 
-### R/G/B/A Color Chord Strip
+### Color Chord
 
-- `Type`: **Boolean**
+- `Type`: **Toggle**
+
+Enables Color Chord Strip mode for the Path.
+
+#### R/G/B/A Color Chord Strip
+
+- `Type`: **Toggle**
 
 Color Chord assigns a color to each segment of the path based on the audio. This can be used to create a unique colorful rainbow effect.

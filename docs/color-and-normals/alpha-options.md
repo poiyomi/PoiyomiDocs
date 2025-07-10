@@ -5,7 +5,6 @@ description: Properties for modifying how your Material treats Alpha in Poiyomi 
 image: /img/color-and-normals/Thumb-AlphaOptions.png
 keywords: [alpha, options, properties, poiyomi, shader]
 ---
-import PoiVideo from '@site/src/components/PoiVideo'
 
 The **Alpha Options** section provides options for modifying how the material treats alpha. The effects of these options are heavily influenced by the [Render Preset](/docs/general/render-preset.md) and other render settings.
 
@@ -13,25 +12,25 @@ These properties below can allow you to further modify how you want the Alpha to
 
 ## Force Opaque
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 This option forces the material to have an alpha value of 1. Generally, this will result in any transparency being disabled.
 
 ## Alpha Mod
 
-- `Type`: **Float**, Range: `-1.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
 
 Alpha Mod defines a direct value to add to or remove from the material alpha. This directly influences all alpha values on the material.
 
 ## Global Mask
 
-- `Type`: **Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
 Select which [Global Mask](/docs/modifiers/global-masks.md) to use for the Alpha overall.
 
 ## Alpha To Coverage
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enable or Disable Alpha to Coverage. This affects how the shader is sampled by functions that read the coverage of a fragment. 
 
@@ -39,7 +38,7 @@ Alpha to Coverage can be enabled in the cutout render mode to provide transparen
 
 ### Sharpened A2C
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Sharpened Alpha to Coverage (A2C) rescales the alpha value using the mipmaps. 
 
@@ -47,13 +46,13 @@ This option is useful for using Alpha to Coverage on dense collections of cutout
 
 ### Mip Level Alpha Scale
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to use the mipmaps to rescale the alpha value. Only used when Sharpened A2C is enabled.
 
 ## Dithering
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enable or disable alpha dithering.
 
@@ -61,25 +60,25 @@ Dithering is a technique that introduces intentional noise in order to provide a
 
 ### Dither Gradient
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 The range to apply dithering over. The larger this value is, the more dithering will be applied.
 
 ### Dither Bias
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 The range bias of the gradient to apply dithering over.
 
 ## Distance Alpha / Distance Fade
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enable or Disable Distance Alpha. Distance Alpha can modify the alpha value based on the distance from the viewer (camera) to the object/pixel.
 
 ### Pos To Use
 
-- `Type`: **Dropdown**, Options: `Object Position`/`Pixel Position`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Object Position`/`Pixel Position`
 
 Which position to use to calculate distance.
 
@@ -98,37 +97,37 @@ Which position to use to calculate distance.
 
 ### Min Distance Alpha
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 The alpha multiplier that will be applied at the [Min Distance](#min-distance).
 
 ### Max Distance Alpha
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 The alpha multiplier that will be applied at the [Max Distance](#max-distance). 
 
 ### Min Distance
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 The distance (in meters) at which the Min Distance Alpha multiplier will be applied.
 
 ### Max Distance
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 The distance (in meters) at which the Max Distance Alpha multiplier will be applied.
 
 ### Global Mask
 
-- `Type`: **Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
 Select which [Global Mask](/docs/modifiers/global-masks.md) to only affect the Distance Alpha / Distance Fade onto.
 
 ## Fresnel Alpha
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enable or Disable the Fresnel Alpha effect. Fresnel Alpha uses the angle between the viewer (camera) and the object's normal to modify the alpha.
 
@@ -136,37 +135,37 @@ This can be used to simulate materials that are more opaque at shallow angles, s
 
 ### Intensity
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much the alpha should be modified by the Fresnel Alpha effect.
 
 ### Sharpness
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How sharp the transition should be between full effect and no effect.
 
 ### Width
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How wide the Fresnel Alpha effect should be.
 
 ### Invert
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Whether the Fresnel Alpha effect should increase in intensity from the outside-in or the inside-out.
 
 ### Global Mask
 
-- `Type`: **Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
 Select which [Global Mask](/docs/modifiers/global-masks.md) to only affect the Fresnel Alpha effect onto.
 
 ## Angular Alpha
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Angular Alpha uses the angle between a specified direction and the object or vertex position to modify the material alpha. 
 
@@ -174,7 +173,7 @@ This can be used to create materials that are only visible when looking directly
 
 ### Angle Type
 
-- `Type`: **Dropdown**, Options: `Camera Face Model`/`Model Face Camera`/`Face Each Other`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Camera Face Model`/`Model Face Camera`/`Face Each Other`
 
 Defines how the angle should be calculated.
 
@@ -197,7 +196,7 @@ Defines how the angle should be calculated.
 
 ### Model or Vert Position
 
-- `Type`: **Dropdown**, Options: `Model`/`Vertex`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Model`/`Vertex`
 
 Choice of which to calculate the Angular Position from.
 
@@ -216,49 +215,49 @@ Choice of which to calculate the Angular Position from.
 
 ### Forward Direction
 
-- `Type`: **Float3**
+- `Type`: <PropertyIcon name="float3" />**Float3**
 
 Defines the vector used for the model Forward Direction. Relative to the model's origin coordinates.
 
 ### Camera Angle Min
 
-- `Type`: **Float**, Range: `0.0 - 180.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 180.0`
 
 The angle (in degrees) at which the alpha multiplier should be 0 in the `Camera Face Model` mode.
 
 ### Camera Angle Max
 
-- `Type`: **Float**, Range: `0.0 - 180.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 180.0`
 
 The angle (in degrees) at which the alpha multiplier should be 1 in the `Camera Face Model` mode.
 
 ### Model Angle Min
 
-- `Type`: **Float**, Range: `0.0 - 180.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 180.0`
 
 The angle (in degrees) at which the alpha multiplier should be 0 in the `Model Face Camera` mode.
 
 ### Model Angle Max
 
-- `Type`: **Float**, Range: `0.0 - 180.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 180.0`
 
 The angle (in degrees) at which the alpha multiplier should be 1 in the `Model Face Camera` mode.
 
 ### Min Alpha
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 The minimum value of alpha for the Angular Alpha mode. This will prevent the alpha from going below a certain level.
 
 ### Global Mask
 
-- `Type`: **Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
 Select which [Global Mask](/docs/modifiers/global-masks.md) to only affect the Angular Alpha effect onto.
 
 ## Alpha Audio Link
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables AudioLink for Alpha Options. The Alpha can be modified based on the audio level in a specific band.
 
@@ -268,13 +267,13 @@ The settings in this section will only be visible when [AudioLink](/docs/audio-l
 
 ### Add Band
 
-- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
 
 Which Band to use for the below Add Range.
 
 ### Add Range
 
-- `Type`: **Vector2**
+- `Type`: <PropertyIcon name="float2" />**Vector2**
 
 How much to add (or subtract) from alpha. The **X** value is the alpha added with no volume in the Alpha Add Band, and the **Y** value is the alpha added with maximum volume.
 
@@ -284,12 +283,12 @@ If audio link is not present in a world, no value will be added. Using this beha
 
 ### Alpha Premultiply
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 With Alpha Premultiply enabled, the shader will multiply the base color by the alpha value after all base color operations, but before lighting and emission calculations. This results in a different appearance for transparent materials.
 
 ### Boost Transparency in Forward Add
 
-- `Type`: **Float**, Range: `1.0 - 100.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `1.0 - 100.0`
 
 How much to "boost" the Transparency in the Forward Add of the Alpha.

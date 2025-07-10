@@ -4,7 +4,6 @@ title: Depth Bulge
 description: Depth Bulge causes the Mesh to bulge out towards other nearby meshes, like when touching it with a finger.
 keywords: [depth, bulge, depth bulge, buffer, texture, special fx, poiyomi, shader]
 ---
-import PoiVideo from '@site/src/components/PoiVideo'
 
 Depth Bulge causes the Mesh to bulge out towards other nearby meshes when it's in proximity to it, like when touching it with a finger.
 

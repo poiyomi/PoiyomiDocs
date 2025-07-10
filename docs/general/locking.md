@@ -4,7 +4,6 @@ title: Locking and Animation
 description: Information regarding the Lock-In and Animation systems used in Poiyomi Shaders.
 keywords: [lock-in, lock, unlock, shader locking, mark animated, mark, animated, property, poiyomi, shader, thry, editor, thryeditor]
 ---
-import PoiVideo from '@site/src/components/PoiVideo'
 
 Poiyomi Shaders includes some back-end systems that are built with the intention of keeping your workflow optimized in Unity. This page will explain the importance of the Shader Locking feature, as well as how to animate Material Properties on your terms.
 

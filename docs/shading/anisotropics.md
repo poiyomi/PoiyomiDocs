@@ -4,7 +4,6 @@ title: Anisotropics
 description: Anisotropics emulates the rendering of anisotropic fabrics, used as a way to create shiny fabric effects like silk, satin, nylon, and polyester.
 keywords: [anisotropics, emulate, fabric, silk, satin, nylon, polyester, shading, poiyomi, shader]
 ---
-import PoiVideo from '@site/src/components/PoiVideo'
 
 Anisotropics is a feature that emulates the rendering of anisotropic fabrics. This can be used as a way to create shiny fabric effects such as silk, satin, nylon, and polyester.
 

@@ -4,7 +4,6 @@ title: Backlight
 description: Backlight expresses lighting from behind a character or model, which can look similar to how Japanese-style illustrations are drawn.
 keywords: [backlight, back, light, shading, lighting, liltoon, poiyomi, shader]
 ---
-import PoiVideo from '@site/src/components/PoiVideo'
 
 Backlight is a shading feature that is used to express lighting from *behind* a character or model, which can look similar to how Japanese-style illustrations are drawn.
 

@@ -6,7 +6,6 @@ keywords: [stylized, specular, style, toon, effect, highlight, poiyomi, shader]
 toc_min_heading_level: 2
 toc_max_heading_level: 4
 ---
-import PoiVideo from '@site/src/components/PoiVideo'
 
 Stylized Reflections is a module that applies a stylized specular highlight or reflective effect to the material. It's useful for creating a more toon-like, stylized effect than the standard specular highlights or reflections from [Reflections & Specular](/docs/shading/reflections-and-specular.md).
 

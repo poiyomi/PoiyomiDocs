@@ -5,7 +5,6 @@ description: The fundamental features of your Material in Poiyomi Shaders, inclu
 image: /img/color-and-normals/Thumb-ColorAndNormals.png
 keywords: [main, texture, normals, map, color, alpha, poiyomi, shader, unity]
 ---
-import PoiVideo from '@site/src/components/PoiVideo'
 
 The **Color & Normals** section defines the fundamental attributes of a material, including many options that affect the Base Color and per-pixel Normals of the material. It is the first section that most users will utilize when editing the Material.
 
@@ -15,13 +14,13 @@ The **Color & Normals** section defines the fundamental attributes of a material
 
 ## Color & Alpha
 
-- `Type`: **Color**
+- `Type`: <PropertyIcon name="color" />**Color**
 
 A tint Color that's blended multiplicative with the base texture. If no Main Texture is specified, this Color will be used instead overall.
 
 ## Main Texture
 
-- `Type`: **Color** Texture (`sRGB = ON`)
+- `Type`: <PropertyIcon name="texture" />**Color** Texture (`sRGB = ON`)
 
 The Main Texture of the material. The base color of the material is set from the color of this texture. In transparent rendering modes, the Main Texture's Alpha sets the base alpha of the material.
 
@@ -31,7 +30,7 @@ The assigned **UV Map** and the **Panning** of the Main Texture can be adjusted,
 
 ## Normal Map
 
-- `Type`: **Normal Map** Texture (`sRGB = OFF`)
+- `Type`: <PropertyIcon name="texture" />**Normal Map** Texture (`sRGB = OFF`)
 
 The Normal Map texture changes the normal of the surface based on a normal map texture. This allows additional detail to be added to a material without increasing the complexity of a mesh.
 
@@ -65,7 +64,7 @@ To learn more about Normals, see the video below.
 
 ## Alpha Map
 
-- `Type`: **Data** Texture (`sRGB = OFF`)
+- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = OFF`)
 
 The Alpha Map texture provides an additional slot to influence the base alpha of a material. This texture will be multiplied with the base alpha from the Main Texture. It should generally be black and white, as only its value (specifically the red channel value) will be used, not the color.
 
@@ -83,7 +82,7 @@ The Alpha Map can be inverted with the **Invert** option.
 
 ## Alpha Cutoff
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 The **Alpha Cutoff** value sets the alpha value at which to [clip](https://docs.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-clip) a pixel. If the alpha value of a pixel is below this value, the pixel is [discarded](https://docs.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-discard).
 

@@ -4,7 +4,6 @@ title: AudioLink
 description: AudioLink features for Poiyomi Toon Shader.
 keywords: [audiolink, audio, link, udon audiolink, poiyomi]
 ---
-import PoiVideo from '@site/src/components/PoiVideo'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

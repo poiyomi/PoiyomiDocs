@@ -4,7 +4,6 @@ title: Rim Lighting
 description: Rim Lighting is used to add a highlight or glow around the edges of a Material. It samples from the angle between your POV and the Normal of the surface to define the effect.
 keywords: [rim, lighting, rim lighting, highlight, glow, edge, edges, shading, poiyomi, shader]
 ---
-import PoiVideo from '@site/src/components/PoiVideo';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

@@ -4,7 +4,6 @@ title: Tessellated
 description: Poiyomi Tessellated is the Tessellation shader, which involves the process of subdividing triangles into a more realistic structure for certain realistic effects.
 keywords: [tessellated, poiyomi, shader]
 ---
-import PoiVideo from '@site/src/components/PoiVideo'
 
 **Poiyomi Pro Tessellated** is the Tessellation shader, which includes a shading process that subdivides triangles into a more realistic structure for certain realistic effects.
 

@@ -4,7 +4,6 @@ title: Grab Pass
 description: Grab Pass Transparency takes a screenshot of the scene every frame to create special effects, such as refraction and blur.
 keywords: [grab, pass, grabpass, transparency, refraction, blur, poiyomi, shader]
 ---
-import PoiVideo from '@site/src/components/PoiVideo'
 
 Grab Pass transparency uses a Grab Pass, which takes a screenshot of the scene every frame to create special effects like refraction and blur. It's a powerful, but expensive feature that enables unique effects.
 

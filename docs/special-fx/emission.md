@@ -4,7 +4,6 @@ title: Emission
 description: Emission provides the ability to add brightness directly to the base color of a Mesh, and can be used to add highlights or a glow effect.
 keywords: [emission, emissions, glow, bloom, brightness, color, scrolling, center out, blinking, special fx, poiyomi, shader]
 ---
-import PoiVideo from '@site/src/components/PoiVideo' 
 
 Emission is a function that allows adding brightness directly to the base color of a mesh. It can be used to add highlights, or to add a glow effect to a mesh.
 

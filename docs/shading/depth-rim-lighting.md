@@ -4,7 +4,6 @@ title: Depth Rim Lighting
 description: Depth-based Rim Lighting creates a constant-size Rim in screen space, allowing the Rim to have a more constant size, unlike traditional Rim Lighting.
 keywords: [rim, lighting, depth rim lighting, depth, lighting, shading, poiyomi, shader]
 ---
-import PoiVideo from '@site/src/components/PoiVideo'
 
 Depth-based Rim Lighting is a rim lighting effect that creates a constant-size rim in screen space, meaning the rim has a more constant size, unlike traditional rim lighting.
 

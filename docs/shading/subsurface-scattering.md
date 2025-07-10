@@ -4,7 +4,6 @@ title: Subsurface Scattering
 description: Subsurface Scattering is an effect that simulates how light penetrates a translucent surface, such as skin, and exits the surface at a potentially different point.
 keywords: [subsurface scattering, subsurface, scattering, light, translucency, skin]
 ---
-import PoiVideo from '@site/src/components/PoiVideo'
 
 Subsurface Scattering is a lighting effect that simulates how light can penetrate a translucent surface and exit at a potentially different point. This allows you to have the effect where thin parts of flesh get tinted red when a light (such as a flashlight) is behind them.
 

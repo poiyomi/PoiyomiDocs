@@ -4,7 +4,6 @@ title: Substance Painter
 description: Using Substance Painter's Export Templates for Poiyomi Shaders.
 keywords: [substance, 3d, painter, substance painter, export preset, export, preset, poiyomi, shader]
 ---
-import PoiVideo from '@site/src/components/PoiVideo'
 
 [Adobe Substance Painter](https://www.adobe.com/products/substance3d-painter.html) is frequently used for authoring PBR (Physically Based Rendering) texture maps, and works well for creating realistic looking textures. Provided on this page are some project settings and export presets for Substance Painter that can be used to easily export textures for use in a Poiyomi Material.
 

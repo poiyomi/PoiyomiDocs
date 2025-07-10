@@ -4,7 +4,6 @@ title: Upgrading from V7.x to V9.x
 description: What to know before upgrading from V7.x to V9.x.
 keywords: [upgrade, v7, v8, v9, new, changes, poiyomi, shader]
 ---
-import PoiVideo from '@site/src/components/PoiVideo' 
 
 Because the shader was reworked in significant ways, there are significant differences made to the shader since v7.x.
 

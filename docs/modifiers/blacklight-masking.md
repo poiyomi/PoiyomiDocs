@@ -4,7 +4,6 @@ title: BlackLight Masking
 description: BlackLight Masking allows the user to create distance-based effects from Light Sources.
 keywords: [blacklight, black light, masking, blacklight masking, poiyomi, shader]
 ---
-import PoiVideo from '@site/src/components/PoiVideo'
 
 <!--
 EDITOR'S NOTE: This page was written based on an old Tutorial Video by Poiyomi. Some information may not be totally accurate as this module has completely changed since then. -BluWizard10

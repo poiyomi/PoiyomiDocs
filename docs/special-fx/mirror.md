@@ -4,7 +4,6 @@ title: Mirror/Camera Visibility
 description: The Mirror section controls whether the shader should appear in VRChat Mirrors or not.
 keywords: [mirror, mirrors, appearance, special fx, effect, poiyomi, shader]
 ---
-import PoiVideo from '@site/src/components/PoiVideo'
 
 The Mirror/Cmaera Visibility section is a very simple section that controls whether the shader should appear in VRChat Mirrors or not.
 

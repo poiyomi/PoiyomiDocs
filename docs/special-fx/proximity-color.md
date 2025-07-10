@@ -4,7 +4,6 @@ title: Proximity Color
 description: Proximity Color is a special effect that allows the user to change the color of a Mesh based on the distance from the Camera or the user's POV.
 keywords: [proximity color, proximity, color, pixel, object, color, special fx, effect, poiyomi, shader]
 ---
-import PoiVideo from '@site/src/components/PoiVideo'
 
 Proximity Color is a special effect that allows you to change the color of a mesh based on the distance from the camera. This can be used to darken a mesh when it gets close, simulating local occlusion of light.
 

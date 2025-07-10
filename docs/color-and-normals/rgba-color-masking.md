@@ -4,7 +4,6 @@ title: RGBA Color Masking
 description: RGBA Color Masking provides flexible ways to apply different Color Tints, Textures, and Normals within the Material without affecting Alpha.
 keywords: [rgba, color, masking, tint, texture, normals, poiyomi, shader]
 ---
-import PoiVideo from '@site/src/components/PoiVideo'
 
 RGBA Color Masking provides a flexible way to apply different color tints, textures, and normal maps with the main color. This allows the user to seamlessly blend between Materials for situations where the need for blending vertex colors is necessary and for consolidating Detail Normals for greater efficiency.
 
@@ -30,7 +29,7 @@ Below are the list of properties available to use in RGBA Color Masking.
 
 ## Mask Type
 
-- `Type`: **Dropdown**, Options: `Texture`/`Vertex Colors`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Texture`/`Vertex Colors`
 
 ### Texture
 
@@ -48,7 +47,7 @@ When using Vertex Colors as the RGBA Mask, make sure the Color Attributes on the
 
 ### Masks
 
-- `Type`: **Data** Texture (`sRGB OFF`)
+- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB OFF`)
 
 Slot for the masks that you wish to use for your RGBA Masking. This will only be exposed when Mask Type is set to Texture.
 
@@ -58,13 +57,13 @@ This slot is only exposed when **Mask Type** is set to `Texture`.
 
 ### Metallic Maps
 
-- `Type`: **Data** Texture (`sRGB OFF`)
+- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB OFF`)
 
 Slot to use for Metallics & Smoothness effect on your RGBA Masks. Use this for the Metallics mapping in each channel.
 
 ### Smoothness Maps
 
-- `Type`: **Data** Texture (`sRGB OFF`)
+- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB OFF`)
 
 Slot to use for Metallics & Smoothness effect on your RGBA Masks. Use this for the Smoothness mapping in each channel.
 
@@ -76,13 +75,13 @@ The following properties below will appear for each Channel you are customizing.
 
 ### Channel
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables the mentioned Channel to be used.
 
 ### Scale & Offset
 
-- `Type`: **Float4**
+- `Type`: <PropertyIcon name="float4" />**Float4**
   - Default: `X = 1`, `Y = 1`, `Z = 0`, `W = 0`
 
 Determines both the Scale and Offset of the affected area.
@@ -96,31 +95,31 @@ Determines both the Scale and Offset of the affected area.
 
 ### Blend Mode
 
-- `Type`: **Dropdown**, Options: `Replace`/`Darken`/`Multiply`/`Lighten`/`Screen`/`Subtract`/`Add`/`Overlay`/`Mixed`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Replace`/`Darken`/`Multiply`/`Lighten`/`Screen`/`Subtract`/`Add`/`Overlay`/`Mixed`
 
 Choice of Blend mode you wish to use for this channel.
 
 ### Color
 
-- `Type`: **Color**
+- `Type`: <PropertyIcon name="color" />**Color**
 
 Set the Color of the Channel to use.
 
 ### Texture
 
-- `Type`: **Data** Texture (`sRGB ON`)
+- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB ON`)
 
 Texture to use for the **Channel** masked area. This is pure white by default, if a texture is not defined.
 
 ### Normal
 
-- `Type`: **Normal Map** Texture (`sRGB OFF`)
+- `Type`: <PropertyIcon name="texture" />**Normal Map** Texture (`sRGB OFF`)
 
 Normal Map texture to be used for the **Channel** masked area.
 
 #### Blend Mode
 
-- `Type`: **Dropdown**, Options: `Replace`/`Blend All`/`Blend Base Normal`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Replace`/`Blend All`/`Blend Base Normal`
 
 Adjust how the Normal Map blends with the Base, also defined by your RGBA Mask. **Expand the Normal Texture Slot to see this property.**
 
@@ -132,7 +131,7 @@ If set to `Blend All`, it will combine the bump Normal with ALL Normals of your 
 
 ### Normal Intensity
 
-- `Type`: **Float**, Range: `0.0 - 10.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 10.0`
 
 Intensity for the Normals in your mask, if defined.
 
@@ -140,18 +139,18 @@ By default, a standard Normal intensity would be `1`, for reference.
 
 ### Emission Strength
 
-- `Type`: **Float**, Range: `0.0 - 20.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 20.0`
 
 Set the Emission strength to the masked area. High values can create a "bloom" effect in worlds with Post Processing.
 
 ### Metallics & Smoothness
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables the usage of your [Metallic Map](#metallic-maps) and [Smoothness Map](#smoothness-maps) to be used in the Channel, if defined.
 
 #### Custom Sampling
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 If enabled, exposes more options for sampling your Metallic Maps and Smoothness Maps.

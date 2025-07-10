@@ -4,7 +4,6 @@ title: Fur
 description: The Poiyomi Fur Shader enables simulation of fabrics and hairs using a specialized technique similar to Height, at a notable performance cost.
 keywords: [fur, fur shader, poiyomi fur, poiyomi, shader]
 ---
-import PoiVideo from '@site/src/components/PoiVideo'
 
 The Poiyomi Fur Shader is a system that uses a height-based technique to enable simulation of fabrics and hairs. It can look similar to how fur is simulated in animated films but with some differences.
 

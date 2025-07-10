@@ -4,7 +4,6 @@ title: Internal Parallax
 description: Internal Parallax creates an illusion of layers inside of the Mesh, like an infinite mirror.
 keywords: [internal parallax, internal, parallax, infinite mirror, special fx, effect, poiyomi, shader]
 ---
-import PoiVideo from '@site/src/components/PoiVideo'
 
 Internal Parallax creates an illusion of layers going inside the Mesh. Similar to an "infinite mirror" effect, it can be used to create stylized parallax effects in the specified areas.
 

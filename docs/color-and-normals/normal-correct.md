@@ -9,13 +9,13 @@ Normal Correct forces the normals of the mesh to point towards a certain directi
 
 ## Normal Correct Amount
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Controls the intensity of how much it alters the normals.
 
 ## Origin
 
-- `Type`: **Float3**
+- `Type`: <PropertyIcon name="float3" />**Float3**
 
 The point that acts as the center will be where the normals are aligned outwards from, on the XYZ axis.
 
