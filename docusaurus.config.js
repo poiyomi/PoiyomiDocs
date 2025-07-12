@@ -105,7 +105,11 @@ const config = {
           },
           {
             to: '/color-and-normals/',
-            from: '/color-and-normals/main'
+            from: '/color-and-normals/main',
+          },
+          {
+            to: '/shading/matcap',
+            from: '/special-fx/iridescence',
           }
           // Redirect from multiple old paths to the new path
           // {
