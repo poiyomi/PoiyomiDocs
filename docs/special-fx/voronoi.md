@@ -9,115 +9,115 @@ Voronoi is an effect that generates a noise pattern across the Material, either 
 
 ## Type
 
-- `Type`: **Dropdown**, Options: `2D (Fast)`/`3D (Fast with color bugs)`/`3D (Slow with no bugs)`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `2D (Fast)`/`3D (Fast with color bugs)`/`3D (Slow with no bugs)`
 
 Choice of Voronoi effect to use. Each of these are self-explanatory due to the way they function.
 
 ## Space
 
-- `Type`: **Dropdown**, Options: `Local`/`World`/`UV`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Local`/`World`/`UV`
 
 Where should the Voronoi effects be simulated on.
 
 ## Blend
 
-- `Type`: **Dropdown**, Options: `Color and Emission`/`Just Emission`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Color and Emission`/`Just Emission`
 
 Chooses how you want the Voronoi to Blend with the Material.
 
 ## Affects Material Alpha
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 If enabled, the Voronoi will also affect the Material's Alpha.
 
 ## Mask
 
-- `Type`: **Data** Texture (`sRGB = Off`)
+- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = Off`)
 
 Determines where to contain the Voronoi effects and where it should only appear in.
 
 ## Global Mask
 
-- `Type`: **Dropdown**, Options: `1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
 Same as above, but uses a [Global Mask](/docs/modifiers/global-masks.md) instead to determine the Mask.
 
 ## Noise
 
-- `Type`: **Data** Texture (`sRGB = Off`)
+- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = Off`)
 
 Which Noise Map to use for the Voronoi effect.
 
 ## Noise Intensity
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much intensity to add to the Noise Map, if provided.
 
 ## Outer Color
 
-- `Type`: **Color**
+- `Type`: <PropertyIcon name="color" />**Color**
 
 Choice of Color to use for the Outer Voronoi.
 
 ## Outer Emission
 
-- `Type`: **Float**, Range: `0.0 - 20.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 20.0`
 
 How much Emission to add to the Outer Voronoi's color.
 
 ## Inner Color
 
-- `Type`: **Color**
+- `Type`: <PropertyIcon name="color" />**Color**
 
 Choice of Color to use for the Inner Voronoi.
 
 ## Inner Emission
 
-- `Type`: **Float**, Range: `0.0 - 20.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 20.0`
 
 How much Emission to add to the Inner Voronoi's color.
 
 ## Gradient
 
-- `Type`: **Vector2**
+- `Type`: <PropertyIcon name="float2" />**Vector2**
 
 In X and Y coordinates, determines the Gradient location of the Voronoi in the 2D space.
 
 ## Power
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 How much power to add to the Voronoi.
 
 ## Scale
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 How large or small to scale the Voronoi effects.
 
 ## Speed
 
-- `Type`: **Float3**
+- `Type`: <PropertyIcon name="float3" />**Float3**
 
 How fast to move the Voronoi effect among the simulated space.
 
 ## Voronoi Random Cell Color
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables the ability to apply random saturation and brightness to each Voronoi cell simulated.
 
 ### Saturation Range
 
-- `Type`: **Clamped Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="multislider" />**Multislider**, Range: `0.0 - 1.0`
 
 Minimum and Maximum range of Saturation to apply to each randomized Voronoi Cell.
 
 ### Brightness Range
 
-- `Type`: **Clamped Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="multislider" />**Multislider**, Range: `0.0 - 1.0`
 
 Minimum and Maximum range of Brightness to apply to each randomized Voronoi Cell.
 
@@ -129,13 +129,13 @@ The settings in this section will only be visible when [AudioLink](/docs/audio-l
 
 ### Inner Emission Band
 
-- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
 
 Which band to use for the Inner Emission Mod.
 
 ### Inner Emission Mod
 
-- `Type`: **Vector2**
+- `Type`: <PropertyIcon name="float2" />**Vector2**
 
 How much to add or subtract from the Inner Emission.
 
@@ -146,13 +146,13 @@ How much to add or subtract from the Inner Emission.
 
 ### Outer Emission Band
 
-- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
 
 Which band to use for the Outer Emission Mod.
 
 ### Outer Emission Mod
 
-- `Type`: **Vector2**
+- `Type`: <PropertyIcon name="float2" />**Vector2**
 
 How much to add or subtract from the Outer Emission.
 
@@ -163,31 +163,31 @@ How much to add or subtract from the Outer Emission.
 
 ### Gradient Min Band
 
-- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
 
 Which band to use for the Gradient Min Add
 
 ### Gradient Min Add
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 How much to add or subtract from the Gradient Min value.
 
 ### Gradient Max Band
 
-- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
 
 Which band to use for the Gradient Max Add
 
 ### Gradient Max Add
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 How much to add or subtract from the Gradient Max value.
 
 ### Speed X Motion Type
 
-- `Type`: **Dropdown**
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**
 
 Which motion type to use for the Speed X.
 
@@ -206,19 +206,19 @@ Which motion type to use for the Speed X.
 
 ### Speed X Band
 
-- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
 
 Which band to use for the Speed X.
 
 ### Speed X
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 How much to add or subtract from the Speed X value.
 
 ### Speed Y Motion Type
 
-- `Type`: **Dropdown**
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**
 
 Which motion type to use for the Speed Y.
 
@@ -237,19 +237,19 @@ Which motion type to use for the Speed Y.
 
 ### Speed Y Band
 
-- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
 
 Which band to use for the Speed Y.
 
 ### Speed Y
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 How much to add or subtract from the Speed Y value.
 
 ### Speed Z Motion Type
 
-- `Type`: **Dropdown**
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**
 
 Which motion type to use for the Speed Z.
 
@@ -268,12 +268,12 @@ Which motion type to use for the Speed Z.
 
 ### Speed Z Band
 
-- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
 
 Which band to use for the Speed Z.
 
 ### Speed Z
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 How much to add or subtract from the Speed Z value.

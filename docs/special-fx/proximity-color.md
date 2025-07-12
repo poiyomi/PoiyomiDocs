@@ -12,7 +12,7 @@ Proximity Color is a special effect that allows you to change the color of a mes
 
 ## Pos To Use
 
-- `Type`: **Dropdown**, Options: `Pixel Position`/`Object Position`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Pixel Position`/`Object Position`
 
 Which position to use to determine distance.
 
@@ -21,31 +21,31 @@ Which position to use to determine distance.
 
 ## Min Color
 
-- `Type`: **Color**
+- `Type`: <PropertyIcon name="color" />**Color**
 
 What color to multiply the base color by when the distance is at or below the [Min Distance](#min-distance). Typically, this would be set to Black in most cases.
 
 ## Max Color
 
-- `Type`: **Color**
+- `Type`: <PropertyIcon name="color" />**Color**
 
 What color to multiply the base color by when the distance is at or above the [Max Distance](#max-distance). Typically, this would be set to White.
 
 ## Min Distance
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 Distance from the camera at which the [Min Color](#min-color) should be applied.
 
 ## Max Distance
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 Distance from the camera at which the [Max Color](#max-color) should be applied.
 
 ## Force BackFace Color
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 If enabled, applies the above set [Min Color](#min-color) to show on the Back Face, as if the Camera is going inside the mesh.
 

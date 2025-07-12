@@ -15,13 +15,13 @@ Texture Arrays can quickly add up to your VRAM consumption depending on the reso
 
 ## Color & Alpha
 
-- `Type`: **Color**
+- `Type`: <PropertyIcon name="color" />**Color**
 
 Defines the color tint and alpha value (transparency) of the flipbook. This allows the flipbook to be tinted, or to blend only partially. Can generally be left at the default values.
 
 ## Texture Array
 
-- `Type`: **Texture Array** (`sRGB = On`)
+- `Type`: <PropertyIcon name="texture" />**Texture Array** (`sRGB = On`)
 
 Main Texture Slot to specify your Flipbook Texture Array. This uses a [Texture2DArray <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/class-Texture2DArray.html) texture to store multiple flipbook frames.
 
@@ -35,13 +35,13 @@ Attaching a GIF into the texture slot will automatically convert the file into a
 
 ## Mask
 
-- `Type`: **Data** Texture (`sRGB = Off`)
+- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = Off`)
 
 Defines where on the UV the flipbook can be applied. Black indicates the flipbook can not be applied, while white indicates the flipbook can be applied. If this texture is not defined, the flipbook can apply everywhere.
 
 ### Global Mask
 
-- `Type`: **Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
 Select which [Global Mask](/docs/modifiers/global-masks.md) to use for the Flipbook overall.
 
@@ -51,25 +51,25 @@ Expand the **Mask** slot to see this property.
 
 ## Tiling
 
-- `Type`: **Dropdown**, Options: `Off`/`Tiled (Seamless)`/`Tiled (Sprite)`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`Tiled (Seamless)`/`Tiled (Sprite)`
 
 Sets the Tiling mode to use on the Flipbook.
 
 ## Blending
 
-- `Type`: **Dropdown**, Options: `Replace`/`Darken`/`Multiply`/`Lighten`/`Screen`/`Subtract`/`Add`/`Overlay`/`Mixed`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Replace`/`Darken`/`Multiply`/`Lighten`/`Screen`/`Subtract`/`Add`/`Overlay`/`Mixed`
 
 Controls how to blend the Flipbook with the Material.
 
 ## Alpha/Color Override
 
-- `Type`: **Dropdown**, Options: `Off`/`Replace Alpha`/`Replace Alpha and Color`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`Replace Alpha`/`Replace Alpha and Color`
 
 Optional setting to control if the Color and/or Alpha of the Flipbook should replace the final Color and/or Alpha. This allows the Flipbook to be rendered on top of the material, even if the material is transparent OR if the Flipbook should override the base color as well.
 
 ## Replace
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Replaces the base color with the Flipbook.
 
@@ -79,19 +79,19 @@ You may animate this slider to toggle the Flipbook on the Material. Animating th
 
 ## Emission Strength
 
-- `Type`: **Float**, Range: `0.0 - 20.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 20.0`
 
 How much emission the flipbook should have. This stacks with whatever blending options are selected.
 
 ## FPS
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 How many frames per second the flipbook should play if "Manual Frame Control" is not enabled. This is used to determine how fast the flipbook should play. The default is 30 FPS.
 
 ## Frame Offset
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 Sets an offset for the frames.
 
@@ -99,19 +99,19 @@ Sets an offset for the frames.
 
 ### Pan UV
 
-- `Type`: **Vector2**
+- `Type`: <PropertyIcon name="float2" />**Vector2**
 
 Sets a panning speed on the Flipbook.
 
 ### Scale / Offset 
 
-- `Type`: **Vector4**
+- `Type`: <PropertyIcon name="float4" />**Vector4**
 
 Determines the Scale (size) and Offset (position) of the Flipbook. The first two values are the scale (in X/Y) and the second two are the position (in X/Y). This allows placing the Flipbook like a Decal.
 
 ## Side Offset
 
-- `Type`: **Vector4**
+- `Type`: <PropertyIcon name="float4" />**Vector4**
 
 Side Offset allows stretching and squishing the Flipbook in the X and Y directions. Each value can be positive or negative values, with positive values stretching the Flipbook in that direction, and negative values squishing the Flipbook in that direction.
 
@@ -119,67 +119,67 @@ The first two values the left and right offsets, and the second two are the top 
 
 ### Rotation
 
-- `Type`: **Float**, Range: `0.0 - 360.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 360.0`
 
 How much to rotate the Flipbook by, in degrees.
 
 ### Rotation Speed
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 A constant rotation speed applied to the decal. A value of `180` will rotate the decal once per second, which is quite fast.
 
 ## Manual Frame Control
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Determines whether the Flipbook should be manually controlled. If this is enabled, the Flipbook will not play automatically, and the frame must manually advance via animations. This is useful for dynamically controlling the speed of the Flipbook, or using the Flipbook to show specific frames.
 
 ### Current Frame
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 Determines which frame to show. Only works when the above toggle `Manual Frame Control` is enabled.
 
 ## Start/End Frame Loop
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 When enabled, the settings in this area can be used to clamp which frame the Flipbook should start and end from.
 
 ### Start Frame
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 Sets the first frame in the Flipbook.
 
 ### End Frame
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 Sets the last frame in the Flipbook before it loops back to the beginning Start Frame.
 
 ## Frame Crossfade
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables or disables crossfading. This is used to smoothly transition between frames, which can be useful for reducing the number of frames needed in the Flipbook.
 
 ### Fade Range
 
-- `Type`: **Clamped Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatclamped" />**Multislider**, Range: `0.0 - 1.0`
 
 Determines how much to crossfade the Flipbook between frames. Defined by a start and stop value.
 
 ## Hue Shift
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enable or Disable the Hue Shifting functionality.
 
 ### Color Space
 
-- `Type`: **Dropdown**, Options: `OKLab`/`HSV`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `OKLab`/`HSV`
 
 Choice of Color Space to use for the Hue Shift. By default, it will be set to `OKLab`.
 
@@ -187,7 +187,7 @@ Learn about the difference of Color Spaces as documented here in [Color Adjust](
 
 ### Select or Shift
 
-- `Type`: **Dropdown**, Options: `Hue Select`/`Hue Shift`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Hue Select`/`Hue Shift`
   - Default: `Hue Shift`
 
 This dropdown allows you to select how the Color Adjustment should behave when the Hue Shift is used. By default, this will be set to `Hue Shift`.
@@ -202,13 +202,13 @@ This dropdown allows you to select how the Color Adjustment should behave when t
 
 ### Shift Speed
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 How much to constantly shift the hue with time. A value of 1 will result in a full hue shift cycle every 20 seconds.
 
 ### Hue Shift
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to shift the flipbook around the hue circle.
 
@@ -222,7 +222,7 @@ The settings in this section will only be visible when [AudioLink](/docs/audio-l
 
 ### Scale Band
 
-- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
 
 Which band of the audio to use for the Audio Link Scale Mod.
 
@@ -230,7 +230,7 @@ Which band of the audio to use for the Audio Link Scale Mod.
 
 How much to modify (mod) the scale of the flipbook. These values are added to the current scale, and can be positive or negative.
 
-- `Type`: **Vector4**
+- `Type`: <PropertyIcon name="float4" />**Vector4**
 
 | Channel | Function |
 | --- | --- |
@@ -241,13 +241,13 @@ How much to modify (mod) the scale of the flipbook. These values are added to th
 
 ### Alpha Band
 
-- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
 
 Which band to use for the Audio Link Alpha adjustment.
 
 ### Alpha Mod
 
-- `Type`: **Vector2**
+- `Type`: <PropertyIcon name="float2" />**Vector2**
 
 How much to modify (mod) the alpha of the flipbook, in degrees.
 
@@ -258,13 +258,13 @@ How much to modify (mod) the alpha of the flipbook, in degrees.
 
 ### Emission Band
 
-- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
 
 Which band to use for the Audio Link Emission adjustment.
 
 ### Emission Mod
 
-- `Type`: **Vector2**
+- `Type`: <PropertyIcon name="float2" />**Vector2**
 
 How much to modify (mod) the alpha of the flipbook.
 
@@ -275,11 +275,13 @@ How much to modify (mod) the alpha of the flipbook.
 
 ### Frame Band
 
-- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
 
 Which band to use for the frame adjustment.
 
 ### Frame Control
+
+- `Type`: <PropertyIcon name="float" />**Vector2**
 
 How many frames to add. This is added to the current frame, and stacks with a constant FPS, or with Chronotensity frame control.
 
@@ -287,13 +289,13 @@ How many frames to add. This is added to the current frame, and stacks with a co
 
 #### Chrono Band
 
-- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
 
 Which band to use for the chronotensity frame adjustment.
 
 #### Chrono Type
 
-- `Type`: **Dropdown**, Options:
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**
 
 <details>
 <summary><b>Chronotensity Options</b></summary>
@@ -310,6 +312,6 @@ Which band to use for the chronotensity frame adjustment.
 
 #### Chrono Speed
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 How much chronotensity should affect the frame continuation of the decal. Good starting values are `5 - 30`. Combines well with FPS being set to `0`.

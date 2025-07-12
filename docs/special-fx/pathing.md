@@ -18,7 +18,7 @@ For example, "`R Path Type`" will be documented here as "`R/G/B/A Path Type`" in
 
 ## Path Source
 
-- `Type`: **Dropdown**, Options: `Tex Gradient`/`UV Gradient`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Tex Gradient`/`UV Gradient`
 
 Choice of what Path Gradient should be used.
 
@@ -27,13 +27,13 @@ Choice of what Path Gradient should be used.
 
 ## Blend Mode
 
-- `Type`: **Dropdown**, Options: `Replace`/`Add`/`Multiply`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Replace`/`Add`/`Multiply`
 
 Choice of blending operator to use for the Pathing gradient.
 
 ## Gradient Type
 
-- `Type`: **Dropdown**, Options: `Split Channels`/`Merged Channels`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Split Channels`/`Merged Channels`
 
 Determines whether to sample the Path Map texture. There are two modes:
 
@@ -46,7 +46,7 @@ The Gradient Type setting is only visible with [Path Source](#path-source) set t
 
 ## UV
 
-- `Type`: **Dropdown**, Options: `UV0`/`UV1`/`UV2`/`UV3`/`Panosphere`/`World Pos`/`Local Pos`/`Polar UV`/`Distorted UV`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `UV0`/`UV1`/`UV2`/`UV3`/`Panosphere`/`World Pos`/`Local Pos`/`Polar UV`/`Distorted UV`
 
 Determines which UV to sample the Path Map from.
 
@@ -56,19 +56,19 @@ The UV setting is only visible with [Path Source](#path-source) set to `UV Gradi
 
 ## Point Sampling
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 If enabled, will sample the Path from points.
 
 ## Override Alpha
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 If enabled, multiplies the base alpha of the material with the Path's final alpha.
 
 ## RGBA Path Gradient / Mask
 
-- `Type`: **Data** Texture (`sRGB = Off`)
+- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = Off`)
 
 Defines the gradients for the path. If using `Split Channels` mode, this texture should consist of between 1 and 4 channels of gradient data, with each channel representing a different path. Each channel used will flow between a value of `1` to a value of `255` (in 0-255 range), and should be defined from linear textures. 
 
@@ -78,7 +78,7 @@ If using `Merged Channels` mode, this texture should be the output of the Poiyom
 
 ## Color & Mask
 
-- `Type`: **Color** Texture (`sRGB = On`)
+- `Type`: <PropertyIcon name="color" />**Color** Texture (`sRGB = On`)
 
 Defines the underlying color for the paths, and a mask for the paths. Both the RGB Color and the Alpha Mask will apply to all paths.
 
@@ -88,7 +88,7 @@ The RGB Color can be used to show textures or colors where the path is active. T
 
 ### R/G/B/A Path Type
 
-- `Type`: **Dropdown**, Options: `Fill`/`Path`/`Loop`/`Dashed`/`Off`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Fill`/`Path`/`Loop`/`Dashed`/`Off`
 
 Defines the path type for each path channel.
 
@@ -107,7 +107,7 @@ Defines the path type for each path channel.
 
 ### R/G/B/A Color
 
-- `Type`: **HDR Color**
+- `Type`: <PropertyIcon name="hdrcolor" />**HDR Color**
 
 Colors for each path channel. This is overlain on the `Color` texture, if defined. Otherwise, the `Color` will be used directly.
 
@@ -117,7 +117,7 @@ The **Alpha** value of these colors determines the strength of the path. Path ch
 
 ### R/G/B/A Direction
 
-- `Type`: **Dropdown**, Options: `UV X Axis`/`UV Y Axis`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `UV X Axis`/`UV Y Axis`
 
 Choice of which direction the Path should travel on the UV's axis. X is left to right, and Y is bottom to top.
 
@@ -131,31 +131,31 @@ Each of these settings below has 4 fields, one for each path channel. They are l
 
 ### Emission Strength
 
-- `Type`: **Float4**
+- `Type`: <PropertyIcon name="float4" />**Float4**
 
 How strong the emission of the active part of the path should be.
 
 ### Softness
 
-- `Type`: **Float4**
+- `Type`: <PropertyIcon name="float4" />**Float4**
 
 How sharp the edges of the active path segment should be. This smooths and softens the appearance of the path.
 
 ### Speed
 
-- `Type`: **Float4**
+- `Type`: <PropertyIcon name="float4" />**Float4**
 
 How fast the path should move from minimum to maximum along the gradient. A value of `1` will result in a complete path cycle every `20` seconds.
 
 ### Length
 
-- `Type`: **Float4**
+- `Type`: <PropertyIcon name="float4" />**Float4**
 
 How long the path should be, relative to the gradient. A value of `1` will result in a path that extends across the entire gradient.
 
 ### Gap Length
 
-- `Type`: **Float4**
+- `Type`: <PropertyIcon name="float4" />**Float4**
 
 Determines the Gap in between each Path fired when [R/G/B/A Path Type](#rgba-path-type) is set to `Dashed`.
 
@@ -169,7 +169,7 @@ Each of these settings has 4 fields, one for each path channel.
 
 ### Manual Timing
 
-- `Type`: **Float4**
+- `Type`: <PropertyIcon name="float4" />**Float4**
 
 Determines whether to use manual timing, useful for animating a path in response to avatar parameters.
 
@@ -177,25 +177,25 @@ A value of `-999` will result in automatic timing; any other value will offset i
 
 ### Timing Offset
 
-- `Type`: **Float4**
+- `Type`: <PropertyIcon name="float4" />**Float4**
 
 How much to offset the time by, in terms of path cycles. This can be used whether automatic or manual timing is active.
 
 ### Path Segments
 
-- `Type`: **Float4**
+- `Type`: <PropertyIcon name="float4" />**Float4**
 
 How many segments to split the path into. At a value of `0`, this defaults to the texture precision. If set to a value greater than `0`, the path will be split into that many segments - for most paths, this will be `255` by default, so lower values can be used to break up the path into blockier segments.
 
 ## Path Remapping
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables Path Remapping, allowing the ability to change the entire range of the Path to a clamped range instead. This is especially useful when using `UV Gradient` as the [Path Source](#path-source).
 
 ### R/G/B/A Range
 
-- `Type`: **Clamped Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="multislider" />**Multislider**, Range: `0.0 - 1.0`
 
 Adjusts the mapping range of the specified Path.
 
@@ -209,61 +209,61 @@ For any audio link values with a **Vector2** offset, the **X** represents the va
 
 ### Time Offset
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Time Offset adds an offset to the time based on the audio. This can be used to make the path "bounce" in response to the audio.
 
 #### R/G/B/A Band
 
-- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
 
 Band of audio to use for the time offset.
 
 #### R/G/B/A Offset
 
-- `Type`: **Vector2**
+- `Type`: <PropertyIcon name="float2" />**Vector2**
 
 How much time offset to apply to the path based on audio.
 
 ### Emission Offset
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Emission Offset adds emission strength to the path based on the audio. This can be used to make the path "glow" in response to the audio.
 
 #### R/G/B/A Band
 
-- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
 
 Band of audio to use for the emission offset.
 
 #### R/G/B/A Offset
 
-- `Type`: **Vector2**
+- `Type`: <PropertyIcon name="float2" />**Vector2**
 
 How much emission offset to apply to the path based on audio.
 
 ### Width Offset
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Width Offset adds width to the path based on the audio. This can be used to make the path "thicken" in response to the audio.
 
 #### R/G/B/A Band
 
-- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
 
 Band of audio to use for the width offset.
 
 #### R/G/B/A Offset
 
-- `Type`: **Vector2**
+- `Type`: <PropertyIcon name="float2" />**Vector2**
 
 How much width offset to apply to the path based on audio.
 
 ### History
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 History applies a mask on top of the path that corresponds to the history of the audio in the selected channel. This consists of about a second of audio data.
 
@@ -271,43 +271,43 @@ This is often useful when applied to a path that's completely filled, which can 
 
 #### History Mode
 
-- `Type`: **Dropdown**, Options: `Mask`/`Override`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Mask`/`Override`
 
 Sets the History pattern mode.
 
 #### R/G/B/A History
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Whether to apply history masking to the path.
 
 #### R/G/B/A Band
 
-- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
 
 Band to use for history masking.
 
 #### R/G/B/A Range
 
-- `Type`: **Clamped Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="multislider" />**Multislider**, Range: `0.0 - 1.0`
 
 Sets the range of the history masking in the path.
 
 ### Chrono Time
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Chrono (Chronotensity) Time is a very useful feature for advancing the path based on audio, while maintaining how far the path has already progressed.
 
 #### R/G/B/A Band
 
-- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
 
 Band to use for Chrono Time.
 
 #### R/G/B/A Motion Type
 
-- Type: **Dropdown**, Options:
+- Type: <PropertyIcon name="dropdown" />**Dropdown**
 
 <details>
 <summary><b>Chronotensity Options</b></summary>
@@ -326,36 +326,36 @@ Chrontensity mode to use for the chrono time offset.
 
 #### R/G/B/A Speed
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 How much to incorporate the chronotensity adjustment into the path timing. Good starting values are `0.1 - 0.5`.
 
 ### Auto Correlator
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Whether to apply the autocorrelator as a mask along the path. Autocorrelatior roughly corresponds to the intensity of the audio at various frequencies.
 
 #### Autocorrelator Mode
 
-- `Type`: **Dropdown**, Options: `Mask`/`Override`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Mask`/`Override`
 
 Sets the autocorrelator mode.
 
 #### R/G/B/A Type
 
-- `Type`: **Dropdown**, Options: `Off`/`On`/`Mirrored`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`On`/`Mirrored`
 
 Autocorrelator mode to use for the autocorrelator mask in each channel. `Mirrored` will mirror the autocorrelator mask to the other side of the path.
 
 ### Color Chord
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables Color Chord Strip mode for the Path.
 
 #### R/G/B/A Color Chord Strip
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Color Chord assigns a color to each segment of the path based on the audio. This can be used to create a unique colorful rainbow effect.

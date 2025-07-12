@@ -11,7 +11,9 @@ This effect relies on the [Depth Buffer/Depth Texture](https://docs.unity3d.com/
 
 To forcibly enable the depth buffer from an avatar, a reliable method is to add a realtime directional light to the scene, which will trigger the depth texture to be updated. A prefab called `DepthGet` is included in the Poiyomi Shaders package.
 
-:::warning
+:::warning Requires Depth Buffer
+In order to use Depth Rim Lighting, you will need to place the `DepthGet` Prefab found in the `Assets/_PoiyomiShaders/Prefabs` on your avatar.
+
 Make sure to only enable the depth buffer when you need it! This can be a performance hit, and it's not always necessary.
 :::
 
@@ -21,18 +23,18 @@ Depth Bulge doesn't write to depth, which can break certain transparent effects 
 
 ## Bulge Mask
 
-- `Type`: **Data** Texture (`sRGB = Off`)
+- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = Off`)
 
 Mask to use for the Depth Bulge.
 
 ## Touch Distance
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Minimum amount of distance for the Depth Bulge to affect the Mesh.
 
 ## Bulge Height
 
-- `Type`: **Float**, Range: `-0.2 - 0.2`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-0.2 - 0.2`
 
 The maximum Height of the Depth Bulge effect.

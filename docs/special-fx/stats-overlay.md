@@ -15,7 +15,7 @@ Stats overlay only shows stats for the viewer - not for the person with the mate
 
 ## Font Array
 
-- `Type`: **Data** Texture (sRGB **OFF**)
+- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = Off`)
 
 Texture that defines the font data to use. Two fonts in four variations are included in the package:
 
@@ -26,150 +26,150 @@ Texture that defines the font data to use. Two fonts in four variations are incl
 
 ## Pixel Range
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 Pixel range to use to sample the edge of the font SDF. Can generally be left at the default value of `4`.
 
 ## FPS
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables or Disables the FPS counter.
 
 ### FPS UV
 
-- `Type`: **Dropdown**, Options: `UV0`/`UV1`/`UV2`/`UV3`/`Panosphere`/`World Pos XZ`/`Polar UV`/`Distorted UV`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `UV0`/`UV1`/`UV2`/`UV3`/`Panosphere`/`World Pos XZ`/`Polar UV`/`Distorted UV`
 
 UV Map to use for the FPS counter.
 
 ### Color
 
-- `Type`: **Color**
+- `Type`: <PropertyIcon name="color" />**Color**
 
 Color of the FPS Counter text.
 
 ### Emission Strength
 
-- `Type`: **Float**, Range: `0.0 - 20.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 20.0`
 
 Emission strength of the FPS Counter text. Draws from the color.
 
 ### Offset
 
-- `Type`: **Vector2**
+- `Type`: <PropertyIcon name="float2" />**Vector2**
 
 Where the FPS Counter text should be placed on the UV, relative to the bottom left corner of the UV. A value of `1,1` would place the bottom left of the text at the top right of the UV.
 
 ### Rotation
 
-- `Type`: **Float**, Range: `0.0 - 360.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 360.0`
 
 How much rotation to apply to the FPS Counter text, around its center position.
 
 ### Scale
 
-- `Type`: **Vector2**
+- `Type`: <PropertyIcon name="float2" />**Vector2**
 
 How large the text should be, in UV space. `1.0, 1.0` would map the text to the entire UV square. Generally, the Y Value should be a fraction of the X value, as the text is much wider than it is tall.
 
 ### Padding Reduction
 
-- `Type`: **Vector4**
+- `Type`: <PropertyIcon name="float4" />**Vector4**
 
 How much additional padding to remove from the edges of the FPS Counter text. The Z value is particularly useful for slightly increasing the size of characters.
 
 ## Position
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables or Disables the World Position display.
 
 ### Position UV
 
-- `Type`: **Dropdown**, Options: `UV0`/`UV1`/`UV2`/`UV3`/`Panosphere`/`World Pos XZ`/`Polar UV`/`Distorted UV`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `UV0`/`UV1`/`UV2`/`UV3`/`Panosphere`/`World Pos XZ`/`Polar UV`/`Distorted UV`
 
 UV Map to use for the World Position text.
 
 ### Color
 
-- `Type`: **Color**
+- `Type`: <PropertyIcon name="color" />**Color**
 
 Color of the World Position text.
 
 ### Emission Strength
 
-- `Type`: **Float**, Range: `0.0 - 20.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 20.0`
 
 Emission strength of the World Position text. Draws from the color.
 
 ### Offset
 
-- `Type`: **Vector2**
+- `Type`: <PropertyIcon name="float2" />**Vector2**
 
 Where the World Position text should be placed on the UV, relative to the bottom left corner of the UV. A value of `1,1` would place the bottom left of the text at the top right of the UV.
 
 ### Rotation
 
-- `Type`: **Float**, Range: `0.0 - 360.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 360.0`
 
 How much rotation to apply to the World Position text, around its center position.
 
 ### Scale
 
-- `Type`: **Vector2**
+- `Type`: <PropertyIcon name="float2" />**Vector2**
 
 How large the text should be, in UV space. `1.0, 1.0` would map the text to the entire UV square. Generally, the Y Value should be a fraction of the X value, as the text is much wider than it is tall.
 
 ### Padding Reduction
 
-- `Type`: **Vector4**
+- `Type`: <PropertyIcon name="float4" />**Vector4**
 
 How much additional padding to remove from the edges of the World Position text. The Z value is particularly useful for slightly increasing the size of characters.
 
 ## Instance Time
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables or Disables display of the time in the instance.
 
 ### Time UV
 
-- `Type`: **Dropdown**, Options: `UV0`/`UV1`/`UV2`/`UV3`/`Panosphere`/`World Pos XZ`/`Polar UV`/`Distorted UV`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `UV0`/`UV1`/`UV2`/`UV3`/`Panosphere`/`World Pos XZ`/`Polar UV`/`Distorted UV`
 
 UV Map to use for the Instance Time text.
 
 ### Color
 
-- `Type`: **Color**
+- `Type`: <PropertyIcon name="color" />**Color**
 
 Color of the Instance Time text.
 
 ### Emission Strength
 
-- `Type`: **Float**, Range: `0.0 - 20.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 20.0`
 
 Emission strength of the Instance Time text. Draws from the color.
 
 ### Offset
 
-- `Type`: **Vector2**
+- `Type`: <PropertyIcon name="float2" />**Vector2**
 
 Where the Instance Time text should be placed on the UV, relative to the bottom left corner of the UV. A value of `1,1` would place the bottom left of the text at the top right of the UV.
 
 ### Rotation
 
-- `Type`: **Float**, Range: `0.0 - 360.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 360.0`
 
 How much rotation to apply to the Instance Time text, around its center position.
 
 ### Scale
 
-- `Type`: **Vector2**
+- `Type`: <PropertyIcon name="float2" />**Vector2**
 
 How large the text should be, in UV space. `1.0, 1.0` would map the text to the entire UV square. Generally, the Y Value should be a fraction of the X value, as the text is much wider than it is tall.
 
 ### Padding Reduction
 
-- `Type`: **Vector4**
+- `Type`: <PropertyIcon name="float4" />**Vector4**
 
 How much additional padding to remove from the edges of the Instance Time text. The Z value is particularly useful for slightly increasing the size of characters.

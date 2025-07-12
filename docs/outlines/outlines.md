@@ -23,7 +23,7 @@ All Outlines features have been reintroduced to the main shader, `.poiyomi/Poiyo
 
 ## Mode
 
-- `Type`: **Dropdown**, Options: `Basic`/`Rim Light`/`Directional`/`Drop Shadow`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Basic`/`Rim Light`/`Directional`/`Drop Shadow`
     - Default: `Basic`
 
 Changes the mode of the outline.
@@ -38,7 +38,7 @@ Rim Light actually uses the direction of the light to determine the width of the
 
 #### Rim Light Blend
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to blend between the base color and the direct light color as the tint of the outline. At 0, the outline will be tinted with the base color. At 1, the outline will be tinted with the direct light color.
 
@@ -50,7 +50,7 @@ Directional is similar to Rim Light in that it biases the outline to a specific 
 
 #### Directional Offset X Y
 
-- `Type`: **Vector4** (Only `X`/`Y` used)
+- `Type`: <PropertyIcon name="float4" />**Vector4** (Only `X`/`Y` used)
 
 Direction to use for the outline. Calculated from only the X (horizontal) and Y (vertical) values.
 
@@ -62,13 +62,13 @@ In Drop Shadow mode, the **Width** is *not* used.
 
 #### Drop Direction X Y
 
-- `Type`: **Vector4** (Only `X`/`Y`/`Z` used)
+- `Type`: <PropertyIcon name="float4" />**Vector4** (Only `X`/`Y`/`Z` used)
 
 How much to offset the outline in the X, Y, and Z directions, in unity base units.
 
 ## Space
 
-- `Type`: **Dropdown**, Options: `Local`/`World`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Local`/`World`
     - Default: `Local`
 
 Determines where the size of the Outlines should assume the initial scale units from. Influences the [Outline Size](#outline-size).
@@ -82,13 +82,13 @@ If you choose the Space to be `World`, the Outline Size will remain the same reg
 
 ## Outline Size
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 Thickness of the Outline, in Unity base units (scaled down by 100).
 
 ### Outline Size Mask
 
-- `Type`: **Data** Texture (`sRGB: OFF`)
+- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = Off`)
 
 Mask Texture in Grayscale that determines the thickness of the Outline in various places on the model. Areas in darker Grayscale will reduce the thickness based on the initial [Outline Size](#outline-size) value set.
 
@@ -103,40 +103,39 @@ This determines the Outline Width *per-vertex*, not per-pixel.
 
 ## Outline Texture
 
-- `Type`: **Data** Texture (`sRGB: ON`)
+- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = On`)
 
 Texture to use for the Outline. Will be tinted based on the [Color Adjust](#color-adjust) settings.
 
 ## Color
 
-- `Type`: **Color**
+- `Type`: <PropertyIcon name="color" />**Color**
 
 Base Color of the Outline. Can be mixed in various ways depending on the [Mode](#mode) settings.
 
 ## Outline Emission
 
-- `Type`: **Float**, Range: `0.0 - 20.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 20.0`
 
 How much Emission the Outline should have. Creates a glowing effect, especially in Worlds with Post Processing Bloom.
 
 ## MainTex Blend
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much the [Outline Color](#color) should be blended with your Texture.
 
 ## UTS2 style Blend
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Determines if you want the Outlines to blend in a way that is similar to Unity-Chan Toon Shader 2 (UTS2).
-
 
 <!---------- Color Adjust Section ---------->
 
 ## Color Adjust
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables the ability to modify the Outline Color in a similar fashion to [Color Adjust](/docs/color-and-normals/color-adjust.md). This is applied directly after the main [Outline Color](#color), and will not affect other sections that modify the base Outline Color.
 
@@ -146,13 +145,13 @@ All of these values can be individually animated as of the latest version.
 
 ### Hue
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to shift the Outline Color around the Hue Circle.
 
 ### Saturation
 
-- `Type`: **Float**, Range: `0.0 - 2.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 2.0`
 
 Adjusts the saturation of the Outline Color.
 
@@ -162,19 +161,19 @@ Adjusts the saturation of the Outline Color.
 
 ### Value
 
-- `Type`: **Float**, Range: `0.0 - 2.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 2.0`
 
 Adjusts the influence (or Brightness) of the color without regard to it's hue or tone.
 
 ### Gamma
 
-- `Type`: **Float**, Range: `0.01 - 2.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.01 - 2.0`
 
 Lerps the brightness of the color in regards to it's hue or tone.
 
 ### Shift Speed
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 How much to constantly shift the hue with time.
 
@@ -184,7 +183,7 @@ For reference, a value of `1` will result in a full Hue Shift cycle every 20 sec
 
 ## Distance Alpha
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 When enabled, Distance Alpha can modify the Alpha value of the Outlines based on the distance from the Camera to the Object or Pixel.
 
@@ -194,7 +193,7 @@ Distance Alpha requires Transparency in order for it to work.
 
 ### Pos To Use
 
-- `Type`: **Dropdown**, Options: `Object Position`/`Pixel Position`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Object Position`/`Pixel Position`
 
 Which position to use to calculate distance.
 
@@ -203,25 +202,25 @@ Which position to use to calculate distance.
 
 ### Min Distance Alpha
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 The alpha multiplier that will be applied at the [Min Distance](#min-distance).
 
 ### Max Distance Alpha
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 The alpha multiplier that will be applied at the [Max Distance](#max-distance).
 
 ### Min Distance
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 The distance (in meters) at which the [Min Distance Alpha](#min-distance-alpha) multiplier will be applied.
 
 ### Max Distance
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 The distance (in meters) at which the [Max Distance Alpha](#max-distance-alpha) multiplier will be applied.
 
@@ -230,21 +229,21 @@ The distance (in meters) at which the [Max Distance Alpha](#max-distance-alpha) 
 
 ## Fixed Size Over Distance
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
     - Default: `true`
 
 Enables a fixed screen-space size for outlines. This can allow control of the outlines to not get smaller when moving away from the model.
 
 ### Fixed Width
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
     - Default: `0.5`
 
 The width of the fixed outline size.
 
 ### Fixed Size Max Distance
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
     - Default: `1`
 
 How far away from the model to use the fixed size outlines in Unity Base Units. Beyond this distance, the outlines will properly scale accordingly.
@@ -253,22 +252,20 @@ How far away from the model to use the fixed size outlines in Unity Base Units. 
 Keep your Max Distance value at a small number in order to ensure they scale correctly without blocking your Avatar's visibility when viewed at a far distance!
 :::
 
-
 <!---------- Lighting Section ---------->
 
 ## Lighting
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
     - Default: `true`
 
 Enables lighting for the Outline. This darkens the outline color in shadowed areas.
 
 ### Shadow Strength
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Shadow intensity of the Outlines.
-
 
 <!---------- Vertex Color Section ---------->
 
@@ -276,13 +273,13 @@ Shadow intensity of the Outlines.
 
 ### Vertex Color Normals
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Use the vertex colors of the model, if they've been specially prepared. The (smoothed) vertex colors are used as the normal data.
 
 ### Vertex Color Mask
 
-- `Type`: **Dropdown**, Options: `Off`/`R`/`G`/`B`/`A`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`R`/`G`/`B`/`A`
 
 Choose which Color channel to use in your Mask for the Vertex Colors.
 
@@ -293,7 +290,7 @@ Choose which Color channel to use in your Mask for the Vertex Colors.
 
 ### Clip 0 Width
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables clipping of the outline if a vertex has `0` outline thickness.
 
@@ -303,34 +300,34 @@ If using an [Outline Size Mask](#outline-size-mask), all areas that are marked i
 
 ### Override Base Alpha
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Sets the base fragment Alpha to the Outline's Alpha value.
 
 ### Cam Z Offset
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
     - Default: `0`
 
 How much to offset the Camera Z Position when Rendering the Outlines. This is useful for giving control over the clipping of the Outlines.
 
 ### Cull
 
-- `Type`: **Dropdown**, Options: `Off`/`Front`/`Back`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`Front`/`Back`
     - Default: `Front`
 
 Which faces to cull. For the inverted hull technique, this should be set to `Front`.
 
 ### ZWrite
 
-- `Type`: **Dropdown**, Options: `Off`/`On`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`On`
     - Default: `On`
 
 Determines whether the Outlines should write to the depth buffer. This should typically be ON by default.
 
 ### ZTest
 
-- `Type`: **Dropdown**, Options: `Disabled`/`Never`/`Less`/`Equal`/`LessEqual`/`Greater`/`NotEqual`/`GreaterEqual`/`Always`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Disabled`/`Never`/`Less`/`Equal`/`LessEqual`/`Greater`/`NotEqual`/`GreaterEqual`/`Always`
     - Default: `LessEqual`
 
 Sets how the Outline Stencil should test the depth buffer. By default, the depth buffer is tested, and if the depth value is not less than or equal to the current value, the Outline is discarded.
@@ -348,13 +345,13 @@ The settings in this section will only be visible when [AudioLink](/docs/audio-l
 
 ### Size Band
 
-- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
 
 Which Band to use for the Outline Size adjustment.
 
 #### Size Mod
 
-- `Type`: **Vector2**
+- `Type`: <PropertyIcon name="float2" />**Vector2**
 
 How much to add to or subtract from the Outline Size with Audio.
 
@@ -365,13 +362,13 @@ How much to add to or subtract from the Outline Size with Audio.
 
 ### Emission Band
 
-- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
 
 Which Band to use for Outline Emission adjustment.
 
 #### Emission Mod
 
-- `Type`: **Vector2**
+- `Type`: <PropertyIcon name="float2" />**Vector2**
 
 How much to add to or subtract from the Outline Emission Intensity with Audio.
 
@@ -382,7 +379,7 @@ How much to add to or subtract from the Outline Emission Intensity with Audio.
 
 ### Color
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables the ability to change the Outline Color with Audio.
 
@@ -391,13 +388,13 @@ Enables the ability to change the Outline Color with Audio.
 
 #### Band
 
-- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
 
 Which Band to use to change the Outline Color with Audio.
 
 #### Replace
 
-- `Type`: **Vector2**
+- `Type`: <PropertyIcon name="float2" />**Vector2**
 
 How much to replace the Outline Color with Audio.
 
@@ -408,7 +405,7 @@ How much to replace the Outline Color with Audio.
 
 #### Color
 
-- `Type`: **Color**
+- `Type`: <PropertyIcon name="color" />**Color**
 
 Which color to replace the current Outline Color with Audio.
 

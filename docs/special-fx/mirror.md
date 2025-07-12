@@ -5,13 +5,13 @@ description: The Mirror section controls whether the shader should appear in VRC
 keywords: [mirror, mirrors, appearance, special fx, effect, poiyomi, shader]
 ---
 
-The Mirror/Cmaera Visibility section is a very simple section that controls whether the shader should appear in VRChat Mirrors or not.
+The Mirror/Camera Visibility section is a very simple section that controls whether the shader should appear in VRChat Mirrors or not.
 
 This can be used for very niche effects, such as if you want only a specific texture or effect to only show when the shader is being viewed from a Mirror, or from a Camera.
 
 ## Mode
 
-- `Type`: **Dropdown**, Options: `VRC`/`Generic`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `VRC`/`Generic`
 
 Sets the behavioral mode for the Mirror and Camera visibility.
 
@@ -24,37 +24,37 @@ These settings below will show if [Mode](#mode) is set to `VRC`.
 
 ### Normal (Outside Mirror/Camera)
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Toggles the visibility of the shader in a normal situation, without the requirement of a Mirror or a Camera.
 
 ### Mirror (VR)
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Toggles the visibility of the shader in the Mirror in VR.
 
 ### Mirror (Desktop)
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Toggles the visibility of the shader in the Mirror while on Desktop Mode.
 
 ### Camera (VR)
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Toggles the visibility of the shader in Cameras in VR.
 
 ### Camera (Desktop)
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Toggles the visibility of the shader in Cameras while on Desktop Mode.
 
 ### Screenshot
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Toggles the visibility of the shader in Screenshots.
 
@@ -64,7 +64,7 @@ These settings below will show if [Mode](#mode) is set to `Generic`.
 
 ### Mirror Visibility
 
-- `Type`: **Dropdown**, Options: `Show In Both`/`Show Only In Mirror`/`Don't Show In Mirror`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Show In Both`/`Show Only In Mirror`/`Don't Show In Mirror`
 
 Mode to use for the mirror visibility.
 
@@ -79,31 +79,31 @@ Mode to use for the mirror visibility.
 
 ## Mirror Texture & Color
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables the ability to change the Main Texture or Color when the shader is shown in a Mirror.
 
 ### Blending
 
-- `Type`: **Dropdown**, Options: `Replace`/`Darken`/`Multiply`/`Lighten`/`Screen`/`Subtract`/`Add`/`Overlay`/`Mixed`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Replace`/`Darken`/`Multiply`/`Lighten`/`Screen`/`Subtract`/`Add`/`Overlay`/`Mixed`
 
 Set of the Blending of the Mirror Texture in the Mirror.
 
 ### Color
 
-- `Type`: **Color**
+- `Type`: <PropertyIcon name="color" />**Color**
 
 Color shown in the Mirror. It is blended multiplicative with the Mirror Texture. If no Mirror Texture is defined, the Color will be used instead.
 
 ### Texture
 
-- `Type`: **Color** Texture (`sRGB = On`)
+- `Type`: <PropertyIcon name="texture" />**Color** Texture (`sRGB = On`)
 
 Texture shown in the Mirror. The base color of the material in the Mirror is set from the color of this texture.
 
 ### Test
 
-- `Type` **Toggle**
+- `Type` <PropertyIcon name="toggle" />**Toggle**
 
 Toggle checkbox used to debug your results, assuming it's being seen in a Mirror or Camera right now.
 

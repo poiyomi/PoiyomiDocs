@@ -18,7 +18,7 @@ In Poiyomi Shaders, there are various features that support AudioLink. However, 
 
 ## AudioLink
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 If enabled, activates AudioLink features and exposes AudioLink parameter controls for supported modules and effects.
 
@@ -43,7 +43,7 @@ When this feature activates, the following sections in Poiyomi Shaders will have
 
 ### Anim Toggle
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 <!-- 
 EDITORS NOTE: This H2 Header only has this Message Box below. Adding additional words above or below it may make it look repetitive. -BluWizard10
@@ -57,25 +57,25 @@ Animate this checkbox when creating toggles for AudioLink on this Material. Anim
 
 ### Bass
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Modifier for smoothing the Bass Band.
 
 ### Low Mid
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Modifier for smoothing the Low Mid Band.
 
 ### High Mid
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Modifier for smoothing the High Mid Band.
 
 ### Treble
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Modifier for smoothing the Treble Band.
 
@@ -85,7 +85,7 @@ Properties that allow animated overrides of the Audio Bands against AudioLink da
 
 ### Band Overrides
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables the Band Overrides function. These sliders will manually override the mentioned Band as if music is playing, except that now you're manually animating it's values.
 
@@ -96,25 +96,25 @@ This can be useful if you for some reason wish to use the `Voice` VRChat Paramet
 
 #### Bass
 
-- `Type`: **Float4**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to override the Bass Band. A value greater than `0` will override the Band to the specified value.
 
 #### Low Mid
 
-- `Type`: **Float4**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to override the Low Mid Band. A value greater than `0` will override the Band to the specified value.
 
 #### High Mid
 
-- `Type`: **Float4**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to override the High Mid Band. A value greater than `0` will override the Band to the specified value.
 
 #### Treble
 
-- `Type`: **Float4**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to override the Treble Band. A value greater than `0` will override the Band to the specified value.
 

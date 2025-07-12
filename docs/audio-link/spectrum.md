@@ -16,7 +16,7 @@ This module allows you to have a fancy spectrum of varying styles that appear wi
 
 ### UV Mode
 
-- `Type`: **Dropdown**, Options: `Normal`/`Circle`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Normal`/`Circle`
     - Default: `Normal`
 
 Choice of UV projection of your Spectrum.
@@ -28,13 +28,13 @@ Choice of UV projection of your Spectrum.
 
 ### UV
 
-- `Type`: **Dropdown**, Options: `UV0`/`UV1`/`UV2`/`UV3`/`Panosphere`/`World Pos`/`Local Pos`/`Polar UV`/`Distorted UV`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `UV0`/`UV1`/`UV2`/`UV3`/`Panosphere`/`World Pos`/`Local Pos`/`Polar UV`/`Distorted UV`
 
 Choice of UV to use for your Spectrum. You will most likely be configuring this for your specific model.
 
 ### Position
 
-- `Type`: **Float2**
+- `Type`: <PropertyIcon name="float2" />**Float2**
     - Default: `X = 0.5`, `Y = 0.5`
 
 Adjusts the Position of the Spectrum's projection on the model's UV space. The Position is based off of the direct center of the projection plane.
@@ -46,7 +46,7 @@ Adjusts the Position of the Spectrum's projection on the model's UV space. The P
 
 ### Scale
 
-- `Type`: **Float4**
+- `Type`: <PropertyIcon name="float4" />**Float4**
     - Default: `X = 1`, `Y = 1`, `Z = 1`, `W = 1`
 
 Adjusts the Scale of the Spectrum's projection on the model's UV space.
@@ -62,19 +62,19 @@ Adjusts the Scale of the Spectrum's projection on the model's UV space.
 
 ### Rotation
 
-- `Type`: **Float**, Range: `0.0 - 360.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 360.0`
 
 Rotation of the Spectrum's projection in degrees.
 
 ### Rotation Speed
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 Consistent rotation speed of the Spectrum's projection. A value of `1` will result in a complete 360° rotation of the Spectrum every 20 seconds.
 
 ### Line Width
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
     - Default: `1`
 
 How large the width of the Spectrum should be across the projection.
@@ -88,7 +88,7 @@ How large the width of the Spectrum should be across the projection.
 
 ### Circle Dimensions
 
-- `Type`: **Float4**
+- `Type`: <PropertyIcon name="float4" />**Float4**
     - Default: `X = 0`, `Y = 1`, `Z = 0`, `W = 1`
 
 Adjusts the radius and dimension of the Circle Spectrum, if used.
@@ -121,7 +121,7 @@ Adjustment of the Volume's UV Space and it's appearance. Goes from Bottom to Top
 
 #### Volume Step Num (0 = Off)
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 Determines if the Volume projection should have steps for each set amount of units on the projection.
 
@@ -130,13 +130,13 @@ Determines if the Volume projection should have steps for each set amount of uni
 
 #### Volume Clip Min
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Clipping control of the Volume's projection from the Bottom-edge.
 
 #### Volume Clip Max
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Clipping control of the VOlume's projection from the Top-edge.
 
@@ -151,7 +151,7 @@ Adjustment of the Band's UV Space and it's appearance. Goes from Left to Right.
 
 #### Band Step Num (0 = Off)
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 Determines if the Band projection should have steps for each set amount of units on the projection.
 
@@ -160,13 +160,13 @@ Determines if the Band projection should have steps for each set amount of units
 
 #### Band Clip Min
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Clipping control of the Band's projection from the Left-edge.
 
 #### Band Clip Max
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Clipping control of the Band's projection from the Right-edge.
 
@@ -174,7 +174,7 @@ Clipping control of the Band's projection from the Right-edge.
 
 ## Shape Clip
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables the ability to provide a set amount of space between each Step for the `Band` or `Volume`, clipping whatever is in-between each step. Use this in conjunction with your [Volume Step Num](#volume-step-num-0--off) and [Band Step Num](#band-step-num-0--off) values to achieve a digital visualizer look.
 
@@ -186,7 +186,7 @@ Shape Clip should use a [Volume Step Num](#volume-step-num-0--off) and [Band Ste
 
 ### Volume Width
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Width of the space between each step on the Volume.
 
@@ -196,7 +196,7 @@ Width of the space between each step on the Volume.
 
 ### Band Width
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Width of the space between each step on the Band.
 
@@ -212,21 +212,21 @@ Modifier for increasing or decreasing the sensitivity of the Spectrum from each 
 
 ### Volume
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
     - Default: `0.5`
 
 Adjusts the sensitivity of the Volume Band. Higher values will yield larger Spectrums.
 
 ### Bass Boost
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
     - Default: `5`
 
 Adjusts the sensitivity of the Bass Band. Higher values will yield increased reaction to the Bass on the Spectrum.
 
 ### Treble Boost
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
     - Default: `1`
 
 Adjusts the sensitivity of the Treble Band. Higher values will yield increased reaction to the the Treble on the Spectrum.
@@ -239,13 +239,13 @@ Use this section to customize the Color and overall Appearance of your Spectrum.
 
 ### Color & Mask
 
-- `Type`: **RGB:** `Color Texture` **A:** `Mask` `(sRGB: ON)`
+- `Type`: <PropertyIcon name="texture" />**Color** Texture (`sRGB = On`)
 
 Texture slot for customizing the Colors and Blending of your Spectrum.
 
 ### Source
 
-- `Type`: **Dropdown**, Options: `UVX`/`UVY`/`Volume`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `UVX`/`UVY`/`Volume`
     - Default: `UVY`
 
 Choose which direction the blending of Colors will be using. The colors you specify will appear on the Spectrum depending on the intensity of the music on each Band.
@@ -258,7 +258,7 @@ Choose which direction the blending of Colors will be using. The colors you spec
 
 ### Volume Color Low
 
-- `Type`: **Color**
+- `Type`: <PropertyIcon name="color" />**Color**
 
 Color of the Volume at the start of the blending with your selected `Source`.
 
@@ -266,13 +266,13 @@ This will be treated as the lowest frequency when `Source` is set to `Volume`.
 
 ### Low Emission
 
-- `Type`: **Float**, Range: `0.0 - 20.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 20.0`
 
 Adjusts the Emission Strength of the Volume Color Low.
 
 ### Volume Color Mid
 
-- `Type`: **Color**
+- `Type`: <PropertyIcon name="color" />**Color**
 
 Color of the Volume around the middle of the blending.
 
@@ -280,13 +280,13 @@ This will be treated as the middle frequency when `Source` is set to `Volume`.
 
 ### Mid Emission
 
-- `Type`: **Float**, Range: `0.0 - 20.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 20.0`
 
 Adjusts the Emission Strength of the Volume Color Mid.
 
 ### Volume Color High
 
-- `Type`: **Color**
+- `Type`: <PropertyIcon name="color" />**Color**
 
 Color of the Volume at the end of the blending with your selected `Source`.
 
@@ -294,25 +294,25 @@ This will be treated as the highest frequency when `Source` is set to `Volume`.
 
 ### High Emission
 
-- `Type`: **Float**, Range: `0.0 - 20.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 20.0`
 
 Adjusts the Emission Strength of the Volume Color High.
 
 ### Blend Type
 
-- `Type`: **Dropdown**, Options: `Replace`/`Multiply`/`Screen`/`Linear Dodge(Add)`/`Overlay`/`Mixed`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Replace`/`Multiply`/`Screen`/`Linear Dodge(Add)`/`Overlay`/`Mixed`
 
 Behavior of the Spectrum's blending against your Material.
 
 ### Alpha
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Adjusts the visibility of the entire Spectrum projection on your Material.
 
 ### Override Alpha
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Overrides the entire Opacity of the Material besides the Spectrum itself. Requires Transparency.
 

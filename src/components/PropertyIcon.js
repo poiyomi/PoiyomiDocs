@@ -22,6 +22,7 @@ const iconMap = {
     float4: Icon_Float4,
     floatrange: Icon_FloatRange,
     floatclamped: Icon_FloatClamped,
+    multislider: Icon_FloatClamped,
     hdrcolor: Icon_HDRColor,
     slider: Icon_Slider,
     texture: Icon_Texture,
