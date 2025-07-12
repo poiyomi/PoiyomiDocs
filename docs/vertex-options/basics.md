@@ -9,8 +9,8 @@ keywords: [vertex, vertices, options, offset, vertex options, poiyomi, shader]
 
 This section can be described by Poiyomi as *"the silly options"* due to the amount of weird and strange things that can be accomplished with Vertex Options.
 
-:::note Known Z-fighting Issues
-Vertex Options can cause nasty Z-fighting issues when seen against projection-based shaders, as they re-render the mesh using a shader of their own. This is a known limitation in Unity.
+:::note Z-fighting Issues
+Vertex Options can cause nasty Z-fighting when seen against projection-based shaders, as they re-render the mesh using a shader of their own. This is a known limitation in Unity.
 :::
 
 <PoiVideo url='/vid/color-and-normals/VertexOptionsDemo.mp4'/>
@@ -18,31 +18,31 @@ Vertex Options can cause nasty Z-fighting issues when seen against projection-ba
 
 ## Local Translation
 
-- `Type`: **Vector3**
+- `Type`: <PropertyIcon name="float3" />**Vector3**
 
 How much to move the vertices of the mesh (in units of meters) with respect to its local coordinate system, on a per-axis basis. This means that it will line up with the mesh regardless of the mesh's rotation, and will be scaled with the scaling of the mesh's axes.
 
 ## World Translation
 
-- `Type`: **Vector3**
+- `Type`: <PropertyIcon name="float3" />**Vector3**
 
 How much to move the vertices of the mesh (in units of meters) with respect to the world coordinate system, on a per-axis basis. This means that it will not necessarily line up with the mesh if the mesh is rotated, and will always uniformly move the mesh regardless of the mesh's scaling.
 
 ## Scale
 
-- `Type`: **Vector4**
+- `Type`: <PropertyIcon name="float4" />**Vector4**
 
 How much to scale the mesh relative to its local coordinate system, on a per-axis basis. The **X**, **Y**, and **Z** value affect their respective axes, while the **W** value scales all axes uniformly.
 
 ## Rotation
 
-- `Type`: **Vector3**
+- `Type`: <PropertyIcon name="float3" />**Vector3**
 
 How much to rotate the vertices of the mesh (in units of degrees) with respect to its local coordinate system, on a per-axis basis.
 
 ## Rotation Speed
 
-- `Type`: **Vector3**
+- `Type`: <PropertyIcon name="float3" />**Vector3**
 
 How much constant rotation speed to apply to the vertices of the mesh, on a per-axis basis. This is defined in degrees per `20` seconds, so a value of `360` will complete one rotation in `20` seconds, while a value of `7200` would complete one rotation per second.
 
@@ -52,19 +52,19 @@ How much constant rotation speed to apply to the vertices of the mesh, on a per-
 
 ### Height Map
 
-- `Type`: **Data** Texture (sRGB **OFF**)
+- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = Off`)
 
 A texture used to modify the vertex height adjustment. This represents the low and high points of to be used for vertex modification.
 
 ### Height
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 How much to offset the vertices of the mesh (in units of meters) along the vertex normals. This will apply a constant value regardless of the mesh's scaling. The modified height is scaled by the Height Map and modified by the Mask Bias.
 
 ### Map Bias
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to offset the vertex height for the mask. A value of `0` will mean that the vertex height will only move up from the unmodified position. A value of `0.5` will mean the vertex height will go down by half the vertex height where the mask is pure black, up by half the vertex height where the mask is pure white. A value of `1.0` means the vertex height will only move down from the unmodified position.
 
@@ -72,7 +72,7 @@ How much to offset the vertex height for the mask. A value of `0` will mean that
 
 ## Vertex Rounding (Blocky/PS1)
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Vertex Rounding snaps vertices to specific intervals in the world coordinate system. The amount of snap interval is defined by the Rounding Interval. This option can be used to create retro effects or pixelation.
 
@@ -81,11 +81,13 @@ Vertex Rounding snaps vertices to specific intervals in the world coordinate sys
 
 ### Rounding Space
 
-- `Type`: **Dropdown**, Options: `Local`/`World`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Local`/`World`
 
 Defines where to calculate the Rounding Interval from. If set to `Local`, it will calculate from the scale of the Mesh it's using. If set to `World`, it will calculate from the World's scale.
 
 ### Rounding Interval
+
+- `Type`: <PropertyIcon name="float" />**Float**
 
 Defines the interval for vertex rounding. This is defined as the distance between points in local space, in base units of meters. For example, a value of `0.1` will round vertices to the nearest tenth of a meter (if the object is scaled uniformly).
 
@@ -93,7 +95,7 @@ Defines the interval for vertex rounding. This is defined as the distance betwee
 
 ## Barrel Distortion
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Barrel Distortion allows the vertices to snap and morph the mesh into a cylinder/barrel-shape form.
 
@@ -102,19 +104,19 @@ Barrel Distortion allows the vertices to snap and morph the mesh into a cylinder
 
 ### Barrel Width
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 The width of the Barrel in world space, measured in meters.
 
 ### Barrel Alpha
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Determines how much to distort and morph into the barrel-shape.
 
 ### Barrel Height
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Determines how much to stretch the edges of the "barrel" outside of the shape.
 
@@ -122,7 +124,7 @@ Determines how much to stretch the edges of the "barrel" outside of the shape.
 
 ## Sphere Distortion
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables the ability to snap and morph the mesh into a spherical shape and form.
 
@@ -131,25 +133,25 @@ Enables the ability to snap and morph the mesh into a spherical shape and form.
 
 ### Sphere Radius
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Determines how circular the spherical shape is morphed into.
 
 ### Sphere Height
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Determines how tall the spherical shape is morphed.
 
 ### Sphere Alpha
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Main slider. Determines how much to distort and morph into a spherical shape and form.
 
 ### Sphere Center
 
-- `Type`: **Vector3**
+- `Type`: <PropertyIcon name="float3" />**Vector3**
 
 Determines the center origin of the morphed spherical shape and form in the local axis.
 
@@ -157,7 +159,7 @@ Determines the center origin of the morphed spherical shape and form in the loca
 
 ## Tornado
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables the ability to morph the mesh into an animated swirling funnel, or a "Tornado" effect.
 
@@ -170,31 +172,31 @@ The location of the [Top Height](#top-height) and [Bottom Height](#bottom-height
 
 ### Radius
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 Determines the maximum width of the funnel.
 
 ### Spiral Intensity
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 Determines the visual intensity of the funnel. Lower values are less intensive and can emulate a funky water effect, while values over `100` will intensify the swirl even further to emulate a twister.
 
 ### Rotation Speed
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 How fast should each swirl rotate. The higher the value, the faster the swirl.
 
 ### Top Height
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 Determines the top height of the funnel.
 
 ### Bottom Height
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 Determines the bottom lower height of the funnel.
 
@@ -202,7 +204,7 @@ Determines the bottom lower height of the funnel.
 
 ## Audio Link
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables the ability to manipulate the Vertex Options in response to AudioLink.
 
@@ -219,19 +221,19 @@ Options for adjusting the Local Translation in response to AudioLink bands.
 
 #### Band
 
-- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
 
 AudioLink Band to use for Local Translation adjustments.
 
 #### Translation Min
 
-- `Type`: **Vector3**
+- `Type`: <PropertyIcon name="float3" />**Vector3**
 
 Translation adjustment used when Local Translate Band has no audio.
 
 #### Translation Max
 
-- `Type`: **Vector3**
+- `Type`: <PropertyIcon name="float3" />**Vector3**
 
 Translation adjustment used when Local Translate Band has max audio.
 
@@ -241,25 +243,25 @@ Options for rotating directly in response to AudioLink bands.
 
 #### Band X
 
-- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
 
 Audio Link band to use for rotation in X.
 
 #### Band Y
 
-- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
 
 Audio Link band to use for rotation in Y.
 
 #### Band Z
 
-- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
 
 Audio Link band to use for rotation in Z.
 
 #### Rotation
 
-- `Type`: **Vector3**
+- `Type`: <PropertyIcon name="float3" />**Vector3**
 
 How much the rotation to apply to the vertices of the mesh, on a per-axis basis, for the given band. 
 
@@ -269,13 +271,13 @@ Options for rotating continuously in response to AudioLink bands.
 
 #### Band X
 
-- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
 
 Audio Link band to use for continuous rotation in X.
 
 #### Motion Type X
 
-- `Type`: **Dropdown**
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**
 
 Which continuous motion mode to use for the X rotation.
 
@@ -294,13 +296,13 @@ Which continuous motion mode to use for the X rotation.
 
 #### Band Y
 
-- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
 
 Audio Link band to use for continuous rotation in Y.
 
 #### Motion Type Y
 
-- `Type`: **Dropdown**
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**
 
 Which continuous motion mode to use for the Y rotation.
 
@@ -319,13 +321,13 @@ Which continuous motion mode to use for the Y rotation.
 
 #### Band Z
 
-- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
 
 Audio Link band to use for continuous rotation in Z.
 
 #### Motion Type Z
 
-- `Type`: **Dropdown**
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**
 
 Which continuous motion mode to use for the Z rotation.
 
@@ -344,7 +346,7 @@ Which continuous motion mode to use for the Z rotation.
 
 #### Rotation
 
-- `Type`: **Vector3**
+- `Type`: <PropertyIcon name="float3" />**Vector3**
 
 Scaler for continuous rotation on each axis.
 
@@ -354,19 +356,19 @@ Options for local vertex scaling in response to AudioLink.
 
 #### Band
 
-- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
 
 Audio Link band to use for vertex scale.
 
 #### Scale Min
 
-- `Type`: **Vector3**
+- `Type`: <PropertyIcon name="float3" />**Vector3**
 
 Scale state used when Scale Band has no audio.
 
 #### Scale Max
 
-- `Type`: **Vector3**
+- `Type`: <PropertyIcon name="float3" />**Vector3**
 
 Scale state used when Scale Band has max audio.
 
@@ -376,19 +378,19 @@ Options for world translation in response to AudioLink.
 
 #### Band
 
-- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
 
 Audio Link band to use for World Translation.
 
 #### World Translation Min
 
-- `Type`: **Vector3**
+- `Type`: <PropertyIcon name="float3" />**Vector3**
 
 World Translation state used when Scale Band has no audio.
 
 #### World Translation Max
 
-- `Type`: **Vector3**
+- `Type`: <PropertyIcon name="float3" />**Vector3**
 
 World Translation state used when Scale Band has max audio.
 
@@ -398,13 +400,13 @@ Options for vertex height in response to AudioLink.
 
 #### Band
 
-- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
 
 Audio Link band to use for World Translation.
 
 #### Height
 
-- `Type`: **Vector2**
+- `Type`: <PropertyIcon name="float2" />**Vector2**
 
 How much to add (or subtract) from vertex height. The **X** value is the height added with no volume in the Vertex Height Band, and the **Y** value is the height added with maximum volume.
 
@@ -414,42 +416,42 @@ Options for rounding in response to AudioLink.
 
 #### Band
 
-- `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
 
 Audio Link band to use for World Translation.
 
 #### Range
 
-- `Type`: **Vector2**
+- `Type`: <PropertyIcon name="float2" />**Vector2**
 
 How much to add (or subtract) from vertex rounding. The **X** value is the height added with no volume in the Vertex Height Band, and the **Y** value is the height added with maximum volume.
 
 ### Spectrum Motion
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables a very interesting effect where the entirety of the Mesh is morphed to look like a visualizer in response to AudioLink.
 
 #### UV
 
-- `Type`: **Dropdown**, Options: `UV0`/`UV1`/`UV2`/`UV3`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `UV0`/`UV1`/`UV2`/`UV3`
 
 Selection of UV to use. This selection will determine which vertices the Spectrum Motion will affect.
 
 #### UV Direction
 
-- `Type`: **Dropdown**, Options: `X`/`Y`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `X`/`Y`
 
 Which direction on the UV will Spectrum Motion be manipulated from. `X` will be the left-right direction of the UV, while `Y` will be the up-down direction of the UV.
 
 #### Offset Min
 
-- `Type`: **Vector4**
+- `Type`: <PropertyIcon name="float4" />**Vector4**
 
 How much to offset the Spectrum Motion when no audio is present.
 
 #### Offset Max
 
-- `Type` **Vector4**
+- `Type` <PropertyIcon name="float4" />**Vector4**
 
 How much to offset the Spectrum Motion when full audio from AudioLink peaks.

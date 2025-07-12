@@ -23,7 +23,7 @@ To use BlackLight Masking, you must set the following on a **Point Light Source*
 
 ## BlackLight Masking
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables BlackLight Masking on the Material.
 
@@ -31,13 +31,13 @@ Enables BlackLight Masking on the Material.
 
 ### Key
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 Which `Key` should be used for BlackLight Mask One. This should match the same value as the specific Light Source's `Intensity` value.
 
 ### Range
 
-- `Type`: **Float2**
+- `Type`: <PropertyIcon name="flaot2" />**Float2**
 
 The Gradient of the BlackLight Mask, ranging from Beginning to End Point.
 
@@ -48,7 +48,7 @@ The Gradient of the BlackLight Mask, ranging from Beginning to End Point.
 
 ### Apply to Global Mask
 
-- `Type`: **Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
 Select which [Global Mask](/docs/modifiers/global-masks.md) to apply the BlackLight Mask **One** effects onto.
 
@@ -56,13 +56,13 @@ Select which [Global Mask](/docs/modifiers/global-masks.md) to apply the BlackLi
 
 ### Key
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 Which `Key` should be used for BlackLight Mask Two. This should match the same value as the specific Light Source's `Intensity` value.
 
 ### Range
 
-- `Type`: **Float2**
+- `Type`: <PropertyIcon name="float2" />**Float2**
 
 The Gradient of the BlackLight Mask, ranging from Beginning to End Point.
 
@@ -73,7 +73,7 @@ The Gradient of the BlackLight Mask, ranging from Beginning to End Point.
 
 ### Apply to Global Mask
 
-- `Type`: **Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
 Select which [Global Mask](/docs/modifiers/global-masks.md) to apply the BlackLight Mask **Two** effects onto.
 
@@ -81,13 +81,13 @@ Select which [Global Mask](/docs/modifiers/global-masks.md) to apply the BlackLi
 
 ### Key
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 Which `Key` should be used for BlackLight Mask Three. This should match the same value as the specific Light Source's `Intensity` value.
 
 ### Range
 
-- `Type`: **Float2**
+- `Type`: <PropertyIcon name="float2" />**Float2**
 
 The Gradient of the BlackLight Mask, ranging from Beginning to End Point.
 
@@ -98,7 +98,7 @@ The Gradient of the BlackLight Mask, ranging from Beginning to End Point.
 
 ### Apply to Global Mask
 
-- `Type`: **Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
 Select which [Global Mask](/docs/modifiers/global-masks.md) to apply the BlackLight Mask **Three** effects onto.
 
@@ -106,13 +106,13 @@ Select which [Global Mask](/docs/modifiers/global-masks.md) to apply the BlackLi
 
 ### Key
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 Which `Key` should be used for BlackLight Mask Four. This should match the same value as the specific Light Source's `Intensity` value.
 
 ### Range
 
-- `Type`: **Float2**
+- `Type`: <PropertyIcon name="float2" />**Float2**
 
 The Gradient of the BlackLight Mask, ranging from Beginning to End Point.
 
@@ -123,6 +123,6 @@ The Gradient of the BlackLight Mask, ranging from Beginning to End Point.
 
 ### Apply to Global Mask
 
-- `Type`: **Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
 Select which [Global Mask](/docs/modifiers/global-masks.md) to apply the BlackLight Mask **Four** effects onto.

@@ -75,7 +75,7 @@ Keep in mind how the names are used. For example: if the channel is `2G`, it mea
 
 ## Textures
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables the Global Mask Textures feature.
 
@@ -85,25 +85,25 @@ This is the flagship feature of Global Masks. Here, you can specify up to 4 Glob
 
 ### Global Mask 1
 
-- `Type`: **Data** Texture (`sRGB OFF`)
+- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = Off`)
 
 Texture Slot defining the first Global Mask. This will represent Global Masks `1R`, `1G`, `1B`, and `1A`.
 
 ### Global Mask 2
 
-- `Type`: **Data** Texture (`sRGB OFF`)
+- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = Off`)
 
 Texture Slot defining the secondary Global Mask. This will represent Global Masks `2R`, `2G`, `2B`, and `2A`.
 
 ### Global Mask 3
 
-- `Type`: **Data** Texture (`sRGB OFF`)
+- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = Off`)
 
 Texture Slot defining the tertiary Global Mask. This will represent Global Masks `3R`, `3G`, `3B`, and `3A`.
 
 ### Global Mask 4
 
-- `Type`: **Data** Texture (`sRGB OFF`)
+- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = Off`)
 
 Texture Slot defining the forth Global Mask. This will represent Global Masks `4R`, `4G`, `4B`, and `4A`.
 
@@ -113,44 +113,44 @@ This section allows you to use [Vertex Colors](/docs/vertex-options/vertex-color
 
 ### Linear Colors
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
   - Default: `On`
 
 Enable to use Linear Colors from your Vertex Colors. This is typically recommended so that the shader can accurately read them.
 
 ### Red
 
-- `Type`: **Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
 Specify which Vertex Colors from the Red Channel to be applied to your Global Mask.
 
 ### Green
 
-- `Type`: **Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
 Specify which Vertex Colors from the Green Channel to be applied to your Global Mask.
 
 ### Blue
 
-- `Type`: **Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
 Specify which Vertex Colors from the Blue Channel to be applied to your Global Mask.
 
 ### Alpha
 
-- `Type`: **Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
 Specify which Vertex Colors from the Alpha Channel to be applied to your Global Mask.
 
 ## Backface Masking
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables control on how your Global Masks appear on the Backface.
 
 ### Mask Channel
 
-- `Type`: **Dropdown**, Options: `Front Only`/`Back Only`/`Both`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Front Only`/`Back Only`/`Both`
     - Default: `Both`
 
 For each channel, you can choose where the Global Mask appears on. You can choose the Front Face, the Back Face, or Both Faces.
@@ -159,25 +159,25 @@ By default, `Both` will be set.
 
 ## Mirror Masking
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables control of how your Global Masks appear on Mirrors in VRChat.
 
 ### Mirror Detection Mode
 
-- `Type`: **Dropdown**, Options: `Generic`/`VRC`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Generic`/`VRC`
 
 Choose the detection mode of how the Global Mask treats the Mirror.
 
 ### Mask Channel
 
-- `Type`: **Dropdown**, Options: `Both`/`Only Outside Mirror`/`Only In Mirror`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Both`/`Only Outside Mirror`/`Only In Mirror`
 
 Choose how the channel appears in Mirrors.
 
 ## Camera Masking
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables control of how your Global Masks appear in VRChat Cameras.
 
@@ -187,25 +187,25 @@ Camera Masking will only exclusively work in VRChat.
 
 ### Mask Channel
 
-- `Type`: **Dropdown**, Options: `Both`/`Only Outside Camera`/`Only In Camera`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Both`/`Only Outside Camera`/`Only In Camera`
 
 Choose how the channel appears in Cameras.
 
 ## Distance Masking
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables Distance Masking, which controls how the Global Mask appears based on the Camera's distance to the Mesh this Material is used on.
 
 ### Mask Channel
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables the Mask Channel to be used with your Distance Masking.
 
 #### Pos To Use
 
-- `Type`: **Dropdown**, Options: `Object Position`/`Pixel Position`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Object Position`/`Pixel Position`
 
 Which position to use to calculate distance.
 
@@ -215,30 +215,30 @@ Which position to use to calculate distance.
 
 #### Min Distance
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 The distance (in meters) at which the Min Distance Alpha multiplier will be applied.
 
 #### Max Distance
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 The distance (in meters) at which the Max Distance Alpha multiplier will be applied.
 
 #### Min Distance Alpha
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 The alpha multiplier that will be applied at the Min Distance.
 
 #### Max Distance Alpha
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 The alpha multiplier that will be applied at the Max Distance. 
 
 #### Blending
 
-- `Type`: **Dropdown**, Options: `Replace`/`Multiply`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Replace`/`Multiply`
 
 Choose how the Distance Masking are blended in your Material.

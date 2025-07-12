@@ -20,7 +20,7 @@ Geometric Dissolve can have a performance impact depending on the Mesh it is bei
 
 ## Shape Type
 
-- `Type`: **Dropdown**, Options: `Pyramid (Slower)`/`Triangle (Fast)`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Pyramid (Slower)`/`Triangle (Fast)`
 
 Choice of Geometric Dissolve style to use.
 
@@ -39,7 +39,7 @@ Triangles actively being 'dissolved' will remain simple triangles and have no ad
 
 ## Gradient Type
 
-- `Type`: **Dropdown**, Options: `Texture`/`Point 2 Point`/`Noise`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Texture`/`Point 2 Point`/`Noise`
 
 Determines how the intensity of the effect will be driven by.
 
@@ -50,31 +50,31 @@ Determines how the intensity of the effect will be driven by.
 
 #### UV
 
-- `Type`: **Dropdown**, Options: `UV0`/`UV1`/`UV2`/`UV3`/`World Pos`/`Local Pos`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `UV0`/`UV1`/`UV2`/`UV3`/`World Pos`/`Local Pos`
 
 Which UV the Geometric Dissolve effect will be projected onto.
 
 #### Gradient
 
-- `Type`: **Data** Texture (`sRGB = OFF`)
+- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = Off`)
 
 Gradient Texture to use for the Geometric Dissolve Gradient.
 
 #### Mask
 
-- `Type`: **Data** Texture (`sRGB = OFF`)
+- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = Off`)
 
 Mask Texture to isolate the Geometric Dissolve to only affect a specific area.
 
 #### Dissolve Alpha
 
-- `Type`: **Float**, Range: `-1.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
 
 Defines the main state of the Geometric Dissolve effect.
 
 #### Expansion Time
 
-- `Type`: **Float**, Range: `0.001 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.001 - 1.0`
 
 Defines the delay of time between the main states of the Geometric Dissolve effect.
 
@@ -87,43 +87,43 @@ Defines the delay of time between the main states of the Geometric Dissolve effe
 
 #### Mask
 
-- `Type`: **Data** Texture (`sRGB = OFF`)
+- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = Off`)
 
 Mask Texture to isolate the Geometric Dissolve to only affect a specific area.
 
 #### Dissolve Alpha
 
-- `Type`: **Float**, Range: `-1.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
 
 Defines the main state of the Geometric Dissolve effect.
 
 #### Expansion Time
 
-- `Type`: **Float**, Range: `0.001 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.001 - 1.0`
 
 Defines the delay of time between the main states of the Geometric Dissolve effect.
 
 #### Vertex Color Position
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 If enabled, will use the Vertex Colors of your Mesh to define the positions for the Geometric Dissolve.
 
 #### Start Point
 
-- `Type`: **Vector3**
+- `Type`: <PropertyIcon name="float3" />**Vector3**
 
 Defines the starting position of the Gradient in XYZ coordinates.
 
 #### End Point
 
-- `Type`: **Vector3**
+- `Type`: <PropertyIcon name="float3" />**Vector3**
 
 Defines the ending position of the Gradient in XYZ coordinates.
 
 #### Visualize
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Changes the Geometric Dissolve effect to show a visualization of the effect, ignoring other shader effects rendered on top.
 
@@ -136,43 +136,43 @@ Changes the Geometric Dissolve effect to show a visualization of the effect, ign
 
 #### UV
 
-- `Type`: **Dropdown**, Options: `UV0`/`UV1`/`UV2`/`UV3`/`World Pos`/`Local Pos`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `UV0`/`UV1`/`UV2`/`UV3`/`World Pos`/`Local Pos`
 
 Which UV the Geometric Dissolve effect will be projected onto.
 
 #### Mask
 
-- `Type`: **Data** Texture (`sRGB = OFF`)
+- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = Off`)
 
 Mask Texture to isolate the Geometric Dissolve to only affect a specific area.
 
 #### Dissolve Alpha
 
-- `Type`: **Float**, Range: `-1.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
 
 Defines the main state of the Geometric Dissolve effect.
 
 #### Noise Threshold
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Defines the threshold to use on the Geometric Dissolve effect, such as a delay to where each piece of the Mesh will start dissolving from.
 
 #### Expansion Time
 
-- `Type`: **Float**, Range: `0.001 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.001 - 1.0`
 
 Defines the delay of time between the main states of the Geometric Dissolve effect.
 
 #### Noise Density
 
-- `Type`: **Float2**
+- `Type`: <PropertyIcon name="float2" />**Float2**
 
 Density of the noise used to drive dissolve intensity. Smaller values appear smoother, larger values provide more detail.
 
 #### Noise Speed
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 Determines how quickly the noise algorithm progresses through time. Larger values are faster.
 
@@ -184,13 +184,13 @@ This setting creates an animated Geometric Dissolve when in-between Dissolve Alp
 
 ### Travel Distance
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 Determines the maximum distance a triangle being "dissolved" may travel.
 
 ### Scale Range
 
-- `Type`: **Float4**
+- `Type`: <PropertyIcon name="float4" />**Float4**
 
 Defines the minimum and maximum scales and range of the Geometric Dissolve shapes.
 
@@ -203,7 +203,7 @@ Defines the minimum and maximum scales and range of the Geometric Dissolve shape
 
 ### Height Range
 
-- `Type`: **Float4**
+- `Type`: <PropertyIcon name="float4" />**Float4**
 
 Defines the minimum and maximum height and range of the Geometric Dissolve shapes.
 
@@ -216,13 +216,13 @@ Defines the minimum and maximum height and range of the Geometric Dissolve shape
 
 ### Min Rotation
 
-- `Type`: **Float3**
+- `Type`: <PropertyIcon name="float3" />**Float3**
 
 Defines the minimum amount of rotations per cycle.
 
 ### Max Rotation
 
-- `Type`: **Float3**
+- `Type`: <PropertyIcon name="float3" />**Float3**
 
 Defines the maximum amount of rotations per cycle.
 
@@ -230,25 +230,25 @@ Defines the maximum amount of rotations per cycle.
 
 ### Color Tex
 
-- `Type`: **Color** Texture (`sRGB = ON`)
+- `Type`: <PropertyIcon name="texture" />**Color** Texture (`sRGB = On`)
 
 Color Texture to blend with the Geometric Dissolve shapes.
 
 ### Blending
 
-- `Type`: **Dropdown**, Options: `Replace`/`Darken`/`Multiply`/`Lighten`/`Screen`/`Subtract`/`Add`/`Overlay`/`Mixed`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Replace`/`Darken`/`Multiply`/`Lighten`/`Screen`/`Subtract`/`Add`/`Overlay`/`Mixed`
 
 Choice of blending mode to use for the Color Texture.
 
 ### Color
 
-- `Type`: **Color**
+- `Type`: <PropertyIcon name="color" />**Color**
 
 Color to blend with the Geometric Dissolve shapes.
 
 ### Color Range
 
-- `Type`: **Float2**
+- `Type`: <PropertyIcon name="float2" />**Float2**
 
 Defines the range of Color to blend with the Geometric Dissolve shapes.
 
@@ -258,7 +258,7 @@ Values between `Min` and `Max` will fade smoothly. `Min` may be larger than `Max
 
 ### Emission Range
 
-- `Type`: **Float2**
+- `Type`: <PropertyIcon name="float2" />**Float2**
 
 Defines the range of Emission to blend with the Geometric Dissolve shapes.
 
@@ -268,49 +268,49 @@ Values between `Min` and `Max` will fade smoothly. `Min` may be larger than `Max
 
 ## Wireframe
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables the wireframe to show during the Geometric Dissolve.
 
 ### Thickness
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Thickness of the wireframe lines.
 
 ### Softness
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How soft the wireframe is drawn on the Geometric Dissolve.
 
 ### Time Offset
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 Timing offset for the Geometric Dissolve's wireframe during the animation.
 
 ### Extend Base Color
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Extends the wireframe to the Base Color.
 
 ### Extend Emission
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Extends the wireframe to the Emission.
 
 ### Wireframe Only
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Shows only the Wireframe.
 
 ## UV Tile Geo Dissolve
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Allows an alternative way to use UV Tile Discard with the use of Geometric Dissolve's advanced effects instead.
 
@@ -322,13 +322,13 @@ Each Slider will control the `Dissolve Alpha` for the described Row and Column.
 
 ### UV Tile UV
 
-- `Type`: **Dropdown**, Options: `UV0`/`UV1`/`UV2`/`UV3`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `UV0`/`UV1`/`UV2`/`UV3`
 
 Choice of which UV to use for the Tile Dissolve.
 
 ### Row X Column Y
 
-- `Type`: **Float**, Range: `-1.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
 
 This property will appear for each Row and Column for UV Tile Dissolve. Below is a table reference matching the same positions as described in [UV Tile Discard](/docs/special-fx/uv-tile-discard.md), named to each field shown in UV Tile Dissolve.
 

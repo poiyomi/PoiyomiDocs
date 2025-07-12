@@ -20,79 +20,79 @@ Poiyomi Fur is an expensive feature, each layer increases the number of times yo
 
 ## Layer Count
 
-- `Type`: **Float**, Range: `1.0 - 31.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `1.0 - 31.0`
 
 How many fur layers to use. The higher the value, the more fur simulation will occur.
 
 ## Length
 
-- `Type`: **Float**, Range: `0.0 - 0.05`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 0.05`
 
 How much length the fur should be from the surface of the Mesh.
 
 ## Gravity Strength
 
-- `Type`: **Float**, Range: `-1.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
 
 How much Gravity should be simulated on the fur.
 
 ## Color
 
-- `Type`: **Color**
+- `Type`: <PropertyIcon name="color" />**Color**
 
 The Base Color of the Fur, if no Texture is defined.
 
 ## Fur Texture
 
-- `Type`: **Color** Texture (`sRGB = ON`)
+- `Type`: <PropertyIcon name="texture" />**Color** Texture (`sRGB = On`)
 
 Texture pattern to use as the fur.
 
 ## Apply Fur Texture to Skin
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 If enabled, applies the Fur Texture to the skin's surface.
 
 ## Mask
 
-- `Type`: **Data** Texture (`sRGB = OFF`)
+- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = Off`)
 
 Texture slot to use for masking areas where Fur should only simulate.
 
 ## Height Map
 
-- `Type`: **Data** Texture (`sRGB = OFF`)
+- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = Off`)
 
 Specify which Height Map to use for the Fur. This is the main driver for the Fur simulation.
 
 ## Height Map Min Max
 
-- `Type`: **Variable Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="multislider" />**Multislider**, Range: `0.0 - 1.0`
 
 Determines the intensity of the Height range as determined by the Height Map.
 
 ## AO
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Intensity of Ambient Occlusion to use on the Fur simulation.
 
 ## AO Min Max
 
-- `Type`: **Variable Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="multislider" />**Multislider**, Range: `0.0 - 1.0`
 
 Determines the intensity of the AO range.
 
 ## Hue Shift
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables options to change the Hue of the fur color using the Animator.
 
 ### Color Space
 
-- `Type`: **Dropdown**, Options: `OKLab`/`HSV`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `OKLab`/`HSV`
 
 Choice of Color Space to use for the Hue Shift. By default, it will be set to `OKLab`.
 
@@ -100,7 +100,7 @@ Learn about the difference of Color Spaces as documented here in [Color Adjust](
 
 ### Select or Shift
 
-- `Type`: **Dropdown**, Options: `Hue Select`/`Hue Shift`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Hue Select`/`Hue Shift`
   - Default: `Hue Shift`
 
 This dropdown allows you to select how the Color Adjustment should behave when the Hue Shift is used. By default, this will be set to `Hue Shift`.
@@ -115,13 +115,13 @@ This dropdown allows you to select how the Color Adjustment should behave when t
 
 ### Shift Speed
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 How much to constantly shift the hue with time. A value of 1 will result in a full hue shift cycle every 20 seconds.
 
 ### Hue Shift
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to shift the fur color around the hue circle. 
 
@@ -131,18 +131,18 @@ This value is circular, and will have the same result at 0 and 1.
 
 ### Vertex Color Normals
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 If enabled, uses Vertex Color Normals for the Fur surface.
 
 ### Min Distance
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 The minimum distance of the Fur.
 
 ### Max Distance
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 The maximum distance of the Fur.

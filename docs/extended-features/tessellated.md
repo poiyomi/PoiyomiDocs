@@ -22,18 +22,18 @@ Tessellation is an expensive feature and can greatly slow down your Graphics Car
 
 ## Tessellation Type
 
-- `Type`: **Dropdown**, Options: `Uniform`/`Edge Length`/`Distance`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Uniform`/`Edge Length`/`Distance`
 
 Choice of tessellation pass to use.
 
 ## Edge Length (px)
 
-- `Type`: **Float**, Range: `10.0 - 60.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `10.0 - 60.0`
 
 The length of each edge in the tessellation pass.
 
 ## Phong
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 The amount of Phong interpolation that will be used in the tessellation pass.

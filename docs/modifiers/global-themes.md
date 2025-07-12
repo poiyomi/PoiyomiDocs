@@ -41,13 +41,13 @@ To learn more about animating properties, see [Marking Properties for Animation]
 
 ### Theme Color 0
 
-- `Type`: **HDR Color**
+- `Type`: <PropertyIcon name="hdrcolor" />**HDR Color**
 
 Color to use for Theme Color 0.
 
 ### Hue Adjust
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to shift the Theme Color around the Hue Circle. This value is circular, and will have the same result at 0 and 1.
 
@@ -55,13 +55,13 @@ This functions in the same fashion as Color Adjust's [Hue Shift](/docs/color-and
 
 ### Hue Adjust Speed
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 How much to constantly shift the Theme Color Hue with time. A value of 1 will result in a full hue shift cycle every 20 seconds.
 
 ### Saturation Adjust
 
-- `Type`: **Float**, Range: `-1.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
 
 Adjusts the Saturation of the Theme Color.
 
@@ -69,7 +69,7 @@ A value of -1 will make the Theme Color fully de-saturate (grayscale). A value o
 
 ### Value Adjust
 
-- `Type`: **Float**, Range: `-1.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
 
 Adjusts the brightness value of the Theme Color on top, without regard for it's Hue or Tone.
 
@@ -77,13 +77,13 @@ Adjusts the brightness value of the Theme Color on top, without regard for it's 
 
 ### Theme Color 1
 
-- `Type`: **HDR Color**
+- `Type`: <PropertyIcon name="hdrcolor" />**HDR Color**
 
 Color to use for Theme Color 1.
 
 ### Hue Adjust
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to shift the Theme Color around the Hue Circle. This value is circular, and will have the same result at 0 and 1.
 
@@ -91,13 +91,13 @@ This functions in the same fashion as Color Adjust's [Hue Shift](/docs/color-and
 
 ### Hue Adjust Speed
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 How much to constantly shift the Theme Color Hue with time. A value of 1 will result in a full hue shift cycle every 20 seconds.
 
 ### Saturation Adjust
 
-- `Type`: **Float**, Range: `-1.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
 
 Adjusts the Saturation of the Theme Color.
 
@@ -105,7 +105,7 @@ A value of -1 will make the Theme Color fully de-saturate (grayscale). A value o
 
 ### Value Adjust
 
-- `Type`: **Float**, Range: `-1.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
 
 Adjusts the brightness value of the Theme Color on top, without regard for it's Hue or Tone.
 
@@ -113,13 +113,13 @@ Adjusts the brightness value of the Theme Color on top, without regard for it's 
 
 ### Theme Color 2
 
-- `Type`: **HDR Color**
+- `Type`: <PropertyIcon name="hdrcolor" />**HDR Color**
 
 Color to use for Theme Color 2.
 
 ### Hue Adjust
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to shift the Theme Color around the Hue Circle. This value is circular, and will have the same result at 0 and 1.
 
@@ -127,13 +127,13 @@ This functions in the same fashion as Color Adjust's [Hue Shift](/docs/color-and
 
 ### Hue Adjust Speed
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 How much to constantly shift the Theme Color Hue with time. A value of 1 will result in a full hue shift cycle every 20 seconds.
 
 ### Saturation Adjust
 
-- `Type`: **Float**, Range: `-1.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
 
 Adjusts the Saturation of the Theme Color.
 
@@ -141,7 +141,7 @@ A value of -1 will make the Theme Color fully de-saturate (grayscale). A value o
 
 ### Value Adjust
 
-- `Type`: **Float**, Range: `-1.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
 
 Adjusts the brightness value of the Theme Color on top, without regard for it's Hue or Tone.
 
@@ -149,13 +149,13 @@ Adjusts the brightness value of the Theme Color on top, without regard for it's 
 
 ### Theme Color 3
 
-- `Type`: **HDR Color**
+- `Type`: <PropertyIcon name="hdrcolor" />**HDR Color**
 
 Color to use for Theme Color 3.
 
 ### Hue Adjust
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to shift the Theme Color around the Hue Circle. This value is circular, and will have the same result at 0 and 1.
 
@@ -163,13 +163,13 @@ This functions in the same fashion as Color Adjust's [Hue Shift](/docs/color-and
 
 ### Hue Adjust Speed
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
 
 How much to constantly shift the Theme Color Hue with time. A value of 1 will result in a full hue shift cycle every 20 seconds.
 
 ### Saturation Adjust
 
-- `Type`: **Float**, Range: `-1.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
 
 Adjusts the Saturation of the Theme Color.
 
@@ -177,6 +177,6 @@ A value of -1 will make the Theme Color fully de-saturate (grayscale). A value o
 
 ### Value Adjust
 
-- `Type`: **Float**, Range: `-1.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
 
 Adjusts the brightness value of the Theme Color on top, without regard for it's Hue or Tone.

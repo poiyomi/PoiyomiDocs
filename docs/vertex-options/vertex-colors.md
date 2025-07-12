@@ -14,18 +14,18 @@ Vertex Colors can also be used as Masks in different parts of the Shader, such a
 
 ## Linear Colors
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Whether to convert the mesh vertex colors from gamma space to linear space.
 
 ## Use Vertex Color
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to blend vertex colors with the base color. Colors are blended multiplicative with the base color.
 
 ## Use Vertex Color Alpha
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to blend vertex alpha with the base alpha. Alpha is blended multiplicative with the base alpha.
