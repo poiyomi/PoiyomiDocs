@@ -113,6 +113,18 @@ Colors for each path channel. This is overlain on the `Color` texture, if define
 
 The **Alpha** value of these colors determines the strength of the path. Path channels can be disabled by setting their colors' alpha to `0`.
 
+## Path Source Directions
+
+### R/G/B/A Direction
+
+- `Type`: **Dropdown**, Options: `UV X Axis`/`UV Y Axis`
+
+Choice of which direction the Path should travel on the UV's axis. X is left to right, and Y is bottom to top.
+
+:::info
+Path Source Directions will only appear when [Path Source](#path-source) is set to `UV Gradient`.
+:::
+
 ## Path Appearance
 
 Each of these settings below has 4 fields, one for each path channel. They are labeled accordingly as `R`, `G`, `B`, and `A`, referring to their respective channels.

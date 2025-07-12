@@ -13,77 +13,69 @@ Flipbooks use a `Texture Array`, which is a special type of file that consists o
 Texture Arrays can quickly add up to your VRAM consumption depending on the resolution and the amount of images used in your array! Please keep this in mind when creating your Texture Arrays.
 :::
 
-## Flipbook Controls Alpha
-
-- `Type`: **Toggle**
-
-Toggles whether the flipbook alpha should override the final alpha of the material. This allows the flipbook to be rendered on top of the material, even if the material is transparent.
-
-## Intensity Controls Alpha
-
-- `Type`: **Toggle**
-
-Toggles whether the alpha's intensity (determined by the max value of any of the color channels) should be used to determine the flipbook's blending alpha. This allows black to be used as a no-render color, allowing the flipbook to be rendered cleanly without using the "Add" blend mode.
-
-## Color Replaces Flipbook
-
-- `Type`: **Toggle**
-
-Determines if the flipbook's color should be replaced with the color from Color & Alpha, instead of being tinted.
-
-## Texture Array
-
-- `Type`: **Texture Array** (sRGB **ON**)
-
-Flipbook texture array. This uses a [Texture2DArray](https://docs.unity3d.com/Manual/class-Texture2DArray.html) texture to store multiple flipbook frames.
-
-Texture Arrays can be created from GIF files imported to unity, or a series of single frames. By right clicking the file (or files) to be made into a texture array and selecting `Thry -> Gif 2 Texture Array` or `Thry -> Images 2 Texture Array`, the texture array will be created. Make sure to take note of the "Slices" value, which is the number of frames in the array.
-
-Note that Texture2DArrays can get very big very quickly - make sure your source image files are low resolution, such as 512x512 or lower.
-
-## Mask
-
-- `Type`: **Data** Texture (sRGB **OFF**)
-
-Defines where on the UV the flipbook can be applied. Black indicates the flipbook can not be applied, while white indicates the flipbook can be applied. If this texture is not defined, the flipbook can apply everywhere.
-
 ## Color & Alpha
 
 - `Type`: **Color**
 
 Defines the color tint and alpha value (transparency) of the flipbook. This allows the flipbook to be tinted, or to blend only partially. Can generally be left at the default values.
 
-## Total Frames
+## Texture Array
 
-- `Type`: **Integer**
+- `Type`: **Texture Array** (`sRGB = On`)
 
-The total number of frames to be used in the flipbook. In almost all cases, this should be set to the number of frames in the texture array, which can be found by viewing the texture array in the inspector, expanding the preview, and looking at the "Slices" value at the bottom center.
+Main Texture Slot to specify your Flipbook Texture Array. This uses a [Texture2DArray <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/class-Texture2DArray.html) texture to store multiple flipbook frames.
 
-## FPS
+Texture Arrays can be created from GIF files imported to unity, or a series of single frames. By right clicking the file (or files) to be made into a texture array and selecting `Thry -> Gif 2 Texture Array` or `Thry -> Images 2 Texture Array`, the texture array will be created. Make sure to take note of the "Slices" value, which is the number of frames in the array.
 
-- `Type`: **Float**
+Note that Texture2DArrays can get very big very quickly - make sure your source image files are low resolution, such as 512x512 or lower.
 
-How many frames per second the flipbook should play if "Manual Frame Control" is not enabled. This is used to determine how fast the flipbook should play. The default is 30 FPS.
+:::warning Automatic Conversion Warning
+Attaching a GIF into the texture slot will automatically convert the file into a Texture Array. Please be aware that if your images are of large size (or have many frames), **Unity will freeze for a few moments** while it auto-converts the GIF.
+:::
 
-## Scale / Offset 
+## Mask
 
-- `Type`: **Vector4**
+- `Type`: **Data** Texture (`sRGB = Off`)
 
-Determines the Scale (size) and Offset (position) of the flipbook. The first two values are the scale (in X/Y) and the second two are the position (in X/Y). This allows placing the flipbook like a Decal.
+Defines where on the UV the flipbook can be applied. Black indicates the flipbook can not be applied, while white indicates the flipbook can be applied. If this texture is not defined, the flipbook can apply everywhere.
 
-## Side Offset ←→↑↓
+### Global Mask
 
-- `Type`: **Vector4**
+- `Type`: **Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-Side Offset allows stretching and squishing the flipbook in the X and Y directions. Each value can be positive or negative values, with positive values stretching the flipbook in that direction, and negative values squishing the flipbook in that direction.
+Select which [Global Mask](/docs/modifiers/global-masks.md) to use for the Flipbook overall.
 
-The first two values the left and right offsets, and the second two are the top and bottom offsets.
+:::note
+Expand the **Mask** slot to see this property.
+:::
 
-## Tiled
+## Tiling
 
-- `Type`: **Toggle**
+- `Type`: **Dropdown**, Options: `Off`/`Tiled (Seamless)`/`Tiled (Sprite)`
 
-Determines if the flipbook should be tiled. If this is enabled, the flipbook will tile across the selected UV.
+Sets the Tiling mode to use on the Flipbook.
+
+## Blending
+
+- `Type`: **Dropdown**, Options: `Replace`/`Darken`/`Multiply`/`Lighten`/`Screen`/`Subtract`/`Add`/`Overlay`/`Mixed`
+
+Controls how to blend the Flipbook with the Material.
+
+## Alpha/Color Override
+
+- `Type`: **Dropdown**, Options: `Off`/`Replace Alpha`/`Replace Alpha and Color`
+
+Optional setting to control if the Color and/or Alpha of the Flipbook should replace the final Color and/or Alpha. This allows the Flipbook to be rendered on top of the material, even if the material is transparent OR if the Flipbook should override the base color as well.
+
+## Replace
+
+- `Type`: **Float**, Range: `0.0 - 1.0`
+
+Replaces the base color with the Flipbook.
+
+:::tip
+You may animate this slider to toggle the Flipbook on the Material. Animating the [Section Header](/docs/general/locking.md#section-header-checkboxes) will not work!
+:::
 
 ## Emission Strength
 
@@ -91,71 +83,99 @@ Determines if the flipbook should be tiled. If this is enabled, the flipbook wil
 
 How much emission the flipbook should have. This stacks with whatever blending options are selected.
 
-## Rotation
-
-- `Type`: **Float**, Range: `0.0 - 360.0`
-
-How much to rotate the flipbook by, in degrees.
-
-## Rotation Speed
+## FPS
 
 - `Type`: **Float**
 
-A constant roatation speed applied to the decal. A value of `180` will rotate the decal once per second, which is quite fast.
+How many frames per second the flipbook should play if "Manual Frame Control" is not enabled. This is used to determine how fast the flipbook should play. The default is 30 FPS.
 
-## Blending
+## Frame Offset
 
-These options control how to blend the flipbook with the material. Generally, only one of these should be used at a time.
+- `Type`: **Float**
 
-### Replace
+Sets an offset for the frames.
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+## Positioning
 
-Replaces the base color with the flipbook. This is the default.
+### Pan UV
 
-### Multiply
+- `Type`: **Vector2**
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+Sets a panning speed on the Flipbook.
 
-Multiplies the base color and the flipbook. This generally darkens the color, with white not affecting the color, and black completely darkening the color.
+### Scale / Offset 
 
-### Add
+- `Type`: **Vector4**
 
-- `Type`: **Float**, Range: `0.0 - 1.0`
+Determines the Scale (size) and Offset (position) of the Flipbook. The first two values are the scale (in X/Y) and the second two are the position (in X/Y). This allows placing the Flipbook like a Decal.
 
-Adds the base color and the flipbook together. This generally brightens the color, with black not affecting the color, and white significantly brightening the color.
+## Side Offset
+
+- `Type`: **Vector4**
+
+Side Offset allows stretching and squishing the Flipbook in the X and Y directions. Each value can be positive or negative values, with positive values stretching the Flipbook in that direction, and negative values squishing the Flipbook in that direction.
+
+The first two values the left and right offsets, and the second two are the top and bottom offsets.
+
+### Rotation
+
+- `Type`: **Float**, Range: `0.0 - 360.0`
+
+How much to rotate the Flipbook by, in degrees.
+
+### Rotation Speed
+
+- `Type`: **Float**
+
+A constant rotation speed applied to the decal. A value of `180` will rotate the decal once per second, which is quite fast.
 
 ## Manual Frame Control
 
 - `Type`: **Toggle**
 
-Determines whether the flipbook should be manually controlled. If this is enabled, the flipbook will not play automatically, and the frame must manually advance via animations. This is useful for dynamically controlling the speed of the flipbook, or using the flipbook to show specific frames.
+Determines whether the Flipbook should be manually controlled. If this is enabled, the Flipbook will not play automatically, and the frame must manually advance via animations. This is useful for dynamically controlling the speed of the Flipbook, or using the Flipbook to show specific frames.
 
 ### Current Frame
 
 - `Type`: **Float**
 
-Determines which frame to show. Only visible when "Manual Frame Control" is enabled.
+Determines which frame to show. Only works when the above toggle `Manual Frame Control` is enabled.
 
-## Crossfade
+## Start/End Frame Loop
 
 - `Type`: **Toggle**
 
-Enables or disables crossfading. This is used to smoothly transition between frames, which can be useful for reducing the number of frames needed in the flipbook.
+When enabled, the settings in this area can be used to clamp which frame the Flipbook should start and end from.
+
+### Start Frame
+
+- `Type`: **Float**
+
+Sets the first frame in the Flipbook.
+
+### End Frame
+
+- `Type`: **Float**
+
+Sets the last frame in the Flipbook before it loops back to the beginning Start Frame.
+
+## Frame Crossfade
+
+- `Type`: **Toggle**
+
+Enables or disables crossfading. This is used to smoothly transition between frames, which can be useful for reducing the number of frames needed in the Flipbook.
 
 ### Fade Range
 
-- `Type`: **Float Range**, Range: `0.0 - 1.0`
+- `Type`: **Clamped Float**, Range: `0.0 - 1.0`
 
-Determines how much to crossfade the flipbook between frames. Defined by a start and stop value.
+Determines how much to crossfade the Flipbook between frames. Defined by a start and stop value.
 
 ## Hue Shift
 
 - `Type`: **Toggle**
 
 Enable or Disable the Hue Shifting functionality.
-
-This toggle can be animated.
 
 ### Color Space
 
@@ -200,15 +220,13 @@ This value is circular, and will have the same result at 0 and 1.
 The settings in this section will only be visible when [AudioLink](/docs/audio-link/audio-link.md) is activated on the Material.
 :::
 
-### Scale
-
-#### Scale Band
+### Scale Band
 
 - `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
 
 Which band of the audio to use for the Audio Link Scale Mod.
 
-#### Scale Mod
+### Scale Mod
 
 How much to modify (mod) the scale of the flipbook. These values are added to the current scale, and can be positive or negative.
 
@@ -221,15 +239,13 @@ How much to modify (mod) the scale of the flipbook. These values are added to th
 | Z | Amount Added to X Scale with max audio in Scale Band |
 | W | Amount Added to Y Scale with max audio in Scale Band |
 
-### Alpha
-
-#### Alpha Band
+### Alpha Band
 
 - `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
 
 Which band to use for the Audio Link Alpha adjustment.
 
-#### Alpha Mod
+### Alpha Mod
 
 - `Type`: **Vector2**
 
@@ -240,15 +256,13 @@ How much to modify (mod) the alpha of the flipbook, in degrees.
 | X | Amount Added to alpha with no audio in alpha Band |
 | Y | Amount Added to alpha with max audio in alpha Band |
 
-### Emission
-
-#### Emission Band
+### Emission Band
 
 - `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
 
 Which band to use for the Audio Link Emission adjustment.
 
-#### Emission Mod
+### Emission Mod
 
 - `Type`: **Vector2**
 
@@ -259,19 +273,17 @@ How much to modify (mod) the alpha of the flipbook.
 | X | Amount Added to Emission with no audio in Emission Band |
 | Y | Amount Added to Emission with max audio in Emission Band |
 
-### Frame
-
-#### Frame Band
+### Frame Band
 
 - `Type`: **Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
 
 Which band to use for the frame adjustment.
 
-#### Frame Control
+### Frame Control
 
 How many frames to add. This is added to the current frame, and stacks with a constant FPS, or with Chronotensity frame control.
 
-### Chronotensity?
+### Chronotensity
 
 #### Chrono Band
 
