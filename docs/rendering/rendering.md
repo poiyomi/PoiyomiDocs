@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 0
 title: Rendering
 description: The Rendering section sets various low-level properties that control how the shader is rendered. It directly influences how the Graphics Driver will interpret Poiyomi Shaders at runtime.
 keywords: [render, rendering, cull, culling, ztest, zwrite, z, offset, instancing, gpu, early, early z, vrc, fallback, poiyomi, shader]
@@ -13,7 +13,7 @@ Many of the settings in this section are automatically-configured depending on w
 
 ## Cull
 
-- `Type`: **Dropdown**, Options: `Back`/`Front`/`Off`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Back`/`Front`/`Off`
   - Default: `Back`
 
 Sets what faces should be culled. By default, back faces are culled, in order to improve performance. This can be set to `Off` in order to render both front and back faces. `Front` is only useful for special effects.
@@ -24,7 +24,7 @@ This option is usually the only one in this section that should be adjusted by m
 
 ## ZTest
 
-- `Type`: **Dropdown**, Options: `Disabled`/`Never`/`Less`/`Equal`/`LessEqual`/`Greater`/`NotEqual`/`GreaterEqual`/`Always`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Disabled`/`Never`/`Less`/`Equal`/`LessEqual`/`Greater`/`NotEqual`/`GreaterEqual`/`Always`
   - Default: `LessEqual`
 
 Sets how the shader should test the depth buffer. By default, the depth buffer is tested, and if the depth value is not less than or equal to the current value, the pixel is discarded.
@@ -33,7 +33,7 @@ Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-r
 
 ## ZWrite
 
-- `Type`: **Dropdown**, Options: `Off`/`On`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`On`
   - Default: Determined by [Rendering Preset](/docs/general/render-preset.md)
 
 Determines whether the shader should write to the depth buffer. For Opaque presets, this is usually `On`, but for Transparent presets, this is usually `Off`.
@@ -42,8 +42,8 @@ Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-r
 
 ## Color Mask
 
-- `Type`: **Dropdown**
-  - Default: `RGBA`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Multiple Options: `Everything`/`Alpha`/`Blue`/`Green`/`Red`
+  - Default: `Everything`
 
 Color Mask determines which color channels should be rendered. By default, this is set to `RGBA`, which means that all colors are rendered. All permutations of color channels are available.
 
@@ -51,7 +51,7 @@ Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-r
 
 ## Offset Factor
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
   - Default: `0`
 
 Offset factor moves where a polygon is rendered in screen-space. This doesn't change the visual appearance of the polygon, but can be used to specially modify the depth value of the polygon.
@@ -60,7 +60,7 @@ Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-r
 
 ## Offset Units
 
-- `Type`: **Float**
+- `Type`: <PropertyIcon name="float" />**Float**
   - Default: `0`
 
 A fixed value to move the polygon away from or toward the camera, while keeping it visually the same size.
@@ -69,14 +69,14 @@ Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-r
 
 ## Reduce Clip Distance
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
   - Default: `Off`
 
 Creates a smaller clip distance for the material. This can be used to make geometry not disappear when very close to the camera.
 
 ## Z Clip
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
   - Default: `On`
 
 Enables or Disables the GPU's Depth Clip Mode, which determines how the GPU handles fragments of the Shader that are outside of the Near and Far Planes.
@@ -85,7 +85,7 @@ Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-r
 
 ## Ignore Fog
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
   - Default: `Off`
 
 If checked, this material will not be affected by fog, if present in the scene.
@@ -94,14 +94,14 @@ Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-r
 
 ## Flip Backface Normals
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
   - Default: `On`
 
 If enabled, inverts the normal vectors of the mesh if you're looking at a backface. This ensures it renders correctly when the camera is looking towards the backface.
 
 ## Enable GPU Instancing
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
   - Default: `Off`
 
 Enables or disables GPU instancing for this material. GPU instancing allows for rendering multiple copies of the same mesh with the same material, given some specific conditions are met. This can be used to create more efficient rendering of objects with multiple copies.
@@ -110,32 +110,16 @@ Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-r
 
 ## Early Z
 
-- `Type`: **Toggle**
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
   - Default: `Off`
 
 Enables Early Z mode on the Material. This makes the Mesh first only render to Depth, culling anything behind the main Front Face.
 
 This option is commonly used to solve Stacking Transparency problems.
 
-## World AO Blocker
+## VRC Fallback Shader
 
-- `Type`: **Toggle**
-
-In worlds with Ambient Occlusion Post Processing, it can have negative effects on the Mesh (especially on the Eyes) when being rendered. This feature can counteract against that by creating a blocking volume on the UV channel.
-
-:::info
-Meshes in this UV space render only to depth and act as a blocking volume for effects like Ambient Occlusion. This section affects the UV Tile directly to the left of the default UV. (U -1->0, V 0->1)
-:::
-
-### UV Channel
-
-- `Type`: **Dropdown**, Options: `UV0`/`UV1`/`UV2`/`UV3`
-
-Choice of UV channel to use as the blocking volume.
-
-## VRC Fallback
-
-- `Type`: **Dropdown**, Options: `None`/`Hidden`/`Standard`/`Toon`/`Unlit`/`VertexLit`/`Particle`/`Sprite`/`Matcap`/`MobileToon`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `None`/`Hidden`/`Standard`/`Toon`/`Unlit`/`VertexLit`/`Particle`/`Sprite`/`Matcap`/`MobileToon`
   - Default: `Standard/Opaque/OneSided`
 
 Defines what Fallback Shader to use if shaders are hidden on the Avatar. Fallback Shaders are seen when a Remote User is blocking your shaders via their own Safety Settings.
@@ -154,4 +138,19 @@ For more information on VRC Fallback Shaders, including what specific properties
 You can test how the Fallback Shader setting behaves in-game by toggling a setting in the Action Menu!
 
 To do this, open the Action Menu, go to `Tools -> Avatar` and toggle the `Fallback Shaders` to preview. Make sure to turn this off when you're done!
+:::
+
+## Render Queue
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `From Shader`/`Geometry`/`AlphaTest`/`Transparent`
+  - `Type`: <PropertyIcon name="float" />**Index**
+
+The Render Queue tells Unity to set the sorting behavior within the Rendering Pipeline, as Unity must sort and draw objects within the Scene so that it can be show to the Camera as requested by the Render Queue. This plays a vital part on how the shader is rendered in-game.
+
+For more information on Render Queues and the Sorting Behaviors in the rendering pipeline, see the [Unity Documentation](https://docs.unity3d.com/Manual/built-in-rendering-order.html).
+
+:::warning
+**This setting is automatically set by the [Rendering Preset](/docs/general/render-preset.md) and should not be touched!** Only touch this if you absolutely know what you are doing!
+
+If you need to change this for whatever reason, please select the proper [Rendering Preset](/docs/general/render-preset.md) instead!
 :::

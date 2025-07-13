@@ -33,6 +33,9 @@ const iconMap = {
     slider: Icon_Slider,
     texture: Icon_Texture,
     toggle: Icon_Toggle,
+    checkbox: Icon_Toggle,
+    bool: Icon_Toggle,
+    boolean: Icon_Toggle,
 };
 
 export default function Icon({ name, size = '1.5em', style = {} }) {

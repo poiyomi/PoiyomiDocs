@@ -104,12 +104,19 @@ const config = {
             from: '/color-and-normals/vertex-colors',
           },
           {
+            // Reorganized Color & Normals.
             to: '/color-and-normals/',
             from: '/color-and-normals/main',
           },
           {
+            // Removed Iridescence, redirecting old link to Matcap.
             to: '/shading/matcap',
             from: '/special-fx/iridescence',
+          },
+          {
+            // Reorganized Rendering.
+            to: '/rendering/',
+            from: '/rendering/main',
           }
           // Redirect from multiple old paths to the new path
           // {
@@ -378,7 +385,7 @@ const config = {
               },
               {
                 label: "Rendering",
-                to: "/rendering/main"
+                to: "/rendering/"
               },
               {
                 label: "Thry Editor",

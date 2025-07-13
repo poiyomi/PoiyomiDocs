@@ -113,7 +113,7 @@ Configurable in ThryEditor Settings, an asterisk (`*`) will appear next to a Mat
 
 ### VRC Fallback Shader
 
-The Fallback Shader option generates a tag for the material that informs VRChat which shader to use when your shaders are hidden. See [Rendering: VRC Fallback](/docs/rendering/main.md#vrc-fallback) for more details.
+The Fallback Shader option generates a tag for the material that informs VRChat which shader to use when your shaders are hidden. See [Rendering: VRC Fallback](/docs/rendering/rendering.md#vrc-fallback-shader) for more details.
 
 <a>
 <img src="/img/thryeditor/fallback.png" alt="VRC Fallback Selector" width="700px"/>

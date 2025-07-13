@@ -10,7 +10,7 @@ Back Face provides options for modifying the base color, emission, and alpha for
 On 3D models, meshes typically only show it's faces on one side, that being the front-facing side. The back-facing side of the mesh is usually see-through, an effect that you can get when you are looking from inside a model. Shaders can control this behavior, forcing the back-facing side of the mesh to also render if the user desires for whatever reason.
 
 :::caution Disable Culling to use this feature!
-To use this section, [Cull](/docs/rendering/main.md#cull) must be set to `Off` in order for backfaces to be visible. Find this option under [Rendering](/docs/rendering/main.md).
+To use this section, [Cull](/docs/rendering/rendering.md#cull) must be set to `Off` in order for backfaces to be visible. Find this option under [Rendering](/docs/rendering/rendering.md).
 :::
 
 ## Color

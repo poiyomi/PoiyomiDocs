@@ -50,5 +50,5 @@ Distance from the camera at which the [Max Color](#max-color) should be applied.
 If enabled, applies the above set [Min Color](#min-color) to show on the Back Face, as if the Camera is going inside the mesh.
 
 :::caution Disable Culling for this setting to work
-In order to use **Force BackFace Color**, you must set the [Cull](/docs/rendering/main.md#cull) to `Off` under your [Rendering](/docs/rendering/main.md) settings.
+In order to use **Force BackFace Color**, you must set the [Cull](/docs/rendering/rendering.md#cull) to `Off` under your [Rendering](/docs/rendering/rendering.md) settings.
 :::

@@ -7,7 +7,7 @@ keywords: [render, rendering, preset, opaque, cutout, transparent, transclipping
 
 At the top of the shader, there is a dropdown that may be labeled with something like `Opaque`, `Cutout`, `Transparent`, or something similar. It's located on the bottom-right from the Material Lock/Unlock button.
 
-When you click on this, the dropdown will show the options that are documented on this page. The option you select will automatically configure your [Rendering](/docs/rendering/main.md) settings to ensure they appear as intended.
+When you click on this, the dropdown will show the options that are documented on this page. The option you select will automatically configure your [Rendering](/docs/rendering/rendering.md) settings to ensure they appear as intended.
 
 <a target="_blank" href="/img/general/RenderingPresets-new.png">
 <img src="/img/general/RenderingPresets-new.png" alt="Rendering Presets Dropdown Menu" width="700px"/>
@@ -113,7 +113,7 @@ The multiplicative preset will always either keep or darken the background color
 
 ### Options
 
-Render Presets Set a bunch of options for how a material should render. They are all set to the default values, but if you know what you're doing, you can adjust them in the [Rendering Settings](/docs/rendering/main.md) section.
+Render Presets Set a bunch of options for how a material should render. They are all set to the default values, but if you know what you're doing, you can adjust them in the [Rendering Settings](/docs/rendering/rendering.md) section.
 
 The options that are set by default by rendering presets are:
 

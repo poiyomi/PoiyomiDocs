@@ -52,11 +52,11 @@ When a box is checked, that tile is discarded. When animating these Toggle check
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
 
-Face Discard is a granular alternative to the [Cull](/docs/rendering/main.md#cull) rendering option, providing control over which faces of a mesh to discard. It utilizes the pixel mode of UV Tile Discard to apply face discarding selectively, instead of applying global face culling across the entire material.
+Face Discard is a granular alternative to the [Cull](/docs/rendering/rendering.md#cull) rendering option, providing control over which faces of a mesh to discard. It utilizes the pixel mode of UV Tile Discard to apply face discarding selectively, instead of applying global face culling across the entire material.
 
 This is useful when some backfaces are visible, such as in exposed interior areas of clothing, while others are not and can be discarded to improve performance. Using Face Discard in these cases lets you achieve performance gains without the limitations of enabling global culling.
 
-However, it’s important to note that while Face Discard provides more granular control compared to traditional face culling, it does not offer the same level of performance improvement as the global [Cull](/docs/rendering/main.md#cull) render option, which should be used when possible. This is due the discarding being performed in the fragment shader.
+However, it’s important to note that while Face Discard provides more granular control compared to traditional face culling, it does not offer the same level of performance improvement as the global [Cull](/docs/rendering/rendering.md#cull) render option, which should be used when possible. This is due the discarding being performed in the fragment shader.
 
 ### Face Discard UV
 
