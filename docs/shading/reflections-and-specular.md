@@ -203,13 +203,13 @@ Using Anisotropics in Reflections & Specular can be useful for matching your PBR
 
 - `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = Off`)
 
-Texture Map to use for the Anisotropic effects.
+Texture Map for the angle of the Anisotropic effects. Gets reranged to -1 to 1. In the texture map .5 is 0 or no Anisotropic effect.
 
 ### Anisotropy
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
 
-Adjusts the angle of the Anisotropic effect.
+Adjusts the angle of the Anisotropic effect. Added with the texture map and clamped.
 
 ### Reflection Stretch
 
@@ -221,7 +221,7 @@ Adjusts the intensity of the Anisotropic reflections.
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
-Adjusts how rough the Anisotropic effect is.
+Adjusts how dependent the Anisotropic effect is on the roughness of the material.
 
 ## 2nd Specular
 
