@@ -197,21 +197,21 @@ Forces the material to always use the above specified Fallback Cubemap in Reflec
 
 Enables Anisotropy effects in Reflections & Specular, which can emulate an effect similar to silk and/or polyester.
 
-Using Anisotrophy in Reflections & Specular can be useful for matching your PBR textures and settings, especially when creating stylized hair.
+Using Anisotropics in Reflections & Specular can be useful for matching your PBR textures and settings, especially when creating stylized hair.
 
 ### Anisotropy Map
 
 - `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = Off`)
 
-Texture Map to use for the anisotrophic effects.
+Texture Map to use for the Anisotropic effects.
 
 ### Anisotropy
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
 
-Adjusts the angle of the Anisotrophic effect.
+Adjusts the angle of the Anisotropic effect.
 
-### Reflection Strength
+### Reflection Stretch
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `1.0 - 5.0`
 
@@ -221,7 +221,7 @@ Adjusts the intensity of the Anisotropic reflections.
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
-Adjusts how rough the Anisotrophy effect is.
+Adjusts how rough the Anisotropic effect is.
 
 ## 2nd Specular
 
