@@ -33,7 +33,9 @@ We recommend only using this Shader if you are using the Worlds SDK.
 
 The Two Pass version renders the inside of the Mesh first, rather than the outside (Cull Front > Cull Back). This special version should only be used when creating Meshes that need to have double the rendering pass, especially with Transparency.
 
-Because this Shader renders everything twice, it can have a slight performance impact.
+When this shader is selected, three additional sections will be exposed under [Rendering](/docs/rendering/rendering.md) and will appear as `2nd Pass Rendering`, `2nd Pass Blending`, and `2nd Pass Stencil`.
+
+Because the Two Pass shader renders everything twice, it can have a slight performance impact.
 
 ## Outline Early
 
