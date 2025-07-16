@@ -71,7 +71,7 @@ Fur simulation is a very expensive feature, as it must render every frame in ord
 
 - `.poiyomi/Poiyomi Pro ShatterWave`
 
-Poiyomi Pro ShatterWave is an advanced special effect that uses the mesh's vertices to create a wavy effect across the mesh in variation. It functions similar to Geometric Dissolve, but does it in a wavy pattern instead. See [Tessellated](/docs/extended-features/tessellated.md) for more info.
+Poiyomi Pro ShatterWave is an advanced special effect that uses the mesh's vertices to create a wavy effect across the mesh in variation. It functions similar to Geometric Dissolve, but does it in a wavy pattern instead. See [ShatterWave](/docs/extended-features/shatterwave.md) for more info.
 
 ## Tessellated
 
