@@ -11,4 +11,5 @@ tags: [shader, vrchat, updates, update]
 This update contains finalized support for VRC Light Volumes 2.0 and is recommended for all users. The Toon version is now available in the VCC Repository, GitHub, and on BOOTH.
 
 ### Changes
-- Updated to support VRC Light Volumes v2.0.0.
+- Updated to support the full release of VRC Light Volumes v2.0.0.
+- Added Exposure Occlusion to Reflections & Specular and Clear Coat.

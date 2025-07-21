@@ -51,6 +51,14 @@ This option scales the **Reflection Mask** if defined. If not defined, this opti
 
 How strong the low-angle reflective rim should affect the material. This is similar to Unity Standard's fresnel effect by default, but allows further control of how intense it should be.
 
+## Exposure Occlusion
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+
+Controls how much to darken reflections for areas that are not receiving as much lighting, such as in shadowed areas. This matches similar behavior to Filamented-based shaders.
+
+This effect typically looks best when seen in VRC Light Volumes rather than Light Probes.
+
 ## Reflection Tint
 
 - `Type`: <PropertyIcon name="color" />**Color**
