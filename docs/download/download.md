@@ -16,15 +16,18 @@ The latest version of Poiyomi Toon Shader can be installed in one of two ways. C
 </div>
 
 1. Join the [Poiyomi Discord Server](https://discord.gg/poiyomi) and download the latest `.unitypackage` posted in `#free-shader` channel.
-    - OR you can download a stable, but likely outdated version of Poiyomi Toon Shader from either [GitHub](https://github.com/poiyomi/PoiyomiToonShader/releases/latest) or [BOOTH](https://poiyomi.booth.pm/items/4841309).
+    - OR you can download a stable, but likely outdated version of Poiyomi Toon Shader from either [GitHub <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/poiyomi/PoiyomiToonShader/releases/latest) or [BOOTH <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://poiyomi.booth.pm/items/4841309).
 2. Import the Unity Package into your Unity Project from the Menu Bar via `Assets > Import Package > Custom Package`.
 3. Click `Import` when prompted.
 4. Done! Enjoy using Poiyomi Shaders.
+
+If you are encountering an issue where the shader cannot be imported due to a script telling you "it already exists in the project," please follow the steps below.
 
 ### Upgrading the Shader Unity Package
 
 When replacing or upgrading versions, you must do the following:
 1. Delete the `Assets/_PoiyomiShaders` folder in your Project. **DO NOT SKIP THIS STEP!**
+   - *Sometimes, Avatar Creators may attempt to hide the folder elsewhere in the project. If this is the case, make sure you delete it!*
 2. Import the newest Unity Package into your Project from the Menu Bar via `Assets > Import Package > Custom Package`.
 3. Click `Import` when prompted.
 4. Done! You are now on the latest version.
@@ -59,6 +62,8 @@ The VCC version of Poiyomi Shaders will automatically replace any existing copy 
 ## Poiyomi Pro
 
 The Pro version of the shader (also known as Poiyomi Pro) is a Paid Version of the shader, available as a subscription model for $10/month on Patreon.
+
+Before using Poiyomi Pro, please ensure you agree to the Pro Version [Terms of Service](/docs/terms-of-service/terms-of-service.md#pro-version).
 
 <div style={{marginBottom: '20px'}}>
 
@@ -98,19 +103,19 @@ To see the different features offered between the Free vs. Pro version, refer to
 | [Stats Overlay](/docs/special-fx/stats-overlay.md), [Proximity Color](/docs/special-fx/proximity-color.md), [Internal Parallax](/docs/special-fx/internal-parallax.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | [Video Effects](/docs/special-fx/video-effects.md), Stochastic Sampling, UV Options+ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | [Grab Pass](/docs/extended-features/grabpass.md), [LTCGI](/docs/shading/ltcgi.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [VRC Light Volumes <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/REDSIM/VRCLightVolumes) Support | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | [Parallax Heightmapping](/docs/modifiers/uvs/parallax.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | [RGBA Color Masking](/docs/color-and-normals/rgba-color-masking.md), [Decals](/docs/color-and-normals/decals.md), [Color Adjust (Hue Shift)](/docs/color-and-normals/color-adjust.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Opaque, Cutout, TransClipping, Fade, Transparent | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Additive, Soft Additive, Multiplicative, 2x Multiplicative | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Two Pass Transparency | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| [VRC Light Volumes <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/REDSIM/VRCLightVolumes) Support | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | **Pro Features** | | | | | | |
 | [Screen Space Ambient Occlusion](/docs/shading/ssao.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | Custom Modules | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | [Geometric Dissolve](/docs/extended-features/geometric-dissolve.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | [Fur and World Fur](/docs/extended-features/fur.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
-| Shatterwave | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
-| Tessellated | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| [Shatterwave](/docs/extended-features/shatterwave.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| [Tessellated](/docs/extended-features/tessellated.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | Tessellated Geometric | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | Wireframe | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | DPS/TPS | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |

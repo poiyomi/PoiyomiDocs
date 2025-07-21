@@ -23,7 +23,7 @@ In Poiyomi Shaders, there are various features that support AudioLink. However, 
 If enabled, activates AudioLink features and exposes AudioLink parameter controls for supported modules and effects.
 
 :::info
-When this feature activates, the following sections in Poiyomi Shaders will have their AudioLink properties exposed for you to use. Refer to each of their Documentation Entries for more information.
+When this feature activates, the following sections in Poiyomi Shaders will have their AudioLink properties exposed for you to use. Please refer to each of their Documentation Entries for more information.
 - [Color Adjust](/docs/color-and-normals/color-adjust.md#hue-shift-audio-link)
 - [Alpha Options](/docs/color-and-normals/alpha-options.md#alpha-audio-link)
 - [Decals](/docs/color-and-normals/decals.md#audiolink)
@@ -39,6 +39,7 @@ When this feature activates, the following sections in Poiyomi Shaders will have
 - [Truchet](/docs/special-fx/truchet.md#audiolink)
 - [Vertex Options -> Basics & Fun](/docs/vertex-options/basics.md#audio-link)
 - [Vertex Options -> Glitching](/docs/vertex-options/glitching.md#audio-link)
+- [Vertex Options -> LookAt](/docs/vertex-options/look-at.md#audio-link)
 :::
 
 ### Anim Toggle
@@ -46,7 +47,7 @@ When this feature activates, the following sections in Poiyomi Shaders will have
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 <!-- 
-EDITORS NOTE: This H2 Header only has this Message Box below. Adding additional words above or below it may make it look repetitive. -BluWizard10
+EDITORS NOTE: This H3 Header only has this Message Box below. Adding additional words above or below it may make it look repetitive. -BluWizard10
 -->
 
 :::tip

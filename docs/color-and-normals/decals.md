@@ -148,7 +148,7 @@ Which blending operation to use from the Decal's Alpha channel.
 How much to apply the blended color to the base color.
 
 :::tip
-This slider can be used to hide and show a decal by animating it's value.
+This slider can be animated to hide and show the decal. Animating the [Section Header](/docs/general/locking.md#section-header-checkboxes) will not work!
 :::
 
 ### Depth

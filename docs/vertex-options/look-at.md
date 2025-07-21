@@ -3,30 +3,32 @@ sidebar_position: 1
 title: LookAt
 description: Distorts the mesh to make it face towards the Camera in a billboard-like fashion.
 keywords: [vertex, lookat, look at, vertex look, vertex options]
-draft: true
 ---
-
-<!-- THIS PAGE IS A DRAFT! CONTRIBUTORS, PLEASE ADD INFO. -->
 
 **LookAt** is a special Vertex Options feature that manipulates the Vertices to face towards the Camera in a billboard-like fashion. It can be used to allow your model's Eyes to always focus towards the third-person's point of view.
 
-LookAt is considered an **Advanced Feature**. Therefore, it is not made for beginners. Please carefully read the required setup below before attempting to use LookAt.
+LookAt is considered an **Advanced Feature**. Therefore, it is not made for beginners. <!-- Please carefully read the required setup below before attempting to use LookAt. -->
 
 :::danger Breaks with Avatar Scaling
 LookAt does not work with Avatar Scaling! Therefore, you may need to do some math to account for scaling changes if opting for scaling-related Animator Parameters.
 :::
 
-<!-- Ensure Pivot Point is set for this to work (e.g Skinned Mesh Renderer Root Bone) 
-
-Best to turn off Mipmaps for Eye Masks. Otherwise, other parts of the Model could start deforming. Vertex Colors could fix this issue.
-
-Doesn't work with with Avatar Scaling.
-
--->
+<!-- WORK IN PROGRESS INSTRUCTIONS
 
 ## Required Setup
 
-In order to use LookAt, you must set a proper Pivot Point. This is an offset from your mesh's `Root Bone` as defined in the model's `Skinned Mesh Renderer` that your Material will be using.
+In order to use LookAt, you must set a proper Pivot Position. This is an offset from your mesh's `Root Bone` as defined in the model's `Skinned Mesh Renderer` that your Material will be using. Without a proper Root Bone set, LookAt will not appear correctly as it will work off of the rotation of the Hips instead (not good!).
+
+Yes, it's normal for your Eyes to disappear and appear in a strange fashion when initially enabling LookAt. So it's extremely important that you set your Pivot Position correctly. The most effective way of doing so is getting reference of your Eye's transform location and using that as your target.
+
+1. Create an Empty GameObject inside one of your Eye Bones and zero out the Transform values.
+2. Then, move the Empty GameObject from inside your Eye Bone into your Head Bone. Set the X value of it back to 0.
+3. Set the `Root Bone` of your Skinned Mesh Renderer (where the Material is being used on) to the Empty GameObject you created.
+4. You can then start calculating the X offset of the [Pivot Position](#pivot-position) based on the location of the new Root Bone you created.
+
+# Material Properties
+
+-->
 
 ## Look-At Mask
 
@@ -116,7 +118,7 @@ Clamps the maximum rotational Yaw of the affected mask on the Y-axis (Left/Right
 
 - `Type`: <PropertyIcon name="multislider" />**Multislider**, Range: `-180 - 180`
 
-Clamps the maximum rotational Roll of the affected mask on the Z-axis (Camera Rotation).
+Clamps the maximum rotational Roll of the affected mask on the Z-axis (Barrel Roll).
 
 ## Visibility
 
@@ -143,7 +145,7 @@ These settings below will show if [Mode](#mode) is set to `VRC`.
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
 
-Toggles the visibility of LookAt in a normal situation, without the requirement of a Mirror or a Camera.
+Toggles the visibility of LookAt in a normal situation, without the requirement of a Mirror or a Camera. This will also affect the Editor preview.
 
 #### Mirror (VR)
 
@@ -193,3 +195,30 @@ Mode to use for the LookAt visibility.
 - `Don't Show In Mirror`: LookAt will only be shown outside the mirror.
 
 </details>
+
+## Audio Link
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+
+Enables [AudioLink](/docs/audio-link/audio-link.md) to control LookAt. This will affect ALL `Alpha` properties in LookAt.
+
+:::info
+The settings in this section will only be visible when [AudioLink](/docs/audio-link/audio-link.md) is activated on the Material.
+:::
+
+### Alpha Band
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+
+Choice of which Band to use for the Alpha.
+
+### Alpha AudioLink
+
+- `Type`: <PropertyIcon name="float2" />**Vector2**
+
+How much to add to or subtract from the Alpha with Audio.
+
+| Modifier | Function |
+| --- | --- |
+| Off | Amount changed to Alpha with No Audio in Alpha Band |
+| On | Amount changed to Alpha with Max Audio in Alpha Band |

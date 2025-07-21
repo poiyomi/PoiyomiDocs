@@ -22,7 +22,7 @@ All features in the Shader UI will redirect here for further reading. They are i
 
 ### VRChat
 
-Make sure you refer to the [VRChat Creators Documentation](https://creators.vrchat.com/sdk/) for setting up your Project and the SDK in Unity. Use the supported Unity Version for VRChat and ensure you're always on the latest version of the VRChat SDK.
+Make sure you refer to the [VRChat Creators Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://creators.vrchat.com/sdk/) for setting up your Project and the SDK in Unity. Use the supported Unity Version for VRChat and ensure you're always on the latest version of the VRChat SDK.
 
 After doing so, simply follow the instructions found in [Download & Install](/download) to learn how to begin using the Shader in your Project.
 
@@ -36,10 +36,10 @@ Poiyomi Shaders is primarily built for usage in VRChat. Therefore, limitations m
 
 If you are a Game Developer or hobbyist wishing to use Poiyomi Shaders on a non-VRChat Project, here are the requirements:
 - Supported Unity Versions: `2019.4`, `2021.3`, `2022.3 (Recommended)`
-- Rendering Pipeline: `Built-in Render Pipeline`
+- Rendering Pipeline: `Built-in Render Pipeline`, `Universal Rendering Pipeline (BETA)`
 - Build Target: `Windows`
 
-Please note that this information above are **strict** requirements. We do NOT support the Universal Render Pipeline (URP) or High Definition Render Pipeline (HDRP) in Unity whatsoever.
+Please note that this information above are **strict** requirements. We do NOT support the High Definition Render Pipeline (HDRP) in Unity whatsoever.
 
 ## Version 9.x
 
@@ -49,6 +49,11 @@ If you are on an older version of Poiyomi Shaders, we highly suggest that you re
 
 ## Completion Status
 
-As of January 30, 2025, this Documentation has been greatly updated to match version `9.1.20` of the Shader. We have been hard at work ensuring that all information has been properly addressed and detailed. Not only that, but plenty of new images and rich visual examples have been added! It's a lot better than what it has been since we initially launched this website!
+The Documentation now matches version `9.2.66` and newer patches following it. The following features have been added to the Documentation as of late:
+- Added Changelogs, separate from the Blog. All changes, both old and new, will be documented here from now on.
+  - *Major Updates will still be talked about in the Blog.*
+- "Type" properties are accommodated with an icon that matches what it is in the Shader UI.
+- Cleaned up some back-end code and got rid of deprecated pages.
+- Reorganized sections that were changed in 9.2 to match the Shader UI.
 
-If you have any questions or if you think you've found an issue, please [join the Discord](https://discord.gg/poiyomi) and ask! The Documentation is continuously being edited, updated, and proofread by our contributors, so please don't hesitate to reach out!
+If you have any questions or if you think you've found an issue, please [join the Discord <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://discord.gg/poiyomi) and ask! The Documentation is continuously being edited, updated, and proofread by our contributors, so please don't hesitate to reach out!
