@@ -13,3 +13,5 @@ This update contains finalized support for VRC Light Volumes 2.0 and is recommen
 ### Changes
 - Updated to support the full release of VRC Light Volumes v2.0.0.
 - Added Exposure Occlusion to Reflections & Specular and Clear Coat.
+- Cam Z Offset in Outlines was overhauled into `Outline Z Offset`, allowing greater control over the clipping of Outlines in certain areas.
+  - The equation used to set the Cam Z Offset has changed with this introduction. **This is a breaking change!**

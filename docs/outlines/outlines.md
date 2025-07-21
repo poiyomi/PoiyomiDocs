@@ -267,6 +267,49 @@ Enables lighting for the Outline. This darkens the outline color in shadowed are
 
 Shadow intensity of the Outlines.
 
+<!---------- Outline Z Offset ---------->
+
+## Outline Z Offset
+
+This area controls the Camera Z Position when rendering Outlines. This is useful for giving control over the clipping of the Outlines in certain areas of your mesh.
+
+### Overall Strength
+
+- `Type`: <PropertyIcon name="float" />**Float**
+    - Default: `0`
+
+How much to offset the Camera Z Position. This property was previously known as `Cam Z Offset`.
+
+### Outline Mask Channel
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `R`/`G`/`B`/`A`
+
+Which channel to use from the [Outline Size Mask](#outline-size-mask) to control the Outline Z Offset.
+
+### Mask Strength
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+
+Controls the strength of the [Outline Mask Channel](#outline-mask-channel) used for the Outline Z Offset.
+
+### Invert Mask Channel
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+
+If enabled, will invert the value from the [Outline Mask Channel](#outline-mask-channel).
+
+### Vertex Color Channel
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`R`/`G`/`B`/`A`
+
+Which [Vertex Color](/docs/vertex-options/vertex-colors.md) channel to use to control the Outline Z Offset.
+
+### Vertex Color Strength
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+
+Controls the strength of the [Vertex Color Channel](#vertex-color-channel) used for the Outline Z Offset.
+
 <!---------- Vertex Color Section ---------->
 
 ## Vertex Colors
@@ -282,7 +325,6 @@ Use the vertex colors of the model, if they've been specially prepared. The (smo
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`R`/`G`/`B`/`A`
 
 Choose which Color channel to use in your Mask for the Vertex Colors.
-
 
 <!---------- Rendering Options Section ---------->
 
@@ -303,13 +345,6 @@ If using an [Outline Size Mask](#outline-size-mask), all areas that are marked i
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Sets the base fragment Alpha to the Outline's Alpha value.
-
-### Cam Z Offset
-
-- `Type`: <PropertyIcon name="float" />**Float**
-    - Default: `0`
-
-How much to offset the Camera Z Position when Rendering the Outlines. This is useful for giving control over the clipping of the Outlines.
 
 ### Cull
 
