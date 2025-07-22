@@ -44,19 +44,26 @@ Color to blend multiplicatively with LTCGI to tint the reflection. Use shades of
 When enabled, will sample the metallicity and smoothness values from [Reflections & Specular](/docs/shading/reflections-and-specular.md) for LTCGI.
 
 :::info
-If **Reflections & Specular** module is turned off, the sliders below will appear and serve as a fallback.
+If **Reflections & Specular** module is turned off, the **Metallic** and **Smoothness** sliders will appear below and serve as a fallback.
 
-These sliders will also appear if you turn off this checkbox.
+Those sliders will also appear if you turn off this checkbox.
 :::
 
-## Metallic
+### Metallic
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Determines how metallic the surface is.
 
-## Smoothness
+### Smoothness
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Determines how rough or smooth the specular reflections are.
+
+## Use Exposure Occlusion
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+  - Default: `Off`
+
+Enables LTCGI to use Exposure Occlusion.
