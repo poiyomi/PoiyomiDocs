@@ -21,7 +21,7 @@ Tint color to multiply the backface by.
 
 ## Texture
 
-- `Type`: <PropertyIcon name="color" />**Color** Texture (`sRGB = ON`)
+- `Type`: <PropertyIcon name="texture" />**Color** Texture (`sRGB = ON`)
 
 Texture to override the backface base color with instead.
 
