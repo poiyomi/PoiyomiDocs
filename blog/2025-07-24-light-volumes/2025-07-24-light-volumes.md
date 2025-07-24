@@ -62,3 +62,6 @@ Also notice how we didn't have to ask the CPU to do anything. The GPU already 'k
 - Probe coefficients are stored in an array accessed by the CPU, volume coefficients are stored in a 3D texture accessed by the GPU.
 - Probes light meshes per-renderer based on an anchor sample position. Volumes light meshes per-pixel based on world-space position samples.
 
+### Goodbye
+
+I haven't touched on a fraction of the cool stuff VRCLV does, and I'm tempted to make a tutorial or something on how to set up LV and use them in place of Unity's traditional lightmapping. Let me know what you think!
