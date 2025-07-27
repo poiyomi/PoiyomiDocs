@@ -119,7 +119,7 @@ This option is commonly used to solve Stacking Transparency problems.
 
 ## VRC Fallback Shader
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `None`/`Hidden`/`Standard`/`Toon`/`Unlit`/`VertexLit`/`Particle`/`Sprite`/`Matcap`/`MobileToon`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `None`/`Hidden`/`Standard`/`Toon`/`Unlit`/`VertexLit`/`Particle`/`Sprite`/`Matcap`/`MobileToon`/`toonstandard`/`toonstandardoutline`
   - Default: `Standard/Opaque/OneSided`
 
 Defines what Fallback Shader to use if shaders are hidden on the Avatar. Fallback Shaders are seen when a Remote User is blocking your shaders via their own Safety Settings.
@@ -131,6 +131,8 @@ This option includes a large variety of shaders, with some of the more useful op
 - `Standard/Cutout`: Cutout Standard shader material, drawing from base texture alpha.
 - `Toon/Opaque`: Opaque Toon-lit (flat lit) shader material.
 - `Toon/Cutout`: Cutout Toon-lit (flat lit) shader material, drawing from base texture alpha.
+- `toonstandard/Opaque`: Uses VRChat's Toon Standard shader, introduced in SDK 3.8.1 and newer versions. **Only supports Opaque.**
+- `toonstandardoutline/Opaque`: Uses VRChat's Toon Standard shader with Outlines, introduced in SDK 3.8.1 and newer versions. **Only supports Opaque.**
 
 For more information on VRC Fallback Shaders, including what specific properties will be copied to the fallback shader, read the [VRC Creators Documentation for the Shader Fallback System <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://creators.vrchat.com/avatars/shader-fallback-system/).
 
@@ -147,10 +149,10 @@ To do this, open the Action Menu, go to `Tools -> Avatar` and toggle the `Fallba
 
 The Render Queue tells Unity to set the sorting behavior within the Rendering Pipeline, as Unity must sort and draw objects within the Scene so that it can be show to the Camera as requested by the Render Queue. This plays a vital part on how the shader is rendered in-game.
 
-For more information on Render Queues and the Sorting Behaviors in the rendering pipeline, see the [Unity Documentation](https://docs.unity3d.com/Manual/built-in-rendering-order.html).
+:::danger
+**This setting is automatically set by the [Rendering Preset](/docs/general/render-preset.md) and should not be touched!**
 
-:::warning
-**This setting is automatically set by the [Rendering Preset](/docs/general/render-preset.md) and should not be touched!** Only touch this if you absolutely know what you are doing!
-
-If you need to change this for whatever reason, please select the proper [Rendering Preset](/docs/general/render-preset.md) instead!
+Only modify this value if you *absolutely* know what you are doing.
 :::
+
+For more information on Render Queues and the Sorting Behaviors in the Built-in Rendering Pipeline, see the [Unity Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/built-in-rendering-order.html).

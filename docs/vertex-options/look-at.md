@@ -9,8 +9,8 @@ keywords: [vertex, lookat, look at, vertex look, vertex options]
 
 LookAt is considered an **Advanced Feature**. Therefore, it is not made for beginners. <!-- Please carefully read the required setup below before attempting to use LookAt. -->
 
-:::danger Breaks with Avatar Scaling
-LookAt does not work with Avatar Scaling! Therefore, you may need to do some math to account for scaling changes if opting for scaling-related Animator Parameters.
+:::warning Can Break with Avatar Scaling
+LookAt may not behave correctly with Avatar Scaling! Therefore, you may need to do some math to account for scaling changes if opting for scaling-related Animator Parameters.
 :::
 
 <!-- WORK IN PROGRESS INSTRUCTIONS
@@ -25,6 +25,16 @@ Yes, it's normal for your Eyes to disappear and appear in a strange fashion when
 2. Then, move the Empty GameObject from inside your Eye Bone into your Head Bone. Set the X value of it back to 0.
 3. Set the `Root Bone` of your Skinned Mesh Renderer (where the Material is being used on) to the Empty GameObject you created.
 4. You can then start calculating the X offset of the [Pivot Position](#pivot-position) based on the location of the new Root Bone you created.
+
+// VIDEO GOES HERE //
+
+After you finish setting up the Pivot for each Mask, you can then start manipulating the `Max Pitch (X)`, `Max Yaw (Y)`, and `Max Roll (Z)` for your Eyes. These multisliders will define the maximum area the vertices are allowed to rotate, such as when the Eyes are seen from the side.
+
+:::tip Toggle Recommended
+Because of how LookAt can have possible unpredictable vertex behavior in certain situations when always on (especially when scaling your Avatar in-game), we highly recommend controlling that behavior on the fly by creating a toggle for it. Use the [Alpha](#alpha) slider on each Mask to toggle it.
+
+You can also control it by setting how the effect appears in VRC-specific POV's such as in Mirrors and Cameras. Set this behavior under [Visibility](#visibility).
+:::
 
 # Material Properties
 

@@ -23,22 +23,7 @@ A huge thanks to all the active contributors that have helped maintain this Docu
     <div class="avatar__intro">
         <div class="avatar__name" style={{marginTop: '5px'}}>Poiyomi</div>
         <small class="avatar__subtitle">
-            Shader Developer
-        </small>
-    </div>
-</div>
-
-<div class="avatar avatar--vertical" style={{margin: '20px'}}>
-    <a
-        class="avatar__photo-link avatar__photo avatar__photo--xl"
-        href="https://github.com/rrazgriz">
-        <img
-        src="https://github.com/rrazgriz.png" />
-    </a>
-    <div class="avatar__intro">
-        <div class="avatar__name" style={{marginTop: '5px'}}>Razgriz</div>
-        <small class="avatar__subtitle">
-            Author
+            Creator, Shader Developer
         </small>
     </div>
 </div>
@@ -53,7 +38,22 @@ A huge thanks to all the active contributors that have helped maintain this Docu
     <div class="avatar__intro">
         <div class="avatar__name" style={{marginTop: '5px'}}>BluWizard10</div>
         <small class="avatar__subtitle">
-            Lead Writer, Contributor
+            Head Docs Author
+        </small>
+    </div>
+</div>
+
+<div class="avatar avatar--vertical" style={{margin: '20px'}}>
+    <a
+        class="avatar__photo-link avatar__photo avatar__photo--xl"
+        href="https://github.com/rrazgriz">
+        <img
+        src="https://github.com/rrazgriz.png" />
+    </a>
+    <div class="avatar__intro">
+        <div class="avatar__name" style={{marginTop: '5px'}}>Razgriz</div>
+        <small class="avatar__subtitle">
+            Original Docs Author
         </small>
     </div>
 </div>
@@ -83,7 +83,7 @@ A huge thanks to all the active contributors that have helped maintain this Docu
     <div class="avatar__intro">
         <div class="avatar__name" style={{marginTop: '5px'}}>Sacred</div>
         <small class="avatar__subtitle">
-            Contributor
+            Community Helper, Contributor
         </small>
     </div>
 </div>

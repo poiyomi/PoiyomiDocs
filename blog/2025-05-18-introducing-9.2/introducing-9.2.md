@@ -8,7 +8,7 @@ authors:
 tags: [shader, vrchat, updates, update, major update]
 ---
 
-Heya, BluWizard here! Just wanna hop in to give you a scoop on Poiyomi 9.2, a major update to the shader!
+Heya, BluWizard here! Just wanna hop in to give you some info on Poiyomi 9.2, a major update to the shader that has just released!
 
 While most of the features haven't changed, this update has introduced native support for [VRC Light Volumes](https://github.com/REDSIM/VRCLightVolumes), an excellent voxel-based Light Probes replacement for VRChat Worlds. Alongside that, are various amount of bug fixes and improvements! See the [Changelog](/changelog) Blog for all the details.
 
