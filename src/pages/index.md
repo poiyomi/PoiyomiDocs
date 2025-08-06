@@ -16,11 +16,11 @@ import Heading from '@theme/Heading';
 <PoiyomiWordmark />
 </div>
 
-<h1 style={{textAlign: 'center', fontSize: '25px', margin: '2px', fontWeight: 'bold'}}>
-Feature-rich Toon and PBR Shader for Unity, with a specific focus on VRChat
+<h1 style={{textAlign: 'center', fontSize: '40px', margin: '2px', fontWeight: 'bold'}}>
+The Everything Shader
 </h1>
 
-<h2 style={{textAlign: 'center', fontSize: '15px', margin: '10px', fontWeight: 'normal'}}>
+<p style={{textAlign: 'center', fontSize: '15px', margin: '10px', fontWeight: 'normal'}}>
 Toon |
 Realistic |
 Stylized Shading |
@@ -28,8 +28,9 @@ PBR Features |
 Global Masking |
 AudioLink Support |
 LTCGI Support |
+Light Volumes Support |
 and more!
-</h2>
+</p>
 
 <Columns style={{marginTop: '50px', marginBottom: '50px'}}> 
   <Column className='text--center'>
@@ -39,7 +40,7 @@ and more!
       </CardHeader>
       <CardImage cardImageUrl='/img/custom-icons/Icon_Books.png'/>
       <CardBody>
-        Learn how to use the features available in Poiyomi Shaders.
+        Fully detailed documentation of all the features currently available in Poiyomi Shaders.
       </CardBody>
       <CardFooter>
         <a class="button button--block button--primary" href="/intro">Open Docs</a>
@@ -53,7 +54,7 @@ and more!
       </CardHeader>
       <CardImage cardImageUrl='/img/custom-icons/Icon_Download.png'/>
       <CardBody>
-        Instructions to Download & Install the shader.
+        Learn how to download the shader and install it into your Unity project.
       </CardBody>
       <CardFooter>
         <a class="button button--block button--secondary" href="/download">Go to Downloads</a>
@@ -67,7 +68,7 @@ and more!
       </CardHeader>
       <CardImage cardImageUrl='/img/custom-icons/Icon_News.png'/>
       <CardBody>
-        Read our Blog & Updates
+        Stay up-to-date on our latest changes and all upcoming features, or learn something new from one of our devs.
       </CardBody>
       <CardFooter>
         <div className='button-group button-group--block'>
@@ -119,5 +120,5 @@ and more!
   - AL Spectrum, projecting a waveform-like effect that react to the World's music onto the UV.
 - **LTCGI Support**
   - Supports receiving LTCGI diffuse and specular lighting from Worlds actively producing LTCGI.
-- **VRC Light Volumes Support**
+- **Light Volumes Support**
   - Supports receiving volumetric and balanced lighting from Worlds baked with VRC Light Volumes.
