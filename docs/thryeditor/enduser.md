@@ -111,9 +111,9 @@ To learn more about how Texture Memory impacts performance, [see this page](/doc
 
 Configurable in ThryEditor Settings, an asterisk (`*`) will appear next to a Material Property that has deviated away from it's default value. This is useful to see which values are not at it's default, and can assist with debugging issues in the Editor.
 
-### VRC Fallback Shader
+### VRChat Fallback Shader
 
-The Fallback Shader option generates a tag for the material that informs VRChat which shader to use when your shaders are hidden. See [Rendering: VRC Fallback](/docs/rendering/rendering.md#vrc-fallback-shader) for more details.
+The Fallback Shader option generates a tag for the material that informs VRChat which shader to use when your shaders are hidden. See [Rendering: VRChat Fallback Shader](/docs/rendering/rendering.md#vrchat-fallback-shader) for more details.
 
 <a>
 <img src="/img/thryeditor/fallback.png" alt="VRC Fallback Selector" width="700px"/>

@@ -117,7 +117,7 @@ Enables Early Z mode on the Material. This makes the Mesh first only render to D
 
 This option is commonly used to solve Stacking Transparency problems.
 
-## VRC Fallback Shader
+## VRChat Fallback Shader
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `None`/`Hidden`/`Standard`/`Toon`/`Unlit`/`VertexLit`/`Particle`/`Sprite`/`Matcap`/`MobileToon`/`toonstandard`/`toonstandardoutline`
   - Default: `Standard/Opaque/OneSided`

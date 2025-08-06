@@ -169,6 +169,19 @@ const config = {
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
+
+        sitemap: {
+          lastmod: 'date',
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: ['/tags/**'],
+          filename: 'sitemap.xml',
+          createSitemapItems: async (params) => {
+            const {defaultCreateSitemapItems, ...rest} = params;
+            const items = await defaultCreateSitemapItems(rest);
+            return items.filter((item) => !item.url.includes('/page/'));
+          },
+        },
       }),
     ],
   ],
@@ -457,7 +470,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Poiyomi Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Poiyomi Labs. Built with Docusaurus.`,
       }
     }),
 };

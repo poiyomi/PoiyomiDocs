@@ -10,16 +10,20 @@ keywords: [vertex, lookat, look at, vertex look, vertex options]
 LookAt is considered an **Advanced Feature**. Therefore, it is not made for beginners. <!-- Please carefully read the required setup below before attempting to use LookAt. -->
 
 :::warning Can Break with Avatar Scaling
-LookAt may not behave correctly with Avatar Scaling! Therefore, you may need to do some math to account for scaling changes if opting for scaling-related Animator Parameters.
+LookAt may not behave correctly with Avatar Scaling due to shader limitations! Therefore, you may need to do some math to account for scaling changes if opting for scaling-related Animator Parameters.
 :::
 
 <!-- WORK IN PROGRESS INSTRUCTIONS
 
 ## Required Setup
 
-In order to use LookAt, you must set a proper Pivot Position. This is an offset from your mesh's `Root Bone` as defined in the model's `Skinned Mesh Renderer` that your Material will be using. Without a proper Root Bone set, LookAt will not appear correctly as it will work off of the rotation of the Hips instead (not good!).
+In order to use LookAt, you must set a proper Pivot Position (aka the Root Bone). This is an offset from your mesh's `Root Bone` as defined in the model's `Skinned Mesh Renderer` that your Material will be using. Without a proper Root Bone set, LookAt will not appear correctly as it will work off of the rotation of the Hips instead (not good!).
 
 Yes, it's normal for your Eyes to disappear and appear in a strange fashion when initially enabling LookAt. So it's extremely important that you set your Pivot Position correctly. The most effective way of doing so is getting reference of your Eye's transform location and using that as your target.
+
+:::tip Remember
+The `Root Bone` of your Skinned Mesh Renderer plays an important part in how LookAt functions. Do not skip setting this up!
+:::
 
 1. Create an Empty GameObject inside one of your Eye Bones and zero out the Transform values.
 2. Then, move the Empty GameObject from inside your Eye Bone into your Head Bone. Set the X value of it back to 0.

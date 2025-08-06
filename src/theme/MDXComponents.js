@@ -10,6 +10,17 @@ import { Icon } from '@iconify/react'; // Import the entire Iconify library.
 import PoiVideo from '@site/src/components/PoiVideo'; // Import PoiVideo component globally.
 import PropertyIcon from '@site/src/components/PropertyIcon'; // Import PropertyIcon component globally.
 
+import Card from '@site/src/components/Card/Card';
+import CardBody from '@site/src/components/Card/CardBody';
+import CardHeader from '@site/src/components/Card/CardHeader';
+import CardImage from '@site/src/components/Card/CardImage';
+import CardFooter from '@site/src/components/Card/CardFooter';
+
+import Column from '@site/src/components/Column';
+import Columns from '@site/src/components/Columns';
+
+import Button from '@site/src/components/Button';
+
 library.add(fab, fas); // Add all icons to the library so you can use them without importing them individually.
 
 export default {
@@ -19,4 +30,12 @@ export default {
   IIcon: Icon, // Make the iconify Icon component available in MDX as <icon />.
   PoiVideo,
   PropertyIcon,
+  Card,
+  CardBody,
+  CardHeader,
+  CardImage,
+  CardFooter,
+  Column,
+  Columns,
+  Button,
 };

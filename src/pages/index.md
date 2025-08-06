@@ -7,8 +7,8 @@ keywords: [poiyomi, shader, shaders, docs, documentation, unity, vrchat, vrc, pb
 hide_title: true
 hide_table_of_contents: true
 ---
-import PoiVideo from '@site/src/components/PoiVideo';
 import PoiyomiWordmark from '@site/static/img/Poiyomi-Wordmark.svg';
+import Heading from '@theme/Heading';
 
 <!-- ![Poiyomi Shaders Wordmark](/img/Poiyomi-Toon-Wordmark_NoBG.png) -->
 
@@ -31,11 +31,53 @@ LTCGI Support |
 and more!
 </h2>
 
-<div style={{textAlign: 'center', margin: '40px'}}>
-
-<a class="button button--lg button--primary" href="/intro">Documentation</a>&nbsp;<a class="button button--lg button--link" href="/download">Download & Install</a>
-
-</div>
+<Columns style={{marginTop: '50px', marginBottom: '50px'}}> 
+  <Column className='text--center'>
+    <Card>
+      <CardHeader>
+        <h2>Documentation</h2>
+      </CardHeader>
+      <CardImage cardImageUrl='/img/custom-icons/Icon_Books.png'/>
+      <CardBody>
+        Learn how to use the features available in Poiyomi Shaders.
+      </CardBody>
+      <CardFooter>
+        <a class="button button--block button--primary" href="/intro">Open Docs</a>
+      </CardFooter>
+    </Card>
+  </Column>
+  <Column className='text--center'>
+    <Card>
+      <CardHeader>
+        <h2>Download & Install</h2>
+      </CardHeader>
+      <CardImage cardImageUrl='/img/custom-icons/Icon_Download.png'/>
+      <CardBody>
+        Instructions to Download & Install the shader.
+      </CardBody>
+      <CardFooter>
+        <a class="button button--block button--secondary" href="/download">Go to Downloads</a>
+      </CardFooter>
+    </Card>
+  </Column>
+  <Column className='text--center'>
+    <Card>
+      <CardHeader>
+        <h2>Blog</h2>
+      </CardHeader>
+      <CardImage cardImageUrl='/img/custom-icons/Icon_News.png'/>
+      <CardBody>
+        Read our Blog & Updates
+      </CardBody>
+      <CardFooter>
+        <div className='button-group button-group--block'>
+          <a class="button button--block button--secondary" href="/blog">Tips & Tricks</a>
+          <a class="button button--block button--secondary" href="/changelog">Changelogs</a>
+        </div>
+      </CardFooter>
+    </Card>
+  </Column>
+</Columns>
 
 ## Feature Highlights
 - **Various Shading Styles**
