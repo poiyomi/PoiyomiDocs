@@ -21,15 +21,16 @@ The Everything Shader
 </h1>
 
 <p style={{textAlign: 'center', fontSize: '15px', margin: '10px', fontWeight: 'normal'}}>
-Toon |
-Realistic |
-Stylized Shading |
-PBR Features |
-Global Masking |
-AudioLink Support |
-LTCGI Support |
-Light Volumes Support |
-and more!
+<!-- MDX is weird and stupid, will throw warnings if the text below contained in multi-space paragraph is not surrounded by <> and </> on each. e.g. <>your text here</> -->
+<>Toon | </>
+<>Realistic | </>
+<>Stylized Shading | </>
+<>PBR Features | </>
+<>Global Masking | </>
+<>AudioLink Support | </>
+<>LTCGI Support | </>
+<>Light Volumes Support | </>
+<>and more!</>
 </p>
 
 <Columns style={{marginTop: '50px', marginBottom: '50px'}}> 
