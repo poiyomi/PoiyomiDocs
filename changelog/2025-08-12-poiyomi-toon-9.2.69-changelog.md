@@ -6,7 +6,6 @@ hide_table_of_contents: true
 authors:
   poiyomi
 tags: [shader, vrchat, updates, update]
-draft: true
 ---
 
 This update contains some important improvements and a critical bug fix for Pathing. The Toon version is now available in the VCC Repository, GitHub, and on BOOTH.
