@@ -806,6 +806,10 @@ Realistic add pass lighting uses a physically-based lighting model to determine 
 
 Makes the Add Pass Lighting match close to your [Lighting Type (Base Pass)](#lighting-type) settings.
 
+:::warning Limitations
+`Same as Base Pass` is not supported when using [SDF](#sdf) shading.
+:::
+
 ## Global Masks
 
 ### LightMap to Global Mask
