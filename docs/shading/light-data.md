@@ -9,7 +9,7 @@ The Light Data section provides options for changing features relating to the da
 
 ## AO Maps
 
-- `Type`: <PropertyIcon name="texture" />**Data** Texture (sRGB **OFF**)
+- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = OFF`)
 
 A texture used to define the Ambient Occlusion (AO) for different areas on the material. Ambient occlusion darkens the lighting provided by ambient (indirect) lighting, an effect frequently seen in physical environments. This texture is generally baked in a 3d program like Blender or Substance Painter.
 
@@ -25,7 +25,7 @@ Intensity of each AO map channel.
 
 ## Shadow Map
 
-- `Type`: <PropertyIcon name="texture" />**Data** Texture (sRGB **OFF**)
+- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = OFF`)
 
 A texture used to define the Detail Shadows for different areas on the material. Detail Shadows darken the lighting provided by direct lighting. In some cases, this texture is similar to (or identical to) the AO texture. 
 
@@ -43,7 +43,7 @@ Intensity of each Detail Shadow map channel.
 
 ## Shadow Masks
 
-- `Type`: <PropertyIcon name="texture" />**Data** Texture (sRGB **OFF**)
+- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = OFF`)
 
 A texture used to define the shadow mask on different areas of the material. Shadow Masks reduce the influence of shadows, and can be used to to create stylized models and appearances.
 
@@ -92,7 +92,7 @@ Uses the Light Coloring mode used by lilToon.
 
 ### Light Map Mode
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Poi Custom`/`Normalized NDotL`/`Saturated NDotL`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Poi Custom`/`Normalized NDotL`/`Saturated NDotL`/`Casted Shadows Only`/`SDF`
 
 Changes how the light map is calculated.
 
@@ -110,6 +110,43 @@ Normalized NDotL uses the dot product between the mesh normal and the light dire
 #### Saturated NDotL
 
 Normalized NDotL uses the dot product between the mesh normal and the light direction, saturated at `0` and `1`.
+
+#### Casted Shadows Only
+
+Replaces the Light Map with Casted Shadows from lights in Unity only.
+
+#### SDF
+
+Replaces the Shadow Map with SDF textures. This will expose the Signed Distance Fields below.
+
+Please be aware that using SDF does not support using `Same as Base Pass` in your [Shading](#add-pass-point--spot-lights) settings.
+
+<details>
+<summary><b>Signed Distance Fields</b></summary>
+
+:::note
+This area is only visible when **Light Map Mode** is set to `SDF`.
+:::
+
+#### SDF Map
+
+- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = OFF`)
+
+Texture to use as the Signed Distance Field.
+
+#### LOD
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+
+Adjusts the Level of Detail of the Signed Distance Field.
+
+#### Blend Y Direction
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.001 - 2.0`
+
+Adjusts the Y direction blending of the Signed Distance Field.
+
+</details>
 
 </details>
 
@@ -148,7 +185,31 @@ UTS2 calculates the light direction the same as the Unity Standard Shader, but w
 
 Uses the light direction mode unique to lilToon.
 
+#### View Direction
+
+This makes the Light Direction follow the user's Camera so that light always comes from one side only.
+
 </details>
+
+### View Dir Offset Pitch
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-90 - 90`
+
+Sets the View Direction Pitch Offset.
+
+:::info
+This option is only visible when **Light Direction Mode** is set to `View Direction`.
+:::
+
+### View Dir Offset Yaw
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-90 - 90`
+
+Sets the View Direction Yaw Offset.
+
+:::info
+This option is only visible when **Light Direction Mode** is set to `View Direction`.
+:::
 
 ### Forced Direction
 
@@ -250,6 +311,10 @@ Enables Vertex Lights to be used in Mirrors. Because VRChat interprets vertex li
 Enables support for [VRC Light Volumes <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/REDSIM/VRCLightVolumes), a voxel-based Light Probes replacement used in some VRChat Worlds. It allows for more natural lighting and balanced illumination to appear on your Material from an environment using VRC Light Volumes.
 
 The results of this setting can be easily noticeable in Worlds that use it. For more information on this system as well as a list of Worlds to test this effect in, view the [GitHub Repository <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/REDSIM/VRCLightVolumes).
+
+:::note
+Please be aware that you will not see the results of Light Volumes in your project unless you have a working setup in your Scene that can show it to you. You can use newer versions of [Haï Lightbox Viewer <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.hai-vr.dev/docs/products/lightbox-viewer) (v2.4.0 and up) to preview the results, which includes new lightboxes supporting Light Volumes.
+:::
 
 ## Add Pass (Point & Spot Lights)
 
