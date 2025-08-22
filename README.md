@@ -18,14 +18,14 @@ It's recommended you use an IDE that supports Source Control such as [Visual Stu
 
 #### Package Manager
 
-This README shows using `yarn` since it's easier to maintain. However you are free to use your own Package Manager that supports Node.js. If you do choose to use a different one (like `npm`) instead, just put them in place of `npm` in the commands. **Just make sure you DO NOT include their lock files in your commits!**
+This README shows using `yarn` since it addresses performance issues `npm` is known for. However you are free to use your own Package Manager that supports Node.js. If you do choose to use a different one (like `npm`) instead, just put them in place of `npm` in the commands. **Just make sure you DO NOT include their lock files in your commits!**
 
 ### Installation
 
 After cloning the Repository into your local machine, run the following command into the root folder of the repository:
 
 ```
-$ npm install
+$ yarn install
 ```
 
 This will install the Node Package Manager into the repository, required for building and developing the website locally.
