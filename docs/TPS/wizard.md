@@ -2,14 +2,9 @@
 sidebar_position: 1
 title: How to Setup
 ---
-# How to Setup
 
-:::tip
-**This is a patreon-only feature!** Subscribe to the [Patreon](https://www.patreon.com/poiyomi) at the $10 tier or higher to unlock it.
-:::
-
-:::note 
-TPS requires the VRChat Avatars SDK3 (https://vrchat.com/home/download)
+:::danger Deprecated Feature
+TPS will be deprecated in Poiyomi 10.0. Please consider using better solutions such as [VRCFury's SPS <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://vrcfury.com/sps/) instead, which supports Poiyomi Shaders.
 :::
 
 In general, the Wizard is organized in multiple steps that you should go through in numerical order.

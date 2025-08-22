@@ -2,7 +2,11 @@
 sidebar_position: 4
 title: System Specifications
 ---
-# System Specifications
+
+:::danger Deprecated Feature
+TPS will be deprecated in Poiyomi 10.0. Please consider using better solutions such as [VRCFury's SPS <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://vrcfury.com/sps/) instead, which supports Poiyomi Shaders.
+:::
+
 TPS is a Penetration System that uses a combination of Vertex Lights & VRC Contacts to deform a penetrator towards an orifice.
 
 The Animator Setup + Light & Contact placement is done by the [Wizard](wizard).

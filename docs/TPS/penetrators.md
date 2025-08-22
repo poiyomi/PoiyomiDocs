@@ -2,16 +2,18 @@
 sidebar_position: 2
 title: Custom Penetrators
 ---
-# Creating Custom Penetrators 
+
+:::danger Deprecated Feature
+TPS will be deprecated in Poiyomi 10.0. Please consider using better solutions such as [VRCFury's SPS <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://vrcfury.com/sps/) instead, which supports Poiyomi Shaders.
+:::
 
 Custom penetrators are split into two categories: Static and Skinned.
 - `Skinned` use Skinned Mesh Renderers. They have bones & blendshapes and can use Physbones for dynamics
 - `Static` use Static Mesh Renderers. They don't have bones & blendshapes and can't use Physbones for dynamics
 
 ## General
-Penetrators need their mesh origin to be set at their root. Their forward direction (the blue arrow in unity) should be pointing towards their tip.
 
-\- add totorial on setting origin in blender here \-
+Penetrators need their mesh origin to be set at their root. Their forward direction (the blue arrow in unity) should be pointing towards their tip.
 
 ## Static
 **Requirements**
