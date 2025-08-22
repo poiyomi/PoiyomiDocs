@@ -18,24 +18,24 @@ It's recommended you use an IDE that supports Source Control such as [Visual Stu
 
 #### Package Manager
 
-This README shows using `pnpm` as it's more efficient on disk space and has built-in workspace support. However you are free to use your own Package Manager that supports Node.js. If you do choose to use a different one (like `npm` or `yarn`) instead, just put them in place of `pnpm` in the commands. **Just make sure you DO NOT include their lock files in your commits!**
+This README shows using `yarn` since it's easier to maintain. However you are free to use your own Package Manager that supports Node.js. If you do choose to use a different one (like `npm`) instead, just put them in place of `npm` in the commands. **Just make sure you DO NOT include their lock files in your commits!**
 
 ### Installation
 
 After cloning the Repository into your local machine, run the following command into the root folder of the repository:
 
 ```
-$ pnpm install
+$ npm install
 ```
 
 This will install the Node Package Manager into the repository, required for building and developing the website locally.
 
 ### Local Development
 
-After installing npm, you can start developing locally by running this command:
+After installing yarn, you can start developing locally by running this command:
 
 ```
-$ pnpm start
+$ yarn start
 ```
 
 This command starts a local development server and opens up a browser window. This allows you to reflect changes you make to the website in realtime without having to restart the server.
@@ -49,7 +49,7 @@ To close the server, simply hit `Ctrl + C` on the Keyboard in Git.
 The following command will generate a static build of the website into the local directory and can be served using any static content hosting service. The static content will be thrown into the `./build` directory in the repository's root folder.
 
 ```
-$ pnpm build
+$ yarn build
 ```
 
 **It is extremely important you run this command prior to pushing any authorized commits or PR's to this repository!** This is so that you can tell if Vercel will be able to successfully deploy the website.
@@ -57,7 +57,7 @@ $ pnpm build
 You can optionally run the statically-built website locally as well by running the following command:
 
 ```
-$ pnpm serve
+$ yarn serve
 ```
 
 This will launch a locally hosted build of the website in a browser window. Similar to running a development server, this just launches a fully compiled version of the website. So any additional edits you make will require you to run the `build` command again.
@@ -70,7 +70,7 @@ To close the server, simply hit `Ctrl + C` on the Keyboard in Git.
 
 The website deployment of the Poiyomi Shaders Documentation is automated by **Vercel**. Any approved PR's or direct commits to this repository by authorized contributors will instantly trigger the `deploy` command, which will rebuild and deploy the website.
 
-**To ensure that Vercel can smoothly deploy your website, make sure you run `npm run build` before pushing your commits to the repository!**
+**To ensure that Vercel can smoothly deploy your website, make sure you run `yarn build` before pushing your commits to the repository!**
 
 ## Creating Pull Requests or adding Commits
 
