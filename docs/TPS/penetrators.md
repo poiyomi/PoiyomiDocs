@@ -3,10 +3,6 @@ sidebar_position: 2
 title: Custom Penetrators
 ---
 
-:::danger Deprecation Notice
-TPS will be deprecated in Poiyomi 10.0. Please consider using better solutions such as [VRCFury's SPS <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://vrcfury.com/sps/) instead, which supports Poiyomi Shaders.
-:::
-
 Custom penetrators are split into two categories: Static and Skinned.
 - `Skinned` use Skinned Mesh Renderers. They have bones & blendshapes and can use Physbones for dynamics
 - `Static` use Static Mesh Renderers. They don't have bones & blendshapes and can't use Physbones for dynamics
