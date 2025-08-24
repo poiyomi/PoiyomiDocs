@@ -445,3 +445,17 @@ How much to replace the Outline Color with Audio.
 Which color to replace the current Outline Color with Audio.
 
 </details>
+
+## Outline Vertex Color Baker
+
+The Outline Vertex Color Baker is an included utility used to create a version of your meshes that has smoothed Vertex Colors baked for Outlines. It can help eliminate sharp edges on your mesh so that Outlines can look as smooth as possible.
+
+To use it,
+1. Open the panel `Poi/Vertex Color Baker` from the Unity Menu.
+2. Select your Avatar from the Scene.
+3. Select which Meshes to target. It will ask you how much to "shrink" the tips of the Edges by a certain amount.
+4. Generate the Mesh to Test the results. A clone of your Mesh will appear in your Scene showing your results.
+   - *IMPORTANT: Ensure your Materials have `Vertex Color Normals` enabled in your Outlines settings in order to see results!*
+5. Hit `Save` if you're happy with the changes, and you're going to use the newly-created Avatar in your scene labeled with `(VertexColorBaked)`. *Your original Avatar is still preserved in the Scene.*
+
+The generated Meshes will be placed in a sub-folder called `BakedMeshes`, located at each location of the original FBX files used on the Avatar.
