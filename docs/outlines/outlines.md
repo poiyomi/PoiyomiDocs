@@ -456,6 +456,6 @@ To use it,
 3. Select which Meshes to target. It will ask you how much to "shrink" the tips of the Edges by a certain amount.
 4. Generate the Mesh to Test the results. A clone of your Mesh will appear in your Scene showing your results.
    - *IMPORTANT: Ensure your Materials have `Vertex Color Normals` enabled in your Outlines settings in order to see results!*
-5. Hit `Save` if you're happy with the changes, and you're going to use the newly-created Avatar in your scene labeled with `(VertexColorBaked)`. *Your original Avatar is still preserved in the Scene.*
+5. Hit `Save` if you're happy with the changes. You can then use the newly-created Clone in your scene labeled with `(VertexColorBaked)`, OR link the generated Baked Meshes onto your Avatar's Mesh Renderers. *Your original Avatar is still preserved in the Scene.*
 
 The generated Meshes will be placed in a sub-folder called `BakedMeshes`, located at each location of the original FBX files used on the Avatar.
