@@ -5,28 +5,36 @@ description: Post Processing Animations are a set of fields that can be used to 
 keywords: [pp, animations, post, processing, postprocessing, lighting, brightness, poiyomi, shader]
 ---
 
-PP (Post Processing) Animations are a set of fields that can be used to modify the brightness of the shader. These are primarily intended to be used with Avatars 3.0 by animating them at runtime to adapt to the user's environment.
+PP (Post Processing) Animations are a set of fields that can be used to modify the brightness of the shader. These are primarily intended to be used with Avatars by animating them at runtime to adapt to the user's environment.
+
+:::tip
+Creating Radial Toggles that animate each of these properties below can be very useful while traveling through VRChat's diverse collection of Worlds.
+:::
 
 ## Lighting Multiplier
 
 - `Type`: <PropertyIcon name="float" />**Float**
+  - Default: `1`
 
 How much to multiply the lighting input value by. This can be used to subtly brighten the brightness, especially in too-bright or too-dark areas.
 
 ## Lighting Add
 
 - `Type`: <PropertyIcon name="float" />**Float**
+  - Default: `0`
 
 Adds to (or subtracts from) the lighting input value. This can be used to forcibly add lighting to the scene, but is generally harsher than the Lighting Multiplier adjustment.
 
 ## Emission Multiplier
 
 - `Type`: <PropertyIcon name="float" />**Float**
+  - Default: `1`
 
 How much the emission value of the shader is multiplied by. This takes into account emission values from all sections, and is a good way to globally toggle emissions, or adjust the overall emission brightness.
 
 ## Final Color Multiplier
 
 - `Type`: <PropertyIcon name="float" />**Float**
+  - Default: `1`
 
 How much to multiply the final color value of the shader. This simply scales the final color - it's effectively a global brightness adjustment.

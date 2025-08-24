@@ -3,7 +3,7 @@ sidebar_position: 1
 title: How to Setup
 ---
 
-:::danger Deprecated Feature
+:::danger Deprecation Notice
 TPS will be deprecated in Poiyomi 10.0. Please consider using better solutions such as [VRCFury's SPS <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://vrcfury.com/sps/) instead, which supports Poiyomi Shaders.
 :::
 

@@ -1,16 +1,8 @@
 ---
-sidebar_position: 2
+sidebar_position: 4
+title: Panosphere UV
+description: Settings for the Panosphere UV effect in Poiyomi Shaders.
+keywords: [panosphere, uv, fx, poiyomi, shaders]
 draft: true
 ---
 
-# Panosphere UV
-
-![Docusaurus logo](/img/CirclelogoBig.png)
-
-### Stereo Enabled
-
-Description
-
-### Perspective Correct (VR)
-
-Description

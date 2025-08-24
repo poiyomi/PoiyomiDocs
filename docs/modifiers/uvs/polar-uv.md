@@ -1,28 +1,7 @@
 ---
-sidebar_position: 3
+sidebar_position: 5
+title: Polar UV
+description: Settings for Polar UV visuals in Poiyomi Shaders.
+keywords: [polar, uv, fx, shading, poiyomi, shaders]
 draft: true
 ---
-
-# Polar UV
-
-![Docusaurus logo](/img/CirclelogoBig.png)
-
-### UV
-
-Description
-
-### Center Coordinate
-
-Description
-
-### Radial Scale
-
-Description
-
-### Length Scale
-
-Description
-
-### Spiral Power
-
-Description

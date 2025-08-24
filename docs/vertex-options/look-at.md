@@ -9,8 +9,8 @@ keywords: [vertex, lookat, look at, vertex look, vertex options]
 
 LookAt is considered an **Advanced Feature**. Therefore, it is not made for beginners. <!-- Please carefully read the required setup below before attempting to use LookAt. -->
 
-:::warning Can Break with Avatar Scaling
-LookAt may not behave correctly with Avatar Scaling due to shader limitations! Therefore, you may need to do some math to account for scaling changes if opting for scaling-related Animator Parameters.
+:::warning Breaks with Avatar Scaling!
+LookAt does not behave correctly with Avatar Scaling due to shader limitations! Therefore, you may need to do some math to account for scaling changes if opting for scaling-related Animator Parameters.
 :::
 
 <!-- WORK IN PROGRESS INSTRUCTIONS

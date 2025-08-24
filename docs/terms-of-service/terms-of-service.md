@@ -6,7 +6,7 @@ keywords: [terms of service, tos, rules, guidelines, mit, pro, poiyomi, shader]
 hide_table_of_contents: true
 ---
 
-By using the Shader, you hereby agree to the Terms of Service as listed below. Depending on which version of the Shader you use, Free vs. Pro, it's important you understand how these rules apply to you.
+By using the Shader, you hereby agree to the Terms of Service and Licenses as listed below. Depending on which version of the Shader you use, Free vs. Pro, it's important you understand how these rules apply to you.
 
 ## Free Version
 
@@ -41,6 +41,8 @@ In summary, the MIT License basically says "you can do almost anything you want 
 :::info
 The following text below only applies if you are using **Poiyomi Pro**, which costs $10 USD/month. For more information, visit the [Patreon Page](https://www.patreon.com/poiyomi).
 :::
+
+A copy of the End-User License Agreement can be found in the Poiyomi Pro package in `Assets/_PoiyomiShaders/LICENSE` for further reading. But to put things simply:
 
 #### YOU CAN:
 - Create a game where the Shader is used, but the Source Code is not freely accessible to the end user.

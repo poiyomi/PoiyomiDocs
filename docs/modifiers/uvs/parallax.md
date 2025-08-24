@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 6
 title: Parallax Heightmapping
 description: Parallax Heightmapping simulates large bumps and protrusions on a Material using a specialized linear texture that determines depth.
 keywords: [parallax, height, map, heightmap, bump, bumpmapping, heightmapping, protrustion, poiyomi, shader]
