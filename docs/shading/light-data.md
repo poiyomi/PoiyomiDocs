@@ -17,6 +17,10 @@ The AO map texture reads all 4 RGBA channels independently, allowing different A
 
 Generally, if only a single map is being used (such as in the case of a black and white AO map), only one slider should generally be used. 
 
+:::note
+AO Maps are more effective in Realistic-based lighting methods (see [Shading](/docs/shading/main.md)). It may not be visible in Toon-based lighting.
+:::
+
 ### AO Map R/G/B/A Strength
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
