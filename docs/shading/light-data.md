@@ -25,7 +25,7 @@ AO Maps are more effective in Realistic-based lighting methods (see [Shading](/d
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
-Intensity of each AO map channel.
+Intensity of each AO Map channel. Since you can have up to 4 AO Maps baked into the texture's color channels, you can also animate these sliders to control which ones are visible at a time.
 
 ## Shadow Map
 
@@ -39,11 +39,17 @@ The Detail Shadow texture reads all 4 RGBA channels independently, allowing diff
 
 Generally, if only a single map is being used (such as in the case of a black and white Detail Shadow map), only one slider should generally be used.
 
-### Shadow Map R/G/B/A Intensity
+### Shadow Map R/G/B/A Strength
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
-Intensity of each Detail Shadow map channel.
+Intensity of each Shadow Map channel.
+
+### Shadow Map R/G/B/A Additive Strength
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+
+Additive blending strength of each Shadow Map channel.
 
 ## Shadow Masks
 
@@ -53,7 +59,7 @@ A texture used to define the shadow mask on different areas of the material. Sha
 
 The Shadow Mask texture reads all 4 RGBA channels independently, allowing different Shadow Masks to be packed into individual channels, and the intensity of each channel can be adjusted independently using the sliders visible on dropdown. This can be used to create different Shadow Masks for different material states, for example, different Shadow Masks on the skin of a character with different combinations of clothing.
 
-### Shadow Mask R/G/B/A Intensity
+### Shadow Mask R/G/B/A Strength
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
@@ -314,7 +320,7 @@ Enables Vertex Lights to be used in Mirrors. Because VRChat interprets vertex li
 
 Enables support for [VRC Light Volumes <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/REDSIM/VRCLightVolumes), a voxel-based Light Probes replacement used in some VRChat Worlds. It allows for more natural lighting and balanced illumination to appear on your Material from an environment using VRC Light Volumes.
 
-The results of this setting can be easily noticeable in Worlds that use it. For more information on this system as well as a list of Worlds to test this effect in, view the [GitHub Repository <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/REDSIM/VRCLightVolumes).
+The results of this setting can be easily noticeable in Worlds that use it. For more information on this system as well as a list of Worlds to test this effect in, view the [GitHub Repository <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/REDSIM/VRCLightVolumes) or check out Poiyomi's [Poi Light Volumes Tech Test <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://vrchat.com/home/world/wrld_e1f6b0ae-4d12-4136-9675-a5383c172ace/info) World to explore the various effects that Light Volumes can do.
 
 :::note
 Please be aware that you will not see the results of Light Volumes in your project unless you have a working setup in your Scene that can show it to you. You can use newer versions of [Haï Lightbox Viewer <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.hai-vr.dev/docs/products/lightbox-viewer) (v2.4.0 and up) to preview the results, which includes new lightboxes supporting Light Volumes.
