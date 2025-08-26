@@ -43,13 +43,13 @@ Generally, if only a single map is being used (such as in the case of a black an
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
-Intensity of each Shadow Map channel.
+Intensity of each Shadow Map channel. This affects the Base pass.
 
 ### Shadow Map R/G/B/A Additive Strength
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
-Additive blending strength of each Shadow Map channel.
+Additive blending strength of each Shadow Map channel. This affects the Add pass.
 
 ## Shadow Masks
 
