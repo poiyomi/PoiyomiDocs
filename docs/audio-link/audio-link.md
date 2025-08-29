@@ -172,7 +172,7 @@ You can then change the URL from the Inspector. Paste the new URL into the field
 The `AudioLinkAvatar` Prefab uses the [yt-dlp <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/yt-dlp/yt-dlp) plugin from VRChat's installation files in order to test AudioLink in Unity. However oftentimes, the plugin provided by VRChat may sometimes break due to YouTube's destructive changes to the format. In cases where this happens, you can manually download the latest `yt-dlp.exe` and use it as the executable instead of the potentially outdated version provided by VRChat.
 
 :::warning Only do this if AudioLink is not working!
-Setting a Custom YTDL Location is intended for Advanced Users. You do not need to do this if AudioLink is already working normally!
+Setting a Custom YTDL Location is intended for advanced users. You do not need to do this if AudioLink is already working normally!
 :::
 
 1. Download the latest version of the `yt-dlp.exe` executable from the [GitHub Repository](https://github.com/yt-dlp/yt-dlp/releases).

@@ -82,9 +82,13 @@ Determines whether or not to incorporate the full ambient color into the lightin
 
 ### Multilayer Math
 
-Multilayer Math is a Toon Lighting method that uses mathematically defined gradients to determine the lighting level. These gradients can be edited using the defined settings, and set using colors or textures. Multilayer Math is similar to the lighting model used in the [LilToon](https://github.com/lilxyzw/lilToon) shader. Multilayer Math shading is useful for creating robust shading that performs well in most lighting conditions.
+Multilayer Math is a Toon Lighting method that uses mathematically defined gradients to determine the lighting level. These gradients can be edited using the defined settings, and set using colors or textures. Multilayer Math shares the same behavior as [LilToon](https://github.com/lilxyzw/lilToon)'s primary shading feature (Shadows).
 
-On a basic level, Multilayer Math has three shadow layers, and a border. Not all layers need to be used, nor the border. In previous versions of the shader, the *Math Gradient* shading mode was used to create a similar effect, but this mode was removed in favor of the more flexible Multilayer Math.
+Multilayer Math shading is useful for creating robust toon shading that performs well in most lighting conditions. On a basic level, Multilayer Math has three shadow layers, and a border. Not all layers need to be used, nor the border... as the visibility of those shadow layers are controlled by the Shadow Layer's Color Alpha.
+
+:::note Fun Fact
+In very old versions of Poiyomi Shaders, the *Math Gradient* shading mode was used to create a similar effect, but this mode was replaced in favor of the more flexible Multilayer Math system you see here.
+:::
 
 <PoiVideo url='/vid/shading/Shading_MultilayerMath.mp4'/>
 

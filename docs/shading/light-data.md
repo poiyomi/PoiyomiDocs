@@ -322,9 +322,11 @@ Enables support for [VRC Light Volumes <FAIcon icon="fa-solid fa-square-arrow-up
 
 The results of this setting can be easily noticeable in Worlds that use it. For more information on this system as well as a list of Worlds to test this effect in, view the [GitHub Repository <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/REDSIM/VRCLightVolumes) or check out Poiyomi's [Poi Light Volumes Tech Test <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://vrchat.com/home/world/wrld_e1f6b0ae-4d12-4136-9675-a5383c172ace/info) World to explore the various effects that Light Volumes can do.
 
-:::note
-Please be aware that you will not see the results of Light Volumes in your project unless you have a working setup in your Scene that can show it to you. You can use newer versions of [Haï Lightbox Viewer <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.hai-vr.dev/docs/products/lightbox-viewer) (v2.4.0 and up) to preview the results, which includes new lightboxes supporting Light Volumes.
+:::warning
+Due to some of the code required for Light Volumes to work, it is known that enabling Light Volumes may cause a brief performance impact on users loading your Avatar!
 :::
+
+Please be aware that you will not see the results of Light Volumes in your project unless you have a working setup in your Scene that can show it to you. You can use newer versions of [Haï Lightbox Viewer <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.hai-vr.dev/docs/products/lightbox-viewer) (v2.4.0 and up) to preview the results, which includes new lightboxes supporting Light Volumes.
 
 ## Add Pass (Point & Spot Lights)
 

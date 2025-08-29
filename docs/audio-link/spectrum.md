@@ -30,7 +30,7 @@ Choice of UV projection of your Spectrum.
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `UV0`/`UV1`/`UV2`/`UV3`/`Panosphere`/`World Pos`/`Local Pos`/`Polar UV`/`Distorted UV`
 
-Choice of UV to use for your Spectrum. You will most likely be configuring this for your specific model.
+Choice of UV to use for your Spectrum. You will most likely be configuring this for your specific mesh.
 
 ### Position
 
@@ -82,7 +82,7 @@ How large the width of the Spectrum should be across the projection.
 <PoiVideo url='/vid/audio-link/ALSpect_LineWidth.mp4'/>
 
 - A value of `1` will present ignored width and lock it to remain on the bottom-edge of the projection, resulting in a standard spectrum with empty space overhead.
-- A value **less than** `1` will result in a change in the Spectrum's width across the projection. This makes it use the entire space. The locations of where the Bands will move to and from are as it follows:
+- A value **less than** `1` will result in a change in the Spectrum's width across the projection. This makes it use the entire space, like wavelengths. The locations of where the Bands will move to and from are as it follows:
     - `Top-edge = Full Audio`
     - `Bottom-edge = No Audio`
 
@@ -103,8 +103,8 @@ This property is only shown if the [UV Mode](#uv-mode) is set to `Circle`.
 | --- | --- |
 | X | Minimum size of the Circle Spectrum starting from the direct center of the projection |
 | Y | Maximum size of the Circle Spectrum |
-| Z | Minimum radial clipping of the Circle Spectrum |
-| W | Maximum radial clipping of the Circle Spectrum |
+| Z | Minimum radial clipping (pie-cut) of the Circle Spectrum |
+| W | Maximum radial clipping (pie-cut) of the Circle Spectrum |
 
 ## Volume and Band
 
@@ -178,8 +178,8 @@ Clipping control of the Band's projection from the Right-edge.
 
 Enables the ability to provide a set amount of space between each Step for the `Band` or `Volume`, clipping whatever is in-between each step. Use this in conjunction with your [Volume Step Num](#volume-step-num-0--off) and [Band Step Num](#band-step-num-0--off) values to achieve a digital visualizer look.
 
-:::tip Works best with Steps
-Shape Clip should use a [Volume Step Num](#volume-step-num-0--off) and [Band Step Num](#band-step-num-0--off) with a value greater than `0` for this to appear correctly.
+:::tip Looks best with Steps
+Shape Clip should use a [Volume Step Num](#volume-step-num-0--off) and [Band Step Num](#band-step-num-0--off) with a value greater than `0` for this to appear nicely.
 :::
 
 <PoiVideo url='/vid/audio-link/ALSpect_ShapeClip.mp4'/>
