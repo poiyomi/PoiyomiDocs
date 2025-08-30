@@ -14,7 +14,7 @@ There may be bugs in this build as a lot of things were changed behind the scene
 
 ### Added
 - Added a new Particle Shader that spawns from the surface of the mesh.
-	- Two Pass and Grab Pass versions are also available.
+	- Two Pass and One Pass versions are available.
 - Two Pass now supports Global Masking per pass.
 - `_UdonForceSceneLighting` has been implemented to allow Worlds to turn off Avatar light limitations, as recommended by lilxyzw.
 
