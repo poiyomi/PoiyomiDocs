@@ -77,3 +77,40 @@ The website deployment of the Poiyomi Shaders Documentation is automated by **Ve
 **THIS IS IMPORTANT!** When adding commits to your Fork (and prepping it for PRs), ONLY include files that are necessary. **DO NOT INCLUDE your generated `package-lock.json`, `yarn.lock`, or `pnpm-lock.yaml` files in your pushes, or there will be a PR conflict!** I will not allow PRs that overwrite either one of those files due to the sensitive nature those files serve in the website deployment.
 
 The `package-lock.json`, `yarn.lock`, `pnpm-lock.yaml` and similar .lock files of their type, are files that are auto-generated and should never be edited! Therefore, the only exception is if they are being replaced when upgrading Docusaurus versions. Which, should only be done exclusively by the owners of the Repository.
+
+## Making a Blog Post
+
+For those active in this project, the main Blog is located in the folder `/blog`. Creating a Blog Post requires a few things:
+
+- Your Name and info in the `authors.yml` file, located inside the `/blog` folder. Use currently-added Authors for reference.
+- Must be in Markdown format.
+- The prefix of the document name must be `YYYY-MM-DD-` for the Date of the post (Year, Month, Day).
+  - *Example: `2025-08-30-my-blog-post.md` for the date to be August 30, 2025.*
+- A header in the post containing:
+  - `slug:` - The URL-friendly name of the page. Optional. If empty, will assume the name of the file as the default.
+  - `title:` - The H1 Heading name of your Blog Post.
+    - *Example: `title: My Blog Post`*
+  - `description:` - A short description of the context of the Blog post. Important for SEO!
+    - *Example: `description: This is my short description.`*
+  - `hide_table_of_contents: true` - This should be marked `true` to keep things clean.
+  - `authors:` - This should be your name as specified in the `authors.yml` file. Shows who wrote this post.
+    - *Example: `authors: myname`*
+  - `tags:` - Search-friendly tags to add. Each should be a single word separated by a comma. Important for SEO!
+    - *Example: `tags: [blog, post, subject]`*
+- Compliance with the Docusaurus Blogging system.
+
+After you create a named Markdown file in the `/blog` folder and followed the requirements stated above, you can then start writing!
+
+In order to follow Markdown compliance, make sure you follow the Basic Syntax guidelines when formatting your text: https://www.markdownguide.org/basic-syntax/.
+
+### Attaching Images
+
+If your Blog Post contains images, put your Blog post inside a folder instead! To do this, you will instead create a folder named appropriately (to match the document name) and place your Markdown file inside of it.
+
+Example: `/blog/2025-08-30-my-blog-post/my-blog-post.md`
+
+You can then add an image inside the same folder directory. Add as many images as you need.
+
+To show them in your post, use the Markdown syntax as found here: https://www.markdownguide.org/basic-syntax/#images-1. Since the image will be in the same folder as your post, the path to the image should just be the name of the file itself.
+
+Make sure you specify the Alt text as described in the Markdown syntax. This is important for SEO!

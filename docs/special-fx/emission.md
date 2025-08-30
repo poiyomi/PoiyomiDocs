@@ -5,15 +5,17 @@ description: Emission provides the ability to add brightness directly to the bas
 keywords: [emission, emissions, glow, bloom, brightness, color, scrolling, center out, blinking, special fx, poiyomi, shader]
 ---
 
-Emission is a function that allows adding brightness directly to the base color of a mesh. It can be used to add highlights, or to add a glow effect to a mesh.
-
-There are 4 Emission Slots total, each with their own unique options. They are independent of each other. Emissions are always added with one another when overlapping.
+Emission is a function that allows adding brightness directly to the base color of a mesh. It can be used to add highlights, or to add a glow effect to a mesh. This is one of the most well-known features in the shader.
 
 <a>
 <img src="/img/special-fx/Emission_Example.png" alt="Emission Example"/>
 </a>
 
 *Example usage of Emission on the Eyes, Hair, Nose, Ears, and Paws.*
+
+:::info Documentation Info
+Each of the 4 Emission slots (0, 1, 2, 3) have the following unique options listed below. They are independent of each other. Emissions are always added with one another when overlapping.
+:::
 
 ## Emission Mask
 
@@ -51,7 +53,7 @@ Color map of the emission. This is used to define the color of the emission in d
 
 Strength of the emission. Values greater than `1.0` will not change the base color as much, but will increase the amount the emission *blooms* (glows) in worlds with post processing enabled, and bloom configured.
 
-Generally, this value should be set between `0.0` and `1.0` for a normal effect, and `1.0` to `5.0` for a more intense effect.
+Generally, this value should be set between `0.0` and `1.0` for a normal effect, and `1.0` to `5.0` for a more intense effect. Be careful when bringing this value too high, as doing so can cause the color to get washed out and/or be extremely blinding in Post Processing.
 
 ## Use Base Colors
 

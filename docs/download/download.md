@@ -63,7 +63,7 @@ The VCC version of Poiyomi Shaders will automatically replace any existing copy 
 
 The Pro version of the shader (also known as Poiyomi Pro) is a Paid Version of the shader, available as a subscription model for $10/month on Patreon. It contains extra special features that are [outlined below](#features-chart).
 
-Before using Poiyomi Pro, please ensure you agree to the Pro Version [Terms of Service](/docs/terms-of-service/terms-of-service.md#pro-version). A copy of the Pro License is included in all versions of Poiyomi Pro.
+Before using Poiyomi Pro, please ensure you agree to the Pro Version [Terms of Service](/docs/terms-of-service/terms-of-service.md#pro-version) and EULA. A copy of the Pro EULA is included in all versions of Poiyomi Pro.
 
 <div style={{marginBottom: '20px'}}>
 
@@ -73,7 +73,8 @@ Before using Poiyomi Pro, please ensure you agree to the Pro Version [Terms of S
 
 In order to download and install Poiyomi Pro, please follow these updated instructions:
 1. Subscribe to the shader on [Patreon <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://www.patreon.com/poiyomi) for $10/month USD or higher.
-2. Login to [pro.poiyomi.com <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://pro.poiyomi.com/) by authenticating with your Patreon Account.
+2. Login to [pro.poiyomi.com <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://pro.poiyomi.com/) and follow the instructions to authenticate with your Patreon Account.
+   - *If you don't see the pop-up Patreon Login window, check with your Browser to see if a pop-up window was blocked.*
 3. If successful, you can then immediately download the latest version of the Pro shader by going to the Downloads page.
 4. You may now proceed with **Step 2** of installing Poiyomi Shaders as described above in [Method 1.](#method-1-manual-unity-package)
 
@@ -90,7 +91,7 @@ As Poiyomi Pro is exclusive to subscribers, it is incompatible with the VCC Vers
 **DO NOT ATTEMPT TO IMPORT BOTH TOON AND PRO VERSIONS OR YOUR PROJECT MAY BREAK!**
 :::
 
-By using Poiyomi Pro, you agree to the License stated [here](/docs/terms-of-service/terms-of-service.md#pro-version).
+By using Poiyomi Pro, you agree to the EULA stated [here](/docs/terms-of-service/terms-of-service.md#pro-version).
 
 ### Features Chart
 
