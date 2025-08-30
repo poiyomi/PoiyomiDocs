@@ -4,7 +4,7 @@ title: New Website Available for Patreon Subscribers
 description: You can now download the Pro shader from pro.poiyomi.com by logging in via Patreon.
 hide_table_of_contents: true
 authors:
-  [poiyomi, bluwizard]
+  poiyomi
 tags: [shader, vrchat, updates, update, pro, website]
 ---
 
