@@ -29,9 +29,9 @@ To use the new website, visit [pro.patreon.com <FAIcon icon="fa-solid fa-square-
 
 *There's also a little Easter Egg on the website (more like, a mini-game) that's playable in plain sight. Can you find it?*
 
-### About Discord
-
-From this point forward, you will still need to link your Patreon with your Discord Account in order to receive tech support from our Discord server. As always, linking your Patreon to your Discord will unlock a fancy role, some perks, and access to the `#paid-shader` channel where you can also download the same package from.
+:::info About Discord
+From this point forward, you will still need to link your Patreon with your Discord Account in order to receive tech support on the Pro Shader. As always, linking your Patreon to your Discord will unlock a fancy role, some perks, and access to the `#paid-shader` channel where you can also download the same package from.
+:::
 
 ## VCC Support Coming Soon!
 
