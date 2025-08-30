@@ -1,6 +1,6 @@
 razgriz:
   name: Razgriz
-  title: Poiyomi Docs Author
+  title: Original Docs Author
   url: https://github.com/rrazgriz
   image_url: https://github.com/rrazgriz.png
   page: true
@@ -21,7 +21,7 @@ poiyomi:
 
 bluwizard:
   name: BluWizard
-  title: Lead Poiyomi Docs Contributor
+  title: Lead Docs Author, Community Helper
   url: https://github.com/bluwizard10
   image_url: https://github.com/bluwizard10.png
   page: true
@@ -50,3 +50,13 @@ rurre:
   socials:
     github: rurre
     bluesky: pumkin.bsky.social
+
+sacred:
+  name: Sacred
+  title: Community Helper
+  url: https://github.com/sacred0
+  image_url: https://github.com/sacred0.png
+  page: true
+  socials:
+    github: sacred0
+    bluesky: sacred0.bsky.social
