@@ -10,30 +10,23 @@ By using the Shader, you hereby agree to the Terms of Service and Licenses as li
 
 ## Free Version
 
-The current publicly accessible version of Poiyomi Toon Shader (also known as the Free Version) is licensed under the **MIT Open Source License**.
+The current publicly accessible version of Poiyomi Toon Shader (also known as the Free Version) is licensed under the [MIT Open Source License <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](/assets/Poiyomi-Free-License.txt).
 
 The MIT License is one of the most straightforward and permissive licenses used for software. Let's break it down into simple points:
 
-```md
-Free to Use: You can use the software for any purpose, including commercial use, for free.
-
-Free to Modify: You can change the software as you like.
-
-Free to Share: You can share the software with others, either in its original form or with your modifications.
-
-Free to Include in Your Own Projects: You can include the software, modified or not, in your own projects.
-
-Keep the License Notice: When you redistribute the software or any modified versions of it, you need to include the original MIT License text with it. This lets others know they can use, modify, and share the software under the same terms.
-
-No Warranty: The software is provided "as is", without any guarantees. The authors aren't responsible if something goes wrong after using or modifying the software.
-```
+- Free to Use: You can use the software for any purpose, including commercial use, for free.
+- Free to Modify: You can change the software as you like.
+- Free to Share: You can share the software with others, either in its original form or with your modifications.
+- Free to Include in Your Own Projects: You can include the software, modified or not, in your own projects.
+- Keep the License Notice: When you redistribute the software or any modified versions of it, you need to include the original MIT License text with it. This lets others know they can use, modify, and share the software under the same terms.
+- No Warranty: The software is provided "as is", without any guarantees. The authors aren't responsible if something goes wrong after using or modifying the software.
 
 In summary, the MIT License basically says "you can do almost anything you want with this software, **but you need to include this license text wherever you use it, and you can't hold the original creators responsible for problems.**"
 
 :::note Disclaimer: For Avatar Sellers
-*Poiyomi Shaders includes scripts that change from time to time. If you are an Avatar Seller, we kindly request that you refrain from including the Free Version when exporting your Avatar Packages. Doing so can risk disruption of Unity workflow and potentially break various scripts, as a result of unknowingly double-importing the package.*
+*Poiyomi Shaders includes scripts that change from time to time. If you are an Avatar Seller, we kindly request that you refrain from including the Free Version when exporting your Avatar Packages. Doing so can risk disruption of Unity workflow and potentially break various scripts as a result of unknowingly double-importing the package.*
 
-*We highly recommend you redirect your customers to download and install Poiyomi Shaders separately. <u>We are not responsible for any damages to Unity Projects as a result of ignoring this disclaimer.</u>*
+*We highly advise you redirect your customers to download and install Poiyomi Shaders separately, with a link to this website. <u>We are not responsible for any damages to Unity Projects as a result of ignoring this disclaimer.</u>*
 :::
 
 ## Pro Version
@@ -42,7 +35,9 @@ In summary, the MIT License basically says "you can do almost anything you want 
 The following text below only applies if you are using **Poiyomi Pro**, which costs $10 USD/month. For more information, visit the [Patreon Page](https://www.patreon.com/poiyomi).
 :::
 
-A copy of the End-User License Agreement can be found in the Poiyomi Pro package in `Assets/_PoiyomiShaders/LICENSE` for further reading. But to put things simply:
+By using Poiyomi Pro, you agree to the [End-User License Agreement <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](/assets/Poiyomi-Pro-License.txt). Please make sure you read and understand the policies stated.
+
+To put things simply, here are the restrictions:
 
 #### YOU CAN:
 - Create a game where the Shader is used, but the Source Code is not freely accessible to the end user.

@@ -55,7 +55,7 @@ When replacing or upgrading versions, you must do the following:
 
 To update the VCC Version later on, simply return to `Manage Project` and click the green-highlighted version to update to the specified version.
 
-:::note
+:::warning
 The VCC version of Poiyomi Shaders will automatically replace any existing copy of the `_PoiyomiShaders` folder in your Project's Assets in favor of the VCC Version, if it exists. Keep this in mind if you have any other versions, such as the Pro version, in your Project.
 :::
 
@@ -63,7 +63,7 @@ The VCC version of Poiyomi Shaders will automatically replace any existing copy 
 
 The Pro version of the shader (also known as Poiyomi Pro) is a Paid Version of the shader, available as a subscription model for $10/month on Patreon. It contains extra special features that are [outlined below](#features-chart).
 
-Before using Poiyomi Pro, please ensure you agree to the Pro Version [Terms of Service](/docs/terms-of-service/terms-of-service.md#pro-version) and EULA. A copy of the Pro EULA is included in all versions of Poiyomi Pro.
+Before using Poiyomi Pro, please ensure you agree to the [EULA](/docs/terms-of-service/terms-of-service.md#pro-version).
 
 <div style={{marginBottom: '20px'}}>
 
@@ -85,8 +85,8 @@ In order to download and install Poiyomi Pro, please follow these updated instru
 
 As a reminder, the Pro Shader only includes extra features. Therefore, it is not required if you are trying to access features already available in the Free version.
 
-:::danger Incompatible with VCC Version
-As Poiyomi Pro is exclusive to subscribers, it is incompatible with the VCC Version of Poiyomi Toon. You must uninstall Poiyomi Toon from the VCC prior to importing Poiyomi Pro!
+:::warning Currently Incompatible with VCC Version
+The VCC version of Poiyomi Pro is currently under development. In the meantime, you must uninstall Poiyomi Toon from VCC prior to importing Poiyomi Pro!
 
 **DO NOT ATTEMPT TO IMPORT BOTH TOON AND PRO VERSIONS OR YOUR PROJECT MAY BREAK!**
 :::

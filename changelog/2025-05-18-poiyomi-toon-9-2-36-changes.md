@@ -18,6 +18,10 @@ This update significantly reorganized ALL Vertex-related features into a new ded
 Documentation has been updated to match this change.
 :::
 
+:::danger Custom Shader Modules: Heads Up!
+This update has changed the list of Base Modules! Please ensure your Modular Shader assets are updated to include `VRLM_PoiProgrammableStagesBasic (Shader Module)` into your list of Base Modules! Otherwise, your shader will break upon generating it!
+:::
+
 ### Added
 - Added a `Circle Mask` option for **Matcap**, allowing you to have smaller matcaps without having them repeat.
   - *You can smooth the falloff of a matcap by blurring the mask, using the sliders exposed when enabling this feature.*
