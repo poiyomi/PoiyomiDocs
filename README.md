@@ -1,6 +1,6 @@
 # Poiyomi Shaders Documentation
 
-This website is built using [Docusaurus 3](https://docusaurus.io/), a modern static website generator utilizing React.
+This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator utilizing React.
 
 ## Contributors: Please Read!
 
@@ -18,7 +18,7 @@ It's recommended you use an IDE that supports Source Control such as [Visual Stu
 
 #### Package Manager
 
-This README shows using `yarn` since it addresses performance issues `npm` is known for. However you are free to use your own Package Manager that supports Node.js. If you do choose to use a different one (like `npm`) instead, just put them in place of `npm` in the commands. **Just make sure you DO NOT include their lock files in your commits!**
+This README shows using `yarn` since it addresses performance issues `npm` is known for. However you are free to use your own Package Manager that supports Node.js. If you do choose to use a different one (like `npm`) instead, just put them in place of `yarn` in the commands. **Just make sure you DO NOT include their lock files in your commits!**
 
 ### Installation
 
