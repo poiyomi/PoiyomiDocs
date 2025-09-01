@@ -80,7 +80,7 @@ The `package-lock.json`, `yarn.lock`, `pnpm-lock.yaml` and similar .lock files o
 
 ## Making a Blog Post
 
-For those active in this project, the main Blog is located in the folder `/blog`. Creating a Blog Post requires a few things:
+For those active in this project, the main Blog is located in the folder `/blog`. This is where Tips, Tricks, and helpful articles will be posted in. Creating a Blog Post requires a few things:
 
 - Your Name and info in the `authors.yml` file, located inside the `/blog` folder. Use currently-added Authors for reference.
 - Must be in Markdown format.
