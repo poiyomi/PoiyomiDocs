@@ -633,8 +633,8 @@ Smoothness is a baked-in value determining how much additional reflection the ma
 
 Cloth shading is a physically-based lighting model that draws from the Cloth shading model used in [Google's Filament engine](https://google.github.io/filament/Materials.html#materialmodels/clothmodel). It uses a packed mask to determine physically-based components of the lighting.
 
-:::warning
-Due to the unique properties used in Cloth shading, it's <u>not recommended</u> to use both Cloth shading and [Reflections & Specular](/docs/shading/reflections-and-specular.md) at the same time!
+:::info Cloth PBR is Built-In
+Cloth shading has Reflections & Specular already built-in. Therefore, it's <u>not necessary</u> to use both Cloth shading and [Reflections & Specular](/docs/shading/reflections-and-specular.md) at the same time!
 :::
 
 <details>
