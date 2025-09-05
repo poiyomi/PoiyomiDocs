@@ -36,10 +36,16 @@ Poiyomi Shaders is primarily built for usage in VRChat. Therefore, limitations m
 
 If you are a Game Developer or hobbyist wishing to use Poiyomi Shaders on a non-VRChat Project, here are the requirements:
 - Supported Unity Versions: `2021.3`, `2022.3`
-- Rendering Pipeline: `Built-in Render Pipeline`, `Universal Rendering Pipeline (BETA)`
+- Rendering Pipeline: `Built-in Render Pipeline`
 - Supported Platforms: `Windows`
 
-Please note that this information above are **strict** requirements. We do NOT support the High Definition Render Pipeline (HDRP) in Unity whatsoever.
+Please note that this information above are **strict** requirements. We do NOT support the Universal Render Pipeline (URP) or the High Definition Render Pipeline (HDRP) in the Unity versions mentioned above.
+
+#### Unity 6 Support
+  
+If using Unity 6 (`6000.0` and up), we only support the `Universal Render Pipeline`. This is currently in BETA and may be unstable!
+
+Please join the [Poiyomi Shaders Discord <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://discord.gg/poiyomi) in order to access to the Unity 6-compatible URP version of Poiyomi Shaders.
 
 ## Version 9.x
 
@@ -49,7 +55,7 @@ If you are on an older version of Poiyomi Shaders, we highly suggest that you re
 
 ## Completion Status
 
-The Documentation now matches version `9.2.67` and newer patches following it. The following features have been added to the Documentation as of late:
+The Documentation now matches version `9.2.69` and newer patches following it. The following features have been added to the Documentation as of late:
 - Added Changelogs, separate from the Blog. All changes, both old and new, will be documented here from now on.
   - *Major Updates will still be talked about in the Blog.*
 - "Type" properties are accommodated with an icon that matches what it is in the Shader UI.
