@@ -26,3 +26,8 @@ There may be bugs in this build as a lot of things were changed behind the scene
 - Presets for the Particle shader.
 - Presets for the Two Pass shader.
 - Scaling float that can be animated so particles scale properly.
+
+## Known Issues
+- No implementation of `poiRand2` in the Pro Shader.
+- UI broken in `2nd Pass` section. Possibly related to new Global Masking options.
+- Crash when AO is set to a Global Mask and AudioLink is enabled.
