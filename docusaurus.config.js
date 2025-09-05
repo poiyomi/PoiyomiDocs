@@ -138,6 +138,12 @@ const config = {
         blogSidebarTitle: 'All Changelogs',
         blogSidebarCount: 'ALL',
         onUntruncatedBlogPosts: 'ignore',
+        feedOptions: {
+          type: ['rss', 'atom'],
+          limit: 20,
+          title: 'Poiyomi Shaders Changelogs',
+          description: 'Full Changelogs from recent versions of Poiyomi Shaders.'
+        },
       },
     ],
   ],
@@ -161,6 +167,12 @@ const config = {
           blogSidebarTitle: 'All Posts',
           blogSidebarCount: 'ALL',
           onUntruncatedBlogPosts: 'ignore',
+          feedOptions: {
+            type: ['rss', 'atom'],
+            limit: 20,
+            title: 'Poiyomi Shaders Blog: Tips & Tricks',
+            description: 'Tips, Tricks, and Updates from the Poiyomi Team.',
+          },
           // Please change this to your repo.
           // editUrl:
           // 'https://github.com/poiyomi/PoiyomiDocs',
