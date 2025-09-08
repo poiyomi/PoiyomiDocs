@@ -20,11 +20,11 @@ Defines the mode dissolve is operating in.
 
 ### Basic
 
-In `Basic`, The 0-1 value of the Dissolve Gradient texture is used to define the scale from 0 to 1.
+In `Basic`, The 0-1 value of the [Dissolve Gradient](#dissolve-gradient) texture is used to define the scale from 0 to 1.
 
-<PoiVideo url='/vid/special-fx/Dissolve_Mode_Basic.mp4'/>
+<PoiVideo url='/vid/special-fx/Dissolve_Mode_Basic-Gradient.mp4'/>
 
-*Example of Basic Dissolve with and without an Edge Gradient.*
+*Example of Basic Dissolve. As you can see, it only works best with a Dissolve Gradient defined.*
 
 ### Point2Point
 
