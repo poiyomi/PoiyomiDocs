@@ -5,7 +5,7 @@ description: Information regarding the release of Poiyomi Pro 9.3.41.
 hide_table_of_contents: true
 authors:
   poiyomi
-tags: [shader, vrchat, updates, update]
+tags: [shader, vrchat, updates, update, pro]
 ---
 
 This update to the Pro shader contains some new features (including a new Particle shader!) and some new UI improvements. You can download it now from [pro.poiyomi.com](https://pro.poiyomi.com) by logging in via your Patreon account.
