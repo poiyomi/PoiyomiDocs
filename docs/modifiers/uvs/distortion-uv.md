@@ -47,7 +47,7 @@ Linear texture of the second distortion.
 
 Sets the strength of the Distortion from Texture 1.
 
-### Strength 1
+### Strength 2
 
 - `Type`: <PropertyIcon name="float" />**Float**
 
