@@ -7,7 +7,7 @@ keywords: [polar, uv, fx, shading, poiyomi, shaders]
 
 Polar UV is a set of texture coordinate remapping properties, which converts the UVs into Polar coordinates. When used, your texture will be wrapped in a circular/radial fashion around the mesh rather than stretched flat.
 
-This section houses the global settings for Polar UV in the material.
+This section houses the global settings for Polar UV. To use it, select it as a UV option in supported sections of the shader.
 
 ## UV
 

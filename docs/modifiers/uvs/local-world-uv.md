@@ -5,7 +5,7 @@ description: Settings for overriding the Local World UVs in Poiyomi Shaders.
 keywords: [local, world, uv, poiyomi, shaders]
 ---
 
-This section houses the settings for the Local World UVs to use for certain UV modifiers in the material.
+This section houses the settings for the Local World UVs to use for certain UV modifiers. To use it, select it as a UV option in supported sections of the shader.
 
 ## Local X
 

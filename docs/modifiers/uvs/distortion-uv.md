@@ -9,13 +9,13 @@ toc_max_heading_level: 4
 
 Distortion UV refers to a shader technique where the UV coordinates used to sample a texture are offset or warped to create the illusion of distortion or other wobbly effects.
 
-This section houses the global settings for Distortion UV in the material.
+This section houses the global settings for Distortion UV. To use it, select it as a UV option in supported sections of the shader.
 
 ## Distortion UV
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
 
-Enables Distortion UV effects on the material. Make sure to select which Texture Slots across the material should use Distortion UV.
+Enables Distortion UV effects on the material. Make sure to select which Texture Slots across the shader should use Distortion UV.
 
 ### Distorted UV
 
