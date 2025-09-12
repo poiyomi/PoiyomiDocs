@@ -103,7 +103,7 @@ For most color and data textures, it's simplest to use `DXT1`. This is what Unit
 
 To have full control over what format Unity uses, you can select the tab to the right of the `Default` tab of compression options, and select `Override for PC, Mac, & Linux Standalone`. This will give you a full list of available compression options.
 
-> Community member **Zanariyo** has compiled an excellent document that explains some of the most common texture formats in Unity and when it's appropriate to use them for your Avatar. [You can view the document here <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.google.com/document/d/1WvgJ2lzyNXJuzFa1cr1YKC8xu5-L124VXQ4JI11wJoc).
+> Community member **Zanariyo** compiled an excellent document that explains some of the most common texture formats in Unity and when it's appropriate to use them for your Avatar. [You can view the document here <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.google.com/document/d/1WvgJ2lzyNXJuzFa1cr1YKC8xu5-L124VXQ4JI11wJoc).
 
 To learn more about the different compression formats in further detail, visit the [Unity Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/class-TextureImporterOverride.html).
 
@@ -127,10 +127,10 @@ If you are an Avatar Creator, consider leaving this OFF in your Packages.
 
 This setting determines the maximum resolution of the texture after Unity compresses it. Texture resolution is the biggest driver of VRAM (Texture Memory) consumption, and it's important to keep your textures as low resolution as they can be while maintaining acceptable visual quality.
 
-4096px and 8192px square textures, in particular, **use large amounts of VRAM**. Where possible, make your textures smaller, and use features like [RGBA Color Masking](/docs/color-and-normals/rgba-color-masking.md), alternate UV maps, [Decals](/docs/color-and-normals/decals.md), etc., to reduce the need for large, high resolution textures. Using those features can both help improve performance and cut down on VRAM consumption.
+4096px and 8192px square textures, in particular, **use large amounts of VRAM**. Where possible, make your textures smaller, and use features like [RGBA Color Masking](/docs/color-and-normals/rgba-color-masking.md), alternate UV maps, [Decals](/docs/color-and-normals/decals.md), etc., to reduce the need for large, high resolution textures. Using those features can both help improve performance and cut down on VRAM consumption. Your friends will thank you.
 
 :::info VRChat Avatar Size Limits
-Make sure to keep the Max Size of your textures <u>as low as you can</u>, as it will greatly contribute to the final **Download Size** and **Uncompressed Size** of your Avatar. Failure to take this into account may prevent VRChat from even loading your Avatar at all!
+Make sure to keep the Max Size of your textures <u>as low as you can</u>, as it will greatly contribute to the final **Download Size** and **Uncompressed Size** of your Avatar. Failure to take this into account may prevent VRChat from even loading your Avatar at all, as it is subject to server-side scanning!
 
 To see the Size Limits that are currently enforced for both PC and Mobile Platforms, refer to the VRChat Creators Documentation on [Avatar Size Limits <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://creators.vrchat.com/avatars/avatar-size-limits).
 :::
@@ -139,10 +139,10 @@ To see the Size Limits that are currently enforced for both PC and Mobile Platfo
 
 Mipmaps are a feature of Unity (and most modern game engines) that store shrunken versions of a texture alongside the full resolution. These are used to create less aliasing, and are essential for textures to look good. They also improve performance, as they allow the GPU to access smaller, more localized areas of the texture.
 
-:::warning
-**DO NOT turn mipmaps off!** While it does reduce VRAM usage a bit, much of the performance bump is mitigated by the GPU having to always access full-resolution textures.
+:::warning Choose Mipmaps Wisely!
+**Commonly, you should <u>never</u> turn off Mipmapping!** Only turn off Mipmapping when it is appropriate for certain situations, or when the appearance of some textures (like Emission Maps or Vertex Masks) appear to leak through neighboring seams at a distance.
 
-Turning off mipmaps should only be done for very specific data textures that should not be mipped.
+If your UVs have very narrow gaps between each island, use your best judgement when choosing Mipmaps.
 :::
 
 #### Mipmap Filtering
@@ -162,11 +162,9 @@ In order to take advantage of this feature, you must set your **Mipmap Filtering
 
 Wrap Mode defines how a texture should repeat when it is tiled. This has various options,
 
-**Repeat** is self-explanatory. It will repeat (tile) the texture infinitely.
-
-**Clamp** will stretch the edges of the texture to each end of the UV's boundaries.
-
-**Mirror** will simply flip the texture in reverse as if it was inside a mirror.
+- `Repeat`: Self-explanatory. It will repeat (tile) the texture infinitely.
+- `Clamp`: Stretches the edges of the texture to each end of the UV's boundaries.
+- `Mirror`: Flips the texture in reverse as if it was inside a mirror.
 
 This option has a caveat. For most textures, the wrap mode defined for the *Main Texture* will be used. This is due to a limitation within the DirectX Graphics API, which limits the amount of samplers that can be defined.
 
