@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 This module allows you to have a fancy spectrum of varying styles that appear with your Audio. It is projected onto the UV of your choice and is scaled to each end of your UV space by default.
 
-<PoiVideo url='/vid/audio-link/ALSpectrumDemo.mp4'/>
+<PoiVideo url='/vid/audio-link/ALSpectrumDemo.webm'/>
 <em>Demonstration of AL Spectrum projecting across a custom UV1 layout on the Suit. (Un-mute to hear sound)</em>
 
 ## Transform
@@ -21,7 +21,7 @@ This module allows you to have a fancy spectrum of varying styles that appear wi
 
 Choice of UV projection of your Spectrum.
 
-<PoiVideo url='/vid/audio-link/ALSpect_NormVSCircle.mp4'/>
+<PoiVideo url='/vid/audio-link/ALSpect_NormVSCircle.webm'/>
 
 - `Normal` is the standard default mode, projected flat on the UV from left to right.
 - `Circle` turns it into a more circular-shaped Spectrum while projected on your UV. It is centered by default.
@@ -51,7 +51,7 @@ Adjusts the Position of the Spectrum's projection on the model's UV space. The P
 
 Adjusts the Scale of the Spectrum's projection on the model's UV space.
 
-<PoiVideo url='/vid/audio-link/ALSpect_ScalePos.mp4'/>
+<PoiVideo url='/vid/audio-link/ALSpect_ScalePos.webm'/>
 
 | Axis | Function |
 | --- | --- |
@@ -79,7 +79,7 @@ Consistent rotation speed of the Spectrum's projection. A value of `1` will resu
 
 How large the width of the Spectrum should be across the projection.
 
-<PoiVideo url='/vid/audio-link/ALSpect_LineWidth.mp4'/>
+<PoiVideo url='/vid/audio-link/ALSpect_LineWidth.webm'/>
 
 - A value of `1` will present ignored width and lock it to remain on the bottom-edge of the projection, resulting in a standard spectrum with empty space overhead.
 - A value **less than** `1` will result in a change in the Spectrum's width across the projection. This makes it use the entire space, like wavelengths. The locations of where the Bands will move to and from are as it follows:
@@ -97,7 +97,7 @@ Adjusts the radius and dimension of the Circle Spectrum, if used.
 This property is only shown if the [UV Mode](#uv-mode) is set to `Circle`.
 :::
 
-<PoiVideo url='/vid/audio-link/ALSpect_CircleDimensions.mp4'/>
+<PoiVideo url='/vid/audio-link/ALSpect_CircleDimensions.webm'/>
 
 | Axis | Function |
 | --- | --- |
@@ -110,7 +110,7 @@ This property is only shown if the [UV Mode](#uv-mode) is set to `Circle`.
 
 Adjustment of the UV Space and it's appearance across the Spectrum.
 
-<PoiVideo url='/vid/audio-link/ALSpect_VolBandStepNum.mp4'/>
+<PoiVideo url='/vid/audio-link/ALSpect_VolBandStepNum.webm'/>
 
 ### Volume
 
@@ -182,7 +182,7 @@ Enables the ability to provide a set amount of space between each Step for the `
 Shape Clip should use a [Volume Step Num](#volume-step-num-0--off) and [Band Step Num](#band-step-num-0--off) with a value greater than `0` for this to appear nicely.
 :::
 
-<PoiVideo url='/vid/audio-link/ALSpect_ShapeClip.mp4'/>
+<PoiVideo url='/vid/audio-link/ALSpect_ShapeClip.webm'/>
 
 ### Volume Width
 
@@ -208,7 +208,7 @@ Width of the space between each step on the Band.
 
 Modifier for increasing or decreasing the sensitivity of the Spectrum from each Band. This will greatly influence how the Spectrum appears in the projection.
 
-<PoiVideo url='/vid/audio-link/ALSpect_AudMods.mp4'/>
+<PoiVideo url='/vid/audio-link/ALSpect_AudMods.webm'/>
 
 ### Volume
 
@@ -235,7 +235,7 @@ Adjusts the sensitivity of the Treble Band. Higher values will yield increased r
 
 Use this section to customize the Color and overall Appearance of your Spectrum.
 
-<PoiVideo url='/vid/audio-link/ALSpect_Blending.mp4'/>
+<PoiVideo url='/vid/audio-link/ALSpect_Blending.webm'/>
 
 ### Color & Mask
 
@@ -314,6 +314,6 @@ Adjusts the visibility of the entire Spectrum projection on your Material.
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
-Overrides the entire Opacity of the Material besides the Spectrum itself. Requires Transparency.
+Overrides the entire Opacity of the Material besides the Spectrum itself. Works best with Transparency.
 
-<PoiVideo url='/vid/audio-link/ALSpect_AlphaOverride.mp4'/>
+<PoiVideo url='/vid/audio-link/ALSpect_AlphaOverride.webm'/>

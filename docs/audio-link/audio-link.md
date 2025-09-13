@@ -13,7 +13,7 @@ AudioLink is a system that analyzes and processes in-world audio into many diffe
 
 In Poiyomi Shaders, there are various features that support AudioLink. However, they will only be available when [AudioLink is activated on the Material](#audiolink).
 
-<PoiVideo url='/vid/audio-link/ALDemo-MoveYourBody-Short.mp4'/>
+<PoiVideo url='/vid/audio-link/ALDemo-MYB.webm'/>
 <em>Demonstration of various AudioLink effects on this Avatar, with the AudioLink Controller on the left. (Un-mute to hear sound)</em>
 
 ## AudioLink
