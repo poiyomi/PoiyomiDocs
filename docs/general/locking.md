@@ -22,8 +22,8 @@ When uploading to VRChat, the Auto-Locking process runs automatically for any Po
 
 **If you are uploading for the first time, a one-time message will appear informing you that the Materials are being automatically locked. It may look like this:**
 
-<a target="_blank" href="/img/general/Auto-Lock.png">
-<img src="/img/general/Auto-Lock.png" alt="Auto-Lock Dialogue" width="400px"/>
+<a>
+<img src="/img/general/Auto-Lock-2.png" alt="Auto-Lock Dialogue" width="400px"/>
 </a>
 
 If this above message appears, click `OK` to continue the Upload.
