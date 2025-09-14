@@ -124,7 +124,7 @@ Minimum and Maximum range of Brightness to apply to each randomized Voronoi Cell
 ## Audio Link
 
 :::info
-The settings in this section will only be visible when [AudioLink](/docs/audio-link/audio-link.md) is activated on the Material.
+The settings in this section will only be visible when [Audio Link](/docs/audio-link/audio-link.md) is activated on the Material.
 :::
 
 ### Inner Emission Band

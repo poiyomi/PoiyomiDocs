@@ -113,7 +113,7 @@ To see the different features offered between the Free vs. Pro version, refer to
 | [Emissions](/docs/special-fx/emission.md), [Glitter/Sparkle](/docs/special-fx/glitter.md), [Dissolve](/docs/special-fx/dissolve.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | [Flipbook](/docs/special-fx/flipbook.md), [Pathing](/docs/special-fx/pathing.md), [Stats Overlay](/docs/special-fx/stats-overlay.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | [Stats Overlay](/docs/special-fx/stats-overlay.md), [Video Effects](/docs/special-fx/video-effects.md), [Voronoi](/docs/special-fx/voronoi.md), [Truchet](/docs/special-fx/truchet.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| [AudioLink](/docs/audio-link/audio-link.md), [Global Themes](/docs/modifiers/global-themes.md), [Global Mask](/docs/modifiers/global-masks.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [Audio Link](/docs/audio-link/audio-link.md), [Global Themes](/docs/modifiers/global-themes.md), [Global Mask](/docs/modifiers/global-masks.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | [VRC Light Volumes <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/REDSIM/VRCLightVolumes) Support | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | [BlackLight Masking](/docs/modifiers/blacklight-masking.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Stochastic Sampling, Distortion UV, Panosphere UV, Polar UV | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |

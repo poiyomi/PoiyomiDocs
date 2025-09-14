@@ -367,16 +367,16 @@ Determines whether the Outlines should write to the depth buffer. This should ty
 
 Sets how the Outline Stencil should test the depth buffer. By default, the depth buffer is tested, and if the depth value is not less than or equal to the current value, the Outline is discarded.
 
-<!---------- AudioLink Section ---------->
+<!---------- Audio Link Section ---------->
 
-## AudioLink
+## Audio Link
 
 :::info
-The settings in this section will only be visible when [AudioLink](/docs/audio-link/audio-link.md) is activated on the Material.
+The settings in this section will only be visible when [Audio Link](/docs/audio-link/audio-link.md) is activated on the Material.
 :::
 
 <PoiVideo url='/vid/outlines/outlineALtest4.mp4'/>
-<em>Demonstration of the Bass Band controlling the Outline Size, Emission, and Color via AudioLink. (Un-mute to hear sound)</em>
+<em>Demonstration of the Bass Band controlling the Outline Size, Emission, and Color via Audio Link. (Un-mute to hear sound)</em>
 
 ### Size Band
 

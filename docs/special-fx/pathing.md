@@ -202,7 +202,7 @@ Adjusts the mapping range of the specified Path.
 ## Audio Link
 
 :::info
-The settings in this section will only be visible when [AudioLink](/docs/audio-link/audio-link.md) is activated on the Material.
+The settings in this section will only be visible when [Audio Link](/docs/audio-link/audio-link.md) is activated on the Material.
 :::
 
 For any audio link values with a **Vector2** offset, the **X** represents the value to add when the audio is at minimum (no audio), and the **Y** represents the value to add when the audio is at maximum (full audio).

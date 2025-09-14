@@ -72,10 +72,10 @@ Enables the ability to control the visibility of the glitching in mirrors.
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
 
-Enables the ability to use AudioLink to control the Glitching Intensity.
+Enables the ability to use Audio Link to control the Glitching Intensity.
 
 :::info
-The settings in this section will only be visible when [AudioLink](/docs/audio-link/audio-link.md) is activated on the Material.
+The settings in this section will only be visible when [Audio Link](/docs/audio-link/audio-link.md) is activated on the Material.
 :::
 
 ### Glitch Band
@@ -84,8 +84,8 @@ The settings in this section will only be visible when [AudioLink](/docs/audio-l
 
 Choice of which music band to use when triggering Vertex Glitching.
 
-### Override Glitch Intensity with AudioLink
+### Override Glitch Intensity with Audio Link
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
 
-If enabled, will override the [Glitch Strength](#glitch-strength) with the selected music band in AudioLink.
+If enabled, will override the [Glitch Strength](#glitch-strength) with the selected music band in Audio Link.

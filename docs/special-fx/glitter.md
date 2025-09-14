@@ -288,14 +288,14 @@ How much to constantly shift the hue with time. A value of 1 will result in a fu
 
 How much to shift the base color around the hue circle. This value is circular, and will have the same result at 0 and 1.
 
-## AudioLink
+## Audio Link
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
 
-Enables or Disables AudioLink effects for Glitter.
+Enables or Disables Audio Link effects for Glitter.
 
 :::info
-The settings in this section will only be visible when [AudioLink](/docs/audio-link/audio-link.md) is activated on the Material.
+The settings in this section will only be visible when [Audio Link](/docs/audio-link/audio-link.md) is activated on the Material.
 :::
 
 ### Alpha Band

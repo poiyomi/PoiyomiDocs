@@ -262,16 +262,16 @@ How much distance there should be between each wave. This value is unitless, and
 
 An offset applied to the wave. This value is unit-less, and depends on the velocity and interval values.
 
-<!---------- AudioLink Section ---------->
+<!---------- Audio Link Section ---------->
 
 ## Audio Link
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
 
-Enables or disables Emission AudioLink features.
+Enables or disables Emission Audio Link features.
 
 :::info
-The settings in this section will only be visible when [AudioLink](/docs/audio-link/audio-link.md) is activated on the Material.
+The settings in this section will only be visible when [Audio Link](/docs/audio-link/audio-link.md) is activated on the Material.
 :::
 
 ### Strength Multiplier
@@ -282,7 +282,7 @@ Adjusts the Emission Strength times(x) the defined value. This will use the equa
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
 
-Which band to use for the AudioLink Emission multiplier.
+Which band to use for the Audio Link Emission multiplier.
 
 #### Multiplier
 
@@ -292,7 +292,7 @@ Which band to use for the AudioLink Emission multiplier.
 How much to multiply the Emission Strength with Audio.
 
 :::warning
-This is a mathematical value. Your multiplier must be at least `1` or greater for AudioLink Emissions to work by default.
+This is a mathematical value. Your multiplier must be at least `1` or greater for Audio Link Emissions to work by default.
 
 If you change any of these to `0`, Emissions may not be visible since there's nothing being multiplied.
 :::
@@ -310,7 +310,7 @@ Adjusts the Emission Strength by adding or subtracting from the current [Emissio
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
 
-Which band to use for the AudioLink Emission adjustment.
+Which band to use for the Audio Link Emission adjustment.
 
 #### Strength Add
 
@@ -331,7 +331,7 @@ Makes the Emission move from the center of the mesh to the edges of the mesh, re
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
 
-Which band to use for the AudioLink Center Out adjustment.
+Which band to use for the Audio Link Center Out adjustment.
 
 #### Strength
 

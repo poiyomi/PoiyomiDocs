@@ -94,23 +94,23 @@ This slider can be used to control the main appearance of the Truchet.
 
 If enabled, will override the Alpha/Transparency from the Base, if Transparency exists.
 
-## AudioLink
+## Audio Link
 
 :::info
-The settings in this section will only be visible when [AudioLink](/docs/audio-link/audio-link.md) is activated on the Material.
+The settings in this section will only be visible when [Audio Link](/docs/audio-link/audio-link.md) is activated on the Material.
 :::
 
 ### Hide When No AL
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
 
-If enabled, the Truchet will be completely hidden when there's NO AudioLink whatsoever.
+If enabled, the Truchet will be completely hidden when there's NO Audio Link whatsoever.
 
 ### AL Emission
 
 - `TYpe`: <PropertyIcon name="toggle" />**Toggle**
 
-Enables the ability to control the Truchet Emission using AudioLink.
+Enables the ability to control the Truchet Emission using Audio Link.
 
 #### Emission Band
 
@@ -133,7 +133,7 @@ How much to modify the Emission of the Truchet.
 
 - `TYpe`: <PropertyIcon name="toggle" />**Toggle**
 
-Enables the ability to control the Truchet Alpha using AudioLink.
+Enables the ability to control the Truchet Alpha using Audio Link.
 
 #### Alpha Band
 
@@ -187,9 +187,9 @@ Which motion type to use for the Chrono Pan. Chronotensity is an Audio Link feat
 
 - `Type`: <PropertyIcon name="float2" />**Float2**
 
-Amount to pan the Truchet with AudioLink.
+Amount to pan the Truchet with Audio Link.
 
 | Modifier | Function |
 | --- | --- |
-| X | How much to pan the Truchet on the X-axis with AudioLink. |
-| X | How much to pan the Truchet on the Y-axis with AudioLink. |
+| X | How much to pan the Truchet on the X-axis with Audio Link. |
+| X | How much to pan the Truchet on the Y-axis with Audio Link. |

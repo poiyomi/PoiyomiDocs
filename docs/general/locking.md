@@ -71,7 +71,7 @@ The unique suffix assigned for Properties marked as `RA` will depend on the name
 | :---: | :---: | :---: | :---: | :---: |
 | **"Body Mat"** | Decal 0 -> Alpha | `_DecalBlendAlpha` | `_Body_Mat` | `_DecalBlendAlpha_Body_Mat` |
 | **"Body Mat"** | Emission 0 -> Emission Strength | `_EmissionStrength` | `_Body_Mat` | `_EmissionStrength_Body_Mat` |
-| **"Suit Jacket"** | AudioLink -> Anim Toggle | `_AudioLinkAnimToggle` | `_Suit_Jacket` | `_AudioLinkAnimToggle_Suit_Jacket` | 
+| **"Suit Jacket"** | Audio Link -> Anim Toggle | `_AudioLinkAnimToggle` | `_Suit_Jacket` | `_AudioLinkAnimToggle_Suit_Jacket` | 
 | **"Outfit Shirt"** | Color Adjust -> Hue Shift -> Hue Shift | `_MainHueShift` | `_Outfit_Shirt` | `_MainHueShift_Outfit_Shirt` |
 
 If you enable [Allow custom renaming for locking](/docs/thryeditor/settings.md#allow-custom-renaming-for-locking) under ThryEditor settings, the unique suffix will instead use whichever one you have typed in the field.
@@ -154,7 +154,7 @@ These section checkboxes signal the shader to add and remove code. **Thus, they 
 If you want to toggle the effect of a section, use a property that controls the overall effect. For example,
 - To disable [Color Adjust](/docs/color-and-normals/color-adjust.md), you could animate the settings to their default values.
 - To disable a [Decal](/docs/color-and-normals/decals.md), animate its `Alpha` value to `0`.
-- To disable [AudioLink](/docs/audio-link/audio-link.md), animate the `Anim Toggle` to be *un-checked*.
+- To disable [Audio Link](/docs/audio-link/audio-link.md), animate the `Anim Toggle` to be *un-checked*.
 
 ### Keyword Toggle Checkboxes
 

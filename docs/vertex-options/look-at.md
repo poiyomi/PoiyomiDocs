@@ -214,10 +214,10 @@ Mode to use for the LookAt visibility.
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
 
-Enables [AudioLink](/docs/audio-link/audio-link.md) to control LookAt. This will affect ALL `Alpha` properties in LookAt.
+Enables [Audio Link](/docs/audio-link/audio-link.md) to control LookAt. This will affect ALL `Alpha` properties in LookAt.
 
 :::info
-The settings in this section will only be visible when [AudioLink](/docs/audio-link/audio-link.md) is activated on the Material.
+The settings in this section will only be visible when [Audio Link](/docs/audio-link/audio-link.md) is activated on the Material.
 :::
 
 ### Alpha Band
@@ -226,7 +226,7 @@ The settings in this section will only be visible when [AudioLink](/docs/audio-l
 
 Choice of which Band to use for the Alpha.
 
-### Alpha AudioLink
+### Alpha Audio Link
 
 - `Type`: <PropertyIcon name="float2" />**Vector2**
 

@@ -7,7 +7,7 @@ keywords: [decal, decals, decorative, decoration, sticker, logo, shape, blush, p
 toc_max_heading_level: 4
 ---
 
-Decals are used to place images onto a UV with specific location, rotation, and blending. 4 independent Decal sections are available, with extensive base and AudioLink options.
+Decals are used to place images onto a UV with specific location, rotation, and blending. 4 independent Decal sections are available, with extensive base and Audio Link options.
 
 They can be used to add high resolution designs and details onto a mesh without the base texture having to be higher resolution, or to replace base textures entirely. This can allow fun and unique ways to decorate your Avatar with logos, shapes, stickers, or even as a blush emote toggle.
 
@@ -219,12 +219,12 @@ This feature enables a Video Texture to appear on the Decal. It will only work i
 <details>
 <summary><b>How to test Decal Video Textures</b></summary>
 
-1. Ensure you have the `AudioLinkAvatar` Prefab in your Scene, as described [here](/docs/audio-link/audio-link.md#how-to-test-audiolink-using-poiyomi-shaders).
-2. Inside the `AudioLinkAvatar` Prefab, expand it and select the object `AudioLinkYtdlpPlayer`. *This is the same place where you specify a YouTube video to use when testing AudioLink.*
+1. Ensure you have the `AudioLinkAvatar` Prefab in your Scene, as described [here](/docs/audio-link/audio-link.md#how-to-test-audio-link-using-poiyomi-shaders).
+2. Inside the `AudioLinkAvatar` Prefab, expand it and select the object `AudioLinkYtdlpPlayer`. *This is the same place where you specify a YouTube video to use when testing Audio Link.*
 3. On the bottom line, **enable** the checkmark called `Enable Global Video Texture`.
 4. The Decal Video Texture can now be tested and debugged in the Unity Editor while in Play Mode.
 
-**REMEMBER: Global Video Texture is <u>NOT</u> a part of AudioLink and is only provided as a convenience!**
+**REMEMBER: Global Video Texture is <u>NOT</u> a part of Audio Link and is only provided as a convenience!**
 
 *It's also worth knowing that there are not many Worlds out there supporting this feature. Currently, only Worlds that utilize the latest versions of [ProTV <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://protv.dev/) 3.0 are able to broadcast Video Textures to shaders.*
 
@@ -316,10 +316,10 @@ Select which [Global Mask](/docs/modifiers/global-masks.md) to apply directly on
 
 Select which [Global Mask](/docs/modifiers/global-masks.md) to send your Decal's effects onto the specified Global Mask.
 
-## AudioLink
+## Audio Link
 
 :::info
-The settings in this section will only be visible when [AudioLink](/docs/audio-link/audio-link.md) is activated on the Material.
+The settings in this section will only be visible when [Audio Link](/docs/audio-link/audio-link.md) is activated on the Material.
 :::
 
 ### Scale Band

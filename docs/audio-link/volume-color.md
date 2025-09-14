@@ -1,13 +1,13 @@
 ---
 sidebar_position: 3
 title: AL Volume Color
-description: Waveform UV colors through AudioLink.
+description: Waveform UV colors through Audio Link.
 keywords: [waveform, uv, volume, color, audiolink, poiyomi]
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Creates a waveform of Colors projected on the UV through AudioLink.
+Creates a waveform of Colors projected on the UV through Audio Link.
 
 ## UV
 

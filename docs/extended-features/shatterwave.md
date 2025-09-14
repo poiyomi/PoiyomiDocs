@@ -110,14 +110,14 @@ Measures how dense the waves are in tiled coordinates.
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
-## AudioLink
+## Audio Link
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
 
-Enables AudioLink to manipulate the ShatterWave.
+Enables Audio Link to manipulate the ShatterWave.
 
 :::info
-The settings in this section will only be visible when [AudioLink](/docs/audio-link/audio-link.md) is activated on the Material.
+The settings in this section will only be visible when [Audio Link](/docs/audio-link/audio-link.md) is activated on the Material.
 :::
 
 ## Emission Multiplier Band

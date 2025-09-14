@@ -259,10 +259,10 @@ Select which [Global Mask](/docs/modifiers/global-masks.md) to only affect the A
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
 
-Enables AudioLink for Alpha Options. The Alpha can be modified based on the audio level in a specific band.
+Enables Audio Link for Alpha Options. The Alpha can be modified based on the audio level in a specific band.
 
 :::info
-The settings in this section will only be visible when [AudioLink](/docs/audio-link/audio-link.md) is activated on the Material.
+The settings in this section will only be visible when [Audio Link](/docs/audio-link/audio-link.md) is activated on the Material.
 :::
 
 ### Add Band

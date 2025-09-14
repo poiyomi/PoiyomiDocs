@@ -200,30 +200,30 @@ Determines the top height of the funnel.
 
 Determines the bottom lower height of the funnel.
 
-<!-- AudioLink Section -->
+<!-- Audio Link Section -->
 
 ## Audio Link
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
 
-Enables the ability to manipulate the Vertex Options in response to AudioLink.
+Enables the ability to manipulate the Vertex Options in response to Audio Link.
 
 :::info
-The settings in this section will only be visible when [AudioLink](/docs/audio-link/audio-link.md) is activated on the Material.
+The settings in this section will only be visible when [Audio Link](/docs/audio-link/audio-link.md) is activated on the Material.
 :::
 
 <PoiVideo url='/vid/color-and-normals/VertexOptionsAudioLink.mp4'/>
-<em>Example of AudioLink making two sides of the Sphere look like a Subwoofer by using the Local Translation modifier. (Un-mute to hear Audio)</em>
+<em>Example of Audio Link making two sides of the Sphere look like a Subwoofer by using the Local Translation modifier. (Un-mute to hear Audio)</em>
 
 ### Local Translation
 
-Options for adjusting the Local Translation in response to AudioLink bands.
+Options for adjusting the Local Translation in response to Audio Link bands.
 
 #### Band
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
 
-AudioLink Band to use for Local Translation adjustments.
+Audio Link Band to use for Local Translation adjustments.
 
 #### Translation Min
 
@@ -239,7 +239,7 @@ Translation adjustment used when Local Translate Band has max audio.
 
 ### Local Rotation
 
-Options for rotating directly in response to AudioLink bands.
+Options for rotating directly in response to Audio Link bands.
 
 #### Band X
 
@@ -267,7 +267,7 @@ How much the rotation to apply to the vertices of the mesh, on a per-axis basis,
 
 ### Continuous Rotation
 
-Options for rotating continuously in response to AudioLink bands.
+Options for rotating continuously in response to Audio Link bands.
 
 #### Band X
 
@@ -352,7 +352,7 @@ Scaler for continuous rotation on each axis.
 
 ### Vertex Scale
 
-Options for local vertex scaling in response to AudioLink.
+Options for local vertex scaling in response to Audio Link.
 
 #### Band
 
@@ -374,7 +374,7 @@ Scale state used when Scale Band has max audio.
 
 ### World Translation
 
-Options for world translation in response to AudioLink.
+Options for world translation in response to Audio Link.
 
 #### Band
 
@@ -396,7 +396,7 @@ World Translation state used when Scale Band has max audio.
 
 ### Vertex Height
 
-Options for vertex height in response to AudioLink.
+Options for vertex height in response to Audio Link.
 
 #### Band
 
@@ -412,7 +412,7 @@ How much to add (or subtract) from vertex height. The **X** value is the height 
 
 ### Vertex Rounding
 
-Options for rounding in response to AudioLink.
+Options for rounding in response to Audio Link.
 
 #### Band
 
@@ -430,7 +430,7 @@ How much to add (or subtract) from vertex rounding. The **X** value is the heigh
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
 
-Enables a very interesting effect where the entirety of the Mesh is morphed to look like a visualizer in response to AudioLink.
+Enables a very interesting effect where the entirety of the Mesh is morphed to look like a visualizer in response to Audio Link.
 
 #### UV
 
@@ -454,4 +454,4 @@ How much to offset the Spectrum Motion when no audio is present.
 
 - `Type` <PropertyIcon name="float4" />**Vector4**
 
-How much to offset the Spectrum Motion when full audio from AudioLink peaks.
+How much to offset the Spectrum Motion when full audio from Audio Link peaks.

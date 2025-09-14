@@ -240,15 +240,15 @@ Choose to use a [Global Mask](/docs/modifiers/global-masks.md) to constrain the 
 
 Allows you to add the currently set Rim Lighting setup to be applied to an existing [Global Mask](/docs/modifiers/global-masks.md) of your choice.
 
-## AudioLink
+## Audio Link
 
 :::info
-The settings in this section will only be visible when [AudioLink](/docs/audio-link/audio-link.md) is activated on the Material.
+The settings in this section will only be visible when [Audio Link](/docs/audio-link/audio-link.md) is activated on the Material.
 :::
 
 <PoiVideo url='/vid/shading/RL_AudioLink.mp4'/>
 
-*Demonstration of the AudioLink Controls on the Bass Band for Rim Lighting.*
+*Demonstration of the Audio Link Controls on the Bass Band for Rim Lighting.*
 
 ### Width Add Band
 

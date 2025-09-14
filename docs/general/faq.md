@@ -97,9 +97,9 @@ You can invert it in an image editor or use the invert checkboxes.
 
 Open Packed Maps by clicking on the triangle and place the Roughness in the [G Smoothness Map](/docs/shading/reflections-and-specular.md#packed-maps) slot. It is important that you checkmark `Invert` so that it matches the Unity PBR Shading Pipeline. [Refer to the Documentation Page](/docs/shading/reflections-and-specular.md#packed-maps) for more information.
 
-### How do I test AudioLink in Poiyomi Shaders?
+### How do I test Audio Link in Poiyomi Shaders?
 
-You will need to install the AudioLink Package into your Project. [Read the Documentation Page for instructions here.](/docs/audio-link/audio-link.md#how-to-test-audiolink-using-poiyomi-shaders)
+You will need to install the Audio Link Package into your Project. [Read the Documentation Page for instructions here.](/docs/audio-link/audio-link.md#how-to-test-audio-link-using-poiyomi-shaders)
 
 ### I am using a feature that is supposed to animate, but it doesn't show it's animating. Why is that?
 
@@ -138,11 +138,8 @@ Due to Unity Editor limitations, you cannot do this as it can cause problems at 
 While it is not possible to animate texture slots, Poiyomi Shaders has features that can make up for this. Try out using these modules:
 
 - [Decals](/docs/color-and-normals/decals.md), a decorative feature. You can animate the `Alpha` slider to control the visibility of the Texture using a Decal.
-
 - [Dissolve](/docs/special-fx/dissolve.md), a Special FX feature that can gradually introduce a different Texture through a visual transition.
-
 - [Geometric Dissove](/docs/extended-features/geometric-dissolve.md). Like Dissolve, but uses your Mesh's Geometry to transition to a different Texture.
-
 - [UV Tile Discard](/docs/special-fx/uv-tile-discard.md), to animate offsets when needed.
 
 ### Why use OKLab for Hue Shift instead of HSV?

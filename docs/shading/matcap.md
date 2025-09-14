@@ -334,14 +334,14 @@ How much to Blend the result.
 
 </details>
 
-## AudioLink
+## Audio Link
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
 
-Allows AudioLink to influence the Matcap.
+Allows Audio Link to influence the Matcap.
 
 :::info
-The settings in this section will only be visible when [AudioLink](/docs/audio-link/audio-link.md) is activated on the Material.
+The settings in this section will only be visible when [Audio Link](/docs/audio-link/audio-link.md) is activated on the Material.
 :::
 
 ### Alpha Band
