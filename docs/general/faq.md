@@ -37,7 +37,9 @@ If you are having issues with Poiyomi Shaders such as the Material Inspector not
 
 This should help solve most issues with the Shader not behaving as expected in Unity, including issues with double-importing the Shader from an Avatar that included the Shader when it wasn't supposed to.
 
-If you are still running into issues, post some screenshots in the [Discord](https://discord.gg/poiyomi) and we'll be happy to help you out.
+If you are still running into issues, post some screenshots in the [Discord <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://discord.gg/poiyomi) and we'll be happy to help you out.
+
+Related Issues: [64 Slot Crash](#why-does-unity-editor-constantly-crash-when-editing-the-shader), [Unity 2019 Issues](#why-cant-i-use-poiyomi-shaders-on-unity-2019).
 
 ### When I Upload an Avatar, I get a message saying "Unlocked Shaders were found and will not be included in the build."
 
@@ -66,7 +68,7 @@ You need to mark properties that you are animating by `Right-Clicking` on them a
 
 Keep in mind that properties marked as `Renamed` will only work when the Material is Locked. **Make sure you Lock the Material prior to recording your animations!**
 
-<a target="_blank" href="/img/general/locking_animated.png">
+<a>
 <img src="/img/general/locking_animated.png" alt="Animation Tags" width="400px"/>
 </a>
 
@@ -105,7 +107,7 @@ You will need to install the Audio Link Package into your Project. [Read the Doc
 
 In order to preview animations from Poiyomi Materials (such as Glitter or continuous Hue Shift) outside of Play Mode, you must toggle on this button/option in your Scene View:
 
-<a target="_blank" href="/img/general/mat-animation.png">
+<a>
 <img src="/img/general/mat-animation.png" alt="Material Animations Toggle" width="400px"/>
 </a>
 
@@ -113,7 +115,7 @@ In order to preview animations from Poiyomi Materials (such as Glitter or contin
 
 Yes! Make sure to select `.poiyomi/Poiyomi Toon World` as the shader so that it can receive and contribute to Global Illumination. This special shader version includes all the same features in the Free version, but introduces the meta passes necessary for baking Global Illumination. Additionally, it exposes a category called `Shading -> Baked Lighting` that houses all the GI settings for the Material.
 
-You may want to consider setting it to Realistic Shading from the Shading settings so that it can look it’s best with Baked Lighting.
+You may want to consider setting it to Realistic Shading from the Shading settings so that it can look it’s best with Baked Lighting. We also recommend the "PBR" Preset for Light Data.
 
 ### I've un-tagged a property that I don't want to be animated, but it still animates regardless when using an Emulator. Why does it still animate while in Play Mode?
 
@@ -125,7 +127,7 @@ To test your Animator against animated properties that are no longer tagged with
 
 You can do this by clicking the 3 dots on the Header of the feature you wish to copy the properties of. Click on it, then hit `Copy`.
 
-<a target="_blank" href="/img/general/copy-module.png">
+<a>
 <img src="/img/general/copy-module.png" alt="How to Copy a module's Properties" width="500px"/>
 </a>
 
@@ -142,13 +144,21 @@ While it is not possible to animate texture slots, Poiyomi Shaders has features 
 - [Geometric Dissove](/docs/extended-features/geometric-dissolve.md). Like Dissolve, but uses your Mesh's Geometry to transition to a different Texture.
 - [UV Tile Discard](/docs/special-fx/uv-tile-discard.md), to animate offsets when needed.
 
+### Where is "Basic Emission" found?
+
+Basic Emission was removed in version 8.0 and newer because it was often used incorrectly.
+
+If you're wanting to make the model not too dark, it's generally better to use [Min Brightness](/docs/shading/light-data.md#min-brightness) located in Light Data for that purpose, as it won't over-brighten the avatar in various situations.
+
+If you REALLY need to add what used to be called "Basic Emission," you can use an [Emission](/docs/special-fx/emission.md) slot with `Use Base Colors` enabled and set a desired intensity.
+
 ### Why use OKLab for Hue Shift instead of HSV?
 
 OKLab has varying hue with constant lightness and chroma. It is more *even* in lightness for various hues. The reason for this is because OKLab takes the perceived lighting, including on how Green/Red and Blue/Yellow the color is, and calculates it to be a more accurate perception of the color being seen.
 
 This eliminates issues with noise and colors being washed out when changing the Hue.
 
-The usage of perceptual color space is desirable when using the Color Adjust feature. OKLab provides better perceptual properties that allow more accurate color changes, compared to the legacy HSV method. For more technical information on how this works, [see this external webpage](https://bottosson.github.io/posts/oklab/).
+The usage of perceptual color space is desirable when using the Color Adjust feature. OKLab provides better perceptual properties that allow more accurate color changes, compared to the legacy HSV method. For more technical information on how this works, [see this external webpage <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://bottosson.github.io/posts/oklab/).
 
 ## Unity Editor
 
@@ -171,8 +181,8 @@ To fix this, we recommend assigning a Bone (such as the `Chest`) from your Armat
 :::tip
 ThryEditor will run this automatic fix to you if there's no Anchor Override set. A one-time "Bad Lighting Fix" message (Example below) will appear when Uploading for the first time. We recommend you to keep it enabled if prompted.
 
-<a target="_blank" href="/img/general/bad-lighting-fix-message.png">
-<img src="/img/general/bad-lighting-fix-message.png" alt="ThryEditor Bad Lighting Auto-Fix Dialogue" width="400px"/>
+<a>
+<img src="/img/general/bad-lighting-fix-message-2.png" alt="ThryEditor Bad Lighting Auto-Fix Dialogue" width="400px"/>
 </a>
 :::
 
@@ -182,13 +192,19 @@ ThryEditor will run this automatic fix to you if there's no Anchor Override set.
 
 Quest and Android hardware is underpowered and doesn't support features that Poiyomi Shaders need to work properly. Even if you managed to upload an avatar with unsupported shaders on it, the VRChat client will override them at runtime.
 
+### Why can't I use Poiyomi Shaders on Unity 2019?
+
+As of recent versions, support for Unity 2019 was dropped. If you are attempting to use Poiyomi Shaders with VRM-based SDKs such as VSeeFace that only works in Unity 2019, only Poiyomi versions 9.2.42 or older currently work in Unity 2019.
+
+In order to user newer versions of Poiyomi for this purpose, we recommend some modern systems instead such as [Warudo <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://warudo.app/), which supports newer Unity versions.
+
 ## VRChat
 
 ### What is the recommended SDK and Unity Version to use with Poiyomi Shaders?
 
 As of May 2024, we recommend VRChat SDK `v3.5.0` or newer in order to use Poiyomi Shaders. Ensure the VRChat Creator Companion App is the latest version in order to access the latest SDKs.
 
-For the Unity Version, we currently actively support Unity 2022. To learn what specific version you should use, refer to the [VRC Creators Documentation](https://creators.vrchat.com/sdk/upgrade/current-unity-version/).
+For the Unity Version, we currently actively support Unity 2022. To learn what specific version you should use, refer to the [VRC Creators Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://creators.vrchat.com/sdk/upgrade/current-unity-version/).
 
 ## Other Resourceful Info
 
@@ -196,7 +212,7 @@ For the Unity Version, we currently actively support Unity 2022. To learn what s
 
 We recommend **Haï Lightbox Viewer**, a Utility that simulates your Avatar's Shading and Lighting Behavior in various different Scenes, all at once. This is an excellent tool that can give a visual representation of how your Shading and Lighting setup is expected to be shown as in the client.
 
-[You can download Haï Lightbox Viewer here.](https://docs.hai-vr.dev/docs/products/lightbox-viewer)
+[You can download Haï Lightbox Viewer here <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.hai-vr.dev/docs/products/lightbox-viewer).
 
 ### Why does my Avatar get super bright in some Worlds?
 
@@ -207,13 +223,13 @@ This is generally because of additive lights which add up. If you want to set a 
 Here is a list of recommended plugins and tools that we use when building our Avatars, with or without Poiyomi Toon Shader:
 
 **MUST HAVES:**
-- **Haï Lightbox Viewer:** Test your Avatar’s lighting behavior in the Unity Editor. Highly Recommended for testing Poiyomi’s lighting behavior in various conditions! [Download Haï Lightbox Viewer](https://docs.hai-vr.dev/docs/products/lightbox-viewer)
-- **Gesture Manager:** A lightweight and powerful Emulator, allowing you to test your Avatar’s animations and toggles directly in the Editor. [Download Gesture Manager](https://github.com/BlackStartx/VRC-Gesture-Manager)
-- **Thry’s VRC Avatar Performance Tools:** Texture Memory calculator that measures the VRAM consumption of your Avatar’s Textures and Mesh, exposing greater detail on how your Avatar impacts other users in VRChat. [Download VRC Avatar Performance Tools](https://github.com/Thryrallo/VRC-Avatar-Performance-Tools)
+- **Haï Lightbox Viewer:** Test your Avatar’s lighting behavior in the Unity Editor. Highly Recommended for testing Poiyomi’s lighting behavior in various conditions! [Download Haï Lightbox Viewer <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.hai-vr.dev/docs/products/lightbox-viewer)
+- **Gesture Manager:** A lightweight and powerful Emulator, allowing you to test your Avatar’s animations and toggles directly in the Editor. [Download Gesture Manager <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/BlackStartx/VRC-Gesture-Manager)
+- **Thry’s VRC Avatar Performance Tools:** Texture Memory calculator that measures the VRAM consumption of your Avatar’s Textures and Mesh, exposing greater detail on how your Avatar impacts other users in VRChat. [Download VRC Avatar Performance Tools <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/Thryrallo/VRC-Avatar-Performance-Tools)
 
 **Other Awesome Tools:**
-- **Pumkin’s Tools:** Avatar Component Copier and in-editor tool for capturing screenshots directly from your Scene. [Download Pumkin's Avatar Tools](https://github.com/rurre/PumkinsAvatarTools) | [Download Editor Screenshot](https://github.com/rurre/Editor-Screenshot)
-- **Avatars 3.0 Manager:** Manages your Avatar Descriptor, including editing, merging and copying your Animators, Menus, and Parameters. [Download Avatars 3.0 Manager](https://github.com/VRLabs/Avatars-3.0-Manager)
+- **Pumkin’s Tools:** Avatar Component Copier and in-editor tool for capturing screenshots directly from your Scene. [Download Pumkin's Avatar Tools](https://github.com/rurre/PumkinsAvatarTools) | [Download Editor Screenshot <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/rurre/Editor-Screenshot)
+- **Avatars 3.0 Manager:** Manages your Avatar Descriptor, including editing, merging and copying your Animators, Menus, and Parameters. [Download Avatars 3.0 Manager <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/VRLabs/Avatars-3.0-Manager)
 
 **Honorable Mention:**
-- **ALCOM:** An excellent and *faster* alternative to the VRChat Creator Companion App (VCC). Works on both Windows and Linux. [Download ALCOM](https://vrc-get.anatawa12.com/en/alcom/)
+- **ALCOM:** An excellent and *faster* alternative to the VRChat Creator Companion App (VCC). Works on both Windows and Linux. [Download ALCOM <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://vrc-get.anatawa12.com/en/alcom/)
