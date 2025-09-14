@@ -7,7 +7,7 @@ keywords: [stochastic, sampling, poiyomi, shaders]
 
 Stochastic Sampling involves collecting data or points randomly, rather than at fixed regular intervals. This leads to varied results even with identical inputs due to the inherent randomness of the sampling. This technique improves anti-aliasing by randomly sampling pixels instead of normally. A simple example of Stochastic Sampling can be visualized on [this webpage <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://hybriddog.github.io/stochastic_texture_sampling_demo/).
 
-This section houses the global settings for Stochastic Sampling. To use it, select it as a UV option in supported sections of the shader.
+This section houses the global settings for Stochastic Sampling. To use it, enable the checkbox from supported texture slots across the shader.
 
 ## Sampling Mode
 
