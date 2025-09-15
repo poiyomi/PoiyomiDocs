@@ -62,19 +62,21 @@ By selecting **Renamed (when locked)**, upon locking, the property will have a *
 Using **Renamed (when locked)** can be a way to animate multiple different Materials on the same Mesh without affecting all Material Slots.
 
 :::warning Always Lock before Animating!
-Because `RA` properties are generated after the Material is optimized, it's extremely important to first Lock Materials BEFORE recording any Properties marked as `RA` for your Animation!
+Because `RA` properties are generated during optimization, it's extremely important to first Lock Materials BEFORE recording any Properties marked as `RA` for your Animation!
+
+If you forget to do this, the Animator will assume the `A` Property Name instead while recording, which you probably don't want!
 :::
 
 The unique suffix assigned for Properties marked as `RA` will depend on the name of the Material. *For Example: If you're animating the `Alpha` slider on Decal 0 in a Material named **Body Mat**, the suffix of this property would be the name of the Material itself.* If the name of the Material has space between each word, an underscore (`_`) will be appended between each word. Certain characters such as a dash (`-`) in Material Names may be treated differently. See Example Table below for reference on how the Properties are treated:
 
 | Material Name | Property | `A` Property Name | `RA` Suffix | Renamed Property Name |
-| :---: | :---: | :---: | :---: | :---: |
+| :--- | :--- | :--- | :--- | :--- |
 | **"Body Mat"** | Decal 0 -> Alpha | `_DecalBlendAlpha` | `_Body_Mat` | `_DecalBlendAlpha_Body_Mat` |
 | **"Body Mat"** | Emission 0 -> Emission Strength | `_EmissionStrength` | `_Body_Mat` | `_EmissionStrength_Body_Mat` |
 | **"Suit Jacket"** | Audio Link -> Anim Toggle | `_AudioLinkAnimToggle` | `_Suit_Jacket` | `_AudioLinkAnimToggle_Suit_Jacket` | 
 | **"Outfit Shirt"** | Color Adjust -> Hue Shift -> Hue Shift | `_MainHueShift` | `_Outfit_Shirt` | `_MainHueShift_Outfit_Shirt` |
 
-If you enable [Allow custom renaming for locking](/docs/thryeditor/settings.md#allow-custom-renaming-for-locking) under ThryEditor settings, the unique suffix will instead use whichever one you have typed in the field.
+If you wish to enforce a specific custom renaming scheme for `RA` properties, enable [Allow custom renaming for locking](/docs/thryeditor/settings.md#allow-custom-renaming-for-locking) under Thry Editor settings. This exposes a dedicated field on the top of the material inspector, where you can type in a custom suffix for the material to use instead.
 
 ## Copying Properties for Animation
 
@@ -92,15 +94,15 @@ If the property is set to **Animated (when locked)**, the keyframe will be copie
 
 These options are mostly useful for shader debugging and development, as well as editor scripting. However, this will come in handy if you are using non-destructive editor tools that you program to interact with these material properties.
 
-#### **Copy Property Name**
+#### Copy Property Name
 
 Copies the name of the property, as defined in the shader properties.
 
-#### **Copy Animated Property Name**
+#### Copy Animated Property Name
 
 Copies the name of the property, appending the renaming suffix if the property is set to **Renamed (when locked)**.
 
-#### **Copy Animated Property Path**
+#### Copy Animated Property Path
 
 Copies the name of the property, appending the renaming suffix if applicable. If the renderer is a child of an object with an animator, it will copy the path with reference to the parent animator.
 
@@ -127,23 +129,23 @@ The following table provides a list of features that will be animated on all mat
 This behavior is not a bug, it's behavior defined by Unity, beyond the control of the shader author (given the need to name these properties specifically for fallback shaders to work correctly).
 
 | Property Name | Can be Renamed? | Property |
-|--|--|--|
-| `_Color`                  | ✔️ | [Main Color](/docs/color-and-normals/color-and-normals.md#color--alpha) |
+| :--- | :--- | :--- |
+| `_Color`                  | ✅ | [Main Color](/docs/color-and-normals/color-and-normals.md#color--alpha) |
 | `_MainTex_ST`             | ❌ | [Main Texture Tiling/Offset](/docs/color-and-normals/color-and-normals.md#main-texture) |
 | `_BumpMap_ST`             | ❌ | [Normal Map Tiling/Offset](/docs/color-and-normals/color-and-normals.md#normal-map) |
-| `_BumpScale`              | ✔️ | [Normal Map Intensity](/docs/color-and-normals/color-and-normals.md#normal-map) |
-| `_Cutoff`                 | ✔️ | [Alpha Cutoff](/docs/color-and-normals/color-and-normals.md#alpha-cutoff) |
+| `_BumpScale`              | ✅ | [Normal Map Intensity](/docs/color-and-normals/color-and-normals.md#normal-map) |
+| `_Cutoff`                 | ✅ | [Alpha Cutoff](/docs/color-and-normals/color-and-normals.md#alpha-cutoff) |
 | `_DetailMask_ST`          | ❌ | [Detail Mask Tiling/Offset](/docs/color-and-normals/details.md#detail-mask) |
 | `_DetailNormalMap_ST`     | ❌ | [Detail Mask Tiling/Offset](/docs/color-and-normals/details.md#detail-normal) |
-| `_DetailNormalMapScale`   | ✔️ | [Detail Mask Tiling/Offset](/docs/color-and-normals/details.md#normal-intensity) |
-| `_EmissionColor`          | ✔️ | [Emission 0 Color](/docs/special-fx/emission.md#emission-color) |
+| `_DetailNormalMapScale`   | ✅ | [Detail Mask Tiling/Offset](/docs/color-and-normals/details.md#normal-intensity) |
+| `_EmissionColor`          | ✅ | [Emission 0 Color](/docs/special-fx/emission.md#emission-color) |
 | `_EmissionMap_ST`         | ❌ | [Emission 0 Map Tiling/Offset](/docs/special-fx/emission.md#emission-map) |
 
 ## Non-Animatable Properties
 
 Some properties cannot be animated at runtime in the same way as most, due to the way they function. You may be able to create keyframes that change these properties, but they will not work at runtime.
 
-To adjust these properties at runtime, you'll need to create different materials with the different settings. These can then be animated to change on the material, <s>though be advised that there are issues with animating material slots on a renderer - notably, the slot labeled "Element 4" cannot be animated without the slot labeled "Material 2" changing[^2].</s> ***As of Unity 2022, this issue has been fixed. You can do Material Swaps without issues in Unity 2022.***
+To adjust these properties at runtime, you'll need to create different materials with the different settings. These can then be animated to change on the material, though older versions of Unity (2021 and older) had issues with animating material slots on a renderer - notably, the slot labeled "Element 4" cannot be animated without the slot labeled "Material 2" changing[^2]. This issue was fixed in Unity 2022.
 
 ### Section Header Checkboxes
 
@@ -153,8 +155,10 @@ These section checkboxes signal the shader to add and remove code. **Thus, they 
 
 If you want to toggle the effect of a section, use a property that controls the overall effect. For example,
 - To disable [Color Adjust](/docs/color-and-normals/color-adjust.md), you could animate the settings to their default values.
-- To disable a [Decal](/docs/color-and-normals/decals.md), animate its `Alpha` value to `0`.
+- To disable a [Decal](/docs/color-and-normals/decals.md), animate its `Alpha` value to `0`. If the Decal has Emissions, also animate its `Emission Strength` value to `0`.
 - To disable [Audio Link](/docs/audio-link/audio-link.md), animate the `Anim Toggle` to be *un-checked*.
+
+For other sections, make sure to refer to the appropriate documentation pages on them so that you can know which properties you should animate as a toggle.
 
 ### Keyword Toggle Checkboxes
 
