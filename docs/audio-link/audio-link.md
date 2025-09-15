@@ -11,7 +11,7 @@ Audio Link is a system that analyzes and processes in-world audio into many diff
 
 *For more information on Audio Link, visit the website at [https://audiolink.dev/ <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://audiolink.dev/) or view the [GitHub Repository <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/llealloo/audiolink)*
 
-In Poiyomi Shaders, there are various features that support Audio Link. However, they will only be available when [AudioLink is activated on the Material](#audio-link).
+In Poiyomi Shaders, there are various features that support Audio Link. However, they will only be available when [Audio Link is activated on the Material](#audio-link).
 
 <PoiVideo url='/vid/audio-link/ALDemo-MYB.webm'/>
 <em>Demonstration of various Audio Link effects on this Avatar, with the Audio Link Controller on the left. (Un-mute to hear sound)</em>
@@ -46,12 +46,10 @@ When this feature activates, the following sections in Poiyomi Shaders will have
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
 
-<!-- 
-EDITORS NOTE: This H3 Header only has this Message Box below. Adding additional words above or below it may make it look repetitive. -BluWizard10
--->
+This is used to globally toggle Audio Link visibility across the entire material.
 
-:::tip
-Animate this checkbox when creating toggles for Audio Link on this Material. Animating the [Section Header](/docs/general/locking.md#section-header-checkboxes) will not work!
+:::tip Reminder
+Make sure to tag this checkbox as animated if creating toggles for Audio Link on this material. Animating the Section Header will not work! [Read More](/docs/general/locking.md#marking-properties-for-animation)
 :::
 
 ## Smoothing
