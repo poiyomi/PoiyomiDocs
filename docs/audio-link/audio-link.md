@@ -46,7 +46,7 @@ When this feature activates, the following sections in Poiyomi Shaders will have
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
 
-This is used to globally toggle Audio Link visibility across the entire material.
+This is used to globally toggle Audio Link effects across the entire material though animations.
 
 :::tip Reminder
 Make sure to tag this checkbox as animated if creating toggles for Audio Link on this material. Animating the Section Header will not work! [Read More](/docs/general/locking.md#marking-properties-for-animation)
