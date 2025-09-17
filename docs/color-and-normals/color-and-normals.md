@@ -97,6 +97,4 @@ In Transparent rendering modes like Fade, Transparent, TransClipping, etc., this
 
 <PoiVideo url='/vid/color-and-normals/main_Alpha-Cutoff_Fade.mp4'/> 
 
-## Footnotes
-
 [^1]: [Special Unity Properties](/docs/general/locking.md#unity-special-properties)
