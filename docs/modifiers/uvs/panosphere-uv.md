@@ -5,9 +5,12 @@ description: Selectable UV Projection mode that samples the texture using the Ca
 keywords: [panosphere, uv, fx, poiyomi, shaders]
 ---
 
-Panosphere is a UV projection mode that is selectable in various sections of the shader. It samples the texture using the Camera/View Direction instead of the mesh's native UV layout. This makes the effect look "stuck to the world" rather than to the triangulated layout, by projecting the texture onto a large sphere within the shader.
+Panosphere is a UV projection mode that is selectable in various sections of the shader. It samples the texture using the Camera/View Direction instead of the mesh's native UV layout. This makes the effect look "stuck to the world" rather than to the triangulated layout by projecting the texture onto a large sphere within the shader.
 
 This section houses the global settings for Panosphere. To use it, select it as a UV option in supported sections of the shader.
+
+<PoiVideo url='/vid/modifiers/panosphere-demo.webm' width='300px'/>
+<em>*Example of Glitter on a 3D Sphere switched to using Panosphere UV. Notice how the Panosphere stays consistent, regardless of the Camera's POV.*</em>
 
 ## Stereo Enabled
 
