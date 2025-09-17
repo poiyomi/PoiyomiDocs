@@ -1,6 +1,7 @@
 ---
 title: Download & Install
 description: Where to Download and Install Poiyomi Toon Shader.
+image: /img/general/Thumb-DownloadInstall.png
 keywords: [download, install, update, poiyomi, shader]
 hide_table_of_contents: true
 ---
