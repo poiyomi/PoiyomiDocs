@@ -18,6 +18,9 @@ To use Geometric Dissolve, select the shader version `.poiyomi/Poiyomi Pro Geome
 Geometric Dissolve can have a performance impact depending on the Mesh it is being used on, especially if using `Pyramid (Slower)` Shape Type. Use this feature wisely!
 :::
 
+<PoiVideo url='/vid/extended-features/geodissolve-demo.webm' width='300px'/>
+<em>*Example of the Geometric Dissolve effect using Point 2 Point and Noise.*</em>
+
 ## Shape Type
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Pyramid (Slower)`/`Triangle (Fast)`
