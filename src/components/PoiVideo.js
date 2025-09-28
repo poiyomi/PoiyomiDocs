@@ -27,8 +27,8 @@ export default function PoiVideo({url}) {
 			controls={false}
 			muted="true"
 			playing={true}
-			playsInLine="true"
-			loop="true"
+			playsInLine={true}
+			loop={true}
 			style={{
 				width: "100%", 
 				height: "100%",
