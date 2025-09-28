@@ -318,12 +318,16 @@ Enables Vertex Lights to be used in Mirrors. Because VRChat interprets vertex li
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
   - Default: `true`
 
-Enables support for [VRC Light Volumes <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/REDSIM/VRCLightVolumes), a voxel-based Light Probes replacement used in some VRChat Worlds. It allows for more natural lighting and balanced illumination to appear on your Material from an environment using VRC Light Volumes.
+Enables support for [VRC Light Volumes by RED_SIM<FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/REDSIM/VRCLightVolumes), a voxel-based Light Probes replacement used in some VRChat Worlds. This allows for more natural lighting and balanced illumination to appear on your Material from an environment using VRC Light Volumes.
 
-The results of this setting can be easily noticeable in Worlds that use it. For more information on this system as well as a list of Worlds to test this effect in, view the [GitHub Repository <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/REDSIM/VRCLightVolumes) or check out Poiyomi's [Poi Light Volumes Tech Test <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://vrchat.com/home/world/wrld_e1f6b0ae-4d12-4136-9675-a5383c172ace/info) World to explore the various effects that Light Volumes can do.
+The results of this setting can be easily noticeable in Worlds that use it. For more information on this system, view the [GitHub Repository <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/REDSIM/VRCLightVolumes) or check out Poiyomi's [Poi Light Volumes Tech Test World<FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://vrchat.com/home/world/wrld_e1f6b0ae-4d12-4136-9675-a5383c172ace/info) in VRChat to explore the various effects that VRC Light Volumes can do. Otherwise, most Worlds in VRChat using VRC Light Volumes will have some form of Attribution located somewhere.
+
+More Technical Info: [<FAIcon icon="fa-solid fa-square-arrow-up-right"/> "Why are Light Volumes cool?" by Teeh](@site/blog/2025-07-24-light-volumes/2025-07-24-light-volumes.md)
 
 :::warning
-Due to some of the code required for Light Volumes to work, it is known that enabling Light Volumes may cause a brief performance impact on users loading your Avatar!
+Due to some of the code required for Light Volumes to work, it is known that enabling Light Volumes may cause a brief performance impact on users loading your Avatar.
+
+To ensure the impact is far lessened, make sure you are on the latest version of Poiyomi Shaders as it contains the most up-to-date code on Light Volumes.
 :::
 
 Please be aware that you will not see the results of Light Volumes in your project unless you have a working setup in your Scene that can show it to you. You can use newer versions of [Haï Lightbox Viewer <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.hai-vr.dev/docs/products/lightbox-viewer) (v2.4.0 and up) to preview the results, which includes new lightboxes supporting Light Volumes.
