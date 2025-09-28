@@ -322,7 +322,7 @@ Enables support for [VRC Light Volumes by RED_SIM<FAIcon icon="fa-solid fa-squar
 
 The results of this setting can be easily noticeable in Worlds that use it. For more information on this system, view the [GitHub Repository <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/REDSIM/VRCLightVolumes) or check out Poiyomi's [Poi Light Volumes Tech Test World<FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://vrchat.com/home/world/wrld_e1f6b0ae-4d12-4136-9675-a5383c172ace/info) in VRChat to explore the various effects that VRC Light Volumes can do. Otherwise, most Worlds in VRChat using VRC Light Volumes will have some form of Attribution located somewhere.
 
-More Technical Info: [<FAIcon icon="fa-solid fa-square-arrow-up-right"/> "Why are Light Volumes cool?" by Teeh](@site/blog/2025-07-24-light-volumes/2025-07-24-light-volumes.md)
+More Technical Info: [<FAIcon icon="fa-solid fa-blog"/> "Why are Light Volumes cool?" by Teeh](@site/blog/2025-07-24-light-volumes/2025-07-24-light-volumes.md)
 
 :::warning
 Due to some of the code required for Light Volumes to work, it is known that enabling Light Volumes may cause a brief performance impact on users loading your Avatar.
