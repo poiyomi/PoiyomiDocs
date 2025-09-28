@@ -32,6 +32,7 @@ export default function PoiVideo({url}) {
 			style={{
 				width: "100%", 
 				height: "100%",
+				playsinline: "true",
 				"--controls": "none",
 			}}
 		></ReactPlayer>
