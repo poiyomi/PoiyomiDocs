@@ -5,7 +5,6 @@ export default function PoiVideo({url}) {
 	return (
 		<ReactPlayer
 			src={url} 
-			controls={false}
 			muted={true}
 			playing={true}
 			playsinline={true}
