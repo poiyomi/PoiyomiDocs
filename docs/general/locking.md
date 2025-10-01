@@ -43,7 +43,7 @@ Due to the way Unity works, make sure you always edit and interact with Material
 
 To animate a property on a Locked Material, you need to mark it as Animated. To do this, <u>while the Material is Unlocked</u>, `Right-Click` the property and select **Animated (When Locked)**. This will add a green `A` next to the property (short for `A`nimated).
 
-<PoiVideo url='/vid/general/AnimatedPropertyExample.mp4'/>
+<ReactVideo src='/vid/general/AnimatedPropertyExample.mp4'/>
 
 *Demonstration of Marking a Property as Animated.*
 

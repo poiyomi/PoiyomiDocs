@@ -127,7 +127,7 @@ For worlds, it depends entirely on the content and intended usecase of the world
 
 You should only disable mipmaps if it's something like a lookup table (LUT) or data texture (ex. font textures) that always needs the full texture resolution. While disabling them may reduce VRAM usage, it's not worth the hit to performance, and will make things look worse.
 
-<PoiVideo url='/vid/blog/texture-optimization-bgolus-mipmaps.mp4'/>
+<ReactVideo src='/vid/blog/texture-optimization-bgolus-mipmaps.mp4'/>
 
 *Please don't turn off mipmaps. Image courtesy [Ben Golus](https://bgolus.medium.com/sharper-mipmapping-using-shader-based-supersampling-ed7aadb47bec)*
 

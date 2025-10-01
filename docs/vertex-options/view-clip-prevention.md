@@ -7,7 +7,7 @@ keywords: [vertex, clipping, view, clip, poiyomi, shader, uzumore]
 
 View Clip Prevention (also known as the [Uzumore Shader <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/sigmal00/UzumoreShaderVPM) integration) is a Vertex-based feature that "pushes" the mesh back when the camera gets too close to the object, preventing the camera from seeing inside the mesh. In some ways, this can make things a little more immersive.
 
-<PoiVideo url='/vid/vertex-options/anti-mesh-penetration-example.webm' width='300px'/>
+<ReactVideo src='/vid/vertex-options/anti-mesh-penetration-example.webm' width='300px'/>
 <em>*Example of View Clip Prevention in action.*</em>
 
 ## Animation Toggle

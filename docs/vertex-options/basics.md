@@ -13,7 +13,7 @@ This section can be described by Poiyomi as *"the silly options"* due to the amo
 Vertex Options can cause nasty Z-fighting when seen against projection-based shaders, as they re-render the mesh using a shader of their own. This is a known limitation in Unity.
 :::
 
-<PoiVideo url='/vid/color-and-normals/VertexOptionsDemo.mp4'/>
+<ReactVideo src='/vid/color-and-normals/VertexOptionsDemo.mp4'/>
 <em>Demonstration of two Material Spheres being manipulated by various settings.</em>
 
 ## Local Translation
@@ -76,7 +76,7 @@ How much to offset the vertex height for the mask. A value of `0` will mean that
 
 Vertex Rounding snaps vertices to specific intervals in the world coordinate system. The amount of snap interval is defined by the Rounding Interval. This option can be used to create retro effects or pixelation.
 
-<PoiVideo url='/vid/color-and-normals/VertexOptionsPS1Mode.mp4'/>
+<ReactVideo src='/vid/color-and-normals/VertexOptionsPS1Mode.mp4'/>
 <em>Example of how adjusting the Rounding Interval can influence how many pixelation is performed.</em>
 
 ### Rounding Space
@@ -99,7 +99,7 @@ Defines the interval for vertex rounding. This is defined as the distance betwee
 
 Barrel Distortion allows the vertices to snap and morph the mesh into a cylinder/barrel-shape form.
 
-<PoiVideo url='/vid/color-and-normals/VertexOptionsBarrelAMOGUS.mp4'/>
+<ReactVideo src='/vid/color-and-normals/VertexOptionsBarrelAMOGUS.mp4'/>
 <em>Example of what Barrel Distortion will do to the mesh. Notice how it makes it shape close to a cylinder.</em>
 
 ### Barrel Width
@@ -128,7 +128,7 @@ Determines how much to stretch the edges of the "barrel" outside of the shape.
 
 Enables the ability to snap and morph the mesh into a spherical shape and form.
 
-<PoiVideo url='/vid/color-and-normals/VertexOptionsSphere.mp4'/>
+<ReactVideo src='/vid/color-and-normals/VertexOptionsSphere.mp4'/>
 <em>Example of Sphere Distortion. Notice how adjusting the settings can make it morph closer to an actual Sphere, based on the Sphere Center defined.</em>
 
 ### Sphere Radius
@@ -167,7 +167,7 @@ Enables the ability to morph the mesh into an animated swirling funnel, or a "To
 The location of the [Top Height](#top-height) and [Bottom Height](#bottom-height) is determined by the current direction of the Y-axis on the mesh.
 :::
 
-<PoiVideo url='/vid/color-and-normals/VertexOptionsTornado.mp4'/>
+<ReactVideo src='/vid/color-and-normals/VertexOptionsTornado.mp4'/>
 <em>Example of the swirling funnel effect created by the Tornado function.</em>
 
 ### Radius
@@ -212,7 +212,7 @@ Enables the ability to manipulate the Vertex Options in response to Audio Link.
 The settings in this section will only be visible when [Audio Link](/docs/audio-link/audio-link.md) is activated on the Material.
 :::
 
-<PoiVideo url='/vid/color-and-normals/VertexOptionsAudioLink.mp4'/>
+<ReactVideo src='/vid/color-and-normals/VertexOptionsAudioLink.mp4'/>
 <em>Example of Audio Link making two sides of the Sphere look like a Subwoofer by using the Local Translation modifier. (Un-mute to hear Audio)</em>
 
 ### Local Translation

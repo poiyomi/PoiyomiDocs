@@ -80,7 +80,7 @@ These coordinates work in the same manner as the primary [Discard Coordinates](#
 
 For an example of a correct setup using Blender, we can take an existing mesh, and add an extra UV channel to it:
 
-<PoiVideo url='/vid/special-fx/uv-tile-discard_setup_blender1.mp4'/>
+<ReactVideo src='/vid/special-fx/uv-tile-discard_setup_blender1.mp4'/>
 
 While it's not strictly necessary, the `UDIM Grid` setting allows us to visualise our tiles. To change this setting your mesh has to be in `Edit Mode`. In blender 3.2 and later, this setting can be found in the overlays dropdown.
 
@@ -88,8 +88,8 @@ While it's not strictly necessary, the `UDIM Grid` setting allows us to visualis
 
 On that extra UV channel, move different UV islands to different uv tiles. Using whole number offsets lets you map textures to it, but since we made an alternate UV, all that's necessary is that the islands are on different UV tiles:
 
-<PoiVideo url='/vid/special-fx/uv-tile-discard_setup_blender2.mp4'/>
+<ReactVideo src='/vid/special-fx/uv-tile-discard_setup_blender2.mp4'/>
 
 With the UVs set up, we can use enable UV tile discard on the material, set the UV to the one we created (they're matched by slot position), and use UV tile discard successfully:
 
-<PoiVideo url='/vid/special-fx/uv-tile-discard_setup_unity1.mp4'/>
+<ReactVideo src='/vid/special-fx/uv-tile-discard_setup_unity1.mp4'/>

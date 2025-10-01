@@ -375,7 +375,7 @@ Sets how the Outline Stencil should test the depth buffer. By default, the depth
 The settings in this section will only be visible when [Audio Link](/docs/audio-link/audio-link.md) is activated on the Material.
 :::
 
-<PoiVideo url='/vid/outlines/outlineALtest4.mp4'/>
+<ReactVideo src='/vid/outlines/outlineALtest4.mp4'/>
 <em>Demonstration of the Bass Band controlling the Outline Size, Emission, and Color via Audio Link. (Un-mute to hear sound)</em>
 
 ### Size Band

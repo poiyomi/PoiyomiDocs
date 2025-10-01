@@ -39,7 +39,7 @@ TextureRamp is a Toon lighting method that uses a gradient texture to determine 
 
 Texture Ramp lighting is useful for creating cartoon-like lighting, especially when specific color gradients are desired.
 
-<PoiVideo url='/vid/shading/Shading_TextureRamp.mp4'/>
+<ReactVideo src='/vid/shading/Shading_TextureRamp.mp4'/>
 
 *Demonstration of Texture Ramp Shading using Thry Gradient Editor.*
 
@@ -90,7 +90,7 @@ Multilayer Math shading is useful for creating robust toon shading that performs
 In very old versions of Poiyomi Shaders, the *Math Gradient* shading mode was used to create a similar effect, but this mode was replaced in favor of the more flexible Multilayer Math system you see here.
 :::
 
-<PoiVideo url='/vid/shading/Shading_MultilayerMath.mp4'/>
+<ReactVideo src='/vid/shading/Shading_MultilayerMath.mp4'/>
 
 *Demonstration of Multilayer Math Shading with the Shadow Layers.*
 
@@ -371,7 +371,7 @@ Wrapped lighting is a semi-realistic lighting method that uses a mathematical gr
 
 For technical details of this method, see Jordan Stevens' [Lighting Models In Unity](https://www.jordanstevenstechart.com/lighting-models) (*Half-Lambert (Diffuse Wrap)* section), Stephen Hill's [Righting Wrap](https://blog.selfshadow.com/2011/12/31/righting-wrap-part-1/), or Steve McAuley's [Energy-Conserving Wrapped Diffuse](https://web.archive.org/web/20210228210901/http://blog.stevemcauley.com/2011/12/03/energy-conserving-wrapped-diffuse/).
 
-<PoiVideo url='/vid/shading/Shading_Wrapped.mp4'/>
+<ReactVideo src='/vid/shading/Shading_Wrapped.mp4'/>
 
 *Demonstration of Wrapped Shading and the various adjustments.*
 
@@ -440,7 +440,7 @@ Skin lighting is useful for achieving a realistic human skin lighting effect.
 This lighting mode is experimental and is not fully implemented yet, as it requires more data (thickness maps) to work fully. This will be improved in the future.
 :::
 
-<PoiVideo url='/vid/shading/Shading_Skin.mp4'/>
+<ReactVideo src='/vid/shading/Shading_Skin.mp4'/>
 
 *Demonstration of Skin Shading and how a Thickness Map is used with it.*
 
@@ -505,7 +505,7 @@ ShadeMap lighting is useful for creating highly stylized lighting effects. [It's
 
 For a basic ShadeMap shading setup, you can enable *Use BaseMap as 1st ShadeMap* and *Use BaseMap as 2nd ShadeMap*, set the *1st ShadeColor* and *2nd ShadeColor* to a lighter and darker tone respectively, and set the BaseColor Step and ShadeColor Step to a larger (`0.4 - 0.6`) and smaller (`0.1 - 0.3`), respectively.
 
-<PoiVideo url='/vid/shading/Shading_ShadeMap.mp4'/>
+<ReactVideo src='/vid/shading/Shading_ShadeMap.mp4'/>
 
 *Demonstration of ShadeMap and it's properties.*
 

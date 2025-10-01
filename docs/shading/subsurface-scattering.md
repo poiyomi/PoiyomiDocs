@@ -7,7 +7,7 @@ keywords: [subsurface scattering, subsurface, scattering, light, translucency, s
 
 Subsurface Scattering is a lighting effect that simulates how light can penetrate a translucent surface and exit at a potentially different point. This allows you to have the effect where thin parts of flesh get tinted red when a light (such as a flashlight) is behind them.
 
-<PoiVideo url='/vid/shading/SubsurfaceScatteringDemo.mp4'/>
+<ReactVideo src='/vid/shading/SubsurfaceScatteringDemo.mp4'/>
 <em>Brief demonstration of basic Subsurface Scattering effect using a relatively bright Realtime Light Source.</em>
 
 ## Subsurface Color

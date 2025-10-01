@@ -13,7 +13,7 @@ Options in this section will be labeled as **"R/G/B/A"**, each corresponding to 
 For example, "`R Path Type`" will be documented here as "`R/G/B/A Path Type`" instead.
 :::
 
-<PoiVideo url='/vid/special-fx/4paths.mp4' width='300px'/>
+<ReactVideo src='/vid/special-fx/4paths.mp4' width='300px'/>
 <em>Example of Paths used on the lines of this Jacket. Notice the timing of each Path as they animate.</em>
 
 ## Path Source

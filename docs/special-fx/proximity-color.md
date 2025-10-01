@@ -7,7 +7,7 @@ keywords: [proximity color, proximity, color, pixel, object, color, special fx, 
 
 Proximity Color is a special effect that allows you to change the color of a mesh based on the distance from the camera. This can be used to darken a mesh when it gets close, simulating local occlusion of light.
 
-<PoiVideo url='/vid/special-fx/proximity-color.mp4'/>
+<ReactVideo src='/vid/special-fx/proximity-color.mp4'/>
 <em>Demonstration of Proximity Color affecting the appearance of the Material based on the Camera's distance to the object.</em>
 
 ## Pos To Use

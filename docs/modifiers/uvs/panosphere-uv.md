@@ -9,7 +9,7 @@ Panosphere is a UV projection mode that is selectable in various sections of the
 
 This section houses the global settings for Panosphere. To use it, select it as a UV option in supported sections of the shader.
 
-<PoiVideo url='/vid/modifiers/panosphere-demo.webm' width='300px'/>
+<ReactVideo src='/vid/modifiers/panosphere-demo.webm' width='300px'/>
 <em>*Example of Glitter on a 3D Sphere switched to using Panosphere UV. Notice how the Panosphere stays consistent, regardless of the Camera's POV.*</em>
 
 ## Stereo Enabled
