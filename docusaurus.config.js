@@ -13,10 +13,14 @@ const config = {
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenAnchors: "warn",
-  onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
   organizationName: "poiyomi", // Usually your GitHub org/user name.
   projectName: "PoiyomiDocs", // Usually your repo name.
+  markdown: {
+    hooks: {
+      onBrokenMarkdownImages: "warn",
+    }
+  },
 
   future: {
     experimental_faster: true,
