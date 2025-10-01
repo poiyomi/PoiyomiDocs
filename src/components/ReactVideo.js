@@ -11,6 +11,7 @@ export default function ReactVideo({
     forceInline = true,
     style,
     children,
+    ...rest
 }) {
     // Honors the explicit `muted` prop; otherwise mute when autoplaying (mobile policy friendly)
     const resolvedMuted = muted ?? autoplay;
