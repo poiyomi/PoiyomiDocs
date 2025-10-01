@@ -9,7 +9,7 @@ The Vertex Colors section provides options for using a Mesh's Vertex Colors to a
 
 Vertex Colors can also be used as Masks in different parts of the Shader, such as [RGBA Color Masking](/docs/color-and-normals/rgba-color-masking.md#vertex-colors) and [Global Masks](/docs/modifiers/global-masks.md#vertex-colors).
 
-<PoiVideo url='/vid/color-and-normals/PoiVertexColors.mp4'/>
+<ReactVideo src='/vid/color-and-normals/PoiVertexColors.mp4'/>
 <em>This video shows how the shader will read Vertex Colors if the Mesh itself has assigned Color Attributes.</em>
 
 ## Linear Colors

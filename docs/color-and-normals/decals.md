@@ -42,7 +42,7 @@ Decals supports the **Raycast** feature, which allows you to visually position a
 
 To use this feature, edit the Decal on your Material <u>directly from the Mesh</u> as shown here:
 
-<PoiVideo url='/vid/color-and-normals/Decals_RaycastDemo.mp4' width='300px'/>
+<ReactVideo src='/vid/color-and-normals/Decals_RaycastDemo.mp4'/>
 
 `Left-Click` on the **Raycast** button to enable the feature. Hover the Mouse over your Mesh to position it, then `Left-Click` again to finalize your placement.
 :::

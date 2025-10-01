@@ -9,7 +9,7 @@ LTCGI is an optimized plug-and-play realtime area lighting solution using the li
 
 For more detailed information on this system, [visit the LTCGI Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://ltcgi.dev/).
 
-<PoiVideo url='/vid/shading/ltcgi_demo.mp4'/>  
+<ReactVideo src='/vid/shading/ltcgi_demo.mp4'/>  
 <em>In this demonstration, the video player is reflecting off of the avatar's eye, and the light is dynamically illuminating the face and the environment from LTCGI.</em>
 
 ## Anim Toggle

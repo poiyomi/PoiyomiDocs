@@ -9,7 +9,7 @@ Environmental Rim is a rim lighting effect that simulates low-angle reflections 
 
 This effect is similar to the rim glow seen in the realistic lighting mode and the Unity Standard Shader, especially at high Smoothness values.
 
-<PoiVideo url='/vid/shading/EnvironmentalRim.mp4'/>
+<ReactVideo src='/vid/shading/EnvironmentalRim.mp4'/>
 
 *Quick demonstration of Environmental Rim. Notice how with reduced Blur, it slightly shows a reflection from the World.*
 

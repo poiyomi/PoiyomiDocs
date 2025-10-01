@@ -51,7 +51,7 @@ Bias of the Mask Intensity.
 
 ## Color & Blending
 
-<PoiVideo url='/vid/shading/RL_ColorBlending.mp4'/>
+<ReactVideo src='/vid/shading/RL_ColorBlending.mp4'/>
 
 *Demonstration of the Rim Lighting Color & Blending options.*
 
@@ -109,7 +109,7 @@ Total emission values above 1 will generally cause glow in worlds with bloom.
 
 ## Shape Controls
 
-<PoiVideo url='/vid/shading/RL_ShapeControls.mp4'/>
+<ReactVideo src='/vid/shading/RL_ShapeControls.mp4'/>
 
 *Demonstration of the Rim Lighting Shape Controls.*
 
@@ -246,7 +246,7 @@ Allows you to add the currently set Rim Lighting setup to be applied to an exist
 The settings in this section will only be visible when [Audio Link](/docs/audio-link/audio-link.md) is activated on the Material.
 :::
 
-<PoiVideo url='/vid/shading/RL_AudioLink.mp4'/>
+<ReactVideo src='/vid/shading/RL_AudioLink.mp4'/>
 
 *Demonstration of the Audio Link Controls on the Bass Band for Rim Lighting.*
 

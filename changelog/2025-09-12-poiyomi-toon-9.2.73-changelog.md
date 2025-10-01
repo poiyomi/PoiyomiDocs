@@ -22,7 +22,7 @@ This update to the Shader contains some various improvements and bug fixes. The 
 - Added `Anti Mesh Penetration` feature in Vertex Options.
   - This pushes the mesh back when the camera gets too close, which stops you from seeing the inside of the mesh. Makes things a little more immersive.
 
-<PoiVideo url='/vid/vertex-options/anti-mesh-penetration-example.webm' width='300px'/>
+<ReactVideo src='/vid/vertex-options/anti-mesh-penetration-example.webm' width='300px'/>
 <em>*Example of Anti Mesh Penetration in action.*</em>
 
 ### Fixes

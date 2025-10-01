@@ -11,7 +11,7 @@ The Glitter feature is a simple effect that adds a voronoi-based sparkle to the 
 Glitter / Sparkle received a complete rewrite as of Poiyomi 9.0. Therefore, some features have been changed and reorganized.
 :::
 
-<PoiVideo url='/vid/special-fx/GlitterExample.mp4'/>
+<ReactVideo src='/vid/special-fx/GlitterExample.mp4'/>
 <em>Example of the Glitter effect on this Clothing.</em>
 
 ## UV

@@ -13,7 +13,7 @@ Audio Link is a system that analyzes and processes in-world audio into many diff
 
 In Poiyomi Shaders, there are various features that support Audio Link. However, they will only be available when [Audio Link is activated on the Material](#audio-link).
 
-<PoiVideo url='/vid/audio-link/ALDemo-MYB.webm'/>
+<ReactVideo src='/vid/audio-link/ALDemo-MYB.webm'/>
 <em>Demonstration of various Audio Link effects on this Avatar, with the Audio Link Controller on the left. (Un-mute to hear sound)</em>
 
 ## Audio Link

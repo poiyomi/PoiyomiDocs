@@ -13,7 +13,7 @@ Each Glitch is triggered through a rolling [sine wave](https://mathematicalmyste
 Vertex Options can cause nasty Z-fighting when seen against projection-based shaders, as they re-render the mesh using a shader of their own. This is a known limitation in Unity.
 :::
 
-<PoiVideo url='/vid/color-and-normals/VertexGlitchingDemo.mp4'/>
+<ReactVideo src='/vid/color-and-normals/VertexGlitchingDemo.mp4'/>
 <em>Demonstration of the Vertex Glitching shader effect.</em>
 
 ## Glitch Interval

@@ -8,7 +8,7 @@ toc_max_heading_level: 4
 
 The Dissolve module provides features for transitioning between a base appearance and a modified appearance in an aesthetically pleasing way. It can be used to transition from one base texture to another, or from the base color to a transparent appearance.
 
-<PoiVideo url='/vid/special-fx/Dissolve_ContinuousLoop.mp4'/>
+<ReactVideo src='/vid/special-fx/Dissolve_ContinuousLoop.mp4'/>
 
 *Example of CenterOut Dissolve being animated back and forth.*
 
@@ -22,7 +22,7 @@ Defines the mode dissolve is operating in.
 
 In `Basic`, The 0-1 value of the [Dissolve Gradient](#dissolve-gradient) texture is used to define the scale from 0 to 1.
 
-<PoiVideo url='/vid/special-fx/Dissolve_Mode_Basic-Gradient.mp4'/>
+<ReactVideo src='/vid/special-fx/Dissolve_Mode_Basic-Gradient.mp4'/>
 
 *Example of Basic Dissolve. As you can see, it only works best with a Dissolve Gradient defined.*
 
@@ -30,7 +30,7 @@ In `Basic`, The 0-1 value of the [Dissolve Gradient](#dissolve-gradient) texture
 
 In `Point2Point`, the pixel's position is used to define the scale. [Scroll to Advanced Point2Point Settings](#point2point-1)
 
-<PoiVideo url='/vid/special-fx/Dissolve_Mode_Point2Point.mp4'/>
+<ReactVideo src='/vid/special-fx/Dissolve_Mode_Point2Point.mp4'/>
 
 *Example of Point2Point Dissolve.*
 
@@ -38,7 +38,7 @@ In `Point2Point`, the pixel's position is used to define the scale. [Scroll to A
 
 In `Spherical` mode, the center point determines where the Dissolve will animate from. [Scroll to Advanced Spherical Settings](#spherical-1)
 
-<PoiVideo url='/vid/special-fx/Dissolve_Mode_Spherical.mp4'/>
+<ReactVideo src='/vid/special-fx/Dissolve_Mode_Spherical.mp4'/>
 
 *Example of Spherical Dissolve with a larger Radius set.*
 
@@ -46,13 +46,13 @@ In `Spherical` mode, the center point determines where the Dissolve will animate
 
 In `CenterOut` mode, Dissolve is animated determined by the Camera's angle. [Scroll to Advanced CenterOut Settings](#centerout-1)
 
-<PoiVideo url='/vid/special-fx/Dissolve_Mode_CenterOut.mp4'/>
+<ReactVideo src='/vid/special-fx/Dissolve_Mode_CenterOut.mp4'/>
 
 *Example of CenterOut Dissolve set to View Direction.*
 
 ## Edge
 
-<PoiVideo url='/vid/special-fx/Dissolve_EdgeSetting.mp4'/>
+<ReactVideo src='/vid/special-fx/Dissolve_EdgeSetting.mp4'/>
 
 *Demonstration of the Edge Settings.*
 
@@ -108,7 +108,7 @@ If you set the Alpha channel of this color to `A = 0`, the Dissolve can transiti
 **Keep in mind this only works if you set your [Rendering Preset](/docs/general/render-preset.md) to Cutout or a Transparent Preset.**
 :::
 
-<PoiVideo url='/vid/special-fx/Dissolve_DissolvedColor.mp4'/>
+<ReactVideo src='/vid/special-fx/Dissolve_DissolvedColor.mp4'/>
 
 *Example of changing the Dissolved Color settings using a TransClipping Rendering Preset.*
 
@@ -146,7 +146,7 @@ A black and white (single channel) map that adds a modifier to the dissolve edge
 You can find example Noise Textures, such as the one shown in the video below, included in the Package by navigating to the folder `_PoiyomiShaders/Textures/Noise`.
 :::
 
-<PoiVideo url='/vid/special-fx/Dissolve_Noise.mp4'/>
+<ReactVideo src='/vid/special-fx/Dissolve_Noise.mp4'/>
 
 *Demonstration of using a Noise Texture for the Dissolve.*
 
@@ -162,7 +162,7 @@ Determines the smoothing of the Noise Texture, if provided.
 
 Controls how much the dissolve detail strength influences the edge. At high values, this may lead to "flashing" as the dissolve transitions in and out.
 
-<PoiVideo url='/vid/special-fx/Dissolve_DetailStrength.mp4'/>
+<ReactVideo src='/vid/special-fx/Dissolve_DetailStrength.mp4'/>
 
 *Demonstration of adjusting the Detail Strength of the Noise.*
 
@@ -310,7 +310,7 @@ If set to True, this ensures that the whole material is clamped to the set value
 It may be beneficial to enable Clamp Dissolve if you change your Avatar's Scale frequently in VRChat, as it will help prevent Dissolves from partially working as intended at various heights or scales. 
 :::
 
-<PoiVideo url='/vid/special-fx/Dissolve_Clamp.mp4'/>
+<ReactVideo src='/vid/special-fx/Dissolve_Clamp.mp4'/>
 
 *Difference between the Off and On states of Clamp Dissolve.*
 
