@@ -8,7 +8,7 @@ hide_table_of_contents: true
 
 <ShowWhenRef equals="jinxxy">
 
-:::tip Welcome Jinxxy Customers
+:::note Note for Jinxxy Customers
 Please ensure you use the right version of the shader as detailed by the Avatar Creator you purchased your Avatar from. It should be detailed in your Inventory, on the description of the Avatar's listing, or in a text file from the Avatar's archive you downloaded.
 
 **Most commonly, you will be downloading the <u>FREE</u> version of the shader, which includes all of the features necessary for the Avatar to work.** To make things easier for you, we highly recommend installing the shader using the Creator Companion app of your choice. Jump to [Method 2: ALCOM / Creator Companion](#method-2-alcom--creator-companion) to read more on how to install it.
@@ -20,7 +20,7 @@ If your Avatar Creator asks you to use Poiyomi Pro, it is a PAID version of the 
 
 <ShowWhenRef equals="gumroad">
 
-:::tip Welcome Gumroad Customers
+:::note Note for Gumroad Customers
 Please ensure you use the right version of the shader as detailed by the Avatar Creator you purchased your Avatar from. It should be detailed in your Downloads, on the description of the product's listing, or in a text file from the Avatar's archive you downloaded.
 
 **Most commonly, you will be downloading the <u>FREE</u> version of the shader, which includes all of the features necessary for the Avatar to work.** To make things easier for you, we highly recommend installing the shader using the Creator Companion app of your choice. Jump to [Method 2: ALCOM / Creator Companion](#method-2-alcom--creator-companion) to read more on how to install it.
