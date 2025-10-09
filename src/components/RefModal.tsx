@@ -1,4 +1,3 @@
-// src/components/RefModal.tsx
 import React from 'react';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import { useLocation } from '@docusaurus/router';
