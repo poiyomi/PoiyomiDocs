@@ -5,8 +5,6 @@ description: The Shading section determines the primary base shading of the Mate
 keywords: [shading, diffuse, lighting, base, style, stylized, base pass, add pass, texture ramp, math gradient, multilayer math, wrapped, skin, shademap, flat, realistic, cloth, toon, poiyomi, shader]
 toc_max_heading_level: 3
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 The **Shading** section defines the base shading of the material. It controls how the material reflects light in a diffuse way, and how it is affected by other lighting. Options in the [Light Data](/docs/shading/light-data.md) section heavily affect how shading is performed.
 
