@@ -39,11 +39,23 @@ Value used to mask what bits of the stencil buffer are read from. This is best t
 
 For a reference on stencil read/write masks, [this thread <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://old.reddit.com/r/Unity3D/comments/mz7b4h/what_does_stencil_readmask_writemask_do/gw06pie/) provides some useful information.
 
-## Stencil Pass/Fail/Zfail Op
+## Stencil Pass Op
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Keep`/`Zero`/`Replace`/`Increment`/`Decrement`/`Invert`/`IncrementWrap`/`DecrementWrap`
 
-Which write operation to apply to the stencil buffer based on each test. Different operations can be used to create different effects based on if the stencil test passes, fails, or passes the stencil test but fails the depth test.
+Defines the operation that the GPU performs on the Stencil buffer when a pixel passes both the Stencil test and the Depth test.
+
+## Stencil Fail Op
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Keep`/`Zero`/`Replace`/`Increment`/`Decrement`/`Invert`/`IncrementWrap`/`DecrementWrap`
+
+Defines the operation that the GPU performs on the Stencil buffer when a pixel fails the Stencil test.
+
+## Stencil ZFail Op
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Keep`/`Zero`/`Replace`/`Increment`/`Decrement`/`Invert`/`IncrementWrap`/`DecrementWrap`
+
+Defines the operation that the GPU performs on the Stencil buffer when a pixel passes the Stencil test, but fails the Depth test.
 
 ## Stencil Compare Function
 
