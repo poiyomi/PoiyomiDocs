@@ -35,6 +35,20 @@ If you are happy with the changes this Preset makes, click the `Apply` button to
 
 Although if you are not satisfied with the settings it applied, you can un-check the Preset and choose a different one. Or you can close the Preset List without applying any settings by clicking the `Discard` button.
 
+### Applying Quick Presets
+
+You can quickly apply a Preset to your Material without having to open the dialogue. Instead of clicking the Presets button, **Right-Click** it! This will show a dropdown-style Menu allowing you to navigate to a listed Preset, and instantly apply it upon clicking it.
+
+<ReactVideo src='/vid/thryeditor/quick-presets-demo.webm'/>
+
+### Applying Section Presets
+
+Some sections support their own Presets which are configured [below](#advanced-per-section-presets). They will appear as an icon in the Section Header...
+
+<ReactVideo src='/vid/thryeditor/section-presets-demo.webm'/>
+
+Click on it to bring up a list of Presets in a dropdown menu that are exclusive to that section. Then, click on the preferred Preset's name to instantly apply it to that section only.
+
 ## How to Create a Preset
 
 Creating your own Presets is very easy to do. By doing this, you can save yourself a few clicks with a workflow of consistent settings you use very often without having to copy and paste them every so often.
@@ -71,9 +85,13 @@ In a similar manner to [Marking Properties as Animated](/docs/general/locking.md
 
 Once you finish marking your Properties as `P`, test it out by going to a Material you're using on your Avatar.
 
-Just like as described in [Using Presets](#using-presets), open the Preset List by pressing the **Presets** button, and your Preset should be seen in there. Select your Preset and Apply to your Material.
+Just like as described in [Using Presets](#using-presets), open the Preset List by pressing the **Presets** button, and your Preset should be seen in there. Select your Preset and Apply to your Material. That's it!
 
-Congratulations! You now know how to create and apply your own Presets.
+:::warning
+Be careful when creating too many Preset Materials in your project. Otherwise, you may risk causing the [64 Slot Crash](/docs/general/textures-64-texture-slot-crash.md)!
+
+To help counteract against this, you can safely switch your Preset Material(s) to the Standard shader. Don't worry, your preset settings are preserved on the Material (.mat) file. So if you need to edit your presets again later on, simply switch it back to Poiyomi and your settings will appear exactly where you left it.
+:::
 
 ### Advanced Per Section Presets
 
@@ -87,4 +105,4 @@ When enabled, the Material will now include it's own `Preset Name` field near th
 
 *Example of what the UI looks like when `Preset per Section` is enabled.*
 
-As instructed from above, the workflow is still very much the same. The only difference however, is instead of the entire Material serving as a whole Preset, each Section is serving as their own additional amount of Presets. Therefore, each one used will appear separate from each other in the Presets List.
+As instructed from above, the workflow is still very much the same. The only difference however, is instead of the entire Material serving as a whole Preset, each Section is serving as their own additional amount of Presets. Therefore, each one used will appear separate from each other in the Presets List. [See the video on this page](#applying-section-presets) to see how it will appear.
