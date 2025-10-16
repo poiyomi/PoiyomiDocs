@@ -3,7 +3,11 @@ sidebar_position: 6
 title: Drawers
 description: Description of the Drawers available in the Thry Editor shader inspector.
 keywords: [drawers, shader, inspector, thry, editor, thryeditor, poiyomi, shader]
+draft: true
 ---
+
+<!-- THIS PAGE IS DUE TO BE REWRITTEN. MARKED AS DRAFT UNTIL COMPLETE. -->
+
 If no constructor is defined here the default constructor will be used. This you will not have to pass any parameters in those cases.
 
 # Texture Drawers
