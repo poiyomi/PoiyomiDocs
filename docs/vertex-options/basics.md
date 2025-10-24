@@ -54,7 +54,7 @@ How much constant rotation speed to apply to the vertices of the mesh, on a per-
 
 - `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = Off`)
 
-A texture used to modify the vertex height adjustment. This represents the low and high points of to be used for vertex modification.
+A texture used to modify the vertex height adjustment. This represents the low and high points to be used for vertex modification.
 
 ### Height
 
