@@ -20,13 +20,6 @@ When switching from the Standard shader to Poiyomi, most if not all properties w
 
 LilToon uses a much different and simplified approach to Toon shading compared to Poiyomi. There are some settings that are carried over, **however it will require usage of our included script utility** in order to reliably translate the listed properties over.
 
-This list is incomplete and may be missing some details. For accurate results, use the [LilToon to Poiyomi Script](#using-the-liltoon-to-poiyomi-script) detailed below.
-
-- **Shadows**: The `Shadows` feature in LilToon is the exact same as `Multilayer Math` and can be carried over when converted. However if it's disabled, it will be converted to `Flat` instead.
-- **Lil Reflections**: In LilToon, it uses both Specular and Environment Reflections in a more stylized fashion. If used, this will enable `Stylized Reflections`, set the mode to `lilToon` and convert the values over.
-- **Backlighting**: Poiyomi Shaders has the same features and properties as LilToon's Backlighting feature and can be converted over 1:1.
-- **Rim Lighting**: Each of Rim Lighting settings will be converted over to match.
-
 ### Using the LilToon to Poiyomi Script
 
 To convert a copy of the Avatar in the Scene using LilToon over to Poiyomi Shaders, `Right-Click` on the Avatar in the Hierarchy and click `Poiyomi -> Materials -> Translate Copy to Poiyomi Toon`. This will run a script that will convert recognized properties in each LilToon Material over to their appropriate counterparts. The converted Materials will be placed in the same folder as the original Materials for comparison.
@@ -40,3 +33,10 @@ As LilToon is an actively-developed shader, there may be some bugs with the scri
 <div class="videobox">
 <iframe class="iframe-element" src="https://www.youtube-nocookie.com/embed/Auw6WAzKAsw?si=TO5iXVR7NWWw4xNw" title="YouTube Video Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
+
+Below is a list of some of the significant features in LilToon that will be converted. This list is incomplete and may be missing some details...
+
+- **Shadows**: The `Shadows` feature in LilToon is the exact same as `Multilayer Math` and can be carried over when converted. However if it's disabled, it will be converted to `Flat` instead.
+- **Lil Reflections**: In LilToon, it uses both Specular and Environment Reflections in a more stylized fashion. If used, this will enable `Stylized Reflections`, set the mode to `lilToon` and convert the values over.
+- **Backlighting**: Poiyomi Shaders has the same features and properties as LilToon's Backlighting feature and can be converted over 1:1.
+- **Rim Lighting**: Each of Rim Lighting settings will be converted over to match.
