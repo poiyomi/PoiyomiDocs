@@ -31,6 +31,12 @@ This list is incomplete and may be missing some details. For accurate results, u
 
 To convert a copy of the Avatar in the Scene using LilToon over to Poiyomi Shaders, `Right-Click` on the Avatar in the Hierarchy and click `Poiyomi -> Materials -> Translate Copy to Poiyomi Toon`. This will run a script that will convert recognized properties in each LilToon Material over to their appropriate counterparts. The converted Materials will be placed in the same folder as the original Materials for comparison.
 
+The video below covers some of the basics of converting over LilToon Avatars to Poiyomi. Please give it a watch for an in-depth look at the workflow process.
+
 :::warning
 As LilToon is an actively-developed shader, there may be some bugs with the script that don't translate some properties over correctly. If you find any inconsistencies, please let us know in our Discord server!
 :::
+
+<div class="videobox">
+<iframe class="iframe-element" src="https://www.youtube-nocookie.com/embed/Auw6WAzKAsw?si=TO5iXVR7NWWw4xNw" title="YouTube Video Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
