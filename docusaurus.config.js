@@ -121,6 +121,11 @@ const config = {
             // Reorganized Rendering.
             to: '/rendering/',
             from: '/rendering/main',
+          },
+          {
+            // Changed Thry Editor Overview
+            to: '/thryeditor/',
+            from: '/thryeditor/enduser',
           }
           // Redirect from multiple old paths to the new path
           // {
@@ -418,7 +423,7 @@ const config = {
               },
               {
                 label: "Thry Editor",
-                to: "/thryeditor/enduser",
+                to: "/thryeditor/",
               }
             ],
           },

@@ -72,7 +72,7 @@ If enabled, multiplies the base alpha of the material with the Path's final alph
 
 Defines the gradients for the path. If using `Split Channels` mode, this texture should consist of between 1 and 4 channels of gradient data, with each channel representing a different path. Each channel used will flow between a value of `1` to a value of `255` (in 0-255 range), and should be defined from linear textures. 
 
-When expanded, 4 slots will be visible, one for each path. This is an integrated [Thry Texture Packer](/docs/thryeditor/enduser.md#texture-packer), which you can use to define gradient paths for each channel.
+When expanded, 4 slots will be visible, one for each path. This is an integrated [Thry Texture Packer](/docs/thryeditor/thryeditor.md#texture-packer), which you can use to define gradient paths for each channel.
 
 If using `Merged Channels` mode, this texture should be the output of the Poiyomi Pathing tool. The 4 channels will be sampled in order, from `R -> G -> B -> A`.
 

@@ -1,15 +1,10 @@
 ---
 sidebar_position: 1
-title: Overview
+title: Thry Editor
 hide_title: true
 description: Thry Editor is the underlying framework that powers the User Interface known in Poiyomi Shaders, and serves as the core Shader Inspector and Editor.
 keywords: [thry, editor, thryeditor, thryrallo, ui, poiyomi, shader]
 ---
-
-<!-- FIXES SEO TITLE. DO NOT REMOVE! -->
-<head>
-    <title>Thry Editor | Poiyomi Shaders</title>
-</head>
 
 <div style={{textAlign: 'center', marginTop: '20px', marginBottom: '20px', marginLeft: '70px', marginRight: '70px'}}>
     <a>
@@ -53,17 +48,7 @@ Right Clicking opens the Quick Presets context menu. Here you can only select on
 
 *Right-Click the Presets button to quickly select a Preset.*
 
-You can also create your own Presets using this feature. [See the Documentation Page to learn more.](../thryeditor/presets)
-
-### Shader Translator
-
-The Shader Translator is there to help you swap from one shader to an new one. Predefined property changes that map your settings from the old shader to the new one will adjust your material to match features as best as possible.
-
-[Shader Translator Information](./translator.md)
-
-<a>
-<img src="/img/thryeditor/Thry_Translator.png" alt="Presets Feature" width="800px"/>
-</a>
+You can also create your own Presets using this feature. [See the Documentation Page to learn more.](/docs/thryeditor/presets.md)
 
 ### Material Linking
 

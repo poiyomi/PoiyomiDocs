@@ -20,7 +20,7 @@ Color Adjust can be used to quickly change the colors presented from the main te
 
 Texture Slot that defines where to specifically apply the color adjustments to. If this texture is not defined, the adjustments will apply everywhere.
 
-This slot has the [Texture Packer](/docs/thryeditor/enduser.md#texture-packer) integrated for convenience.
+This slot has the [Texture Packer](/docs/thryeditor/thryeditor.md#texture-packer) integrated for convenience.
 
 | Channel | Mask |
 | :---: | :---: |
