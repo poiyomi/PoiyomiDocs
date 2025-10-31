@@ -1,5 +1,5 @@
 ---
-sidebar_position: 8
+sidebar_position: 1
 title: Terms of Service
 description: Rules and Guidelines on the usage of Poiyomi Shaders.
 keywords: [terms of service, tos, rules, guidelines, mit, pro, poiyomi, shader]
@@ -56,3 +56,11 @@ To put things simply, here are the restrictions:
 :::warning
 If you are discovered to have illegally acquired a version of Poiyomi Pro without purchasing it, we reserve the right to invoke legal action against you, both via Patreon and through Discord.
 :::
+
+## Third Party Licenses
+
+- [Lil License <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://raw.githubusercontent.com/lilxyzw/lilToon/refs/heads/master/LICENSE)
+- [LTCGI License <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://raw.githubusercontent.com/PiMaker/ltcgi/refs/heads/main/LICENSE)
+- [VRC Light Volumes License <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://raw.githubusercontent.com/REDSIM/VRCLightVolumes/refs/heads/main/LICENSE)
+- [SCSS License <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://raw.githubusercontent.com/s-ilent/scss/refs/heads/master/LICENSE)
+- [Uzumore License <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://raw.githubusercontent.com/sigmal00/UzumoreShader/refs/heads/main/LICENSE)
