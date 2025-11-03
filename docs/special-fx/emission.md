@@ -5,7 +5,7 @@ description: Emission provides the ability to add brightness directly to the bas
 keywords: [emission, emissions, glow, bloom, brightness, color, scrolling, center out, blinking, special fx, poiyomi, shader]
 ---
 
-Emission is a function that allows adding brightness directly to the base color of a mesh. It can be used to add highlights, or to add a glow effect to a mesh. This is one of the most well-known features in the shader.
+Emission is a function that allows adding brightness directly to the base color of a mesh. It can be used to add highlights, or to add a glow effect to a mesh. This is one of the most well-known features found across different shaders.
 
 <a>
 <img src="/img/special-fx/Emission_Example.png" alt="Emission Example"/>
@@ -23,15 +23,17 @@ Each of the 4 Emission slots (0, 1, 2, 3) have the following unique options list
 
 Mask texture that defines where to place the emission effect. Black areas will not be affected by the emission, while white areas will be fully affected by the emission.
 
+:::warning Fallback Shader Warning
+Please be aware that Fallback Shaders do not support Masking. If you are using **Emission 0** slot, this property will NOT appear at all in your Fallback.
+:::
+
 ### Global Mask
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
 Select which [Global Mask](/docs/modifiers/global-masks.md) to use as the Emission Mask instead.
 
-:::note
-Expand the **Emission Mask** slot to see this property.
-:::
+Expand the **Emission Mask** slot from above to see this property.
 
 ## Emission Color
 
@@ -41,11 +43,27 @@ Tint color applied to the emission map. If no map is defined, this color will be
 
 This color is an HDR color, meaning it can have an intensity applied to make the color brighter than normal colors. This can be optionally used instead of, or in addition to, the Emission Strength option.
 
+:::warning Fallback Shader Warning
+If you are using **Emission 0** slot, please be aware that this property controls Emission Strength in Fallback Shaders.
+
+If you leave **Emission 0** disabled, ensure the Emission Color is set to `Black` to avoid your Avatar appearing extremely bright in your Fallback Shaders. This situation happens when users block your shaders via in-game Safety Settings.
+
+You can safely use the other slots, **Emission 1, 2, or 3,** without affecting your Fallback Shaders.
+:::
+
 ## Emission Map
 
 - `Type`: <PropertyIcon name="texture" />**Color** Texture (`sRGB = On`)
 
-Color map of the emission. This is used to define the color of the emission in different areas on the mesh. Black areas will not be affected by the emission, while areas with color will be affected by the emission.
+Color map of the emissions. This is used to define independent colors of your emissions in different areas on the mesh. Black areas will not be affected by the emission, while areas with color will be blended with the emission color.
+
+Most commonly, this slot would be used in combination with Emission Color set to `White`.
+
+:::info
+If you are using **Emission 0** slot, only your Emission Map will appear in Fallback Shaders.
+
+Please keep this in mind when creating your Emissions. This only applies to **Emission 0** slot.
+:::
 
 ## Emission Strength
 
