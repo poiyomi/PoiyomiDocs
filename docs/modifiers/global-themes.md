@@ -5,7 +5,7 @@ description: Global Themes are a centralized place to change colors throughout t
 keywords: [global, themes, theme, global themes, color, colors, poiyomi, shader]
 ---
 
-Global Themes provide a central place to change colors throughout the shader. When configured, you can set any **Color** property in the Material to use a Theme Color as defined by the user.
+Global Themes provide a central place to change colors throughout the shader. When configured, you can set any **Color** property in the Material to instead use your defined Theme Color.
 
 ## Usage in the Shader
 
@@ -23,7 +23,7 @@ When set, this will override the Color with whichever Color is configured in the
 
 # Material Properties
 
-The following below are the properties that are available in Global Themes, and will be  You can have a maximum of 4 Theme Colors, per Material.
+The following below are the properties that are available in Global Themes. You can have a maximum of 4 Theme Colors, per Material.
 
 :::info Documentation Info
 Each of the 4 Global Themes (0, 1, 2, 3) have the following unique options listed below. They are independent of each other, and are selected across the shader based on the identifying Theme Color slot.

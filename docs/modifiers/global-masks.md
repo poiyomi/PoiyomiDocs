@@ -13,7 +13,7 @@ Global Masks are shader-wide texture channels that can be used for masking effec
 
 You can choose from a variety of blending modes when referencing a Global Mask channel, such as Replace, Multiply, Subtract, and more. Modifiers can be used to additionally restrict where effects are applied, such as Backface masking, Mirror/Camera masking, and Distance masking. 
 
-Global Masking expands the functionality of almost every part of the shader that supports it, and can be a powerful tool for optimization.
+Global Masking expands the functionality of almost every part of the shader that supports it and can be a powerful tool for optimization.
 
 <GlobalMaskConcept className="vectorimage"/>
 
