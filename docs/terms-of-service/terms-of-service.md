@@ -23,10 +23,12 @@ The MIT License is one of the most straightforward and permissive licenses used 
 
 In summary, the MIT License basically says "you can do almost anything you want with this software, **but you need to include this license text wherever you use it, and you can't hold the original creators responsible for problems.**"
 
-:::note Disclaimer: For Avatar Sellers
-*Poiyomi Shaders includes scripts that change from time to time. If you are an Avatar Seller, we kindly request that you refrain from including the Free Version when exporting your Avatar Packages. Doing so can risk disruption of Unity workflow and potentially break various scripts as a result of unknowingly double-importing the package.*
+:::danger Avatar Sellers: PLEASE READ!
+Poiyomi Shaders includes breaking changes from time to time. If you are an Avatar Seller, DO NOT INCLUDE THE `_PoiyomiShaders` FOLDER WHEN EXPORTING YOUR AVATAR'S PACKAGES!! While this may be seen as a convenience to your customers, it causes a HUGE disruption of Unity workflows, causing a chain-reaction of various scripts to break as a result of your customers unknowingly double-importing the package!
 
-*We highly advise you redirect your customers to download and install Poiyomi Shaders separately, with a link to this website. <u>We are not responsible for any damages to Unity Projects as a result of ignoring this disclaimer.</u>*
+To ensure your customers have a painless experience, please redirect your customers to the Download & Install page located at `https://www.poiyomi.com/download` as it details the most up-to-date instructions and download links for Poiyomi Shaders. We recommend your customers to first install Poiyomi Shaders prior to importing your Avatar's Unity Package.
+
+*<u>WE ARE NOT RESPONSIBLE FOR ANY DAMAGES TO UNITY PROJECTS AS A RESULT OF IGNORING THIS NOTICE!</u>*
 :::
 
 ## Pro Version
