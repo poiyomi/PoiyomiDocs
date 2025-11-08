@@ -117,7 +117,7 @@ If you are using the default VRChat Creator Companion App, follow the instructio
           - Didn't work? In the VCC, go to `Settings > Packages > Add Repository`, type in `https://poiyomi.github.io/vpm/index.json` and then click `Add`.
 2. When Prompted, click the button labeled `I Understand, Add Respository`.
 3. In the list, make sure `Poiyomi's VPM Repo` is checkmarked.
-4. Find your Project in the VCC Project List, click `Manage Project`, then click the `+` button on `Poiyomi Toon Shader` to add it to your project.
+4. Find your Project in the VCC Project List, click `Manage Project`, then click the <FAIcon icon="fa-solid fa-circle-plus"/> button on `Poiyomi Toon Shader` to add it to your project.
 5.  Done! Once the package is resolved, launch your Project and enjoy using Poiyomi Shaders.
       
 **If an update becomes available, click the Green <FAIcon icon="fa-solid fa-circle-up"/> icon to update to the latest version.**
