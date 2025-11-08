@@ -22,7 +22,7 @@ All features in the Shader UI will redirect here for further reading. They are i
 
 ### VRChat
 
-Poiyomi Shaders is primarily built for use in VRChat. Make sure you refer to the [VRChat Creators Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://creators.vrchat.com/sdk/) for setting up your Project and the SDK in Unity. Use the only supported Unity Version for VRChat (`2022.3.22f1`) and ensure you're always on the latest version of the VRChat SDK (`3.6.0` or higher).
+Poiyomi Shaders is primarily built for use in VRChat. Make sure you refer to the [VRChat Creators Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://creators.vrchat.com/sdk/) for setting up your Project and the SDK in Unity. Use the only supported Unity Version for VRChat (`2022.3.22f1`) and ensure you're always on the latest version of the VRChat SDK.
 
 After doing so, follow the instructions found in [Download & Install](/download) to learn how to begin using the Shader in your Project.
 
