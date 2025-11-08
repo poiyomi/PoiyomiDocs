@@ -35,6 +35,8 @@ If you are having issues with Poiyomi Shaders such as the Material Inspector not
 2. Download the latest version of the Package if you haven't already.
 3. Import the Unity Package.
 
+> If you are using the VCC Version, please fully remove it from your Project, then add it again.
+
 This should help solve most issues with the Shader not behaving as expected in Unity, including issues with double-importing the Shader from an Avatar that included the Shader when it wasn't supposed to.
 
 If you are still running into issues, post some screenshots in the [Discord <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://discord.gg/poiyomi) and we'll be happy to help you out.
@@ -43,9 +45,12 @@ Related Issues: [64 Slot Crash](#why-does-unity-editor-constantly-crash-when-edi
 
 ### When I Upload an Avatar, I get a message saying "Unlocked Shaders were found and will not be included in the build."
 
-This message indicates there was a problem with the Auto-Lock function. For context, your Materials must be locked in order to upload to VRChat in order to prevent unused features from being included.
+This message indicates there was a problem with the Auto-Lock function, which should never happen.
 
-If this function fails to work and you get that message, ensure there are no scripts interfering with the Upload. Some tools and certain optimizers can interfere with the optimizer, even though they're not supposed to.
+> For context, your Materials must be locked in order to upload to VRChat in order to prevent unused features from being included. To ensure this is done automatically, the SDK will invoke a `IVRCSDKBuildRequestedCallback` function anytime a Build & Upload is commenced, which will run our Auto-Lock script.
+
+If this function fails to work and you get that message, ensure there are no scripts interfering with the Upload! Some tools and certain optimizers can interfere with the locking function, even though they're not supposed to.
+
 - Remove any third-party tools and Packages you suspect are interfering until the message no longer appears when uploading. If you find the culprit issue, we encourage you to inform the creator of said scripts/utilities that are interfering with the Auto-Lock so that it doesn't happen again.
 
 :::tip Manual Lock-In
@@ -76,18 +81,15 @@ Keep in mind that properties marked as `Renamed` will only work when the Materia
 
 Place AO (Ambient Occlusion) Maps in the [AO Maps](/docs/shading/light-data.md#ao-maps) Texture Slot, located in `Shading -> Light Data`.
 
-It is recommended to use a [Lighting Type](/docs/shading/main.md#lighting-type) that supports AO Maps. Most of them (except for `Flat`) will work with AO Maps.
+It is recommended to use a [Lighting Type](/docs/shading/main.md#lighting-type) that supports AO Maps. Only Realistic-based Lighting Types will allow AO maps to appear correctly.
 
 ### Where does Height Maps go in Poiyomi Shaders?
 
-Height maps are generally used to change the shape of the surface of a material. Generally, if it's small displacements, 
-You can often get the same detail by using a Normal Map (make sure your shading is set to something other than Flat, though!). 
+Height maps are generally used to change the shape of the surface of a material. Generally, if it's small displacements, you can often get the same detail by using a Normal Map (make sure your shading is set to something other than Flat, though!). 
 
-If you have a height map but not a normal map, you can convert it in Unity by setting the texture to a Normal map and selecting "Convert from Grayscale".
+If you have a height map but not a normal map, you can convert it in Unity by setting the texture to a Normal map and selecting `Convert from Grayscale`.
 
-If you need the displacement, you can use it with [Parallax Heightmapping](/docs/modifiers/uvs/parallax.md), which creates a displacement-like effect. You can also use a shader that tessellates, which will add geometry to create the height detail.
-
-**Vertex Displacement** takes a height map, but it's limited to the vertex density on the mesh, and often will not provide the desired results.
+If you need the displacement, you can use it with [Parallax Heightmapping](/docs/modifiers/uvs/parallax.md), which creates a displacement-like effect. You can also use a shader that tessellates, which will add geometry to create the height detail. Please be aware that this is not an optimized method and may have a performance impact!
 
 ### What is the difference between Roughness vs. Smoothness Maps?
 
@@ -101,7 +103,13 @@ Open Packed Maps by clicking on the triangle and place the Roughness in the [G S
 
 ### How do I test Audio Link in Poiyomi Shaders?
 
-You will need to install the Audio Link Package into your Project. [Read the Documentation Page for instructions here.](/docs/audio-link/audio-link.md#how-to-test-audio-link-using-poiyomi-shaders)
+We have dedicated instructions in our Audio Link feature Documentation on how to test Audio Link in Unity. [Please take a look at it (Click Here)](/docs/audio-link/audio-link.md#how-to-test-audio-link-using-poiyomi-shaders)
+
+### Why isn't Audio Link playing music in the Scene?
+
+The `AudioLinkAvatar` prefab in the scene uses the yt-dlp plugin from the VRChat installation files. However, YouTube has continuously made destructive changes to the audio/video format, which breaks it's functionality.
+
+Instead, you will need to manually specify a separate `yt-dlp.exe` to use instead to play audio. [Read the instructions carefully on our Docs (Click Here)](/docs/audio-link/audio-link.md#using-a-custom-ytdl-location)
 
 ### I am using a feature that is supposed to animate, but it doesn't show it's animating. Why is that?
 
@@ -144,7 +152,7 @@ While it is not possible to animate texture slots, Poiyomi Shaders has features 
 - [Geometric Dissove](/docs/extended-features/geometric-dissolve.md). Like Dissolve, but uses your Mesh's Geometry to transition to a different Texture.
 - [UV Tile Discard](/docs/special-fx/uv-tile-discard.md), to animate offsets when needed.
 
-### Where is "Basic Emission" found?
+### What happened to "Basic Emission" in the shader?
 
 Basic Emission was removed in version 8.0 and newer because it was often used incorrectly.
 
@@ -179,18 +187,20 @@ Without setting an `Anchor Override` on the meshes, Unity can sample the world's
 To fix this, we recommend assigning a Bone (such as the `Chest`) from your Armature into the `Anchor Override` on all Meshes.
 
 :::tip
-ThryEditor will run this automatic fix to you if there's no Anchor Override set. A one-time "Bad Lighting Fix" message (Example below) will appear when Uploading for the first time. We recommend you to keep it enabled if prompted.
+Thry Editor will run this automatic fix to you if there's no Anchor Override set. A one-time "Bad Lighting Fix" message (Example below) will appear when Uploading for the first time. We recommend you to keep it enabled if prompted.
 
 <a>
-<img src="/img/general/bad-lighting-fix-message-2.png" alt="ThryEditor Bad Lighting Auto-Fix Dialogue" width="400px"/>
+<img src="/img/general/bad-lighting-fix-message-2.png" alt="Thry Editor Bad Lighting Auto-Fix Dialogue" width="400px"/>
 </a>
 :::
 
-### Why can't I use Poiyomi Shaders on Quest?
+### Why can't I use Poiyomi Shaders on Quest, Android, or iOS?
 
-**You can only use the VRChat mobile shaders that come with the SDK on your Quest/Android Avatars!**
+**You can only use the VRChat mobile shaders that come with the SDK on your Quest/Android/iOS Avatars!**
 
-Quest and Android hardware is underpowered and doesn't support features that Poiyomi Shaders need to work properly. Even if you managed to upload an avatar with unsupported shaders on it, the VRChat client will override them at runtime.
+Quest, Android, and iOS hardware is underpowered and doesn't support features that Poiyomi Shaders need to work properly. Even if you managed to upload an avatar with unsupported shaders on it, the VRChat client will override them at runtime.
+
+VRChat's Toon Standard shader has some of the basic functionality for Toon-based shading on Quest and is our recommended alternative for Quest Avatars. To use it, ensure you use VRChat SDK 3.8.1 or newer, select `VRChat/Mobile/Toon Standard` shader and customize it to your needs.
 
 ### Why can't I use Poiyomi Shaders on Unity 2019?
 
@@ -202,9 +212,9 @@ In order to user newer versions of Poiyomi for this purpose, we recommend some m
 
 ### What is the recommended SDK and Unity Version to use with Poiyomi Shaders?
 
-As of May 2024, we recommend VRChat SDK `v3.5.0` or newer in order to use Poiyomi Shaders. Ensure the VRChat Creator Companion App is the latest version in order to access the latest SDKs.
+<u>You should always use the very latest VRChat SDK version available</u>, as uploading from older versions can be blocked by their servers (as mentioned from [VRChat Developer Update - 10 October 2025 <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://ask.vrchat.com/t/developer-update-10-october-2025/46874#p-85100-a-reminder-to-upgrade-to-the-latest-sdk-3) and [VRChat Developer Update - 23 October 2025 <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://ask.vrchat.com/t/developer-update-23-october-2025/46983#p-85382-a-reminder-to-upgrade-to-the-latest-sdk-3)). To ensure you receive the latest SDKs, make sure your VRChat Creator Companion App of choice is the latest version!
 
-For the Unity Version, we currently actively support Unity 2022. To learn what specific version you should use, refer to the [VRC Creators Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://creators.vrchat.com/sdk/upgrade/current-unity-version/).
+Regarding Unity support, please refer to the [VRC Creators Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://creators.vrchat.com/sdk/upgrade/current-unity-version/) for the current Unity version that is supported by VRChat. Whichever specific Unity version VRChat actively supports takes priority in development of Poiyomi Shaders.
 
 ## Other Resourceful Info
 
