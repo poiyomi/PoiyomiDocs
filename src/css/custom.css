@@ -14,7 +14,7 @@
   --ifm-color-primary-light: #29bee8;
   --ifm-color-primary-lighter: #34c1e9;
   --ifm-color-primary-lightest: #56cced;
-  --ifm-code-font-size: 95%;
+  --ifm-code-font-size: 93%;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -60,6 +60,7 @@
   border: none;
 }
 
+/* Mona Sans */
 @font-face {
   font-family: "Mona Sans";
   src: url("/static/fonts/Mona-Sans.woff2") format("woff2 supports variations"),
@@ -68,12 +69,56 @@
   font-stretch: 75% 125%;
 }
 
+/* Inter */
 @font-face {
   font-family: "Inter";
   src: url("/static/fonts/InterVariable.woff2") format("woff2 supports variations"),
     url("/static/fonts/InterVariable.woff2") format("woff2-variations");
   font-weight: 400 900;
   font-strength: 75% 125%;
+}
+
+/* JetBrains Mono */
+
+/*** Regular ***/
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/static/fonts/JetBrainsMono-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-strength: 75%;
+  font-style: normal;
+  font-display: swap;
+  font-synthesis: none;
+}
+
+/*** Italic ***/
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/static/fonts/JetBrainsMono-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-strength: 75%;
+  font-style: italic;
+  font-synthesis: none;
+}
+
+/*** Bold ***/
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/static/fonts/JetBrainsMono-ExtraBold.woff2") format("woff2");
+  font-weight: 900;
+  font-strength: 125%;
+  font-style: normal;
+  font-synthesis: none;
+}
+
+/*** Bold Italic ***/
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/static/fonts/JetBrainsMono-ExtraBoldItalic.woff2") format("woff2");
+  font-weight: 900;
+  font-strength: 125%;
+  font-style: italic;
+  font-synthesis: none;
 }
 
 body {
@@ -87,6 +132,10 @@ h4,
 h5,
 h6 {
   font-family: "Mona Sans", sans-serif;
+}
+
+code, pre, .mono {
+  font-family: "JetBrains Mono", monospace;
 }
 
 /* SVGs set to this class will keep it contained within the page (no clipping or overlapping) */
