@@ -104,7 +104,7 @@ For those active in this project, the main Blog is located in the folder `/blog`
   - `hide_table_of_contents: true` - This should be marked `true` to keep things clean.
   - `authors:` - This should be your name as specified in the `authors.yml` file. Shows who wrote this post.
     - *Example: `authors: myname`*
-  - `tags:` - Search-friendly tags to add. Each should be a single word separated by a comma. Important for SEO!
+  - `tags: []` - Search-friendly tags to add. Each should be a single word separated by a comma. Important for SEO!
     - *Example: `tags: [blog, post, subject]`*
 - Compliance with the Docusaurus Blogging system.
 
@@ -123,3 +123,26 @@ You can then add an image inside the same folder directory. Add as many images a
 To show them in your post, use the Markdown syntax as found here: https://www.markdownguide.org/basic-syntax/#images-1. Since the image will be in the same folder as your post, the path to the image should just be the name of the file itself.
 
 Make sure you specify the Alt text as described in the Markdown syntax. This is important for SEO!
+
+## Posting Changelogs
+
+There is a sub-blog located under `/changelog`, where patch notes and major update changes should be notated. Unfortunately there is no automation since Docusaurus is static-generated, so changelogs must be published manually.
+
+When creating changelogs, please follow the following formatting:
+
+- Name the document with the prefix `YYYY-MM-DD-` for the Date of the post (Year, Month, Day), followed by `poiyomi-toon-` and ending with the version number.
+  - *Example: `2025-09-26-poiyomi-toon-9.2.79-changelog.md`. The date in this example is September 26, 2025.*
+- Must be in Markdown format.
+- Header should be exactly:
+  - `title:` - Should be the name of the shader followed by a version number and ending with "changelog" as the title.
+    - *Example: `title: Poiyomi Toon 9.2.79 Changelog`*
+  - `description:` - A short description about the update. Typically you can get away with saying that it contains information about the update.
+    - *Example: `description: Information regarding the release of Poiyomi Toon 9.2.79.`*
+  - `hide_table_of_contents: true` - This should be marked `true` to keep things clean.
+  - `authors:` - This should be your name as specified in the `authors.yml` file. Most of the time though, `poiyomi` will write these changelogs.
+    - *Example: `authors: poiyomi`*
+  - `tags: []` - Search-friendly tags to add. Put in `poiyomi, shader, vrchat, update, updates`. Put in `free` if it affects the Free version, and/or put in `pro` if it affects the Pro version.
+    - *Example: `tags: [poiyomi, shader, vrchat, update, updates, free]`
+- Compliance with the Docusaurus blogging system.
+
+To start with the written portion, feel free to go straight to the point and make a list notating each change. If you wanna be a little more professional, feel free to add a friendly sentence prior to making the list.
