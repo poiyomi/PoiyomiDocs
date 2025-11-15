@@ -133,6 +133,10 @@ Below is a Video Tutorial on how to set it up, courtesy of Community Member **Te
 
 ### Instructions
 
+:::warning
+YouTube makes destructive changes that causes testing Audio Link to not work. You may need to set up a Custom YTDL Location! Scroll down to the header by [clicking here](#using-a-custom-ytdl-location) and follow the instructions to learn more.
+:::
+
 Here are text instructions on how to set up Audio Link, as explained in the video above:
 
 1. Use the VRChat Creator Companion and click **Manage Project** for your Unity Project.
@@ -169,17 +173,21 @@ You can then change the URL from the Inspector. Paste the new URL into the field
 
 The `AudioLinkAvatar` Prefab uses the [yt-dlp <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/yt-dlp/yt-dlp) plugin from VRChat's installation files in order to test AudioLink in Unity. However oftentimes, the plugin provided by VRChat may sometimes break due to YouTube's destructive changes to the format. In cases where this happens, you can manually download the latest `yt-dlp.exe` and use it as the executable instead of the potentially outdated version provided by VRChat.
 
-:::warning Only do this if Audio Link is not working!
-Setting a Custom YTDL Location is intended for advanced users. You do not need to do this if Audio Link is already working normally!
+:::tip Recommended back-up option
+As YouTube continues to create destructive changes, using a Custom YTDL Location is going to become necessary. Until Audio Link v3.0.0 is released with a curated rewrite to support these changes, we highly recommend setting this up in order to ensure full functionality in the meantime.
 :::
 
-1. Download the latest version of the `yt-dlp.exe` executable from the [GitHub Repository](https://github.com/yt-dlp/yt-dlp/releases).
-2. Place it in a location somewhere on your Computer that you'll remember.
+1. Download the latest version of the `yt-dlp.exe` executable from the [GitHub Repository](https://github.com/yt-dlp/yt-dlp/releases). Place it in a location somewhere on your Computer that you'll remember.
+2. Install a supported external JavaScript runtime to allow full support of YouTube extraction from the JavaScript player. Either one of these should work:
+   - **Deno:** Open Windows PowerShell and type in `irm https://deno.land/install.ps1 | iex` to install Deno (Recommended by yt-dlp). Must be v2.0 or newer.
+   - **Node.js:** Download the prebuilt .msi package [here](https://nodejs.org/en/download) and install it. Must be Node.js v20.0 or newer.
 3. In Unity, navigate to the Menu option `Tools -> AudioLink -> Select Custom YTDL Location`. This will open a pop-up window asking you to locate the `yt-dlp.exe` program that you downloaded.
    - *Keep in mind, this is a global setting! It will apply to ALL Unity Projects!*
 4. If successful, the Menu option `Select Custom YTDL Location` will show a checkmark. This is indicating it's now using the custom `yt-dlp.exe` you've chosen.
 5. Enter Play Mode and cross your fingers!
 
 To debug if it's pointing to the custom location, select the `AudioLinkYtdlpPlayer` GameObject in the Scene and a Info message should appear in the Console. It may say something like, "`[AudioLink:ytdlp] Custom YTDL location found: J:/ytdlp.exe`"
+
+> The YTDL Player works best using a low resolution. Set it to `360p` or `480p` for it to stream from the internet faster.
 
 If later on you wish to go back to using VRChat's provided `yt-dlp.exe` instead, click the option `Tools -> AudioLink -> Select Custom YTDL Location` again to disable it.
