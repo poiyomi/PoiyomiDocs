@@ -130,6 +130,12 @@ Defines how much to blur the shadow out from the border position. A value of `0.
 
 How much this shadow layer should receive shadows.
 
+#### Normal Blend
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+
+Sets how much to blend this Shadow Layer with the Normals.
+
 </details>
 
 <details>
@@ -165,6 +171,12 @@ Defines how much to blur the shadow out from the border position. A value of `0.
 
 How much this shadow layer should receive shadows.
 
+#### Normal Blend
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+
+Sets how much to blend this Shadow Layer with the Normals.
+
 </details>
 
 <details>
@@ -199,6 +211,12 @@ Defines how much to blur the shadow out from the border position. A value of `0.
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much this shadow layer should receive shadows.
+
+#### Normal Blend
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+
+Sets how much to blend this Shadow Layer with the Normals.
 
 </details>
 
