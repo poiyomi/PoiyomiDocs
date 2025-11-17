@@ -11,8 +11,7 @@ This update includes some general improvements and bug fixes, as well as one big
 
 Poiyomi Pro Users: Download the latest Pro version from [pro.poiyomi.com](https://pro.poiyomi.com) by logging in via your Patreon account.
 
-## Pro 9.3.50
-
+## Changes
 - **Added Lil Fur.**
 - Fixed Fallback Cubemaps looking bad.
   - There was a bug that got introduced recently that made them look even worse. This should be resolved now.
@@ -20,7 +19,6 @@ Poiyomi Pro Users: Download the latest Pro version from [pro.poiyomi.com](https:
 - Added Normal Map sliders to each Lighting Layer within Multilayer Math.
 - Added Texture Intensity sliders for the Multilayer Math Shadow Color Textures.
 - Improved the look of Anisotropic specular slightly and split the show in Shadow and Light Direction attenuation.
-- Added `OKLab` support to Global Themes.
 
 ## Localization
 - Added **Spanish** translation for the first time, contributed by `yamikadesu`.
