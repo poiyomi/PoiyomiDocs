@@ -12,6 +12,7 @@ import Icon_HDRColor from '@site/static/img/property-icons/Icon_HDRColorD.svg';
 import Icon_Slider from '@site/static/img/property-icons/Icon_SliderD.svg';
 import Icon_Texture from '@site/static/img/property-icons/Icon_TextureD.svg';
 import Icon_Toggle from '@site/static/img/property-icons/Icon_ToggleD.svg';
+import Icon_Float4Curve from '@site/static/img/property-icons/Icon_Float4DCurve.svg';
 
 const iconMap = {
     color: Icon_Color,
@@ -36,6 +37,7 @@ const iconMap = {
     checkbox: Icon_Toggle,
     bool: Icon_Toggle,
     boolean: Icon_Toggle,
+    vectorcurve: Icon_Float4Curve,
 };
 
 export default function Icon({ name, size = '1.5em', style = {} }) {

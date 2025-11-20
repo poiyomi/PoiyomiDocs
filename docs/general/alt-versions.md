@@ -80,3 +80,11 @@ Poiyomi Pro ShatterWave is an advanced special effect that uses the mesh's verti
 The Tessellated shader includes a shading process that subdivides triangles into a more realistic structure for certain realistic effects. See [Tessellated](/docs/extended-features/tessellated.md) for more info.
 
 Tessellated shaders are extremely expensive and will greatly hinder your computer's performance, even on the most powerful hardware out there. Please exercise caution if using it.
+
+## Particle
+
+- `.poiyomi/Poiyomi Pro Particle`
+
+Poiyomi Pro Fur is a Geometric Particle shader that uses the 3D mesh to spawn each Particle from, similar to a Particle System in Unity. See [Particle](/docs/extended-features/particle.md) for more info.
+
+Just like Geometric Dissolve, it can have a significant performance impact.
