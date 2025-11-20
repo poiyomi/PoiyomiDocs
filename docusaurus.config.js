@@ -1,12 +1,15 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const {themes} = require('prism-react-renderer');
+import {themes} from 'prism-react-renderer';
 const lightTheme = themes.github;
 const darkTheme = themes.dracula;
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 /** @type {import('@docusaurus/types').Config} */
-const config = {
+
+export default {
   title: "Poiyomi Shaders",
   tagline: "Toon Shaders for Unity and VRChat",
   url: "https://www.poiyomi.com",
@@ -168,6 +171,8 @@ const config = {
           // Please change this to your repo.
           // editUrl: 'https://github.com/poiyomi/PoiyomiDocs',
           showLastUpdateTime: true,
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
         },
         // blog: true,
 
@@ -205,6 +210,16 @@ const config = {
         },
       }),
     ],
+  ],
+
+  // This stylesheet is attached for Katex plugin. Do not remove.
+  stylesheets: [
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
+      type: 'text/css',
+      integrity: 'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
+      crossorigin: 'anonymous',
+    }
   ],
 
   themes: [
@@ -495,5 +510,3 @@ const config = {
       }
     }),
 };
-
-module.exports = config;
