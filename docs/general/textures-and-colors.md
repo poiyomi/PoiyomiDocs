@@ -145,6 +145,9 @@ Mipmaps are a feature of Unity (and most modern game engines) that store shrunke
 If your UVs have very narrow gaps between each island, use your best judgement when choosing Mipmaps.
 :::
 
+<ReactVideo src='/vid/blog/texture-optimization-bgolus-mipmaps.webm'/>
+<em>Comparison of how choosing Mipmaps wil appear on digital screens.</em>
+
 #### Mipmap Filtering
 
 When using mipmaps, there is a choice on the type of filtering to use.  In Unity, you can choose `Box` or `Kaiser`. It specifies which method Unity should use when filtering mipmaps to optimize image quality.

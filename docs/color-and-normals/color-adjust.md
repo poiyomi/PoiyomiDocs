@@ -11,7 +11,7 @@ The Color Adjust section provides options for modifying the base color of the ma
 
 Color Adjust can be used to quickly change the colors presented from the main texture to a different hue of color either directly or indirectly. The results of the hue shift can vary depending on which [Color Space](#color-space) is chosen, and how much [Saturation](#saturation), [Brightness](#brightness), and [Gamma](#gamma), is set by the user.
 
-<ReactVideo src='/vid/color-and-normals/ColorAdjustDemo2.mp4'/>
+<ReactVideo src='/vid/color-and-normals/ColorAdjustDemo2.webm'/>
 <em>Demonstration of the Color Adjust feature on this Avatar's Suit. Watch how the Saturation, Brightness, and Gamma, can influence how shifting the Hue will look.</em>
 
 ## Mask
@@ -86,7 +86,7 @@ OKLab has varying hue with constant lightness and chroma. It is more *even* in l
 
 Because of OKLab's accuracy, this eliminates issues with noise and colors being washed out when changing the Hue.
 
-<ReactVideo src='/vid/color-and-normals/HueShift2.mp4'/>
+<ReactVideo src='/vid/color-and-normals/HueShift2.webm'/>
 
 *Demonstration of the difference between OKLab (Left) vs. HSV (Right) in Unity.*
 
@@ -113,7 +113,7 @@ This dropdown allows you to select how the Color Adjustment should behave when t
 
 </details>
 
-<ReactVideo src='/vid/color-and-normals/HueSelectShiftDemo.mp4'/>
+<ReactVideo src='/vid/color-and-normals/HueSelectShiftDemo.webm'/>
 <em>Demonstration of the Select and Shift behavior. Pay attention to how multiple colors are treated when using Select instead of Shift.</em>
 
 ### Hue Replace

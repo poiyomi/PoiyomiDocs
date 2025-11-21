@@ -38,7 +38,7 @@ When expanded, the Normal Map texture has options for **Tiling** and **Offset**,
 
 The Normal Map texture has a slider for **Intensity**, which affects how much influence the normal map has on the surface. This is a special property and has unique considerations for animating[^1].
 
-<ReactVideo src='/vid/color-and-normals/main_Normal-Map_Intensity.mp4'/>
+<ReactVideo src='/vid/color-and-normals/main_Normal-Map_Intensity.webm'/>
 
 *Adjusting the Intensity of a Normal Map on a Shaded material*
 
@@ -95,6 +95,6 @@ In the Cutout rendering mode, this value is set to `0.5` by default, and general
 
 In Transparent rendering modes like Fade, Transparent, TransClipping, etc., this value defaults to `0.0`. It can be used as a hard cutoff below which a transparent material will render nothing.
 
-<ReactVideo src='/vid/color-and-normals/main_Alpha-Cutoff_Fade.mp4'/> 
+<ReactVideo src='/vid/color-and-normals/main_Alpha-Cutoff_Fade.webm'/> 
 
 [^1]: [Special Unity Properties](/docs/general/locking.md#unity-special-properties)
