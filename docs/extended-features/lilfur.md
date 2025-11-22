@@ -3,15 +3,20 @@ sidebar_position: 3
 title: Lil Fur
 description: The Lil Fur Shader enables simulation of fabrics and hairs using the same technique found on LilToon's Fur Shader.
 keywords: [fur, lilfur, lil fur, liltoon, fur shader, poiyomi fur, poiyomi, shader]
-draft: true
 ---
+
+:::tip Pending Release
+Lil Fur will be added in an upcoming version of Poiyomi Shaders. Stay tuned!
+:::
 
 The Lil Fur feature module allows simulation of fabrics and hairs, looking similar to how fur is simulated in animated films. This uses the same simulation technique known in LilToon shader.
 
-To use Poiyomi Lil Fur, select the shader version `.poiyomi/Poiyomi Toon + Lil Fur` or `.poiyomi/Poiyomi Pro + Lil Fur`. This exposes the Lil Fur category with the following settings shown below.
+To use Poiyomi Lil Fur, select the shader version `.poiyomi/Poiyomi Toon + Lil Fur` or `.poiyomi/Poiyomi Pro + Lil Fur`. This exposes the `lil Fur` category with the following settings shown below.
 
-:::warning
-Lil Fur renders on it's own independently, meaning it does not stack with other Poiyomi features used. This is slightly lighter than Poiyomi Fur, although it can still have a performance cost. Please keep this in mind when using Lil Fur.
+:::warning Heads Up
+Lil Fur renders on it's own independently, meaning it does not stack with other Poiyomi features used. This is slightly lighter than Poiyomi Fur, but this means most Poiyomi-exclusive features will not appear on it.
+
+Please keep this in mind when using Lil Fur.
 :::
 
 ## Fur Mode
