@@ -88,3 +88,11 @@ Tessellated shaders are extremely expensive and will greatly hinder your compute
 Poiyomi Pro Fur is a Geometric Particle shader that uses the 3D mesh to spawn each Particle from, similar to a Particle System in Unity. See [Particle](/docs/extended-features/particle.md) for more info.
 
 Just like Geometric Dissolve, it can have a significant performance impact.
+
+## Lil Fur
+
+- `.poiyomi/Poiyomi Toon + Lil Fur`
+
+Similar to Poiyomi Fur, but instead uses the same simulation technique on LilToon's Fur Shader. See [Lil Fur](/docs/extended-features/lilfur.md) for more details.
+
+Like Poiyomi Fur, Lil Fur can have a significant performance impact.
