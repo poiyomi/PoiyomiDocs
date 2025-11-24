@@ -6,12 +6,11 @@ image: /img/color-and-normals/Thumb-ColorAdjust.png
 keywords: [hue, color, saturation, gamma, hue shift, poiyomi]
 ---
 
-
 The Color Adjust section provides options for modifying the base color of the material. This is applied directly after the main [Color and Normals](/docs/color-and-normals/color-and-normals.md) section, and will not affect any other sections that modify the Base Color.
 
 Color Adjust can be used to quickly change the colors presented from the main texture to a different hue of color either directly or indirectly. The results of the hue shift can vary depending on which [Color Space](#color-space) is chosen, and how much [Saturation](#saturation), [Brightness](#brightness), and [Gamma](#gamma), is set by the user.
 
-<ReactVideo src='/vid/color-and-normals/ColorAdjustDemo2.webm'/>
+<ReactVideo src='/vid/color-and-normals/ColorAdjustDemo.webm'/>
 <em>Demonstration of the Color Adjust feature on this Avatar's Suit. Watch how the Saturation, Brightness, and Gamma, can influence how shifting the Hue will look.</em>
 
 ## Mask
@@ -113,7 +112,7 @@ This dropdown allows you to select how the Color Adjustment should behave when t
 
 </details>
 
-<ReactVideo src='/vid/color-and-normals/HueSelectShiftDemo.webm'/>
+<ReactVideo src='/vid/color-and-normals/ShiftOrSelectDemo.webm'/>
 <em>Demonstration of the Select and Shift behavior. Pay attention to how multiple colors are treated when using Select instead of Shift.</em>
 
 ### Hue Replace
