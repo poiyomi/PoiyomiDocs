@@ -209,6 +209,7 @@ To see the different features offered between the Free vs. Pro version, refer to
 | [Tessellated](/docs/extended-features/tessellated.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | Tessellated Geometric | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | [Particles](/docs/extended-features/particle.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| Constellation | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | Wireframe | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | NameTag | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | Cubed | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
