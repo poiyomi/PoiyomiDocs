@@ -189,6 +189,7 @@ To see the different features offered between the Free vs. Pro version, refer to
 | [BlackLight Masking](/docs/modifiers/blacklight-masking.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Stochastic Sampling, Distortion UV, Panosphere UV, Polar UV | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | [Parallax Heightmapping](/docs/modifiers/uvs/parallax.md), [Post Processing Animations](/docs/modifiers/post-processing/pp-animations.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [Lil Fur](/docs/extended-features/lilfur.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Vertex Options |  |  |  |  |  |  |
 | [Basics & Fun](/docs/vertex-options/basics.md), [Glitching](/docs/vertex-options/glitching.md), [LookAt](/docs/vertex-options/look-at.md), [Vertex Colors](/docs/vertex-options/vertex-colors.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | [Shading Styles](/docs/shading/main.md) |  |  |  |  |  |  |
@@ -207,7 +208,7 @@ To see the different features offered between the Free vs. Pro version, refer to
 | [Shatterwave](/docs/extended-features/shatterwave.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | [Tessellated](/docs/extended-features/tessellated.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | Tessellated Geometric | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
-| Particle (Coming Soon) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| [Particles](/docs/extended-features/particle.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | Wireframe | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | NameTag | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | Cubed | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |

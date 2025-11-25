@@ -92,7 +92,8 @@ Just like Geometric Dissolve, it can have a significant performance impact.
 ## Lil Fur
 
 - `.poiyomi/Poiyomi Toon + Lil Fur`
+- `.poiyomi/Poiyomi Toon + Lil Fur Two Pass`
 
 Similar to Poiyomi Fur, but instead uses the same simulation technique on LilToon's Fur Shader. See [Lil Fur](/docs/extended-features/lilfur.md) for more details.
 
-Like Poiyomi Fur, Lil Fur can have a significant performance impact.
+The Lil Fur shader uses a separate pass for the fur shading, meaning it does not stack with other Poiyomi features. However, this shader may have a performance impact.
