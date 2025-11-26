@@ -372,6 +372,7 @@ export default {
       prism: {
         theme: lightTheme,
         darkTheme: darkTheme,
+        additionalLanguages: ['hlsl'],
       },
       footer: {
         logo: {
