@@ -59,12 +59,9 @@ In `CenterOut` mode, Dissolve is animated determined by the Camera's angle. [Scr
 ### Edge Width
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 0.5`
+	- Conditional: Requires [Dissolve Type](#dissolve-type) set to `Basic` or `CenterOut`
 
 Defines the range over which the edge effects apply. The larger this is, the more area the edge will cover during the dissolve. Combines with Dissolve Noise and its associated[Dissolve Detail Strength to produce the final edge.
-
-:::info
-This property is only exposed when using `Basic` or `CenterOut` Dissolve Type.
-:::
 
 <!-- ![Dissolve Edge Width 0 -> 0.25 -> 0.5]() -->
 
@@ -129,12 +126,9 @@ An Emission multiplier for the Dissolved state. Will use the Dissolved texture i
 ### Dissolve Gradient
 
 - `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = Off`)
+	- Conditional: Requires [Dissolve Type](#dissolve-type) set to `Basic`
 
 A linear gradient map that defines the Dissolve Map. This tells the Shader the direction of the Dissolve on the UV when using a Basic Dissolve.
-
-:::info
-This texture slot is only exposed when [Dissolve Type](#dissolve-type) is set to `Basic`.
-:::
 
 ### Dissolve Noise
 
@@ -368,12 +362,9 @@ Uses the direction of Light to use as the CenterOut direction.
 #### Custom Direction Value
 
 - `Type`: <PropertyIcon name="float3" />**Float3**
+	- Conditional: Requires [CenterOut Mode](#centerout-mode) set to `Custom Direction`
 
 Chooses the Custom Direction of the CenterOut on the Local X, Y, and Z axis.
-
-:::info
-This property is only exposed if you chose `Custom Direction` as the CenterOut Mode.
-:::
 
 #### Invert
 

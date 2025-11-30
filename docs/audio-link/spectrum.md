@@ -90,12 +90,9 @@ How large the width of the Spectrum should be across the projection.
 
 - `Type`: <PropertyIcon name="float4" />**Float4**
     - Default: `X = 0`, `Y = 1`, `Z = 0`, `W = 1`
+    - Conditional: Requires [UV Mode](#uv-mode) set to `Circle`
 
 Adjusts the radius and dimension of the Circle Spectrum, if used.
-
-:::info
-This property is only shown if the [UV Mode](#uv-mode) is set to `Circle`.
-:::
 
 <ReactVideo src='/vid/audio-link/ALSpect_CircleDimensions.webm'/>
 
