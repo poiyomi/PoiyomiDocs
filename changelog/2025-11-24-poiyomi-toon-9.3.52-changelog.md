@@ -5,14 +5,13 @@ hide_table_of_contents: true
 authors:
   poiyomi
 tags: [shader, vrchat, updates, update, free, pro]
-draft: true
 ---
 
 ## This is a major release!
 
 Poiyomi Toon has been graduated to version 9.3 and introduces a new shading feature called **Constellation**, exclusive to Poiyomi Pro.
 
-The Toon version is now available in the VCC Repository, GitHub, and on BOOTH.
+The Toon version is now available to download in our Discord server. Please test it out! As soon as we can confirm this version is bug-free, this will be the version released on the VCC, GitHub, and on BOOTH.
 
 Poiyomi Pro Users: Download the latest Pro version from [pro.poiyomi.com](https://pro.poiyomi.com) by logging in with your Patreon account.
 
@@ -20,7 +19,8 @@ Poiyomi Pro Users: Download the latest Pro version from [pro.poiyomi.com](https:
 
 ### Changes
 - Added Lil Fur and Lil Fur Two Pass shaders.
-  - Read more on how Lil Fur functions in Poiyomi Shaders on the Documentation page [here](https://www.poiyomi.com/extended-features/lilfur).
+  - The Lil Fur shaders are independent and do not stack with each other. This is vastly different from the Poiyomi Fur shader.
+  - Please read more on how Lil Fur functions in Poiyomi Shaders on the Documentation page [here](https://www.poiyomi.com/extended-features/lilfur).
 - All Documentation Links have been updated.
 - Fixed a bug when Decal was set to Back Only or Front Only, the Alpha Blend Mode still affected the other side of the mesh.
 
