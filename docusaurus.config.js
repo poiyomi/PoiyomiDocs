@@ -2,8 +2,6 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 
 import {themes} from 'prism-react-renderer';
-const lightTheme = themes.github;
-const darkTheme = themes.dracula;
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 
@@ -370,8 +368,8 @@ export default {
         ],
       },
       prism: {
-        theme: lightTheme,
-        darkTheme: darkTheme,
+        theme: themes.vsLight,
+        darkTheme: themes.vsDark,
         additionalLanguages: ['hlsl'],
       },
       footer: {
