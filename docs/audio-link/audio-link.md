@@ -86,7 +86,9 @@ Properties that allow animated overrides of the Audio Bands against Audio Link d
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
 
-Enables the Band Overrides function. These sliders will manually override the mentioned Band as if music is playing, except that now you're manually animating it's values.
+When ON, the per‑band sliders below completely replace the incoming AudioLink data for their respective bands. When OFF, normal AudioLink data (if any) is used and the sliders are ignored.
+
+These sliders will manually override the mentioned band as if music is playing, except that now you're manually animating its values.
 
 This can be useful if you for some reason wish to use the `Voice` VRChat Parameter to also animate the forementioned Overrides in your Animator. As an example, you could use `Voice` to make those Bands have an effect when you speak.
 
@@ -97,25 +99,25 @@ This can be useful if you for some reason wish to use the `Voice` VRChat Paramet
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
-How much to override the Bass Band. A value greater than `0` will override the Band to the specified value.
+Value to force for the Bass band while Band Overrides is enabled. (0 = silence, 1 = full). The value always overrides while Band Overrides is ON, even if it is `0.0`. When Band Overrides is OFF this value does nothing.
 
 #### Low Mid
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
-How much to override the Low Mid Band. A value greater than `0` will override the Band to the specified value.
+Value to force for the Low Mid band while Band Overrides is enabled. Behaves identically to Bass.
 
 #### High Mid
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
-How much to override the High Mid Band. A value greater than `0` will override the Band to the specified value.
+Value to force for the High Mid band while Band Overrides is enabled. Behaves identically to Bass.
 
 #### Treble
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
-How much to override the Treble Band. A value greater than `0` will override the Band to the specified value.
+Value to force for the Treble band while Band Overrides is enabled. Behaves identically to Bass.
 
 </details>
 
