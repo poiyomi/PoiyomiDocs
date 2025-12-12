@@ -292,13 +292,7 @@ export default {
         minHeadingLevel: 2,
         maxHeadingLevel: 3,
       },
-      // announcementBar: {
-      //  id: 'alert_critical',
-      //  content: 'Global Announcement goes here.',
-      //  backgroundColor: '#ff0033',
-      //  textColor: '#ffffff',
-      //  isCloseable: true,
-      // },
+      // announcementBar: { id: 'alert_critical', backgroundColor: '#ff0033', textColor: '#ffffff', isCloseable: true, content: 'Global Announcement goes here.' },
       navbar: {
         title: "Poiyomi Shaders",
         logo: {
