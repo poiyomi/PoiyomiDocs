@@ -31,9 +31,9 @@ Lighting mode to use. Each of these models uses the same lighting data in differ
 This option cannot be animated at runtime! Please consider a material swap if you need to change the lighting mode for some reason!
 :::
 
-### TextureRamp
+### Texture Ramp
 
-TextureRamp is a Toon lighting method that uses a gradient texture to determine the lighting level. This texture can be edited using the Thry gradient editor by clicking the gradient slot.
+Texture Ramp is a Toon lighting method that uses a gradient texture to determine the lighting level. This texture can be edited using the Thry Gradient Editor by clicking the gradient texture slot.
 
 Texture Ramp lighting is useful for creating cartoon-like lighting, especially when specific color gradients are desired.
 
@@ -42,7 +42,7 @@ Texture Ramp lighting is useful for creating cartoon-like lighting, especially w
 *Demonstration of Texture Ramp Shading using Thry Gradient Editor.*
 
 <details>
-<summary><b>TextureRamp Options</b></summary>
+<summary><b>Texture Ramp Options</b></summary>
 
 #### Shadow Tint
 
@@ -52,17 +52,33 @@ Shadow Tint will tint the shadow map with a specific color, useful for creating 
 
 #### Lighting Ramp
 
-- `Type`: <PropertyIcon name="texture" />**Color Gradient** Texture (sRGB **ON**)
+- `Type`: <PropertyIcon name="texture" />**Linear Gradient** Texture (`sRGB = OFF`)
 
-Ramp texture that controls the lighting. The lightmap is mapped from left-to-right, with the left-most pixel being the darkest, and the right-most pixel being the lightest. This texture generally uses a black-to-white gradient, but it can contain colors to create a more specific lighting effect.
+Ramp texture that controls the overall shading in Texture Ramp. This is mapped from left-to-right, with the left-most pixel being the darkest and the right-most pixel being the lightest. This texture generally uses a black-to-white gradient, but it can contain colors to create a more specific lighting effect. However, we recommend to use grayscale for the best results.
 
-This texture can be edited using the Thry gradient editor by clicking the gradient slot.
+This texture can be edited using the Thry Gradient Editor by clicking the wide gradient located to the right of the texture slot.
+
+:::note
+When editing the Ramp Texture using the Gradient Editor, your changes will be saved in the `Assets/textures/Gradients` folder in Unity with a unique identifier. If this folder doesn't exist, it will be generated automatically upon saving.
+:::
 
 #### Ramp Offset
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
 
 Offsets the ramp from left to right. Negative values will bias the lighting toward the left (darker) side, and positive values will bias the lighting toward the right (lighter) side.
+
+#### Ramp Count
+
+- `Type`: <PropertyIcon name="float" />**Float**
+
+This will set an amount of Ramps to use on the Texture Ramp.
+
+#### Ramp Selector UV
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `UV0`/`UV1`/`UV2`/`UV3`
+
+Chooses which UV to use for the Ramp.
 
 #### Shadow Strength
 
