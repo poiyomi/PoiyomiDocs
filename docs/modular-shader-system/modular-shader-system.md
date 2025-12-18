@@ -1,15 +1,21 @@
 ---
 sidebar_position: 1
 title: Modular Shader System
-description: A guide to creating shader modules for the Poiyomi shader framework.
+description: A guide to creating shader modules for the Poiyomi Shaders framework.
 keywords: [modular, shader, module, template, poiyomi, development, custom, poiTemplateCollection, VRLM, VRLT, VRLTC]
 ---
 
-A guide to creating shader modules for the Poiyomi shader framework.
+Poiyomi Shaders is put together using the Modular Shader System, which allows for modular architecture on each individual features. This is a comprehensive guide to creating shader modules for the Poiyomi Shaders framework.
+
+:::info Attention Shader Developers
+For security reasons, the Modular Shader components and modules referenced here are only exposed for end-user access in the Poiyomi Pro shader package, as it also exposes Pro-only modules.
+
+To learn more on how to obtain the Poiyomi Pro version, see [Download & Install: Poiyomi Pro](/docs/download/download.md#poiyomi-pro).
+:::
 
 ## Overview
 
-The Poiyomi shader system uses a modular architecture where individual features are defined as separate modules. Each module consists of two main files:
+The Poiyomi Shader system uses a modular architecture where individual features are defined as separate modules. Each module consists of two main files:
 
 1. **Module Definition** (`.asset`) - YAML file defining module metadata and template references
 2. **Template Collection** (`.poiTemplateCollection`) - Contains the actual shader code templates
@@ -889,4 +895,3 @@ Modules are included via Module Collections. Add your module reference to the ap
 - [Poiyomi Documentation](https://www.poiyomi.com)
 - [ThryEditor Documentation](https://github.com/Thryrallo/ThryEditor)
 - Existing modules in `Poi_FeatureModules/` serve as excellent references
-
