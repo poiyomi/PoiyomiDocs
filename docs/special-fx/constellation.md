@@ -3,10 +3,13 @@ sidebar_position: 16
 title: Constellation
 description: Constellation creates a galactic special effect that replicates animated connected stars.
 keywords: [constellation, galactic, stars, special effect, special fx]
-draft: true
 ---
 
-Constellation is a unique special effect that replicates connected stars in an abstract pattern.
+Constellation is a unique special effect that replicates connected stars in an abstract pattern. It is continuously animated and can have a wide variety of different adjustments.
+
+:::note New Feature Notice
+Constellation is currently in active development. Therefore, information on this page may change at any time without notice.
+:::
 
 <!-- POIYOMI PRO LABEL -->
 <a target="_blank" href="https://www.patreon.com/poiyomi">
