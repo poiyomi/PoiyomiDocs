@@ -76,7 +76,7 @@ Sets what faces should be discarded. By default, this is set to `Back`. `Front` 
 
 These coordinates work in the same manner as the primary [Discard Coordinates](#discard-coordinates) option.
 
-## UV Tile Setup
+## UV Tile Setup <!-- NOTE: DO NOT CHANGE THIS HEADER! This is linked to from the Shader UI! -->
 
 For an example of a correct setup using Blender, we can take an existing mesh, and add an extra UV channel to it:
 

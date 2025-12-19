@@ -7,10 +7,6 @@ keywords: [constellation, galactic, stars, special effect, special fx]
 
 Constellation is a unique special effect that replicates connected stars in an abstract pattern. It is continuously animated and can have a wide variety of different adjustments.
 
-:::note New Feature Notice
-Constellation is currently in active development. Therefore, information on this page may change at any time without notice.
-:::
-
 <!-- POIYOMI PRO LABEL -->
 <a target="_blank" href="https://www.patreon.com/poiyomi">
 <img src="/img/Poiyomi-Pro-Label.png" alt="Pro Feature" width="600px"/>
@@ -21,7 +17,7 @@ Constellation is currently in active development. Therefore, information on this
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Normal`/`Multiply`/`Add`
   - `Type`: <PropertyIcon name="dropdown" />**UV**, Options: `UV0`/`UV1`/`UV2`/`UV3`/`Panosphere`/`World Pos`/`Local Pos`/`Polar UV`/`Distorted UV`/`Matcap`
 
-Sets the Color Blending mode and which UV to draw the Constellation on.
+Sets the Color Blending mode and which UV to draw the Constellations on.
 
 ## Color
 
@@ -103,9 +99,9 @@ Sets the base brightness of the stars.
 
 As the constellation animates, stars will twinkle in a blinking pattern. This slider will set how fast the stars should "blink" over time.
 
-## Depth Fade
+## Layer Fade
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+- `Type`: <PropertyIcon name="multislider" />**Multislider**, Range: `0.0 - 1.0`
 
 This sets how the constellation should fade on it's depth distance.
 
