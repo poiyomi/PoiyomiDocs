@@ -35,7 +35,8 @@ Enables the mentioned Decal slot.
 Each of the 4 decal sections (0, 1, 2, 3) have the following options listed below. They are independent of each other and colors are blended in order of ID, according to their blend operation. Decal Emissions are always added with one another when overlapping.
 :::
 
-### Positioning <!-- NOTE: DO NOT CHANGE THIS HEADER! This is linked to from the Shader UI! -->
+<!-- NOTE: DO NOT CHANGE THIS HEADER! This is linked to from the Shader UI! -->
+### Positioning
 
 :::tip
 Decals supports the **Raycast** feature, which allows you to visually position a Decal on your Model without having to second-guess it's exact UV coordinates.
