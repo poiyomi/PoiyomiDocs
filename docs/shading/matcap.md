@@ -37,7 +37,7 @@ Top Pinch maps the texture based on the view normals, with a correction for the 
 
 ### Double Sided
 
-Double Sided uses the object's orientation and the reflection vectors to determine the matcap projection. This results in a consistent, unique matcap effect.
+Double Sided uses the object's orientation and the reflection vectors to determine the matcap projection. This results in a consistent, unique matcap effect. However, this may require an arbitrary adjustment of the matcap's [Border](#border) value for it's appearance to look good.
 
 ### Gradient
 
@@ -94,8 +94,13 @@ How much to continuously pan the Matcap on the UV's X-axis and Y-axis.
 ### Border
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 0.5`
+  - Default: `0.5`
 
-How far toward the edge the matcap texture should be applied. At 0.0, it would only project the very center. At 0.5, it would project all the way to the edge. This option defaults to `0.43`.
+How far toward the edge the Matcap texture should be applied. At `0.0`, it would only project the very center. At `0.5`, it would project all the way to the edge.
+
+The Border value should be chosen based on how your Matcap texture appears. This is because there can be arbitrary cases depending on the [UV Mode](#uv-mode) you choose. By default, `0.5` should be what you use as it shows the whole Matcap as-is.
+
+Do keep in mind some Matcaps will not look pleasant at `0.5` when using `Double Sided` UV Mode, so you will need to adjust the Border. An arbitrary value to use for `Double Sided` should be at `0.43`.
 
 ### Rotation
 
