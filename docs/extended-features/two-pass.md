@@ -5,7 +5,7 @@ description: The Poiyomi Two Pass shader renders two rendering passes on the sha
 keywords: [two pass, 2nd pass, two, pass, poiyomi, shader]
 ---
 
-The Two Pass version does two rendering passes on teh shader with the inside of the Mesh rendered first and the outside second (Cull Front > Cull Back). This special version should only be used when creating Meshes that need to have double the rendering pass, especially with Transparency.
+The Two Pass version does two rendering passes on the shader with the inside of the Mesh rendered first and the outside second (Cull Front > Cull Back). This special version should only be used when creating Meshes that need to have double the rendering pass, especially with Transparency.
 
 To use the Two Pass shader, select the shader version `.poiyomi/Poiyomi Toon Two Pass`. When this shader is selected, a `2nd Pass` category will be exposed on the UI below Color & Normals with the properties shown below. Additionally, three additional sections will be exposed under [Rendering](/docs/rendering/rendering.md) and will appear as `2nd Pass Rendering`, `2nd Pass Blending`, and `2nd Pass Stencil`.
 
