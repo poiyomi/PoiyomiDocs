@@ -7,7 +7,7 @@ authors:
 tags: [shader, vrchat, updates, update, free, pro]
 ---
 
-# This is a major release!
+## This is a major release!
 
 **Poiyomi Toon is now on version 9.3 LTS. See previous changelogs for the major changes introduced!**
 
