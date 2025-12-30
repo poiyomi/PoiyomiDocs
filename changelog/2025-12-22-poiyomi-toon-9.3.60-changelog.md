@@ -15,4 +15,4 @@ Poiyomi Pro Users: Download the latest Pro version from [pro.poiyomi.com](https:
 
 ### Changes
 - Emission NOW works with Lil Fur.
-  - I thought I fixed this already, but I get the fix got lost somehow.
+  - I thought I fixed this already, but I guess the fix got lost somehow.
