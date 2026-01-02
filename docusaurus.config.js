@@ -475,6 +475,10 @@ export default {
                 label: "VCC Repository",
                 href: "vcc://vpm/addRepo?url=https%3A%2F%2Fpoiyomi.github.io/vpm/index.json",
               },
+              {
+                label: "Poiyomi Pro (Requires Patreon)",
+                href: "https://pro.poiyomi.com/",
+              },
             ],
           },
           {
