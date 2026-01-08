@@ -16,12 +16,10 @@ For more detailed information on this system, [visit the LTCGI Documentation <FA
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
 
-<!-- 
-EDITORS NOTE: This H2 Header only has this Message Box below. Adding additional words above or below it may make it look repetitive. -BluWizard10
--->
+This checkbox allows toggling LTCGI effects at runtime.
 
 :::tip
-Animate this Toggle (checkbox) when creating toggles for LTCGI on this Material. Animating the [Section Header](/docs/general/locking.md#section-header-checkboxes) will not work!
+LTCGI rendering is enabled by default. To turn off LTCGI in-game, you need to animate this Toggle (checkbox) when creating toggles for LTCGI on this Material. Animating the [Section Header](/docs/general/locking.md#section-header-checkboxes) will not work!
 :::
 
 ## Diffuse Tint
