@@ -24,12 +24,10 @@ SSAO is a performance heavy effect, so use it mindfully. Add a toggle for [Anima
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
 
-<!-- 
-EDITORS NOTE: This H2 Header only has this Message Box below. Adding additional words above or below it may make it look repetitive. Let's avoid that. -BluWizard10
--->
+This checkbox allows toggling SSAO at runtime.
 
 :::tip
-Animate this Toggle (checkbox) when creating toggles for SSAO on this Material. Animating the [Section Header](/docs/general/locking.md#section-header-checkboxes) will not work!
+SSAO rendering is enabled by default. To turn off SSAO in-game, you need to animate this Toggle (checkbox) when creating toggles for SSAO on this Material. Animating the [Section Header](/docs/general/locking.md#section-header-checkboxes) will not work!
 :::
 
 ## AO Intensity
