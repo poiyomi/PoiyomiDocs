@@ -89,45 +89,88 @@ How much emission the flipbook should have. This stacks with whatever blending o
 
 How many frames per second the flipbook should play if "Manual Frame Control" is not enabled. This is used to determine how fast the flipbook should play. The default is 30 FPS.
 
+:::warning Heads Up
+The FPS will be automatically configured based on the GIF shortly after conversion in the [Texture Array](#texture-array) slot.
+:::
+
 ## Frame Offset
 
 - `Type`: <PropertyIcon name="float" />**Float**
 
 Sets an offset for the frames.
 
+<!-- NOTE: DO NOT CHANGE THIS HEADER! This is linked to from the Shader UI! -->
 ## Positioning
 
-### Pan UV
+:::tip
+Flipbook supports **Raycast**, the same feature offered in Decals. This allows you to visually position your Flipbook on your Model without having to second-guess it's exact UV coordinates.
+
+To use this feature, edit the Flipbook on your Material <u>directly from the Mesh</u> as shown here:
+
+<ReactVideo src='/vid/color-and-normals/Decals_RaycastDemo.webm'/> <!-- REPLACE THIS WITH A VARIANT OF THIS EXAMPLE USING FLIPBOOKS! -->
+
+`Left-Click` on the **Raycast** button to enable the feature. Hover the Mouse over your Mesh to position it, then `Left-Click` again to finalize your placement.
+:::
+
+### Position
 
 - `Type`: <PropertyIcon name="float2" />**Vector2**
 
-Sets a panning speed on the Flipbook.
-
-### Scale / Offset 
-
-- `Type`: <PropertyIcon name="float4" />**Vector4**
-
-Determines the Scale (size) and Offset (position) of the Flipbook. The first two values are the scale (in X/Y) and the second two are the position (in X/Y). This allows placing the Flipbook like a Decal.
-
-## Side Offset
-
-- `Type`: <PropertyIcon name="float4" />**Vector4**
-
-Side Offset allows stretching and squishing the Flipbook in the X and Y directions. Each value can be positive or negative values, with positive values stretching the Flipbook in that direction, and negative values squishing the Flipbook in that direction.
-
-The first two values the left and right offsets, and the second two are the top and bottom offsets.
+Where on the UV the Flipbook's center should be.
 
 ### Rotation
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 360.0`
 
-How much to rotate the Flipbook by, in degrees.
+How much rotation to apply to the Flipbook, around its center position.
 
 ### Rotation Speed
 
 - `Type`: <PropertyIcon name="float" />**Float**
 
-A constant rotation speed applied to the decal. A value of `180` will rotate the decal once per second, which is quite fast.
+A constant rotation speed applied to the Flipbook. A value of `180` will rotate the Flipbook once per second.
+
+### Scale
+
+- `Type`: <PropertyIcon name="float2" />**Vector2**
+
+Scale of the Flipbook in UV space. `1.0, 1.0` would map the decal to the entire UV square.
+
+### Side Offset
+
+- `Type`: <PropertyIcon name="float4" />**Vector4**
+
+How much scale offset to define on each side of the Flipbook.
+
+### Aspect Ratio
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`Shrink to Fit`/`Grow to Fit`
+
+Determines the Aspect Ratio of the Flipbook, used to specify fitting within the boundaries of your Flipbook or to fill in the entire Decal boundaries.
+
+### Mirrored UV Mode
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`Flip`/`Left Only`/`Right Only`/`Flip Right Only`
+
+This option allows you to place the Flipbook on Meshes that have problematic overlapping UVs, where two or more UV islands stack above each other. Use this to put the Flipbook on just one side, or flip them on one side as well.
+
+:::info
+If your Flipbook appear normally in the intended location without it appearing in another area, you shouldn't need to use this setting!
+
+While models with Overlapping UVs are becoming less and less common, there are still many models out there that suffer from this mistake. Only use this setting if this is the case on your end.
+:::
+
+### Symmetry Mode
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`Symmetry`/`Flipped`
+
+This setting will divide the UV down the Center (at `X = 0.5`) and puts the Flipbook on Both Sides of the Symmetry, like a mirror. This only works on models that have a perfectly symmetrized UV layout.
+
+### Tiled
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+
+Whether or not the Flipbook texture should be tiled. By default, Flipbooks are not tiled.
 
 ## Manual Frame Control
 

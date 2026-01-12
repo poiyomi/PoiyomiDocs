@@ -52,31 +52,37 @@ To use this feature, edit the Decal on your Material <u>directly from the Mesh</
 
 - `Type`: <PropertyIcon name="float2" />**Vector2**
 
-Where on the UV the decal's center should be.
+Where on the UV the Decal's center should be.
 
 #### Rotation
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 360.0`
 
-How much rotation to apply to the decal, around its center position.
+How much rotation to apply to the Decal, around its center position.
 
 #### Rotation Speed
 
 - `Type`: <PropertyIcon name="float" />**Float**
 
-A constant roatation speed applied to the decal. A value of `180` will rotate the decal once per second.
+A constant rotation speed applied to the Decal. A value of `180` will rotate the Decal once per second.
 
 #### Scale
 
 - `Type`: <PropertyIcon name="float2" />**Vector2**
 
-Scale of the decal, in UV space. `1.0, 1.0` would map the decal to the entire UV square.
+Scale of the Decal, in UV space. `1.0, 1.0` would map the Decal to the entire UV square.
 
 #### Side Offset
 
 - `Type`: <PropertyIcon name="float4" />**Vector4**
 
-How much scale offset to define on each side of the decal.
+How much scale offset to define on each side of the Decal.
+
+#### Aspect Ratio
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`Shrink to Fit`/`Grow to Fit`
+
+Determines the Aspect Ratio of the Decal, used to specify fitting within the boundaries of your Decal or to fill in the entire Decal boundaries.
 
 #### Mirrored UV Mode
 
@@ -100,7 +106,7 @@ This setting will divide the UV down the Center (at `X = 0.5`) and puts the Deca
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
 
-Whether or not the decal texture should be tiled. By default, decals are not tiled.
+Whether or not the Decal texture should be tiled. By default, decals are not tiled.
 
 ### Color
 

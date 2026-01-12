@@ -7,7 +7,7 @@ keywords: [details, tile, tiling, normals, base color, poiyomi, shader]
 
 The Details section provides options to apply additional textures (often tiled) to the base color and normals. When tiled, this feature can grant the user to bring out additional small details on the model without sacrificing quality.
 
-When coming from other shaders, Details can sometimes be referred to as *2nd Normal*.
+This section contains more customization features for 2nd Normals in comparison to [Normal Map 2](/docs/color-and-normals/normal-map-2.md).
 
 ## Detail Mask
 
@@ -60,6 +60,10 @@ Select which [Global Mask](/docs/modifiers/global-masks.md) to only affect the D
 - `Type`: <PropertyIcon name="texture" />**Normal Map** Texture (`sRGB = OFF`)
 
 A normal map texture that's blended with the base normal map. 
+
+:::info Use OpenGL Format
+**Poiyomi Shaders, and across Unity as a whole, <u>requires OpenGL format</u> for Normal Maps.** Even though the game runs in DirectX, Unity always uses the OpenGL format.
+:::
 
 #### Normal Intensity
 
