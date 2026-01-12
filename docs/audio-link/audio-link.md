@@ -46,10 +46,10 @@ When this feature activates, the following sections in Poiyomi Shaders will have
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
 
-This is used to globally toggle Audio Link effects across the entire material though animations.
+This checkbox allows toggling Audio Link effects at runtime.
 
-:::tip Reminder
-Make sure to tag this checkbox as animated if creating toggles for this feature. Animating the [Section Header](/docs/general/locking.md#section-header-checkboxes) will not work! [Read More](/docs/general/locking.md#marking-properties-for-animation)
+:::tip
+Audio Link is enabled by default. To turn off Audio Link in-game, you need to animate this Toggle (checkbox) when creating toggles for Audio Link on this Material. Animating the [Section Header](/docs/general/locking.md#section-header-checkboxes) will not work!
 :::
 
 ## Smoothing
