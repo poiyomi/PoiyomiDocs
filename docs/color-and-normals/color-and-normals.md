@@ -46,23 +46,6 @@ The Alpha Map can be inverted with the **Invert** option.
 
 *Alpha Map Invert: Off/On*
 
-## Alpha Cutoff
-
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
-
-The **Alpha Cutoff** value sets the alpha value at which to [clip](https://docs.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-clip) a pixel. If the alpha value of a pixel is below this value, the pixel is [discarded](https://docs.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-discard).
-
-This is a special property and has unique considerations for animating[^1].
-
-In the Cutout rendering mode, this value is set to `0.5` by default, and generally does not need to be adjusted.
-
-![Alpha Cutoff Cutout GIF](/img/color-and-normals/main_Alpha-Cutoff_Cutout.png)
-*Alpha Cutoff (Cutout Rendering Preset): 0 -> 0.25 -> 0.5 -> 0.75*
-
-In Transparent rendering modes like Fade, Transparent, TransClipping, etc., this value defaults to `0.0`. It can be used as a hard cutoff below which a transparent material will render nothing.
-
-<ReactVideo src='/vid/color-and-normals/main_Alpha-Cutoff_Fade.webm'/> 
-
 ## Normal Map
 
 - `Type`: <PropertyIcon name="texture" />**Normal Map** Texture (`sRGB = OFF`)
@@ -96,5 +79,22 @@ To learn more about Normals, see the video below.
 <div class="videobox">
 <iframe class="iframe-element" src="https://www.youtube-nocookie.com/embed/spuF6j87kPU?si=TO5iXVR7NWWw4xNw" title="YouTube Video Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
+
+## Alpha Cutoff
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+
+The **Alpha Cutoff** value sets the alpha value at which to [clip](https://docs.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-clip) a pixel. If the alpha value of a pixel is below this value, the pixel is [discarded](https://docs.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-discard).
+
+This is a special property and has unique considerations for animating[^1].
+
+In the Cutout rendering mode, this value is set to `0.5` by default, and generally does not need to be adjusted.
+
+![Alpha Cutoff Cutout GIF](/img/color-and-normals/main_Alpha-Cutoff_Cutout.png)
+*Alpha Cutoff (Cutout Rendering Preset): 0 -> 0.25 -> 0.5 -> 0.75*
+
+In Transparent rendering modes like Fade, Transparent, TransClipping, etc., this value defaults to `0.0`. It can be used as a hard cutoff below which a transparent material will render nothing.
+
+<ReactVideo src='/vid/color-and-normals/main_Alpha-Cutoff_Fade.webm'/> 
 
 [^1]: [Special Unity Properties](/docs/general/locking.md#unity-special-properties)
