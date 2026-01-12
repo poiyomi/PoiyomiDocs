@@ -17,8 +17,8 @@ Most, if not all Shaders in Substance Painter, should work when previewing the M
 
 ## Export Presets
 
-:::info Recently Updated!
-These templates were updated to include new workflows that were introduced between 8.0 and 9.0. However, the naming of the Texture files have been changed for simplicity.
+:::info Updated for 10.0!
+The Export templates have been redesigned to take advantage of Substance Painter's features. Please carefully read on how to use them!
 :::
 
 To use these presets, download them and add them to your substance project either by navigating to `File -> Import Resources` and adding them, or dragging them onto the shelf (which will open the same interface with the presets pre-selected)
@@ -30,7 +30,7 @@ Alternatively, place these presets in your exports folder. For most people, this
 
 ## Download
 
-:::tip Latest 9.0+ Export Templates
+:::tip Latest 10.0+ Export Templates
 <h3> 📥 <a target="_blank" href="/assets/substance/Unity Poiyomi V9 r2024-03-20.spexp" download="Unity Poiyomi V9 r2024-03-20.spexp"><b><code>Unity Poiyomi V9 r2024-03-20.spexp</code></b></a></h3>
 <h3> 📥 <a target="_blank" href="/assets/substance/Unity Poiyomi V9_ExtraMaps r2024-03-20.spexp" download="Unity Poiyomi V9_ExtraMaps r2024-03-20.spexp"><b><code>Unity Poiyomi V9_ExtraMaps r2024-03-20.spexp</code></b></a></h3>
 :::
@@ -41,18 +41,21 @@ Alternatively, place these presets in your exports folder. For most people, this
 
 Textures have a specific prefix when exported: `t_$textureSet_`. `t` indicates it's a texture (and groups textures together when sorted), `$textureSet` which the name of the Material set set being used. At the end of the filename is the type of texture, which will be one of the following:
 
-- `BaseColor`: Place in the [`Main Texture`](/docs/color-and-normals/color-and-normals.md#main-texture) slot in [Color & Normals](/docs/color-and-normals/color-and-normals.md).
+- `BaseColor`: Place in the [`Main Texture`](/docs/color-and-normals/color-and-normals.md#texture) slot in [Color & Normals](/docs/color-and-normals/color-and-normals.md).
 - `NormalMap`: Place in the [`Normal Map`](/docs/color-and-normals/color-and-normals.md#normal-map) texture slot in [Color & Normals](/docs/color-and-normals/color-and-normals.md). Make sure to mark it as a normal map in the texture import settings.
-- `AmbientOcclusion`: Place in the [`AO`](docs/shading/light-data.md#ao-maps) texture slot in [Light Data](/docs/shading/light-data.md). Make sure to **uncheck sRGB** in the texture import settings.
-- `MetallicSmoothnessMaps`: Place in the [`Packed Maps`](/docs/shading/reflections-and-specular.md#packed-maps) texture slot in [Reflections & Specular](/docs/shading/reflections-and-specular.md). Make sure to **uncheck sRGB** in the texture import settings, and that all of your sliders are set to 1.0, which uses the map's value. Note that this uses `User0` and `User1` channels in Substance Painter for the Reflection and Specular masks respectively, which can be hand-authored to control the amount of reflection and specular.
+- `AmbientOcclusion`: Place in the [`AO Maps`](docs/shading/light-data.md#ao-maps) texture slot in [Light Data](/docs/shading/light-data.md). Make sure to **uncheck sRGB** in the texture import settings.
+  - This template will pack in both the Mesh, Input, and Mixed Ambient Occlusion maps into separate channels for your convenience. Mesh AO will go to the `R` channel, while Input AO will go to the `G` channel, and both Mixed AO will be packed into the `B` channel.
+- `MetallicSmoothnessMaps`: Place in the [`Packed Maps`](/docs/shading/reflections-and-specular.md#packed-maps) texture slot in [Reflections & Specular](/docs/shading/reflections-and-specular.md). Make sure to **uncheck sRGB** in the texture import settings, and that all of your sliders are set to 1.0, which uses the map's value.
+  - `Roughness` is automatically converted to match Unity's PBR pipeline when using this template.
+  - Note that this uses `Reflection` and `Specular level` channels in Substance Painter for the `Reflection` and `Specular` masks respectively. **These are optional!** It is provided if you wish to manually determine the amount of reflection and specular intensity on your map.
 - `EmissionMap`: Place in the [`Emission Map`](/docs/special-fx/emission.md#emission-map) texture slot in [`Emission`](/docs/special-fx/emission.md).
-- `GlobalMask`: Place in one of the Global Mask texture slots in [`Global Mask`](/docs/modifiers/global-masks.md). Make sure to **uncheck sRGB** in the texture import settings. Note that this uses the custom **User channels** in Substance for your Masks. This Template is programmed to use `User10` for the `R` channel, `User11` for the `G` channel, `User12` for the `B` channel, and `User13` for the `A` channel.
+- `GlobalMask`: Place in one of the Global Mask texture slots in [`Global Mask`](/docs/modifiers/global-masks.md). Make sure to **uncheck sRGB** in the texture import settings. Note that this uses the custom **User channels** in Substance for your Masks. This Template is programmed to use `User0` for the `R` channel, `User1` for the `G` channel, `User2` for the `B` channel, and `User3` for the `A` channel.
 
 <a target="_blank" href="/img/general/substance_texturelocations.png">
 <img src="/img/general/substance_texturelocations.png" alt="V8 Export Texture Locations"/>
 </a>
 
-*V9 Export Texture Locations (click to zoom)*
+*V10 Export Texture Locations (click to zoom)*
 
 ### Usage Notes
 
@@ -70,11 +73,12 @@ PBR shading relies on the world lighting being well-defined and correct. In worl
 
 When using the `ExtraMaps` preset, additional textures are exported:
 
-- All textures from the [v8 preset](#textures).
-- The `v7MetallicGlossiness` texture for poiyomi v7 metallics and smoothness, which is also compatible with the Unity Standard Shader.
+- All textures from the [V10 preset](#textures).
+- `StandardMetallicGlossiness`: Texture for use only with Unity Standard Shader, which is also compatible with Legacy v7.3 versions of Poiyomi.
 - `AlphaMap`: Separate alpha/opacity map for the base texture. Can be used to optimize the base texture, or for other effects based around the opacity of the material.
     - *You should not use Alpha Map unless it's absolutely necessary. This is because the Alpha is already encoded into the Main Texture when using the `Opacity` channel in Substance Painter.*
 - `Height`: Height map. Currently best used as a height texture in Parallax Heightmapping. Can also be used directly as a vertex offset, though this usually does not have the same effect.
+- `OutlineSizeMask`: Place in the Outline Size Mask texture slot in [`Outlines`](/docs/outlines/outlines.md). Make sure to **uncheck sRGB** in the texture import settings. This is programmed to use the `User10` channel.
 
 ## Legacy (v7)
 

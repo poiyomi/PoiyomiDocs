@@ -107,7 +107,8 @@ Flipbook supports **Raycast**, the same feature offered in Decals. This allows y
 
 To use this feature, edit the Flipbook on your Material <u>directly from the Mesh</u> as shown here:
 
-<ReactVideo src='/vid/color-and-normals/Decals_RaycastDemo.webm'/> <!-- REPLACE THIS WITH A VARIANT OF THIS EXAMPLE USING FLIPBOOKS! -->
+<!-- REPLACE WITH A VARIANT OF THIS EXAMPLE USING FLIPBOOKS! -->
+<ReactVideo src='/vid/color-and-normals/Decals_RaycastDemo.webm'/>
 
 `Left-Click` on the **Raycast** button to enable the feature. Hover the Mouse over your Mesh to position it, then `Left-Click` again to finalize your placement.
 :::
