@@ -37,6 +37,7 @@ When this feature activates, the following sections in Poiyomi Shaders will have
 - [Pathing](/docs/special-fx/pathing.md#audio-link)
 - [Voronoi](/docs/special-fx/voronoi.md#audio-link)
 - [Truchet](/docs/special-fx/truchet.md#audio-link)
+- [Constellation](/docs/special-fx/constellation.md#audio-link)
 - [Vertex Options -> Basics & Fun](/docs/vertex-options/basics.md#audio-link)
 - [Vertex Options -> Glitching](/docs/vertex-options/glitching.md#audio-link)
 - [Vertex Options -> LookAt](/docs/vertex-options/look-at.md#audio-link)
