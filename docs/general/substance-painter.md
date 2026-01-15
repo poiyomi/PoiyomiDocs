@@ -13,12 +13,12 @@ For the most part, you'll be using whichever default Substance Shader was assign
 
 To ensure you are using whichever one you prefer, click `Window -> Views -> Shading settings` from the Menu Bar in Substance Painter.
 
-Most, if not all Shaders in Substance Painter, should work when previewing the Material. However, if you plan to use `Opacity` to control levels of transparency, choose a version that supports it. If you are painting areas for things such as Glass, you would want to use something like `pbr-metal-rough-with-alpha-blending` or similar. *In Substance Painter v9.1.0 and newer versions, `asm-metal-rough` added support for transparency, which can be enabled in the Shading settings by toggling `Enable alpha test` or `Enable alpha blending`.*
+Most, if not all Shaders in Substance Painter, should work when previewing the Material. However, if you plan to use `Opacity` to control levels of transparency, choose a version that supports it. If you are painting areas for things such as Glass, you would want to use something like `pbr-metal-rough-with-alpha-blending` or similar. *In Substance Painter v9.1.0 and newer versions, `asm-metal-rough` added support for transparency, which can be enabled in the Shading settings by toggling `Enable alpha test` or `Enable alpha blending` (incompatible with Subsurface Scattering).*
 
 ## Export Presets
 
-:::info Updated for 10.0!
-The Export templates have been redesigned to take advantage of Substance Painter's features. Please carefully read on how to use them!
+:::warning All Export Templates Updated to 10.0 Workflow
+The Export templates have been redesigned to take advantage of Substance Painter's features. Please read carefully as the complete workflow has been overhauled!
 :::
 
 To use these presets, download them and add them to your substance project either by navigating to `File -> Import Resources` and adding them, or dragging them onto the shelf (which will open the same interface with the presets pre-selected)
@@ -28,11 +28,15 @@ Alternatively, place these presets in your exports folder. For most people, this
 - **v7.2 and newer:** `C:\Users\*UserName*\Documents\Adobe\Adobe Substance 3D Painter\assets\export-presets`
 - **Legacy Versions:** `C:\Users\*UserName*\Documents\Substance 3D Painter\shelf\export-presets`
 
+:::note
+At this time, our Export Template only supports v7.2 (2021) or newer versions due to workflow changes.
+:::
+
 ## Download
 
 :::tip Latest 10.0+ Export Templates
-<h3> 📥 <a target="_blank" href="/assets/substance/Unity Poiyomi V9 r2024-03-20.spexp" download="Unity Poiyomi V9 r2024-03-20.spexp"><b><code>Unity Poiyomi V9 r2024-03-20.spexp</code></b></a></h3>
-<h3> 📥 <a target="_blank" href="/assets/substance/Unity Poiyomi V9_ExtraMaps r2024-03-20.spexp" download="Unity Poiyomi V9_ExtraMaps r2024-03-20.spexp"><b><code>Unity Poiyomi V9_ExtraMaps r2024-03-20.spexp</code></b></a></h3>
+<h3> 📥 <a target="_blank" href="/assets/substance/Unity Poiyomi V10.0 r2026.1.14.spexp" download="Unity Poiyomi V10.0 r2026.1.14.spexp"><b><code>Unity Poiyomi V10.0 r2026.1.14.spexp</code></b></a></h3>
+<h3> 📥 <a target="_blank" href="/assets/substance/Unity Poiyomi V10.0 ExtraMaps r2026.1.14.spexp" download="Unity Poiyomi V10.0 ExtraMaps r2026.1.14.spexp"><b><code>Unity Poiyomi V10.0 ExtraMaps r2026.1.14.spexp</code></b></a></h3>
 :::
 
 ## Usage
@@ -74,6 +78,7 @@ PBR shading relies on the world lighting being well-defined and correct. In worl
 When using the `ExtraMaps` preset, additional textures are exported:
 
 - All textures from the [V10 preset](#textures).
+- `GlobalMask2`: Additionally Global Mask texture for use in [`Global Mask`](/docs/modifiers/global-masks.md). The Global Mask 2 texture uses `User4`, `User5`, `User6`, and `User7` channels.
 - `StandardMetallicGlossiness`: Texture for use only with Unity Standard Shader, which is also compatible with Legacy v7.3 versions of Poiyomi.
 - `AlphaMap`: Separate alpha/opacity map for the base texture. Can be used to optimize the base texture, or for other effects based around the opacity of the material.
     - *You should not use Alpha Map unless it's absolutely necessary. This is because the Alpha is already encoded into the Main Texture when using the `Opacity` channel in Substance Painter.*
@@ -82,7 +87,7 @@ When using the `ExtraMaps` preset, additional textures are exported:
 
 ## Legacy (v7)
 
-A legacy export preset is provided for compatibility with Poiyomi v7. It is recommended that you upgrade to Poiyomi v8, as v7 is no longer actively supported or developed.
+A legacy export preset is provided for compatibility with Poiyomi v7. It is recommended that you upgrade to Poiyomi v10, as v7 is no longer actively supported or developed.
 
 ### Poiyomi V7 Preset Download
 
