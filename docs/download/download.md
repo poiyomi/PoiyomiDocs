@@ -96,10 +96,13 @@ Otherwise, follow the instructions detailed below.
    - URL: The URL you entered.
    - Packages:
      - `Poiyomi Toon Shader`
+     - `Poiyomi Pro`
 4. Afterwards, head back to `Projects`, click `MANAGE` for the project you want to add Poiyomi Shaders to, and look for `Poiyomi Toon Shader` in the list. Click the <FAIcon icon="fa-solid fa-circle-plus"/> icon for it. When prompted, click `APPLY`.
 5. Done! Once ALCOM successfully installs the package, launch your Project and enjoy using Poiyomi Shaders.
       
 **If an update becomes available, the `Latest` version number will be highlighted with a Green Box and a Green <FAIcon icon="fa-solid fa-circle-up"/> icon. Click it and hit `APPLY` when prompted to update to the latest version.**
+
+The Repository also includes the `Poiyomi Pro` package. To learn more about Poiyomi Pro, [see the details below](#poiyomi-pro).
 
 </TabItem>
 
@@ -122,6 +125,8 @@ If you are using the default VRChat Creator Companion App, follow the instructio
       
 **If an update becomes available, click the Green <FAIcon icon="fa-solid fa-circle-up"/> icon to update to the latest version.**
 
+The Repository also includes the `Poiyomi Pro` package. To learn more about Poiyomi Pro, [see the details below](#poiyomi-pro).
+
 </TabItem>
 
 </Tabs>
@@ -142,7 +147,8 @@ Before using Poiyomi Pro, please ensure you agree to the [EULA](/docs/terms-of-s
 
 </div>
 
-In order to download and install Poiyomi Pro, please follow these updated instructions:
+In order to download and install Poiyomi Pro, please follow these updated instructions below. If you prefer to use the VCC version, [see the header below](#vcc-version).
+
 1. Subscribe to the shader on [Patreon <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://www.patreon.com/poiyomi) for $10/month USD or higher.
 2. Login to [pro.poiyomi.com <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://pro.poiyomi.com/) and follow the instructions to authenticate with your Patreon Account.
    - *If you don't see the pop-up Patreon Login window, check with your Browser to see if a pop-up window was blocked.*
@@ -156,11 +162,24 @@ In order to download and install Poiyomi Pro, please follow these updated instru
 
 As a reminder, the Pro Shader only includes extra features. Therefore, it is not required if you are trying to access features already available in the Free version.
 
-:::warning Currently Incompatible with VCC Version
-The VCC version of Poiyomi Pro is currently under development. In the meantime, you must uninstall Poiyomi Toon from VCC prior to importing Poiyomi Pro!
+### VCC Version
 
-**DO NOT ATTEMPT TO IMPORT BOTH TOON AND PRO VERSIONS OR YOUR PROJECT MAY BREAK!**
+:::warning Poiyomi Pro VCC Beta
+The VCC offering of Poiyomi Pro is currently in Beta and may have bugs. Please report any issues you may have with it in our Discord server.
 :::
+
+The VCC version of Poiyomi Pro is available for those who prefer to install it through the VCC Repository. To ensure it works, you must be an active Patreon subscriber.
+
+Follow the same instructions as noted above in [Method 2: ALCOM / Creator Companion](#method-2-alcom--creator-companion), but instead of adding the `Poiyomi Toon Shader` package to your project, you will install add `Poiyomi Pro`.
+
+Things work a little differently when using this version upon launching your Unity Project. Basically, the following sequence will take place:
+1. Upon launching your Unity Project, a script will run that will open your Web Browser. You will then be asked to authorize with your Patreon account on `pro.poiyomi.com`.
+2. Login to your Patreon account when prompted, and confirm to authorize your connection to Poiyomi Pro.
+   - *If you've already logged in to this website previously, you will be automatically redirected to the next step.*
+3. When successful, a message should appear saying, *"Authentication successful. You may now close this window."*
+4. Jump back into your Unity Project. Assuming you've successfully authorized linking your Patreon account, the script will automatically begin installing Poiyomi Pro into your project. Enjoy using Poiyomi Pro!
+
+Do keep in mind that this script is intentionally designed to require an active subscription in order to receive future updates. So when updating Poiyomi Pro, you must go through the same process as detailed above.
 
 By using Poiyomi Pro, you agree to the EULA stated [here](/docs/terms-of-service/terms-of-service.md#pro-version).
 
