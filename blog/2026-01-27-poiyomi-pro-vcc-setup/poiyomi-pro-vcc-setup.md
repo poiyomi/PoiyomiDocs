@@ -6,7 +6,6 @@ hide_table_of_contents: true
 authors:
   poiyomi
 tags: [shader, vrchat, updates, update, pro, patreon, vcc]
-draft: true
 ---
 
 The Poiyomi Pro version can now be installed via `com.poiyomi.pro` VCC package, now available in the main VCC Repository.
