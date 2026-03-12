@@ -171,6 +171,16 @@ export default {
           showLastUpdateTime: true,
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
+          lastVersion: 'current',
+          versions: {
+            current: {
+              label: '10.0',
+            },
+            '9.3': {
+              label: '9.3',
+              path: '9.3',
+            },
+          },
         },
         // blog: true,
 
@@ -327,6 +337,14 @@ export default {
                 to: "/changelog",
               },
             ],
+          },
+          {
+            type: 'docsVersionDropdown',
+            position: "right",
+            versions: [
+              'current',
+              '9.3'
+            ]
           },
           {
             type: "dropdown",
