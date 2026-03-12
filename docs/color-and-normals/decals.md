@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 8
 title: Decals
 description: In Poiyomi Shaders, Decals are used to place images onto your UV with specific location, rotation, and blending.
 image: /img/color-and-normals/Thumb-Decals.png

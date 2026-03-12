@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 title: Alpha Options
 description: Properties for modifying how your Material treats Alpha in Poiyomi Shaders.
 image: /img/color-and-normals/Thumb-AlphaOptions.png

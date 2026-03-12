@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 title: Detail Normals & Texture
 description: Details section provides options to apply additional textures and normals, often tiled, to the Material.
 keywords: [details, tile, tiling, normals, base color, poiyomi, shader]
@@ -7,7 +7,7 @@ keywords: [details, tile, tiling, normals, base color, poiyomi, shader]
 
 The Details section provides options to apply additional textures (often tiled) to the base color and normals. When tiled, this feature can grant the user to bring out additional small details on the model without sacrificing quality.
 
-When coming from other shaders, Details can sometimes be referred to as *2nd Normal*.
+This section contains more customization features for 2nd Normals in comparison to [Normal Map 2](/docs/color-and-normals/normal-map-2.md).
 
 ## Detail Mask
 

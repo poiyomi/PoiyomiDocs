@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 0
 title: Color & Normals
 description: The fundamental features of your Material in Poiyomi Shaders, including the Base Color, Main Texture, and Normal Mapping.
 image: /img/color-and-normals/Thumb-ColorAndNormals.png
@@ -18,7 +18,7 @@ The **Color & Normals** section defines the fundamental attributes of a material
 
 A tint Color that's blended multiplicative with the base texture. If no Main Texture is specified, this Color will be used instead overall.
 
-## Main Texture
+## Texture
 
 - `Type`: <PropertyIcon name="texture" />**Color** Texture (`sRGB = ON`)
 
@@ -26,7 +26,25 @@ The Main Texture of the material. The base color of the material is set from the
 
 Like most other textures, the **Tiling** and **Offset** values of the Main Texture can be adjusted when the options are expanded. However, they cannot be independently animated on a mesh[^1].
 
-The assigned **UV Map** and the **Panning** of the Main Texture can be adjusted, and can be animated independently.
+The assigned **UV Map** and the **Panning** of the Main Texture can be adjusted and animated independently.
+
+## Alpha Map
+
+- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = OFF`)
+
+The Alpha Map texture provides an additional slot to influence the base alpha of a material. This texture will be multiplied with the base alpha from the Main Texture. It should generally be black and white, as only its value (specifically the red channel value) will be used, not the color.
+
+![Alpha Map](/img/color-and-normals/main_Alpha-Map_Comparison.png)
+
+*Alpha Map: Opaque / Cutout (0.5 Cutoff) / Cutout (0 Cutoff, Alpha To Coverage and Dithering with MSAA) / Fade*
+
+When expanded, the Alpha Map texture has options for **Tiling** and **Offset**. The assigned **UV Map** and the **Panning** of the Alpha Map can be adjusted.
+
+The Alpha Map can be inverted with the **Invert** option.
+
+![Alpha Map Invert](/img/color-and-normals/main_Alpha-Map_Invert.png)
+
+*Alpha Map Invert: Off/On*
 
 ## Normal Map
 
@@ -61,24 +79,6 @@ To learn more about Normals, see the video below.
 <div class="videobox">
 <iframe class="iframe-element" src="https://www.youtube-nocookie.com/embed/spuF6j87kPU?si=TO5iXVR7NWWw4xNw" title="YouTube Video Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
-
-## Alpha Map
-
-- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = OFF`)
-
-The Alpha Map texture provides an additional slot to influence the base alpha of a material. This texture will be multiplied with the base alpha from the Main Texture. It should generally be black and white, as only its value (specifically the red channel value) will be used, not the color.
-
-![Alpha Map](/img/color-and-normals/main_Alpha-Map_Comparison.png)
-
-*Alpha Map: Opaque / Cutout (0.5 Cutoff) / Cutout (0 Cutoff, Alpha To Coverage and Dithering with MSAA) / Fade*
-
-When expanded, the Alpha Map texture has options for **Tiling** and **Offset**. The assigned **UV Map** and the **Panning** of the Alpha Map can be adjusted.
-
-The Alpha Map can be inverted with the **Invert** option.
-
-![Alpha Map Invert](/img/color-and-normals/main_Alpha-Map_Invert.png)
-
-*Alpha Map Invert: Off/On*
 
 ## Alpha Cutoff
 

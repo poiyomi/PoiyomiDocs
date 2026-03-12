@@ -131,7 +131,7 @@ This behavior is not a bug, it's behavior defined by Unity, beyond the control o
 | Property Name | Can be Renamed? | Property |
 | :--- | :--- | :--- |
 | `_Color`                  | ✅ | [Main Color](/docs/color-and-normals/color-and-normals.md#color--alpha) |
-| `_MainTex_ST`             | ❌ | [Main Texture Tiling/Offset](/docs/color-and-normals/color-and-normals.md#main-texture) |
+| `_MainTex_ST`             | ❌ | [Main Texture Tiling/Offset](/docs/color-and-normals/color-and-normals.md#texture) |
 | `_BumpMap_ST`             | ❌ | [Normal Map Tiling/Offset](/docs/color-and-normals/color-and-normals.md#normal-map) |
 | `_BumpScale`              | ✅ | [Normal Map Intensity](/docs/color-and-normals/color-and-normals.md#normal-map) |
 | `_Cutoff`                 | ✅ | [Alpha Cutoff](/docs/color-and-normals/color-and-normals.md#alpha-cutoff) |
