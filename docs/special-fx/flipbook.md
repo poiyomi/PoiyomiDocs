@@ -114,6 +114,8 @@ To use this feature, edit the Flipbook on your Material <u>directly from the Mes
 
 ### Position
 
+- `Type`: <PropertyIcon name="float2" />**Vector2**
+
 Where on the UV the Flipbook's center should be.
 
 ### Rotation
