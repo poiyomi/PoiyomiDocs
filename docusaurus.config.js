@@ -5,6 +5,8 @@ import {themes} from 'prism-react-renderer';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 
+const pkg = require('./package.json')
+
 /** @type {import('@docusaurus/types').Config} */
 
 export default {
@@ -521,7 +523,7 @@ export default {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Poiyomi Labs. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Poiyomi Labs. v${pkg.version}. Built with Docusaurus.`,
       }
     }),
 };
