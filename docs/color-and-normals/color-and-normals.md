@@ -9,7 +9,7 @@ keywords: [main, texture, normals, map, color, alpha, poiyomi, shader, unity]
 The **Color & Normals** section defines the fundamental attributes of a material, including many options that affect the Base Color and per-pixel Normals of the material. It is the first section that most users will utilize when editing the Material.
 
 <a>
-<img src="/img/color-and-normals/ColorAndNormalsSection9-2.png" alt="The main Color & Normals Section in Poiyomi Shaders" width="600px"/>
+<img src="/img/color-and-normals/ColorAndNormals10.png" alt="The main Color & Normals Section in Poiyomi Shaders" width="600px"/>
 </a>
 
 ## Color & Alpha
@@ -49,6 +49,7 @@ The Alpha Map can be inverted with the **Invert** option.
 ## Normal Map
 
 - `Type`: <PropertyIcon name="texture" />**Normal Map** Texture (`sRGB = OFF`)
+  - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 10.0`
 
 The Normal Map texture changes the normal of the surface based on a normal map texture. This allows additional detail to be added to a material without increasing the complexity of a mesh.
 

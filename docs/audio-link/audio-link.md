@@ -177,7 +177,7 @@ You can then change the URL from the Inspector. Paste the new URL into the field
 The `AudioLinkAvatar` Prefab uses the [yt-dlp <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/yt-dlp/yt-dlp) plugin from VRChat's installation files in order to test AudioLink in Unity. However oftentimes, the plugin provided by VRChat may sometimes break due to YouTube's destructive changes to the format. In cases where this happens, you can manually download the latest `yt-dlp.exe` and use it as the executable instead of the potentially outdated version provided by VRChat.
 
 :::tip Recommended back-up option
-As YouTube continues to create destructive changes, using a Custom YTDL Location is going to become necessary. Until Audio Link v3.0.0 is released with a curated rewrite to support these changes, we highly recommend setting this up in order to ensure full functionality in the meantime.
+As YouTube continues to create destructive changes, using a Custom YTDL Location is going to become necessary.
 :::
 
 1. Download the latest version of the `yt-dlp.exe` executable from the [GitHub Repository](https://github.com/yt-dlp/yt-dlp/releases). Place it in a location somewhere on your Computer that you'll remember.
@@ -194,3 +194,20 @@ To debug if it's pointing to the custom location, select the `AudioLinkYtdlpPlay
 > The YTDL Player works best using a low resolution. Set it to `360p` or `480p` for it to stream from the internet faster.
 
 If later on you wish to go back to using VRChat's provided `yt-dlp.exe` instead, click the option `Tools -> AudioLink -> Select Custom YTDL Location` again to disable it.
+
+### Using FFmpeg
+
+:::info
+Using FFmpeg is only supported in AudioLink v3.1.0 and newer. Update to the latest AudioLink version to see this feature!
+:::
+
+In AudioLink v3.1.0 and newer versions, you can choose to use FFmpeg to transcode videos. This is mainly beneficial for Linux where H.264/AAC is unsupported, as FFmpeg transcodes to VP8/Vorbis instead.
+
+To install FFmpeg, [Download from the Website](https://www.ffmpeg.org/download.html) or use your system's package manager with the appropriate command.
+- Windows: Open Windows Terminal or PowerShell, type in `winget install -e --id Gyan.FFmpeg` to install.
+- MacOS: Open Terminal and type in `brew install ffmpeg`. This command requires [Homebrew](https://brew.sh/) to be installed.
+- Linux: Refer to your distribution's package manager for the command. For Debian/Ubuntu, it will be `sudo apt install ffmpeg` to install.
+
+Next, follow the same instructions stated above in [Using a Custom YTDL Location](#using-a-custom-ytdl-location) but instead, turn on the option `Use FFmpeg Transcoding` in the `AudioLinkYtdlpPlayer` object. Then, enter Play Mode!
+
+Be aware that transcoding videos through FFmpeg may take a few seconds for it to play audio, depending on your system's performance. Please be patient!

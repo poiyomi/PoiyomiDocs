@@ -9,7 +9,7 @@ At the top of the shader, there is a dropdown that may be labeled with something
 
 When you click on this, the dropdown will show the options that are documented on this page. The option you select will automatically configure your [Rendering](/docs/rendering/rendering.md) settings to ensure they appear as intended.
 
-<a target="_blank" href="/img/general/RenderingPresets-new.png">
+<a>
 <img src="/img/general/RenderingPresets-new.png" alt="Rendering Presets Dropdown Menu" width="700px"/>
 </a>
 
@@ -22,7 +22,7 @@ This setting is critical to determining how a material will render, and it's imp
 - Render Queue: `2000` (Geometry)
 - ZWrite: `On`
 
-The default rendering mode in Unity. Suitable for objects with no transparency at all, such as concrete, wood, solid plastic, etc.
+The default rendering mode in Unity, typically recommended for general usage. Commonly used for objects with no transparency at all, such as concrete, wood, solid plastic, human skin, etc.
 
 ### Cutout
 
@@ -34,28 +34,30 @@ Similar to Opaque, but allows a yes/no for whether a pixel should be rendered. T
 By default, cutout is binary: it either renders or it doesn't. You can use certain options to improve partially transparent areas and edges:
 
 - [Dithering](/docs/color-and-normals/alpha-options.md#dithering) uses a technique that introduces noise in order to provide a perceptually smoother transition between two sharp differences in alpha.
-- [Alpha to Coverage](/docs/color-and-normals/alpha-options.md#alpha-to-coverage) uses partial transparency values to provide variable transparency levels when the viewer is using Multi-Sampled Anti-Aliasing (MSAA). The number of transparency levels is equal to the MSAA level (x2, x4, x8, etc). VRChat allows users to select the number of MSAA levels they want to use, so it's best to make your material still look good with no MSAA.
+- [Alpha to Coverage](/docs/color-and-normals/alpha-options.md#alpha-to-coverage) uses partial transparency values to provide variable transparency levels when the viewer is using Multi-Sampled Anti-Aliasing (MSAA). The number of transparency levels is equal to the MSAA level (x2, x4, x8, etc). VRChat allows users to select the number of MSAA levels they want to use through the in-game Graphics Settings, so it's best to make your material still look good even with no MSAA.
 
 :::tip
-You can enable MSAA in your Unity project by going to **Edit** > **Project Settings** > **Quality** and finding the *Anti Aliasing* options, and setting them to *MSAA 4x*.
+You can enable MSAA in your Unity project by going to `Edit > Project Settings > Quality` and find the **Anti Aliasing** options. Use a starting level of `MSAA x4` and feel free to adjust to see how they appear with different MSAA levels.
 
 Alternatively, [VRWorldToolkit](https://github.com/oneVR/VRWorldToolkit) can set up post-processing for you, which enables MSAA, even in avatar projects!
 :::
 
 ## Transparent Presets
 
-These presets are transparent, and primarily use the Alpha value to determine how to blend with the background. Transparent presets allow partial blending between the transparent material's color and the background color. This effect should be used sparingly, as it can cause a number of issues due to the problems inherent in realtime transparency stacking.
+These presets are transparent and primarily use the Alpha value to determine how to blend with the background. Transparent presets allow partial blending between the transparent material's color and the background color. This effect should be used sparingly, as it can cause a number of issues due to the problems inherent in realtime transparency stacking.
 
 To learn more about transparency issues, and how to mitigate some of them, check out this video:
 
-<center><iframe width="600px" height="338px"  src="https://www.youtube.com/embed/jvaoZJmjENs" title="How To Fix Transparency" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allow="fullscreen;"></iframe></center>
+<div class="videobox">
+<iframe class="iframe-element" src="https://www.youtube-nocookie.com/embed/jvaoZJmjENs?si=TO5iXVR7NWWw4xNw" title="YouTube Video Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
 
 ### Fade
 
 - Render Queue: `3000` (Transparent)
 - ZWrite: `Off`
 
-Fade is a fully transparent preset, and allows an object to be completely faded away when its alpha value is 0. This is useful for things that need reliable partial transparency, but also need to disappear completely.
+Fade is a fully transparent preset, and allows an object to be completely faded away when its alpha value is 0. This is useful for things that need reliable partial transparency, but also need to disappear completely. Therefore, this does not work with specular highlights or reflections.
 
 ### Transparent
 
@@ -69,7 +71,7 @@ Transparent is like fade, but will keep specular highlights and reflections, lik
 - Render Queue: `2460` (AlphaTest+10)
 - ZWrite: `On`
 
-TransClipping is like Transparent, but will write to the Z-buffer and render on the AlphaTest queue +10. This can sometimes fix certain transparency issues, but may cause other issues.
+TransClipping is like Transparent, but will write to the Z-buffer and render on the AlphaTest queue with +10. This can sometimes fix certain transparency issues, but may cause other issues.
 
 ## Color Blend Presets
 
@@ -118,7 +120,7 @@ Render Presets Set a bunch of options for how a material should render. They are
 The options that are set by default by rendering presets are:
 
 - Render Queue
-- Render Type (internal)
+- Render Type (internal only)
 - Blend Op
 - Blend Op Alpha
 - Alpha Cutoff
