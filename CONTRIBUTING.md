@@ -9,13 +9,17 @@ It is recommended you utilize your own branches when making changes. Having bran
 
 ## Docs
 
-All pages in the Documentation are sorted under `/docs`. The file and organization structure should represent close to the order of appearance in the Poiyomi Shaders UI.
+This Repository is using Docusaurus **Versioning**. This means content in the Docs may be split between different major releases of Poiyomi Shaders. Any Docs pages under `./docs` refer to the latest version, while items under `./versioned_docs` refer to previous versions. **Please refrain from editing pages inside `./versioned_docs` unless absolutely necessary.** It's preferred to prioritize information on the latest version under `./docs` instead.
 
-Each Documentation page uses the MDX format so that both written content and embedded media can be easily implemented. To learn how to create a Docs page and how they appear on the website itself, read the official documentation [here](https://docusaurus.io/docs/docs-introduction).
+**If something changes that mandates a new versioned docs, please open an Issue and let us know!**
+
+Now, each Documentation page uses the MDX format so that both written content and embedded media can be easily implemented. To learn how to create a Docs page and how they appear on the website itself, read the official documentation [here](https://docusaurus.io/docs/docs-introduction).
 
 ## Pages
 
 Some pages, that require it's own landing page (like the Home page) are created when truly necessary. However, the main difference is that Pages never have Sidebars. Read more [here](https://docusaurus.io/docs/creating-pages).
+
+You should not need to worry about creating standalone pages. However, if there is a reason that mandates it, Pages must be located under `./src/pages`.
 
 ## Blog Posts
 
