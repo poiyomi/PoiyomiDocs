@@ -45,19 +45,18 @@ If using Unity 6 (`6000.0` and up), our Universal Render Pipeline (URP) version 
 Please join the [Poiyomi Shaders Discord <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://discord.gg/poiyomi) in order to access to the Unity 6-compatible URP version of Poiyomi Shaders.
 :::
 
-## Version 9.x
+## Version 10.0
 
-All information in this documentation is geared towards `9.0` and newer. Therefore, this documentation may not apply at all if you are using an older version.
+**Poiyomi Shaders 10.0 is now being rolled out in phases!** Therefore, all affected features documented will be updated with new text over time as new information becomes available. If something's missing, there's a good chance it's already on our radar, so hold tight!
 
-If you are on an older version of Poiyomi Shaders, we highly suggest that you read [**our upgrading guidelines**](/docs/general/upgrade/upgrade.md) in order to ensure you are fully up-to-date on the latest features that are documented here.
+:::info Version Selection
+All information in this Documentation has been "versioned" to accommodate this major update. When navigating the Documentation, please be aware of the Version number dropdown menu found in the Navigation Bar:
 
-## Completion Status
+<a>
+<img src="/img/general/Docs-Version-Dropdown.png" alt="Dropdown Menu to switch between versions."/>
+</a>
 
-The Documentation now matches version `9.2.69` and newer patches following it. The following features have been added to the Documentation as of late:
-- Added Changelogs, separate from the Blog. All changes, both old and new, will be documented here from now on.
-  - *Major Updates will still be talked about in the Blog.*
-- "Type" properties are accommodated with an icon that matches what it is in the Shader UI.
-- Cleaned up some back-end code and got rid of deprecated pages.
-- Reorganized sections that were changed in 9.2 to match the Shader UI.
+If you're looking for accurate information referring to a specific version, such as 9.3, please use this dropdown and select the appropriate version of the shader you are using to see relevant context! Otherwise, the latest version (10.0) will be the default viewing mode. The versions in this dropdown will be updated over time as Poiyomi Shaders continues it's ongoing development.
+:::
 
-If you have any questions or if you think you've found an issue, please [join the Discord <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://discord.gg/poiyomi) and ask! The Documentation is continuously being edited, updated, and proofread by our contributors, so please don't hesitate to reach out!
+If you have any questions or if you think you've found an issue, please [join the Discord <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://discord.gg/poiyomi) or [open an Issue on our Docs Repository <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/poiyomi/PoiyomiDocs)! The Documentation is continuously being edited, updated, and proofread by our contributors, so please don't hesitate to reach out!
