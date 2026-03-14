@@ -13,6 +13,12 @@ Color Adjust can be used to quickly change the colors presented from the main te
 <ReactVideo src='/vid/color-and-normals/ColorAdjustDemo.webm'/>
 <em>Demonstration of the Color Adjust feature on this Avatar's Suit. Watch how the Saturation, Brightness, and Gamma, can influence how shifting the Hue will look.</em>
 
+## Bake Color Adjust
+
+This option can bake the currently-set color adjustments into a new texture and reset the color adjust settings. The original texture is not modified, but rather a separate texture is created to served as a baseline color adjustment profile.
+
+In order to Bake a texture (and enable this button), you must first adjust any of the sliders in Color Adjust.
+
 ## Mask
 
 - `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = OFF`)
@@ -39,6 +45,13 @@ A value of `-1` will make the base color fully de-saturate (grayscale). A value 
 
 This is implemented as a lerp between the base color and a grayscale version of the base color.
 
+## Chromatize
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 10.0`
+  - Normal: `0.0`
+
+Adjusts the intensity of the color's reproduction and quality regardless of it's luminance.
+
 ## Brightness
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
@@ -56,6 +69,21 @@ This increases or decreases brightness directly on top of the existing color, wi
 Adjusts the gamma of the base color.
 
 This can lerp the brightness of the color in regards to it's hue or tone. Lower values are more lighter, while higher values are more bolder.
+
+## Tint
+
+### Tint Color
+
+- `Type`: <PropertyIcon name="color" />**Color**
+  - Normal: `#FFFFFF`
+
+Sets the mixture tone color, used for adjusting the colorfulness and how the perceived hue can be affected.
+
+### Tint Texture
+
+- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = ON`)
+
+If defined, the texture's color can be used for defining the mixture tone color.
 
 ## Hue Shift
 
@@ -183,7 +211,7 @@ If enabled, uses a `Gradation Map` as reference to determine how the Color Adjus
 
 - `Type`: <PropertyIcon name="texture" />**Color** Texture (`sRGB = ON`)
 
-Texture to use for the Color Grading
+Texture to use for the Color Grading.
 
 ### Gradation Strength
 
