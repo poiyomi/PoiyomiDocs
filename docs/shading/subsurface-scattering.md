@@ -60,8 +60,28 @@ How much to spread the light on the surface.
 
 How much to distort the lighting on the surface.
 
+## Light Color Mix
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+
+How much to blend the lighting with the Base Color (Main Texture) of your Material.
+
 ## Base Color Mix
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to blend the Subsurface Scattering with the Base Color (Main Texture) of your Material.
+
+## Shadow Strength
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+
+Sets the intensity of shadows in Subsurface Scattering.
+
+## Global Masks
+
+### Apply From Global Mask
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+
+Select which [Global Mask](/docs/modifiers/global-masks.md) to apply directly onto the Decal.
