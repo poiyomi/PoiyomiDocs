@@ -11,10 +11,6 @@ The Outlines feature creates outlines using a simplified pass with the mesh offs
 
 For smooth meshes, the inverted hull technique works well, but for hard-edged models, it can have noticeable seams. To correct this, you can bake a version of the mesh with smoothed normals baked into the vertex color, using the Poi Vertex Color Baker. This will overwrite other vertex color data, and will create a unique version of the mesh.
 
-:::info Changes in 9.0
-All Outlines features have been reintroduced to the main shader, `.poiyomi/Poiyomi Toon` as of version 9.0 and newer. There is no need to select a separate version in order to use Outlines.
-:::
-
 <a target="_blank" href="/img/outlines/PoiOutlinesDemo2.png">
 <img src="/img/outlines/PoiOutlinesDemo2.png" alt="Outlines Example"/>
 </a>
