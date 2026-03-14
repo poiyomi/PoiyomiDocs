@@ -41,7 +41,7 @@ Determines where to contain the Voronoi effects and where it should only appear 
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-Same as above, but uses a [Global Mask](/docs/modifiers/global-masks.md) instead to determine the Mask.
+Same as above, but uses a [Global Mask](/modifiers/global-masks.md) instead to determine the Mask.
 
 ## Noise
 
@@ -124,7 +124,7 @@ Minimum and Maximum range of Brightness to apply to each randomized Voronoi Cell
 ## Audio Link
 
 :::info
-The settings in this section will only be visible when [Audio Link](/docs/audio-link/audio-link.md) is activated on the Material.
+The settings in this section will only be visible when [Audio Link](/audio-link/audio-link.md) is activated on the Material.
 :::
 
 ### Inner Emission Band

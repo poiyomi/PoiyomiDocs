@@ -49,7 +49,7 @@ Please join the [Poiyomi Shaders Discord <FAIcon icon="fa-solid fa-square-arrow-
 
 All information in this documentation is geared towards `9.0` and newer. Therefore, this documentation may not apply at all if you are using an older version.
 
-If you are on an older version of Poiyomi Shaders, we highly suggest that you read [**our upgrading guidelines**](/docs/general/upgrade/upgrade.md) in order to ensure you are fully up-to-date on the latest features that are documented here.
+If you are on an older version of Poiyomi Shaders, we highly suggest that you read [**our upgrading guidelines**](/general/upgrade/upgrade.md) in order to ensure you are fully up-to-date on the latest features that are documented here.
 
 ## Completion Status
 

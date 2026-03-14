@@ -6,7 +6,7 @@ keywords: [shading, diffuse, lighting, base, style, stylized, base pass, add pas
 toc_max_heading_level: 3
 ---
 
-The **Shading** section defines the base shading of the material. It controls how the material reflects light in a diffuse way, and how it is affected by other lighting. Options in the [Light Data](/docs/shading/light-data.md) section heavily affect how shading is performed.
+The **Shading** section defines the base shading of the material. It controls how the material reflects light in a diffuse way, and how it is affected by other lighting. Options in the [Light Data](/shading/light-data.md) section heavily affect how shading is performed.
 
 <a>
 <img src="/img/shading/Shading_All.png" alt="Various Shading Styles on multiple Material Spheres."/>
@@ -666,7 +666,7 @@ Smoothness is a baked-in value determining how much additional reflection the ma
 Cloth shading is a physically-based lighting model that draws from the Cloth shading model used in [Google's Filament engine](https://google.github.io/filament/Materials.html#materialmodels/clothmodel). It uses a packed mask to determine physically-based components of the lighting.
 
 :::info Cloth PBR is Built-In
-Cloth shading has Reflections & Specular already built-in. Therefore, it's <u>not necessary</u> to use both Cloth shading and [Reflections & Specular](/docs/shading/reflections-and-specular.md) at the same time!
+Cloth shading has Reflections & Specular already built-in. Therefore, it's <u>not necessary</u> to use both Cloth shading and [Reflections & Specular](/shading/reflections-and-specular.md) at the same time!
 :::
 
 <details>
@@ -751,7 +751,7 @@ This value is multiplied with the value of the Smoothness Map. If no smoothness 
 SDF (Signed Distance Field) is a complex shading style that defines how shadows should act based on the direction of light. This can create cell-looking shadows in a way similar to how Mihoyoverse renders their models (Genshin Impact, Zenless Zone Zero, etc.)
 
 :::warning SDF is NOT universal
-In a similar fashion to having a [Shadow Map](/docs/shading/light-data.md#shadow-map), SDF requires a specialized data texture, specific to your model, in order for the appearance of SDF to appear as intended.
+In a similar fashion to having a [Shadow Map](/shading/light-data.md#shadow-map), SDF requires a specialized data texture, specific to your model, in order for the appearance of SDF to appear as intended.
 
 Therefore, the results will appear "flat" if there is no texture defined.
 :::
@@ -848,10 +848,10 @@ Makes the Add Pass Lighting match close to your [Lighting Type (Base Pass)](#lig
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-If set, will send the Lighting data to a [Global Mask](/docs/modifiers/global-masks.md) of your choice as a mask. This will make the data written to the Global Mask appear based on it's illumination from the environment.
+If set, will send the Lighting data to a [Global Mask](/modifiers/global-masks.md) of your choice as a mask. This will make the data written to the Global Mask appear based on it's illumination from the environment.
 
 ### Inversed LightMap to Global Mask
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-If set, will send inverted Lighting data to a [Global Mask](/docs/modifiers/global-masks.md) of your choice as a mask. This is similar to the above option, but it will invert the data instead.
+If set, will send inverted Lighting data to a [Global Mask](/modifiers/global-masks.md) of your choice as a mask. This is similar to the above option, but it will invert the data instead.

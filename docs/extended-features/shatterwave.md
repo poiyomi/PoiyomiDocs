@@ -5,7 +5,7 @@ description: Poiyomi ShatterWave is an advanced special effect that uses the mes
 keywords: [shatterwave, poiyomi, shader]
 ---
 
-ShatterWave is an advanced special effect that uses the mesh's vertices to create a wavy effect across the mesh in variation. This effect is very similar to [Geometric Dissolve](/docs/extended-features/geometric-dissolve.md) with the exception of it being animated in an ocean wave-like effect instead.
+ShatterWave is an advanced special effect that uses the mesh's vertices to create a wavy effect across the mesh in variation. This effect is very similar to [Geometric Dissolve](/extended-features/geometric-dissolve.md) with the exception of it being animated in an ocean wave-like effect instead.
 
 To use Poiyomi ShatterWave, select the shader version `.poiyomi/Poiyomi Pro ShatterWave`. This exposes the ShatterWave category with the following settings shown below.
 
@@ -52,7 +52,7 @@ Creates an Emissive effect on the ShatterWave's color.
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-Allows you to add the currently set ShatterWave setup to be applied to an existing [Global Mask](/docs/modifiers/global-masks.md) of your choice.
+Allows you to add the currently set ShatterWave setup to be applied to an existing [Global Mask](/modifiers/global-masks.md) of your choice.
 
 ## Show Under Wave
 
@@ -82,7 +82,7 @@ Creates an Emissive effect underneath the ShatterWave's mesh.
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-Allows you to add the currently set Under Wave setup to be applied to an existing [Global Mask](/docs/modifiers/global-masks.md) of your choice.
+Allows you to add the currently set Under Wave setup to be applied to an existing [Global Mask](/modifiers/global-masks.md) of your choice.
 
 ## Wave Speed X Y Z
 
@@ -117,7 +117,7 @@ Measures how dense the waves are in tiled coordinates.
 Enables Audio Link to manipulate the ShatterWave.
 
 :::info
-The settings in this section will only be visible when [Audio Link](/docs/audio-link/audio-link.md) is activated on the Material.
+The settings in this section will only be visible when [Audio Link](/audio-link/audio-link.md) is activated on the Material.
 :::
 
 ## Emission Multiplier Band

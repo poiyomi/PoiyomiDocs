@@ -27,7 +27,7 @@ SSAO is a performance heavy effect, so use it mindfully. Add a toggle for [Anima
 This checkbox allows toggling SSAO at runtime.
 
 :::tip
-SSAO rendering is enabled by default. To turn off SSAO in-game, you need to animate this Toggle (checkbox) when creating toggles for SSAO on this Material. Animating the [Section Header](/docs/general/locking.md#section-header-checkboxes) will not work!
+SSAO rendering is enabled by default. To turn off SSAO in-game, you need to animate this Toggle (checkbox) when creating toggles for SSAO on this Material. Animating the [Section Header](/general/locking.md#section-header-checkboxes) will not work!
 :::
 
 ## AO Intensity
@@ -171,10 +171,10 @@ Reduce these if your AO looks like it's "reaching too far". X determines the dif
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-Select which [Global Mask](/docs/modifiers/global-masks.md) to apply to SSAO.
+Select which [Global Mask](/modifiers/global-masks.md) to apply to SSAO.
 
 ### Apply To Global Mask
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-Select which [Global Mask](/docs/modifiers/global-masks.md) SSAO writes to.
+Select which [Global Mask](/modifiers/global-masks.md) SSAO writes to.

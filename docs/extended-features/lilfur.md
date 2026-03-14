@@ -21,7 +21,7 @@ Please keep this in mind when using Lil Fur.
 
 This chooses the rendering mode to use for Lil Fur. Settings will be applied to the module's [Rendering](#rendering) properties.
 
-For reference on the meanings of these modes, see [Rendering Presets](/docs/general/render-preset.md).
+For reference on the meanings of these modes, see [Rendering Presets](/general/render-preset.md).
 
 ## Fur
 
@@ -133,7 +133,7 @@ Sets the Anti Light factor on the Fur's Rim Lighting.
 :::warning Heads Up
 These properties are automatically set based on the [Fur Mode](#fur-mode) set. If you intend to modify these properties below, please do so with care.
 
-Most, if not all properties that are listed here are the same descriptions as notated in [Rendering](/docs/rendering/rendering.md). However, these settings are completely independent of the material's overall Rendering settings.
+Most, if not all properties that are listed here are the same descriptions as notated in [Rendering](/rendering/rendering.md). However, these settings are completely independent of the material's overall Rendering settings.
 :::
 
 ### Cull
@@ -147,25 +147,25 @@ Sets what faces should be culled.
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Zero`/`One`/`DstColor`/`SrcColor`/`OneMinusDstColor`/`SrcAlpha`/`OneMinusSrcColor`/`DstAlpha`/`OneMinusDstAlpha`/`SrcAlphaSaturate`/`OneMinusSrcAlpha`
 
-Which blend factors to use for the source on the Fur. See the [Unity Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-Blend.html) and [Rendering Presets](/docs/general/render-preset.md) page for more information.
+Which blend factors to use for the source on the Fur. See the [Unity Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-Blend.html) and [Rendering Presets](/general/render-preset.md) page for more information.
 
 ### DstBlend RGB
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Zero`/`One`/`DstColor`/`SrcColor`/`OneMinusDstColor`/`SrcAlpha`/`OneMinusSrcColor`/`DstAlpha`/`OneMinusDstAlpha`/`SrcAlphaSaturate`/`OneMinusSrcAlpha`
 
-Which blend factors to use for the destination on the Fur. See the [Unity Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-Blend.html) and [Rendering Presets](/docs/general/render-preset.md) page for more information.
+Which blend factors to use for the destination on the Fur. See the [Unity Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-Blend.html) and [Rendering Presets](/general/render-preset.md) page for more information.
 
 ### SrcBlend Alpha
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Zero`/`One`/`DstColor`/`SrcColor`/`OneMinusDstColor`/`SrcAlpha`/`OneMinusSrcColor`/`DstAlpha`/`OneMinusDstAlpha`/`SrcAlphaSaturate`/`OneMinusSrcAlpha`
 
-Which blend factors to use for the Alpha source on the Fur. See the [Unity Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-Blend.html) and [Rendering Presets](/docs/general/render-preset.md) page for more information.
+Which blend factors to use for the Alpha source on the Fur. See the [Unity Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-Blend.html) and [Rendering Presets](/general/render-preset.md) page for more information.
 
 ### DstBlend Alpha
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Zero`/`One`/`DstColor`/`SrcColor`/`OneMinusDstColor`/`SrcAlpha`/`OneMinusSrcColor`/`DstAlpha`/`OneMinusDstAlpha`/`SrcAlphaSaturate`/`OneMinusSrcAlpha`
 
-Which blend factors to use for the Alpha destination on the Fur. See the [Unity Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-Blend.html) and [Rendering Presets](/docs/general/render-preset.md) page for more information.
+Which blend factors to use for the Alpha destination on the Fur. See the [Unity Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-Blend.html) and [Rendering Presets](/general/render-preset.md) page for more information.
 
 ### BlendOp RGB
 
@@ -242,7 +242,7 @@ Sets the Alpha to affect the Mask of the Fur.
 ## Stencil
 
 :::warning Heads Up
-Most, if not all properties that are listed here are the same descriptions as notated in [Stencil](/docs/rendering/stencil.md). However, these settings are completely independent of the material's overall Stencil settings.
+Most, if not all properties that are listed here are the same descriptions as notated in [Stencil](/rendering/stencil.md). However, these settings are completely independent of the material's overall Stencil settings.
 :::
 
 ### Stencil Type

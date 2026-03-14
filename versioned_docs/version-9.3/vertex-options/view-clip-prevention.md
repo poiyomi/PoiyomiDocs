@@ -17,7 +17,7 @@ View Clip Prevention (also known as the [Uzumore Shader <FAIcon icon="fa-solid f
 This is used to globally toggle the Uzumore Shader's effect across the entire material.
 
 :::tip Reminder
-Make sure to tag this checkbox as animated if creating toggles for this feature. Animating the [Section Header](/docs/general/locking.md#section-header-checkboxes) will not work! [Read More](/docs/general/locking.md#marking-properties-for-animation)
+Make sure to tag this checkbox as animated if creating toggles for this feature. Animating the [Section Header](/general/locking.md#section-header-checkboxes) will not work! [Read More](/general/locking.md#marking-properties-for-animation)
 :::
 
 ## Push Amount (m)

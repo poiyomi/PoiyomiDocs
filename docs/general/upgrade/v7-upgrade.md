@@ -13,7 +13,7 @@ This page covers a few of the major differences between the two versions that sh
 
 ### Light Data
 
-**Ambient Occlusion** and **Direct Shadows** have been moved from a shading mode subsection to the [Light Data](/docs/shading/light-data.md) section. 
+**Ambient Occlusion** and **Direct Shadows** have been moved from a shading mode subsection to the [Light Data](/shading/light-data.md) section. 
 
 Various other settings have been moved to the Light Data section, including:
 
@@ -38,19 +38,19 @@ The "Toon" mode, with subsections for Toon Ramp, Math Gradient, and Shade Map, h
 
 #### Math Gradient -> Multilayer Math
 
-The Math Gradient mode has been reworked into a new mode called [Multilayer Math](/docs/shading/main.md#multilayer-math).
+The Math Gradient mode has been reworked into a new mode called [Multilayer Math](/shading/main.md#multilayer-math).
 
 The first shading layer is equivalent to the Math Gradient mode, with "Gradient Start" and "Gradient End" having been replaced by a shadow center point and a blur. Changing the center point is equivalent to changing the average of the "Gradient Start" and "Gradient End" settings, and changing the blur is equivalent to moving the "Gradient Start" and "Gradient End" settings closer or farther apart.
 
 ### Metallics/Metallics and Specular -> Reflections and Specular
 
-The "Metallics/Specular" and "Metallics (Deprecated)" sections have been removed, and PBR Reflections and Specular highlights have been re-worked significantly into the new [Reflections & Specular](/docs/shading/reflections-and-specular.md) module. A new inline packer has been introduced as well, which allow easy merging of Metallic and Smoothness Maps.
+The "Metallics/Specular" and "Metallics (Deprecated)" sections have been removed, and PBR Reflections and Specular highlights have been re-worked significantly into the new [Reflections & Specular](/shading/reflections-and-specular.md) module. A new inline packer has been introduced as well, which allow easy merging of Metallic and Smoothness Maps.
 
-By opening up the [Packed Maps](/docs/shading/reflections-and-specular.md#packed-maps) texture slot, you can insert individual maps into each channel. You can directly use metallic and smoothness/roughness maps, or you can use the inline packer to re-map your v7 maps to the new packed map. Put your v7 map texture in both the Metallic map and Smoothness map slots, and select `R` and `A` respectively to pull from the old metallic and smoothness channels. If you used the Reflectivity map, you can also put the v7 texture in the Reflection Mask slot and select `G`, but this may not have the intended effect due to the more accurate PBR implementation.
+By opening up the [Packed Maps](/shading/reflections-and-specular.md#packed-maps) texture slot, you can insert individual maps into each channel. You can directly use metallic and smoothness/roughness maps, or you can use the inline packer to re-map your v7 maps to the new packed map. Put your v7 map texture in both the Metallic map and Smoothness map slots, and select `R` and `A` respectively to pull from the old metallic and smoothness channels. If you used the Reflectivity map, you can also put the v7 texture in the Reflection Mask slot and select `G`, but this may not have the intended effect due to the more accurate PBR implementation.
 
 ### Specular Highlights 1/2 -> Stylized Specular/Anisotropics
 
-The custom specular highlights mode has been reworked into a new feature called [Stylized Reflections](/docs/shading/stylized-reflections.md), and Anisotropic reflections have been reworked into a new feature called [Anisotropics](/docs/shading/anisotropics.md).
+The custom specular highlights mode has been reworked into a new feature called [Stylized Reflections](/shading/stylized-reflections.md), and Anisotropic reflections have been reworked into a new feature called [Anisotropics](/shading/anisotropics.md).
 
 ## Color & Normals
 
@@ -58,13 +58,13 @@ The custom specular highlights mode has been reworked into a new feature called 
 
 Basic Emission has been removed as it was often used incorrectly.
 
-If you have a material that should always have a minimum brightness, use the [Min Brightness](/docs/shading/light-data.md#min-brightness) setting in the Light Data section.
+If you have a material that should always have a minimum brightness, use the [Min Brightness](/shading/light-data.md#min-brightness) setting in the Light Data section.
 
-If you need a material to have a uniform emission, use an Emission slot with [Use Base Colors](/docs/special-fx/emission.md#use-base-colors) enabled, and a white color. This will make the `Emission Strength` setting equivalent to the old "Basic Emission" setting.
+If you need a material to have a uniform emission, use an Emission slot with [Use Base Colors](/special-fx/emission.md#use-base-colors) enabled, and a white color. This will make the `Emission Strength` setting equivalent to the old "Basic Emission" setting.
 
 ### Alpha Options
 
-The Alpha options has been reworked, with Distance Alpha (Distance Fade), Fresnel Alpha, and Angular Alpha being moved to [Alpha Options](/docs/color-and-normals/alpha-options.md).
+The Alpha options has been reworked, with Distance Alpha (Distance Fade), Fresnel Alpha, and Angular Alpha being moved to [Alpha Options](/color-and-normals/alpha-options.md).
 
 ## Outlines
 
@@ -76,13 +76,13 @@ However, in V8.x versions, Outlines were moved to their own versions such as `.p
 
 ### Emission
 
-"Glow In The Dark" was renamed to [Light Based](/docs/special-fx/emission.md#light-based) in order to better describe the effect. It can still be used in the same way.
+"Glow In The Dark" was renamed to [Light Based](/special-fx/emission.md#light-based) in order to better describe the effect. It can still be used in the same way.
 
 "Multiply Emission Strength" was removed from emission audio link, as it conflicted with (and was less useful than) the X/Y min/max additive values. To recreate its effect, set the "Min" value of Emission Add to the negative value of your base emission strength, and the "Max" value of Emission Add to zero. In Worlds with AudioLink, this will result in no emission when there's no volume in the selected channel, and the base emission value when there is max volume in that channel.
 
 ### Dissolve
 
-"Dissolve Noise" was renamed to [Dissolve Gradient](/docs/special-fx/dissolve.md#dissolve-gradient), and "Dissolve Detail Noise" was renamed to [Dissolve Noise](/docs/special-fx/dissolve.md#dissolve-noise). This better reflects their functionality
+"Dissolve Noise" was renamed to [Dissolve Gradient](/special-fx/dissolve.md#dissolve-gradient), and "Dissolve Detail Noise" was renamed to [Dissolve Noise](/special-fx/dissolve.md#dissolve-noise). This better reflects their functionality
 
 If you only have one dissolve map, it should be put in the `Dissolve Gradient` slot.
 
@@ -100,4 +100,4 @@ To configure the behavior of Panosphere UVs, see the `Panosphere` section locate
 
 ### Parallax/Parallax Heightmapping
 
-Parallax/Parallax Heightmapping have been reworked to use the new UV option system, in [Parallax Heighmapping](/docs/modifiers/uvs/parallax.md). Similar to the Panosphere option, the parallax-modified UV can be applied to almost any texture in the shader, by modifying one of the base UV slots (0, 1, 2, 3).
+Parallax/Parallax Heightmapping have been reworked to use the new UV option system, in [Parallax Heighmapping](/modifiers/uvs/parallax.md). Similar to the Panosphere option, the parallax-modified UV can be applied to almost any texture in the shader, by modifying one of the base UV slots (0, 1, 2, 3).

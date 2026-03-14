@@ -24,23 +24,23 @@ If enabled, activates Audio Link features and exposes Audio Link parameter contr
 
 :::info
 When this feature activates, the following sections in Poiyomi Shaders will have their Audio Link properties exposed for you to use. Please refer to each of their Documentation Entries for more information.
-- [Color Adjust](/docs/color-and-normals/color-adjust.md#hue-shift-audio-link)
-- [Alpha Options](/docs/color-and-normals/alpha-options.md#alpha-audio-link)
-- [Decals](/docs/color-and-normals/decals.md#audio-link)
-- [Matcap](/docs/shading/matcap.md#audio-link)
-- [Rim Lighting](/docs/shading/rim-lighting.md#audio-link)
-- [Outlines](/docs/outlines/outlines.md#audio-link)
-- [Dissolve](/docs/special-fx/dissolve.md#audio-link)
-- [Flipbook](/docs/special-fx/flipbook.md#audio-link)
-- [Emission](/docs/special-fx/emission.md#audio-link)
-- [Glitter / Sparkle](/docs/special-fx/glitter.md#audio-link)
-- [Pathing](/docs/special-fx/pathing.md#audio-link)
-- [Voronoi](/docs/special-fx/voronoi.md#audio-link)
-- [Truchet](/docs/special-fx/truchet.md#audio-link)
-- [Constellation](/docs/special-fx/constellation.md#audio-link)
-- [Vertex Options -> Basics & Fun](/docs/vertex-options/basics.md#audio-link)
-- [Vertex Options -> Glitching](/docs/vertex-options/glitching.md#audio-link)
-- [Vertex Options -> LookAt](/docs/vertex-options/look-at.md#audio-link)
+- [Color Adjust](/color-and-normals/color-adjust.md#hue-shift-audio-link)
+- [Alpha Options](/color-and-normals/alpha-options.md#alpha-audio-link)
+- [Decals](/color-and-normals/decals.md#audio-link)
+- [Matcap](/shading/matcap.md#audio-link)
+- [Rim Lighting](/shading/rim-lighting.md#audio-link)
+- [Outlines](/outlines/outlines.md#audio-link)
+- [Dissolve](/special-fx/dissolve.md#audio-link)
+- [Flipbook](/special-fx/flipbook.md#audio-link)
+- [Emission](/special-fx/emission.md#audio-link)
+- [Glitter / Sparkle](/special-fx/glitter.md#audio-link)
+- [Pathing](/special-fx/pathing.md#audio-link)
+- [Voronoi](/special-fx/voronoi.md#audio-link)
+- [Truchet](/special-fx/truchet.md#audio-link)
+- [Constellation](/special-fx/constellation.md#audio-link)
+- [Vertex Options -> Basics & Fun](/vertex-options/basics.md#audio-link)
+- [Vertex Options -> Glitching](/vertex-options/glitching.md#audio-link)
+- [Vertex Options -> LookAt](/vertex-options/look-at.md#audio-link)
 :::
 
 ### Anim Toggle
@@ -50,7 +50,7 @@ When this feature activates, the following sections in Poiyomi Shaders will have
 This checkbox allows toggling Audio Link effects at runtime.
 
 :::tip
-Audio Link is enabled by default. To turn off Audio Link in-game, you need to animate this Toggle (checkbox) when creating toggles for Audio Link on this Material. Animating the [Section Header](/docs/general/locking.md#section-header-checkboxes) will not work!
+Audio Link is enabled by default. To turn off Audio Link in-game, you need to animate this Toggle (checkbox) when creating toggles for Audio Link on this Material. Animating the [Section Header](/general/locking.md#section-header-checkboxes) will not work!
 :::
 
 ## Smoothing

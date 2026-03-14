@@ -67,7 +67,7 @@ Enabled by default, ThryEditor will attempt to automatically mark properties as 
 - `Setting`: **Toggle**
   - Default: `Off`
 
-Allows a custom suffix to be used on properties that are marked Renamed Animated (`RA`), overriding the default naming as outlined [here](/docs/general/locking.md#rename-animated).
+Allows a custom suffix to be used on properties that are marked Renamed Animated (`RA`), overriding the default naming as outlined [here](/general/locking.md#rename-animated).
 
 ### Gradient Save File Names
 

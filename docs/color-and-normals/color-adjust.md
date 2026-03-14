@@ -6,7 +6,7 @@ image: /img/color-and-normals/Thumb-ColorAdjust.png
 keywords: [hue, color, saturation, gamma, hue shift, poiyomi]
 ---
 
-The Color Adjust section provides options for modifying the base color of the material. This is applied directly after the main [Color and Normals](/docs/color-and-normals/color-and-normals.md) section, and will not affect any other sections that modify the Base Color.
+The Color Adjust section provides options for modifying the base color of the material. This is applied directly after the main [Color and Normals](/color-and-normals/color-and-normals.md) section, and will not affect any other sections that modify the Base Color.
 
 Color Adjust can be used to quickly change the colors presented from the main texture to a different hue of color either directly or indirectly. The results of the hue shift can vary depending on which [Color Space](#color-space) is chosen, and how much [Saturation](#saturation), [Brightness](#brightness), and [Gamma](#gamma), is set by the user.
 
@@ -25,7 +25,7 @@ In order to Bake a texture (and enable this button), you must first adjust any o
 
 Texture Slot that defines where to specifically apply the color adjustments to. If this texture is not defined, the adjustments will apply everywhere.
 
-This slot has the [Texture Packer](/docs/thryeditor/thryeditor.md#texture-packer) integrated for convenience.
+This slot has the [Texture Packer](/thryeditor/thryeditor.md#texture-packer) integrated for convenience.
 
 | Channel | Mask |
 | :---: | :---: |
@@ -180,7 +180,7 @@ If set, will constantly shift the hue with time. A value of `1` will result in a
 If enabled, allows the Hue Shift to be controlled with Audio Link chronotensity.
 
 :::info
-The settings in this section will only be visible when [Audio Link](/docs/audio-link/audio-link.md) is activated on the Material.
+The settings in this section will only be visible when [Audio Link](/audio-link/audio-link.md) is activated on the Material.
 :::
 
 #### Band
@@ -221,7 +221,7 @@ How strong should the Color Grading be applied to the Color Adjust.
 
 ## Global Mask
 
-Use this section to instead use a [Global Mask](/docs/modifiers/global-masks.md) for the Color Adjust Mask.
+Use this section to instead use a [Global Mask](/modifiers/global-masks.md) for the Color Adjust Mask.
 
 ### Hue
 

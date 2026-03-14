@@ -11,10 +11,10 @@ In Poiyomi Shaders, there are some properties that will completely differ from U
 
 When switching from the Standard shader to Poiyomi, most if not all properties will be carried over with a few exceptions. Please read below to see what will NOT be carried over:
 
-- **Metallic Smoothness**: Properties and Textures such as `_Metallic`, `_Glossiness`, and `MetalGlossMap`, will not be carried over as we use a different workflow as defined by Mochie. When switching over, you must adjust the workflow for [Reflections & Specular](/docs/shading/reflections-and-specular.md) in Poiyomi Shaders. See the documentation page linked in this paragraph to learn more.
-- **Occlusion**: This Texture Slot will not be carried over. However, you should be able to use it under the [AO Maps](/docs/shading/light-data.md) slot in Light Data without a problem. Do keep in mind that AO Maps will only work best with Realistic-based shading.
-- **Detail Maps**: This texture slot will not be carried over as we use a far more advanced setup in both [Details](/docs/color-and-normals/details.md) and [RGBA Color Masking](/docs/color-and-normals/rgba-color-masking.md).
-- **Detail Albedo x2**: This texture slot will not be carried over as we use a more advanced approach in [Details](/docs/color-and-normals/details.md) feature.
+- **Metallic Smoothness**: Properties and Textures such as `_Metallic`, `_Glossiness`, and `MetalGlossMap`, will not be carried over as we use a different workflow as defined by Mochie. When switching over, you must adjust the workflow for [Reflections & Specular](/shading/reflections-and-specular.md) in Poiyomi Shaders. See the documentation page linked in this paragraph to learn more.
+- **Occlusion**: This Texture Slot will not be carried over. However, you should be able to use it under the [AO Maps](/shading/light-data.md) slot in Light Data without a problem. Do keep in mind that AO Maps will only work best with Realistic-based shading.
+- **Detail Maps**: This texture slot will not be carried over as we use a far more advanced setup in both [Details](/color-and-normals/details.md) and [RGBA Color Masking](/color-and-normals/rgba-color-masking.md).
+- **Detail Albedo x2**: This texture slot will not be carried over as we use a more advanced approach in [Details](/color-and-normals/details.md) feature.
 
 ## LilToon
 

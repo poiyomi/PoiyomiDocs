@@ -23,3 +23,5 @@ yarn-error.log*
 *.code-workspace
 .markdownlint.json
 /.vscode/settings.json
+
+.idea

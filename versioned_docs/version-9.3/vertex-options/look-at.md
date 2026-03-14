@@ -71,7 +71,7 @@ The following properties below will appear for each Color Mask you are customizi
 Controls the overall visibility of the LookAt effect. `0` would be no effect, `0.5` would be half of the effect, and `1.0` would be the full effect.
 
 :::tip
-Animate this slider when creating toggles for LookAt on this Material. Animating the [Section Header](/docs/general/locking.md#section-header-checkboxes) will not work!
+Animate this slider when creating toggles for LookAt on this Material. Animating the [Section Header](/general/locking.md#section-header-checkboxes) will not work!
 :::
 
 ### Target Up Direction
@@ -138,7 +138,7 @@ Clamps the maximum rotational Roll of the affected mask on the Z-axis (Barrel Ro
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**WW
 
-Enables the visibility modifier, which includes features similar to the [Mirror/Camera Visibility](/docs/special-fx/mirror.md) feature. This can affect how LookAt appears either Normally, in the Mirror, or in the Camera.
+Enables the visibility modifier, which includes features similar to the [Mirror/Camera Visibility](/special-fx/mirror.md) feature. This can affect how LookAt appears either Normally, in the Mirror, or in the Camera.
 
 Use this section to specifically control how LookAt should appear in specific scenarios.
 
@@ -214,10 +214,10 @@ Mode to use for the LookAt visibility.
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
 
-Enables [Audio Link](/docs/audio-link/audio-link.md) to control LookAt. This will affect ALL `Alpha` properties in LookAt.
+Enables [Audio Link](/audio-link/audio-link.md) to control LookAt. This will affect ALL `Alpha` properties in LookAt.
 
 :::info
-The settings in this section will only be visible when [Audio Link](/docs/audio-link/audio-link.md) is activated on the Material.
+The settings in this section will only be visible when [Audio Link](/audio-link/audio-link.md) is activated on the Material.
 :::
 
 ### Alpha Band

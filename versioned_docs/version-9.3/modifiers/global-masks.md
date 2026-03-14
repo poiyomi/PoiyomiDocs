@@ -27,7 +27,7 @@ Each Global Mask uses the `Red (R)`, `Green (G)`, `Blue (B)`, and `Alpha (A)` ch
 
 Since you have a total of 4 Global Masking slots, each providing 4 Color Channels, you can have up to 16 Color Channels to use for your Masks.
 
-*Below is a video introduction to Global Masking, courtesy of community member Teeh. This also briefly covers it's sister feature [Global Themes](/docs/modifiers/global-themes.md) as well.*
+*Below is a video introduction to Global Masking, courtesy of community member Teeh. This also briefly covers it's sister feature [Global Themes](/modifiers/global-themes.md) as well.*
 
 <div class="videobox">
 <iframe class="iframe-element" src="https://www.youtube-nocookie.com/embed/ng780niVSzA?si=TO5iXVR7NWWw4xNw" title="YouTube Video Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -51,7 +51,7 @@ Once done, see how to use them in [Usage in the Shader](#usage-in-the-shader).
 
 ### Method 2: Provide your own Texture
 
-Another way of creating Global Masks is by the use of software, such as Substance 3D Painter, to pack your `User` channels into an `R + G + B + A` Texture way in advance. To do this, you would have to add the `User` channels and paint on those channels you specify. We offer an example Export Template that shows the usage of this, which you can download from [here](/docs/general/substance-painter.md).
+Another way of creating Global Masks is by the use of software, such as Substance 3D Painter, to pack your `User` channels into an `R + G + B + A` Texture way in advance. To do this, you would have to add the `User` channels and paint on those channels you specify. We offer an example Export Template that shows the usage of this, which you can download from [here](/general/substance-painter.md).
 
 After exporting your `t_$textureSet_GlobalMask.png` file, slot it directly into one of the Global Mask slots. See [Usage in the Shader](#usage-in-the-shader) below to see how to use them.
 
@@ -109,7 +109,7 @@ Texture Slot defining the forth Global Mask. This will represent Global Masks `4
 
 ## Vertex Colors
 
-This section allows you to use [Vertex Colors](/docs/vertex-options/vertex-colors.md) on your Mesh as a Global Mask.
+This section allows you to use [Vertex Colors](/vertex-options/vertex-colors.md) on your Mesh as a Global Mask.
 
 ### Linear Colors
 

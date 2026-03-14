@@ -84,4 +84,4 @@ Sets the intensity of shadows in Subsurface Scattering.
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-Select which [Global Mask](/docs/modifiers/global-masks.md) to apply directly onto the Decal.
+Select which [Global Mask](/modifiers/global-masks.md) to apply directly onto the Decal.

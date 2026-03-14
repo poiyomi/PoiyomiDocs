@@ -75,7 +75,7 @@ Once you reach this part, you are now ready to start marking properties on the M
 
 ### Tagging Preset Properties
 
-In a similar manner to [Marking Properties as Animated](/docs/general/locking.md#marking-properties-for-animation), `Right-Click` and in the context menu you will instead click `Is part of preset`. When you do this, a Light Blue colored `P` symbol will appear to the left next to it. This indicates that the property will be used in your Preset. Do this for each Property that you wish to use in your Preset.
+In a similar manner to [Marking Properties as Animated](/general/locking.md#marking-properties-for-animation), `Right-Click` and in the context menu you will instead click `Is part of preset`. When you do this, a Light Blue colored `P` symbol will appear to the left next to it. This indicates that the property will be used in your Preset. Do this for each Property that you wish to use in your Preset.
 
 <a>
 <img src="/img/thryeditor/Thry_MarkingPresets.png" alt="Tagging Properties as part of the Preset" width="400px"/>
@@ -88,7 +88,7 @@ Once you finish marking your Properties as `P`, test it out by going to a Materi
 Just like as described in [Using Presets](#using-presets), open the Preset List by pressing the **Presets** button, and your Preset should be seen in there. Select your Preset and Apply to your Material. That's it!
 
 :::warning
-Be careful when creating too many Preset Materials in your project. Otherwise, you may risk causing the [64 Slot Crash](/docs/general/textures-64-texture-slot-crash.md)!
+Be careful when creating too many Preset Materials in your project. Otherwise, you may risk causing the [64 Slot Crash](/general/textures-64-texture-slot-crash.md)!
 
 To help counteract against this, you can safely switch your Preset Material(s) to the Standard shader. Don't worry, your preset settings are preserved on the Material (.mat) file. So if you need to edit your presets again later on, simply switch it back to Poiyomi and your settings will appear exactly where you left it.
 :::

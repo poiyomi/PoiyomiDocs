@@ -97,7 +97,7 @@ If enabled, will override the Alpha/Transparency from the Base, if Transparency 
 ## Audio Link
 
 :::info
-The settings in this section will only be visible when [Audio Link](/docs/audio-link/audio-link.md) is activated on the Material.
+The settings in this section will only be visible when [Audio Link](/audio-link/audio-link.md) is activated on the Material.
 :::
 
 ### Hide When No AL

@@ -8,7 +8,7 @@ keywords: [render, rendering, cull, culling, ztest, zwrite, z, offset, instancin
 The Rendering section provides various low-level options for controlling how the shader is rendered. This plays an important part in how the Graphics Driver will interpret the shader at runtime.
 
 :::info
-Many of the settings in this section are automatically-configured depending on which [Rendering Preset](/docs/general/render-preset.md) you select.
+Many of the settings in this section are automatically-configured depending on which [Rendering Preset](/general/render-preset.md) you select.
 :::
 
 ## Cull
@@ -34,7 +34,7 @@ Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-r
 ## ZWrite
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`On`
-  - Default: Determined by [Rendering Preset](/docs/general/render-preset.md)
+  - Default: Determined by [Rendering Preset](/general/render-preset.md)
 
 Determines whether the shader should write to the depth buffer. For Opaque presets, this is usually `On`, but for Transparent presets, this is usually `Off`.
 
@@ -150,7 +150,7 @@ To do this, open the Action Menu, go to `Tools -> Avatar` and toggle the `Fallba
 The Render Queue tells Unity to set the sorting behavior within the Rendering Pipeline, as Unity must sort and draw objects within the Scene so that it can be show to the Camera as requested by the Render Queue. This plays a vital part on how the shader is rendered in-game.
 
 :::danger
-**This setting is automatically set by the [Rendering Preset](/docs/general/render-preset.md) and should not be touched!**
+**This setting is automatically set by the [Rendering Preset](/general/render-preset.md) and should not be touched!**
 
 Only modify this value if you *absolutely* know what you are doing.
 :::

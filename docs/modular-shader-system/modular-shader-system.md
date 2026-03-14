@@ -10,7 +10,7 @@ Poiyomi Shaders is put together using the Modular Shader System, which allows fo
 :::info Attention Shader Developers
 For security reasons, the Modular Shader components and modules referenced here are only exposed for end-user access in the Poiyomi Pro shader package, as it also exposes Pro-only modules.
 
-To learn more on how to obtain the Poiyomi Pro version, see [Download & Install: Poiyomi Pro](/docs/download/download.md#poiyomi-pro).
+To learn more on how to obtain the Poiyomi Pro version, see [Download & Install: Poiyomi Pro](/download/download.md#poiyomi-pro).
 :::
 
 ## Overview

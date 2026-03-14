@@ -75,7 +75,7 @@ Enables the ability to control the visibility of the glitching in mirrors.
 Enables the ability to use Audio Link to control the Glitching Intensity.
 
 :::info
-The settings in this section will only be visible when [Audio Link](/docs/audio-link/audio-link.md) is activated on the Material.
+The settings in this section will only be visible when [Audio Link](/audio-link/audio-link.md) is activated on the Material.
 :::
 
 ### Glitch Band

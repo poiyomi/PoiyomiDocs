@@ -311,7 +311,7 @@ Increasing this value will scale the brightness of the glitter based on the inte
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-Select which [Global Mask](/docs/modifiers/global-masks.md) to use to mask the Glitter effects.
+Select which [Global Mask](/modifiers/global-masks.md) to use to mask the Glitter effects.
 
 ## Hue Shift
 
@@ -325,7 +325,7 @@ Enables or Disables the Hue Shift effect for glitter.
 
 Choice of Color Space to use for the Hue Shift. By default, it will be set to `OKLab`.
 
-Learn about the difference of Color Spaces as documented here in [Color Adjust](/docs/color-and-normals/color-adjust.md#oklab-vs-hsv).
+Learn about the difference of Color Spaces as documented here in [Color Adjust](/color-and-normals/color-adjust.md#oklab-vs-hsv).
 
 ### Select or Shift
 
@@ -361,7 +361,7 @@ How much to shift the base color around the hue circle. This value is circular, 
 Enables or Disables Audio Link effects for Glitter.
 
 :::info
-The settings in this section will only be visible when [Audio Link](/docs/audio-link/audio-link.md) is activated on the Material.
+The settings in this section will only be visible when [Audio Link](/audio-link/audio-link.md) is activated on the Material.
 :::
 
 ### Alpha Band

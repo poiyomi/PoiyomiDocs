@@ -10,7 +10,7 @@ The Stencil section gives access to the Stencil buffer and it's associated capab
 To learn more about Stencils, visit the [Unity Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-Stencil.html).
 
 :::note Documentation info
-Outline Stencil will also be visible here containing the same settings as described below. This allows you to control the Stencil behavior of the [Outlines](/docs/outlines/outlines.md) separate from the base Stencil.
+Outline Stencil will also be visible here containing the same settings as described below. This allows you to control the Stencil behavior of the [Outlines](/outlines/outlines.md) separate from the base Stencil.
 :::
 
 ## Stencil Type

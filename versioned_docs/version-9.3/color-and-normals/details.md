@@ -51,7 +51,7 @@ Multiplier for the detail texture's base brightness. Can be used to emphasize da
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-Select which [Global Mask](/docs/modifiers/global-masks.md) to only affect the Detail Texture onto.
+Select which [Global Mask](/modifiers/global-masks.md) to only affect the Detail Texture onto.
 
 ## Detail Normal
 
@@ -71,4 +71,4 @@ Intensity multiplier for the detail normal map. Expand the Detail Normal texture
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-Select which [Global Mask](/docs/modifiers/global-masks.md) to only affect the Detail Normal onto.
+Select which [Global Mask](/modifiers/global-masks.md) to only affect the Detail Normal onto.

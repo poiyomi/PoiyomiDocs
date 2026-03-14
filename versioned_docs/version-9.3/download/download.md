@@ -139,7 +139,7 @@ The VCC version of Poiyomi Shaders will automatically replace any existing copy 
 
 The Pro version of the shader (also known as Poiyomi Pro) is a Paid Version of the shader, available as a subscription model for $10/month on Patreon. It contains extra special features that are [outlined below](#features-chart).
 
-Before using Poiyomi Pro, please ensure you agree to the [EULA](/docs/terms-of-service/terms-of-service.md#pro-version).
+Before using Poiyomi Pro, please ensure you agree to the [EULA](/terms-of-service/terms-of-service.md#pro-version).
 
 <div style={{marginBottom: '20px'}}>
 
@@ -181,7 +181,7 @@ Things work a little differently when using this version upon launching your Uni
 
 Do keep in mind that this script is intentionally designed to require an active subscription in order to receive future updates. So when updating Poiyomi Pro, you must go through the same process as detailed above.
 
-By using Poiyomi Pro, you agree to the EULA stated [here](/docs/terms-of-service/terms-of-service.md#pro-version).
+By using Poiyomi Pro, you agree to the EULA stated [here](/terms-of-service/terms-of-service.md#pro-version).
 
 ### Features Chart
 
@@ -190,44 +190,44 @@ To see the different features offered between the Free vs. Pro version, refer to
 | Role Access | Public | $2/month | $5/month | $10/month | $20/month | $50/month |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
 | **Toon/Pro Features** | | Nano | Micro | Mega | Giga | Tera |
-| [Color & Normals](/docs/color-and-normals/color-and-normals.md), [Color Adjust (Hue Shift)](/docs/color-and-normals/color-adjust.md), [Details](/docs/color-and-normals/details.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| [Alpha Options](/docs/color-and-normals/alpha-options.md), [Back Face](/docs/color-and-normals/back-face.md), [Normal Correct](/docs/color-and-normals/normal-correct.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| [Decals](/docs/color-and-normals/decals.md), [RGBA Color Masking](/docs/color-and-normals/rgba-color-masking.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| [Anisotropics](/docs/shading/anisotropics.md), [Matcaps](/docs/shading/matcap.md), [CubeMap](/docs/shading/cubemap.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| [Rim Lighting](/docs/shading/rim-lighting.md), [Depth Rim Lighting](/docs/shading/depth-rim-lighting.md), [Subsurface Scattering](/docs/shading/subsurface-scattering.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| [Reflections & Specular](/docs/shading/reflections-and-specular.md), [Clear Coat](/docs/shading/clear-coat.md), [Environmental Rim](/docs/shading/environmental-rim.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| [Stylized Reflections](/docs/shading/stylized-reflections.md), [Backlight](/docs/shading/backlight.md), [LTCGI](/docs/shading/ltcgi.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| [Outlines](/docs/outlines/outlines.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| [UV Tile Discard](/docs/special-fx/uv-tile-discard.md), [Proximity Color](/docs/special-fx/proximity-color.md), [Mirror/Camera Visibility](/docs/special-fx/mirror.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| [Depth Bulge](/docs/special-fx/depth-bulge.md), [Depth FX](/docs/special-fx/depth-fx.md), [Internal Parallax](/docs/special-fx/internal-parallax.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| [Emissions](/docs/special-fx/emission.md), [Glitter/Sparkle](/docs/special-fx/glitter.md), [Dissolve](/docs/special-fx/dissolve.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| [Flipbook](/docs/special-fx/flipbook.md), [Pathing](/docs/special-fx/pathing.md), [Stats Overlay](/docs/special-fx/stats-overlay.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| [Stats Overlay](/docs/special-fx/stats-overlay.md), [Video Effects](/docs/special-fx/video-effects.md), [Voronoi](/docs/special-fx/voronoi.md), [Truchet](/docs/special-fx/truchet.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| [Audio Link](/docs/audio-link/audio-link.md), [Global Themes](/docs/modifiers/global-themes.md), [Global Mask](/docs/modifiers/global-masks.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [Color & Normals](/color-and-normals/color-and-normals.md), [Color Adjust (Hue Shift)](/color-and-normals/color-adjust.md), [Details](/color-and-normals/details.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [Alpha Options](/color-and-normals/alpha-options.md), [Back Face](/color-and-normals/back-face.md), [Normal Correct](/color-and-normals/normal-correct.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [Decals](/color-and-normals/decals.md), [RGBA Color Masking](/color-and-normals/rgba-color-masking.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [Anisotropics](/shading/anisotropics.md), [Matcaps](/shading/matcap.md), [CubeMap](/shading/cubemap.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [Rim Lighting](/shading/rim-lighting.md), [Depth Rim Lighting](/shading/depth-rim-lighting.md), [Subsurface Scattering](/shading/subsurface-scattering.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [Reflections & Specular](/shading/reflections-and-specular.md), [Clear Coat](/shading/clear-coat.md), [Environmental Rim](/shading/environmental-rim.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [Stylized Reflections](/shading/stylized-reflections.md), [Backlight](/shading/backlight.md), [LTCGI](/shading/ltcgi.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [Outlines](/outlines/outlines.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [UV Tile Discard](/special-fx/uv-tile-discard.md), [Proximity Color](/special-fx/proximity-color.md), [Mirror/Camera Visibility](/special-fx/mirror.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [Depth Bulge](/special-fx/depth-bulge.md), [Depth FX](/special-fx/depth-fx.md), [Internal Parallax](/special-fx/internal-parallax.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [Emissions](/special-fx/emission.md), [Glitter/Sparkle](/special-fx/glitter.md), [Dissolve](/special-fx/dissolve.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [Flipbook](/special-fx/flipbook.md), [Pathing](/special-fx/pathing.md), [Stats Overlay](/special-fx/stats-overlay.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [Stats Overlay](/special-fx/stats-overlay.md), [Video Effects](/special-fx/video-effects.md), [Voronoi](/special-fx/voronoi.md), [Truchet](/special-fx/truchet.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [Audio Link](/audio-link/audio-link.md), [Global Themes](/modifiers/global-themes.md), [Global Mask](/modifiers/global-masks.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | [VRC Light Volumes <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/REDSIM/VRCLightVolumes) Support | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| [BlackLight Masking](/docs/modifiers/blacklight-masking.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [BlackLight Masking](/modifiers/blacklight-masking.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Stochastic Sampling, Distortion UV, Panosphere UV, Polar UV | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| [Parallax Heightmapping](/docs/modifiers/uvs/parallax.md), [Post Processing Animations](/docs/modifiers/post-processing/pp-animations.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| [Lil Fur](/docs/extended-features/lilfur.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [Parallax Heightmapping](/modifiers/uvs/parallax.md), [Post Processing Animations](/modifiers/post-processing/pp-animations.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [Lil Fur](/extended-features/lilfur.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Vertex Options |  |  |  |  |  |  |
-| [Basics & Fun](/docs/vertex-options/basics.md), [Glitching](/docs/vertex-options/glitching.md), [LookAt](/docs/vertex-options/look-at.md), [Vertex Colors](/docs/vertex-options/vertex-colors.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| [Shading Styles](/docs/shading/main.md) |  |  |  |  |  |  |
+| [Basics & Fun](/vertex-options/basics.md), [Glitching](/vertex-options/glitching.md), [LookAt](/vertex-options/look-at.md), [Vertex Colors](/vertex-options/vertex-colors.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [Shading Styles](/shading/main.md) |  |  |  |  |  |  |
 | Texture Ramp, Multilayer Math, Wrapped, Skin | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | ShadeMap, Flat, Realistic, Cloth, SDF | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| [Rendering Presets](/docs/general/render-preset.md) |  |  |  |  |  |  |
+| [Rendering Presets](/general/render-preset.md) |  |  |  |  |  |  |
 | Opaque, Cutout, TransClipping, Fade, Transparent | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Additive, Soft Additive, Multiplicative, 2x Multiplicative | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Two Pass Transparency | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| [Grab Pass](/docs/extended-features/grabpass.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [Grab Pass](/extended-features/grabpass.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | **Pro Features** | | | | | | |
-| [Screen Space Ambient Occlusion](/docs/shading/ssao.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| [Screen Space Ambient Occlusion](/shading/ssao.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | Custom Modules | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
-| [Geometric Dissolve](/docs/extended-features/geometric-dissolve.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
-| [Fur and World Fur](/docs/extended-features/fur.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
-| [Shatterwave](/docs/extended-features/shatterwave.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
-| [Tessellated](/docs/extended-features/tessellated.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| [Geometric Dissolve](/extended-features/geometric-dissolve.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| [Fur and World Fur](/extended-features/fur.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| [Shatterwave](/extended-features/shatterwave.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| [Tessellated](/extended-features/tessellated.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | Tessellated Geometric | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
-| [Particles](/docs/extended-features/particle.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| [Particles](/extended-features/particle.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | Constellation | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | Wireframe | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | NameTag | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
