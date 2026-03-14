@@ -1,5 +1,5 @@
 ---
-sidebar_position: 15
+sidebar_position: 16
 title: LTCGI
 description: Poiyomi Shaders support the use of LTCGI, which provides optimized plug-and-play realtime area lighting solutions for Unity and VRChat.
 keywords: [ltcgi, realtime, area, lighting, poiyomi, shader]
@@ -65,3 +65,17 @@ Determines how rough or smooth the specular reflections are.
   - Default: `Off`
 
 Enables LTCGI to use Exposure Occlusion.
+
+## Specular Multiplier
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 2.0`
+  - Default: `1.0`
+
+Modifies the multiplicative factor of LTCGI's speculars. Use this for artistic control of it's appearance.
+
+## Diffuse Multiplier
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 2.0`
+  - Default: `1.0`
+
+Modifies the multiplicative factor of LTCGI's diffuse. Use this for artistic control of it's appearance.
