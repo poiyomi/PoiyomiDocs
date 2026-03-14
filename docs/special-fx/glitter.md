@@ -141,6 +141,16 @@ Applies random size to glitter.
 
 The size range of the glitter. Overrides 'Glitter Size'.
 
+### Allow Overlap
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+
+If enabled, allows each shape to overlap one another instead of being spaced apart from each other.
+
+:::danger
+Enabling `Allow Overlap` will invoke a heavy performance cost the more dense your Glitter is. Use this conservatively!
+:::
+
 ## Sparkle Control
 
 ### Glitter Min Brightness
@@ -201,6 +211,12 @@ How much to apply a fix for jagged edges of square glitter. Slightly rounds the 
 
 Only visible when **Shape** is set to `Square`.
 
+### Distance LOD
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+
+When enabled, the shader will calculate an appropriate Level-of-Detail (LOD) based on the Camera's distance to the mesh.
+
 ## Rotations
 
 ### Random Offset
@@ -220,6 +236,56 @@ How fast the glitter particles should rotate within the voronoi cell. This is on
 - `Type`: <PropertyIcon name="float2" />**Vector2**
 
 Applies a constant, randomly selected rotation speed to each cell, meaning each individual cell will have a consistent rotation speed.
+
+## Sprite Sheet
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+
+When enabled, allows the usage of a Sprite Sheet to use for your glitter animation. This will change the treatment of the [Shape Texture](#shape-texture) to look for Sprite Sheets instead.
+
+When using a Sprite Sheet, use the properties exposed here to define how many Columns and Rows are in the Sprite Sheet texture.
+
+### Columns
+
+- `Type`: <PropertyIcon name="float" />**Float**
+
+Set how many Columns (Horizontal) are in your Sprite Sheet.
+
+### Rows
+
+- `Type`: <PropertyIcon name="float" />**Float**
+
+Set how many Rows (Vertical) are in your Sprite Sheet.
+
+### Frame Selection
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Random`/`Time Based`
+
+Choice of Frame Selection technique to use for the Sprite Sheet. `Random` will let the shader choose the frames randomly, while `Time Based` will expose some properties below that allow you to define the FPS and if a Frame should be selected randomly at start.
+
+### FPS
+
+- `Type`: <PropertyIcon name="float" />**Float**
+
+Sets the FPS (Frames per Second) of the Sprite Sheet animation.
+
+This property is exposed when `Frame Selection` is set to `Time Based`.
+
+### Random Start Frame
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+
+If enabled, the shader will randomly decide which frame to start the Sprite Sheet animation from each cycle.
+
+This property is exposed when `Frame Selection` is set to `Time Based`.
+
+### Total Frames
+
+- `Type`: <PropertyIcon name="float" />**Float**
+
+Use this if when the Sprite Sheet atlas isn't full and has some empty frames.
+
+If set to `0`, this will be automatic. Keep this set to `0` if all atlases are filled.
 
 ## Masking & Light Masking
 
