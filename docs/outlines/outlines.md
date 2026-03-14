@@ -7,9 +7,11 @@ keywords: [outline, outlines, inverted hull, stencil, size, width, poiyomi, shad
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The Outlines feature creates outlines using a simplified pass with the mesh offset by a small amount. This is also known as an "Inverted Hull" outline.
+The Outlines feature creates outlines using a simplified pass with the mesh offset by a small amount, also known as an "Inverted Hull" technique.
 
 For smooth meshes, the inverted hull technique works well, but for hard-edged models, it can have noticeable seams. To correct this, you can bake a version of the mesh with smoothed normals baked into the vertex color, using the Poi Vertex Color Baker. This will overwrite other vertex color data, and will create a unique version of the mesh.
+
+Outlines are known for it's distinctive "lines" traced around characters and objects in various 2D cartoons seen in popular culture.
 
 <a target="_blank" href="/img/outlines/PoiOutlinesDemo2.png">
 <img src="/img/outlines/PoiOutlinesDemo2.png" alt="Outlines Example"/>
