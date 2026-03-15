@@ -1,0 +1,134 @@
+{
+  "link.title.Featured Pages": {
+    "message": "Featured Pages",
+    "description": "The title of the footer links column with title=Featured Pages in the footer"
+  },
+  "link.title.Community": {
+    "message": "Community",
+    "description": "The title of the footer links column with title=Community in the footer"
+  },
+  "link.title.Where to Download": {
+    "message": "Where to Download",
+    "description": "The title of the footer links column with title=Where to Download in the footer"
+  },
+  "link.title.About": {
+    "message": "About",
+    "description": "The title of the footer links column with title=About in the footer"
+  },
+  "link.item.label.Download & Install": {
+    "message": "Download & Install",
+    "description": "The label of footer link with label=Download & Install linking to /download"
+  },
+  "link.item.label.Locking and Animation": {
+    "message": "Locking and Animation",
+    "description": "The label of footer link with label=Locking and Animation linking to /general/locking"
+  },
+  "link.item.label.Color & Normals": {
+    "message": "Color & Normals",
+    "description": "The label of footer link with label=Color & Normals linking to /color-and-normals"
+  },
+  "link.item.label.Shading": {
+    "message": "Shading",
+    "description": "The label of footer link with label=Shading linking to /shading/main"
+  },
+  "link.item.label.Reflections & Specular": {
+    "message": "Reflections & Specular",
+    "description": "The label of footer link with label=Reflections & Specular linking to /shading/reflections-and-specular"
+  },
+  "link.item.label.Screen Space Ambient Occlusion": {
+    "message": "Screen Space Ambient Occlusion",
+    "description": "The label of footer link with label=Screen Space Ambient Occlusion linking to /shading/ssao"
+  },
+  "link.item.label.Outlines": {
+    "message": "Outlines",
+    "description": "The label of footer link with label=Outlines linking to /outlines"
+  },
+  "link.item.label.UV Tile Discard": {
+    "message": "UV Tile Discard",
+    "description": "The label of footer link with label=UV Tile Discard linking to /special-fx/uv-tile-discard"
+  },
+  "link.item.label.Emission": {
+    "message": "Emission",
+    "description": "The label of footer link with label=Emission linking to /special-fx/emission"
+  },
+  "link.item.label.Glitter / Sparkle": {
+    "message": "Glitter / Sparkle",
+    "description": "The label of footer link with label=Glitter / Sparkle linking to /special-fx/glitter"
+  },
+  "link.item.label.AudioLink": {
+    "message": "AudioLink",
+    "description": "The label of footer link with label=AudioLink linking to /audio-link"
+  },
+  "link.item.label.Global Masks": {
+    "message": "Global Masks",
+    "description": "The label of footer link with label=Global Masks linking to /modifiers/global-masks"
+  },
+  "link.item.label.Rendering": {
+    "message": "Rendering",
+    "description": "The label of footer link with label=Rendering linking to /rendering/"
+  },
+  "link.item.label.Thry Editor": {
+    "message": "Thry Editor",
+    "description": "The label of footer link with label=Thry Editor linking to /thryeditor/"
+  },
+  "link.item.label.Discord": {
+    "message": "Discord",
+    "description": "The label of footer link with label=Discord linking to https://discord.gg/poiyomi"
+  },
+  "link.item.label.Bluesky": {
+    "message": "Bluesky",
+    "description": "The label of footer link with label=Bluesky linking to https://bsky.app/profile/poiyomi.com"
+  },
+  "link.item.label.Twitter / X": {
+    "message": "Twitter / X",
+    "description": "The label of footer link with label=Twitter / X linking to https://x.com/poiyomi"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "The label of footer link with label=GitHub linking to https://github.com/poiyomi"
+  },
+  "link.item.label.BOOTH": {
+    "message": "BOOTH",
+    "description": "The label of footer link with label=BOOTH linking to https://poiyomi.booth.pm/"
+  },
+  "link.item.label.GitHub Repository": {
+    "message": "GitHub Repository",
+    "description": "The label of footer link with label=GitHub Repository linking to https://github.com/poiyomi/PoiyomiToonShader"
+  },
+  "link.item.label.BOOTH Listing": {
+    "message": "BOOTH Listing",
+    "description": "The label of footer link with label=BOOTH Listing linking to https://poiyomi.booth.pm/items/4841309"
+  },
+  "link.item.label.VCC Repository": {
+    "message": "VCC Repository",
+    "description": "The label of footer link with label=VCC Repository linking to vcc://vpm/addRepo?url=https%3A%2F%2Fpoiyomi.github.io/vpm/index.json"
+  },
+  "link.item.label.Poiyomi Pro (Requires Patreon)": {
+    "message": "Poiyomi Pro (Requires Patreon)",
+    "description": "The label of footer link with label=Poiyomi Pro (Requires Patreon) linking to https://pro.poiyomi.com/"
+  },
+  "link.item.label.Blog": {
+    "message": "Blog",
+    "description": "The label of footer link with label=Blog linking to /blog"
+  },
+  "link.item.label.FAQ / Troubleshooting": {
+    "message": "FAQ / Troubleshooting",
+    "description": "The label of footer link with label=FAQ / Troubleshooting linking to /general/faq"
+  },
+  "link.item.label.Terms of Service": {
+    "message": "Terms of Service",
+    "description": "The label of footer link with label=Terms of Service linking to /terms-of-service"
+  },
+  "link.item.label.Credits": {
+    "message": "Credits",
+    "description": "The label of footer link with label=Credits linking to /credits"
+  },
+  "copyright": {
+    "message": "Copyright © 2026 Poiyomi Labs. v2026.3.12. Built with Docusaurus.",
+    "description": "The footer copyright"
+  },
+  "logo.alt": {
+    "message": "Poiyomi Logo",
+    "description": "The alt text of footer logo"
+  }
+}
