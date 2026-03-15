@@ -27,25 +27,10 @@ export default {
 
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'es', 'de', 'ja', 'ko', 'zh', 'ru'],
+    locales: ['en', 'ru'],
     localeConfigs: {
       en: {
         htmlLang: 'en-US',
-      },
-      es: {
-        htmlLang: 'es-MX',
-      },
-      de: {
-        htmlLang: 'de-DE',
-      },
-      ja: {
-        htmlLang: 'ja-JP',
-      },
-      ko: {
-        htmlLang: 'ko-KR',
-      },
-      zh: {
-        htmlLang: 'zh-CN',
       },
       ru: {
         htmlLang: 'ru-RU',
