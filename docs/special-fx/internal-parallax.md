@@ -103,7 +103,7 @@ Enables the Hue Shift feature of the Internal Parallax.
 
 Choice of Color Space to use for the Hue Shift. By default, it will be set to `OKLab`.
 
-Learn about the difference of Color Spaces as documented here in [Color Adjust](/docs/color-and-normals/color-adjust.md#oklab-vs-hsv).
+Learn about the difference of Color Spaces as documented here in [Color Adjust](/color-and-normals/color-adjust.md#oklab-vs-hsv).
 
 ### Select or Shift
 

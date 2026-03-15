@@ -43,7 +43,7 @@ Color to use for Theme Color.
 
 How much to shift the Theme Color around the Hue Circle. This value is circular, and will have the same result at 0 and 1.
 
-This functions in the same fashion as Color Adjust's [Hue Shift](/docs/color-and-normals/color-adjust.md#hue-shift-1) slider.
+This functions in the same fashion as Color Adjust's [Hue Shift](/color-and-normals/color-adjust.md#hue-shift-1) slider.
 
 ### Hue Adjust Speed
 

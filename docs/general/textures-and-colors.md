@@ -127,7 +127,7 @@ If you are an Avatar Creator, consider leaving this OFF in your Packages.
 
 This setting determines the maximum resolution of the texture after Unity compresses it. Texture resolution is the biggest driver of VRAM (Texture Memory) consumption, and it's important to keep your textures as low resolution as they can be while maintaining acceptable visual quality.
 
-4096px and 8192px square textures, in particular, **use large amounts of VRAM**. Where possible, make your textures smaller, and use features like [RGBA Color Masking](/docs/color-and-normals/rgba-color-masking.md), alternate UV maps, [Decals](/docs/color-and-normals/decals.md), etc., to reduce the need for large, high resolution textures. Using those features can both help improve performance and cut down on VRAM consumption. Your friends will thank you.
+4096px and 8192px square textures, in particular, **use large amounts of VRAM**. Where possible, make your textures smaller, and use features like [RGBA Color Masking](/color-and-normals/rgba-color-masking.md), alternate UV maps, [Decals](/color-and-normals/decals.md), etc., to reduce the need for large, high resolution textures. Using those features can both help improve performance and cut down on VRAM consumption. Your friends will thank you.
 
 :::info VRChat Avatar Size Limits
 Make sure to keep the Max Size of your textures <u>as low as you can</u>, as it will greatly contribute to the final **Download Size** and **Uncompressed Size** of your Avatar. Failure to take this into account may prevent VRChat from even loading your Avatar at all, as it is subject to server-side scanning!
@@ -177,7 +177,7 @@ This option has a caveat. For most textures, the wrap mode defined for the *Main
 
 Most colors in the shader are standard RGBA colors. This means they are stored as four floating point values, with each value ranging from 0 to 1.
 
-Most color pickers have the option to draw from a [Global Theme](/docs/modifiers/global-themes.md), or from a world's Audio Link theme colors. This can be used to create an easy-to-change color palette for your avatar.
+Most color pickers have the option to draw from a [Global Theme](/modifiers/global-themes.md), or from a world's Audio Link theme colors. This can be used to create an easy-to-change color palette for your avatar.
 
 ### HDR Colors
 
@@ -187,13 +187,13 @@ In the Unity Standard Shader, the HDR Color `Intensity` slider serves as the Emi
 
 ### Alpha
 
-The Alpha channel is used to store opacity. It is a floating point value from 0 to 1. Generally, this is used to determine how much an effect or a part of an effect. For example, in [RGBA Color Masking](/docs/color-and-normals/rgba-color-masking.md), the Alpha channel is used to determine how much of a channel's texture should be used.
+The Alpha channel is used to store opacity. It is a floating point value from 0 to 1. Generally, this is used to determine how much an effect or a part of an effect. For example, in [RGBA Color Masking](/color-and-normals/rgba-color-masking.md), the Alpha channel is used to determine how much of a channel's texture should be used.
 
 One notable exception is the base color, where the Alpha channel is used to determine the amount of opacity for the material.
 
 ### Vertex Colors
 
-[Vertex Colors](/docs/vertex-options/vertex-colors.md) are colors stored on each vertex of a mesh. They can be used to color the mesh, or to store data about the mesh, like each vertex's position, or smoothed vertex normals, both of which can be baked into the mesh using the `Poi -> Vertex Color Baker` tool.
+[Vertex Colors](/vertex-options/vertex-colors.md) are colors stored on each vertex of a mesh. They can be used to color the mesh, or to store data about the mesh, like each vertex's position, or smoothed vertex normals, both of which can be baked into the mesh using the `Poi -> Vertex Color Baker` tool.
 
 ### Color Blending/Tinting
 

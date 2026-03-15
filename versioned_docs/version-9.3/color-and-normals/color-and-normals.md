@@ -42,7 +42,7 @@ The Normal Map texture has a slider for **Intensity**, which affects how much in
 
 *Adjusting the Intensity of a Normal Map on a Shaded material*
 
-A Normal Map will affect anything that uses the Normal of a mesh (specifically the Pixel normal, as opposed to the Vertex normal, which is the normal defined by the mesh itself). This includes features like [Shading](/docs/shading/main.md), [Rim Lighting](/docs/shading/rim-lighting.md), [Reflections and Specular](/docs/shading/reflections-and-specular.md), [Matcaps](/docs/shading/matcap.md), and many other lighting-based effects.
+A Normal Map will affect anything that uses the Normal of a mesh (specifically the Pixel normal, as opposed to the Vertex normal, which is the normal defined by the mesh itself). This includes features like [Shading](/shading/main.md), [Rim Lighting](/shading/rim-lighting.md), [Reflections and Specular](/shading/reflections-and-specular.md), [Matcaps](/shading/matcap.md), and many other lighting-based effects.
 
 :::info Use OpenGL Format
 **Poiyomi Shaders, and across Unity as a whole, <u>requires OpenGL format</u> for Normal Maps.** Even though the game runs in DirectX, Unity always uses the OpenGL format.
@@ -97,4 +97,4 @@ In Transparent rendering modes like Fade, Transparent, TransClipping, etc., this
 
 <ReactVideo src='/vid/color-and-normals/main_Alpha-Cutoff_Fade.webm'/> 
 
-[^1]: [Special Unity Properties](/docs/general/locking.md#unity-special-properties)
+[^1]: [Special Unity Properties](/general/locking.md#unity-special-properties)

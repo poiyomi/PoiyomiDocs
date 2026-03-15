@@ -8,7 +8,7 @@ keywords: [normal map 2, normal, normals, map, 2nd normal, poiyomi, shader, unit
 The Normal Map 2 section adds an additional normal map to the surface, allowing additional detail to be added to a material without increasing the complexity of a mesh. This area is commonly referred to as "2nd Normal."
 
 :::info
-This section only contains basic features for a 2nd Normal, specifically for compatibility from other shaders. To use more advanced features, we recommend using [Detail Normals & Texture](/docs/color-and-normals/details.md) instead.
+This section only contains basic features for a 2nd Normal, specifically for compatibility from other shaders. To use more advanced features, we recommend using [Detail Normals & Texture](/color-and-normals/details.md) instead.
 :::
 
 ## Normal Map

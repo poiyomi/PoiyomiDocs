@@ -17,7 +17,7 @@ To use Poiyomi Pro Particle, select the shader version `.poiyomi/Poiyomi Pro Par
 :::tip Works best with Cutout or Transparent Rendering
 Like many Particles, they each spawn with square-shaped planes that contains a texture. Most commonly, those textures have transparent backgrounds.
 
-When using a Texture or Sprite Sheet with a transparent background, change your [Rendering Preset](/docs/general/render-preset.md) to `Cutout` or a preferred transparent preset (if using Alpha transitions) for the best effect.
+When using a Texture or Sprite Sheet with a transparent background, change your [Rendering Preset](/general/render-preset.md) to `Cutout` or a preferred transparent preset (if using Alpha transitions) for the best effect.
 :::
 
 <ReactVideo src='/vid/extended-features/overkillparticles.webm'/>
@@ -83,7 +83,7 @@ Use a Vertex Color Channel from your mesh as the Spawn Mask.
 This should be the main texture you wish to use for the Particle's overall appearance.
 
 :::tip Use a texture with Transparency
-We recommend using a texture that has a transparent background. For best results, use Cutout or a Transparent [Rendering Preset](/docs/general/render-preset.md) on your Material for your Particles to appear correctly.
+We recommend using a texture that has a transparent background. For best results, use Cutout or a Transparent [Rendering Preset](/general/render-preset.md) on your Material for your Particles to appear correctly.
 :::
 
 ### Color
@@ -291,7 +291,7 @@ The bias of how each Frame is treated.
 ## Audio Link
 
 :::info
-The settings in this section will only be visible when [Audio Link](/docs/audio-link/audio-link.md) is activated on the Material.
+The settings in this section will only be visible when [Audio Link](/audio-link/audio-link.md) is activated on the Material.
 :::
 
 ### Gradient Source

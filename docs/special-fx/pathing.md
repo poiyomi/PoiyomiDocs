@@ -72,7 +72,7 @@ If enabled, multiplies the base alpha of the material with the Path's final alph
 
 Defines the gradients for the path. If using `Split Channels` mode, this texture should consist of between 1 and 4 channels of gradient data, with each channel representing a different path. Each channel used will flow between a value of `1` to a value of `255` (in 0-255 range), and should be defined from linear textures. 
 
-When expanded, 4 slots will be visible, one for each path. This is an integrated [Thry Texture Packer](/docs/thryeditor/thryeditor.md#texture-packer), which you can use to define gradient paths for each channel.
+When expanded, 4 slots will be visible, one for each path. This is an integrated [Thry Texture Packer](/thryeditor/thryeditor.md#texture-packer), which you can use to define gradient paths for each channel.
 
 If using `Merged Channels` mode, this texture should be the output of the Poiyomi Pathing tool. The 4 channels will be sampled in order, from `R -> G -> B -> A`.
 
@@ -202,7 +202,7 @@ Adjusts the mapping range of the specified Path.
 ## Audio Link
 
 :::info
-The settings in this section will only be visible when [Audio Link](/docs/audio-link/audio-link.md) is activated on the Material.
+The settings in this section will only be visible when [Audio Link](/audio-link/audio-link.md) is activated on the Material.
 :::
 
 For any audio link values with a **Vector2** offset, the **X** represents the value to add when the audio is at minimum (no audio), and the **Y** represents the value to add when the audio is at maximum (full audio).

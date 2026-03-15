@@ -43,7 +43,7 @@ Defines where on the UV the flipbook can be applied. Black indicates the flipboo
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-Select which [Global Mask](/docs/modifiers/global-masks.md) to use for the Flipbook overall.
+Select which [Global Mask](/modifiers/global-masks.md) to use for the Flipbook overall.
 
 :::note
 Expand the **Mask** slot to see this property.
@@ -74,7 +74,7 @@ Optional setting to control if the Color and/or Alpha of the Flipbook should rep
 Replaces the base color with the Flipbook.
 
 :::tip
-You may animate this slider to toggle the Flipbook on the Material. Animating the [Section Header](/docs/general/locking.md#section-header-checkboxes) will not work!
+You may animate this slider to toggle the Flipbook on the Material. Animating the [Section Header](/general/locking.md#section-header-checkboxes) will not work!
 :::
 
 ## Emission Strength
@@ -183,7 +183,7 @@ Enable or Disable the Hue Shifting functionality.
 
 Choice of Color Space to use for the Hue Shift. By default, it will be set to `OKLab`.
 
-Learn about the difference of Color Spaces as documented here in [Color Adjust](/docs/color-and-normals/color-adjust.md#oklab-vs-hsv).
+Learn about the difference of Color Spaces as documented here in [Color Adjust](/color-and-normals/color-adjust.md#oklab-vs-hsv).
 
 ### Select or Shift
 
@@ -217,7 +217,7 @@ This value is circular, and will have the same result at 0 and 1.
 ## Audio Link
 
 :::info
-The settings in this section will only be visible when [Audio Link](/docs/audio-link/audio-link.md) is activated on the Material.
+The settings in this section will only be visible when [Audio Link](/audio-link/audio-link.md) is activated on the Material.
 :::
 
 ### Scale Band

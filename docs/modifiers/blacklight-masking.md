@@ -50,7 +50,7 @@ The Gradient of the BlackLight Mask, ranging from Beginning to End Point.
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-Select which [Global Mask](/docs/modifiers/global-masks.md) to apply the BlackLight Mask **One** effects onto.
+Select which [Global Mask](/modifiers/global-masks.md) to apply the BlackLight Mask **One** effects onto.
 
 ## Two
 
@@ -75,7 +75,7 @@ The Gradient of the BlackLight Mask, ranging from Beginning to End Point.
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-Select which [Global Mask](/docs/modifiers/global-masks.md) to apply the BlackLight Mask **Two** effects onto.
+Select which [Global Mask](/modifiers/global-masks.md) to apply the BlackLight Mask **Two** effects onto.
 
 ## Three
 
@@ -100,7 +100,7 @@ The Gradient of the BlackLight Mask, ranging from Beginning to End Point.
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-Select which [Global Mask](/docs/modifiers/global-masks.md) to apply the BlackLight Mask **Three** effects onto.
+Select which [Global Mask](/modifiers/global-masks.md) to apply the BlackLight Mask **Three** effects onto.
 
 ## Four
 
@@ -125,4 +125,4 @@ The Gradient of the BlackLight Mask, ranging from Beginning to End Point.
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-Select which [Global Mask](/docs/modifiers/global-masks.md) to apply the BlackLight Mask **Four** effects onto.
+Select which [Global Mask](/modifiers/global-masks.md) to apply the BlackLight Mask **Four** effects onto.

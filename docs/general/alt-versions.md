@@ -31,7 +31,7 @@ We recommend only using this Shader if you are using the Worlds SDK.
 
 - `.poiyomi/Poiyomi Toon Two Pass`
 
-The Two Pass version renders the inside of the Mesh first, rather than the outside (Cull Front > Cull Back). See [Two Pass](/docs/extended-features/two-pass.md) for more info.
+The Two Pass version renders the inside of the Mesh first, rather than the outside (Cull Front > Cull Back). See [Two Pass](/extended-features/two-pass.md) for more info.
 
 Because the Two Pass shader renders everything twice, it can have a slight performance impact.
 
@@ -47,7 +47,7 @@ As Outline Early renders the Outline twice, it can have a slight performance imp
 
 - `.poiyomi/Poiyomi Toon Grab Pass`
 
-The Grab Pass Shader is used for specialized effects that require taking a screenshot every frame in order for it to render. See [Grab Pass](/docs/extended-features/grabpass.md) for more info.
+The Grab Pass Shader is used for specialized effects that require taking a screenshot every frame in order for it to render. See [Grab Pass](/extended-features/grabpass.md) for more info.
 
 Because this shader version uses a Grab Pass, it has the <u>strongest performance impact</u> as it has to take a screenshot every frame to render. If you wish to use this feature, use it judiciously!
 
@@ -55,13 +55,13 @@ Because this shader version uses a Grab Pass, it has the <u>strongest performanc
 
 - `.poiyomi/Poiyomi Pro Geometric Dissolve`
 
-Poiyomi Pro Geometric Dissolve is an advanced version in Poiyomi Pro that expands beyond the features of what a typical Dissolve can offer. It uses the 3D Mesh to manipulate the vertices, creating an advanced 3D Dissolve animation. See [Geometric Dissolve](/docs/extended-features/geometric-dissolve.md) for more info.
+Poiyomi Pro Geometric Dissolve is an advanced version in Poiyomi Pro that expands beyond the features of what a typical Dissolve can offer. It uses the 3D Mesh to manipulate the vertices, creating an advanced 3D Dissolve animation. See [Geometric Dissolve](/extended-features/geometric-dissolve.md) for more info.
 
 ## Fur
 
 - `.poiyomi/Poiyomi Pro Fur`
 
-Poiyomi Pro Fur is a system in Poiyomi Pro that uses a height-based technique to enable simulation of fabrics and hairs. It can look similar to how fur is simulated in animated films but with some differences. See [Fur](/docs/extended-features/fur.md) for more info.
+Poiyomi Pro Fur is a system in Poiyomi Pro that uses a height-based technique to enable simulation of fabrics and hairs. It can look similar to how fur is simulated in animated films but with some differences. See [Fur](/extended-features/fur.md) for more info.
 
 Fur simulation is a very expensive feature, as it must render every frame in order to simulate the effect. As such, this will cause a huge performance impact when used.
 
@@ -69,13 +69,13 @@ Fur simulation is a very expensive feature, as it must render every frame in ord
 
 - `.poiyomi/Poiyomi Pro ShatterWave`
 
-Poiyomi Pro ShatterWave is an advanced special effect that uses the mesh's vertices to create a wavy effect across the mesh in variation. It functions similar to Geometric Dissolve, but does it in a wavy pattern instead. See [ShatterWave](/docs/extended-features/shatterwave.md) for more info.
+Poiyomi Pro ShatterWave is an advanced special effect that uses the mesh's vertices to create a wavy effect across the mesh in variation. It functions similar to Geometric Dissolve, but does it in a wavy pattern instead. See [ShatterWave](/extended-features/shatterwave.md) for more info.
 
 ## Tessellated
 
 - `.poiyomi/Poiyomi Pro Tessellated`
 
-The Tessellated shader includes a shading process that subdivides triangles into a more realistic structure for certain realistic effects. See [Tessellated](/docs/extended-features/tessellated.md) for more info.
+The Tessellated shader includes a shading process that subdivides triangles into a more realistic structure for certain realistic effects. See [Tessellated](/extended-features/tessellated.md) for more info.
 
 Tessellated shaders are extremely expensive and will greatly hinder your computer's performance, even on the most powerful hardware out there. Please exercise caution if using it.
 
@@ -83,7 +83,7 @@ Tessellated shaders are extremely expensive and will greatly hinder your compute
 
 - `.poiyomi/Poiyomi Pro Particle`
 
-Poiyomi Pro Fur is a Geometric Particle shader that uses the 3D mesh to spawn each Particle from, similar to a Particle System in Unity. See [Particle](/docs/extended-features/particle.md) for more info.
+Poiyomi Pro Fur is a Geometric Particle shader that uses the 3D mesh to spawn each Particle from, similar to a Particle System in Unity. See [Particle](/extended-features/particle.md) for more info.
 
 Just like Geometric Dissolve, it can have a significant performance impact.
 
@@ -92,6 +92,6 @@ Just like Geometric Dissolve, it can have a significant performance impact.
 - `.poiyomi/Poiyomi Toon + Lil Fur`
 - `.poiyomi/Poiyomi Toon + Lil Fur Two Pass`
 
-Similar to Poiyomi Fur, but instead uses the same simulation technique on LilToon's Fur Shader. See [Lil Fur](/docs/extended-features/lilfur.md) for more details.
+Similar to Poiyomi Fur, but instead uses the same simulation technique on LilToon's Fur Shader. See [Lil Fur](/extended-features/lilfur.md) for more details.
 
 The Lil Fur shader uses a separate pass for the fur shading, meaning it does not stack with other Poiyomi features. However, this shader may have a performance impact.

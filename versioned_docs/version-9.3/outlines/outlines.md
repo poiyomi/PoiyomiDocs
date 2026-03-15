@@ -137,7 +137,7 @@ Determines if you want the Outlines to blend in a way that is similar to Unity-C
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
 
-Enables the ability to modify the Outline Color in a similar fashion to [Color Adjust](/docs/color-and-normals/color-adjust.md). This is applied directly after the main [Outline Color](#color), and will not affect other sections that modify the base Outline Color.
+Enables the ability to modify the Outline Color in a similar fashion to [Color Adjust](/color-and-normals/color-adjust.md). This is applied directly after the main [Outline Color](#color), and will not affect other sections that modify the base Outline Color.
 
 :::info This area was recently updated!
 All of these values can be individually animated as of the latest version.
@@ -302,7 +302,7 @@ If enabled, will invert the value from the [Outline Mask Channel](#outline-mask-
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`R`/`G`/`B`/`A`
 
-Which [Vertex Color](/docs/vertex-options/vertex-colors.md) channel to use to control the Outline Z Offset.
+Which [Vertex Color](/vertex-options/vertex-colors.md) channel to use to control the Outline Z Offset.
 
 ### Vertex Color Strength
 
@@ -372,7 +372,7 @@ Sets how the Outline Stencil should test the depth buffer. By default, the depth
 ## Audio Link
 
 :::info
-The settings in this section will only be visible when [Audio Link](/docs/audio-link/audio-link.md) is activated on the Material.
+The settings in this section will only be visible when [Audio Link](/audio-link/audio-link.md) is activated on the Material.
 :::
 
 <ReactVideo src='/vid/outlines/outlineALtest4.mp4'/>

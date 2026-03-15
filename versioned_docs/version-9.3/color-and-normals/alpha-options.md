@@ -6,7 +6,7 @@ image: /img/color-and-normals/Thumb-AlphaOptions.png
 keywords: [alpha, options, properties, poiyomi, shader]
 ---
 
-The **Alpha Options** section provides options for modifying how the material treats alpha. The effects of these options are heavily influenced by the [Render Preset](/docs/general/render-preset.md) and other render settings.
+The **Alpha Options** section provides options for modifying how the material treats alpha. The effects of these options are heavily influenced by the [Render Preset](/general/render-preset.md) and other render settings.
 
 These properties below can allow you to further modify how you want the Alpha to behave on the Shader, like the Fresnel effect, Angular Alpha, Distance Fade, and more.
 
@@ -26,7 +26,7 @@ Alpha Mod defines a direct value to add to or remove from the material alpha. Th
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-Select which [Global Mask](/docs/modifiers/global-masks.md) to use for the Alpha overall.
+Select which [Global Mask](/modifiers/global-masks.md) to use for the Alpha overall.
 
 ## Alpha To Coverage
 
@@ -123,7 +123,7 @@ The distance (in meters) at which the Max Distance Alpha multiplier will be appl
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-Select which [Global Mask](/docs/modifiers/global-masks.md) to only affect the Distance Alpha / Distance Fade onto.
+Select which [Global Mask](/modifiers/global-masks.md) to only affect the Distance Alpha / Distance Fade onto.
 
 ## Fresnel Alpha
 
@@ -131,7 +131,7 @@ Select which [Global Mask](/docs/modifiers/global-masks.md) to only affect the D
 
 Enable or Disable the Fresnel Alpha effect. Fresnel Alpha uses the angle between the viewer (camera) and the object's normal to modify the alpha.
 
-This can be used to simulate materials that are more opaque at shallow angles, such as transluscent fabric (used for tights or stockings). It can be thought of as analagous to [Rim Lighting](/docs/shading/rim-lighting.md), but for alpha instead of color.
+This can be used to simulate materials that are more opaque at shallow angles, such as transluscent fabric (used for tights or stockings). It can be thought of as analagous to [Rim Lighting](/shading/rim-lighting.md), but for alpha instead of color.
 
 ### Intensity
 
@@ -161,7 +161,7 @@ Whether the Fresnel Alpha effect should increase in intensity from the outside-i
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-Select which [Global Mask](/docs/modifiers/global-masks.md) to only affect the Fresnel Alpha effect onto.
+Select which [Global Mask](/modifiers/global-masks.md) to only affect the Fresnel Alpha effect onto.
 
 ## Angular Alpha
 
@@ -253,7 +253,7 @@ The minimum value of alpha for the Angular Alpha mode. This will prevent the alp
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-Select which [Global Mask](/docs/modifiers/global-masks.md) to only affect the Angular Alpha effect onto.
+Select which [Global Mask](/modifiers/global-masks.md) to only affect the Angular Alpha effect onto.
 
 ## Alpha Audio Link
 
@@ -262,7 +262,7 @@ Select which [Global Mask](/docs/modifiers/global-masks.md) to only affect the A
 Enables Audio Link for Alpha Options. The Alpha can be modified based on the audio level in a specific band.
 
 :::info
-The settings in this section will only be visible when [Audio Link](/docs/audio-link/audio-link.md) is activated on the Material.
+The settings in this section will only be visible when [Audio Link](/audio-link/audio-link.md) is activated on the Material.
 :::
 
 ### Add Band

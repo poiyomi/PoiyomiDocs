@@ -318,7 +318,7 @@ Shows only the Wireframe.
 Allows an alternative way to use UV Tile Discard with the use of Geometric Dissolve's advanced effects instead.
 
 :::info Refer to UV Tile Documentation
-All the sliders listed for each Row will reflect the same locations as described in [UV Tile Discard](/docs/special-fx/uv-tile-discard.md). Please refer to the documentation page to see what they are.
+All the sliders listed for each Row will reflect the same locations as described in [UV Tile Discard](/special-fx/uv-tile-discard.md). Please refer to the documentation page to see what they are.
 
 Each Slider will control the `Dissolve Alpha` for the described Row and Column.
 :::
@@ -333,7 +333,7 @@ Choice of which UV to use for the Tile Dissolve.
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
 
-This property will appear for each Row and Column for UV Tile Dissolve. Below is a table reference matching the same positions as described in [UV Tile Discard](/docs/special-fx/uv-tile-discard.md), named to each field shown in UV Tile Dissolve.
+This property will appear for each Row and Column for UV Tile Dissolve. Below is a table reference matching the same positions as described in [UV Tile Discard](/special-fx/uv-tile-discard.md), named to each field shown in UV Tile Dissolve.
 
 |  | Column 0 | Column 1 | Column 2 | Column 3 |
 | :---: | :---: | :---: | :---: | :---: |

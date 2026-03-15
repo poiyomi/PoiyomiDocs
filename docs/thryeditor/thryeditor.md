@@ -48,7 +48,7 @@ Right Clicking opens the Quick Presets context menu. Here you can only select on
 
 *Right-Click the Presets button to quickly select a Preset.*
 
-You can also create your own Presets using this feature. [See the Documentation Page to learn more.](/docs/thryeditor/presets.md)
+You can also create your own Presets using this feature. [See the Documentation Page to learn more.](/thryeditor/presets.md)
 
 ### Material Linking
 
@@ -86,7 +86,7 @@ In each Texture Slot, a number will appear on the right-hand side of the Texture
 
 This number informs the user on how much Texture Memory (VRAM) that the assigned Texture is expected to consume. The amount indicated can greatly impact how other users load your Avatar's texture when it is being rendered on their end.
 
-To learn more about how Texture Memory impacts performance, [see this page](/docs/general/textures-and-colors.md#vram-usage).
+To learn more about how Texture Memory impacts performance, [see this page](/general/textures-and-colors.md#vram-usage).
 
 <a>
 <img src="/img/thryeditor/TextureVRAMText.png" alt="Estimated VRAM on the assigned Texture" width="700px"/>
@@ -98,7 +98,7 @@ Configurable in ThryEditor Settings, an asterisk (`*`) will appear next to a Mat
 
 ### VRChat Fallback Shader
 
-The Fallback Shader option generates a tag for the material that informs VRChat which shader to use when your shaders are hidden. See [Rendering: VRChat Fallback Shader](/docs/rendering/rendering.md#vrchat-fallback-shader) for more details.
+The Fallback Shader option generates a tag for the material that informs VRChat which shader to use when your shaders are hidden. See [Rendering: VRChat Fallback Shader](/rendering/rendering.md#vrchat-fallback-shader) for more details.
 
 <a>
 <img src="/img/thryeditor/fallback.png" alt="VRC Fallback Selector" width="700px"/>

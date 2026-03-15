@@ -76,7 +76,7 @@ The unique suffix assigned for Properties marked as `RA` will depend on the name
 | **"Suit Jacket"** | Audio Link -> Anim Toggle | `_AudioLinkAnimToggle` | `_Suit_Jacket` | `_AudioLinkAnimToggle_Suit_Jacket` | 
 | **"Outfit Shirt"** | Color Adjust -> Hue Shift -> Hue Shift | `_MainHueShift` | `_Outfit_Shirt` | `_MainHueShift_Outfit_Shirt` |
 
-If you wish to enforce a specific custom renaming scheme for `RA` properties, enable [Allow custom renaming for locking](/docs/thryeditor/settings.md#allow-custom-renaming-for-locking) under Thry Editor settings. This exposes a dedicated field on the top of the material inspector, where you can type in a custom suffix for the material to use instead.
+If you wish to enforce a specific custom renaming scheme for `RA` properties, enable [Allow custom renaming for locking](/thryeditor/settings.md#allow-custom-renaming-for-locking) under Thry Editor settings. This exposes a dedicated field on the top of the material inspector, where you can type in a custom suffix for the material to use instead.
 
 ## Copying Properties for Animation
 
@@ -130,16 +130,16 @@ This behavior is not a bug, it's behavior defined by Unity, beyond the control o
 
 | Property Name | Can be Renamed? | Property |
 | :--- | :--- | :--- |
-| `_Color`                  | ✅ | [Main Color](/docs/color-and-normals/color-and-normals.md#color--alpha) |
-| `_MainTex_ST`             | ❌ | [Main Texture Tiling/Offset](/docs/color-and-normals/color-and-normals.md#texture) |
-| `_BumpMap_ST`             | ❌ | [Normal Map Tiling/Offset](/docs/color-and-normals/color-and-normals.md#normal-map) |
-| `_BumpScale`              | ✅ | [Normal Map Intensity](/docs/color-and-normals/color-and-normals.md#normal-map) |
-| `_Cutoff`                 | ✅ | [Alpha Cutoff](/docs/color-and-normals/color-and-normals.md#alpha-cutoff) |
-| `_DetailMask_ST`          | ❌ | [Detail Mask Tiling/Offset](/docs/color-and-normals/details.md#detail-mask) |
-| `_DetailNormalMap_ST`     | ❌ | [Detail Mask Tiling/Offset](/docs/color-and-normals/details.md#detail-normal) |
-| `_DetailNormalMapScale`   | ✅ | [Detail Mask Tiling/Offset](/docs/color-and-normals/details.md#normal-intensity) |
-| `_EmissionColor`          | ✅ | [Emission 0 Color](/docs/special-fx/emission.md#emission-color) |
-| `_EmissionMap_ST`         | ❌ | [Emission 0 Map Tiling/Offset](/docs/special-fx/emission.md#emission-map) |
+| `_Color`                  | ✅ | [Main Color](/color-and-normals/color-and-normals.md#color--alpha) |
+| `_MainTex_ST`             | ❌ | [Main Texture Tiling/Offset](/color-and-normals/color-and-normals.md#texture) |
+| `_BumpMap_ST`             | ❌ | [Normal Map Tiling/Offset](/color-and-normals/color-and-normals.md#normal-map) |
+| `_BumpScale`              | ✅ | [Normal Map Intensity](/color-and-normals/color-and-normals.md#normal-map) |
+| `_Cutoff`                 | ✅ | [Alpha Cutoff](/color-and-normals/color-and-normals.md#alpha-cutoff) |
+| `_DetailMask_ST`          | ❌ | [Detail Mask Tiling/Offset](/color-and-normals/details.md#detail-mask) |
+| `_DetailNormalMap_ST`     | ❌ | [Detail Mask Tiling/Offset](/color-and-normals/details.md#detail-normal) |
+| `_DetailNormalMapScale`   | ✅ | [Detail Mask Tiling/Offset](/color-and-normals/details.md#normal-intensity) |
+| `_EmissionColor`          | ✅ | [Emission 0 Color](/special-fx/emission.md#emission-color) |
+| `_EmissionMap_ST`         | ❌ | [Emission 0 Map Tiling/Offset](/special-fx/emission.md#emission-map) |
 
 ## Non-Animatable Properties
 
@@ -154,9 +154,9 @@ To adjust these properties at runtime, you'll need to create different materials
 These section checkboxes signal the shader to add and remove code. **Thus, they cannot be animated at runtime whatsoever**.
 
 If you want to toggle the effect of a section, use a property that controls the overall effect. For example,
-- To disable [Color Adjust](/docs/color-and-normals/color-adjust.md), you could animate the settings to their default values.
-- To disable a [Decal](/docs/color-and-normals/decals.md), animate its `Alpha` value to `0`. If the Decal has Emissions, also animate its `Emission Strength` value to `0`.
-- To disable [Audio Link](/docs/audio-link/audio-link.md), animate the `Anim Toggle` to be *un-checked*.
+- To disable [Color Adjust](/color-and-normals/color-adjust.md), you could animate the settings to their default values.
+- To disable a [Decal](/color-and-normals/decals.md), animate its `Alpha` value to `0`. If the Decal has Emissions, also animate its `Emission Strength` value to `0`.
+- To disable [Audio Link](/audio-link/audio-link.md), animate the `Anim Toggle` to be *un-checked*.
 
 For other sections, make sure to refer to the appropriate documentation pages on them so that you can know which properties you should animate as a toggle.
 
@@ -205,7 +205,7 @@ These options relate to low-level directives and settings that change how the gr
 
 The locking feature uses an optimization procedure developed by [Kaj](https://github.com/DarthShader/Kaj-Unity-Shaders). When the shader is locked in, a unique version is generated that removes unused code, defines fixed values for non-animated shader properties, and defined unused texture slots to be fixed values.
 
-This significantly improves performance, helps mitigate the [64 texture slot crash](/docs/general/textures-64-texture-slot-crash.md) sometimes seen when many complex materials with lots of modules enabled are present in a scene.
+This significantly improves performance, helps mitigate the [64 texture slot crash](/general/textures-64-texture-slot-crash.md) sometimes seen when many complex materials with lots of modules enabled are present in a scene.
 
 [^1]: For a more complete list, see the [List of some "Illegal Property Renames"](https://github.com/Thryrallo/ThryEditor/blob/master/Editor/ShaderOptimizer.cs#L227)
 

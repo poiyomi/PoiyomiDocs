@@ -5,7 +5,7 @@ description: Light Data provides technical properties that change how Lighting a
 keywords: [light, data, light data, lighting, shading, ao, shadow, mapping, masks, color, grayscale, directional, influence, poiyomi, shader]
 ---
 
-The Light Data section provides options for changing features relating to the data used for lighting and shading the material. Options here significantly influence the functionality of the [Shading](/docs/shading/main.md) section.
+The Light Data section provides options for changing features relating to the data used for lighting and shading the material. Options here significantly influence the functionality of the [Shading](/shading/main.md) section.
 
 ## AO Maps
 
@@ -18,7 +18,7 @@ The AO map texture reads all 4 RGBA channels independently, allowing different A
 Generally, if only a single map is being used (such as in the case of a black and white AO map), only one slider should generally be used. 
 
 :::note
-AO Maps are more effective in Realistic-based lighting methods (see [Shading](/docs/shading/main.md)). It may not be visible in Toon-based lighting.
+AO Maps are more effective in Realistic-based lighting methods (see [Shading](/shading/main.md)). It may not be visible in Toon-based lighting.
 :::
 
 ### AO Map R/G/B/A Strength

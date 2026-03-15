@@ -251,7 +251,7 @@ Enables hue shifting of the matcap texture.
 
 Choice of Color Space to use for the Hue Shift. By default, it will be set to `OKLab`.
 
-Learn about the difference of Color Spaces as documented here in [Color Adjust](/docs/color-and-normals/color-adjust.md#oklab-vs-hsv).
+Learn about the difference of Color Spaces as documented here in [Color Adjust](/color-and-normals/color-adjust.md#oklab-vs-hsv).
 
 ### Select or Shift
 
@@ -346,7 +346,7 @@ How much to Blend the result.
 Allows Audio Link to influence the Matcap.
 
 :::info
-The settings in this section will only be visible when [Audio Link](/docs/audio-link/audio-link.md) is activated on the Material.
+The settings in this section will only be visible when [Audio Link](/audio-link/audio-link.md) is activated on the Material.
 :::
 
 ### Alpha Band

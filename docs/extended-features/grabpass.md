@@ -134,7 +134,7 @@ Scaler for the blend amount. The Grab Pass color is blended with the base color 
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-Select which [Global Mask](/docs/modifiers/global-masks.md) should be used as the Blend Map.
+Select which [Global Mask](/modifiers/global-masks.md) should be used as the Blend Map.
 
 ### Source/Destination Blend
 
@@ -142,4 +142,4 @@ Select which [Global Mask](/docs/modifiers/global-masks.md) should be used as th
 
 Blend factor to use for the source and destination factors, respectively.
 
-For traditional transparent blending, `Source Blend` should be set to `SrcAlpha` and `Destination Blend` should be set to `OneMinusSrcAlpha`. Other factors can be used for other effects. Try some of the combinations listed in [Render Presets](/docs/general/render-preset.md#blending).
+For traditional transparent blending, `Source Blend` should be set to `SrcAlpha` and `Destination Blend` should be set to `OneMinusSrcAlpha`. Other factors can be used for other effects. Try some of the combinations listed in [Render Presets](/general/render-preset.md#blending).

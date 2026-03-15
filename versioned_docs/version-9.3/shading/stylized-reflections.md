@@ -7,7 +7,7 @@ toc_min_heading_level: 2
 toc_max_heading_level: 4
 ---
 
-Stylized Reflections is a module that applies a stylized specular highlight or reflective effect to the material. It's useful for creating a more toon-like, stylized effect than the standard specular highlights or reflections from [Reflections & Specular](/docs/shading/reflections-and-specular.md).
+Stylized Reflections is a module that applies a stylized specular highlight or reflective effect to the material. It's useful for creating a more toon-like, stylized effect than the standard specular highlights or reflections from [Reflections & Specular](/shading/reflections-and-specular.md).
 
 :::info Changes in 9.1
 All features of the previously-named module, Stylized Specular, was merged into the [UnityChan](#unity-chan-specular) Mode documented below.

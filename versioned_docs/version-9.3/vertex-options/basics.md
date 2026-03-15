@@ -209,7 +209,7 @@ Determines the bottom lower height of the funnel.
 Enables the ability to manipulate the Vertex Options in response to Audio Link.
 
 :::info
-The settings in this section will only be visible when [Audio Link](/docs/audio-link/audio-link.md) is activated on the Material.
+The settings in this section will only be visible when [Audio Link](/audio-link/audio-link.md) is activated on the Material.
 :::
 
 <ReactVideo src='/vid/color-and-normals/VertexOptionsAudioLink.webm'/>

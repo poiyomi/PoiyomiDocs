@@ -115,13 +115,13 @@ Mask texture that limits where the constellation should only appear in. Black is
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-Uses a [Global Mask](/docs/modifiers/global-masks.md) to limit where the constellation should only appear in.
+Uses a [Global Mask](/modifiers/global-masks.md) to limit where the constellation should only appear in.
 
 ## Write to Global Mask
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-If set, constellations will write onto the selected [Global Mask](/docs/modifiers/global-masks.md) channel.
+If set, constellations will write onto the selected [Global Mask](/modifiers/global-masks.md) channel.
 
 ## Random Colors
 
@@ -148,7 +148,7 @@ Sets the range of value/brightness to apply to the constellations at random inte
 Enables Audio Link features on Constellation.
 
 :::info
-The settings in this section will only be visible when [Audio Link](/docs/audio-link/audio-link.md) is activated on the Material.
+The settings in this section will only be visible when [Audio Link](/audio-link/audio-link.md) is activated on the Material.
 :::
 
 ### Emission Band

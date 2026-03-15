@@ -25,6 +25,19 @@ export default {
     }
   },
 
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'ru'],
+    localeConfigs: {
+      en: {
+        htmlLang: 'en-US',
+      },
+      ru: {
+        htmlLang: 'ru-RU',
+      }
+    },
+  },
+
   future: {
     experimental_faster: true,
     v4: true,

@@ -56,7 +56,7 @@ Sets the strength of the Distortion from Texture 2.
 ### Audio Link
 
 :::info
-The settings in this section will only be visible when [Audio Link](/docs/audio-link/audio-link.md) is activated on the Material.
+The settings in this section will only be visible when [Audio Link](/audio-link/audio-link.md) is activated on the Material.
 :::
 
 #### Strength 1 Band

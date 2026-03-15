@@ -39,12 +39,12 @@ If you know how to create Export Templates in Substance Painter, refer to the gu
 
 Textures have specific naming calls when used: `t_$textureSet_Yourtexture(.$udim)`. `t` indicates it's a texture (and groups textures together when sorted), `$textureSet` which the name of the Material set set being used, and `$udim` which refers to the UDIM Tile of the texture (if your Substance Project is using UDIM).
 
-- `t_$textureSet_BaseColor(.$udim)`: Place in the [`Main Texture`](/docs/color-and-normals/color-and-normals.md#texture) slot in [Color & Normals](/docs/color-and-normals/color-and-normals.md).
-- `t_$textureSet_NormalMap(.$udim)`: Place in the [`Normal Map`](/docs/color-and-normals/color-and-normals.md#normal-map) texture slot in [Color & Normals](/docs/color-and-normals/color-and-normals.md). Make sure to mark it as a normal map in the texture import settings.
-- `t_$textureSet_AmbientOcclusion(.$udim)`: Place in the [`AO`](docs/shading/light-data.md#ao-maps) texture slot in [Light Data](/docs/shading/light-data.md). Make sure to **uncheck sRGB** in the texture import settings.
+- `t_$textureSet_BaseColor(.$udim)`: Place in the [`Main Texture`](/color-and-normals/color-and-normals.md#texture) slot in [Color & Normals](/color-and-normals/color-and-normals.md).
+- `t_$textureSet_NormalMap(.$udim)`: Place in the [`Normal Map`](/color-and-normals/color-and-normals.md#normal-map) texture slot in [Color & Normals](/color-and-normals/color-and-normals.md). Make sure to mark it as a normal map in the texture import settings.
+- `t_$textureSet_AmbientOcclusion(.$udim)`: Place in the [`AO`](/shading/light-data.md#ao-maps) texture slot in [Light Data](/shading/light-data.md). Make sure to **uncheck sRGB** in the texture import settings.
   - Three AO maps are encoded in the texture. This includes `Input AO`, `Mixed AO`, and `User3` for flexibility. `User3` is used for Customized AO mapping. Poiyomi Shaders supports exposing these maps through the sliders in their AO Slots.
-- `t_$textureSet_MetallicSmoothnessMaps(.$udim)`: Place in the [`Packed Maps`](/docs/shading/reflections-and-specular.md#packed-maps) texture slot in [Reflections & Specular](/docs/shading/reflections-and-specular.md). Make sure to **uncheck sRGB** in the texture import settings, and that all of your sliders are set to 1.0, which uses the map's value. Note that this uses `User0` and `User1` channels in Substance Painter for the Reflection and Specular masks respectively, which can be hand-authored to control the amount of reflection and specular.
-- `t_$textureSet_EmissionMap(.$udim)`: Place in the [`Emission Map`](/docs/special-fx/emission.md#emission-map) texture slot in [`Emission`](/docs/special-fx/emission.md).
+- `t_$textureSet_MetallicSmoothnessMaps(.$udim)`: Place in the [`Packed Maps`](/shading/reflections-and-specular.md#packed-maps) texture slot in [Reflections & Specular](/shading/reflections-and-specular.md). Make sure to **uncheck sRGB** in the texture import settings, and that all of your sliders are set to 1.0, which uses the map's value. Note that this uses `User0` and `User1` channels in Substance Painter for the Reflection and Specular masks respectively, which can be hand-authored to control the amount of reflection and specular.
+- `t_$textureSet_EmissionMap(.$udim)`: Place in the [`Emission Map`](/special-fx/emission.md#emission-map) texture slot in [`Emission`](/special-fx/emission.md).
 
 <a target="_blank" href="/img/general/substance_texturelocations.png">
 <img src="/img/general/substance_texturelocations.png" alt="v10 Export Texture Locations"/>
@@ -54,11 +54,11 @@ Textures have specific naming calls when used: `t_$textureSet_Yourtexture(.$udim
 
 ### Usage Notes
 
-PBR textures look best when paired with realistic lighting. To take best advantage of this, good [Shading](docs/shading/main.md) settings are recommended. Some good starting points include:
+PBR textures look best when paired with realistic lighting. To take best advantage of this, good [Shading](/shading/main.md) settings are recommended. Some good starting points include:
 
-- [Realistic](/docs/shading/main.md#realistic) shading
-- [Multilayer Math](/docs/shading/main.md#multilayer-math) shading, using only the first layer with a Border between `0.4` and `0.7` and a Blur of `0.4-0.6`
-- [Wrapped](/docs/shading/main.md#wrapped) shading with a wrap of around `1.0` and a normalization of around `0.5`
+- [Realistic](/shading/main.md#realistic) shading
+- [Multilayer Math](/shading/main.md#multilayer-math) shading, using only the first layer with a Border between `0.4` and `0.7` and a Blur of `0.4-0.6`
+- [Wrapped](/shading/main.md#wrapped) shading with a wrap of around `1.0` and a normalization of around `0.5`
 
 Matcaps are not recommended, as they don't respond to the lighting environment the way metallics and specular do.
 
@@ -69,12 +69,12 @@ PBR shading relies on the world lighting being well-defined and correct. In worl
 When using the `ExtraMaps` preset, additional textures are exported:
 
 - All textures from the [v10 preset](#textures).
-- `t_$textureSet_GlobalMask(.$udim)`: Place in one of the Global Mask texture slots in [`Global Mask`](/docs/modifiers/global-masks.md). Make sure to **uncheck sRGB** in the texture import settings. Note that this uses the custom **User channels** in Substance for your Masks. This Template is programmed to use `User10` for the `R` channel, `User11` for the `G` channel, `User12` for the `B` channel, and `User13` for the `A` channel.
+- `t_$textureSet_GlobalMask(.$udim)`: Place in one of the Global Mask texture slots in [`Global Mask`](/modifiers/global-masks.md). Make sure to **uncheck sRGB** in the texture import settings. Note that this uses the custom **User channels** in Substance for your Masks. This Template is programmed to use `User10` for the `R` channel, `User11` for the `G` channel, `User12` for the `B` channel, and `User13` for the `A` channel.
 - `t_$textureSet_ToonStandardSpecular(.$udim)`: Slightly different version of the Metallic Smoothness Map made specifically for setups requiring minimal VRAM, such as VRChat's Toon Standard.
   - The channels are intentionally mapped to reduce VRAM, which is different than Standard PBR mapping. Use the Channel Mapping in Toon Standard to line them up.
   - Use `(R)` for Metallic, `(G)` for Glossiness, and `(B)` for AO.
-- `t_$textureSet_SubsurfaceScattering(.$udim)`: Exports the `Scattering color` and `Scattering` channels into this map. Use this in Poiyomi's [Subsurface Scattering](/docs/shading/subsurface-scattering.md) feature.
-- `t_$textureSet_OutlineSizeMask(.$udim)`: Exports the `User2` channel. Use this for the Outline Size Mask, if using the [Outlines](/docs/outlines/outlines.md) feature.
+- `t_$textureSet_SubsurfaceScattering(.$udim)`: Exports the `Scattering color` and `Scattering` channels into this map. Use this in Poiyomi's [Subsurface Scattering](/shading/subsurface-scattering.md) feature.
+- `t_$textureSet_OutlineSizeMask(.$udim)`: Exports the `User2` channel. Use this for the Outline Size Mask, if using the [Outlines](/outlines/outlines.md) feature.
 - `t_$textureSet_AlphaMap(.$udim)`: Separate Alpha/Opacity map for the base texture. Can be used to optimize the base texture, or for other Alpha modifiers in the shader.
     - *You should not use Alpha Map unless it's absolutely necessary. This is because the Alpha is already encoded into the Main Texture when using the `Opacity` channel in Substance Painter.*
-- `t_$textureSet_Height(.$udim)`: Height map. Currently best used as a height texture in [Parallax Heightmapping](/docs/modifiers/uvs/parallax.md). Can also be used directly as a vertex offset, though this usually does not have the same effect.
+- `t_$textureSet_Height(.$udim)`: Height map. Currently best used as a height texture in [Parallax Heightmapping](/modifiers/uvs/parallax.md). Can also be used directly as a vertex offset, though this usually does not have the same effect.

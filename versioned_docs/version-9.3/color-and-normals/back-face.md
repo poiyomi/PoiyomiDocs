@@ -10,7 +10,7 @@ Back Face provides options for modifying the base color, emission, and alpha for
 On 3D models, meshes typically only show it's faces on one side, that being the front-facing side. The back-facing side of the mesh is usually see-through, an effect that you can get when you are looking from inside a model. Shaders can control this behavior, forcing the back-facing side of the mesh to also render if the user desires for whatever reason.
 
 :::caution Disable Culling to use this feature!
-To use this section, [Cull](/docs/rendering/rendering.md#cull) must be set to `Off` in order for backfaces to be visible. Find this option under [Rendering](/docs/rendering/rendering.md).
+To use this section, [Cull](/rendering/rendering.md#cull) must be set to `Off` in order for backfaces to be visible. Find this option under [Rendering](/rendering/rendering.md).
 :::
 
 ## Color
@@ -49,7 +49,7 @@ Enable or Disable Hue Shift for the backface base color.
 
 Choice of Color Space to use for the Hue Shift. By default, it will be set to `OKLab`.
 
-Learn about the difference of Color Spaces as documented here in [Color Adjust](/docs/color-and-normals/color-adjust.md#oklab-vs-hsv).
+Learn about the difference of Color Spaces as documented here in [Color Adjust](/color-and-normals/color-adjust.md#oklab-vs-hsv).
 
 ### Select or Shift
 
@@ -86,7 +86,7 @@ How much to constantly shift the hue with time. A value of 1 will result in a fu
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 5.0`
 
-Detail Intensity backface multiplier for detail textures in the [Details](/docs/color-and-normals/details.md) section.
+Detail Intensity backface multiplier for detail textures in the [Details](/color-and-normals/details.md) section.
 
 ### Replace Alpha
 
@@ -98,4 +98,4 @@ Whether to replace the alpha value for the backface with the alpha calculated fr
 
 - `Type`: <PropertyIcon name="float" />**Float**
 
-Custom Multiplier to limit the [Emissions](/docs/special-fx/emission.md) shown on the backface.
+Custom Multiplier to limit the [Emissions](/special-fx/emission.md) shown on the backface.

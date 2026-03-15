@@ -102,7 +102,7 @@ A color tint blended multiplicative with the dissolved texture.
 :::tip
 If you set the Alpha channel of this color to `A = 0`, the Dissolve can transition from the base color to Transparency.
 
-**Keep in mind this only works if you set your [Rendering Preset](/docs/general/render-preset.md) to Cutout or a Transparent Preset.**
+**Keep in mind this only works if you set your [Rendering Preset](/general/render-preset.md) to Cutout or a Transparent Preset.**
 :::
 
 <ReactVideo src='/vid/special-fx/Dissolve_DissolvedColor.mp4'/>
@@ -180,19 +180,19 @@ A black and white (single channel) mask that controls where to apply the dissolv
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-Select which [Global Mask](/docs/modifiers/global-masks.md) to use as the Dissolve Mask instead.
+Select which [Global Mask](/modifiers/global-masks.md) to use as the Dissolve Mask instead.
 
 ### Dissolved to Global Mask
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-This allows you to select which [Global Mask](/docs/modifiers/global-masks.md) to affect when it is fully Dissolved.
+This allows you to select which [Global Mask](/modifiers/global-masks.md) to affect when it is fully Dissolved.
 
 ### Undissolved to Global Mask
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-This allows you to select which [Global Mask](/docs/modifiers/global-masks.md) to affect when it is NOT Dissolved whatsoever.
+This allows you to select which [Global Mask](/modifiers/global-masks.md) to affect when it is NOT Dissolved whatsoever.
 
 ### VertexColor Mask
 
@@ -223,7 +223,7 @@ At a value of 1, the dissolve will complete a full cycle (from `0` to `1` to `0`
 Enables Audio Link to control Dissolve.
 
 :::info
-The settings in this section will only be visible when [Audio Link](/docs/audio-link/audio-link.md) is activated on the Material.
+The settings in this section will only be visible when [Audio Link](/audio-link/audio-link.md) is activated on the Material.
 :::
 
 ### Dissolve Alpha Band
@@ -396,7 +396,7 @@ Enables/Disables hue shifting features for dissolve. Unlike most sections, this 
 
 Choice of Color Space to use for the Hue Shift. By default, it will be set to `OKLab`.
 
-Learn about the difference of Color Spaces as documented here in [Color Adjust](/docs/color-and-normals/color-adjust.md#oklab-vs-hsv).
+Learn about the difference of Color Spaces as documented here in [Color Adjust](/color-and-normals/color-adjust.md#oklab-vs-hsv).
 
 ### Select or Shift
 
@@ -437,7 +437,7 @@ Enables or disables hue shifting of the the dissolve edge color.
 
 Choice of Color Space to use for the Hue Shift. By default, it will be set to `OKLab`.
 
-Learn about the difference of Color Spaces as documented here in [Color Adjust](/docs/color-and-normals/color-adjust.md#oklab-vs-hsv).
+Learn about the difference of Color Spaces as documented here in [Color Adjust](/color-and-normals/color-adjust.md#oklab-vs-hsv).
 
 ### Edge Select or Shift
 
@@ -475,7 +475,7 @@ Allows an alternative way to use UV Tile Discard with the use of Dissolve's effe
 If you prefer to use UV Tile Discard in a way that allows a sleek animation transition, this is the section to do it.
 
 :::info Refer to UV Tile Documentation
-All the sliders listed for each Row will reflect the same locations as described in [UV Tile Discard](/docs/special-fx/uv-tile-discard.md). Please refer to the documentation page to see what they are.
+All the sliders listed for each Row will reflect the same locations as described in [UV Tile Discard](/special-fx/uv-tile-discard.md). Please refer to the documentation page to see what they are.
 
 Each Slider will control the [Dissolve Alpha](#dissolve-alpha) for the described Row and Column.
 :::
@@ -497,7 +497,7 @@ Enforces the Dissolve Tiles to be discarded once a UV Tile Dissolve reaches `1` 
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
 
-This property will appear for each Row and Column for UV Tile Dissolve. Below is a table reference matching the same positions as described in [UV Tile Discard](/docs/special-fx/uv-tile-discard.md), named to each field shown in UV Tile Dissolve.
+This property will appear for each Row and Column for UV Tile Dissolve. Below is a table reference matching the same positions as described in [UV Tile Discard](/special-fx/uv-tile-discard.md), named to each field shown in UV Tile Dissolve.
 
 |  | Column 0 | Column 1 | Column 2 | Column 3 |
 | :---: | :---: | :---: | :---: | :---: |

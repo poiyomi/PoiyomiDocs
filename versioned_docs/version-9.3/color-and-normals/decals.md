@@ -149,7 +149,7 @@ Which blending operation to use from the Decal's Alpha channel.
 How much to apply the blended color to the base color.
 
 :::tip
-This slider can be animated to hide and show the decal. Animating the [Section Header](/docs/general/locking.md#section-header-checkboxes) will not work!
+This slider can be animated to hide and show the decal. Animating the [Section Header](/general/locking.md#section-header-checkboxes) will not work!
 :::
 
 ### Depth
@@ -170,7 +170,7 @@ Enable or Disable hue shifting of the Decal.
 
 Choice of Color Space to use for the Hue Shift. By default, it will be set to `OKLab`.
 
-Learn about the difference of Color Spaces as documented here in [Color Adjust](/docs/color-and-normals/color-adjust.md#oklab-vs-hsv).
+Learn about the difference of Color Spaces as documented here in [Color Adjust](/color-and-normals/color-adjust.md#oklab-vs-hsv).
 
 #### Select or Shift
 
@@ -220,7 +220,7 @@ This feature enables a Video Texture to appear on the Decal. It will only work i
 <details>
 <summary><b>How to test Decal Video Textures</b></summary>
 
-1. Ensure you have the `AudioLinkAvatar` Prefab in your Scene, as described [here](/docs/audio-link/audio-link.md#how-to-test-audio-link-using-poiyomi-shaders).
+1. Ensure you have the `AudioLinkAvatar` Prefab in your Scene, as described [here](/audio-link/audio-link.md#how-to-test-audio-link-using-poiyomi-shaders).
 2. Inside the `AudioLinkAvatar` Prefab, expand it and select the object `AudioLinkYtdlpPlayer`. *This is the same place where you specify a YouTube video to use when testing Audio Link.*
 3. On the bottom line, **enable** the checkmark called `Enable Global Video Texture`.
 4. The Decal Video Texture can now be tested and debugged in the Unity Editor while in Play Mode.
@@ -309,18 +309,18 @@ Choice of where the Decal should appear on your Normals. You can choose it to ap
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-Select which [Global Mask](/docs/modifiers/global-masks.md) to apply directly onto the Decal.
+Select which [Global Mask](/modifiers/global-masks.md) to apply directly onto the Decal.
 
 #### Apply To Global Mask
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
-Select which [Global Mask](/docs/modifiers/global-masks.md) to send your Decal's effects onto the specified Global Mask.
+Select which [Global Mask](/modifiers/global-masks.md) to send your Decal's effects onto the specified Global Mask.
 
 ## Audio Link
 
 :::info
-The settings in this section will only be visible when [Audio Link](/docs/audio-link/audio-link.md) is activated on the Material.
+The settings in this section will only be visible when [Audio Link](/audio-link/audio-link.md) is activated on the Material.
 :::
 
 ### Scale Band

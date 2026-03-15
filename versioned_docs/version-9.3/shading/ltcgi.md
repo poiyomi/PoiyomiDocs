@@ -19,7 +19,7 @@ For more detailed information on this system, [visit the LTCGI Documentation <FA
 This checkbox allows toggling LTCGI effects at runtime.
 
 :::tip
-LTCGI rendering is enabled by default. To turn off LTCGI in-game, you need to animate this Toggle (checkbox) when creating toggles for LTCGI on this Material. Animating the [Section Header](/docs/general/locking.md#section-header-checkboxes) will not work!
+LTCGI rendering is enabled by default. To turn off LTCGI in-game, you need to animate this Toggle (checkbox) when creating toggles for LTCGI on this Material. Animating the [Section Header](/general/locking.md#section-header-checkboxes) will not work!
 :::
 
 ## Diffuse Tint
@@ -39,7 +39,7 @@ Color to blend multiplicatively with LTCGI to tint the reflection. Use shades of
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
   - Default: `On`
 
-When enabled, will sample the metallicity and smoothness values from [Reflections & Specular](/docs/shading/reflections-and-specular.md) for LTCGI.
+When enabled, will sample the metallicity and smoothness values from [Reflections & Specular](/shading/reflections-and-specular.md) for LTCGI.
 
 :::info
 If **Reflections & Specular** module is turned off, the **Metallic** and **Smoothness** sliders will appear below and serve as a fallback.
