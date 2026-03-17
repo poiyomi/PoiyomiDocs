@@ -11,9 +11,9 @@ hide_table_of_contents: true
 :::note Note for Jinxxy Customers
 Please ensure you use the right version of the shader as detailed by the Avatar Creator you purchased your Avatar from. It should be detailed in your Inventory, on the description of the Avatar's listing, or in a text file from the Avatar's archive you downloaded.
 
-**Most commonly, you will be downloading the <u>FREE</u> version of the shader, which includes all of the features necessary for the Avatar to work.** To make things easier for you, we highly recommend installing the shader using the Creator Companion app of your choice. Jump to [Method 2: ALCOM / Creator Companion](#method-2-alcom--creator-companion) to read more on how to install it.
+**Most commonly, you will be downloading the <u>FREE</u> version of the shader, which includes all of the features necessary for the Avatar to work.** To make things easier for you, we highly recommend installing the shader using the Creator Companion app of your choice. Jump to [Method 1: ALCOM / Creator Companion](#method-1-alcom--creator-companion) to read more on how to install it.
 
-If your Avatar Creator asks you to use Poiyomi Pro, it is a PAID version of the shader and requires you to subscribe to access it ($10/month). **Only subscribe to Poiyomi Pro if the Avatar Creator explicitly states it's required, otherwise the FREE version should work without problems by switching your Materials to the Toon version of the shader.** For instructions on using Poiyomi Pro, jump to [Poiyomi Pro](#poiyomi-pro) on this page.
+If your Avatar Creator asks you to use Poiyomi Pro, it is a PAID version of the shader and requires you to subscribe to access it ($10/month). **Only subscribe to Poiyomi Pro if the Avatar Creator explicitly states it's required, otherwise the FREE version should work without problems by switching your Materials to the Toon version of the shader.**
 :::
 
 </ShowWhenRef>
@@ -23,9 +23,9 @@ If your Avatar Creator asks you to use Poiyomi Pro, it is a PAID version of the 
 :::note Note for Gumroad Customers
 Please ensure you use the right version of the shader as detailed by the Avatar Creator you purchased your Avatar from. It should be detailed in your Downloads, on the description of the product's listing, or in a text file from the Avatar's archive you downloaded.
 
-**Most commonly, you will be downloading the <u>FREE</u> version of the shader, which includes all of the features necessary for the Avatar to work.** To make things easier for you, we highly recommend installing the shader using the Creator Companion app of your choice. Jump to [Method 2: ALCOM / Creator Companion](#method-2-alcom--creator-companion) to read more on how to install it.
+**Most commonly, you will be downloading the <u>FREE</u> version of the shader, which includes all of the features necessary for the Avatar to work.** To make things easier for you, we highly recommend installing the shader using the Creator Companion app of your choice. Jump to [Method 1: ALCOM / Creator Companion](#method-1-alcom--creator-companion) to read more on how to install it.
 
-If your Avatar Creator asks you to use Poiyomi Pro, it is a PAID version of the shader and requires you to subscribe to access it ($10/month). **Only subscribe to Poiyomi Pro if the Avatar Creator explicitly states it's required, otherwise the FREE version should work without problems by switching your Materials to the Toon version of the shader.** For instructions on using Poiyomi Pro, jump to [Poiyomi Pro](#poiyomi-pro) on this page.
+If your Avatar Creator asks you to use Poiyomi Pro, it is a PAID version of the shader and requires you to subscribe to access it ($10/month). **Only subscribe to Poiyomi Pro if the Avatar Creator explicitly states it's required, otherwise the FREE version should work without problems by switching your Materials to the Toon version of the shader.**
 :::
 
 </ShowWhenRef>
@@ -35,9 +35,80 @@ The latest version of Poiyomi Shaders can be installed in one of two ways. Pleas
 - For Poiyomi Toon (Free Version), choose which of the installation methods detailed below.
 - If you're using Poiyomi Pro (Paid Version), [skip to the section by clicking here](#poiyomi-pro).
 
-## Method 1: Manual Unity Package
+## Method 1: ALCOM / Creator Companion
 
-The most common method used for installing Poiyomi Shaders is by importing the currently-provided Unity Package directly into your project. Read the instructions below to learn how to install the package:
+Installing Poiyomi Shaders using the VCC Repository is our recommended method for both Poiyomi Toon and Poiyomi Pro. If you are using Poiyomi Pro, [see below to read how our authentication works](#poiyomi-pro).
+
+:::tip
+We recommend using [ALCOM <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://vrc-get.anatawa12.com/en/alcom/) to install Poiyomi Shaders **and for managing VRChat Projects overall** since it's way faster and easier to use compared to the default VRChat Creator Companion App. Although, using the VRChat Creator Companion is also supported.
+:::
+
+<Tabs>
+
+<TabItem value="alcom" label="ALCOM" default>
+
+If you are using [ALCOM <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://vrc-get.anatawa12.com/en/alcom/) to install Poiyomi Shaders, follow the steps detailed below.
+
+If you have registered ALCOM to use the `vcc:` URL scheme, click the `Add to ALCOM` button below. If successful, skip to Step 3.
+
+<div style={{marginBottom: '20px'}}>
+
+<a class="button button--primary" href="vcc://vpm/addRepo?url=https%3A%2F%2Fpoiyomi.github.io/vpm/index.json"><FAIcon icon="fa-solid fa-square-arrow-up-right"/> Add to ALCOM</a>
+
+</div>
+      
+1. Open `Resources` and click `ADD REPOSITORY`.
+2. Enter the URL under the "Enter information about the repository" line and click `ADD REPOSITORY`:
+   - `https://poiyomi.github.io/vpm/index.json`
+3. When prompted, confirm the following details are displayed, then click `ADD REPOSITORY`:
+   - Name: `Poiyomi's VPM Repo`
+   - URL: The URL you entered.
+   - Packages:
+      - `Poiyomi Toon Shader`
+      - `Poiyomi Pro`
+4. Afterwards, head back to `Projects`, click `MANAGE` for the project you want to add Poiyomi Shaders to. Go down the list the list and click the <FAIcon icon="fa-solid fa-circle-plus"/> icon on ONE version you prefer to install:
+   - `Poiyomi Toon Shader`: The FREE Public version of the shader and the version you will most likely be using.
+   - `Poiyomi Pro`: Our PAID version of the shader. This package contains a script used to authenticate with your Patreon account in order to download the shader's package. To learn more about Poiyomi Pro, [see more details below](#poiyomi-pro).
+5. Done! Once ALCOM successfully installs the package, launch your Project and enjoy using Poiyomi Shaders.
+      
+**If an update becomes available, the `Latest` version number will be highlighted with a Green Box and a Green <FAIcon icon="fa-solid fa-circle-up"/> icon. Click it and hit `APPLY` when prompted to update to the latest version.**
+
+</TabItem>
+
+<TabItem value="vcc" label="VRChat Creator Companion">
+
+If you are using the default VRChat Creator Companion App, follow the instructions below:
+
+<div style={{marginBottom: '20px'}}>
+
+<a class="button button--primary" href="vcc://vpm/addRepo?url=https%3A%2F%2Fpoiyomi.github.io/vpm/index.json"><FAIcon icon="fa-solid fa-square-arrow-up-right"/> Add to VCC</a>
+
+</div>
+
+1. Click the `Add to VCC` button above to add Poiyomi Toon Shader to the Creator Companion. The button will open the Creator Companion App.
+   - Didn't work? In the VCC, go to `Settings > Packages > Add Repository`, type in `https://poiyomi.github.io/vpm/index.json` and then click `Add`.
+2. When Prompted, click the button labeled `I Understand, Add Respository`.
+3. In the list, make sure `Poiyomi's VPM Repo` is checkmarked.
+4. Find your Project in the VCC Project List, click `Manage Project`, then click the <FAIcon icon="fa-solid fa-circle-plus"/> button on ONE version you prefer to install:
+   - `Poiyomi Toon Shader`: The FREE Public version of the shader and the version you will most likely be using.
+   - `Poiyomi Pro`: Our PAID version of the shader. This package contains a script used to authenticate with your Patreon account in order to download the shader's package. To learn more about Poiyomi Pro, [see more details below](#poiyomi-pro).
+5. Done! Once the package is resolved, launch your Project and enjoy using Poiyomi Shaders.
+      
+**If an update becomes available, click the Green <FAIcon icon="fa-solid fa-circle-up"/> icon to update to the latest version.**
+
+</TabItem>
+
+</Tabs>
+
+:::warning
+All VCC versions of Poiyomi Shaders will automatically replace any existing copy of the `_PoiyomiShaders` folder in your Project's Assets in favor of the VCC Version, if it exists. Keep this in mind if you have any older versions in your Project.
+
+If you are going to be using both Toon and Pro, please install the `Poiyomi Pro` version as it also contains a copy of Poiyomi Toon. **You cannot install both packages at the same time!**
+:::
+
+## Method 2: Manual Unity Package
+
+We offer a Unity Package of our shaders for those who prefer to use it. Read the instructions below to learn how to install the package.
 
 <div style={{marginBottom: '20px'}}>
 
@@ -46,7 +117,7 @@ The most common method used for installing Poiyomi Shaders is by importing the c
 </div>
 
 1. Join the [Poiyomi Discord Server](https://discord.gg/poiyomi) and download the latest `.unitypackage` posted in `#free-shader` channel.
-    - OR you can download a stable, but likely outdated version of Poiyomi Toon Shader from either [GitHub <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/poiyomi/PoiyomiToonShader/releases/latest) or [BOOTH <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://poiyomi.booth.pm/items/4841309).
+    - OR you can download a stable, but likely outdated version of Poiyomi Shaders from either [GitHub <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/poiyomi/PoiyomiToonShader/releases/latest) or [BOOTH <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://poiyomi.booth.pm/items/4841309).
     - Make sure the file you download is a `.unitypackage` file, NOT a `.zip`!!
 2. Import the Unity Package into your Unity Project from the Menu Bar via `Assets > Import Package > Custom Package` or by Drag & Dropping the file from your File Explorer directly into your Project's Assets folder.
 3. Click `Import` when prompted.
@@ -66,80 +137,11 @@ When replacing or upgrading versions, you must do the following:
 **DO NOT ATTEMPT to import Poiyomi Shaders over another, or your project may break!**
 :::
 
-## Method 2: ALCOM / Creator Companion
-
-We recommend using [ALCOM <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://vrc-get.anatawa12.com/en/alcom/) to install Poiyomi Shaders **and for managing VRChat Projects overall** since it's way faster and easier to use compared to the default VRChat Creator Companion App. Although, using the VRChat Creator Companion is also supported.
-
-<Tabs>
-
-<TabItem value="alcom" label="ALCOM" default>
-
-If you are using [ALCOM <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://vrc-get.anatawa12.com/en/alcom/) to install Poiyomi Shaders, follow these steps:
-
-:::tip
-If you have registered ALCOM to use the `vcc:` URL scheme, click the `Add to ALCOM` button below. If successful, skip to Step 3.
-
-Otherwise, follow the instructions detailed below.
-:::
-
-<div style={{marginBottom: '20px'}}>
-
-<a class="button button--primary" href="vcc://vpm/addRepo?url=https%3A%2F%2Fpoiyomi.github.io/vpm/index.json"><FAIcon icon="fa-solid fa-square-arrow-up-right"/> Add to ALCOM</a>
-
-</div>
-      
-1. Open `Resources` and click `ADD REPOSITORY`.
-2. Enter the URL under the "Enter information about the repository" line and click `ADD REPOSITORY`:
-   - `https://poiyomi.github.io/vpm/index.json`
-3. When prompted, confirm the following details are displayed, then click `ADD REPOSITORY`:
-   - Name: `Poiyomi's VPM Repo`
-   - URL: The URL you entered.
-   - Packages:
-     - `Poiyomi Toon Shader`
-     - `Poiyomi Pro`
-4. Afterwards, head back to `Projects`, click `MANAGE` for the project you want to add Poiyomi Shaders to, and look for `Poiyomi Toon Shader` in the list. Click the <FAIcon icon="fa-solid fa-circle-plus"/> icon for it. When prompted, click `APPLY`.
-5. Done! Once ALCOM successfully installs the package, launch your Project and enjoy using Poiyomi Shaders.
-      
-**If an update becomes available, the `Latest` version number will be highlighted with a Green Box and a Green <FAIcon icon="fa-solid fa-circle-up"/> icon. Click it and hit `APPLY` when prompted to update to the latest version.**
-
-The Repository also includes the `Poiyomi Pro` package. To learn more about Poiyomi Pro, [see the details below](#poiyomi-pro).
-
-</TabItem>
-
-<TabItem value="vcc" label="VRChat Creator Companion">
-
-If you are using the default VRChat Creator Companion App, follow the instructions below:
-
-<div style={{marginBottom: '20px'}}>
-
-<a class="button button--primary" href="vcc://vpm/addRepo?url=https%3A%2F%2Fpoiyomi.github.io/vpm/index.json"><FAIcon icon="fa-solid fa-square-arrow-up-right"/> Add to VCC</a>
-
-</div>
-
-1. Click the `Add to VCC` button above to add Poiyomi Toon Shader to the Creator Companion. The button will open the Creator Companion App.
-          - Didn't work? In the VCC, go to `Settings > Packages > Add Repository`, type in `https://poiyomi.github.io/vpm/index.json` and then click `Add`.
-2. When Prompted, click the button labeled `I Understand, Add Respository`.
-3. In the list, make sure `Poiyomi's VPM Repo` is checkmarked.
-4. Find your Project in the VCC Project List, click `Manage Project`, then click the <FAIcon icon="fa-solid fa-circle-plus"/> button on `Poiyomi Toon Shader` to add it to your project.
-5.  Done! Once the package is resolved, launch your Project and enjoy using Poiyomi Shaders.
-      
-**If an update becomes available, click the Green <FAIcon icon="fa-solid fa-circle-up"/> icon to update to the latest version.**
-
-The Repository also includes the `Poiyomi Pro` package. To learn more about Poiyomi Pro, [see the details below](#poiyomi-pro).
-
-</TabItem>
-
-</Tabs>
-
-:::warning
-The VCC version of Poiyomi Shaders will automatically replace any existing copy of the `_PoiyomiShaders` folder in your Project's Assets in favor of the VCC Version, if it exists. Keep this in mind if you have any other versions, such as the Pro version, in your Project.
-:::
-
 ## Poiyomi Pro
 
-The Pro version of the shader (also known as Poiyomi Pro) is a Paid Version of the shader, available as a subscription model for $10/month on Patreon. It contains extra special features that are [outlined below](#features-chart).
+The Pro version of the shader (also known as Poiyomi Pro) is a Paid Version of the shader, available as a subscription model on Patreon. It contains extra special features that are [outlined below](#features-chart).
 
-Before using Poiyomi Pro, please ensure you agree to the [EULA](/terms-of-service/terms-of-service.md#pro-version).
+**Before using Poiyomi Pro, please ensure you agree to the [EULA](/terms-of-service/terms-of-service.md#pro-version) and subscribe to the $10/month Tier or higher.**
 
 <div style={{marginBottom: '20px'}}>
 
@@ -147,30 +149,11 @@ Before using Poiyomi Pro, please ensure you agree to the [EULA](/terms-of-servic
 
 </div>
 
-In order to download and install Poiyomi Pro, please follow these updated instructions below. If you prefer to use the VCC version, [see the header below](#vcc-version).
+### Pro Version: VCC Package
 
-1. Subscribe to the shader on [Patreon <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://www.patreon.com/poiyomi) for $10/month USD or higher.
-2. Login to [pro.poiyomi.com <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://pro.poiyomi.com/) and follow the instructions to authenticate with your Patreon Account.
-   - *If you don't see the pop-up Patreon Login window, check with your Browser to see if a pop-up window was blocked.*
-3. If successful, you can then immediately download the latest version of the Pro shader by going to the Downloads page.
-4. You may now proceed with **Step 2** of installing Poiyomi Shaders as described above in [Method 1.](#method-1-manual-unity-package)
+Our recommended method to receive the latest updates from the Pro version seamlessly with minimal effort is through our VCC plugin.
 
-- If you use Discord, please link your Discord to your Patreon Account. **This is required if you wish to receive Tech Support on the Pro version!**
-   - *If successfully linked, you'll receive a fancy role, some perks, and access to the `#paid-shader` channel where you can also download the Pro shader from.*
-
-**Only Pro Versions will be offered through <u>pro.poiyomi.com</u> or through <u>Discord</u>, and will never be distributed anywhere else!**
-
-As a reminder, the Pro Shader only includes extra features. Therefore, it is not required if you are trying to access features already available in the Free version.
-
-### VCC Version
-
-:::warning Poiyomi Pro VCC Beta
-The VCC offering of Poiyomi Pro is currently in Beta and may have bugs. Please report any issues you may have with it in our Discord server.
-:::
-
-The VCC version of Poiyomi Pro is available for those who prefer to install it through the VCC Repository. To ensure it works, you must be an active Patreon subscriber.
-
-Follow the same instructions as noted above in [Method 2: ALCOM / Creator Companion](#method-2-alcom--creator-companion), but instead of adding the `Poiyomi Toon Shader` package to your project, you will install add `Poiyomi Pro`.
+Follow the same instructions as noted above in [Method 1: ALCOM / Creator Companion](#method-1-alcom--creator-companion) but instead of adding the `Poiyomi Toon Shader` package to your project, you will install add `Poiyomi Pro`.
 
 Things work a little differently when using this version upon launching your Unity Project. Basically, the following sequence will take place:
 1. Upon launching your Unity Project, a script will run that will open your Web Browser. You will then be asked to authorize with your Patreon account on `pro.poiyomi.com`.
@@ -179,9 +162,28 @@ Things work a little differently when using this version upon launching your Uni
 3. When successful, a message should appear saying, *"Authentication successful. You may now close this window."*
 4. Jump back into your Unity Project. Assuming you've successfully authorized linking your Patreon account, the script will automatically begin installing Poiyomi Pro into your project. Enjoy using Poiyomi Pro!
 
-Do keep in mind that this script is intentionally designed to require an active subscription in order to receive future updates. So when updating Poiyomi Pro, you must go through the same process as detailed above.
+:::note
+Please keep in mind that the scripting is intentionally designed to require an active subscription in order to receive future updates. When updating Poiyomi Pro, you must go through the same process again as detailed above.
+:::
 
 By using Poiyomi Pro, you agree to the EULA stated [here](/terms-of-service/terms-of-service.md#pro-version).
+
+### Pro Version: Unity Package
+
+Optionally, we offer a manual Unity Package version of the Pro Shader for those who prefer to use it. To access these versions, follow the instructions below.
+
+1. Login to [pro.poiyomi.com <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://pro.poiyomi.com/) and follow the instructions to authenticate with your Patreon Account.
+   - *If you don't see the pop-up Patreon Login window, check with your Browser to see if a pop-up window was blocked.*
+2. If successful, you can then immediately download the latest version of the Pro shader by going to the Downloads page.
+3. You may now proceed with **Step 2** of installing Poiyomi Shaders as described above in [Method 2.](#method-2-manual-unity-package)
+
+:::danger Notice on official channels
+**For security reasons, distribution of our newest Poiyomi Pro Unity Packages through Discord is being discontinued!**
+
+Poiyomi Pro versions will only be offered through <u>pro.poiyomi.com</u> or through <u>our VCC Package</u> and will never be distributed anywhere else!
+:::
+
+As a reminder, the Pro Shader only includes extra features. Therefore, it is not required if you are trying to access features already available in the Free version.
 
 ### Features Chart
 
@@ -206,9 +208,10 @@ To see the different features offered between the Free vs. Pro version, refer to
 | [Audio Link](/audio-link/audio-link.md), [Global Themes](/modifiers/global-themes.md), [Global Mask](/modifiers/global-masks.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | [VRC Light Volumes <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/REDSIM/VRCLightVolumes) Support | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | [BlackLight Masking](/modifiers/blacklight-masking.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| Stochastic Sampling, Distortion UV, Panosphere UV, Polar UV | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Stochastic Sampling, [Distortion UV](/modifiers/uvs/distortion-uv.md), [Panosphere UV](/modifiers/uvs/panosphere-uv.md), [Polar UV](/modifiers/uvs/polar-uv.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | [Parallax Heightmapping](/modifiers/uvs/parallax.md), [Post Processing Animations](/modifiers/post-processing/pp-animations.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | [Lil Fur](/extended-features/lilfur.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [Time Source](/modifiers/time-source.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Vertex Options |  |  |  |  |  |  |
 | [Basics & Fun](/vertex-options/basics.md), [Glitching](/vertex-options/glitching.md), [LookAt](/vertex-options/look-at.md), [Vertex Colors](/vertex-options/vertex-colors.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | [Shading Styles](/shading/main.md) |  |  |  |  |  |  |
@@ -221,14 +224,18 @@ To see the different features offered between the Free vs. Pro version, refer to
 | [Grab Pass](/extended-features/grabpass.md) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | **Pro Features** | | | | | | |
 | [Screen Space Ambient Occlusion](/shading/ssao.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
-| Custom Modules | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | [Geometric Dissolve](/extended-features/geometric-dissolve.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | [Fur and World Fur](/extended-features/fur.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | [Shatterwave](/extended-features/shatterwave.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | [Tessellated](/extended-features/tessellated.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | Tessellated Geometric | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | [Particles](/extended-features/particle.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
-| Constellation | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| [Constellation](/special-fx/constellation.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| Bent Normal Maps | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| Contact Shadows | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| Squish | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| Triplanar Projection | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| Custom Modules | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | Wireframe | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | NameTag | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | Cubed | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
