@@ -9,10 +9,10 @@ Time Source configures how the shader should synchronize the timing of material 
 
 Extended information on the functionality of this system is documented on the [VRChat Creators Docs <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://creators.vrchat.com/worlds/udon/vrc-graphics/vrchat-shader-globals/#vrchat-time-global).
 
-:::warning VRChat-only Features
-**Some of these settings below only work in VRChat!**
+:::warning Experimental Feature
+This feature is considered experimental! Time synchronization using VRChat's Shader Globals may be bugged and will be subject to de-synchronization issues.
 
-If you are using Poiyomi Shaders for other games, you may want to keep this setting configured to `Unity Default`.
+**Additionally, some of these settings below only work in VRChat!** If you are using Poiyomi Shaders for other games, you may want to keep this setting configured to `Unity Default`.
 :::
 
 ## Time Source
