@@ -117,19 +117,27 @@ Total emission values above 1 will generally cause glow in worlds with bloom.
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
-Controls the width of the rim lighting. Affects how far from the edge (or center) the rim extends.
+Controls the width of the Rim Lighting. Affects how far from the edge (or center) the rim extends.
 
-### Sharpness
+### Blur
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
-Controls the sharpness of the transition between minimum and maximum rim lighting. At `0`, the rim will be a gradual transition, with the maximum color only present at the very outer edge. As **Rim Sharpness** increases, the maximum color extends further toward the edge as defined by the [Rim Width](#width). At `1`, there is a sharp transition between no rim lighting and rim lighting.
+Controls the amount of Blur to apply the edge of the Rim Lighting. The higher the value, the higher the Blurriness of the edge.
+
+This value was previously `Sharpness` in 9.3 versions and older, but was replaced because it was way more limited than it's intended functionality.
 
 ### Rim Power
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 10.0`
 
 Controls how intense the Rim Lighting has an effect.
+
+### Linear
+
+- `Type`: <PropertyIcon name="floatrange" />**Toggle**
+
+Switches to more linear blending on the Rim Lighting.
 
 ### Normal Strength
 
