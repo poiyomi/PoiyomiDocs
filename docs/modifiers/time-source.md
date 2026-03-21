@@ -5,12 +5,12 @@ description: Time synchronization of the shader in VRChat.
 keywords: [time, sync, synchronization, special effect, special fx]
 ---
 
-Time Source configures how the shader should synchronize the timing of material animations across the network in VRChat. This takes advantage of the `_VRChatTime` shader globals, the same system utilized in Udon returned by `Networking.GetServerTimeInMilliseconds` to sync animations across clients. In Poiyomi Shaders, we remove the top 6 bits from the `uinit` variable to prevent floating-point precision errors.
+Time Source configures how the shader should synchronize the timing of material animations across the network in VRChat. This takes advantage of the `_VRChatTime` shader globals, the same system utilized in Udon returned by `Networking.GetServerTimeInMilliseconds` to sync animations across clients.
 
-Extended information on the functionality of this system is documented on the [VRChat Creators Docs <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://creators.vrchat.com/worlds/udon/vrc-graphics/vrchat-shader-globals/#vrchat-time-global).
+Extended technical information on the functionality of this system is documented on the [VRChat Creators Docs <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://creators.vrchat.com/worlds/udon/vrc-graphics/vrchat-shader-globals/#vrchat-time-global).
 
 :::warning Experimental Feature
-This feature is considered experimental! Time synchronization using VRChat's Shader Globals may be bugged and will be subject to de-synchronization issues.
+In Poiyomi Shaders, we do some rather complicated math behind the scenes to reduce precision errors and prevent choppy data. This means time synchronization using VRChat's Shader Globals can be bugged and be subject to de-synchronization issues.
 
 **Additionally, some of these settings below only work in VRChat!** If you are using Poiyomi Shaders for other games, you may want to keep this setting configured to `Unity Default`.
 :::
