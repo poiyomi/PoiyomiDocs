@@ -5,7 +5,9 @@ description: Global Themes are a centralized place to change colors throughout t
 keywords: [global, themes, theme, global themes, color, colors, poiyomi, shader]
 ---
 
-Global Themes provide a central place to change colors throughout the shader. When configured, you can set any **Color** property in the Material to instead use your defined Theme Color.
+Global Themes provide a central place to change colors throughout the shader. When configured, you can set any **Color** properties across the Material to instead use your defined Theme Color.
+
+This allows you to create animations that can change all Color linked to your Theme Color all in one go.
 
 ## Usage in the Shader
 
@@ -19,11 +21,11 @@ Then, set whichever **Color** property you wish to use a Global Theme by selecti
 
 *Example of the Theme Color dropdown located next to a Color property.*
 
-When set, this will override the Color with whichever Color is configured in the selected Global Theme.
+When set, this will override the Color with whichever Color is configured in the selected Theme Color.
 
 # Material Properties
 
-The following below are the properties that are available in Global Themes. You can have a maximum of 4 Theme Colors, per Material.
+The following below are the properties that are available in Global Themes. You can have a maximum of 4 Theme Colors per Material.
 
 :::info Documentation Info
 Each of the 4 Global Themes (0, 1, 2, 3) have the following unique options listed below. They are independent of each other, and are selected across the shader based on the identifying Theme Color slot.
@@ -31,13 +33,26 @@ Each of the 4 Global Themes (0, 1, 2, 3) have the following unique options liste
 
 ## Theme Color
 
-### Theme Color
-
 - `Type`: <PropertyIcon name="hdrcolor" />**HDR Color**
 
 Color to use for Theme Color.
 
-### Hue Adjust
+## Color Space
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `OKLab`/`HSV`
+  - Default: `OKLab`
+
+Choice of Color Space to use for the Hue Shift.
+
+Learn about the difference of Color Spaces as documented in [Color Adjust](/color-and-normals/color-adjust.md#color-space).
+
+## Shift Speed
+
+- `Type`: <PropertyIcon name="float" />**Float**
+
+How much to constantly shift the Theme Color Hue with time. A value of 1 will result in a full hue shift cycle every 20 seconds.
+
+## Hue Shift
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
@@ -45,22 +60,54 @@ How much to shift the Theme Color around the Hue Circle. This value is circular,
 
 This functions in the same fashion as Color Adjust's [Hue Shift](/color-and-normals/color-adjust.md#hue-shift-1) slider.
 
-### Hue Adjust Speed
+## Saturation Style
 
-- `Type`: <PropertyIcon name="float" />**Float**
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Saturation Value (old)`/`Saturation Brightness`
+  - Default: `Saturation Brightness`
 
-How much to constantly shift the Theme Color Hue with time. A value of 1 will result in a full hue shift cycle every 20 seconds.
+Selects the type of Saturation or Brightness style to use.
 
-### Saturation Adjust
+This dropdown is provided for backwards-compatibility with both old 9.3 and newer 10.0 animation setups. The setting of this dropdown will affect what values are exposed here.
+
+- `Saturation Value (old)` will use the old system with the [Saturation Adjust](#saturation-adjust) and [Value Adjust](#value-adjust) sliders exposed.
+- `Saturation Brightness` will use the NEW system with modern [Saturation](#saturation) and [Brightness](#brightness) sliders exposed.
+
+## Saturation
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 10.0`
+  - Normal: `0.0`
+  - Conditional: Requires [Saturation Style](#saturation-style) set to `Saturation Brightness`.
+
+Adjusts the saturation of the Theme Color. 
+
+A value of `-1` will make the Theme Color fully de-saturate (grayscale). A value of `0` will not alter the color at all. A value greater than 0 will increase the saturation of the color.
+
+This is implemented as a lerp between the base color and a grayscale version of the base color.
+
+## Brightness
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 2.0`
+  - Normal: `0.0`
+  - Conditional: Requires [Saturation Style](#saturation-style) set to `Saturation Brightness`.
+
+Adjusts the brightness of the Theme Color. 
+
+This increases or decreases brightness directly on top of the Theme Color, without regard for it's hue or tone.
+
+## Saturation Adjust
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
+  - Normal: `0.0`
+  - Conditional: Requires [Saturation Style](#saturation-style) set to `Saturation Value (old)`.
 
 Adjusts the Saturation of the Theme Color.
 
 A value of -1 will make the Theme Color fully de-saturate (grayscale). A value of 0 will not alter the color at all. A value greater than 0 will increase the saturation of the Theme Color.
 
-### Value Adjust
+## Value Adjust
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
+  - Normal: `0.0`
+  - Conditional: Requires [Saturation Style](#saturation-style) set to `Saturation Value (old)`.
 
 Adjusts the brightness value of the Theme Color on top, without regard for it's Hue or Tone.
