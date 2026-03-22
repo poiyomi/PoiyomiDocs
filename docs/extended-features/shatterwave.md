@@ -94,7 +94,7 @@ How fast the waves move and in which direction.
 
 - `Type`: <PropertyIcon name="float3" />**Float3**
 
-Measures the size of the wave slop and where it's being drawn at.
+Measures the size of the wave slope and where it's being drawn at.
 
 ## Wave Density X Y Z
 
