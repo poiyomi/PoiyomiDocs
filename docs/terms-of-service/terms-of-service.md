@@ -6,7 +6,7 @@ keywords: [terms of service, tos, rules, guidelines, mit, pro, poiyomi, shader]
 hide_table_of_contents: true
 ---
 
-By using the Shader, you hereby agree to the Terms of Service and Licenses as listed below. Depending on which version of the Shader you use, Free vs. Pro, it's important you understand how these rules apply to you.
+By using Poiyomi Shaders, you hereby agree to the Terms of Service and Licenses as listed below. Depending on which version of the Shader you use, Free vs. Pro, it's important you understand how these rules apply to you.
 
 ## Free Version
 
@@ -59,8 +59,13 @@ To put things simply, here are the restrictions:
 If you are discovered to have illegally acquired a version of Poiyomi Pro without purchasing it, we reserve the right to invoke legal action against you, both via Patreon and through Discord.
 :::
 
+## Changes to the TOS
+
+This Terms of Service may be updated from time to time to reflect changes in the tools used in Poiyomi Shaders. The date of the most recent revision will be notated on the appropriate documents and are timestamped at the bottom of this page.
+
 ## Third Party Licenses
 
+- [Thry Editor License <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://raw.githubusercontent.com/Thryrallo/ThryEditor/refs/heads/master/LICENSE)
 - [Lil License <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://raw.githubusercontent.com/lilxyzw/lilToon/refs/heads/master/LICENSE)
 - [LTCGI License <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://raw.githubusercontent.com/PiMaker/ltcgi/refs/heads/main/LICENSE)
 - [VRC Light Volumes License <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://raw.githubusercontent.com/REDSIM/VRCLightVolumes/refs/heads/main/LICENSE)

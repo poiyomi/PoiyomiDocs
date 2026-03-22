@@ -158,6 +158,13 @@ export default {
         },
       },
     ],
+    [
+      require.resolve("@docusaurus/plugin-vercel-analytics"),
+      {
+        debug: false,
+        mode: 'auto',
+      },
+    ],
   ],
 
   presets: [
@@ -515,6 +522,10 @@ export default {
               {
                 label: "Terms of Service",
                 to: "/terms-of-service",
+              },
+              {
+                label: "Privacy Policy",
+                to: "/privacy",
               },
               {
                 label: "Credits",
