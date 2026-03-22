@@ -39,7 +39,7 @@ Each of the 4 decal sections (0, 1, 2, 3) have the following options listed belo
 ### Positioning
 
 :::tip
-Decals supports the **Raycast** feature, which allows you to visually position a Decal on your Model without having to second-guess it's exact UV coordinates.
+Decals supports the **Raycast** feature, which allows you to visually position a Decal on your Model without having to second-guess its exact UV coordinates.
 
 To use this feature, edit the Decal on your Material <u>directly from the Mesh</u> as shown here:
 
