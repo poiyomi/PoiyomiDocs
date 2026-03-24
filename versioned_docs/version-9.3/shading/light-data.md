@@ -289,7 +289,7 @@ Defines how much to use normals when calculating indirect lighting direction. If
 This option is only visible when **Light Color Mode** is set to `Poi Custom`.
 :::
 
-### Receieve Casted Shadows
+### Receive Casted Shadows
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
@@ -376,7 +376,7 @@ Defines the maximum allowed brightness resulting from the add pass.
 This option is only shown if **Limit Brightness** is enabled.
 :::
 
-### Receieve Casted Shadows (Add Pass)
+### Receive Casted Shadows (Add Pass)
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
