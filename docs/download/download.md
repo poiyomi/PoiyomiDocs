@@ -168,7 +168,7 @@ If your subscription lapses, you may keep a copy of the last Unity Package you d
 
 ### Pro Version: VCC Package
 
-Optionally, we offer downloading Poiyomi Pro using our VCC Package. Things work a little differently, so follow the same instructions as noted above in [Method 1: ALCOM / Creator Companion](#method-1-alcom--creator-companion) but instead of adding the `Poiyomi Toon Shader` package to your project, you will install add `Poiyomi Pro`.
+Optionally, we offer downloading Poiyomi Pro using our VCC Package. Things work a little differently, so follow the same instructions as noted above in [Method 1: ALCOM / Creator Companion](#method-1-alcom--creator-companion) but instead of adding the `Poiyomi Toon Shader` package to your project, you will instead add `Poiyomi Pro`.
 
 As stated, things work a little differently with this version. The following sequence will take place:
 1. Upon launching your Unity Project, a script will run that will open your Web Browser. You will then be asked to authorize with your Patreon account on `pro.poiyomi.com`.
