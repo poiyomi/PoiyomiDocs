@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 0
 title: Stochastic Sampling
 description: Shader technique involving collecting data or points randomly, and simples pixels randomly instead of normally.
 keywords: [stochastic, sampling, poiyomi, shaders]
