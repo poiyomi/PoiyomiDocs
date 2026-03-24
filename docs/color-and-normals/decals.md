@@ -152,6 +152,13 @@ How much to apply the blended color to the base color.
 This slider can be animated to hide and show the decal. Animating the [Section Header](/general/locking.md#section-header-checkboxes) will not work!
 :::
 
+### Alpha Intensity
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 10.0`
+  - Default: `1.0`
+
+Applies a multiplier for how much the decal's alpha should affect the material's alpha.
+
 ### Depth
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-0.5 - 2.0`
