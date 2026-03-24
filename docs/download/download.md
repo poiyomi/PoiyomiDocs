@@ -149,13 +149,28 @@ The Pro version of the shader (also known as Poiyomi Pro) is a Paid Version of t
 
 </div>
 
+### Pro Version: Unity Package
+
+We primarily offer the Poiyomi Pro version as a Unity Package and can be downloaded on our website. This is our recommended method for installing Poiyomi Pro.
+
+To access these versions, follow the instructions below.
+
+1. Login to [pro.poiyomi.com <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://pro.poiyomi.com/) and follow the instructions to authenticate with your Patreon Account.
+   - *If you don't see the pop-up Patreon Login window, check with your Browser to see if a pop-up window was blocked.*
+2. If successful, you can then immediately download the latest version of the Pro shader by going to the Downloads page.
+3. You may now proceed with **Step 2** of installing Poiyomi Shaders as described above in [Method 2.](#method-2-manual-unity-package).
+
+:::danger Notice on official channels
+**For security reasons, distribution of our newest Poiyomi Pro Unity Packages through Discord is being discontinued!** Poiyomi Pro versions will only be offered through <u>pro.poiyomi.com</u> or through <u>our VCC Package</u> and will never be distributed anywhere else!
+
+If your subscription lapses, you may keep a copy of the last Unity Package you downloaded somewhere safe on your computer.
+:::
+
 ### Pro Version: VCC Package
 
-Our recommended method to receive the latest updates from the Pro version seamlessly with minimal effort is through our VCC plugin.
+Optionally, we offer downloading Poiyomi Pro using our VCC Package. Things work a little differently, so follow the same instructions as noted above in [Method 1: ALCOM / Creator Companion](#method-1-alcom--creator-companion) but instead of adding the `Poiyomi Toon Shader` package to your project, you will install add `Poiyomi Pro`.
 
-Follow the same instructions as noted above in [Method 1: ALCOM / Creator Companion](#method-1-alcom--creator-companion) but instead of adding the `Poiyomi Toon Shader` package to your project, you will install add `Poiyomi Pro`.
-
-Things work a little differently when using this version upon launching your Unity Project. Basically, the following sequence will take place:
+As stated, things work a little differently with this version. The following sequence will take place:
 1. Upon launching your Unity Project, a script will run that will open your Web Browser. You will then be asked to authorize with your Patreon account on `pro.poiyomi.com`.
 2. Login to your Patreon account when prompted, and confirm to authorize your connection to Poiyomi Pro.
    - *If you've already logged in to this website previously, you will be automatically redirected to the next step.*
@@ -167,21 +182,6 @@ Please keep in mind that the scripting is intentionally designed to require an a
 :::
 
 By using Poiyomi Pro, you agree to the EULA stated [here](/terms-of-service/terms-of-service.md#pro-version).
-
-### Pro Version: Unity Package
-
-Optionally, we offer a manual Unity Package version of the Pro Shader for those who prefer to use it. To access these versions, follow the instructions below.
-
-1. Login to [pro.poiyomi.com <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://pro.poiyomi.com/) and follow the instructions to authenticate with your Patreon Account.
-   - *If you don't see the pop-up Patreon Login window, check with your Browser to see if a pop-up window was blocked.*
-2. If successful, you can then immediately download the latest version of the Pro shader by going to the Downloads page.
-3. You may now proceed with **Step 2** of installing Poiyomi Shaders as described above in [Method 2.](#method-2-manual-unity-package)
-
-:::danger Notice on official channels
-**For security reasons, distribution of our newest Poiyomi Pro Unity Packages through Discord is being discontinued!**
-
-Poiyomi Pro versions will only be offered through <u>pro.poiyomi.com</u> or through <u>our VCC Package</u> and will never be distributed anywhere else!
-:::
 
 As a reminder, the Pro Shader only includes extra features. Therefore, it is not required if you are trying to access features already available in the Free version.
 
