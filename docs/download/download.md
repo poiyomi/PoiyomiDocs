@@ -178,14 +178,14 @@ As stated, things work a little differently with this version. The following seq
 4. Jump back into your Unity Project. Assuming you've successfully authorized linking your Patreon account, the script will automatically begin installing Poiyomi Pro into your project. Enjoy using Poiyomi Pro!
 
 :::note
-Please keep in mind that the scripting is intentionally designed to require an active subscription in order to receive future updates. When updating Poiyomi Pro, you must go through the same process again as detailed above.
+Please keep in mind that the scripting in the VCC version is intentionally designed to require an active subscription in order to receive future updates. When updating Poiyomi Pro, you must go through the same process again as detailed above.
 :::
 
 By using Poiyomi Pro, you agree to the EULA stated [here](/terms-of-service/terms-of-service.md#pro-version).
 
 As a reminder, the Pro Shader only includes extra features. Therefore, it is not required if you are trying to access features already available in the Free version.
 
-### Features Chart
+## Features Chart
 
 To see the different features offered between the Free vs. Pro version, refer to the table below:
 
