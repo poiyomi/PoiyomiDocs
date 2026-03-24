@@ -59,4 +59,6 @@ All information in this Documentation has been "versioned" to accommodate this m
 If you're looking for accurate information referring to a specific version, such as 9.3, please use this dropdown and select the appropriate version of the shader you are using to see relevant context! Otherwise, the latest version (10.0) will be the default viewing mode. The versions in this dropdown will be updated over time as Poiyomi Shaders continues it's ongoing development.
 :::
 
-If you have any questions or if you think you've found an issue, please [join the Discord <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://discord.gg/poiyomi) or [open an Issue on our Docs Repository <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/poiyomi/PoiyomiDocs)! The Documentation is continuously being edited, updated, and proofread by our contributors, so please don't hesitate to reach out!
+If you find any inaccurate information, typos, or other tomfoolery specifically with the Documentation, please [open an Issue on our Docs Repository <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/poiyomi/PoiyomiDocs/issues)! The Documentation is continuously being edited, updated, and proofread by our contributors, so please don't hesitate to let us know!
+
+[Join our Discord Community <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://discord.gg/poiyomi) and feel free to talk with us! We're excited to get Poiyomi 10.0 out and hope you enjoy what we have to offer!
