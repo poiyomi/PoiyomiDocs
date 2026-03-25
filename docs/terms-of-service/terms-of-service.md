@@ -18,7 +18,7 @@ The MIT License is one of the most straightforward and permissive licenses used 
 - Free to Modify: You can change the software as you like.
 - Free to Share: You can share the software with others, either in its original form or with your modifications.
 - Free to Include in Your Own Projects: You can include the software, modified or not, in your own projects.
-- Keep the License Notice: When you redistribute the software or any modified versions of it, you need to include the original MIT License text with it. This lets others know they can use, modify, and share the software under the same terms.
+- Keep the License Notice: When you redistribute the software or any modified versions of it, you must include the original MIT License text with it.
 - No Warranty: The software is provided "as is", without any guarantees. The authors aren't responsible if something goes wrong after using or modifying the software.
 
 In summary, the MIT License basically says "you can do almost anything you want with this software, **but you need to include this license text wherever you use it, and you can't hold the original creators responsible for problems.**"
