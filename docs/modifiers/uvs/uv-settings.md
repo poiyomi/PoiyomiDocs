@@ -15,14 +15,14 @@ Each of the UV assignments (UV0, UV1, UV2, and UV3) have the following options l
 
 ### Tiling
 
-- `Type`: <PropertyIcon name="float2" />**Float2**
+- `Type`: <PropertyIcon name="float2" />**Vector**
   - Default: `X = 1`, `Y = 1`
 
 Sets the Tiling of the UV layout.
 
 ### Offset
 
-- `Type`: <PropertyIcon name="float2" />**Float2**
+- `Type`: <PropertyIcon name="float2" />**Vector**
   - Default: `X = 0`, `Y = 0`
 
 Sets an Offset for the UV by a specified increment.
@@ -36,7 +36,7 @@ Sets a rotational angle offset of the UV layout in degrees.
 
 ### Pan
 
-- `Type`: <PropertyIcon name="float2" />**Float2**
+- `Type`: <PropertyIcon name="float2" />**Vector**
   - Default: `X = 0`, `Y = 0`
 
 If set, animates the UV in a panning animation on the set axis.
