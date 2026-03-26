@@ -332,6 +332,12 @@ To ensure the impact is far lessened, make sure you are on the latest version of
 
 Please be aware that you will not see the results of Light Volumes in your project unless you have a working setup in your Scene that can show it to you. You can use newer versions of [Haï Lightbox Viewer <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.hai-vr.dev/docs/products/lightbox-viewer) (v2.4.0 and up) to preview the results, which includes new lightboxes supporting Light Volumes.
 
+### Normal Bias Sampling
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+
+Offsets the position where lighting from the mesh normals is sampled from. This can control lighting artifacts when the geometry is thin or too close to edges.
+
 ## Add Pass (Point & Spot Lights)
 
 Options relating to lighting performed in the Add Pass. The Add Pass is used for any Realtime Lights beyond the first in a scene. This includes Realtime Point, Spot, and Directional Lights.
