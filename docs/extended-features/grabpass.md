@@ -9,6 +9,8 @@ Grab Pass transparency uses a Grab Pass, which takes a screenshot of the scene e
 
 To use Grab Pass, select the Shader version `.poiyomi/Poiyomi Toon Grab Pass`. Included in this Shader version, a new Grab Pass category will appear with the following settings shown below.
 
+**Before you start adjusting settings, please choose a GrabPass Preset!** This dropdown replaces the Rendering Preset menu in favor of specialized Grab Pass Rendering Presets.
+
 :::warning
 Grab Pass is an expensive feature - it has to take a screenshot every frame. This will always cause some amount of performance hit, so use it judiciously!
 :::
@@ -56,7 +58,13 @@ Controls the distortion of the Refraction.
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
 
-If enabled, creates a realtime Gaussian Blur effect on the Material.
+If enabled, creates a realtime Blur effect on the Material.
+
+### Pattern
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Sunflower`/`Gaussian`/`Hexagonal`
+
+Choice of which Blur pattern to use. These can have a wide range of different appearances.
 
 ### Blur Distance
 
@@ -85,8 +93,26 @@ Applies a Smoothness modifier to the Blur.
 ### Center Importance
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+  - Conditional: Requires [Pattern](#pattern) set to `Sunflower` OR `Gaussian`
 
-Determines the importance of the Gaussian Blur of Opaque objects visible behind the Material.
+Determines the importance of the Blur of Opaque objects visible behind the Material.
+
+### Use Depth
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+
+If enabled, utilize the Depth Buffer to determine accurate focus of the Blur. This will make meshes closer to it appear clearly, while distant meshes are blurred.
+
+:::warning Requires Depth Buffer
+In order to use Blur Depth, you will need to place the `DepthGet` Prefab found in `Assets/_PoiyomiShaders/Prefabs` onto your avatar.
+:::
+
+### Depth Ramp
+
+- `Type`: <PropertyIcon name="vectorcurve" />**Vector Curve**
+  - Conditional: Requires [Use Depth](#use-depth) to be enabled.
+
+Vector Ramp that determines the focus range of the Blur Depth.
 
 ## Color
 
@@ -107,6 +133,49 @@ Controls the multiplication value of the Grab Pass Color.
 - `Type`: <PropertyIcon name="float" />**Float**
 
 Controls the additive of additional brightness of the Grab Pass Color.
+
+### Hue Shift
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+
+Enable Hue Shifting of the Grab Pass Color.
+
+#### Color Space
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `OKLab`/`HSV`
+
+Choice of Color Space to use for the Hue Shift. By default, it will be set to `OKLab`.
+
+Learn about the difference of Color Spaces as documented here in [Color Adjust](/color-and-normals/color-adjust.md#oklab-vs-hsv).
+
+#### Select or Shift
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Hue Select`/`Hue Shift`
+  - Default: `Hue Shift`
+
+This dropdown allows you to select how the Color Adjustment should behave when the Hue Shift is used. By default, this will be set to `Hue Shift`.
+
+<details>
+<summary><b>Select or Shift Options</b></summary>
+
+- `Hue Select`: Directly applies the selected Hue as an override to the entire color.
+- `Hue Shift`: Only tints the color based on the lerped value. This is the default behavior.
+
+</details>
+
+#### Hue Shift
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+
+How much to shift the color around the hue circle.
+
+This value is circular, and will have the same result at `0` and `1`.
+
+#### Hue Shift Speed
+
+- `Type`: <PropertyIcon name="float" />**Float**
+
+How much to constantly shift the hue with time. A value of `1` will result in a full hue shift cycle every 20 seconds.
 
 ## Advanced
 
