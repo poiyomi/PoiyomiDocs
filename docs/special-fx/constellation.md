@@ -12,6 +12,9 @@ Constellation is a unique special effect that replicates connected stars in an a
 <img src="/img/Poiyomi-Pro-Label.png" alt="Pro Feature" width="600px"/>
 </a>
 
+<ReactVideo src='/vid/special-fx/ConstellationDemo.webm'/>
+<em>Demonstration of the Constellation effect masked on this Avatar's sweatshirt.</em>
+
 ## Blend & UV
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Normal`/`Multiply`/`Add`
