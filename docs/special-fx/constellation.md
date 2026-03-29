@@ -13,7 +13,7 @@ Constellation is a unique special effect that replicates connected stars in an a
 </a>
 
 <ReactVideo src='/vid/special-fx/ConstellationDemo.webm'/>
-<em>Demonstration of the Constellation effect masked on this Avatar's sweatshirt.</em>
+<em>Demonstration of the Constellation effect masked on this Avatar's sweater.</em>
 
 ## Blend & UV
 
