@@ -8,159 +8,16 @@ toc_max_heading_level: 4
 
 The Dissolve module provides features for transitioning between a base appearance and a modified appearance in an aesthetically pleasing way. It can be used to transition from one base texture to another, or from the base color to a transparent appearance.
 
-<ReactVideo src='/vid/special-fx/Dissolve_ContinuousLoop.mp4'/>
-
-*Example of CenterOut Dissolve being animated back and forth.*
+<ReactVideo src='/vid/special-fx/DissolveV10_CenterOut.webm'/>
+<em>Example of the Center Out Dissolve being animated back and forth.</em>
 
 ## Dissolve Type
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Basic`/`Point2Point`/`Spherical`/`CenterOut`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Basic`/`Point to Point`/`Spherical`/`Center Out`
 
-Defines the mode dissolve is operating in.
+Defines the mode Dissolve shall operate as. This will define what settings appear for the type.
 
-### Basic
-
-In `Basic`, The 0-1 value of the [Dissolve Gradient](#dissolve-gradient) texture is used to define the scale from 0 to 1.
-
-<ReactVideo src='/vid/special-fx/Dissolve_Mode_Basic-Gradient.mp4'/>
-
-*Example of Basic Dissolve. As you can see, it only works best with a Dissolve Gradient defined.*
-
-### Point2Point
-
-In `Point2Point`, the pixel's position is used to define the scale. [Scroll to Advanced Point2Point Settings](#point2point-1)
-
-<ReactVideo src='/vid/special-fx/Dissolve_Mode_Point2Point.mp4'/>
-
-*Example of Point2Point Dissolve.*
-
-### Spherical
-
-In `Spherical` mode, the center point determines where the Dissolve will animate from. [Scroll to Advanced Spherical Settings](#spherical-1)
-
-<ReactVideo src='/vid/special-fx/Dissolve_Mode_Spherical.mp4'/>
-
-*Example of Spherical Dissolve with a larger Radius set.*
-
-### CenterOut
-
-In `CenterOut` mode, Dissolve is animated determined by the Camera's angle. [Scroll to Advanced CenterOut Settings](#centerout-1)
-
-<ReactVideo src='/vid/special-fx/Dissolve_Mode_CenterOut.mp4'/>
-
-*Example of CenterOut Dissolve set to View Direction.*
-
-## Edge
-
-<ReactVideo src='/vid/special-fx/Dissolve_EdgeSetting.mp4'/>
-
-*Demonstration of the Edge Settings.*
-
-### Edge Width
-
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 0.5`
-	- Conditional: Requires [Dissolve Type](#dissolve-type) set to `Basic` or `CenterOut`
-
-Defines the range over which the edge effects apply. The larger this is, the more area the edge will cover during the dissolve. Combines with Dissolve Noise and its associated[Dissolve Detail Strength to produce the final edge.
-
-<!-- ![Dissolve Edge Width 0 -> 0.25 -> 0.5]() -->
-
-### Edge Hardness
-
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
-
-Defines how sharply to transition from no edge to edge. At `0`, the material will  smoothly [lerp](https://docs.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-lerp) between the base color and the edge. At `1`, the material will sharply transition between the base color and the edge color.
-
-### Edge Color
-
-- `Type`: <PropertyIcon name="color" />**Color**
-
-Defines the color used for the edge. Blended multiplicative with the Edge Gradient.
-
-### Edge Gradient
-
-- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = Off`)
-
-Defines a Gradient used for the edge color. This will apply across the range of the edge.
-
-This slot also supports the Thry Gradient Editor.
-
-### Edge Emission
-
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 20.0`
-
-Defines how much Emission the Edge should produce. Values above 1 generally produce a glow in worlds with bloom.
-
-## Dissolved
-
-### Dissolved Color
-
-- `Type`: <PropertyIcon name="color" />**Color**
-
-A color tint blended multiplicative with the dissolved texture.
-
-:::tip
-If you set the Alpha channel of this color to `A = 0`, the Dissolve can transition from the base color to Transparency.
-
-**Keep in mind this only works if you set your [Rendering Preset](/general/render-preset.md) to Cutout or a Transparent Preset.**
-:::
-
-<ReactVideo src='/vid/special-fx/Dissolve_DissolvedColor.mp4'/>
-
-*Example of changing the Dissolved Color settings using a TransClipping Rendering Preset.*
-
-### Dissolved Texture
-
-- `Type`: <PropertyIcon name="texture" />**Color** Texture (`sRGB = On`)
-
-The Texture to Dissolve to. If not defined, the Base Color will be used instead.
-
-### Dissolved Emission Strength
-
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 20.0`
-
-An Emission multiplier for the Dissolved state. Will use the Dissolved texture if defined, otherwise it will use the existing Base Color.
-
-## Transition
-
-### Dissolve Gradient
-
-- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = Off`)
-	- Conditional: Requires [Dissolve Type](#dissolve-type) set to `Basic`
-
-A linear gradient map that defines the Dissolve Map. This tells the Shader the direction of the Dissolve on the UV when using a Basic Dissolve.
-
-### Dissolve Noise
-
-- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = Off`)
-
-A black and white (single channel) map that adds a modifier to the dissolve edge. The intensity is controlled by **Dissolve Detail Strength**. You can use a noise texture to create a more detailed edge, or use a pattern for a specific effect.
-
-:::tip
-You can find example Noise Textures, such as the one shown in the video below, included in the Package by navigating to the folder `_PoiyomiShaders/Textures/Noise`.
-:::
-
-<ReactVideo src='/vid/special-fx/Dissolve_Noise.mp4'/>
-
-*Demonstration of using a Noise Texture for the Dissolve.*
-
-### Detail Noise Smoothing
-
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
-
-Determines the smoothing of the Noise Texture, if provided.
-
-### Dissolve Detail Strength
-
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
-
-Controls how much the dissolve detail strength influences the edge. At high values, this may lead to "flashing" as the dissolve transitions in and out.
-
-<ReactVideo src='/vid/special-fx/Dissolve_DetailStrength.mp4'/>
-
-*Demonstration of adjusting the Detail Strength of the Noise.*
-
-### Dissolve Alpha
+## Dissolve Alpha
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
@@ -170,43 +27,374 @@ Defines the main state of the Dissolve effect. `0.0` is the initial state, while
 Animate this property to control the Dissolve state at runtime.
 :::
 
-### Dissolve Mask
+## Softness
 
-- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = Off`)
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
-A black and white (single channel) mask that controls where to apply the dissolve. Black will have no effect, while white will have 100% of the effect. Values in between will vary the strength of the dissolve effect.
+This slider will soften the Dissolve Alpha to a certain extent, which can have a slight "blur" effect.
 
-### Global Mask
+## Debug Gradient
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
 
-Select which [Global Mask](/modifiers/global-masks.md) to use as the Dissolve Mask instead.
+If enabled, will override the Dissolve with a gradient and draws a line that shows you the exact position of the Dissolve Alpha's value during the animation. Use this to help debug positioning errors, if any.
 
-### Dissolved to Global Mask
+## Gradient Options (Basic)
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+<ReactVideo src='/vid/special-fx/DissolveV10_BasicGradient.webm'/>
+<em>Basic Gradient Dissolve, which uses a linear gradient texture. Notice the seams due to poor UVs on this object.</em>
 
-This allows you to select which [Global Mask](/modifiers/global-masks.md) to affect when it is fully Dissolved.
+### Dissolve Gradient
 
-### Undissolved to Global Mask
+- `Type`: <PropertyIcon name="texture" />**Linear** Texture (`sRGB = Off`)
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+Select a Linear gradient to use for the `Basic` Dissolve effect.
 
-This allows you to select which [Global Mask](/modifiers/global-masks.md) to affect when it is NOT Dissolved whatsoever.
+## Point to Point Options
 
-### VertexColor Mask
+<ReactVideo src='/vid/special-fx/DissolveV10_PointToPoint.webm'/>
+<em>Point to Point dissolve effect, which transitions between a defined Local/World position on the X, Y, and Z axis. In this case, from bottom to top.</em>
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`Red`/`Green`/`Blue`/`Alpha`
+### Space
 
-Uses the selected channel of the mesh's vertex colors to mask the dissolve effect.
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Local`/`World`/`Vertex Colors`/`UV`
 
-### Continuous Dissolve Speed
+Sets which coordinate basis to use for Point to Point Dissolve.
+
+### UV
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `UV0`/`UV1`/`UV2`/`UV3`
+  - Conditional: Requires [Space](#space) set to `UV`.
+
+Sets which UV to use for Point to Point, if your model has a UV for the Dissolve to follow.
+
+### Start Point
+
+- `Type`: <PropertyIcon name="float3" />**Float3**
+  - Default: `X = 0`, `Y = -1`, `Z = 0`
+
+The 3D Point to start the dissolve at. For avatars, this should be set far enough away that changes in skinning (sticking arms/legs out) don't cause the dissolve to unintentionally trigger.
+
+### End Point
+
+- `Type`: <PropertyIcon name="float3" />**Float3**
+  - Default: `X = 0`, `Y = 1`, `Z = 0`
+
+The 3D Point to end the dissolve at. For avatars, this should be set far enough away that changes in skinning (sticking arms/legs out) don't cause the dissolve to unintentionally trigger.
+
+## Spherical
+
+<ReactVideo src='/vid/special-fx/DissolveV10_Spherical.webm'/>
+<em>Spherical dissolve effect, which uses a theoretical sphere as it's pivot for the transition.</em>
+
+### Center Point
+
+- `Type`: <PropertyIcon name="float3" />**Float3**
+  - Default: `X = 0`, `Y = 0`, `Z = 0`
+
+The 3D Point to start the Spherical Dissolve at. By default, this will be the direct-center of the Root Transform.
+
+### Radius
 
 - `Type`: <PropertyIcon name="float" />**Float**
 
-Constantly shifts the dissolve up and down in a sine wave pattern. `0` disables the continuous shift.
+Determines the size of the Spherical Dissolve.
 
-At a value of 1, the dissolve will complete a full cycle (from `0` to `1` to `0`) in about 2 minutes (125.7 seconds). 
+### Invert
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+
+Inverts the Spherical Dissolve to implode instead of expand from the center.
+
+## Center Out
+
+<ReactVideo src='/vid/special-fx/DissolveV10_CenterOut.webm'/>
+<em>Center Out dissolve effect, which uses the Camera to transition from the center of the screen.</em>
+
+### Mode
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `View Direction`/`Custom Direction`/`Light Direction`
+  - Default: `View Direction`
+
+Sets how the Dissolve will behave with Center Out.
+
+- `View Direction`: Will use the Camera's POV to determine the Center Out direction.
+- `Custom Direction`: Defines a custom direction to use for the Center Out.
+- `Light Direction`: Uses the direction of Light to use as the Center Out direction.
+
+### Direction
+
+- `Type`: <PropertyIcon name="float3" />**Float3**
+  - Conditional: Requires [Mode](#mode) set to `Custom Direction`
+
+Chooses the Custom Direction of the Center Out on the Local X, Y, and Z axis.
+
+### Invert
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+
+Inverts the direction of the Center Out to implode instead of expand for the Dissolve.
+
+### Pixel Normals
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+
+Uses the Pixel Normals on the Dissolve.
+
+### Linear
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+
+If enabled, will Dissolve Center Out linearly.
+
+## Dissolved
+
+This area controls the overall behavior of the fully dissolved effect.
+
+### Alpha Only
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+
+If enabled, this will change the properties that are shown below. `Alpha Only` will assume priority over the Alpha rather than the Dissolve Color or Texture when fully Dissolved.
+
+### Color
+
+- `Type`: <PropertyIcon name="color" />**Color**
+  - Conditional: Requires [Alpha Only](#alpha-only) to be disabled.
+
+Sets the Color to use on the fully dissolved area.
+
+### Texture
+
+- `Type`: <PropertyIcon name="texture" />**Color** Texture (`sRGB = On`)
+  - Conditional: Requires [Alpha Only](#alpha-only) to be disabled.
+
+Sets a Texture to use on the fully dissolved area.
+
+If left empty, Dissolved [Color](#color) will be used.
+
+### Emission
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 20.0`
+  - Conditional: Requires [Alpha Only](#alpha-only) to be disabled.
+
+### Hue Shift
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+  - Conditional: Requires [Alpha Only](#alpha-only) to be disabled.
+
+Enables/Disables hue shifting features for dissolved color. Unlike most sections, this toggle can be animated.
+
+### Color Space
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `OKLab`/`HSV`
+  - Conditional: Requires [Hue Shift](#hue-shift) to be enabled.
+
+Choice of Color Space to use for the Hue Shift. By default, it will be set to OKLab.
+
+Learn about the difference of Color Spaces as documented in [Color Adjust](/docs/color-and-normals/color-adjust.md#color-space).
+
+### Mode
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Hue Select`/`Hue Shift`
+  - Default: `Hue Shift`
+  - Conditional: Requires [Hue Shift](#hue-shift) to be enabled.
+
+### Shift
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+  - Conditional: Requires [Hue Shift](#hue-shift) to be enabled.
+
+Fixed amount to shift the hue for the dissolved state only.
+
+### Speed
+
+- `Type`: <PropertyIcon name="float" />**Float**
+  - Conditional: Requires [Hue Shift](#hue-shift) to be enabled.
+
+Speed of the hue shift cycling for the dissolved state only. For reference, a speed of 1 corresponds to a full cycle of the hue shift every 20 seconds.
+
+### Alpha Ramp
+
+- `Type`: <PropertyIcon name="vectorcurve" />**Vector Curve**
+  - Default: `X = 1`, `Y = 0`, `Z = 0`, `W = 1`
+  - Conditional: Requires [Alpha Only](#alpha-only) to be enabled.
+
+Vector curve ramp that can optionally fine tune the Alpha on the fully dissolved effect.
+
+## Gradient Noise
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+
+Enables the Noise modifier to the dissolve edge. The intensity is controlled by the Strength in this area. You can use a noise texture to create a more detailed edge, or use a pattern for a specific effect.
+
+<ReactVideo src='/vid/special-fx/DissolveV10_Noise.webm'/>
+<em>Using a noise texture (example here being a square grid) to use a pattern with the edge of the transition.</em>
+
+### Mode
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Texture`/`3D Dot Noise`
+
+Choice of which source to use for the Gradient Noise. By default, a Texture noise is required for the effect.
+
+- `Texture`: Uses a noise texture map to use for the effect.
+- `3D Dot Noise`: Generates a grid to use for the effect.
+
+### Scale
+
+- `Type`: <PropertyIcon name="vector3" />**Vector**
+  - Conditional: Requires Gradient Noise [Mode](#mode-2) set to `3D Dot Noise`
+
+Adjusts the overall scale of the generated 3D Dot Noise.
+
+### Offset
+
+- `Type`: <PropertyIcon name="vector3" />**Vector**
+  - Conditional: Requires Gradient Noise [Mode](#mode-2) set to `3D Dot Noise`
+
+Configures a pivot offset of the generated 3D Dot Noise.
+
+### Speed
+
+- `Type`: <PropertyIcon name="vector3" />**Vector**
+  - Conditional: Requires Gradient Noise [Mode](#mode-2) set to `3D Dot Noise`
+
+Sets a continuously-animated speed value of the 3D Dot Noise.
+
+### Strength
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+
+Controls how much the dissolve detail strength influences the edge. At high values, this may lead to "flashing" as the dissolve transitions in and out.
+
+### Edge Only
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+
+Controls how much the Gradient Noise should only affect the Edge of the dissolve.
+
+## Edge Line
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+
+Enables options to configure a custom colored edge to be used for the effect.
+
+<ReactVideo src='/vid/special-fx/DissolveV10_EdgeLine.webm'/>
+<em>Demonstration of a basic Edge Line using two colors. This can also be blended with the Gradient Noise.</em>
+
+### Color 1
+
+- `Type`: <PropertyIcon name="color" />**Color**
+
+Configures the primary color to use for the Edge Line.
+
+### Gradient
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+
+If enabled, exposes additional properties that allows the dissolve edge to have a colored gradient. This will apply across the range of the edge.
+
+### Color 2
+
+- `Type`: <PropertyIcon name="color" />**Color**
+  - Conditional: Requires [Gradient](#gradient) to be enabled
+
+Configures the first gradient color to use for the Edge Line.
+
+### Color 3
+
+- `Type`: <PropertyIcon name="color" />**Color**
+  - Conditional: Requires [Gradient](#gradient) to be enabled
+
+Configures the second gradient color to use for the Edge Line.
+
+### Border 1
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+  - Conditional: Requires [Gradient](#gradient) to be enabled
+
+Sets the location and intensity of the edge borders for the primary gradient.
+
+### Border 2
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+  - Conditional: Requires [Gradient](#gradient) to be enabled
+
+Sets the location and intensity of the edge borders for the secondary gradient.
+
+### Blur 1
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+  - Conditional: Requires [Gradient](#gradient) to be enabled
+
+Blurs the edge of the primary gradient.
+
+### Blur 2
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+  - Conditional: Requires [Gradient](#gradient) to be enabled
+
+Blurs the edge of the secondary gradient.
+
+### Width
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 0.5`
+
+Configures how wide the edge should appear.
+
+### Emission
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 20.0`
+
+Applies how much Emission the Edge should produce. Values above 1 generally produce a glow in worlds with bloom.
+
+### Flip Side
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+
+This checkbox, if enabled, will essentially "flip" the edge line.
+
+## Wave Mode
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+
+Enables the ability to have the dissolved effect be bilaterial from the center of the dissolve gradient.
+
+<ReactVideo src='/vid/special-fx/DissolveV10_Wave.webm'/>
+<em>Basic Wave Mode enabled with a Gradient Noise being used.</em>
+
+### Wave Width
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+
+Sets the total visible width of the wave.
+
+### Wave Bounds
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Edge`/`Center`/`Loop`
+
+Sets the boundaries that the wave should only affect.
+
+## Continuous Dissolve
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+
+If enabled, will continuously animate the dissolve up and down in a wave shape pattern defined below.
+
+<ReactVideo src='/vid/special-fx/DissolveV10_SineContinuous.webm'/>
+<em>Example of a Continuous Dissolve being animated in a Sine wave pattern. This is also shown with Wave Mode enabled.</em>
+
+### Wave Shape
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Sine`/`Triangle`/`Sawtooth`/`Square`
+
+Sets the source wave effect for what the continuous dissolve should use in the animation.
+
+### Speed
+
+- `Type`: <PropertyIcon name="float" />**Float**
+
+Sets the speed of the dissolve. At a value of 1, the dissolve will complete a full cycle (from `0` to `1` to `0`) in about 2 minutes (125.7 seconds). 
 
 | Speed | Cycle Time (s)[^1] |
 |--|--|
@@ -215,6 +403,113 @@ At a value of 1, the dissolve will complete a full cycle (from `0` to `1` to `0`
 | 10  |  12.6 |
 | 20  |   6.3 |
 | 50  |   2.5 |
+
+### Range
+
+- `Type`: <PropertyIcon name="multislider" />**Multislider**, Range: `0.0 - 1.0`
+
+Sets the clamped range for the continuous dissolve animation.
+
+### Phase
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+
+Sets which phase from the Wave Shape it should use.
+
+### Blend
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Replace`/`Add`/`Multiply`
+
+Configures which blending modifier the Continuous Dissolve should use.
+
+## Vertex Height
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+
+Enables the ability to manipulate the vertices of the mesh with the dissolve.
+
+<ReactVideo src='/vid/special-fx/DissolveV10_VertexHeight.webm'/>
+<em>Basic (somewhat ugly) demonstration of Vertex Height being used with a Gradient Noise.</em>
+
+### Height
+
+- `Type`: <PropertyIcon name="float" />**Float**
+
+Sets how far the vertices should be moved with the dissolve.
+
+### Offset
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
+
+Fixes an offset of the Vertex Height.
+
+### Easing
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Smoothstep`/`Linear`/`Ease Out`/`Ease In`
+
+Sets how the vertex height transition should ease in/out.
+
+### Direction
+
+- `Type`: <PropertyIcon name="float3" />**Vector**
+
+Sets a direction on the X, Y, and Z axis that the Vertex Height should travel.
+
+### Direction Space
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Local`/`World`
+
+Which axis to use for the Direction, which can be either Local or World.
+
+### Direction Blend
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+
+How much to blend with the Direction.
+
+### Dot Mask
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+
+Sets how much Dot Mask to use.
+
+### Continue Past Peak
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+
+If enabled, the Vertex Height will continue to "inflate" past the set height after it's been dissolved.
+
+## Masking
+
+### Mask
+
+- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = Off`)
+
+A black and white (single channel) mask that controls where to apply the dissolve. Black will have no effect, while white will have 100% of the effect. Values in between will vary the strength of the dissolve effect.
+
+### Vertex Color
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`Red`/`Green`/`Blue`/`Alpha`
+
+Uses the selected channel of the mesh's vertex colors to mask the dissolve effect.
+
+### Global Mask
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+
+Select which [Global Mask](/modifiers/global-masks.md) to use as the Dissolve Mask instead.
+
+### Output Dissolved
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+
+This allows you to select which [Global Mask](/modifiers/global-masks.md) to affect when it is fully dissolved.
+
+### Output Undissolved
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+
+This allows you to select which [Global Mask](/modifiers/global-masks.md) to affect when it is NOT dissolved.
 
 ## Audio Link
 
@@ -226,245 +521,68 @@ Enables Audio Link to control Dissolve.
 The settings in this section will only be visible when [Audio Link](/audio-link/audio-link.md) is activated on the Material.
 :::
 
-### Dissolve Alpha Band
+### Alpha Band
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
 
-Selection for which audio Band should control the Dissolve Alpha Mod.
+Selection for which audio band should control the Dissolve's Alpha Mod.
 
-### Dissolve Alpha Mod
+### Alpha Mod
 
-- `Type`: <PropertyIcon name="float2" />**Vector2**
+- `Type`: <PropertyIcon name="float2" />**Vector**
+
+Set the Min and Max values to apply when the audio band is audible or not.
 
 | Channel | Function |
 | --- | --- |
 | Min | Amount Added or Subtracted from the Dissolve Alpha with no audio |
 | Max | Amount Added or Subtracted from the Dissolve Alpha with max audio |
 
-### Dissolve Detail Band
+### Detail Band
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
 
-Selection for which audio Band should control the Dissolve Detail Strength.
+Selection for which audio band should control the Dissolve's Detail Strength.
 
-### Dissolve Detail Mod
+### Detail Mod
 
-- `Type`: <PropertyIcon name="float2" />**Vector2**
+- `Type`: <PropertyIcon name="float2" />**Vector**
 
 | Channel | Function |
 | --- | --- |
 | Min | Amount Added or Subtracted from the Dissolve Detail Strength with no audio |
 | Max | Amount Added or Subtracted from the Dissolve Detail Strength with max audio |
 
-## Advanced Dissolve Settings
+### Alpha Chrono Motion Type
 
-:::info
-The following properties below will only be exposed dependent on which [Dissolve Mode](#dissolve-type) you choose.
-:::
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**
 
-### Point2Point
-
-#### World/Local
-
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Local`/`World`/`Vertex Colors`
-
-Whether to use **World** coordinates (absolute) or **Local** coordinates (relative to the object), or to use **Vertex Colors** for position. 
-
-This should generally be set to **Local** for avatar usage unless specific effects utilizing world position are desired, as worlds can have areas that are in any position in world space.
-
-**Vertex Colors** can be baked to the mesh to set the position of the dissolve. This means the dissolve will always proceed correctly for any mesh, regardless of the mesh's pose or position.
-
-#### Edge Length
-
-- `Type`: <PropertyIcon name="float" />**Float**
-
-Length of the edge in Point-to-Point space. This is an absolute length (in meters) and does not scale with the object or the start/end points.
-
-#### Start Point
-
-- `Type`: <PropertyIcon name="float3" />**Float3**
-    - Default: `X = 0`, `Y = -1`, `Z = 0`
-
-The 3D Point to start the dissolve at. For avatars, this should be set far enough away that changes in skinning (sticking arms/legs out) don't cause the dissolve to unintentionally trigger.
-
-#### End Point
-
-- `Type`: <PropertyIcon name="float3" />**Float3**
-    - Default: `X = 0`, `Y = 1`, `Z = 0`
-
-The 3D Point to end the dissolve at. For avatars, this should be set far enough away that changes in skinning (sticking arms/legs out) don't cause the dissolve to unintentionally trigger.
-
-#### Clamp Dissolve
-
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
-
-If set to True, this ensures that the whole material is clamped to the set value. This means if the dissolve Alpha is at `1` or `0`, they will never be partially dissolved or partially visible. This can fix issues where portions of your Material have visibility issues at certain poses with those values.
-
-:::tip 
-It may be beneficial to enable Clamp Dissolve if you change your Avatar's Scale frequently in VRChat, as it will help prevent Dissolves from partially working as intended at various heights or scales. 
-:::
-
-<ReactVideo src='/vid/special-fx/Dissolve_Clamp.mp4'/>
-
-*Difference between the Off and On states of Clamp Dissolve.*
-
-### Spherical
-
-#### Center Point
-
-- `Type`: <PropertyIcon name="float3" />**Float3**
-    - Default: `X = 0`, `Y = 0`, `Z = 0`
-
-The 3D Point to start the Spherical Dissolve at. By default, this will be the direct-center of the Root Transform.
-
-#### Radius
-
-- `Type`: <PropertyIcon name="float" />**Float**
-
-Determines the size of the Spherical Dissolve.
-
-#### Invert
-
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
-
-Inverts the Spherical Dissolve to implode instead of expand from the center.
-
-#### Clamp Dissolve
-
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
-
-If set to True, this ensures that the whole material is clamped to the set value. This means if the dissolve Alpha is at `1` or `0`, they will never be partially dissolved or partially visible. This can fix issues where portions of your Material have visibility issues at certain poses with those values.
-
-:::tip 
-It may be beneficial to enable Clamp Dissolve if you change your Avatar's Scale frequently in VRChat, as it will help prevent Dissolves from partially working as intended at various heights or scales. 
-:::
-
-### CenterOut
-
-#### CenterOut Mode
-
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `View Direction`/`Custom Direction`/`Light Direction`
-
-Determines how the Dissolve will behave with CenterOut.
-
-##### View Direction
-
-Default. Will use the Camera's POV to determine the CenterOut direction.
-
-##### Custom Direction
-
-Defines a custom direction to use for the CenterOut.
-
-##### Light Direction
-
-Uses the direction of Light to use as the CenterOut direction.
-
-#### Custom Direction Value
-
-- `Type`: <PropertyIcon name="float3" />**Float3**
-	- Conditional: Requires [CenterOut Mode](#centerout-mode) set to `Custom Direction`
-
-Chooses the Custom Direction of the CenterOut on the Local X, Y, and Z axis.
-
-#### Invert
-
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
-
-Inverts the direction of the CenterOut to implode instead of expand for the Dissolve.
-
-#### Use Pixel Normal
-
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
-
-Uses the Pixel Normals on the Dissolve.
-
-#### Power
-
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.1 - 5.0`
-
-Determines the power factor of the CenterOut Dissolve.
-
-## Hue Shift
-
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
-
-Enables/Disables hue shifting features for dissolve. Unlike most sections, this Toggle can be animated.
-
-### Color Space
-
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `OKLab`/`HSV`
-
-Choice of Color Space to use for the Hue Shift. By default, it will be set to `OKLab`.
-
-Learn about the difference of Color Spaces as documented here in [Color Adjust](/color-and-normals/color-adjust.md#oklab-vs-hsv).
-
-### Select or Shift
-
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Hue Select`/`Hue Shift`
-  - Default: `Hue Shift`
-
-This dropdown allows you to select how the Color Adjustment should behave when the Hue Shift is used. By default, this will be set to `Hue Shift`.
+Which motion type to use for the Chrono Alpha. Chronotensity is an Audio Link feature that allows time-dependent features, which shaders alone cannot do. In this case, chronotensity is used to create a time-dependent rotation of the Dissolve Alpha.
 
 <details>
-<summary><b>Select or Shift Options</b></summary>
+<summary><b>Alpha Chrono Motion Options</b></summary>
 
-- `Hue Select`: Directly applies the selected Hue as an override to the entire Dissolve.
-- `Hue Shift`: Only tints the Dissolve based on the lerped value. This is the default behavior.
+- Motion Increases as intensity of the band increases
+- Above but Smooth
+- Motion moves back and forth as a function of intensity
+- Above but Smoooth
+- Fixed Speed Increase when the band is dark Stationary when light
+- Above but Smooooth
+- Fixed Speed Increase when the band is dark Fixed speed decrease when light
 
 </details>
 
-### Dissolved Speed
+### Alpha Chrono Band
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+
+Which band to use for the Chrono Motion.
+
+### Alpha Chrono Speed
 
 - `Type`: <PropertyIcon name="float" />**Float**
 
-Speed of the hue shift cycling for the dissolved state only. A speed of 1 corresponds to a full cycle of the hue shift every 20 seconds.
-
-### Dissolved Shift
-
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
-
-Fixed amount to shift the hue for the dissolved state only.
-
-### Edge Enabled
-
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
-
-Enables or disables hue shifting of the the dissolve edge color.
-
-### Edge Color Space
-
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `OKLab`/`HSV`
-
-Choice of Color Space to use for the Hue Shift. By default, it will be set to `OKLab`.
-
-Learn about the difference of Color Spaces as documented here in [Color Adjust](/color-and-normals/color-adjust.md#oklab-vs-hsv).
-
-### Edge Select or Shift
-
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Hue Select`/`Hue Shift`
-  - Default: `Hue Shift`
-
-This dropdown allows you to select how the Color Adjustment should behave when the Hue Shift is used. By default, this will be set to `Hue Shift`.
-
-<details>
-<summary><b>Select or Shift Options</b></summary>
-
-- `Hue Select`: Directly applies the selected Hue as an override to the entire Edge.
-- `Hue Shift`: Only tints the Edge based on the lerped value. This is the default behavior.
-
-</details>
-
-### Edge Speed
-
-- `Type`: <PropertyIcon name="float" />**Float**
-
-Speed of the hue shift cycling for the edge. A speed of 1 corresponds to a full cycle of the hue shift every 20 seconds.
-
-### Edge Shift
-
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
-
-Fixed amount to shift the hue for the edge color only.
+Sets the speed and intensity of the Chrono Alpha.
 
 ## UV Tile Dissolve
 
@@ -474,44 +592,33 @@ Allows an alternative way to use UV Tile Discard with the use of Dissolve's effe
 
 If you prefer to use UV Tile Discard in a way that allows a sleek animation transition, this is the section to do it.
 
-:::info Refer to UV Tile Documentation
-All the sliders listed for each Row will reflect the same locations as described in [UV Tile Discard](/special-fx/uv-tile-discard.md). Please refer to the documentation page to see what they are.
+:::info Refer to UV Tile Discard Documentation
+All the sliders listed for each UDIM target will reflect the same locations as described in [UV Tile Discard](/special-fx/uv-tile-discard.md). Please refer to the documentation page to see what they are.
 
-Each Slider will control the [Dissolve Alpha](#dissolve-alpha) for the described Row and Column.
+Each Slider will independently treat it as a [Dissolve Alpha](#dissolve-alpha) for the described Column, with the addition of the target UDIM location being discarded at max value.
 :::
 
-### UV Tile UV
+### UV
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `UV0`/`UV1`/`UV2`/`UV3`
 
 Choice of which UV to use for the Tile Dissolve.
 
-### Discard Tiles At Max
+### Discard at Max
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
-    - Default: `On`
+  - Default: `On`
 
-Enforces the Dissolve Tiles to be discarded once a UV Tile Dissolve reaches `1` on the slider.
+Enforces the Dissolve Tiles to be discarded once a UV Tile Dissolve reaches `1` on the slider. This is recommended to keep enabled for the most common setups.
 
-### Row X Column Y
+### Row X
+
+#### Col Y
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
 
-This property will appear for each Row and Column for UV Tile Dissolve. Below is a table reference matching the same positions as described in [UV Tile Discard](/special-fx/uv-tile-discard.md), named to each field shown in UV Tile Dissolve.
+This property will appear for each Column for UV Tile Dissolve.
 
-|  | Column 0 | Column 1 | Column 2 | Column 3 |
-| :---: | :---: | :---: | :---: | :---: |
-| **Row 3** | `Row 3, Column 0` | `Row 3, Column 1` | `Row 3, Column 2` | `Row 3, Column 3` |
-| **Row 2** | `Row 2, Column 0` | `Row 2, Column 1` | `Row 2, Column 2` | `Row 2, Column 3` |
-| **Row 1** | `Row 1, Column 0` | `Row 1, Column 1` | `Row 1, Column 2` | `Row 1, Column 3` |
-| **Row 0** | `Row 0, Column 0` | `Row 0, Column 1` | `Row 0, Column 2` | `Row 0, Column 3` |
+Refer to the table reference matching the same positions as described in [UV Tile Discard](/special-fx/uv-tile-discard.md) for the UDIM targets these control.
 
-## Locked In Anim Sliders
-
-These sliders can be independently marked as animated, and all function the same way as **Dissolve Alpha**. This is useful for situations where you want to animate a dissolve on one material but not another on the same renderer.
-
-The functionality of Locked In Anim Sliders is somewhat shared with the **Rename Animated** functionality, where each material can be locked in with its own unique property name. 
-
-However, Locked in anim sliders may still have some use in overriding the state of the main dissolve. For example, you could have multiple materials on a renderer all with their own dissolves controlled independently, but if they all have the same locked in anim slider unlocked, that locked in anim slider can be used to dissolve all materials at the same time. 
-
-[^1]: Exact Equation: `cycle time (s) = (2*pi * 20)/(speed)` where speed is the Continuous Dissolve Speed
+[^1]: Exact Equation: $cycle time (s) = (2*pi * 20)/(speed)$ where speed is the Continuous Dissolve Speed

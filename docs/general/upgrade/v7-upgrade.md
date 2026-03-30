@@ -82,7 +82,7 @@ However, in V8.x versions, Outlines were moved to their own versions such as `.p
 
 ### Dissolve
 
-"Dissolve Noise" was renamed to [Dissolve Gradient](/special-fx/dissolve.md#dissolve-gradient), and "Dissolve Detail Noise" was renamed to [Dissolve Noise](/special-fx/dissolve.md#dissolve-noise). This better reflects their functionality
+"Dissolve Noise" was renamed to Dissolve Gradient, and "Dissolve Detail Noise" was renamed to Dissolve Noise. This better reflects their functionality
 
 If you only have one dissolve map, it should be put in the `Dissolve Gradient` slot.
 
