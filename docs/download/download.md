@@ -225,16 +225,17 @@ To see the different features offered between the Free vs. Pro version, refer to
 | **Pro Features** | | | | | | |
 | [Screen Space Ambient Occlusion](/shading/ssao.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | [Geometric Dissolve](/extended-features/geometric-dissolve.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
-| [Fur and World Fur](/extended-features/fur.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| [Poiyomi Fur and World Fur](/extended-features/fur.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | [Shatterwave](/extended-features/shatterwave.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | [Tessellated](/extended-features/tessellated.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | Tessellated Geometric | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | [Particles](/extended-features/particle.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | [Constellation](/special-fx/constellation.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
-| Bent Normal Maps | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| [Bent Normal Maps](/color-and-normals/bent-normal-map.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | Contact Shadows | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
-| Squish | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
-| Triplanar Projection | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| [Squish](/special-fx/squish.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| [Triplanar Projection](/special-fx/triplanar-projection.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| [GT7 Tone Mapping](/modifiers/post-processing/gt7.md) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | Custom Modules | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | Wireframe | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | NameTag | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
