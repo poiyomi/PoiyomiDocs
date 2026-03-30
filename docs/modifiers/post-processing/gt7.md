@@ -7,6 +7,11 @@ keywords: [post, processing, postprocessing, advanced, look, gt7, gran turismo 7
 
 This section enables usage of **Gran Turismo 7** tone mapping in the Material, which acts as a perceptual bridge between the colors in the real world and what a computer display can show.
 
+<!-- POIYOMI PRO LABEL -->
+<a target="_blank" href="https://www.patreon.com/poiyomi">
+<img src="/img/Poiyomi-Pro-Label.png" alt="Pro Feature" width="600px"/>
+</a>
+
 The key distinction between the camera and the human eye is the camera's linear, uniform adjustment to brightness. However, human vision uses a complex, non-linear process called adaptation. Humans perceive relative contrast more so than absolute brightness, allowing us to see details in a wide range of conditions.
 
 In GT7 Tone Mapping, it uses a color volume mapping operator that processes brightness and color information together than on separate R, G, and B channels. This involves a blending process where an initial image is processed on a per-channel curve, with a second color-accurate digital image converted to a Uniform Color Space (UCS), separating brightness (luma) from the color (chroma), thus allowing brightness adjustments without distorting the original hue. Finally, the two versions are blended together to produce the final result. This blended approach is designed to maintain color fidelity for important elements while allowing for a controlled, natural-looking result in highlights. [^1] [^2]
