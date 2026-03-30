@@ -155,12 +155,16 @@ We primarily offer the Poiyomi Pro version as a Unity Package and can be downloa
 
 To access these versions, follow the instructions below.
 
+:::danger
+**It is extremely important that you delete any existing version of Poiyomi Shaders from your project before attempting to install Poiyomi Pro!** Failure to do so will cause serious errors!
+:::
+
 1. Login to [pro.poiyomi.com <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://pro.poiyomi.com/) and follow the instructions to authenticate with your Patreon Account.
    - *If you don't see the pop-up Patreon Login window, check with your Browser to see if a pop-up window was blocked.*
 2. If successful, you can then immediately download the latest version of the Pro shader by going to the Downloads page.
 3. You may now proceed with **Step 2** of installing Poiyomi Shaders as described above in [Method 2.](#method-2-manual-unity-package).
 
-:::danger Notice on official channels
+:::warning Notice on official channels
 **For security reasons, distribution of our newest Poiyomi Pro Unity Packages through Discord is being discontinued!** Poiyomi Pro versions will only be offered through <u>pro.poiyomi.com</u> or through <u>our VCC Package</u> and will never be distributed anywhere else!
 
 If your subscription lapses, you may keep a copy of the last Unity Package you downloaded somewhere safe on your computer.
