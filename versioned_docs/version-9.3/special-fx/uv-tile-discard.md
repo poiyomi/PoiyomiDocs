@@ -7,7 +7,7 @@ keywords: [uv, uv tile discard, uv tile, uv toggle, special fx, effect, poiyomi,
 
 UV Tile Discard (previously known as UDIM Discard) provides an efficient way to toggle portions of a model on and off at runtime. This is done by placing portions of the model on different UV Tiles, and then discarding specific tiles at runtime.
 
-Traditionally, UDIMs are used to create a grid of tiles, with specific textures placed on different tiles. UV Tile Discard simply uses the concept of UV tiles, not doing anything with any textures. You can learn more about UV Tiles and UDIMs from [Foundry Learn](https://learn.foundry.com/modo/901/content/help/pages/uving/udim_workflow.html).
+Traditionally, UDIMs are used to create a grid of tiles, with specific textures placed on different tiles. UV Tile Discard simply uses the concept of UV tiles, not doing anything with any textures. You can learn more about UV Tiles and UDIMs from [Foundry Learn <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://learn.foundry.com/modo/901/content/help/pages/uving/udim_workflow.html).
 
 :::warning Known Issues with Screen-Space AO
 UV Tile Discard can have some side-effects in Worlds that use a heavy amount of Screen-Space AO Post Processing. If a Tile is discarded in a World with this, heavy shadows will be visible around the discarded area.
@@ -47,6 +47,12 @@ When a box is checked, that tile is discarded. When animating these Toggle check
 | **Row 2** | `0,2` | `1,2` | `2,2` | `3,2` |
 | **Row 1** | `0,1` | `1,1` | `2,1` | `3,1` |
 | **Row 0** | `0,0` | `1,0` | `2,0` | `3,0` |
+
+:::note Notice for third-party utilities
+Some third-party utilities such as VRCFury or Modular Avatar may sometimes fail to correctly find these material property names due to the way they are coded in the shader.
+
+To ensure you can use them, enter the material property names manually in their respective components. They are labeled with the pattern `_UDIMDiscardRowX_Y`, with `X` being the Row number, and `Y` being the Column number. *For example, Row 2 Column 3 will appear as `_UDIMDiscardRow2_3`.*
+:::
 
 ## Face Discard
 

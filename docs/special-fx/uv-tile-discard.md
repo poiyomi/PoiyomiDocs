@@ -5,14 +5,14 @@ description: UV Tile Discard provides an efficient way to toggle portions of a m
 keywords: [uv, uv tile discard, uv tile, uv toggle, special fx, effect, poiyomi, shader]
 ---
 
-UV Tile Discard (previously known as UDIM Discard) provides an efficient way to toggle portions of a model on and off at runtime. This is done by placing portions of the model on different UV Tiles, and then discarding specific tiles at runtime.
+UV Tile Discard (also referred to as UDIM-discarding) provides an efficient way to toggle portions of a model on and off at runtime. This is done by placing portions of the model on different UV Tiles and then discarding specific tiles at runtime.
 
-Traditionally, UDIMs are used to create a grid of tiles, with specific textures placed on different tiles. UV Tile Discard simply uses the concept of UV tiles, not doing anything with any textures. You can learn more about UV Tiles and UDIMs from [Foundry Learn](https://learn.foundry.com/modo/901/content/help/pages/uving/udim_workflow.html).
+Traditionally, UDIMs are used to create a grid of tiles with specific textures placed on different tiles. UV Tile Discard simply uses the same concept of UV tiles, but without modifying the textures in any way. You can learn more about UV Tiles and UDIMs from [Foundry Learn <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://learn.foundry.com/modo/901/content/help/pages/uving/udim_workflow.html).
 
 :::warning Known Issues with Screen-Space AO
-UV Tile Discard can have some side-effects in Worlds that use a heavy amount of Screen-Space AO Post Processing. If a Tile is discarded in a World with this, heavy shadows will be visible around the discarded area.
+UV Tile Discard can have some side-effects in Worlds that use a heavy amount of Screen-Space AO Post Processing. If a Tile is discarded in a World with this, heavy shadows and/or ghosting will be visible around the discarded area.
 
-Although many Worlds in VRChat do not utilize Screen-Space AO, a small percentage still do. Keep this in mind when using this feature.
+Please keep this in mind when using UV Tile Discard.
 :::
 
 ## Discard UV
@@ -25,28 +25,34 @@ Which UV to draw from for discarding. This can be the base UV or an alternative 
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Vertex (Faster)`/`Pixel (Slower)`
 
-Defines how the discarding is performed. Generally, this should be set to `Vertex` unless there is a good reason to use `Pixel`.
+Defines how the discarding is performed. Generally this should be set to `Vertex` which is most common among setups, unless there is a good reason to use `Pixel`.
 
-`Vertex` mode discards the vertices that are inside the discard UV by evicting the vertices (and any attached triangles) to an invalid position, causing the GPU to never run the fragment shader stage. This is faster than `Pixel` mode, but is not exact to UV tile edges.
+`Vertex` mode discards the vertices that are inside the discard UV by eviscerating the vertices (and any attached triangles) to an invalid position, causing the GPU to never run the fragment shader stage. This is faster than `Pixel` mode, but is not exact to UV tile edges.
 
-`Pixel` mode discards the pixels that are inside the discard UV by using the `clip` HLSL operation. This performs the discarding in the fragment shader, which is slower than `Vertex` mode, but is exact to UV tile edges.
+`Pixel` mode discards the pixels that are inside the discard UV by using the clip HLSL operation. This performs the discarding in the fragment shader, which is slower than `Vertex` mode, but is exact to UV tile edges.
 
 ## Discard Coordinates
 
 - `Type`: <PropertyIcon name="toggle" />**Toggles**
 
-Defines which UV tiles to discard. These are organized into 4 rows (`v`) of 4 tiles (`u`), defining a grid of 16 discard tiles. The bottom left is the origin, and the top right is the maximum. The bottom left tile (`0,0`) is where most UV mapping is performed.
+Defines which UV tiles to discard. These are organized into 4 rows of 4 tiles, defining a grid of 16 discard tiles. The bottom left is the origin, and the top right is the maximum. The bottom left tile (`0,0`) is where most UV mapping is performed.
 
-When a box is checked, that tile is discarded. When animating these Toggle checkboxes, each one is it's own independent property.
+When a button is clicked, that tile is discarded. When animating these Toggle buttons, each one is it's own independent material property.
 
 **Table Reference:**
 
-| Row | Column 0 | Column 1 | Column 2 | Column 3 |
+| UDIM | Column 0 | Column 1 | Column 2 | Column 3 |
 | :---: | :---: | :---: | :---: | :---: |
 | **Row 3** | `0,3` | `1,3` | `2,3` | `3,3` |
 | **Row 2** | `0,2` | `1,2` | `2,2` | `3,2` |
 | **Row 1** | `0,1` | `1,1` | `2,1` | `3,1` |
 | **Row 0** | `0,0` | `1,0` | `2,0` | `3,0` |
+
+:::note Notice for third-party utilities
+Some third-party utilities such as VRCFury or Modular Avatar may sometimes fail to correctly find these material property names, even though they are exposed in the shader's code.
+
+To ensure you can use them, enter the material property names manually in their respective components. They are labeled with the pattern `_UDIMDiscardRowX_Y`, with `X` being the Row number, and `Y` being the Column number. *For example, Row 2 Column 3 will appear as `_UDIMDiscardRow2_3`.*
+:::
 
 ## Face Discard
 
@@ -83,7 +89,7 @@ For an example of a correct setup using Blender, we can take an existing mesh, a
 
 <ReactVideo src='/vid/special-fx/uv-tile-discard_setup_blender1.mp4'/>
 
-While it's not strictly necessary, the `UDIM Grid` setting allows us to visualise our tiles. To change this setting your mesh has to be in `Edit Mode`. In blender 3.2 and later, this setting can be found in the overlays dropdown.
+While it's not strictly necessary, the `UDIM Grid` setting allows us to visualize our tiles. To change this setting your mesh has to be in `Edit Mode`. In Blender 3.2 and later, this setting can be found in the overlays dropdown.
 
 ![Overlays](/img/special-fx/uv-tile-discard_overlays.png)
 
