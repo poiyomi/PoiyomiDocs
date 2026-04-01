@@ -14,7 +14,7 @@
   --ifm-color-primary-light: #ff29ff;
   --ifm-color-primary-lighter: #ff3dff;
   --ifm-color-primary-lightest: #ff66ff;
-  --ifm-background-color: #ffffff;       /* lime green background */
+  --ifm-background-color: #00e061;       /* lime green background */
   --ifm-font-color-base: #ff4500;        /* orange-red text */
   --ifm-code-font-size: 93%;
 }
@@ -28,7 +28,7 @@
   --ifm-color-primary-light: #30c0e9;
   --ifm-color-primary-lighter: #3cc4eb;
   --ifm-color-primary-lightest: #5fceee;
-  --ifm-background-color: #004d01;       /* lime green background */
+  --ifm-background-color: #004d01;       /* green background */
   --ifm-font-color-base: #ff4500;  
 }
 
