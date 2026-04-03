@@ -6,7 +6,6 @@ hide_table_of_contents: true
 authors:
   bluwizard
 tags: [documentation, docs, version, versioning, updates]
-draft: true
 ---
 
 Hi, BluWizard here! As the maintainer of the Poiyomi Shaders Documentation, I would like to share some changes being made to the Documentation in preparation for 10.0.
