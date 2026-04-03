@@ -1,6 +1,6 @@
 razgriz:
   name: Razgriz
-  title: Poiyomi Docs Author
+  title: Original Docs Author
   url: https://github.com/rrazgriz
   image_url: https://github.com/rrazgriz.png
   page: true
@@ -21,7 +21,7 @@ poiyomi:
 
 bluwizard:
   name: BluWizard
-  title: Lead Poiyomi Docs Contributor
+  title: Lead Docs Author, Community Helper, Shader Contributor
   url: https://github.com/bluwizard10
   image_url: https://github.com/bluwizard10.png
   page: true
