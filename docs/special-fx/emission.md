@@ -89,7 +89,7 @@ If enabled, the base color of the mesh will be replaced with the emission color 
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
-This slider controls the "glow in the dark" factor of your Emissions. If set to `0` (default), your Emissions will glow normally. Although if set to `1`, the Emissions will only show in complete darkness.
+Controls how the Emission brightness appears in dark environments. Therefore, Emission will only contribute it's brightness when your mesh is in the dark. This would essentially make it so that Emissions won't look extra-bright when there's lighting on it.
 
 :::tip Light Based Recommendation
 Fluorescence is a very basic slider. For more advanced control of Emission behavior in bright or dark environments, we recommend using the [Light Based](#light-based) Emission settings.
