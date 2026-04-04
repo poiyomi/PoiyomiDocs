@@ -149,6 +149,15 @@ code, pre, .mono {
   display: none;
 }
 
+/* Prevent Font Awesome SVG icons from flashing large before FA CSS loads */
+.svg-inline--fa {
+  height: 1em;
+  width: 1em;
+  vertical-align: -0.125em;
+  overflow: visible;
+  display: inline-block;
+}
+
 img.icon {
   height: 1.5em;
   vertical-align: middle;
