@@ -33,6 +33,14 @@ The Everything Shader
 <>and more!</>
 </p>
 
+<div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '10px', marginTop: '30px', marginBottom: '10px'}}>
+<a class="button button--primary button--lg" href="vcc://vpm/addRepo?url=https%3A%2F%2Fpoiyomi.github.io/vpm/index.json"><FAIcon icon="fa-solid fa-square-arrow-up-right"/> Add to VCC</a>
+<a class="button button--primary button--lg" href="vcc://vpm/addRepo?url=https%3A%2F%2Fpoiyomi.github.io/vpm/index.json"><FAIcon icon="fa-solid fa-square-arrow-up-right"/> Add to ALCOM</a>
+<a class="button button--primary button--lg" href="https://github.com/poiyomi/PoiyomiToonShader/releases/latest" target="_blank"><FAIcon icon="fa-brands fa-github"/> GitHub</a>
+<a class="button button--primary button--lg" href="https://poiyomi.booth.pm/items/4841309" target="_blank"><FAIcon icon="fa-solid fa-circle-down"/> BOOTH</a>
+<a class="button button--warning button--lg" href="https://www.patreon.com/poiyomi" target="_blank"><FAIcon icon="fa-brands fa-patreon"/> Poiyomi Pro</a>
+</div>
+
 <Columns style={{marginTop: '50px', marginBottom: '50px'}}> 
   <Column className='text--center'>
     <Card>
@@ -58,7 +66,10 @@ The Everything Shader
         Learn how to download the shader and install it into your Unity project.
       </CardBody>
       <CardFooter>
-        <a class="button button--block button--secondary" href="/download">Go to Downloads</a>
+        <div className='button-group button-group--block'>
+          <a class="button button--block button--primary" href="vcc://vpm/addRepo?url=https%3A%2F%2Fpoiyomi.github.io/vpm/index.json">VCC / ALCOM</a>
+          <a class="button button--block button--primary" href="https://github.com/poiyomi/PoiyomiToonShader/releases/latest">GitHub</a>
+        </div>
       </CardFooter>
     </Card>
   </Column>
@@ -69,12 +80,12 @@ The Everything Shader
       </CardHeader>
       <CardImage cardImageUrl='/img/custom-icons/Icon_News.png'/>
       <CardBody>
-        Stay up-to-date on our latest changes and all upcoming features, or learn something new from one of our devs.
+        Stay up-to-date on our latest changes, upcoming features, and tips from our devs.
       </CardBody>
       <CardFooter>
         <div className='button-group button-group--block'>
-          <a class="button button--block button--secondary" href="/blog">Tips & Tricks</a>
-          <a class="button button--block button--secondary" href="/changelog">Changelogs</a>
+          <a class="button button--block button--primary" href="/blog">Tips & Tricks</a>
+          <a class="button button--block button--primary" href="/changelog">Changelogs</a>
         </div>
       </CardFooter>
     </Card>

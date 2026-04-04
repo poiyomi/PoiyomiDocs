@@ -30,6 +30,22 @@ If your Avatar Creator asks you to use Poiyomi Pro, it is a PAID version of the 
 
 </ShowWhenRef>
 
+## Quick Download
+
+<div style={{display: 'flex', flexWrap: 'wrap', gap: '10px', marginBottom: '20px'}}>
+<a class="button button--primary button--lg" href="vcc://vpm/addRepo?url=https%3A%2F%2Fpoiyomi.github.io/vpm/index.json"><FAIcon icon="fa-solid fa-square-arrow-up-right"/> Add to VCC</a>
+<a class="button button--primary button--lg" href="vcc://vpm/addRepo?url=https%3A%2F%2Fpoiyomi.github.io/vpm/index.json"><FAIcon icon="fa-solid fa-square-arrow-up-right"/> Add to ALCOM</a>
+<a class="button button--primary button--lg" href="https://github.com/poiyomi/PoiyomiToonShader/releases/latest" target="_blank"><FAIcon icon="fa-brands fa-github"/> GitHub Release</a>
+<a class="button button--primary button--lg" href="https://poiyomi.booth.pm/items/4841309" target="_blank"><FAIcon icon="fa-solid fa-circle-down"/> BOOTH</a>
+<a class="button button--warning button--lg" href="https://www.patreon.com/poiyomi" target="_blank"><FAIcon icon="fa-brands fa-patreon"/> Poiyomi Pro (Patreon)</a>
+</div>
+
+:::tip
+We recommend using **VCC / ALCOM** for the easiest install experience. For detailed instructions, see the sections below.
+:::
+
+---
+
 The latest version of Poiyomi Shaders can be installed in one of two ways. Please be aware that there are different versions offered in terms of feature availability.
 
 - For Poiyomi Toon (Free Version), choose which of the installation methods detailed below.
