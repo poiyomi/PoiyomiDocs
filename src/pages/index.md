@@ -34,8 +34,7 @@ The Everything Shader
 </p>
 
 <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '10px', marginTop: '30px', marginBottom: '10px'}}>
-<a class="button button--primary button--lg" href="vcc://vpm/addRepo?url=https%3A%2F%2Fpoiyomi.github.io/vpm/index.json"><FAIcon icon="fa-solid fa-square-arrow-up-right"/> Add to VCC</a>
-<a class="button button--primary button--lg" href="vcc://vpm/addRepo?url=https%3A%2F%2Fpoiyomi.github.io/vpm/index.json"><FAIcon icon="fa-solid fa-square-arrow-up-right"/> Add to ALCOM</a>
+<a class="button button--primary button--lg" href="vcc://vpm/addRepo?url=https%3A%2F%2Fpoiyomi.github.io/vpm/index.json"><FAIcon icon="fa-solid fa-square-arrow-up-right"/> Add to VCC / ALCOM</a>
 <a class="button button--primary button--lg" href="https://github.com/poiyomi/PoiyomiToonShader/releases/latest" target="_blank"><FAIcon icon="fa-brands fa-github"/> GitHub</a>
 <a class="button button--primary button--lg" href="https://poiyomi.booth.pm/items/4841309" target="_blank"><FAIcon icon="fa-solid fa-circle-down"/> BOOTH</a>
 <a class="button button--warning button--lg" href="https://www.patreon.com/poiyomi" target="_blank"><FAIcon icon="fa-brands fa-patreon"/> Poiyomi Pro</a>
