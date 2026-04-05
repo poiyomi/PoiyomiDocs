@@ -38,7 +38,7 @@ A huge thanks to all the active contributors that have helped maintain this Docu
     <div class="avatar__intro">
         <div class="avatar__name" style={{marginTop: '5px'}}>BluWizard10</div>
         <small class="avatar__subtitle">
-            Lead Docs Author, Community Helper
+            Lead Docs Author, Community Helper, Shader Contributor
         </small>
     </div>
 </div>
