@@ -53,7 +53,7 @@ The latest version of Poiyomi Shaders can be installed in one of two ways. Pleas
 
 ## Method 1: ALCOM / Creator Companion
 
-Installing Poiyomi Shaders using the VCC Repository is our recommended method for both Poiyomi Toon and Poiyomi Pro. If you are using Poiyomi Pro, [see below to read how our authentication works](#poiyomi-pro).
+Installing Poiyomi Shaders using the VCC Repository is our recommended method for the most straightforward and easy install experience..
 
 :::tip
 We recommend using [ALCOM <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://vrc-get.anatawa12.com/en/alcom/) to install Poiyomi Shaders **and for managing VRChat Projects overall** since it's way faster and easier to use compared to the default VRChat Creator Companion App. Although, using the VRChat Creator Companion is also supported.
