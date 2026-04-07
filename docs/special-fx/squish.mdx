@@ -1,0 +1,134 @@
+---
+sidebar_position: 17
+title: Squish
+description: Shader effect that compresses the mesh in reaction to a colliding penetrator.
+keywords: [squish, depth, special effect, special fx]
+---
+
+Squish is a unique shader effect that causes the mesh to compress in reaction to a colliding penetrator, such as a glass plane.
+
+{/* POIYOMI PRO LABEL */}
+<a target="_blank" href="https://www.patreon.com/poiyomi">
+<img src="/img/Poiyomi-Pro-Label.png" alt="Pro Feature" width="600px"/>
+</a>
+
+:::warning[Requires Orifice]
+In order to use Squish, an Orifice penetrator must be present in the Scene. Use the `SquishGlass` Prefab found under `Assets/_PoiyomiShaders/Prefabs` to test the effect.
+:::
+
+<ReactVideo src='/vid/special-fx/SquishDemo.webm'/>
+<em>Basic demonstration of the Squish effect against an Orifice penetrator plane.</em>
+
+## Animation Toggle
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+
+This checkbox allows toggling Squish at runtime.
+
+:::tip
+Squish is enabled by default. To turn off Squish in-game, you need to animate this Toggle (checkbox) when creating toggles for Squish on this Material. Animating the [Section Header](/general/locking.mdx#section-header-checkboxes) will not work!
+:::
+
+## Collider Size
+
+- `Type`: <PropertyIcon name="float2" />**Vector**
+
+Sets the collision size to use with Squish. This value must match the same dimensions as the Orifice penetrator.
+
+## Squish Strength
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+
+Configures the total strength of the Squish effect. For the full effect, this should be set to `1`.
+
+## Squish Spread
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
+
+Sets the spreading of the Squish across the penetrated area. This will impact how the mesh appears when it is squished by the orifice.
+
+## Max Squish
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.1 - 1.0`
+
+Controls how much the mesh is penetrated by the orifice.
+
+## Squish Falloff
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.1 - 1.0`
+
+Controls the falloff range of the penetrated mesh area.
+
+## Z-Clipping Fix
+
+- `Type`: <PropertyIcon name="float" />**Float**
+
+This value controls the Z-clipping factor of the penetrated mesh. For the most part, this should be kept at it's default.
+
+:::danger[Be Careful When Adjusting This Value]
+If this value is not adjusted carefully (especially on the Body), ugly clipping issues can occur!
+:::
+
+## Color Gradient
+
+- `Type`: <PropertyIcon name="texture" />**Color Gradient** Texture (`sRGB = ON`)
+
+Color Gradient texture to use on the mesh when the mesh is being penetrated by the orifice. This is optional.
+
+This texture can be edited using the Thry Gradient Editor by clicking the checkerboard (if no texture is defined) to the right of the texture slot.
+
+:::note
+When editing the Color Gradient using the Gradient Editor, your changes will be saved in the `Assets/textures/Gradients` folder in Unity with a unique identifier. If this folder doesn't exist, it will be generated automatically upon saving.
+:::
+
+## Gradient Min
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-2.0 - 0.0`
+
+Minimum starting point to use for the Color Gradient.
+
+## Gradient Max
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 4.0`
+
+Maximum ending point to use for the Color Gradient.
+
+## Gradient Intensity
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 5.0`
+
+Sets how intense the Color Gradient should appear.
+
+## Masking
+
+### Squish Mask
+
+- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = OFF`)
+
+Mask texture slot to isolate specific areas that the orifice should only affect when the mesh is penetrated.
+
+### Write to Global Mask
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+
+If set, will write the Squish Mask to the chosen [Global Mask](/modifiers/global-masks.mdx) channel.
+
+## Blending
+
+### Replace
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+
+Replace blending modifier to use.
+
+### Multiply
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+
+Multiplicative blending modifier to use.
+
+### Unlit Add
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+
+Unlit blending modifier to use.

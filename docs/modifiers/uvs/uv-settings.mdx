@@ -1,0 +1,54 @@
+---
+sidebar_position: 1
+title: UV Settings
+description: Global UV overrides for UV0, UV1, UV2, and UV3 layouts.
+keywords: [uv, uvs, poiyomi, shaders]
+---
+
+This area allows global configuration of the Tiling, Offset, Angle, Panning, and Rotation of each UV layout on the mesh that the material is used on.
+
+:::info[Documentation Info]
+Each of the UV assignments (UV0, UV1, UV2, and UV3) have the following options listed below.
+:::
+
+## UV Slot
+
+### Tiling
+
+- `Type`: <PropertyIcon name="float2" />**Vector**
+  - Default: `X = 1`, `Y = 1`
+
+Sets the Tiling of the UV layout.
+
+### Offset
+
+- `Type`: <PropertyIcon name="float2" />**Vector**
+  - Default: `X = 0`, `Y = 0`
+
+Sets an Offset for the UV by a specified increment.
+
+### Angle
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-180 - 180`
+  - Default: `0`
+
+Sets a rotational angle offset of the UV layout in degrees.
+
+### Pan
+
+- `Type`: <PropertyIcon name="float2" />**Vector**
+  - Default: `X = 0`, `Y = 0`
+
+If set, animates the UV in a panning animation on the set axis.
+
+### Rotate
+
+- `Type`: <PropertyIcon name="float" />**Float**
+
+If set, animates the UV in a rotation animation of a specified amount.
+
+## Shift Backface UV
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+
+If enabled, will also shift the UVs on the backfaces as well. This is only visible if [Cull](/rendering/rendering.mdx#cull) under Rendering is set to `Off`.
