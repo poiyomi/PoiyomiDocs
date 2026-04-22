@@ -1,0 +1,528 @@
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import pkg from './package.json';
+
+const config: Config = {
+  title: "Poiyomi Shaders",
+  tagline: "Toon Shaders for Unity and VRChat",
+  url: "https://www.poiyomi.com",
+  baseUrl: "/",
+  onBrokenLinks: "throw",
+  onBrokenAnchors: "warn",
+  favicon: "img/favicon.ico",
+  organizationName: "poiyomi", // Usually your GitHub org/user name.
+  projectName: "PoiyomiDocs", // Usually your repo name.
+  markdown: {
+    hooks: {
+      onBrokenMarkdownImages: "warn",
+    }
+  },
+
+  future: {
+    faster: true,
+    v4: true,
+  },
+
+  plugins: [
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        fromExtensions: ["html", "htm"], // /myPage.html -> /myPage
+        redirects: [
+          // /docs/oldDoc -> /docs/newDoc
+          {
+            to: "/special-fx/uv-tile-discard",
+            from: "/special-fx/udim-discard",
+          },
+          {
+            to: "/general/substance-painter",
+            from: "/general/substance-export",
+          },
+          {
+            to: '/extended-features/grabpass',
+            from: '/grab-pass/grabpass',
+          },
+          {
+            to: '/extended-features/grabpass',
+            from: '/grabpass',
+          },
+          {
+            to: '/extended-features/geometric-dissolve',
+            from: '/geometric-dissolve',
+          },
+          {
+            to: "/modifiers/global-themes",
+            from: "/color-and-normals/global-themes",
+          },
+          {
+            to: '/outlines/',
+            from: '/outlines/main',
+          },
+          {
+            to: '/modifiers/uvs/parallax',
+            from: '/modifiers/parallax',
+          },
+          {
+            to: '/modifiers/post-processing/pp-animations',
+            from: '/post-processing/pp-animations',
+          },
+          {
+            to: '/modifiers/post-processing/main',
+            from: '/post-processing/main',
+          },
+          {
+            // Redirect old VCC Webpage to new "Download & Install" page.
+            to: '/download/',
+            from: '/poiyomitoonvcc',
+          },
+          {
+            to: '/general/upgrade/v7-upgrade',
+            from: '/general/v7-upgrade',
+          },
+          {
+            to: '/general/upgrade/v8-upgrade',
+            from: '/general/v8-to-v9-upgrade',
+          },
+          {
+            // Stylized Specular renamed to Stylized Reflections in 9.2.10
+            to: '/shading/stylized-reflections',
+            from: '/shading/stylized-specular',
+          },
+          {
+            // Vertex Options moved to new category in 9.3 release cycle.
+            to: '/vertex-options/basics',
+            from: '/color-and-normals/vertex-options',
+          },
+          {
+            // Vertex Glitching moved to new category in 9.3 release cycle.
+            to: '/vertex-options/glitching',
+            from: '/color-and-normals/vertex-glitching',
+          },
+          {
+            // Vertex Colors moved to new category in 9.3 release cycle.
+            to: '/vertex-options/vertex-colors',
+            from: '/color-and-normals/vertex-colors',
+          },
+          {
+            // Reorganized Color & Normals.
+            to: '/color-and-normals/',
+            from: '/color-and-normals/main',
+          },
+          {
+            // Removed Iridescence, redirecting old link to Matcap.
+            to: '/shading/matcap',
+            from: '/special-fx/iridescence',
+          },
+          {
+            // Reorganized Rendering.
+            to: '/rendering/',
+            from: '/rendering/main',
+          },
+          {
+            // Changed Thry Editor Overview
+            to: '/thryeditor/',
+            from: '/thryeditor/enduser',
+          }
+          // Redirect from multiple old paths to the new path
+          // {
+          //   to: '/docs/newDoc2',
+          //   from: ['/docs/oldDocFrom2019', '/docs/legacyDocFrom2016'],
+          // },
+        ],
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        id: 'second-blog',
+        routeBasePath: 'changelog',
+        path: './changelog',
+        blogTitle: 'Changelog',
+        blogDescription: 'All Changelogs from the latest versions of Poiyomi Shaders.',
+        showReadingTime: true,
+        blogSidebarTitle: 'All Changelogs',
+        blogSidebarCount: 'ALL',
+        onUntruncatedBlogPosts: 'ignore',
+        feedOptions: {
+          type: ['rss', 'atom'],
+          limit: 20,
+          title: 'Poiyomi Shaders Changelogs',
+          description: 'Full Changelogs from recent versions of Poiyomi Shaders.'
+        },
+      },
+    ],
+    [
+      '@docusaurus/plugin-vercel-analytics',
+      {
+        debug: false,
+        mode: 'auto',
+      },
+    ],
+  ],
+
+  presets: [
+    [
+      'classic',
+      {
+        docs: {
+          routeBasePath: "/",
+          sidebarPath: "./sidebars.ts",
+          // Please change this to your repo.
+          // editUrl: 'https://github.com/poiyomi/PoiyomiDocs',
+          showLastUpdateTime: true,
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
+          lastVersion: 'current',
+          versions: {
+            current: {
+              label: '10.0',
+            },
+            '9.3': {
+              label: '9.3',
+              path: '9.3',
+            },
+          },
+        },
+        // blog: true,
+
+        blog: {
+          showReadingTime: true,
+          blogSidebarTitle: 'All Posts',
+          blogSidebarCount: 'ALL',
+          onUntruncatedBlogPosts: 'ignore',
+          feedOptions: {
+            type: ['rss', 'atom'],
+            limit: 20,
+            title: 'Poiyomi Shaders Blog: Tips & Tricks',
+            description: 'Tips, Tricks, and Updates from the Poiyomi Team.',
+          },
+          // Please change this to your repo.
+          // editUrl:
+          // 'https://github.com/poiyomi/PoiyomiDocs',
+        },
+
+        theme: {
+          customCss: "./src/css/custom.css",
+        },
+
+        sitemap: {
+          lastmod: 'date',
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: ['/tags/**', '/**/page/**'],
+          filename: 'sitemap.xml',
+        },
+      },
+    ],
+  ],
+
+  // This stylesheet is attached for Katex plugin. Do not remove.
+  stylesheets: [
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
+      type: 'text/css',
+      integrity: 'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
+      crossorigin: 'anonymous',
+    }
+  ],
+
+  themes: [
+    [
+      "@easyops-cn/docusaurus-search-local",
+      {
+        indexDocs: true,
+        indexBlog: true,
+        indexPages: true,
+        docsRouteBasePath: "/",
+        blogRouteBasePath: "/blog",
+        language: "en",
+        hashed: true,
+        searchBarPosition: "auto",
+      },
+    ],
+  ],
+
+  themeConfig: {
+    metadata: [
+      // Place global <meta> tags here!
+      { name: 'keywords', content: 'poiyomi, shaders, shader, vrchat, poiyomi shaders, blog, docs, documentation, toon, realistic, unity' }, // IMPORTANT SEO KEYWORDS! DO NOT REMOVE!
+      { name: 'twitter:card', content: 'summary_large_image' }, // Used for Twitter Cards.
+      { name: 'apple-mobile-web-app-title', content: 'Poiyomi' }, // Used for Apple Devices.
+    ],
+    headTags: [
+      // Place global <link> tags here!
+      {
+        tagName: 'link',
+        attributes: {
+          rel: 'preconnect', // Hints to Browsers to preload resources from the origin during search.
+          href: 'https://www.poiyomi.com',
+        },
+      },
+      {
+        tagName: 'link',
+        attributes: {
+          rel: 'canonical', // Broadcasts the canonical URL of the website.
+          href: 'https://www.poiyomi.com',
+        },
+      },
+      {
+        tagName: 'link',
+        attributes: {
+          rel: 'apple-touch-icon', // Used for Apple Devices because Apple is very petty with their WebKit.
+          href: '/img/apple-touch-icon.png',
+        }
+      },
+      {
+        tagName: 'link',
+        attributes: {
+          rel: 'manifest', // Used for Favicon Manifest. Common on Android.
+          href: '/img/site.webmanifest',
+        },
+      },
+    ],
+    docs: {
+      sidebar: {
+        hideable: true,
+        autoCollapseCategories: true,
+      },
+    },
+    colorMode: {
+      defaultMode: "dark",
+      disableSwitch: false,
+      respectPrefersColorScheme: true
+    },
+    tableOfContents: {
+      minHeadingLevel: 2,
+      maxHeadingLevel: 3,
+    },
+    announcementBar: { id: 'vcc-back', backgroundColor: '#007a3d', textColor: '#ffffff', isCloseable: true, content: '<b>Both VCC Repositories and the Poiyomi Pro website are back online and 100% safe to use!</b> Please make sure you clear your browser data to ensure authentication works again.' },
+    navbar: {
+      title: "Poiyomi Shaders",
+      logo: {
+        alt: "Poiyomi Circle Logo",
+        src: "img/logo.svg",
+        width: 44,
+        height: 44,
+      },
+      items: [
+        {
+          type: "doc",
+          docId: "intro",
+          position: "left",
+          label: "Docs",
+        },
+        {
+          to: "/download",
+          label: "Download & Install",
+          position: "left"
+        },
+        {
+          type: "dropdown",
+          label: "Blog & Updates",
+          position: "left",
+          items: [
+            {
+              label: "Blog: Tips & Tricks",
+              to: "/blog",
+            },
+            {
+              label: "Changelogs",
+              to: "/changelog",
+            },
+          ],
+        },
+        {
+          type: 'docsVersionDropdown',
+          position: "right",
+          versions: [
+            'current',
+            '9.3'
+          ]
+        },
+        {
+          type: "dropdown",
+          label: "Community",
+          position: "right",
+          items: [
+            {
+              label: "Discord",
+              href: "https://discord.gg/poiyomi",
+            },
+            {
+              label: "Bluesky",
+              href: "https://bsky.app/profile/poiyomi.com",
+            },
+            {
+              label: "Twitter / X",
+              href: "https://x.com/poiyomi",
+            },
+            {
+              label: "GitHub",
+              href: "https://github.com/poiyomi/PoiyomiToonShader",
+            },
+            {
+              label: "BOOTH",
+              href: "https://poiyomi.booth.pm/",
+            }
+          ],
+        },
+        {
+          type: "search",
+          position: "right",
+        },
+      ],
+    },
+    prism: {
+      theme: prismThemes.vsDark,
+      darkTheme: prismThemes.dracula,
+      additionalLanguages: ['hlsl'],
+    },
+    footer: {
+      logo: {
+        alt: "Poiyomi Logo",
+        src: "img/circle_logo.svg",
+        width: 80,
+        height: 80,
+      },
+      links: [
+        {
+          title: "Featured Pages",
+          items: [
+            {
+              label: "Download & Install",
+              to: "/download",
+            },
+            {
+              label: "Locking and Animation",
+              to: "/general/locking",
+            },
+            {
+              label: "Color & Normals",
+              to: "/color-and-normals",
+            },
+            {
+              label: "Shading",
+              to: "/shading/main",
+            },
+            {
+              label: "Reflections & Specular",
+              to: "/shading/reflections-and-specular",
+            },
+            {
+              label: "Screen Space Ambient Occlusion",
+              to: "/shading/ssao",
+            },
+            {
+              label: "Outlines",
+              to: "/outlines",
+            },
+            {
+              label: "UV Tile Discard",
+              to: "/special-fx/uv-tile-discard",
+            },
+            {
+              label: "Emission",
+              to: "/special-fx/emission",
+            },
+            {
+              label: "Glitter / Sparkle",
+              to: "/special-fx/glitter",
+            },
+            {
+              label: "AudioLink",
+              to: "/audio-link",
+            },
+            {
+              label: "Global Masks",
+              to: "/modifiers/global-masks",
+            },
+            {
+              label: "Rendering",
+              to: "/rendering/"
+            },
+            {
+              label: "Thry Editor",
+              to: "/thryeditor/",
+            }
+          ],
+        },
+        {
+          title: "Community",
+          items: [
+            {
+              label: "Discord",
+              href: "https://discord.gg/poiyomi",
+            },
+            {
+              label: "Bluesky",
+              href: "https://bsky.app/profile/poiyomi.com",
+            },
+            {
+              label: "Twitter / X",
+              href: "https://x.com/poiyomi",
+            },
+            {
+              label: "GitHub",
+              href: "https://github.com/poiyomi",
+            },
+            {
+              label: "BOOTH",
+              href: "https://poiyomi.booth.pm/",
+            },
+          ],
+        },
+        {
+          title: "Where to Download",
+          items: [
+            {
+              label: "GitHub Repository",
+              href: "https://github.com/poiyomi/PoiyomiToonShader",
+            },
+            {
+              label: "BOOTH Listing",
+              href: "https://poiyomi.booth.pm/items/4841309",
+            },
+            {
+              label: "VCC Repository",
+              href: "vcc://vpm/addRepo?url=https%3A%2F%2Fpoiyomi.github.io/vpm/index.json",
+            },
+            {
+              label: "Poiyomi Pro (Requires Patreon)",
+              href: "https://pro.poiyomi.com/",
+            },
+          ],
+        },
+        {
+          title: "About",
+          items: [
+            {
+              label: "Blog",
+              to: "/blog",
+            },
+            {
+              label: "FAQ / Troubleshooting",
+              to: "/general/faq",
+            },
+            {
+              label: "Terms of Service",
+              to: "/terms-of-service",
+            },
+            {
+              label: "Privacy Policy",
+              to: "/privacy",
+            },
+            {
+              label: "Credits",
+              to: "/credits",
+            },
+          ],
+        },
+      ],
+      copyright: `Copyright © ${new Date().getFullYear()} Poiyomi Labs. v${pkg.version}. Built with Docusaurus.`,
+    }
+  },
+};
+
+export default config;
