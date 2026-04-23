@@ -1,7 +1,7 @@
 ---
 sidebar_position: 7
 title: Depth Rim Lighting
-description: Depth-based Rim Lighting creates a constant-size Rim in screen space, allowing the Rim to have a more constant size, unlike traditional Rim Lighting.
+description: Depth-based Rim Lighting creates a constant-size Rim in screen space, allowing the Rim to have a more consistent size unlike traditional Rim Lighting.
 keywords: [rim, lighting, depth rim lighting, depth, lighting, shading, poiyomi, shader]
 ---
 
@@ -23,25 +23,102 @@ Make sure to only enable the depth buffer when you need it! This can be a perfor
 
 Normal to use for the depth rim light effect. `Pixel` uses the normal of the pixel after all normal maps have been applied. `Vertex` uses the normal from the mesh itself.
 
-## Width
+## Rim Type
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Two Samples`/`Four Samples`/`Eight Samples`
+
+How many samples to use for the depth rim lighting. This will determine what details appear in the rim as drawn by the Depth Buffer.
+
+## Shape Control
+
+### Width
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How wide the rim should extend from the edge.
 
-## Sharpness
+### Sharpness
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+  - Conditional: Requires [Binary](#binary) to be disabled.
 
 How sharp the edge of the rim should be. Generally, at higher sharpness, the rim will appear in less areas.
 
-## Hide In Shadow
+### Depth Threshold
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+
+The amount of threshold depth to use.
+
+### Binary
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
 
-Hides the rim in shadowed areas.
+Enables the usage of Binary to control the shape's sharpness.
 
-## Color and Blending
+:::info
+If Binary is enabled, it will disable [Sharpness](#sharpness)
+:::
+
+### Fixed Size Threshold
+
+- `Type`: <PropertyIcon name="float" />**Float**
+
+Sets a fixed size threshold to use for the shape control.
+
+### Min Distance
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+
+Minimum distance to use for the shape size.
+
+### Max Distance
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+
+Maximum distance to use for the shape size.
+
+## Light Direction
+
+### Method 
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `NdotL`/`Rim Dot Light`
+
+What light direction method to use for how the depth rim lighting is treated with lighting direction.
+
+### Map to Light Direction
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+
+Sets the mapping to the Light Direction to a specific amount.
+
+### Mix Attenuation
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+
+How much to mix the light direction attenuation.
+
+### Mix Ramped Light Map
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+
+How much to mix the ramped light map with the light direction.
+
+## Masking
+
+### Mask
+
+- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = Off`)
+
+Mask texture slot to mask the depth rim lighting to appear in only the specified areas of the UV.
+
+### Channel
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `R`/`G`/`B`/`A`
+
+If a Mask texture is used, this should select which color channel in the texture to use for the Mask.
+
+## Color
 
 ### Use Base Color
 
@@ -61,35 +138,47 @@ How much to mix the rim color with the light color. The light color scaled to th
 
 Base color of the rim.
 
+### Color Brightness
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 10.0`
+
+How bright should the rim color appear.
+
 ### Emission
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 20.0`
 
 How much emission the rim should exhibit.
 
-### Blending
+## Blending
 
 In most application, choosing one blend mode to use will be sufficient.
 
-#### Replace
+### Replace
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to replace the base color with the rim color.
 
-#### Add
+### Add
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to add the rim color to the base color.
 
-#### Multiply
+### Screen
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+
+How much to blend screen the rim color to the base color.
+
+### Multiply
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to multiply the rim color with the base color.
 
-#### Add To Light
+### Unlit Add
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
