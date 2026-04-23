@@ -25,6 +25,8 @@ const config: Config = {
     v4: true,
   },
 
+  clientModules: [require.resolve('./src/modules/tab-toc-sync.ts')],
+
   plugins: [
     [
       '@docusaurus/plugin-client-redirects',

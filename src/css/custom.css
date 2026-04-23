@@ -194,3 +194,25 @@ img.icon {
   vertical-align: middle;
   margin-right: 0.25em;
 }
+
+/* Rounded-rectangle tab style. Apply with <Tabs className="rounded-tabs"> */
+.rounded-tabs .tabs {
+  gap: 0.5rem;
+}
+
+.rounded-tabs .tabs__item {
+  border-bottom: none;
+  border-radius: var(--ifm-global-radius);
+  transition: background-color var(--ifm-transition-fast) ease;
+}
+
+.rounded-tabs .tabs__item:hover {
+  background-color: var(--ifm-color-emphasis-200);
+}
+
+.rounded-tabs .tabs__item--active,
+.rounded-tabs .tabs__item--active:hover {
+  background-color: var(--ifm-color-primary);
+  color: var(--ifm-color-white, #fff);
+  border-bottom: none;
+}
