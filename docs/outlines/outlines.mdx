@@ -73,16 +73,17 @@ Determines where the size of the Outlines should assume the initial scale units 
 
 - `Local` renders the Size based on the Scale Units of your Avatar.
 - `World` renders the Size based on World Units.
-
-:::info
-If you choose the Space to be `World`, the Outline Size will remain the same regardless of your Avatar Scale. Keep this in mind when choosing this option.
-:::
+  - *Keep in mind that Outline Size will remain the same regardless of Avatar Scale if using `World`.*
 
 ## Outline Size
 
 - `Type`: <PropertyIcon name="float" />**Float**
 
 Thickness of the Outline, in Unity base units (scaled down by 100).
+
+:::tip
+Animate this Float value if you're planning to create toggles for Outline visibility on this Material. Animating the [Section Header](/general/locking.mdx#section-header-checkboxes) will not work!
+:::
 
 ### Outline Size Mask
 
