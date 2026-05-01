@@ -187,7 +187,7 @@ Controls how much to darken reflections for areas that are not receiving as much
 
 This effect typically looks best when seen in VRC Light Volumes rather than Light Probes.
 
-## Cubemap
+## Fallback Cubemap
 
 - `Type`: <PropertyIcon name="texture" />**Cubemap** Texture (`sRGB = ON`)
 
@@ -320,3 +320,29 @@ The default `0.15` value works well to balance the quality of the specular refle
 GSAA Threshold is used to determine the point at which GSAA should be applied.
 
 The default `0.1` value works well to balance the quality of the specular reflections with the quality of the specular anti-aliasing.
+
+## Global Mask
+
+### Metallic
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+
+Select which [Global Mask](/modifiers/global-masks.mdx) to act as the Metallic Strength.
+
+### Smoothness
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+
+Select which [Global Mask](/modifiers/global-masks.mdx) to act as the Smoothness Strength.
+
+### Reflection Strength
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+
+Select which [Global Mask](/modifiers/global-masks.mdx) to act as the Reflection Strength.
+
+### Specular Strength
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+
+Select which [Global Mask](/modifiers/global-masks.mdx) to act as the Specular Strength.
