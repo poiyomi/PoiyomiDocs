@@ -200,6 +200,12 @@ Lighting intensity at which to use the *Max Emission Multiplier*.
 
 Enables Blinking of the emission. This allows the emission to blink at a certain rate without needing to explicitly animate it.
 
+### Mode
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Smooth`/`Pulse`
+
+Choice of blinking behavior to use. By default, a smooth blinking transition is used. If set to `Pulse`, it will instead function in a PWM or Duty blink cycle.
+
 ### Emissive Blink Min
 
 - `Type`: <PropertyIcon name="float" />**Float**
@@ -223,6 +229,14 @@ How fast the blink cycle should move. This uses the sine of time, so a value of 
 - `Type`: <PropertyIcon name="float" />**Float**
 
 Offset of the blink cycle in time. Useful for offsetting the blink cycle of different emission sections. This uses the sine of time, so a value of 6.28 (`Pi * 2`) will offset the blink cycle by 1 second. Higher values will result in a blink cycle that is offset by a larger amount of time.
+
+### Pulse Interval
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+  - Default: `0.5`
+  - Conditional: Requires [Mode](#mode) set to `Basic`
+
+Sets the interval in how and when each blink is timed. This is similar to PWM or Duty cycle modes in electronic lighting modules.
 
 ## Scrolling
 
