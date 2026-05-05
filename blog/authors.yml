@@ -9,7 +9,7 @@ razgriz:
 
 poiyomi:
   name: Poiyomi
-  title: Shader Developer
+  title: Creator, Shader Developer
   url: https://github.com/poiyomi
   image_url: https://github.com/poiyomi.png
   page: true
@@ -63,7 +63,7 @@ sacred:
 
 tony_lewis:
   name: Tony_Lewis
-  title: Lead Community Helper
+  title: Administration, Lead Community Helper
   url: https://github.com/slord399
   image_url: https://github.com/slord399.png
   page: true
@@ -71,3 +71,13 @@ tony_lewis:
     github: slord399
     bluesky: tony-lewis.slord-hd.com
     x: slord399
+
+scrn:
+  name: SCRN-VRC
+  title: Shader Developer
+  url: https://github.com/scrn-vrc
+  image_url: https://github.com/scrn-vrc.png
+  page: true
+  socials:
+    github: scrn-vrc
+    x: SCRNinVR
