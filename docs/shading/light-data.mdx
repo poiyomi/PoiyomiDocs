@@ -204,32 +204,23 @@ This makes the Light Direction follow the user's Camera so that light always com
 ### View Dir Offset Pitch
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-90 - 90`
+  - Conditional: Requires [Light Direction Mode](#light-direction-mode) set to `View Direction`
 
 Sets the View Direction Pitch Offset.
-
-:::info
-This option is only visible when **Light Direction Mode** is set to `View Direction`.
-:::
 
 ### View Dir Offset Yaw
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-90 - 90`
+  - Conditional: Requires [Light Direction Mode](#light-direction-mode) set to `View Direction`
 
 Sets the View Direction Yaw Offset.
-
-:::info
-This option is only visible when **Light Direction Mode** is set to `View Direction`.
-:::
 
 ### Forced Direction
 
 - `Type`: <PropertyIcon name="float" />**Vector3**
+  - Conditional: Requires [Light Direction Mode](#light-direction-mode) set to `Forced Local Direction` or `Forced World Direction`
 
 What direction to force the lighting to.
-
-:::info
-This option is only visible when **Light Direction Mode** is set to `Forced Local Direction` or `Forced World Direction`.
-:::
 
 ### Force Light Color
 
@@ -240,22 +231,16 @@ Whether to force the light color to a specific color. Enabling this option adds 
 #### Forced Color
 
 - `Type`: <PropertyIcon name="color" />**Color**
+  - Conditional: Requires [Force Light Color](#force-light-color) to be enabled
 
 What color the light should be forced to.
-
-:::info
-This option is only visible when **Force Light Color** is enabled.
-:::
 
 ### Unlit Intensity
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.001 - 4`
+  - Conditional: Requires [Light Color Mode](#light-color-mode) set to `UTS2`
 
 How much the model should be lit, even in the absence of direct lighting.
-
-:::info
-This option is only visible when **Light Color Mode** is set to `UTS2`.
-:::
 
 ### Limit Brightness
 
@@ -266,12 +251,9 @@ Whether to cap the brightness value to a specific maximum. Enabling this option 
 ### Max Brightness
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 10.0`
+  - Conditional: Requires [Limit Brightness](#limit-brightness) to be enabled
 
 If **Limit Brightness** is enabled, the brightness due to base pass lighting calculations will never go above this value. Add pass lighting or emission can cause the final color to exceed this value.
-
-:::info
-This option is only visible when **Limit Brightness** is enabled.
-:::
 
 ### Min Brightness
 
@@ -282,12 +264,9 @@ Sets the minimum value for direct lighting. This can be useful for preventing a 
 ### Indirect Uses Normals
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+  - Conditional: Requires [Light Color Mode](#light-color-mode) set to `Poi Custom`
 
-Defines how much to use normals when calculating indirect lighting direction. If not enabled, the indirect lighting will be sampled using the 0-vector. 
-
-:::info
-This option is only visible when **Light Color Mode** is set to `Poi Custom`.
-:::
+Defines how much to use normals when calculating indirect lighting direction. If not enabled, the indirect lighting will be sampled using the 0-vector.
 
 ### Receive Casted Shadows
 
@@ -318,9 +297,9 @@ Enables Vertex Lights to be used in Mirrors. Because VRChat interprets vertex li
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
   - Default: `true`
 
-Enables support for [VRC Light Volumes by RED_SIM<FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/REDSIM/VRCLightVolumes), a voxel-based Light Probes replacement used in some VRChat Worlds. This allows for more natural lighting and balanced illumination to appear on your Material from an environment using VRC Light Volumes.
+Enables support for [VRC Light Volumes by RED_SIM <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/REDSIM/VRCLightVolumes), a voxel-based Light Probes replacement used in some VRChat Worlds. This allows for more natural lighting and balanced illumination to appear on your Material from an environment using VRC Light Volumes.
 
-The results of this setting can be easily noticeable in Worlds that use it. For more information on this system, view the [GitHub Repository <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/REDSIM/VRCLightVolumes) or check out Poiyomi's [Poi Light Volumes Tech Test World<FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://vrchat.com/home/world/wrld_e1f6b0ae-4d12-4136-9675-a5383c172ace/info) in VRChat to explore the various effects that VRC Light Volumes can do. Otherwise, most Worlds in VRChat using VRC Light Volumes will have some form of Attribution located somewhere.
+The results of this setting can be easily noticeable in Worlds that use it. For more information on this system, view the [GitHub Repository <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/REDSIM/VRCLightVolumes) or check out Poiyomi's [Poi Light Volumes Tech Test World <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://vrchat.com/home/world/wrld_e1f6b0ae-4d12-4136-9675-a5383c172ace/info) in VRChat to explore the various effects that VRC Light Volumes can do. Otherwise, most Worlds in VRChat using VRC Light Volumes will have some form of Attribution located somewhere.
 
 More Technical Info: [<FAIcon icon="fa-solid fa-blog"/> "Why are Light Volumes cool?" by Teeh](https://www.poiyomi.com/blog/2025-06-30-light-volumes)
 
@@ -355,16 +334,13 @@ Enables or disables Add Pass lighting in general.
 ### Ignore Directional Lights
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
+  - Conditional: Requires [Pixel Lights (Important)](#pixel-lights-important) to be enabled
 
 Ignores Directional Lights in the Add Pass.
 
 This is enabled by default in order to counteract bad lighting setups in some VRChat Worlds that have way too many Directional Lights.
 
 If the World contains only one Directional Light, it is treated as the "Sun" and is unaffected by this setting. This only ignores additional Directional Lights in the World, if there are any.
-
-:::info
-This option is only shown if **Pixel Lights (Important)** is enabled.
-:::
 
 ### Limit Brightness
 
@@ -375,12 +351,9 @@ Whether to limit the brightness of add pass lights. Enabling this adds the **Max
 ### Max Brightness
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 10.0`
+  - Conditional: Requires [Limit Brightness](#limit-brightness-1) to be enabled
 
 Defines the maximum allowed brightness resulting from the add pass.
-
-:::info
-This option is only shown if **Limit Brightness** is enabled.
-:::
 
 ### Receive Casted Shadows (Add Pass)
 
