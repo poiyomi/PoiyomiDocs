@@ -17,19 +17,19 @@ Some of these alternate Shader versions are not recommended for daily usage as t
 
 ## World
 
-- `.poiyomi/Poiyomi Toon World`
+- `.poiyomi/Poiyomi {Toon/Pro} World`
 
-The Poiyomi World Shader includes the necessary Global Illumination components needed for it to render properly in Worlds with Baked Lighting. It is primarily targeted for those who intend to use features found in Poiyomi Shaders in their VRChat Worlds.
+The Poiyomi World Shader includes Global Illumination passes. As such, Poiyomi World matches the same features as the normal Poiyomi Shader, with the only difference being that it includes standard Global Illumination support for usage in VRChat Worlds.
 
-:::tip[Optimized for Worlds SDK users only]
 Poiyomi World matches the same features as the normal Poiyomi Toon Shader, with the only difference being that it includes standard Global Illumination support.
 
-We recommend only using this Shader if you are using the Worlds SDK.
+:::warning[Does Not Support Batching]
+Due to how the Shader Optimizer works (see [Locking & Animation](/general/locking.mdx)), Poiyomi Shaders does not support static batching. Please keep this in mind when using the World shader.
 :::
 
 ## Two Pass
 
-- `.poiyomi/Poiyomi Toon Two Pass`
+- `.poiyomi/Poiyomi {Toon/Pro} Two Pass`
 
 The Two Pass version renders the inside of the Mesh first, rather than the outside (Cull Front > Cull Back). See [Two Pass](/extended-features/two-pass.mdx) for more info.
 
@@ -37,7 +37,7 @@ Because the Two Pass shader renders everything twice, it can have a slight perfo
 
 ## Outline Early
 
-- `.poiyomi/Poiyomi Toon Outline Early`
+- `.poiyomi/Poiyomi {Toon/Pro} Outline Early`
 
 The Outline Early Shader renders the Outline before rendering the main Mesh, as opposed to normal Outline, which renders afterwards. This can be useful for certain situations where you want the Outline to be prioritized in the rendering pass.
 
@@ -45,7 +45,7 @@ As Outline Early renders the Outline twice, it can have a slight performance imp
 
 ## Grab Pass
 
-- `.poiyomi/Poiyomi Toon Grab Pass`
+- `.poiyomi/Poiyomi {Toon/Pro} Grab Pass`
 
 The Grab Pass Shader is used for specialized effects that require taking a screenshot every frame in order for it to render. See [Grab Pass](/extended-features/grabpass.mdx) for more info.
 
@@ -89,8 +89,8 @@ Just like Geometric Dissolve, it can have a significant performance impact.
 
 ## Lil Fur
 
-- `.poiyomi/Poiyomi Toon + Lil Fur`
-- `.poiyomi/Poiyomi Toon + Lil Fur Two Pass`
+- `.poiyomi/Poiyomi {Toon/Pro} + Lil Fur`
+- `.poiyomi/Poiyomi {Toon/Pro} + Lil Fur Two Pass`
 
 Similar to Poiyomi Fur, but instead uses the same simulation technique on LilToon's Fur Shader. See [Lil Fur](/extended-features/lilfur.mdx) for more details.
 
