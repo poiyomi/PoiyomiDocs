@@ -5,7 +5,13 @@ description: Internal Parallax creates an illusion of layers inside of the Mesh,
 keywords: [internal parallax, internal, parallax, infinite mirror, special fx, effect, poiyomi, shader]
 ---
 
-Internal Parallax creates an illusion of layers going inside the Mesh. Similar to an "infinite mirror" effect, it can be used to create stylized parallax effects in the specified areas.
+Internal Parallax creates an illusion of layers going inside the Mesh. Similar to an "infinite mirror" effect, it can be used to create stylized parallax effects.
+
+<a>
+<img src="/img/special-fx/InternalParallax_DemoGrid.png" alt="Internal Parallax Example"/>
+</a>
+
+*Example of the parallax iterations possible using an Internal Map set to be tiled.*
 
 ## Parallax Mode
 
@@ -27,6 +33,10 @@ Uses the Height Map technique to create the Internal Parallax.
 
 Color Map to use for the Internal Map. `RGB` for Color, and `A` channel for the Height.
 
+:::tip[Two Colors Recommended]
+For best results, use only **two** colors for your Internal Mapping. Those two colors should be used by the [Min Depth Color](#min-depth-color) and [Max Depth Color](#max-depth-color).
+:::
+
 ## Mask
 
 - `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = Off`)
@@ -41,17 +51,29 @@ Clamps the Internal Parallax to only affect a specified area as determined by th
 
 How many iterations should there be for the Parallax. Higher numbers yield more iterations.
 
+### Min Iterations
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `1.0 - 50.0`
+
+Clamps the minimum amount of iterations to a specific value. Typically this should be left at `1.0`.
+
+### Distance Falloff
+
+- `Type`: <PropertyIcon name="vector2" />**Vector2**
+
+Sets the nearest and farthest falloff distance of the Internal Parallax iterations.
+
 ### Min Depth
 
 - `Type`: <PropertyIcon name="float" />**Float**
 
-The Minimum Depth for the Parallax.
+The Minimum Depth for the Parallax, or the beginning of the iteration. Normally this is set to `0`.
 
 ### Max Depth
 
 - `Type`: <PropertyIcon name="float" />**Float**
 
-The Maximum Depth for the Parallax.
+The Maximum Depth for the Parallax, or the ending of the iteration. In a literal sense, this determines the distance of the "infinite mirror" effect.
 
 ## Layer Colors
 
@@ -65,25 +87,25 @@ Minimum Brightness intensity of the Minimum Depth Color.
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 5.0`
 
-Maximum Brightness intensity fo the Maximum Depth Color.
+Maximum Brightness intensity of the Maximum Depth Color.
 
 ### Min Depth Color
 
 - `Type`: <PropertyIcon name="color" />**Color**
 
-Color to use for the Minimum Depth.
+Color to use for the Minimum Depth. This should be set to the starting color of the parallax from the [Internal Map](#internal-map).
 
 ### Max Depth Color
 
 - `Type`: <PropertyIcon name="color" />**Color**
 
-Color to use for the Maximum Depth.
+Color to use for the Maximum Depth. This should be set to the ending color of the parallax from the [Internal Map](#internal-map).
 
 ### Internal Blend Mode
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Add`/`Max`
 
-How much to blend the Internal Parallax with the Base Color.
+Configures the primary blending operator to use for the Internal Parallax with the Base Color.
 
 ### Surface Blend Mode
 
@@ -138,4 +160,211 @@ How much to constantly shift the hue with time. A value of 1 will result in a fu
 
 - `Type`: <PropertyIcon name="float" />**Float**
 
-How much to constantly shift the hue with each level of the Parallax.
+How much to constantly shift the hue with each level of the Parallax. This can create a rather interesting pattern of various colors for each step.
+
+## Audio Link
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+
+Enables Audio Link shaders to influence Internal Parallax for a wide range of rather interesting effects.
+
+:::info
+The settings in this section will only be visible when [Audio Link](/audio-link/audio-link.mdx) is activated on the Material.
+:::
+
+### Emission Band
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+
+Selection for which audio band should control the Internal Parallax Emissions.
+
+### Emission Mod
+
+- `Type`: <PropertyIcon name="float2" />**Vector**
+
+| Channel | Function |
+| --- | --- |
+| Min | Amount Added or Subtracted from the Internal Parallax Emissions with no audio |
+| Max | Amount Added or Subtracted from the Internal Parallax Emissions with max audio |
+
+### Min Depth Band
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+
+Selection for which audio band should control the Internal Parallax Min Depth.
+
+### Min Depth Mod
+
+- `Type`: <PropertyIcon name="float2" />**Vector**
+
+| Channel | Function |
+| --- | --- |
+| Min | Amount Added or Subtracted from the Internal Parallax Min Depth with no audio |
+| Max | Amount Added or Subtracted from the Internal Parallax Min Depth with max audio |
+
+### Max Depth Band
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+
+Selection for which audio band should control the Internal Parallax Max Depth.
+
+### Max Depth Mod
+
+- `Type`: <PropertyIcon name="float2" />**Vector**
+
+| Channel | Function |
+| --- | --- |
+| Min | Amount Added or Subtracted from the Internal Parallax Max Depth with no audio |
+| Max | Amount Added or Subtracted from the Internal Parallax Max Depth with max audio |
+
+### Pan Motion Type
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**
+
+Which motion type to use for the Panning motion. Chronotensity is an Audio Link feature that allows time-dependent features, which shaders alone cannot do. In this case, chronotensity is used to create a time-dependent rotation of the texture's Panning.
+
+<details>
+<summary><b>Pan Motion Type Options</b></summary>
+
+- Motion Increases as intensity of the band increases
+- Above but Smooth
+- Motion moves back and forth as a function of intensity
+- Above but Smoooth
+- Fixed Speed Increase when the band is dark Stationary when light
+- Above but Smooooth
+- Fixed Speed Increase when the band is dark Fixed speed decrease when light
+
+</details>
+
+### Pan Band
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+
+Which band to use for the Panning motion.
+
+### Pan Speed
+
+- `Type`: <PropertyIcon name="vector2" />**Vector2**
+
+Sets the speed of the Panning motion on the X and Y axis.
+
+### Hue Shift Motion Type
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**
+
+Which motion type to use for the Hue Shift. Chronotensity is an Audio Link feature that allows time-dependent features, which shaders alone cannot do. In this case, chronotensity is used to create a time-dependent rotation of the Hue Shift.
+
+<details>
+<summary><b>Pan Motion Type Options</b></summary>
+
+- Motion Increases as intensity of the band increases
+- Above but Smooth
+- Motion moves back and forth as a function of intensity
+- Above but Smoooth
+- Fixed Speed Increase when the band is dark Stationary when light
+- Above but Smooooth
+- Fixed Speed Increase when the band is dark Fixed speed decrease when light
+
+</details>
+
+### Hue Shift Band
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+
+Which band to use for the Hue Shift.
+
+### Hue Shift Speed
+
+- `Type`: <PropertyIcon name="float" />**Float**
+
+Sets the speed of the Hue Shift in reaction to Audio Link.
+
+### Spatial History
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+
+Enables Spatial History for the Internal Parallax Audio Link. Similar to [Pathing](/special-fx/pathing.mdx), Spatial History will create moving emission pattern that flows from the Min Depth to the Max Depth in reaction to Audio Link.
+
+#### History Band
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+
+Which band to use for the Spatial History.
+
+#### History Depth
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `1.0 - 127.0`
+
+Sets how much depth the Spatial History will travel at a time.
+
+#### History Color
+
+- `Type`: <PropertyIcon name="color" />**Color**
+
+Sets which Color to use for the Spatial History. Typically this should blend with the Layer Colors currently used.
+
+#### History UV Bump
+
+- `Type`: <PropertyIcon name="vector2" />**Vector2**
+
+Configures the X and Y offset to shift the parallax in a specific direction each time Spatial History is triggered from Audio Link.
+
+### Min Color Override
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+
+Enables overriding the Min Depth Color using Audio Link.
+
+#### Color
+
+- `Type`: <PropertyIcon name="color" />**Color**
+
+Sets a Color to use as the Min Depth Color Override.
+
+#### Theme Color
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Theme Color 0`/`Theme Color 1`/`Theme Color 2`/`Theme Color 3`/`ColorChord 0`/`ColorChord 1`/`ColorChord 2`/`ColorChord 3`/`AL Theme 0`/`AL Theme 1`/`AL Theme 2`/`AL Theme 3`
+
+Option to set a Theme Color to use as the Min Depth Color Override instead.
+
+#### Color Override Band
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+
+Which Band to use to trigger the Min Depth Color Override.
+
+#### Color Override Ramp
+
+- `Type`: <PropertyIcon name="vectorcurve" />**Vector Curve**
+
+Vector ramp to determine how the Min Depth Color Override is used.
+
+### Max Color Override
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+
+Enables overriding the Max Depth Color using Audio Link.
+
+#### Color
+
+- `Type`: <PropertyIcon name="color" />**Color**
+
+Sets a Color to use as the Max Depth Color Override.
+
+#### Theme Color
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Theme Color 0`/`Theme Color 1`/`Theme Color 2`/`Theme Color 3`/`ColorChord 0`/`ColorChord 1`/`ColorChord 2`/`ColorChord 3`/`AL Theme 0`/`AL Theme 1`/`AL Theme 2`/`AL Theme 3`
+
+Option to set a Theme Color to use as the Max Depth Color Override instead.
+
+#### Color Override Band
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+
+Which Band to use to trigger the Max Depth Color Override.
+
+#### Color Override Ramp
+
+- `Type`: <PropertyIcon name="vectorcurve" />**Vector Curve**
+
+Vector ramp to determine how the Max Depth Color Override is used.
