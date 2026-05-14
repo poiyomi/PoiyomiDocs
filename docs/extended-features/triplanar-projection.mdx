@@ -12,6 +12,14 @@ Triplanar Projection is a feature that projects a texture onto the mesh from thr
 <img src="/img/Poiyomi-Pro-Label.png" alt="Pro Feature" width="600px"/>
 </a>
 
+:::danger
+Triplanar Projection is expensive. It samples texture three times and can be especially heavy with normals, masks, lighting, or extra features enabled. Use it conservatively!
+:::
+
+:::warning[Requires Depth Buffer]
+In order to use Triplanar Projection, you will need to place the `DepthGet` Prefab found in the `Assets/_PoiyomiShaders/Prefabs` on your avatar.
+:::
+
 ## Type
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Depth Projection`/`Self`
