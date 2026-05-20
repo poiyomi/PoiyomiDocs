@@ -28,6 +28,8 @@ import ReactVideo from '@site/src/components/ReactVideo'; // Import ReactVideo c
 
 import ShowWhenRef from '@site/src/components/ShowWhenRef';
 
+import SplashText from '@site/src/components/SplashText';
+
 library.add(fab, fas); // Add all icons to the library so you can use them without importing them individually.
 
 export default {
@@ -49,4 +51,5 @@ export default {
   Button,
   ReactVideo,
   ShowWhenRef,
+  SplashText,
 };
