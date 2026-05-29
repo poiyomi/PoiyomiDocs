@@ -46,8 +46,8 @@
     "@docusaurus/module-type-aliases": "3.10.1",
     "@docusaurus/tsconfig": "3.10.1",
     "@docusaurus/types": "3.10.1",
-    "baseline-browser-mapping": "^2.9.24",
     "@types/react": "^19.0.14",
+    "baseline-browser-mapping": "^2.9.24",
     "typescript": "~6.0.2"
   },
   "engines": {

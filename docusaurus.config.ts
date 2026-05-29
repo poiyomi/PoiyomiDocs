@@ -9,6 +9,7 @@ const config: Config = {
   tagline: "Toon Shaders for Unity and VRChat",
   url: "https://www.poiyomi.com",
   baseUrl: "/",
+  trailingSlash: false, // Pin URLs to a single form (no trailing slash) so canonicals are consistent and search engines don't see duplicate /page vs /page/ URLs.
   onBrokenLinks: "throw",
   onBrokenAnchors: "warn",
   favicon: "img/favicon.ico",
@@ -25,7 +26,9 @@ const config: Config = {
     v4: true,
   },
 
-  clientModules: [require.resolve('./src/modules/tab-toc-sync.ts')],
+  clientModules: [
+    require.resolve('./src/modules/tab-toc-sync.ts'),
+  ],
 
   plugins: [
     [
@@ -247,6 +250,7 @@ const config: Config = {
   ],
 
   themeConfig: {
+    image: 'img/Poiyomi-Thumbnail-Basic.png', // Default social card. Emits og:image + twitter:image on every page without an `image:` frontmatter. IMPORTANT FOR SEO!
     metadata: [
       // Place global <meta> tags here!
       { name: 'keywords', content: 'poiyomi, shaders, shader, vrchat, poiyomi shaders, blog, docs, documentation, toon, realistic, unity' }, // IMPORTANT SEO KEYWORDS! DO NOT REMOVE!
@@ -262,13 +266,10 @@ const config: Config = {
           href: 'https://www.poiyomi.com',
         },
       },
-      {
-        tagName: 'link',
-        attributes: {
-          rel: 'canonical', // Broadcasts the canonical URL of the website.
-          href: 'https://www.poiyomi.com',
-        },
-      },
+      // DEV NOTE: DO NOT add a global rel="canonical" here. Docusaurus already emits a correct
+      // per-page canonical (siteUrl + page path) when generated. A hardcoded site-wide
+      // canonical link makes every page claim to be a duplicate of the homepage, which
+      // Bing and DuckDuckGO honors literally and can de-index inner pages. -BluWizard10
       {
         tagName: 'link',
         attributes: {
