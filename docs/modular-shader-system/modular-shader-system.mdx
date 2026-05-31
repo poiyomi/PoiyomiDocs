@@ -574,14 +574,18 @@ Common UI attributes for material properties:
 | Attribute | Purpose |
 |-----------|---------|
 | `[HideInInspector]` | Hide from default inspector |
+| `[ThryHideInInspector]` | Same as `[HideInInspector]` but allows third-party utilities (such as VRCFury or Modular Avatar) to access it |
 | `[ThryToggle(KEYWORD)]` | Toggle that enables shader keyword |
 | `[ThryToggleUI(true)]` | Toggle without keyword |
 | `[ThryWideEnum(...)]` | Wide dropdown with named options |
 | `[sRGBWarning]` | Warn if texture is sRGB when it shouldn't be |
+| `[sRGBWarning(true)]` | Warn if texture is Linear when it shouldn't be |
 | `[Gradient]` | Gradient texture picker |
 | `[Vector2]` | 2D vector input |
 | `[VectorLabel(X, Y)]` | Labeled vector components |
 | `[Curve]` | Animation curve texture |
+| `[Ramp4(normalized)]` | Use a vector curve ramp |
+| `[DoNotAnimate]` | Explicitly block the property from being tagged as Animated |
 
 ### UI Organization
 
@@ -595,6 +599,11 @@ Common UI attributes for material properties:
 [HideInInspector] s_start_subsection ("Subsection--{reference_property:_EnableSub}", Float) = 0
 // ... properties ...
 [HideInInspector] s_end_subsection ("", Float) = 0
+
+// Nested Subsections
+[HideInInspector] ss_start_nestedsubsection ("Nested Subsection--{reference_property_EnableNestedSub}", Float) = 0
+// ... properties ...
+[HideInInspector] ss_end_nestedsubsection ("", Float) = 0
 ```
 
 ### Conditional Visibility
