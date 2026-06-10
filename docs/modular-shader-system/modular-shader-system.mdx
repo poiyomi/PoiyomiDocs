@@ -583,7 +583,9 @@ Common UI attributes for material properties:
 | `[Gradient]` | Gradient texture picker |
 | `[Vector2]` | 2D vector input |
 | `[VectorLabel(X, Y)]` | Labeled vector components |
+| `[IntRange]` | Only for Int props, makes a clamped range slider determined by `Range(X, Y)` |
 | `[Curve]` | Animation curve texture |
+| `[MultiSlider]` | Sets the Vector to clamp between a min and max value |
 | `[Ramp4(normalized)]` | Use a vector curve ramp |
 | `[DoNotAnimate]` | Explicitly block the property from being tagged as Animated |
 
@@ -610,6 +612,27 @@ Common UI attributes for material properties:
 
 ```hlsl
 _Property ("Name--{condition_showS:_OtherProperty==1}", Float) = 0
+```
+
+### UI-only Attributes
+
+These Attriibutes are used soley for helpful and decorative elements, which can help out in UI organization.
+
+```hlsl
+[Helpbox(1, 2, 1)] _MessageBox ("This is a UI message.", Int) = 0 // Creates a message box with a message and an Icon
+
+[PoiPrefabSpawner(GUID)] _PrefabSpawner ("Add Prefab to Scene", Float) = 0 // Adds the specific Prefab's GUID directly into the active Scene
+
+[Space(7)] // Creates spacing between the properties above and below this line by 7 pixels
+
+[ThrySeperator(2, 2, 2)] // Draws a horizontal line between the properties above and below this line (useful in Nested Subsections)
+
+// Thry Decal Positioning Tool
+[ThryDecalPositioning(_Texture, _UV, _Position, _Rotation, _Scale, _SideOffset)]
+// ... properties ...
+
+// Multi-Float Buttons (only used for UV Tile Discard)
+[ThryMultiFloatButtons(u0v0, u1v0, u2v0, u3v0, _UDIMDiscardRow0_1, _UDIMDiscardRow0_2, _UDIMDiscardRow0_3)] _UDIMDiscardRow0_0("Row 0", Float) = 0
 ```
 
 ## Helper Functions
