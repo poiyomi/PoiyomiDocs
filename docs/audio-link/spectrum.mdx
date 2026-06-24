@@ -373,6 +373,17 @@ Adjusts the visibility of the entire Spectrum projection on your Material.
 
 Overrides the entire Opacity of the Material besides the Spectrum itself. Works best with Transparency.
 
+### Apply Video Effect
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+  - Conditional: Requires [Video Effects](/special-fx/video-effects.mdx) to be turned on.
+
+If enabled, will apply [Video Effects](/special-fx/video-effects.mdx) to the Decal from it's global function.
+
+:::info[Shader Limitation]
+Video Effects [Brightness](/special-fx/video-effects.mdx#brightness) setting will override this module's Emissions, as they are not cross-compatible!
+:::
+
 ### Global Mask
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`

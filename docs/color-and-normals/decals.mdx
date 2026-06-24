@@ -159,6 +159,17 @@ This slider can be animated to hide and show the decal. Animating the [Section H
 
 Applies a multiplier for how much the decal's alpha should affect the material's alpha.
 
+### Apply Video Effect
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+  - Conditional: Requires [Video Effects](/special-fx/video-effects.mdx) to be turned on.
+
+If enabled, will apply [Video Effects](/special-fx/video-effects.mdx) to the Decal from it's global function.
+
+:::info[Shader Limitation]
+Video Effects [Brightness](/special-fx/video-effects.mdx#brightness) setting will override this module's Emissions, as they are not cross-compatible!
+:::
+
 ### Depth
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-0.5 - 2.0`
