@@ -13,6 +13,7 @@ import Icon_Slider from '@site/static/img/property-icons/Icon_SliderD.svg';
 import Icon_Texture from '@site/static/img/property-icons/Icon_TextureD.svg';
 import Icon_Toggle from '@site/static/img/property-icons/Icon_ToggleD.svg';
 import Icon_Float4Curve from '@site/static/img/property-icons/Icon_Float4DCurve.svg';
+import Icon_Curve4 from '@site/static/img/property-icons/Icon_Curve4.svg';
 
 const iconMap = {
     color: Icon_Color,
@@ -38,6 +39,7 @@ const iconMap = {
     bool: Icon_Toggle,
     boolean: Icon_Toggle,
     vectorcurve: Icon_Float4Curve,
+    curve4: Icon_Curve4,
 };
 
 export default function Icon({ name, size = '1.5em', style = {} }) {
