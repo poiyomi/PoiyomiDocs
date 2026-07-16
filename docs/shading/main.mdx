@@ -627,7 +627,7 @@ Flat Lighting is a toon lighting mode that uniformly lights the model at the sam
 Flat Light is useful for creating models that are highly robust to local lighting, but sacrifices detail.
 
 :::info
-The `Flat` lighting mode has no user-configurable options.
+The `Flat` lighting mode has <u>no</u> user-configurable options.
 :::
 
 <a target="_blank" href="/img/shading/Shading_Flat.png">
@@ -653,13 +653,13 @@ Realistic lighting is a physically-based lighting model that behaves similar to 
 
 - `Type`: <PropertyIcon name="color" />**Color**
 
-Shadow Tint will tint the shadow with a specific color, useful for creating a specific stylized shading effect. This color will be mixed with the Ambient Color (if enabled) to produce the final shading.
+Shadow Tint will tint the shadow map with a specific color, useful for creating a specific stylized shading effect. This color will be mixed with the Ambient Color (if enabled) to produce the final shading.
 
-#### Smoothness
+#### Shadow Strength
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
-Smoothness is a baked-in value determining how much additional reflection the material should have due to realistic shading. It can often be set to `0.0` and *Reflections & Specular* used instead to create a more realistic look.
+Determines how strong of a shadow is applied. A value of `0.0` will not apply any shadow, and a value of `1.0` will apply a full shadow.
 
 </details>
 

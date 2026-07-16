@@ -9,11 +9,8 @@ The Lil Fur feature module allows simulation of fabrics and hairs, looking simil
 
 To use Poiyomi Lil Fur, select the shader version `.poiyomi/Poiyomi Toon + Lil Fur` or `.poiyomi/Poiyomi Pro + Lil Fur`. This exposes the `lil Fur` category with the following settings shown below.
 
-:::warning[Heads Up]
-Lil Fur renders on it's own independently, meaning it does not stack with other Poiyomi features used. This is slightly lighter than Poiyomi Fur, but this means most features on Poiyomi will not appear on it.
-
-Please keep this in mind when using Lil Fur.
-:::
+<ReactVideo src='/vid/extended-features/LilFur-RoughDemo.webm'/>
+<em>*Rough example of LilFur with the Cutout Fur Mode active.*</em>
 
 ## Fur Mode
 
@@ -38,11 +35,11 @@ The Fur Normal Map determines the direction of the Fur strands.
 
 Determines and caps the length of the Fur.
 
-### Fur Vector
+### Vector
 
-- `Type`: <PropertyIcon name="float4" />**Float4**
+- `Type`: <PropertyIcon name="float4" />**Float3**
 
-Sets the vectors on the direction of the Fur in `X`, `Y`, `Z`, and `W`.
+Sets the vectors on the direction of the Fur in `X`, `Y`, and `Z`.
 
 ### Vertex Color -> Vector
 
@@ -70,6 +67,12 @@ Sets a degree on how much each direction of the fur is random.
 
 Sets a noise texture to use in the fur generation.
 
+:::tip[Try a Default Noise]
+LilFur has no effect if this texture slot is empty, so be sure to assign one!
+
+A starter texture is included in the shader's package you can use, located at `_PoiyomiShaders/Textures/Fur/lil_noise_fur_2.png`.
+:::
+
 ### Alpha Mask
 
 - `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = OFF`)
@@ -80,7 +83,13 @@ When specified, the fur is disabled on areas that are masked out.
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
-Sets the degree of amount to apply shading to the fur. This may show an darkened underlying structure of the furs (triangular patterns) from certain angles when increased.
+Sets the degree of amount to apply shading to the fur. This may show an darkened underlying structure of the furs (triangular patterns) from certain angles when increased, creating a slightly realistic appearance.
+
+### AO Curve
+
+- `Type`: <PropertyIcon name="curve4" />**Curve4**
+
+Adjusts finer control of the amount of AO to apply to the fur shading. Default is 0 -> 1.
 
 ## Layers
 
@@ -90,23 +99,79 @@ Sets the degree of amount to apply shading to the fur. This may show an darkened
 
 Amount of Fur that is produced. The higher the number, the denser and higher the load is.
 
+:::warning[Be Conservative!]
+Try to be a little conservative with the amount of layers to use. Dependent on the amount of Poiyomi Shaders features you have enabled, a full load of 3 can have a performance impact.
+:::
+
 ### Root Width
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Sets the thickness of the root to increase density and make the main body less visible.
 
-### Cutout Length
-
-- `Type`: <PropertyIcon name="float" />**Float**
-
-Sets the length of the cutout.
-
-### Touch Strength
+### Width
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
-Sets how much deformation is performed due to the contact function using a vertex light.
+Set's the width of the layer. Typically this should be of a small value. Higher values may yield more "blocky" results.
+
+## Wind
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+
+Enables an effect where Fur can be simulated with wind, determined by the settings exposed here.
+
+### Primary Wave (Main Effect)
+
+#### Direction
+
+- `Type`: <PropertyIcon name="vector4" />**Vector4**
+
+Sets the direction of the wind in X, Y, Z, and W axis.
+
+#### Amplitude
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 2.0`
+
+Sets the intensity of how the fur should be simulated with wind, back to back. This can create an effect where the wind changes direction at frequent speed.
+
+#### Speed
+
+- `Type`: <PropertyIcon name="float" />**Float**
+
+Sets the primary speed of the wind.
+
+#### Frequency
+
+- `Type`: <PropertyIcon name="float" />**Float**
+
+Sets how frequent this effect is given to the fur.
+
+### Detail Wave (Secondary Effect)
+
+#### Direction
+
+- `Type`: <PropertyIcon name="vector4" />**Vector4**
+
+Sets the direction of the detailing wind in X, Y, Z, and W axis.
+
+#### Amplitude
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 2.0`
+
+Sets the intensity of how the fur should be simulated with wind, back to back, on the secondary pass. This can create an effect where the wind changes direction at frequent speed.
+
+#### Speed
+
+- `Type`: <PropertyIcon name="float" />**Float**
+
+Sets the secondary speed of the wind.
+
+#### Frequency
+
+- `Type`: <PropertyIcon name="float" />**Float**
+
+Sets how frequent this secondary effect is given to the fur.
 
 ## Rim Light
 

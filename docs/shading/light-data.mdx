@@ -367,11 +367,17 @@ Defines how much to apply Unity's built-in casted shadows to the model. These ca
 
 Defines how much to desaturate the add pass lighting color. This keeps the perceptual luminance the same, but reduces the saturation.
 
-### Point Light Passthrough
+### Light Passthrough
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to apply realtime point lighting to the indirect color.
+
+### Light Attenuation Curve
+
+- `Type`: <PropertyIcon name="curve4" />**Curve4**
+
+Remaps the distance attenuation, allowing for finer control of the lighting falloff without having to change it's behavior within Unity.
 
 ## Debug Visualization
 
