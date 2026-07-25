@@ -1,24 +1,35 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 title: Lil Fur
 description: The Lil Fur Shader enables simulation of fabrics and hairs using the same technique found on LilToon's Fur Shader.
 keywords: [fur, lilfur, lil fur, liltoon, fur shader, poiyomi fur, poiyomi, shader]
 ---
 
-The Lil Fur feature module allows simulation of fabrics and hairs, looking similar to how fur is simulated in animated films. This uses the same simulation technique known in LilToon's Fur shader.
+The Lil Fur feature module allows simulation of fabrics and hairs, looking similar to how fur is simulated in animated films. This uses the exact same fur simulation technique known in LilToon's Fur shader.
 
-To use Poiyomi Lil Fur, select the shader version `.poiyomi/Poiyomi Toon + Lil Fur` or `.poiyomi/Poiyomi Pro + Lil Fur`. This exposes the `lil Fur` category with the following settings shown below.
+To use Poiyomi + Lil Fur, select the shader version `.poiyomi/Poiyomi Toon + Lil Fur` or `.poiyomi/Poiyomi Pro + Lil Fur`. This exposes the `Lil Fur` category with the following settings shown below.
 
-<ReactVideo src='/vid/extended-features/LilFur-RoughDemo.webm'/>
-<em>*Rough example of LilFur with the Cutout Fur Mode active.*</em>
+<a>
+<img src="/img/extended-features/LilFur-Haishima-Test.png" alt="Fluffy Haishima"/>
+</a>
+
+*A rather extremely fluffy example on this Haishima Avatar, utilizing Poiyomi Toon + Lil Fur.*
 
 ## Fur Mode
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Cutout`/`Transparent`
 
-This chooses the rendering mode to use for Lil Fur. Settings will be applied to the module's [Rendering](#rendering) properties.
+This chooses the rendering mode to use for Lil Fur. Settings will be applied to the module's [Rendering](#lil-fur-rendering) properties.
 
 For reference on the meanings of these modes, see [Rendering Presets](/general/render-preset.mdx).
+
+### Fur Mask (RGBA)
+
+- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = OFF`)
+
+Mask Texture in grayscale that determines the length of the Fur in various places on the UV space. Areas in darker grayscale will reduce the length based on the initial [Length](#length) value set.
+
+Determines and caps the length of the Fur.
 
 ## Fur
 
@@ -29,19 +40,27 @@ For reference on the meanings of these modes, see [Rendering Presets](/general/r
 
 The Fur Normal Map determines the direction of the Fur strands.
 
-### Length Mask
-
-- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = OFF`)
-
-Determines and caps the length of the Fur.
-
 ### Vector
 
-- `Type`: <PropertyIcon name="float4" />**Float3**
+- `Type`: <PropertyIcon name="float3" />**Float3**
+  - Default: `X = 0`, `Y = 0`, `Z = 1`
 
 Sets the vectors on the direction of the Fur in `X`, `Y`, and `Z`.
 
-### Vertex Color -> Vector
+### Length
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 0.5`
+  - Default: `0.02`
+
+Sets the total length of the Fur hairs.
+
+### Length Mask
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`R`/`G`/`B`/`A`
+
+When specified, the fur's length is determined from the selected channel specified from the Fur Mask.
+
+### Use Vertex Colors
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
 
@@ -57,27 +76,26 @@ Sets how much the Fur will face down from the force of gravity. The source of th
 
 - `Type`: <PropertyIcon name="float" />**Float**
 
-Sets a degree on how much each direction of the fur is random.
+Sets a degree on how much each direction of the fur is randomized.
 
 ## Appearance
 
 ### Noise
 
 - `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = OFF`)
+  - Default: `_PoiyomiShaders/Textures/Fur/lil_noise_fur_2.png`
 
-Sets a noise texture to use in the fur generation.
+Sets a noise texture to use in the fur generation. By default, this is set to a noise texture included in the shader package, courtesy of lilxyzw.
 
-:::tip[Try a Default Noise]
-LilFur has no effect if this texture slot is empty, so be sure to assign one!
-
-A starter texture is included in the shader's package you can use, located at `_PoiyomiShaders/Textures/Fur/lil_noise_fur_2.png`.
+:::warning[Required Texture Slot]
+LilFur has no effect if this texture slot is empty. Make sure this is properly assigned to one!
 :::
 
 ### Alpha Mask
 
-- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = OFF`)
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`R`/`G`/`B`/`A`
 
-When specified, the fur is disabled on areas that are masked out.
+When specified, the fur is disabled on areas that are masked out in the specific color channel.
 
 ### AO
 
@@ -85,33 +103,26 @@ When specified, the fur is disabled on areas that are masked out.
 
 Sets the degree of amount to apply shading to the fur. This may show an darkened underlying structure of the furs (triangular patterns) from certain angles when increased, creating a slightly realistic appearance.
 
-### AO Curve
-
-- `Type`: <PropertyIcon name="curve4" />**Curve4**
-
-Adjusts finer control of the amount of AO to apply to the fur shading. Default is 0 -> 1.
-
 ## Layers
 
-### Layer Counts
+### Layer Count
 
 - `Type`: <PropertyIcon name="floatrange" />**Int**, Range: `1 - 3`
+  - Default: `2`
 
 Amount of Fur that is produced. The higher the number, the denser and higher the load is.
-
-:::warning[Be Conservative!]
-Try to be a little conservative with the amount of layers to use. Dependent on the amount of Poiyomi Shaders features you have enabled, a full load of 3 can have a performance impact.
-:::
 
 ### Root Width
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+  - Default: `0.0`
 
 Sets the thickness of the root to increase density and make the main body less visible.
 
 ### Width
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+  - Default: `0.15`
 
 Set's the width of the layer. Typically this should be of a small value. Higher values may yield more "blocky" results.
 
@@ -121,7 +132,7 @@ Set's the width of the layer. Typically this should be of a small value. Higher 
 
 Enables an effect where Fur can be simulated with wind, determined by the settings exposed here.
 
-### Primary Wave (Main Effect)
+### Primary Wave
 
 #### Direction
 
@@ -147,7 +158,7 @@ Sets the primary speed of the wind.
 
 Sets how frequent this effect is given to the fur.
 
-### Detail Wave (Secondary Effect)
+### Detail Wave
 
 #### Direction
 
@@ -193,7 +204,7 @@ Sets the Fresnel strength of the Rim Lighting on the Fur.
 
 Sets the Anti Light factor on the Fur's Rim Lighting.
 
-## Rendering
+## Lil Fur Rendering
 
 :::warning[Heads Up]
 These properties are automatically set based on the [Fur Mode](#fur-mode) set. If you intend to modify these properties below, please do so with care.
@@ -208,50 +219,14 @@ Most, if not all properties that are listed here are the same descriptions as no
 
 Sets what faces should be culled.
 
-### SrcBlend RGB
+### ZTest
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Zero`/`One`/`DstColor`/`SrcColor`/`OneMinusDstColor`/`SrcAlpha`/`OneMinusSrcColor`/`DstAlpha`/`OneMinusDstAlpha`/`SrcAlphaSaturate`/`OneMinusSrcAlpha`
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Disabled`/`Never`/`Less`/`Equal`/`LessEqual`/`Greater`/`NotEqual`/`GreaterEqual`/`Always`
+  - Default: `LessEqual`
 
-Which blend factors to use for the source on the Fur. See the [Unity Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-Blend.html) and [Rendering Presets](/general/render-preset.mdx) page for more information.
+Sets how the shader should test the depth buffer on the Fur. By default, the depth buffer is tested, and if the depth value is not less than or equal to the current value, the pixel is discarded.
 
-### DstBlend RGB
-
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Zero`/`One`/`DstColor`/`SrcColor`/`OneMinusDstColor`/`SrcAlpha`/`OneMinusSrcColor`/`DstAlpha`/`OneMinusDstAlpha`/`SrcAlphaSaturate`/`OneMinusSrcAlpha`
-
-Which blend factors to use for the destination on the Fur. See the [Unity Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-Blend.html) and [Rendering Presets](/general/render-preset.mdx) page for more information.
-
-### SrcBlend Alpha
-
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Zero`/`One`/`DstColor`/`SrcColor`/`OneMinusDstColor`/`SrcAlpha`/`OneMinusSrcColor`/`DstAlpha`/`OneMinusDstAlpha`/`SrcAlphaSaturate`/`OneMinusSrcAlpha`
-
-Which blend factors to use for the Alpha source on the Fur. See the [Unity Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-Blend.html) and [Rendering Presets](/general/render-preset.mdx) page for more information.
-
-### DstBlend Alpha
-
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Zero`/`One`/`DstColor`/`SrcColor`/`OneMinusDstColor`/`SrcAlpha`/`OneMinusSrcColor`/`DstAlpha`/`OneMinusDstAlpha`/`SrcAlphaSaturate`/`OneMinusSrcAlpha`
-
-Which blend factors to use for the Alpha destination on the Fur. See the [Unity Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-Blend.html) and [Rendering Presets](/general/render-preset.mdx) page for more information.
-
-### BlendOp RGB
-
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Add`/`Subtract`/`ReverseSubtract`/`Min`/`Max`/`LogicalClear`/`LogicalSet`/`LogicalCopy`/`LogicalCopyInverted`/`LogicalNoop`/`LogicalInvert`/`LogicalAnd`/`LogicalNand`/`LogicalOr`/`LogicalXor`/`LogicalEquivalence`/`LogicalAndReverse`/`LogicalAndInverted`/`LogicalOrReverse`/`LogicalOrInverted`/`Multiply`/`Screen`/`Overlay`/`Darken`/`Lighten`/`ColorDodge`/`ColorBurn`/`HardLight`/`SoftLight`/`Difference`/`Exclusion`/`HSLHue`/`HSLSaturation`/`HSLColor`/`HSLLuminosity`
-
-Which blend operator to use for the RGB channels on the Fur. This is almost always set to `Add`. See the [Unity Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-BlendOp.html) for more information.
-
-### BlendOp Alpha
-
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Add`/`Subtract`/`ReverseSubtract`/`Min`/`Max`/`LogicalClear`/`LogicalSet`/`LogicalCopy`/`LogicalCopyInverted`/`LogicalNoop`/`LogicalInvert`/`LogicalAnd`/`LogicalNand`/`LogicalOr`/`LogicalXor`/`LogicalEquivalence`/`LogicalAndReverse`/`LogicalAndInverted`/`LogicalOrReverse`/`LogicalOrInverted`/`Multiply`/`Screen`/`Overlay`/`Darken`/`Lighten`/`ColorDodge`/`ColorBurn`/`HardLight`/`SoftLight`/`Difference`/`Exclusion`/`HSLHue`/`HSLSaturation`/`HSLColor`/`HSLLuminosity`
-
-What blend op to use for the Alpha channel on the Fur. This is typically set by the Rendering Preset. See the [Unity Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-BlendOp.html) for more information.
-
-### ZClip
-
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
-  - Default: `On`
-
-Enables or Disables the GPU's Depth Clip Mode on the Fur, which determines how the GPU handles fragments of the Shader that are outside of the Near and Far Planes.
-
-Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-ZClip.html).
+Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-ZTest.html).
 
 ### ZWrite
 
@@ -262,14 +237,14 @@ Determines whether the shader should write to the depth buffer on the Fur. For C
 
 Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-ZWrite.html).
 
-### ZTest
+### ZClip
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Disabled`/`Never`/`Less`/`Equal`/`LessEqual`/`Greater`/`NotEqual`/`GreaterEqual`/`Always`
-  - Default: `LessEqual`
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+  - Default: `On`
 
-Sets how the shader should test the depth buffer on the Fur. By default, the depth buffer is tested, and if the depth value is not less than or equal to the current value, the pixel is discarded.
+Enables or Disables the GPU's Depth Clip Mode on the Fur, which determines how the GPU handles fragments of the Shader that are outside of the Near and Far Planes.
 
-Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-ZTest.html).
+Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-ZClip.html).
 
 ### Offset Factor
 
@@ -289,7 +264,9 @@ A fixed value to move the polygon away from or toward the camera, while keeping 
 
 Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-Offset.html).
 
-### Color Mask
+### Color
+
+#### Color Mask
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `None`/`R`/`G`/`B`/`A`/`RGB`/`RGBA`
   - Default: `Everything`
@@ -298,13 +275,57 @@ Color Mask determines which color channels should be rendered on the Fur. By def
 
 Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-ColorMask.html).
 
-### Alpha To Mask
+#### Alpha To Mask
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Sets the Alpha to affect the Mask of the Fur.
 
-## Stencil
+### Lil Fur Blending
+
+These configurations will also appear for the Fur's **Forward Add** pass as well.
+
+#### RGB Blend Op
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Add`/`Subtract`/`ReverseSubtract`/`Min`/`Max`/`LogicalClear`/`LogicalSet`/`LogicalCopy`/`LogicalCopyInverted`/`LogicalNoop`/`LogicalInvert`/`LogicalAnd`/`LogicalNand`/`LogicalOr`/`LogicalXor`/`LogicalEquivalence`/`LogicalAndReverse`/`LogicalAndInverted`/`LogicalOrReverse`/`LogicalOrInverted`/`Multiply`/`Screen`/`Overlay`/`Darken`/`Lighten`/`ColorDodge`/`ColorBurn`/`HardLight`/`SoftLight`/`Difference`/`Exclusion`/`HSLHue`/`HSLSaturation`/`HSLColor`/`HSLLuminosity`
+
+Which blend operator to use for the RGB channels on the Fur. This is almost always set to `Add`. See the [Unity Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-BlendOp.html) for more information.
+
+#### RGB Source Blend
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Zero`/`One`/`DstColor`/`SrcColor`/`OneMinusDstColor`/`SrcAlpha`/`OneMinusSrcColor`/`DstAlpha`/`OneMinusDstAlpha`/`SrcAlphaSaturate`/`OneMinusSrcAlpha`
+
+Which blend factors to use for the source on the Fur. See the [Unity Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-Blend.html) and [Rendering Presets](/general/render-preset.mdx) page for more information.
+
+#### RGB Destination Blend
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Zero`/`One`/`DstColor`/`SrcColor`/`OneMinusDstColor`/`SrcAlpha`/`OneMinusSrcColor`/`DstAlpha`/`OneMinusDstAlpha`/`SrcAlphaSaturate`/`OneMinusSrcAlpha`
+
+Which blend factors to use for the destination on the Fur. See the [Unity Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-Blend.html) and [Rendering Presets](/general/render-preset.mdx) page for more information.
+
+#### Alpha Blending
+
+These configurations will also appear for the Fur's **Forward Add** pass as well.
+
+##### Alpha Blend Op
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Add`/`Subtract`/`ReverseSubtract`/`Min`/`Max`/`LogicalClear`/`LogicalSet`/`LogicalCopy`/`LogicalCopyInverted`/`LogicalNoop`/`LogicalInvert`/`LogicalAnd`/`LogicalNand`/`LogicalOr`/`LogicalXor`/`LogicalEquivalence`/`LogicalAndReverse`/`LogicalAndInverted`/`LogicalOrReverse`/`LogicalOrInverted`/`Multiply`/`Screen`/`Overlay`/`Darken`/`Lighten`/`ColorDodge`/`ColorBurn`/`HardLight`/`SoftLight`/`Difference`/`Exclusion`/`HSLHue`/`HSLSaturation`/`HSLColor`/`HSLLuminosity`
+
+What blend op to use for the Alpha channel on the Fur. This is typically set by the Rendering Preset. See the [Unity Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-BlendOp.html) for more information.
+
+### Alpha Source Blend
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Zero`/`One`/`DstColor`/`SrcColor`/`OneMinusDstColor`/`SrcAlpha`/`OneMinusSrcColor`/`DstAlpha`/`OneMinusDstAlpha`/`SrcAlphaSaturate`/`OneMinusSrcAlpha`
+
+Which blend factors to use for the Alpha source on the Fur. See the [Unity Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-Blend.html) and [Rendering Presets](/general/render-preset.mdx) page for more information.
+
+### Alpha Destination Blend
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Zero`/`One`/`DstColor`/`SrcColor`/`OneMinusDstColor`/`SrcAlpha`/`OneMinusSrcColor`/`DstAlpha`/`OneMinusDstAlpha`/`SrcAlphaSaturate`/`OneMinusSrcAlpha`
+
+Which blend factors to use for the Alpha destination on the Fur. See the [Unity Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-Blend.html) and [Rendering Presets](/general/render-preset.mdx) page for more information.
+
+### Lil Fur Stencil
 
 :::warning[Heads Up]
 Most, if not all properties that are listed here are the same descriptions as notated in [Stencil](/rendering/stencil.mdx). However, these settings are completely independent of the material's overall Stencil settings.
