@@ -7,18 +7,30 @@ keywords: [normals, normal, normal correction, correction]
 
 Normal Correct forces the normals of the mesh to point towards a certain direction. This can have the effect of "flattening" out the shading, commonly only useful for getting more out of toon shading on faces.
 
+:::info
+The "center" of the Origin is an offset from the `Root Bone` of your mesh. This means the effect will appear differently depending on the specified `Root Bone` your mesh is set to.
+:::
+
 ## Normal Correct Amount
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Controls the intensity of how much it alters the normals.
 
-## Origin
+## X
 
-- `Type`: <PropertyIcon name="float3" />**Float3**
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
 
-The point that acts as the center will be where the normals are aligned outwards from, on the XYZ axis.
+The point that acts as the center on the X-axis where the normals are aligned outwards from.
 
-:::info
-The "center" of the Origin is an offset from the `Root Bone` of your mesh. This means the effect will appear differently depending on the specified `Root Bone` your mesh is set to.
-:::
+## Y
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
+
+The point that acts as the center on the Y-axis where the normals are aligned outwards from.
+
+## Z
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
+
+The point that acts as the center on the Z-axis where the normals are aligned outwards from.

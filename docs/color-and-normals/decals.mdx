@@ -36,7 +36,7 @@ Each of the 4 decal sections (0, 1, 2, 3) have the following options listed belo
 :::
 
 {/* NOTE: DO NOT CHANGE THIS HEADER! This is linked to from the Shader UI! */}
-### Positioning
+## Positioning
 
 :::tip
 Decals supports the **Raycast** feature, which allows you to visually position a Decal on your Model without having to second-guess its exact UV coordinates.
@@ -48,37 +48,37 @@ To use this feature, edit the Decal on your Material <u>directly from the Mesh</
 `Left-Click` on the **Raycast** button to enable the feature. Hover the Mouse over your Mesh to position it, then `Left-Click` again to finalize your placement.
 :::
 
-#### Position
+### Position
 
 - `Type`: <PropertyIcon name="float2" />**Vector2**
 
 Where on the UV the decal's center should be.
 
-#### Rotation
+### Rotation
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 360.0`
 
 How much rotation to apply to the decal, around its center position.
 
-#### Rotation Speed
+### Rotation Speed
 
 - `Type`: <PropertyIcon name="float" />**Float**
 
 A constant roatation speed applied to the decal. A value of `180` will rotate the decal once per second.
 
-#### Scale
+### Scale
 
 - `Type`: <PropertyIcon name="float2" />**Vector2**
 
 Scale of the decal, in UV space. `1.0, 1.0` would map the decal to the entire UV square.
 
-#### Side Offset
+### Side Offset
 
 - `Type`: <PropertyIcon name="float4" />**Vector4**
 
 How much scale offset to define on each side of the decal.
 
-#### Mirrored UV Mode
+### Mirrored UV Mode
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`Flip`/`Left Only`/`Right Only`/`Flip Right Only`
 
@@ -90,43 +90,43 @@ If your Decals appear normally in the intended location without it appearing in 
 While models with Overlapping UVs are becoming less and less common, there are still many models out there that suffer from this mistake. Only use this setting if this is the case on your end.
 :::
 
-#### Symmetry Mode
+### Symmetry Mode
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`Symmetry`/`Flipped`
 
 This setting will divide the UV down the Center (at `X = 0.5`) and puts the Decal on Both Sides of the Symmetry, like a mirror. This only works on models that have a perfectly symmetrized UV layout.
 
-#### Tiled
+### Tiled
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Whether or not the decal texture should be tiled. By default, decals are not tiled.
 
-### Color
+## Color
 
 - `Type`: <PropertyIcon name="color" />**Color**
 
 Base color for the decal texture. This is blended multiplicative with the Decal.
 
-### Decal
+## Decal
 
 - `Type`: <PropertyIcon name="texture" />**Color** Texture (`sRGB = ON`)
 
 The texture used for the decal. The alpha channel is used to define where the decal should be blended.
 
-#### Mask Channel
+### Mask Channel
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `R`/`G`/`B`/`A`
 
 Which channel of the Decal RGBA mask to use for masking. ***Expand the [Decal](#decal) Texture Slot to see this property.***
 
-### Emission Strength
+## Emission Strength
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 20.0`
 
 How much Emission to apply from the Decal's Base Color. Higher values will yield a bloom-like effect in certain Worlds.
 
-### Color Blend Mode
+## Color Blend Mode
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Replace`/`Darken`/`Multiply`/`Lighten`/`Screen`/`Subtract`/`Add`/`Overlay`/`Mixed`
 
@@ -134,15 +134,15 @@ Which blending operation to use for the Decal's base color.
 
 These are the same blending operators that are used in Adobe Photoshop.[^1]
 
-### Alpha Blend Mode
+## Alpha Blend Mode
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**
-    - Main Options: `Off`/`Replace`/`Multiply`/`Add`/`Subtract`/`Min`/`Max`
-    - Secondary Options: `Everywhere`/`Decal Bounds`
+  - Main Options: `Off`/`Replace`/`Multiply`/`Add`/`Subtract`/`Min`/`Max`
+  - Secondary Options: `Everywhere`/`Decal Bounds`
 
 Which blending operation to use from the Decal's Alpha channel.
 
-### Alpha
+## Alpha
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
@@ -152,14 +152,14 @@ How much to apply the blended color to the base color.
 This slider can be animated to hide and show the decal. Animating the [Section Header](/general/locking.mdx#section-header-checkboxes) will not work!
 :::
 
-### Alpha Intensity
+## Alpha Intensity
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 10.0`
   - Default: `1.0`
 
 Applies a multiplier for how much the decal's alpha should affect the material's alpha.
 
-### Apply Video Effect
+## Apply Video Effect
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
   - Conditional: Requires [Video Effects](/special-fx/video-effects.mdx) to be turned on.
@@ -170,11 +170,53 @@ If enabled, will apply [Video Effects](/special-fx/video-effects.mdx) to the Dec
 Video Effects [Brightness](/special-fx/video-effects.mdx#brightness) setting will override this module's Emissions, as they are not cross-compatible!
 :::
 
-### Depth
+## Depth
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-0.5 - 2.0`
 
 How much parallax depth the decal should have. This can be used for layered parallax posters, or other unique designs.
+
+## Color Adjust
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+
+Enables the Color Adjustment sliders in Decals.
+
+### Saturation
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 10.0`
+  - Normal: `0.0`
+
+Adjusts the saturation of the Decal. 
+
+A value of `-1` will make the Decal fully de-saturate (grayscale). A value of `0` will not alter the color at all. A value greater than 0 will increase the saturation of the base color.
+
+This is implemented as a lerp between the Decal and a grayscale version of the Decal.
+
+### Chromatize
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 10.0`
+  - Normal: `0.0`
+
+Adjusts the intensity of the Decal's color reproduction and quality regardless of it's luminance.
+
+### Brightness
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
+  - Normal: `0.0`
+
+Adjusts the brightness of the Decal. 
+
+This increases or decreases brightness directly on top of the existing color, without regard for it's hue or tone.
+
+### Gamma
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.01 - 5.0`
+  - Normal: `1.0`
+
+Adjusts the gamma of the Decal.
+
+This can lerp the brightness of the Decal's color in regards to it's hue or tone. Lower values are more lighter, while higher values are more bolder.
 
 ### Hue Shift
 
@@ -225,7 +267,7 @@ This value is circular, and will have the same result at `0` and `1`.
 
 How much to shift the hue with surface angle. A value of `1` will give maximum hue shift when looking straight-on, and no hue shift cycle when looking side-on. The opposite effect can be achieved with negative values. Higher or lower values will produce more or less hue shift as the surface angle changes, creating the kind of effect seen on some holographic trading cards and iridescent materials.
 
-### Video Texture
+## Video Texture
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
 
@@ -249,91 +291,97 @@ This feature enables a Video Texture to appear on the Decal. It will only work i
 
 </details>
 
-#### Aspect Ratio
+### Aspect Ratio
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Shrink2Fit`/`Grow2Fit`/`Off`
 
 Determines the Aspect Ratio of the Video Texture. You can specify to either fit within the boundaries of your Decal, or fill in the entire Decal boundaries.
 
-#### Fit To Scale
+### Fit To Scale
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Changes the sizing of the Video Texture to fit to the Scale of the Decal.
 
-#### Use Decal Alpha
+### Use Decal Alpha
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Uses the Alpha of the Decal for the Video Texture.
 
-#### Only Show Video
+### Only Show Video
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 If enabled, will show ONLY the Video on the Decal.
 
-#### Emission
+### Emission
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 20.0`
 
 Adjusts the Emissive effect of the Video Texture. Higher values will yield a bloom-like effect in some Worlds.
 
-### Chromatic Aberration
+## Chromatic Aberration
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables a feature that turns the specified Decal into a Chromatic Aberration effect, which splits the colors alongside a specified angle.
 
-#### Intensity
+### Intensity
 
 - `Type`: <PropertyIcon name="float" />**Float**
 
 Amount of aberration to use, increasing it's distance. Higher values will yield more intense aberration.
 
-#### Surface Angle Intensity
+### Surface Angle Intensity
 
 - `Type`: <PropertyIcon name="float" />**Float**
 
 Adjusts how the surface influences the Angle intensity.
 
-#### Hue
+### Hue
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
 
 Modifies the chromatic hue on the aberration.
 
-#### Direction
+### Direction
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-3.14 - 3.14`
 
 Adjusts the direction of the aberration.
 
-#### Premultiply Alpha
+### Premultiply Alpha
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables pre-multiplying the Alpha of your Decal for Chromatic Aberration.
 
-### Masking
+## Masking
 
-#### Face Mask
+### Face Mask
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`Front Only`/`Back Only`
 
 Choice of where the Decal should appear on your Normals. You can choose it to appear only on the Front Face, the Back Face, or Both (default).
 
-#### Apply From Global Mask
+### Apply From Global Mask
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
 Select which [Global Mask](/modifiers/global-masks.mdx) to apply directly onto the Decal.
 
-#### Apply To Global Mask
+### Apply To Global Mask
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
 
 Select which [Global Mask](/modifiers/global-masks.mdx) to send your Decal's effects onto the specified Global Mask.
+
+### Show On Outlines
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+
+If enabled, will show the Decal on [Outlines](/outlines/outlines.mdx).
 
 ## Audio Link
 

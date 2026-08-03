@@ -67,7 +67,7 @@ How much to offset the outline in the X, Y, and Z directions, in unity base unit
 ## Space
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Local`/`World`
-    - Default: `Local`
+  - Default: `Local`
 
 Determines where the size of the Outlines should assume the initial scale units from. Influences the [Outline Size](#outline-size).
 
@@ -94,7 +94,7 @@ Mask Texture in Grayscale that determines the thickness of the Outline in variou
 Examples:
 - If your Outline Size is `0.5` and a section of your Texture is 50% Gray, it will reduce the thickness in that area to about `0.25` thickness, which is half of your Outline Size.
 - If a section of your Texture is Black, it will reduce the thickness all the way down to `0` thickness.
-    - If [Clip 0 Width](#clip-0-width) is enabled in this scenario, the Outline will be clipped entirely.
+  - If [Clip 0 Width](#clip-0-width) is enabled in this scenario, the Outline will be clipped entirely.
 
 :::note
 This determines the Outline Width *per-vertex*, not per-pixel.
@@ -118,13 +118,13 @@ Base Color of the Outline. Can be mixed in various ways depending on the [Mode](
 
 How much Emission the Outline should have. Creates a glowing effect, especially in Worlds with Post Processing Bloom.
 
-## MainTex Blend
+## Main Texture Blend
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much the [Outline Color](#color) should be blended with your Texture.
 
-## UTS2 style Blend
+## UTS2-style Blend
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
 
@@ -138,9 +138,19 @@ Determines if you want the Outlines to blend in a way that is similar to Unity-C
 
 Enables the ability to modify the Outline Color in a similar fashion to [Color Adjust](/color-and-normals/color-adjust.mdx). This is applied directly after the main [Outline Color](#color), and will not affect other sections that modify the base Outline Color.
 
-:::info[This area was recently updated!]
-All of these values can be individually animated as of the latest version.
-:::
+### Color Space
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `OKLab`/`HSV`
+
+Choice of Color Space to use for the Hue Shift. By default, it will be set to `OKLab`.
+
+Learn about the difference of Color Spaces as documented here in [Color Adjust](/color-and-normals/color-adjust.mdx#oklab-vs-hsv).
+
+### Shift Speed
+
+- `Type`: <PropertyIcon name="float" />**Float**
+
+How much to constantly shift the Outline Hue with time. A value of 1 will result in a full hue shift cycle every 20 seconds.
 
 ### Hue
 
@@ -148,35 +158,63 @@ All of these values can be individually animated as of the latest version.
 
 How much to shift the Outline Color around the Hue Circle.
 
+### Saturation Style
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Saturation Value (old)`/`Saturation Brightness`
+  - Default: `Saturation Brightness`
+
+Selects the type of Saturation or Brightness style to use.
+
+This dropdown is provided for backwards-compatibility with both old 9.3 and newer 10.0 animation setups. The setting of this dropdown will affect what values are exposed here.
+
+- `Saturation Value (old)` will use the old system with the [Saturation Adjust](#saturation-adjust) and [Value Adjust](#value-adjust) sliders exposed.
+- `Saturation Brightness` will use the NEW system with modern [Saturation](#saturation) and [Brightness](#brightness) sliders exposed.
+
 ### Saturation
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 2.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 10.0`
+  - Normal: `0.0`
+  - Conditional: Requires [Saturation Style](#saturation-style) set to `Saturation Brightness`.
 
-Adjusts the saturation of the Outline Color.
+Adjusts the saturation of the Outlines. 
 
-- A value of `0` will make the Oultine Color fully de-saturate (Grayscale).
-- A value of `1` will not alter the color at all.
-- A value greater than `1` will increase the Saturation of the outline Color.
+A value of `-1` will make the Outlines fully de-saturate (grayscale). A value of `0` will not alter the color at all. A value greater than 0 will increase the saturation of the color.
 
-### Value
+This is implemented as a lerp between the base color and a grayscale version of the base color.
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 2.0`
+### Brightness
 
-Adjusts the influence (or Brightness) of the color without regard to it's hue or tone.
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 2.0`
+  - Normal: `0.0`
+  - Conditional: Requires [Saturation Style](#saturation-style) set to `Saturation Brightness`.
 
-### Gamma
+Adjusts the brightness of the Outlines. 
+
+This increases or decreases brightness directly on top of the Outlines, without regard for it's hue or tone.
+
+### Saturation Adjust
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
+  - Normal: `0.0`
+  - Conditional: Requires [Saturation Style](#saturation-style) set to `Saturation Value (old)`.
+
+Adjusts the Saturation of the Outlines.
+
+A value of -1 will make the Outlines fully de-saturate (grayscale). A value of 0 will not alter the color at all. A value greater than 0 will increase the saturation of the Theme Color.
+
+## Value Adjust
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
+  - Normal: `0.0`
+  - Conditional: Requires [Saturation Style](#saturation-style) set to `Saturation Value (old)`.
+
+Adjusts the brightness value of the Outlines on top, without regard for it's Hue or Tone.
+
+## Gamma
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.01 - 2.0`
 
-Lerps the brightness of the color in regards to it's hue or tone.
-
-### Shift Speed
-
-- `Type`: <PropertyIcon name="float" />**Float**
-
-How much to constantly shift the hue with time.
-
-For reference, a value of `1` will result in a full Hue Shift cycle every 20 seconds.
+Lerps the brightness of the Outlines in regards to it's hue or tone.
 
 {/*-------- Distance Alpha Section --------*/}
 

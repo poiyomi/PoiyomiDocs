@@ -1,0 +1,46 @@
+---
+sidebar_position: 1
+title: Baked Lighting
+description: Controls lighting behavior when used in a Scene with Global Illumination.
+keywords: [baked, lighting, light, static, poiyomi, shader]
+---
+
+Controls for the lighting behavior when used in a Scene with Global Illumination or Baked Lightmaps. To use Baked Lighting, switch to `.poiyomi/Poiyomi Toon World` Shader. If you are building a World with Poiyomi Materials, using `Poiyomi World` is required in order to include it with your Global Illumination.
+
+:::caution[Batching Unsupported!]
+Due to the shader locking system, Static Batching is unsupported! For this reason, you should keep your usage of Poiyomi World to a strict minimum.
+:::
+
+## GI Emission Multiplier
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**
+
+Sets the Global Illumination Multiplier for the Emission's influence on your baked meshes.
+
+## Double Sided Global Illumination
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+
+If enabled, allows the Global Illumination to be baked on both faces.
+
+## Global Illumination
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `None`/`Baked`/`Realtime`
+
+Sets the behavior of how your Material is treated in your environment.
+
+- `None`: Nothing in your environment will be influenced by the Emissions.
+- `Baked`: Any meshes nearby will be influenced by the Emissions.
+- `Realtime`: Any meshes nearby will be influenced by the Emissions in real time.
+
+## Bakery Mode
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `None`/`SH`/`RNM`/`MonoSH`
+
+If using Bakery GPU Lightmapper, use this property to choose which mode is being used in Bakery.
+
+## Use Bicubic Filtering
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+
+If enabled, will use the Bicubic Filtering algorithm in Global Illumination.
