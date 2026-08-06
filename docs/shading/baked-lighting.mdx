@@ -5,10 +5,14 @@ description: Controls lighting behavior when used in a Scene with Global Illumin
 keywords: [baked, lighting, light, static, poiyomi, shader]
 ---
 
-Controls for the lighting behavior when used in a Scene with Global Illumination or Baked Lightmaps. To use Baked Lighting, switch to `.poiyomi/Poiyomi Toon World` Shader. If you are building a World with Poiyomi Materials, using `Poiyomi World` is required in order to include it with your Global Illumination.
+Controls for the lighting behavior when used in a Scene with Global Illumination or Baked Lightmaps. To use Baked Lighting, switch to `.poiyomi/Poiyomi Toon World` or `.poiyomi/Poiyomi Pro World` Shader. If you are building a World with Poiyomi Materials, using `Poiyomi World` is required in order to include it with your Global Illumination.
 
-:::caution[Batching Unsupported!]
-Due to the shader locking system, Static Batching is unsupported! For this reason, you should keep your usage of Poiyomi World to a strict minimum.
+:::caution
+Poiyomi Shaders is <u>not</u> designed to be used as a general-purpose World shader. It should be reserved only when you require specialized functionality that Poiyomi Shaders offers that typical World shaders lack thereof.
+
+Using Poiyomi World for all of your World materials will be detrimental to performance and will risk a bloated world size due to the Shader Optimizer system.
+
+Additionally, Static Batching is unsupported! For this reason, you should keep your usage of Poiyomi World to a strict minimum!
 :::
 
 ## GI Emission Multiplier
