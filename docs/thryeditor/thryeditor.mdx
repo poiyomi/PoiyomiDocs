@@ -2,7 +2,8 @@
 sidebar_position: 1
 title: Thry Editor
 hide_title: true
-description: Thry Editor is the underlying framework that powers the User Interface known in Poiyomi Shaders, and serves as the core Shader Inspector and Editor.
+description: Thry Editor is the underlying framework that powers the User Interface in Poiyomi Shaders and serves as the core Shader Inspector and Editor.
+image: /img/thryeditor/ThryEditor-Test-Logo.png
 keywords: [thry, editor, thryeditor, thryrallo, ui, poiyomi, shader]
 ---
 
@@ -50,20 +51,28 @@ Right Clicking opens the Quick Presets context menu. Here you can only select on
 
 You can also create your own Presets using this feature. [See the Documentation Page to learn more.](/thryeditor/presets.mdx)
 
-### Material Linking
+### Global Linking
 
-The material linking UI allows you to link sections of multiple materials together.
+A spiritual successor to the former Material Linker, Global Linking follows the same principles but is tuned into a more refined, reliable array system.
 
-Afterwards you can change the properties of one material and the linked materials will change as well.
+Global Linking allows linking multiple Materials together to follow the same consistent properties using a JSON string, allowing for non-destructive and repeatable configurations. This eliminates the requirement of hard-linking materials together.
 
-1. Click the `Link Materials` icon next to any section.
-2. Select the materials you want to link.
-You can also drag and drop materials from the asset view.
-3. Click the `Done` button.
+To use Global Linking:
 
-<a>
-<img src="/img/thryeditor/linking.png" alt="Material Linking" width="700px"/>
-</a>
+1. Press the new `Global Link` icon in the Material Section
+2. Create a new link by typing in a name, and click `Add`.
+3. The Global Link has been created.
+
+You can then apply your Global Link to other materials from the following:
+
+1. On the other Material, press the new `Global Link` icon.
+2. Click the link you created from the list of Available Links.
+3. A prompt will ask you to either,
+   1. Apply Properties from the link (Recommended)
+   2. Override Properties on the link with the values on your material (Not Recommended)
+4. The Global Link has been added.
+
+Now whenever you make changes to the Globally Linked section, the values will be instantly updated for all other materials that are linked as well. The Global Link icon will be indicated with Green color to show you that the properties have been globally linked.
 
 ### Unbound Properties
 
@@ -126,6 +135,14 @@ Notes is a basic feature allowing the user to add text to the Shader's module. T
 
 To add or edit a Note, press the Context Menu (3 dots icon) and click `Set Note`.
 
+### Material Text Serializer
+
+The Material Text Serializer allows for basic Copy/Paste of Material Settings from in and outside of Unity Editor.
+
+Press the Context Menu (3 dots icon) and click `Copy as Text` to copy the material settings from the affected section(s) to your computer's clipboard in a JSON format. If there are settings shared with you, use `Paste as Text` to apply the JSON from your clipboard into the material.
+
+Due to limitations, only Material Properties such as Toggles, Sliders, Floats, Ints and Vectors, can be used in the JSON. Texture GUIDs are not supported.
+
 ## Cross Shader Editor
 
 The Cross Shader Editor is a panel that allows you to mass-edit your Poiyomi Materials, all at once. Anything you edit or change in this panel will be applied to all Materials that are referenced.
@@ -153,5 +170,6 @@ Thry Editor integrates itself within the Unity Project from the Menu Bar and in 
 You can quickly and efficiently Lock or Unlock ALL Poiyomi Materials found within an Avatar with just a few clicks. This can be helpful when ensuring things are properly locked prior to uploading.
 
 To access it, `Right-Click` on your Avatar. In the context menu, hover over `Thry -> Materials`, then click either `Lock All` or `Unlock All`.
+- `Lock All` will lock all materials and referenced materials in Animators, while `Lock Renderers` will lock only materials on Mesh Renderer components.
 
 You can also do the same thing to Folders in your Unity Project by `Right-Clicking` on a Folder that contains Poiyomi Materials as well.

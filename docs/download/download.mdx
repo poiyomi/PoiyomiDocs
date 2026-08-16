@@ -124,7 +124,9 @@ If you are going to be using both Toon and Pro, please install the `Poiyomi Pro`
 
 ## Method 2: Manual Unity Package
 
-We offer a Unity Package of our shaders for those who prefer to use it. Read the instructions below to learn how to install the package.
+We offer a Unity Package of our shaders for non-VCC projects. THIS IS NOT RECOMMENDED unless you have a very good reason otherwise.
+
+Read the instructions below to learn how to install the package.
 
 <div style={{marginBottom: '20px'}}>
 
@@ -165,7 +167,22 @@ The Pro version of the shader (also known as Poiyomi Pro) is a Paid Version of t
 
 </div>
 
-### Pro Version: Unity Package
+### Pro Version Method 1: VCC Package
+
+Optionally, we offer downloading Poiyomi Pro using our VCC Package. Things work a little differently, so follow the same instructions as noted above in [Method 1: ALCOM / Creator Companion](#method-1-alcom--creator-companion) but instead of adding the `Poiyomi Toon Shader` package to your project, you will instead add `Poiyomi Pro`.
+
+As stated, things work a little differently with this version. The following sequence will take place:
+1. Upon launching your Unity Project, a script will run that will open your Web Browser. You will then be asked to authorize with your Patreon account on `pro.poiyomi.com`.
+2. Login to your Patreon account when prompted, and confirm to authorize your connection to Poiyomi Pro.
+   - *If you've already logged in to this website previously, you will be automatically redirected to the next step.*
+3. When successful, a message should appear saying, *"Authentication successful. You may now close this window."*
+4. Jump back into your Unity Project. Assuming you've successfully authorized linking your Patreon account, the script will automatically begin installing Poiyomi Pro into your project. Enjoy using Poiyomi Pro!
+
+:::note
+Please keep in mind that the scripting in the VCC version is intentionally designed to require an active subscription in order to receive future updates. When updating Poiyomi Pro, you must go through the same process again as detailed above.
+:::
+
+### Pro Version Method 2: Unity Package
 
 We primarily offer the Poiyomi Pro version as a Unity Package and can be downloaded on our website. This is our recommended method for installing Poiyomi Pro.
 
@@ -184,21 +201,6 @@ To access these versions, follow the instructions below.
 **For security reasons, distribution of our newest Poiyomi Pro Unity Packages through Discord is being discontinued!** Poiyomi Pro versions will only be offered through <u>pro.poiyomi.com</u> or through <u>our VCC Package</u> and will never be distributed anywhere else!
 
 If your subscription lapses, you may keep a copy of the last Unity Package you downloaded somewhere safe on your computer.
-:::
-
-### Pro Version: VCC Package
-
-Optionally, we offer downloading Poiyomi Pro using our VCC Package. Things work a little differently, so follow the same instructions as noted above in [Method 1: ALCOM / Creator Companion](#method-1-alcom--creator-companion) but instead of adding the `Poiyomi Toon Shader` package to your project, you will instead add `Poiyomi Pro`.
-
-As stated, things work a little differently with this version. The following sequence will take place:
-1. Upon launching your Unity Project, a script will run that will open your Web Browser. You will then be asked to authorize with your Patreon account on `pro.poiyomi.com`.
-2. Login to your Patreon account when prompted, and confirm to authorize your connection to Poiyomi Pro.
-   - *If you've already logged in to this website previously, you will be automatically redirected to the next step.*
-3. When successful, a message should appear saying, *"Authentication successful. You may now close this window."*
-4. Jump back into your Unity Project. Assuming you've successfully authorized linking your Patreon account, the script will automatically begin installing Poiyomi Pro into your project. Enjoy using Poiyomi Pro!
-
-:::note
-Please keep in mind that the scripting in the VCC version is intentionally designed to require an active subscription in order to receive future updates. When updating Poiyomi Pro, you must go through the same process again as detailed above.
 :::
 
 By using Poiyomi Pro, you agree to the EULA stated [here](/terms-of-service/terms-of-service.mdx#pro-version).
@@ -256,6 +258,8 @@ To see the different features offered between the Free vs. Pro version, refer to
 | [Squish](/special-fx/squish.mdx) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | [Triplanar Projection](/extended-features/triplanar-projection.mdx) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | [GT7 Tone Mapping](/modifiers/post-processing/gt7.mdx) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| [Lava Lamp](/raymarching/lava-lamp.mdx) | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
+| Self Grab | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | Custom Modules | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | Wireframe | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |
 | NameTag | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ |

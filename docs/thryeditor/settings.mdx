@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 title: Settings
 description: Configuration Settings for Thry Editor in Unity.
 keywords: [thry, editor, thryeditor, thryrallo, settings, ui, configuration, config, poiyomi, shader]
@@ -53,6 +53,13 @@ Shows in-field warnings on specified Textures in various Texture Slots that aren
 
 Shows an asterisk (`*`) on any property that has deviated away from it's default value. Useful for seeing which values are not at it's default, and can assist with debugging.
 
+### Show animated tagged dots on headers
+
+- `Setting`: **Toggle**
+  - Default: `On`
+
+Shows a colored dot (`•`) on the Section Header that has detected child properties currently tagged as `A` or `RA`. Useful for debugging.
+
 ## Shader UI Features
 
 ### Automatically mark animated properties
@@ -75,6 +82,13 @@ Allows a custom suffix to be used on properties that are marked Renamed Animated
   - Default: `gradient_<hash>.png`
 
 Defines the naming scheme to use when auto-saving generated Gradients used in the Material UI.
+
+### Allow Notes 
+
+- `Setting`: **Toggle**
+  - Default: `On`
+
+Allows setting and displaying of Notes on Section Headers in the shader UI. Can be helpful for users who wish to remember what section they're using the feature for.
 
 ## Avatar Fixes
 
@@ -116,7 +130,7 @@ This setting can be individually disabled per avatar by creating an object named
 ### Human Bone Anchor
 
 - `Setting`: **Dropdown**, Options: `Humanoid Bones`
-  - Default: `Spine`
+  - Default: `Chest`
 
 The Bone to use as the Anchor Override if the GameObject Anchor Name doesn't exist. Only works if the model is Humanoid (which is usually the case).
 
@@ -192,6 +206,15 @@ Automatically fixes certain locking errors relating to keywords being missing. T
 ## Developer Settings
 
 The settings below is only intended for Thryrallo. Use these settings at your own risk.
+
+### Logging Level
+
+- `Setting`: **Dropdown**, Options: `None`/`Normal`/`Detailed`/`Stack Traced`
+  - Default: `Normal`
+
+Sets the `ThryLogger` level in the scripts across Thry Editor. For the most part, this should be left at `Normal`.
+
+Tech-savvy users who wish to know what the scripts are doing may set this to `Detailed` or `Stack Traced`, although this will cause the Log files to get very large!
 
 ### Show Manual Reload Button
 
