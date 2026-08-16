@@ -9,7 +9,13 @@ const config: Config = {
   tagline: "Toon Shaders for Unity and VRChat",
   url: "https://www.poiyomi.com",
   baseUrl: "/",
-  trailingSlash: false, // Pin URLs to a single form (no trailing slash) so canonicals are consistent and search engines don't see duplicate /page vs /page/ URLs.
+
+  // Pin URLs to a single form (no trailing slash) so canonicals are consistent and search engines don't see duplicate /page vs /page/ URLs.
+  // DEV NOTE: this makes the build emit flat files (`intro.html`, not `intro/index.html`), which Vercel
+  // only serves at `/intro` when `cleanUrls` is on. Keep `cleanUrls`/`trailingSlash` in vercel.json in
+  // sync with this — without them every deep link 404s (the SPA hides it, but crawlers and #anchors break).
+  trailingSlash: false,
+  
   onBrokenLinks: "throw",
   onBrokenAnchors: "warn",
   favicon: "img/favicon.ico",
