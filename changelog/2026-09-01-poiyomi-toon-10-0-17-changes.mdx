@@ -1,0 +1,449 @@
+---
+title: Poiyomi Toon & Poiyomi Pro 10.0.17 Changelog
+description: Full changelog of Poiyomi Toon & Poiyomi Pro 10.0.17 release.
+hide_table_of_contents: true
+authors:
+  bluwizard
+tags: [shader, vrchat, major, updates, update, free, pro]
+draft: true
+---
+
+{/* THIS POST IS MARKED AS DRAFT. REMOVE `draft: true` from above when ready to post! */}
+
+## This is a major release!
+
+Poiyomi Shaders have been graduated to 10.0 and is now ready for general usage. **Be advised, this is the largest changelog I've ever written!** So if you don't feel like reading everything, then please refer to our [Blog post](/blog/poiyomi-10-release) for a quick summary of the changes listed here.
+
+The Toon version is now available in the VCC Repository, GitHub, and on BOOTH.
+
+Poiyomi Pro Users: Install the Poiyomi Pro package in the VCC Repository. You will be prompted to login with Patreon. Upon successful authentication, the package will be installed into Unity.
+
+:::danger[Legacy Shaders Removed]
+As of this release, versions 7.3, 8.0, 8.1, 9.0, 9.1, and 9.2 have been officially deprecated and no longer exist in this release! This was done to cut down on file size. **If you are still using any of these versions mentioned above, PLEASE UPGRADE NOW!!!**
+
+Our improved translation utilities have been updated to make this transition as seamless as possible. Any materials detected to use an older version will prompt you to translate them to 9.3. This allows you to choose when to translate your materials to 10.0 at your own convenience.
+:::
+
+## Added
+
+### Rendering & Lighting
+- **Added Bent Normals**: Bent Normal Mapping with specular occlusion and indirect diffuse.
+- **Added Skin**: Skin coloring LUT module ranging from Light to Dark skin tones.
+- **Added VRC Light Volumes 3.0 Support**
+  - Full support for VRC Light Volumes 3.0.
+  - Added Light Volumes Specular support with dedicated Intensity, Shadow, and Normal Bias sampling configuration in the Light Data module.
+- **Added Contact Shadows (Poiyomi Pro only)**: Screen-space raymarched shadowing.
+- Added Light Falloff/Attenuation curve, allowing to compensate brightness at distance.
+- AO is now applied to the main light and Occlusion is applied to the indirect color.
+- Directional Shadow Blur.
+
+### Geometry & Vertex
+- **Added Squish (Poiyomi Pro only)**: Vertex deformation with falloff, color gradient mixing, masking, and supports SPS Sockets.
+- Added Scaling to Object/Avatar Scaling to View Clip Prevention.
+- Added mapping to Vertex Glitching.
+- `VertexLookAt` now respects masks.
+
+### Raymarching
+- **Added Lava Lamp (Poiyomi Pro only)**
+  - Full raymarching feature allowing simulation of Lava Lamps, based on normalizedcrow's LavaLamp shader.
+  - Integrated SDF volume baking, bind-pose baking and prefabs.
+  - Multiple blob shapes possible with Scaling, Hollowing, Alpha and Strength. Configurable step-count and refraction.
+  - Audio Link and Global Themes support.
+  - Supports CPU mesh baking fallback (Linux only).
+
+### Surface Texturing
+- **Normal Map 2**: Added second normal map with it's own Scale and Mapping set.
+- **Global UV Configuration**: Shared UV configuration across modules with translation support, with Screen-space UV option.
+- Extended Stochastic Sampling to Lil Fur.
+
+### Color
+- Added `Chromatize` and `Tint` to Color Adjust.
+- Added Gradient Mask to Color Adjust.
+- Added Color Adjust baking, mirroring Lil Toon's Color baking.
+  - Bakes Hue Shift, Saturation, Brightness, Gamma, Chromatize, Tint, and Gradation into the main texture, then resets the values to use the baked map.
+- Added OKLab support to Global Themes, with backwards-compatibility support by setting it to use legacy values.
+- Offset and Constant Hue Shift options added.
+- Added per-Decal Color Adjust settings alongside Hue Shift, including Brightness, Saturation, Gamma, and Chromatize.
+
+### Emission
+- Added Square Wave blinking pattern. Sets `step(frac(phase), duty)` on the same period as the sine wave, allowing existing Velocity values to keep their blinking frequency.
+- Added Linear options for Center Out.
+- Exposed Alpha channel for Emissions, meaning Alpha can now also control the intensity.
+- Added note to `Emission 0` regarding fallback compatibility.
+  - For context, we noticed that using only Emission Masks set to White will cause fallback materials to be extremely bright! To mitigate this issue, we now ask users to use Emission slots 1, 2, or 3 for this reason.
+  - Please set the HDR Color to Black if you are not using `Emission 0`!
+  - If you do plan to use `Emission 0` as your primary, we recommend using an Emission Map only on `Emission 0`.
+
+### Outlines
+- Added `Highlight`, matching Lil Toon's outline highlighting feature. Supports Audio Link and Color Change.
+- Updated Outline Hue Shift to coincide with our modern Color Adjust framework. Backwards-compatible by setting it to use legacy values.
+- RGBA Color Masking, Decals, and Matcaps can now show on the Outlines pass.
+- Added Light Probe sampling for Outline lighting.
+
+### Dissolve
+- **Dissolve has been rewritten** with a full UI overhaul. More advanced configuration options and a wide arrangement of new effects are now possible.
+- `Alpha Only` toggle, which will ignore the Dissolve Color's Alpha value. Enable this if specifically dissolving the Alpha. Dissolving to Alpha is the most common usage of this feature.
+- `Edge` can now support a gradient of two colors.
+- `Wave Mode` can make the effect dissolve in a wavy pattern.
+- `Continuous Dissolve` updated with support for different Wave patterns and phases.
+- Added `Vertex Height` to make the Dissolve affect Vertices while it travels.
+- Added support for outputting the Dissolve effect to a Global Mask.
+
+### Audio Link
+- **AL Spectrum**
+  - Added a Band Range, ColorChord modifier, Mirroring Spectrum, Bilateral Mode, and improved Positioning Controls.
+- Added Audio Link for **Internal Parallax** and **Triplanar Projection**.
+- Various sections now have an improved `Color Override` modifier.
+
+### Effects
+- **Proximity Color** now have Emission override, influence check on the Alpha, sharp borders, edge color, and a falloff curve modifier.
+- **Constellation** now supports random colors, improved star movement speed, and better Audio Link controls.
+- **Glitter** fully overhauled with randomized rotation direction, sprite sheet support, and linear controls.
+- **Grab Pass** now allows masking, color ramp effects, pixelation effect, bounding circle for blur, precomputed Gaussian kernel, and output clamping.
+- **Internal Parallax** now supports Global Masks, distance falloff, pan offset, and now behaves more like Decals.
+- **Video Effects** can now affect Decals and now have Global Masking support.
+- **Depth Rim Lighting** now supports Light Direction and method selection, Mix Attenuation, and Mix Ramped Light Map.
+- **Subsurface Scattering** now supports mixing LIght Colors, Shadow Attenuation adjustment, and Global Masking.
+- **Stylized Specular** now supports Tiling, Offset, Panning and UV, and reworked Lil Reflections.
+- **Matcaps** can now act as a fallback cubemap by using the `Reflection Fallback` toggle.
+- **Backlight** UI now closely reflects Lil Toon's latest version and has Global Masking support.
+- Improved **Global Masking** to Parallax Heightmapping, Light Data, Decals, Path Color, and Reflections & Specular.
+- **Stats Overlay** improved with Clock support, utilizing VRChat's Shader Globals. Supports UTC + Offset, Local Time, Unix time, and added better font alignment.
+
+### Lil Fur
+- Nearly all Poiyomi features are now supported in Lil Fur, including Emission, Proximity Color, UV Tile Discard, Vertex Options, Audio Link, Dissolve, Stochastic Sampling, and more.
+- Lil Fur UVs are no longer linked to the main UVs and can be assigned per-texture UV.
+- Added Wind Effect, fur tip taper, width, RGBA Masking, and Inverted root width configuration options.
+
+### Time
+- Networking Time Support, linking directly into VRChat's Shader Globals for Time syncing.
+
+### Platforms & Compatibility
+- Added initial support for Warudo, MarrowSDK (Bonelab), and support skip-optimization for D3D.
+- `PoiDynamicBranchVariantStripper` added for Unity 2022.3, stripping redundant variants caused by the `dynamic_branch` Unity bug.
+
+### Shaders
+- **Added Shaders for Universal Render Pipeline (URP)**
+  - Supports Unity 6.0 thru 6.5.
+  - Initial Support for BasisVR and Warudo URP.
+- **Added Poiyomi Pro Triplanar Projection (Poiyomi Pro only)**
+  - World-space triplanar with edge fading, distance fading, depth clipping, self-mapping, and exposed depth sampling accuracy.
+  - Supports 2nd Bump Mapping and Audio Link.
+- **Added Poiyomi Pro Self Grab (Poiyomi Pro only)**
+  - New self-grab pass shader, using an outline-like effect to create Grab Pass effects onto one's self.
+
+### Tooling & Editor
+- **User Module Install & Creation Workflow**
+  - Use `Poi -> Installed Modules` to find user modules anywhere in the project and fold enabled ones into the shaders on rebuild.
+  - `Poi -> Create New Module` generates a working module without hand-editing template fileIDs.
+- **DepthGet Prefab Spawner** added on relevant modules that require the depth buffer, utilizing a prefab-spawner MaterialPropertyDrawer.
+- **Color Adjust Baker** scripting pipeline added for Color Adjust.
+- Hardened the Import/Export Checker to ensure bad installs never happen.
+
+### Upgrade & Translation Pipeline
+- Added new scripting pipeline to handle Materials still using legacy shaders, allowing instant upgrade & translation to the latest version.
+- Standalone auto-upgrading scripting added to allow instant translation of materials when changing the shader. Available for both Poiyomi and Lil Toon.
+  - This is enabled by default. Can be toggled under `Poi -> Auto-Upgrade Materials On Shader Change` and `Poi -> Auto-Translate LilToon Materials On Shader Change` in the menu bar.
+- Added more translation parameters to support translating from LilToon 2.3 to Poiyomi 10.0.
+- Cross-edition translation `Toon <-> Pro` now work correctly.
+
+### Presets, Assets, & Localization
+- Added improved Language support to the Shader UI including `Spanish`, `Chinese (Simplified)`, `German`, `Japanese`, `Korean`, and `Russian`.
+  - Localization now lives under `_PoiyomiShaders/Localization` folder in the project.
+- Updated Documentation URLs across the entire UI for new modules added and more.
+
+## Changes
+
+### Lighting Overhaul
+
+This area is the largest amount of changes compared to added features. For advanced users who modify their lighting and shading for their Avatars, please read this section carefully.
+
+- Attenuation was split into Shadow Attenuation and Distance Attenuation. Both are now handled separately.
+- Light Cookies were moved out of attenuation and are now multiplied into Direct Color instead.
+- Unified the Base Pass and Add Pass: `directColor = color × distance attenuation` and `light maps = cookie × shadow attenuation`, so both passes behave identically. This means Shadow Attenuation now does it's shading inside the **Shadows** function.
+- Ambient and Global Illumination contribution in Additive Lighting is now blocked.
+- Light recomputation in the Base Pass and Add Pass are now blocked, removing redundant attenuation calls.
+- Switched to use `isAdditive` flag, as the Add Pass can contain Direction Lights too.
+- Linear Curve is prioritized as the default Light Attenuation.
+- New `Min Brightness` behavior with a noise floor, and a new minimum light cap.
+- **Realistic Shading** now uses Unity dielectrics for the default BRDF.
+- Added Shadow Strength to **Realistic Shading**.
+- Renamed `Shadow Mask` to `Toon Shadow Mask` to distinguish it from Baked Shadows and the Shadow Masking feature.
+- **"Shading > Shading" has been renamed to "Shading > Shadows"** to avoid confusion.
+- Max Light count has been lowered, and fixed the light loop break.
+- Shading Debugging has been refactored with exit codes.
+- **Multilayer Math** now uses main shadow as the main attenuation, and layers use their own attenuation slider. Shadows are made to be more subtle.
+- **Cloth** now uses precalculated indirect color.
+- Modules that don't use the lighting loop are moved into a `PoiLightingNoLoopModules` block. This means turning off Shadows no longer disables them.
+
+### Behavior Defaults
+- Emission Theme Color now replaces the Emission Color instead of multiplying it. Emission Color also tints into the Theme Color.
+- **Matcaps** now default to `Replace` blend mode.
+- Matcap `Border` now defaults to `0.5`.
+  - If using `Double Sided` mode, set the `Border` to `0.43` for the intended appearance.
+- Networked Time is now the default method for time synchronization, utilizing VRChat's Shader Globals.
+- Multilayer Math default settings are now updated to match Lil Toon 2.3.
+- Additive Lighting `#T#` added so Proximity Color works with specular.
+- Passthrough defaults changed to `0`, Add Pass now ignores attenuation.
+- Vertex Lights are now filtered through the attenuation curve, and Vertex Lights are ignored on the Add Pass.
+- All toggles standardized to `< 0.5` / `>= 0.5` comparisons.
+- Decals are now rendered before Matcaps.
+- Grab Pass functions are now moved to render in front of Decals and Matcaps.
+- Hue Shift moved after saturation in Global Themes.
+- Decal Hue Shift moved inside `Color Adjust` as a sub-section in order to make room for the newly-added functions.
+- Global Mask modifiers in Reflections & Specular now split into their own section for UI consistency.
+- Default Fur Noise no longer generates mipmaps (otherwise, fur was losing detail at a distance). Smoother fur LOD.
+- Adjusted defaults for UV Distortion, Squish, and Particle Direction ramp.
+- Lil Fur default noise textures corrected to use `Linear` instead of `sRGB`, matching Lil Toon's upstream repository.
+- Updated Latex Matcaps (removes JPEG artifacts).
+- All included textures using Mipmapping now set to use Kaiser filtering (better support for VRChat's DPID filtering algorithm).
+- "lilToon" is now referred as to "Lil Toon" for general professional appearance in the UI.
+
+### Performance & Compilation
+- **Fog**: `multi_compile` replaced with `dynamic_branch`, cutting the fog variants in half. `applyUnityFog` rewritten to use dynamic-branch keywords instead of runtime `unity_FogParams` heuristics; `fogData` interpolator simplified from `float2` to `float`.
+- `shader_feature` -> `shader_feature_local`, `multi_compile` -> `multi_compile_fragment` and several `multi_compile` moved into the `dynamic_branch`.
+- Modules stripped from passes they don't contribute to, such as Early Z, Outlines, motion vectors, Meta passes, and the Add Pass (which now only keeps modules affecting lighting, masking or alpha).
+- Some Floats were converted to Halfs.
+- `_ST` moved inside the CBuffer, textures moved outside of it.
+- Local keyword and keyword-injection cleaned up, and removed the unused Fur Base Pass.
+- `ifex` stripping guards added and fixed across modules.
+- **Broad Optimization Passes**
+  - Constellation: Sine removed from noise generation, branchless HSV to RGB, time wrapped to `2048π`, self-skipped in the loop, line precomputed outside the loop.
+  - SSAO: Angle rotations precalculated and then added per loop, radius scaled with object size, max radius increased.
+  - Decals: `sincos`, shared variables.
+  - Glitter: Improved it's branching - branch and texture sample moved out of nested loops, and moved the struct inside an `ifdef`.
+  - Reflections & Specular: Metallics refactored, mask sampling delayed, fallbacks removed when unused.
+  - Stochastic and Stylized Specular: `sincos` and refactored code.
+  - Voronoi: Early discard, forced branch on expensive noise generation.
+  - Glitter and Constellation positions cached to prevent memory leakage.
+  - `fwidth` moved out of nested loops; `smoothstep` replaced with `inverseLerp`, cubic curve sampling replaced with a faster path.
+  - Light Cookie branching replaced with compile-time evaluation.
+  - Reduced Samplers where possible: `poiSampleMask` unlinked from texture declaration, RGBA Masking now uses the Main Texture sampler.
+- Branches flattened and switch statements flattened to prevent URP crashes in the URP shaders.
+- Shader Generation batched to avoid redundant AssetDatabase refreshes.
+- Shader Generation Workers improved with batching limits (on by default, prevents a runaway loop from exhausting RAM). `ReleaseGeneratedText` extended, a `ReleaseAll()` helper, `_genContexts` dropped at finalize, and deferred `Resources.UnloadUnusedAssets()` + `GC.Collect()` so memory can return to the Operating System level.
+
+### Architecture & Internals
+- Object Scale exposed inthe fragment shader, stored in `normal.w`. Outlines, SSAO, Vertex Height offsets, View Clip Prevention, Fur, and the pixelate effect now scale with Object/Avatar size.
+- `eyeViewDir` added; `viewDir` is now specifically the center eye. ALl camera positions reads are routed through `getCameraPosition()`.
+- Internal light calculations are made stereo-aware, with center eye used for shadows.
+- Injection points reordered and renamed for Triplanar Projection (`MAIN_TEXTURE_SAMPLE` and `FRAGMENT_NORMAL_CALCULATION` moved after camera init; `BASE_COLOR_MOD` to `MAIN_COLOR_MOD`).
+- Main Color and Skin modularized, GI code moved into a GI module, Mochie Metallics and Specular separated.
+- Video Effects functions moved into `PoiHelperFunctions` for reusability.
+- Chromatize moved into helper functions.
+- Light variables moved into fragment data.
+- `poiMods.audioLinkAvailable` cached instead of calling `AudioLinkIsAvailable()`.
+- Raymarching templates combined into a collection: Lava Lamp baking renamed to Raymarching with `Poi.RaymarchingBaking` / `.Editor` assemblies.
+- **ThryEditor** moved into Poiyomi's fork, submodule tracked more frequently.
+- Module Creator Inspector sections now read from the property skeleton instead of a hardcoded list.
+- Shader `.shader` GUIDs realigned.
+
+### UI
+- Broad UI modernization across all sections including Rim Lighting, Matcaps, Pathing, Black Light Masking, Clear Coat, Reflections & Specular, Backlight, Outlines, ShatterWave, Lil Fur, Rendering, Color Overrides, and all dormant sections.
+- Thry Editor SubSection drawers adopted where appropriate, `[ThrySeparater]` added to replace `[Space]`, UV Tile Dissolve rows converted to SubSection drawers.
+- Consistent UI across all shaders.
+- Helpboxes rewritten and updated and `UIBoilerPlate` updated to include a common error cause.
+- **Back Face** section now shows an error message if `Cull` is NOT set to `Off` because well, it doesn't even work if backfaces are culled.
+- GI and LTCGI have received new relevant warning messages.
+- Enforced `[DoNotAnimate]` tagging pass across some decorative headers and props that cannot be animated at runtime.
+- Shader Generator no longer opens a window unprompted.
+
+## Fixes
+
+### Vulkan
+- Switched to the DXC compiler for Vulkan, `SV_IsFrontFace` changed to a `bool`.
+- Switch-statement syntax fixed for Vulkan, twice.
+- Stereo fixed for geometry and tessellation shaders under Vulkan.
+- Global variables moved into the `poiLight` struct.
+- UV sampling fixed - everything switched to `vertexUV` or a constant.
+- `pow()` with negative arguments fixed.
+- Lower-case `Texture2D` handling fixed.
+- Fixed issues with 3D textures.
+- Fixed Stats Overlay for Vulkan.
+- Fixed Normals on non-Windows platforms, including Linux.
+- Linux off-by-one padding error fixed.
+
+### Unity Version Compatibility
+- Fixed compiler errors in Unity 6 thru 6.5.
+- Fixed `vertexSH`, UIElements fixed, `ui:` changed to `uie:`, `ifdef` guards for LOD crossfade.
+- Fixed `dynamic_branch` fog and variant strippers in Unity 2022.3.
+- Re-encoded `Glass.png` due to WebP format unsupported in Unity 6.
+- Fixed `.NET` API compatibility and replaced deprecated/obsolete editor methods.
+- Fixed Unity's corruption of namespaces in various scripts.
+- Fixed shadows for Unity 6 and fixed Receive Casted Shadows.
+
+### URP
+- Numerous URP compile errors fixed.
+- Light cookies fixed for Point, Direction, and Main Lights - including artifacts on cookie edges under PBR lighting caused by light color affecting light direction.
+- Only the main light cookie is subtracted in URP.
+- Distance attenuation correctly nested inside shadow attenuation.
+- Light cap now counts indirect light.
+- APV probe volume L2 assignment fixed; APV dominant light direction estimation fixed.
+- Fixed Grab Pass for URP.
+- `_CameraOpaqueTexture_TexelSize` added.
+- Add Pass fixed for Stylized Specular, Toon Ramp fixed in the Add Pass, ramped Light fixed for Flat shading on the Add Pass.
+- Outline lighting restored for render-feature passes, with a toggle for the outline render feature.
+- Truchet fixed for URP, Triplanar swapped to URP-appropriate modules.
+- Fixed depth normals pass missing `pragma`, PBR lighting and dynamic UVs fixed.
+- Noise seed changed to screen-space for URP.
+- URP projects now ignore BIRP shaders on export.
+
+### Stereo / VR / Mirrors
+- Fixed Panosphere UV stereo offset.
+  - `MonoPanoProjection` had an eye-dependent Y offset that was being scaled by texture tiling, producing different visual positions per eye with any tiling (especially on Decals, Main Texture, etc.). Mono mode now returns identical UVs for both eyes. `StereoPanoProjection` keeps eye-dependent behavior for real over-under stereo content.
+- Panosphere perspective-correct fixed.
+- Camera position fixed inside mirrors.
+- Fixed screen-space UV in mirrors.
+- LIl Fur mirror/camera visibility fixed.
+- General stereo rendering, mirror, and VR bug fixes.
+- Corrected various screen effects.
+
+### Locking / Shader Optimizer
+- Orphaned Textures are now wiped out.
+  - Textures left in properties Poiyomi doesn't use were being skipped by the ShaderOptimizer, which was very costly for VRAM.
+- Missing `__mIDx__` declarations in Flipbook fixed, plus a follow-up pass for more missing `__mIDx__` cbuffers.
+- Fixed locking issues in Matcap 3 due to a typo in the `//ifex` master category.
+- Fixed locking on several modules such as Grab Pass, Audio Link Theme Colors, and Squish toggle.
+- Global Masks in shading are no longer removed if any of them is marked animated.
+- LV specular removed on lock when disabled.
+- Subsurface Scattering now behaves the same when locked.
+- Height bias now locks in correctly when no texture is used.
+- `isNOtAnimated` check added for Global Masks.
+- Fixed a `DefineableCondition.ParseSingle` regression that prevented some shaders from locking.
+
+### Shading & Lighting Bugs Fixed
+- Fixed Min Brightness causing ringing on indirect color and lighting mistakes corrected on Realistic lighting.
+- Fixed direct light shading due to double-counting built-in indirect lighting.
+- Fixed add lights double-counting attenuation, add light shadows no longer skipped.
+- Ramped light map accumulation fixed.
+- BIRP light attenuation getter fixed, directional lights define fixed in BIRP.
+- Fixed Vertex Lights not showing in the fragment shader and specular for vertex lights.
+- Subsurface Scattering: Fixed spot light support, light clipping, double-add on point/spot lights, and add light contribution.
+- SDF world-coordinate translation fixed.
+- Hide In Shadow fixed, now uses the light map / ramped light map.
+- Matcap, Rim Lighting, Depth Rim Lighting, and Cubemap ordering fixed.
+- Fixed environment reflection when Rim Lighting is enabled.
+- Fixed Baked Lighting and added baked lighting pragmas to the world shader.
+- Cloth: Fixed unassigned referenced Metallic map and fixed texture sampling calling the wrong function.
+- Fixed Depth Rim Lighting ignore-lighting.
+- Fixed Bent Normals in Early Z.
+
+### Module & Feature Bugs Fixed
+- Fixed Theme Color in AL Spectrum double-multiplying and blend types using `Range(0, 1)` instead of `Int`.
+- Fixed Global Themes causing potential NaN at high Saturation and Brightness values.
+- Fixed missing text on Flipbook Hue Shift, causing the property to be impossible to tag as animated.
+- Fixed Decal 3 having an extra Z field even though it's unused.
+- Fixed RNG function and typos in Constellation.
+- Fixed normals and clipping, mask compile errors, keyword warnings, and dissolve on Two Pass Lil Fur when using Squish.
+- Alpha, vertex discards, AO, and UV Tile Discard, vertex options with Audio Link, Theme Colors, Emission, Scaling, Blur, Masks, UVs, frag data, `ApplyDetailNormal` guarded from being applied to Lil Fur.
+- Fixed mixing Metallics with other modules, as well as masks, anisotropy, and undeclared identifier / redefinition errors fixed.
+- Fixed Lil Reflections in Stylized Specular not rendering correctly.
+- Fixed Circle Masks, mip count, sample call count, and circle mask panning in Matcap.
+- Fixed masking, 0-width leaking from antialiasing, and fixed mismatched `_RimBlur`/`_Rim2Blur` defaults.
+- Fixed Hue toggle, Alpha mask, ordering relative to Decals/Matcaps, and Depth Bulge with self grab in Grab Pass.
+- Fixed pixelation seams and texture reads guarded with `ifdef` in Video Effects.
+- Post Processing now works with Emission and Decals, and with the Add Pass and Lil Fur.
+- Fixed distance falloff, Audio Link ordering, Audio Link removed when unused.
+- Fixed world normals, normals, UV channel, and removal from the meta pass.
+- Fixed alpha not affecting Emission output in Voronoi and Truchet.
+- Fixed Two Pass Color Override being always active. Now falls back to main color correctly. Alpha Only option added.
+- Fixed a compiler error with Bent Normal Map.
+- Fixed AO Blocker and moved Black Light Mask up the queue.
+- World AO / SSAO no longer skipped and updated jitter and radius max range.
+- Fixed main texture sample blending.
+- Fixed various dithering issues.
+- Fixed an issue where Vertex Heightmap was being removed when it shouldn't have.
+- Fixed Render Queues not transferring when upgrading/translating materials.
+- Mitigated a Z-fighting issue when exposed to projection shaders.
+- Fixed Vertex Options masking for Audio Link.
+- Backlight moved off the light loop.
+- Fixed Alpha Options Audio Link `endex` clipping off Advanced Options.
+- Fixed Ignore Fog function.
+- Fixed Normal blending issues.
+- Fixed line thickness and twinkle Audio Link in Constellation.
+- Fixed Alpha Cutoff being in the wrong spot.
+- Fixed Global Mask label indentation, text alignment, and animated property marker vertical alignment.
+
+### Editor, Generation & Translation
+- Fixed a Lil Toon translator write-priming bug causing every write to be primed with a throwaway value first due to a StringComparison bug.
+- Fixed Decal enum mis-mappings in Lil Toon's translation, and `&&` guard replaced with `||` guard on HSVG in Outlines. Some corrections from Lil Toon's sneaky UI tricks.
+- `ShaderRepresentation` call hardened against null props, fixing a log error spam when upgrading materials.
+- Fixed an issue where cross-edition (`Toon <-> Pro`) upgrades got borked.
+- Fixed a guard against shader variants when upgrading.
+- Legacy Material Detection and translation improved twice, now using `Poi.Tools.ShaderTranslator.VersionUpgrade` APIs.
+- Fixed Rim Lighting translation issues from 9.3 to 10.0.
+- Fixed Outline Hue Shift behavior mismatched for cross-editor compatibility.
+- Default `ShaderDestinations` updated for 10.0.
+- Re-entry on Shader Generation is now guarded so double-clicking "Generate" is a no-op, fly a `try/catch` around sync so the progress bar is never orphaned. `SessionState` is used to track generation status so it always resets after errors.
+- Half-baked imports during generation are guarded to ensure no code is unfinished or stale (prevents compile errors).
+- Destination folder existence is now checked with a prompt to create it, path handling resolves relative to the Unity project (`Assets` or `Packages`).
+- Fixed resetting sections overwriting rendering settings.
+- Fixed text clipping in Helpboxes.
+- Fixed Decal Positioning Raycaster function.
+- Select All and toggle now only affect visible elements.
+- Fixed Grab Pass preset dropdown being drawn without a label.
+- Fixed GIF support by merging without a `System.Drawing` dependency.
+- UI now updates when shaders are auto-generated.
+- Fixed Receive Casted Shadows not being set to `1` on PBR presets.
+- Fixed modular shader generator weirdness.
+- And an assortment of typos and spelling fixes!
+
+## Removed
+- **Removed Legacy pre-9.3 shaders**
+  - **THIS IS IMPORTANT!** When upgrading to this release, your legacy materials must be translated to 9.3. You can then choose to translate your materials to 10.0 when you are ready to do so.
+- Removed Raliv DPS Integration.
+- Removed Shadow Tint from Realistic Shading (replaced by Shadow Strength).
+- Removed `_ALDecalType`.
+- Removed unused module collections.
+- Removed dead scripts.
+- Removed Specular from the meta pass. Affects Contact Shadows, SSAO, backlight, Cubemap, Environmental Rim, Rim Lighting, Depth Rim Lighting, Matcap, and Reflections & Specular.
+- **LTCGI** marked as pending deprecation.
+  - This module is still available, but the feature will be removed in future versions due to VRC Light Volumes taking over. A warning was added. LTCGI should only be used in World projects.
+
+## Thry Editor
+- **Thry Editor is now a VCC Package!**
+  - **Upon installing Poiyomi Toon 10.0 via the Creator Companion for the first time, Thry Editor will be automatically added as a dependency and cannot be removed unless Poiyomi is removed.**
+  - This allows us to update Thry Editor more quickly without having to update the shader all the time for important fixes.
+- Added Global Linking.
+- Added Blueprint.
+- Fixed VRCFallback tags not being carried over on upgraded materials.
+- Fixed handling of Rendering Presets.
+- Fixed some headers unable to be marked as animated.
+- Added a `Clear` button for inline RGBA packers.
+- Added a "dot" indicator on Headers, which will indicate if properties contained are tagged as `A` or `RA`.
+- Refreshed the Material Lock Manager.
+  - New Toolbar, allowing the ability to Group, Filter, and Search for materials directly in the UI.
+    - Grouping: Sort the list by Shader, Folder, and Prefab/Scene.
+    - Filter: Sort the list by materials that are Locked, Unlocked, Need Attention, or All (Split).
+    - Search Bar: Shows only materials that match the typed-in keyword.
+    - By default, the utility filters through the `Project/Assets` directory. Enabling `Packages` expand the list to include found materials in the `Project/Packages` directory, although placing Poiyomi Materials in the Packages directory is rare.
+  - Grouping and Filtering set is persistent when closing and reopening the utility.
+  - Window Title now matches the actual script function.
+  - Fixed an issue where the list and GUI are computed every frame. It is now computed one per rebuild, saving greatly on CPU.
+  - Fixed an issue where script compiling triggered a full project re-scan.
+- **Locked Shader files go to `Assets/_LockedShaderCache` folder from now on.**
+  - This allows us to cache/share locked samplers across locked materials that use the same features more rigorously now, trimming down on variants wherever possible.
+  - Unlocking no longer deletes cache-resident shaders, saving greatly on CPU. This should make locking twice as faster than before.
+  - Cache is default set to 2048 MB and can be configured in ThryEditor Settings.
+- Added Stencil Calculator
+  - New `[ThryStencilCalculator]` decorator that simulates the stencil test in the Inspector and shows the resulting buffer value as an editable bit grid.
+  - Reference Value, Read Mask, and Write Mask can be edited bit by bit, with masked bits dimmed so it is clear which ones the test actually reads.
+  - New `[ThryStencilSummary]` decorator that draws the same test as a decision flow, showing which of the Pass, ZFail, and Fail operations the outcome selects.
+  - Added a `Simulate ZFail` toggle so the depth-fail case can be previewed alongside Pass and Fail.
+  - Can be implemented to separate `Front` and `Back` stencils, e.g. `[ThryStencilCalculator(Back)]`.
+  - Added `[ByteSlider]`. Similar to `[IntRange]`, this slider includes a foldout revealing the individual bits.
+  - Added `[ByteBitField]`, a row of 8 toggles for editing the bits of a 0-255 value.
+  - Added `[GUILib.SliderFoldout]`, a reusable slider-with-foldout row for use by other drawers.
+  - Shader Developers: The example shader `Thry/Example 3` demonstrates the Stencil Calculator's implementation technique.
+- Fixed Inspector Rebuild occurring often in some usage scenarios, especially during Lock/Unlock.
+- Fixed multiple ShaderProperty name collision bugs.
+- The `GuessShader` levenshtein sweep no longer run constantly and is only executed when absolutely needed.
+- Fixed parser parity.
+- Fixed dead URL on `Right-CLick -> Locking Explanation` context menu option.
+- Fixed a NullReferenceException on the Render Queue property when Right-Clicked.
+- Fixed a nasty null element found when running `PropertyValueAction`, which mainly affected legacy shaders.
+- Fixed a rare bug where the `shader_master_label` would get an asterisk* for some weird reason.
+- Fixed inlinedincludes for shaders that use it (very rare).
+- Fixed some GUI issues if for some reason Thry Editor is being used on very... very old legacy shaders (what are you doing?).
+- Fixed an issue where `GetRoot()` re-read `mat.GetParent()` every iteration, causing deep variant chains resolving to the wrong materials.
+- Fixed an old regression causing Render Queues to show incorrect readings on custom values.
