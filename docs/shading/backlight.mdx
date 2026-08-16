@@ -29,41 +29,11 @@ Color of the light background.
 
 Texture that can be used as the Color of the Backlight.
 
-## Main Color Blend
+## Main Color Power
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 How much to blend the color of the Backlight with the Base Color.
-
-## Normal Strength
-
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
-
-How much to blend the lighting with the Normals on your Model or Material.
-
-## Border
-
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
-
-The range of light that can be used with the Backlight.
-
-## Blur
-
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
-
-The amount of blur on the Backlight.
-
-## Directivity
-
-- `Type`: <PropertyIcon name="float" />**Float**
-
-Determines the amount of brightness *in degrees* that change according to the direction of the light source.
-
-## View Direction Strength
-
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
-
-The *degree* to which the brightness is changed according to the direction of light.
 
 ## Receive Shadow
 
@@ -76,3 +46,49 @@ If enabled, receive Shadows from other objects.
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Enables/Disables the visibility of the backlight's light on the backface.
+
+## Backlight Options
+
+### Normal Strength
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+
+How much to blend the lighting with the Normals on your Model or Material.
+
+### Border
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+
+The range of light that can be used with the Backlight.
+
+### Blur
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+
+The amount of blur on the Backlight.
+
+### Directivity
+
+- `Type`: <PropertyIcon name="float" />**Float**
+
+Determines the amount of brightness *in degrees* that change according to the direction of the light source.
+
+### View Direction Strength
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+
+The *degree* to which the brightness is changed according to the direction of light.
+
+## Masking
+
+### Global Mask
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+
+Select which [Global Mask](/modifiers/global-masks.mdx) to use as the Backlight Mask.
+
+### Apply to Global Mask
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+
+Select which [Global Mask](/modifiers/global-masks.mdx) to apply Backlight effects onto.

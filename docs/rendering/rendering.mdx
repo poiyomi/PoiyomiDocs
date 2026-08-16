@@ -11,7 +11,9 @@ The Rendering section provides various low-level options for controlling how the
 Many of the settings in this section are automatically-configured depending on which [Rendering Preset](/general/render-preset.mdx) you select.
 :::
 
-## Cull
+## Culling and Depth
+
+### Cull
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Back`/`Front`/`Off`
   - Default: `Back`
@@ -22,7 +24,7 @@ Sets what faces should be culled. By default, back faces are culled, in order to
 This option is usually the only one in this section that should be adjusted by most users.
 :::
 
-## ZTest
+### ZTest
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Disabled`/`Never`/`Less`/`Equal`/`LessEqual`/`Greater`/`NotEqual`/`GreaterEqual`/`Always`
   - Default: `LessEqual`
@@ -31,7 +33,7 @@ Sets how the shader should test the depth buffer. By default, the depth buffer i
 
 Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-ZTest.html).
 
-## ZWrite
+### ZWrite
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`On`
   - Default: Determined by [Rendering Preset](/general/render-preset.mdx)
@@ -40,16 +42,16 @@ Determines whether the shader should write to the depth buffer. For Opaque prese
 
 Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-ZWrite.html).
 
-## Color Mask
+### ZClip
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Multiple Options: `Everything`/`Alpha`/`Blue`/`Green`/`Red`
-  - Default: `Everything`
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+  - Default: `On`
 
-Color Mask determines which color channels should be rendered. By default, this is set to `RGBA`, which means that all colors are rendered. All permutations of color channels are available.
+Enables or Disables the GPU's Depth Clip Mode, which determines how the GPU handles clipping fragments of the Shader that are past the Near and Far Planes.
 
-Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-ColorMask.html).
+Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-ZClip.html).
 
-## Offset Factor
+### Offset Factor
 
 - `Type`: <PropertyIcon name="float" />**Float**
   - Default: `0`
@@ -58,32 +60,36 @@ Offset factor moves where a polygon is rendered in screen-space. This doesn't ch
 
 Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-Offset.html).
 
-## Offset Units
+### Offset Units
 
 - `Type`: <PropertyIcon name="float" />**Float**
   - Default: `0`
 
-A fixed value to move the polygon away from or toward the camera, while keeping it visually the same size.
+A fixed value to move the polygon away from or toward the camera, while keeping it visually the same size. Viewed as a constant depth bias against Z-fighting.
 
 Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-Offset.html).
 
-## Reduce Clip Distance
+## Color
+
+### Color Mask
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Multiple Options: `Everything`/`Alpha`/`Blue`/`Green`/`Red`
+  - Default: `Everything`
+
+Color Mask determines which color channels should be rendered. By default, this is set to `RGBA`, which means that all colors are rendered. All permutations of color channels are available.
+
+Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-ColorMask.html).
+
+## Options
+
+### Reduce Clip Distance
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
   - Default: `Off`
 
-Creates a smaller clip distance for the material. This can be used to make geometry not disappear when very close to the camera.
+Stops close geometry clipping the near plane. This can be used to make geometry not disappear when very close to the camera.
 
-## Z Clip
-
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
-  - Default: `On`
-
-Enables or Disables the GPU's Depth Clip Mode, which determines how the GPU handles fragments of the Shader that are outside of the Near and Far Planes.
-
-Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-ZClip.html).
-
-## Ignore Fog
+### Ignore Fog
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
   - Default: `Off`
@@ -92,14 +98,14 @@ If checked, this material will not be affected by fog, if present in the scene.
 
 Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/2018.3/Documentation/Manual/PostProcessing-Fog.html).
 
-## Flip Backface Normals
+### Flip Backface Normals
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
   - Default: `On`
 
-If enabled, inverts the normal vectors of the mesh if you're looking at a backface. This ensures it renders correctly when the camera is looking towards the backface.
+If enabled, inverts the normal vectors of the mesh if you're looking at a backface. This ensures it renders correctly and fixes lighting when the camera is looking towards the backface.
 
-## Enable GPU Instancing
+### Enable GPU Instancing
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
   - Default: `Off`
@@ -108,7 +114,7 @@ Enables or disables GPU instancing for this material. GPU instancing allows for 
 
 Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/GPUInstancing.html).
 
-## Early Z
+### Early Z
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
   - Default: `Off`

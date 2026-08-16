@@ -19,10 +19,17 @@ Outlines are known for it's distinctive "lines" traced around characters and obj
 
 *Example of the inverted hull Outline technique on two Material Spheres.*
 
+## Render
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Regular`/`Render Feature (URP)`
+  - Default: `Regular`
+
+Toggles rendering the feature in URP. Only affects the URP version of Poiyomi Shaders.
+
 ## Mode
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Basic`/`Rim Light`/`Directional`/`Drop Shadow`
-    - Default: `Basic`
+  - Default: `Basic`
 
 Changes the mode of the outline.
 
@@ -129,6 +136,50 @@ How much the [Outline Color](#color) should be blended with your Texture.
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 Determines if you want the Outlines to blend in a way that is similar to Unity-Chan Toon Shader 2 (UTS2).
+
+{/*-------- Highlight Section --------*/}
+
+## Highlight
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+
+Enables Highlighting on the Outlines, rendered based on environmental lighting like a gradient. This matches Lil Toon's Outline Highlighting feature.
+
+### Highlight Color
+
+- `Type`: <PropertyIcon name="color" />**Color**
+
+Sets the Color of the Highlight. Will blend with the main Outline color.
+
+### Highlight Emission
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 20.0`
+
+How much Emission the Highlight should have. Creates a glowing effect, especially in Worlds with Post Processing Bloom.
+
+### Tint From Outline Texture
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+
+Enables tinting the Highlight based on the specified [Outline Texture](#outline-texture) configuration.
+
+### Border
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+
+Sets the location of the Highlight's border.
+
+### Blur
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+
+Sets how much to blur the border of the Highlight.
+
+### Receive Shadow
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+
+If enabled, will allow the Highlight to receive shadows.
 
 {/*-------- Color Adjust Section --------*/}
 
@@ -261,7 +312,6 @@ The distance (in meters) at which the [Min Distance Alpha](#min-distance-alpha) 
 
 The distance (in meters) at which the [Max Distance Alpha](#max-distance-alpha) multiplier will be applied.
 
-
 {/*-------- Fixed Size Over Distance Section --------*/}
 
 ## Fixed Size Over Distance
@@ -294,7 +344,7 @@ Keep your Max Distance value at a small number in order to ensure they scale cor
 ## Lighting
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
-    - Default: `true`
+  - Default: `true`
 
 Enables lighting for the Outline. This darkens the outline color in shadowed areas.
 
@@ -303,49 +353,6 @@ Enables lighting for the Outline. This darkens the outline color in shadowed are
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
 Shadow intensity of the Outlines.
-
-{/*-------- Outline Z Offset --------*/}
-
-## Outline Z Offset
-
-This area controls the Camera Z Position when rendering Outlines. This is useful for giving control over the clipping of the Outlines in certain areas of your mesh.
-
-### Overall Strength
-
-- `Type`: <PropertyIcon name="float" />**Float**
-    - Default: `0`
-
-How much to offset the Camera Z Position. This property was previously known as `Cam Z Offset`.
-
-### Outline Mask Channel
-
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `R`/`G`/`B`/`A`
-
-Which channel to use from the [Outline Size Mask](#outline-size-mask) to control the Outline Z Offset.
-
-### Mask Strength
-
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
-
-Controls the strength of the [Outline Mask Channel](#outline-mask-channel) used for the Outline Z Offset.
-
-### Invert Mask Channel
-
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
-
-If enabled, will invert the value from the [Outline Mask Channel](#outline-mask-channel).
-
-### Vertex Color Channel
-
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`R`/`G`/`B`/`A`
-
-Which [Vertex Color](/vertex-options/vertex-colors.mdx) channel to use to control the Outline Z Offset.
-
-### Vertex Color Strength
-
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
-
-Controls the strength of the [Vertex Color Channel](#vertex-color-channel) used for the Outline Z Offset.
 
 {/*-------- Vertex Color Section --------*/}
 
@@ -363,9 +370,131 @@ Use the vertex colors of the model, if they've been specially prepared. The (smo
 
 Choose which Color channel to use in your Mask for the Vertex Colors.
 
+{/*-------- Audio Link Section --------*/}
+
+## Audio Link
+
+:::info
+The settings in this section will only be visible when [Audio Link](/audio-link/audio-link.mdx) is activated on the Material.
+:::
+
+<ReactVideo src='/vid/outlines/outlineALtest4.mp4'/>
+<em>Demonstration of the Bass Band controlling the Outline Size, Emission, and Color via Audio Link. (Un-mute to hear sound)</em>
+
+### Size Band
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+
+Which Band to use for the Outline Size adjustment.
+
+### Size Mod
+
+- `Type`: <PropertyIcon name="float2" />**Vector2**
+
+How much to add to or subtract from the Outline Size with Audio.
+
+| Modifier | Function |
+| --- | --- |
+| Min | Amount changed to Outline Size with No Audio in Size Band |
+| Max | Amount changed to Outline Size with Max Audio in Size Band |
+
+### Emission Band
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+
+Which Band to use for Outline Emission adjustment.
+
+### Emission Mod
+
+- `Type`: <PropertyIcon name="float2" />**Vector2**
+
+How much to add to or subtract from the Outline Emission Intensity with Audio.
+
+| Modifier | Function |
+| --- | --- |
+| Min | Amount changed to Outline Emission with No Audio in Emission Band |
+| Max | Amount changed to Outline Emission with Max Audio in Emission Band |
+
+### Highlight Emission Band
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+
+Which Band to use for Highlight Emission adjustment.
+
+### Highlight Emission Mod
+
+- `Type`: <PropertyIcon name="float2" />**Vector2**
+
+How much to add to or subtract from the Highlight Emission Intensity with Audio.
+
+| Modifier | Function |
+| --- | --- |
+| Min | Amount changed to Highlight Emission with No Audio in Highlight Emission Band |
+| Max | Amount changed to Highlight Emission with Max Audio in Highlight Emission Band |
+
+### Color Override
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+
+Enables overriding the Color using Audio Link.
+
+#### Band
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+
+Which Band to use to trigger the Color Override.
+
+#### Color
+
+- `Type`: <PropertyIcon name="color" />**Color**
+
+Sets a Color to use as the Color Override.
+
+#### Theme Color
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Theme Color 0`/`Theme Color 1`/`Theme Color 2`/`Theme Color 3`/`ColorChord 0`/`ColorChord 1`/`ColorChord 2`/`ColorChord 3`/`AL Theme 0`/`AL Theme 1`/`AL Theme 2`/`AL Theme 3`
+
+Option to set a Theme Color to use as the Color Override instead.
+
+#### Color Override Ramp
+
+- `Type`: <PropertyIcon name="vectorcurve" />**Vector Curve**
+
+Vector ramp to determine how Color Override is used.
+
+### Highlight Color Override
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+
+Enables overriding the Highlight Color using Audio Link.
+
+#### Band
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+
+Which Band to use to trigger the Highlight Color Override.
+
+#### Color
+
+- `Type`: <PropertyIcon name="color" />**Color**
+
+Sets a Color to use as the Highlight Color Override.
+
+#### Theme Color
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Theme Color 0`/`Theme Color 1`/`Theme Color 2`/`Theme Color 3`/`ColorChord 0`/`ColorChord 1`/`ColorChord 2`/`ColorChord 3`/`AL Theme 0`/`AL Theme 1`/`AL Theme 2`/`AL Theme 3`
+
+Option to set a Theme Color to use as the Highlight Color Override instead.
+
+#### Color Override Ramp
+
+- `Type`: <PropertyIcon name="vectorcurve" />**Vector Curve**
+
+Vector ramp to determine how Highlight Color Override is used.
+
 {/*-------- Rendering Options Section --------*/}
 
-## Rendering Options
+## Outline Rendering Options
 
 ### Clip 0 Width
 
@@ -386,98 +515,66 @@ Sets the base fragment Alpha to the Outline's Alpha value.
 ### Cull
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`Front`/`Back`
-    - Default: `Front`
+  - Default: `Front`
 
 Which faces to cull. For the inverted hull technique, this should be set to `Front`.
 
 ### ZWrite
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`On`
-    - Default: `On`
+  - Default: `On`
 
 Determines whether the Outlines should write to the depth buffer. This should typically be ON by default.
 
 ### ZTest
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Disabled`/`Never`/`Less`/`Equal`/`LessEqual`/`Greater`/`NotEqual`/`GreaterEqual`/`Always`
-    - Default: `LessEqual`
+  - Default: `LessEqual`
 
 Sets how the Outline Stencil should test the depth buffer. By default, the depth buffer is tested, and if the depth value is not less than or equal to the current value, the Outline is discarded.
 
-{/*-------- Audio Link Section --------*/}
+{/*-------- Outline Z Offset --------*/}
 
-## Audio Link
+### Outline Z Offset
 
-:::info
-The settings in this section will only be visible when [Audio Link](/audio-link/audio-link.mdx) is activated on the Material.
-:::
+This area controls the Camera Z Position when rendering Outlines. This is useful for giving control over the clipping of the Outlines in certain areas of your mesh.
 
-<ReactVideo src='/vid/outlines/outlineALtest4.mp4'/>
-<em>Demonstration of the Bass Band controlling the Outline Size, Emission, and Color via Audio Link. (Un-mute to hear sound)</em>
+#### Overall Strength
 
-### Size Band
+- `Type`: <PropertyIcon name="float" />**Float**
+    - Default: `0`
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+How much to offset the Camera Z Position. This property was previously known as `Cam Z Offset`.
 
-Which Band to use for the Outline Size adjustment.
+#### Outline Mask Channel
 
-#### Size Mod
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `R`/`G`/`B`/`A`
 
-- `Type`: <PropertyIcon name="float2" />**Vector2**
+Which channel to use from the [Outline Size Mask](#outline-size-mask) to control the Outline Z Offset.
 
-How much to add to or subtract from the Outline Size with Audio.
+#### Mask Strength
 
-| Modifier | Function |
-| --- | --- |
-| Min | Amount changed to Outline Size with No Audio in Size Band |
-| Max | Amount changed to Outline Size with Max Audio in Size Band |
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
-### Emission Band
+Controls the strength of the [Outline Mask Channel](#outline-mask-channel) used for the Outline Z Offset.
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
-
-Which Band to use for Outline Emission adjustment.
-
-#### Emission Mod
-
-- `Type`: <PropertyIcon name="float2" />**Vector2**
-
-How much to add to or subtract from the Outline Emission Intensity with Audio.
-
-| Modifier | Function |
-| --- | --- |
-| Min | Amount changed to Outline Emission with No Audio in Emission Band |
-| Max | Amount changed to Outline Emission with Max Audio in Emission Band |
-
-### Color Override
+#### Invert Mask Channel
 
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
 
-Enables overriding the Color using Audio Link.
+If enabled, will invert the value from the [Outline Mask Channel](#outline-mask-channel).
 
-#### Color
+#### Vertex Color Channel
 
-- `Type`: <PropertyIcon name="color" />**Color**
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`R`/`G`/`B`/`A`
 
-Sets a Color to use as the Color Override.
+Which [Vertex Color](/vertex-options/vertex-colors.mdx) channel to use to control the Outline Z Offset.
 
-#### Theme Color
+#### Vertex Color Strength
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Theme Color 0`/`Theme Color 1`/`Theme Color 2`/`Theme Color 3`/`ColorChord 0`/`ColorChord 1`/`ColorChord 2`/`ColorChord 3`/`AL Theme 0`/`AL Theme 1`/`AL Theme 2`/`AL Theme 3`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
-Option to set a Theme Color to use as the Color Override instead.
-
-#### Color Override Band
-
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
-
-Which Band to use to trigger the Color Override.
-
-#### Color Override Ramp
-
-- `Type`: <PropertyIcon name="vectorcurve" />**Vector Curve**
-
-Vector ramp to determine how Color Override is used.
+Controls the strength of the [Vertex Color Channel](#vertex-color-channel) used for the Outline Z Offset.
 
 ## Outline Vertex Color Baker
 
