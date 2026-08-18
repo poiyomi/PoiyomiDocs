@@ -24,7 +24,8 @@ LilToon uses a much different approach to Toon shading compared to Poiyomi. **Ho
 
 To convert a copy of the Avatar in the Scene using LilToon over to Poiyomi Shaders, `Right-Click` on the Avatar in the Hierarchy and click `Poiyomi -> Materials -> Translate Copy to Poiyomi Toon`. This will feed a copy of the Materials into our translation pipeline, converting all recognized properties in each LilToon Material over to their appropriate counterparts. The converted Materials will be placed in the same folder as the original Materials for comparison.
 
-**OPTIONAL:** You can convert per-material on your own by switching LilToon from the material itself into a Poiyomi Toon shader of your choice. Doing so will run the automatic translation. This is toggled on by default and can be turned off via `Poi -> Auto-Translate lilToon Materials On Shader Change`.
+**OPTIONAL:** You can convert per-material on your own by switching LilToon from the material itself into a Poiyomi Toon shader of your choice. Doing so will run the automatic translation.
+- *This is toggled on by default and can be turned off via `Poi -> Auto-Translate Materials On Shader Swap` from the Menu.*
 
 The video below covers some of the basics of converting over LilToon Avatars to Poiyomi. Please give it a watch for an in-depth look at the workflow process.
 
@@ -42,9 +43,9 @@ Below is a list of some of the significant features in LilToon that will be conv
 - **Normal Map 2nd**: The `Normal Map 2nd` slot will be converted over into our `Normal Map 2` slot.
 - **Main Color Adjust**: As LilToon uses HSVG in their setup, we must convert the signed offsets into our main Hue Shift properties, wrapping negatives only and assigning them properly.
 - **Lighting**: To match LilToon's rendering style, your converted material will switch over to the following modes:
-  -  `Light Color Mode` to `OpenLit (Lil Toon)`
+  -  `Light Color Mode` to `OpenLit (LilToon)`
   -  `Light Map Mode` to `Normalized NDotL`
-  -  `Light Direction Mode` to `OpenLit (Lil Toon)`
+  -  `Light Direction Mode` to `OpenLit (LilToon)`
 - **Shadows**: The `Shadows` feature in LilToon is the exact same as `Multilayer Math` and will directly favor it. However if Shadows is disabled, it will be converted to use `Flat` instead.
 - **Matcap**: Both `Matcap` and `Matcap 2` will be directly translated over and will be fed through some mathematical calculations to match the Blending modes used.
 - **Lil Reflections**: In LilToon, it uses both Specular and Environment Reflections in a more stylized fashion. If used, this will enable `Stylized Reflections`, set the mode to `lilToon` and convert the values over.
