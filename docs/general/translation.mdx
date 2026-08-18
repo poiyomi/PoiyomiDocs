@@ -2,7 +2,7 @@
 sidebar_position: 6
 title: Shader Translation
 description: Explanation of shader properties and how they are treated in Unity, as well as a few key differences.
-keywords: [translator, shader, thryeditor, thryrallo, thry, editor, shader, property, material, properties]
+keywords: [translator, shader, property, material, properties]
 ---
 
 In Poiyomi Shaders, there are some properties that will completely differ from Unity's Standard and some alternative Toon shaders out there. To ensure shader translation is done appropriately, this page will cover the main differences in how they are used. Because of how Unity treats Material files, many Material Properties are preserved in the file in order to ensure seamless switching back to the previous shader used.
@@ -18,25 +18,37 @@ When switching from the Standard shader to Poiyomi, most if not all properties w
 
 ## LilToon
 
-LilToon uses a much different approach to Toon shading compared to Poiyomi. **However, it requires usage of our included script utility** in order to reliably translate the listed properties over from LilToon to Poiyomi.
+LilToon uses a much different approach to Toon shading compared to Poiyomi. **However, it requires usage of our included translation pipeline** in order to reliably translate the listed properties over from LilToon to Poiyomi.
 
-### Using the LilToon to Poiyomi Script
+### Using the LilToon to Poiyomi Translation Pipeline
 
-To convert a copy of the Avatar in the Scene using LilToon over to Poiyomi Shaders, `Right-Click` on the Avatar in the Hierarchy and click `Poiyomi -> Materials -> Translate Copy to Poiyomi Toon`. This will run a script that will convert recognized properties in each LilToon Material over to their appropriate counterparts. The converted Materials will be placed in the same folder as the original Materials for comparison.
+To convert a copy of the Avatar in the Scene using LilToon over to Poiyomi Shaders, `Right-Click` on the Avatar in the Hierarchy and click `Poiyomi -> Materials -> Translate Copy to Poiyomi Toon`. This will feed a copy of the Materials into our translation pipeline, converting all recognized properties in each LilToon Material over to their appropriate counterparts. The converted Materials will be placed in the same folder as the original Materials for comparison.
+
+**OPTIONAL:** You can convert per-material on your own by switching LilToon from the material itself into a Poiyomi Toon shader of your choice. Doing so will run the automatic translation. This is toggled on by default and can be turned off via `Poi -> Auto-Translate lilToon Materials On Shader Change`.
 
 The video below covers some of the basics of converting over LilToon Avatars to Poiyomi. Please give it a watch for an in-depth look at the workflow process.
 
 :::warning
-As LilToon is an actively-developed shader, there may be some bugs with the script that don't translate some properties over correctly. If you find any inconsistencies, please let us know in our Discord server!
+As LilToon is an actively-developed shader, there may be some properties that are overlooked. If you find any inconsistencies, please let us know in our Discord server!
 :::
 
 <div class="videobox">
 <iframe class="iframe-element" src="https://www.youtube-nocookie.com/embed/Auw6WAzKAsw?si=TO5iXVR7NWWw4xNw" title="YouTube Video Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
-Below is a list of some of the significant features in LilToon that will be converted. This list is incomplete and may be missing some details...
+Below is a list of some of the significant features in LilToon that will be converted. Most, if not all features in LilToon, are fully compatible with Poiyomi Shaders.
 
-- **Shadows**: The `Shadows` feature in LilToon is the exact same as `Multilayer Math` and can be carried over when converted. However if it's disabled, it will be converted to use `Flat` instead.
+- **Main 2nd** and **Main 3rd**: Converted over to specifically `Decal 0` and `Decal 1` and will treat them as so.
+- **Normal Map 2nd**: The `Normal Map 2nd` slot will be converted over into our `Normal Map 2` slot.
+- **Main Color Adjust**: As LilToon uses HSVG in their setup, we must convert the signed offsets into our main Hue Shift properties, wrapping negatives only and assigning them properly.
+- **Lighting**: To match LilToon's rendering style, your converted material will switch over to the following modes:
+  -  `Light Color Mode` to `OpenLit (Lil Toon)`
+  -  `Light Map Mode` to `Normalized NDotL`
+  -  `Light Direction Mode` to `OpenLit (Lil Toon)`
+- **Shadows**: The `Shadows` feature in LilToon is the exact same as `Multilayer Math` and will directly favor it. However if Shadows is disabled, it will be converted to use `Flat` instead.
+- **Matcap**: Both `Matcap` and `Matcap 2` will be directly translated over and will be fed through some mathematical calculations to match the Blending modes used.
 - **Lil Reflections**: In LilToon, it uses both Specular and Environment Reflections in a more stylized fashion. If used, this will enable `Stylized Reflections`, set the mode to `lilToon` and convert the values over.
 - **Backlighting**: Poiyomi Shaders has the same features and properties as LilToon's Backlighting feature and can be converted over 1:1.
 - **Rim Lighting**: Each of Rim Lighting settings will be converted over to match and sets the mode to `lilToon`.
+- **Outline**: Each Outline settings, including the Highlight, will be carried over. Due to the usage of HSVG in Outline Color Adjust, they will be calculated to work with Poiyomi's Color Adjust in Outline.
+- **Emissions**: Both `Emission` and `Emission 2` settings, if used, will be directly translated into our `Emission 0` and `Emission 1` slots.
