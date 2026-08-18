@@ -185,7 +185,7 @@ If left empty, Dissolved [Color](#color) will be used.
 
 Enables/Disables hue shifting features for dissolved color. Unlike most sections, this toggle can be animated.
 
-### Color Space
+#### Color Space
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `OKLab`/`HSV`
   - Conditional: Requires [Hue Shift](#hue-shift) to be enabled.
@@ -194,20 +194,22 @@ Choice of Color Space to use for the Hue Shift. By default, it will be set to OK
 
 Learn about the difference of Color Spaces as documented in [Color Adjust](/docs/color-and-normals/color-adjust.mdx#color-space).
 
-### Mode
+#### Mode
 
 - `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Hue Select`/`Hue Shift`
   - Default: `Hue Shift`
   - Conditional: Requires [Hue Shift](#hue-shift) to be enabled.
 
-### Shift
+Sets the Hue Shifting mode to use.
+
+#### Shift
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
   - Conditional: Requires [Hue Shift](#hue-shift) to be enabled.
 
 Fixed amount to shift the hue for the dissolved state only.
 
-### Speed
+#### Speed
 
 - `Type`: <PropertyIcon name="float" />**Float**
   - Conditional: Requires [Hue Shift](#hue-shift) to be enabled.
@@ -353,6 +355,40 @@ Applies how much Emission the Edge should produce. Values above 1 generally prod
 - `Type`: <PropertyIcon name="toggle" />**Toggle**
 
 This checkbox, if enabled, will essentially "flip" the edge line.
+
+### Hue Shift
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+
+Enables/Disables hue shifting features for Edge Line. Unlike most sections, this toggle can be animated.
+
+#### Color Space
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `OKLab`/`HSV`
+
+Choice of Color Space to use for the Hue Shift. By default, it will be set to OKLab.
+
+Learn about the difference of Color Spaces as documented in [Color Adjust](/docs/color-and-normals/color-adjust.mdx#color-space).
+
+#### Mode
+
+- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Hue Select`/`Hue Shift`
+  - Default: `Hue Shift`
+
+Sets the Hue Shifting mode to use.
+
+#### Shift
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+
+Fixed amount to shift the hue for the Edge Line.
+
+#### Speed
+
+- `Type`: <PropertyIcon name="float" />**Float**
+  - Conditional: Requires [Hue Shift](#hue-shift) to be enabled.
+
+Speed of the hue shift cycling for the Edge Line. For reference, a speed of 1 corresponds to a full cycle of the hue shift every 20 seconds.
 
 ## Wave Mode
 
