@@ -1,0 +1,244 @@
+---
+sidebar_position: 4
+title: Upgrading from Legacy Versions to 10.0
+description: Guide and Information on how to upgrade from legacy versions to v10.0.
+keywords: [v9, v10, upgrade, major, update, guide, poiyomi, shader]
+---
+
+Poiyomi Shaders version 10.0 contains a huge overhaul in every single aspect, both in features and in the Editor. This page contains all the relevant information you need to know in order to ensure your upgrade is as smooth as possible.
+
+## Before You Upgrade
+
+**Please make sure you are prepared by ensuring the following prerequisites are followed:**
+- **Animation Clips are __not__ updated.** The upgrade tools translates your materials, but they cannot rewrite Animation Clips. If you have any `RA` tagged properties, you will need to re-bind those by hand.
+- **Locked Materials are Unlocked!** Any Locked material is unlocked as part of the upgrade and must be left unlocked. This is to ensure all properties are smoothly translated over. You can re-lock once you are happy with the results.
+- **Removed Properties Lose Their Values.** Where a feature was rebuilt and there's nothing to remap on to, those settings will return to their defaults.
+
+Compared to older versions, we have deferred to a newly-revamped translation pipeline so that there are far less steps to upgrade. This means we have eliminated extra steps in order to improve user-friendliness towards both new and experienced users.
+
+Once you upgrade to the latest package, simply switch from `.poiyomi/Old Versions/9.3/*` to the matching edition name in `.poiyomi/*`. When you do this, all values that need adjustments will be automatically re-serialized into the newly-updated values. This also works on multiple selected materials.
+
+Depending on how many Materials you upgrade at once, it will cause Unity to freeze for a few while the scripts translate the properties. During this time, do not close Unity!
+
+### Deprecated Older Versions
+
+:::danger[Deprecated Versions]
+As of Poiyomi 10.0, all versions below 9.3 have been permanently removed in order to reduce performance issues in the editor.
+
+This means version 7.3 has officially been deprecated and will no longer be included due to unsupported changes.
+:::
+
+We thank 7.3 for it's service during it's time. While this removal may cause an inconvenience to the 2% of users who still use it, all good things must come to an end eventually. *Press `F` to pay respects.*
+
+Besides that, all 8.0 and 9.0 versions (below 9.3) have been removed as well. Please prepare for this change when upgrading to 10.0.
+
+## Ways To Upgrade
+
+There are a few ways to translate a material to 10.0. Each one will run your materials through our integrated translation pipeline.
+
+### Method 1. Material Upgrade Utility
+
+Open the utility `Poi -> Material Upgrade Utility`. This utility scans the project and lists every Poiyomi material with its version, grouped by shader, folder or avatar. Upgrade a single material, a whole group, or everything shown.
+
+{/*---INSERT MATERIAL UPGRADE UTILITY SCREENSHOT---*/}
+
+Browse and filter through each Object, Shader, or Folder. Then, use the buttons to upgrade. You will be given a confirmation prompt to confirm your upgrade batch.
+
+:::warning[Expect Some Lag]
+Depending on the amount of materials you are upgrading at once, Unity may freeze and slow down for a minute.
+:::
+
+### Method 2. Right-Click Material(s)
+
+Select one or more materials, Right-Click and then click `Poiyomi -> Materials -> Update Poiyomi Shaders` from the context menu.
+
+### Method 3. Switch the Shader in the Inspector
+
+Picking a 10.0 shader from the material’s shader dropdown translates the material as part of the swap. If there's a type of shader that has breaking changes, you will be prompted with a warning.
+
+{/*---INSERT SCREENSHOT EXAMPLE---*/}
+
+This behavior is controlled by the option `Poi -> Auto-Upgrade Materials On Shader Change`, on by default. If you turn it off, this method will cease to function.
+
+## Important Changes from 9.3 to 10.0
+
+Please read this section carefully when debugging your materials for any changes you need to look out for!
+
+### Renamed Properties
+
+| 9.3 | 10.0 | Notes | Upgradability |
+| :--- | :--- | :--- | :---: |
+| `_ALUVPosition` | `_ALDecalPosition` | AL Spectrum was reworked into using Decal-like Positioning. | Automatic |
+| `_ALUVRotation` | `_ALDecalRotation` | — | Automatic |
+| `_ALUVRotationSpeed` | `_ALDecalRotationSpeed` | — | Automatic |
+| `_ALUVScale` | `_ALDecalScale` | Vector4 → Vector2; the Axis pairs are averaged. | Automatic |
+| `_RimSharpness` | `_RimBlur` | Meaning is inverted — the new value is recalculated from your rim width so the visual result matches closely. | Automatic |
+| `_Rim2Sharpness` | `_Rim2Blur` | Same as above. | Automatic |
+| `_ContinuousDissolve` | `_ContinuousDissolveSpeed`, `_ContinuousDissolveEnabled` | Split into a speed value and an on/off toggle. | Automatic |
+| `_FlipbookScaleOffset` | `_FlipbookPosition`, `_FlipbookScale` | Vector4 split into two; the offset is re-centred on (0.5, 0.5). | Automatic |
+| `_GrabPassBlendGlobalMask` | `_GrabRefractionGlobalMask` | Grab Pass shaders only. | Automatic |
+| `_GrabPassBlendGlobalMaskBlendType` | `_GrabRefractionGlobalMaskBlendType` | Grab Pass shaders only. | Automatic |
+| `_RefractionChromaticAberattion` | `_RefractionChromaticAberration` | Spelling correction - same range and default. | Automatic |
+
+### Removed Properties
+
+These listed properties have no equivalent in 10.0 and will reset to defaults. **This is the list to re-check after upgrading!**
+
+#### Dissolve
+
+Dissolve was rebuilt around distinct modes - Gradient, Point to Point, Spherical, Center Out, UV Tile Dissolve, and Vertex Height. The per-row Alpha Values were removed as they were often used incorrectly.
+
+`DissolveAlpha0 ... _DissolveAlpha9`, `_DissolveEdgeHardness`, `_DissolveDetailEdgeSmoothing`, `_DissolveP2PClamp`, `_DissolveP2PEdgeLength`, `_SphericalDissolveClamp`, `_CenterOutDissolvePower`
+
+#### General
+
+These following properties across the shader were removed.
+
+| Property | Was |
+| :--- | :--- |
+| `_ALDecalType` | AL Type selector. |
+| `_FlipbookPanning` | Flipbook Pan UV. |
+| `_GlitterCenterSize` | Glitter dim-light size. |
+| `_ParallaxInternalPanDepthSpeed` | Per-level pan multiplier. |
+| `_TextFPSOutlineColor` | FPS text outline color. |
+| `_AudioLinkOutlineColorMod` | Outline AudioLink color mod. |
+
+#### Poiyomi Pro Only
+
+`_SSAOEnableColorTexture`, `_SSAOEnableMaskTexture`
+
+#### Grab Pass Shaders Only
+
+| Property | Was | What Changed |
+| :--- | :--- | :--- |
+| `_GrabPassUseAlpha` | "Use Material Alpha" | Refraction now respects the Alpha Mask instead. **This is the main reason a Grab Pass material Base Color can look different after upgrading.** |
+| `_GrabPassHueShiftReplace` | Hue Shift "Replace" mode | Removed |
+| `_GrabBlurDirections` | Multi-directional blur | Removed |
+| `_GrabPassBlendMapChannel` | Per-channel mask selector | The blend map is RGBA-packed now, with a new Mask Type (Texture / Vertex Color) option. |
+
+### Properties That Changed Type
+
+| Property | 9.3 | 10.0 | Impact |
+| :--- | :--- | :--- | :--- |
+| `_DissolveEdgeGradient` | Texture | Float | **Your edge gradient texture was dropped — must be manually re-set.** |
+| `_ALDecalBlendType` | Range | Int | Value preserved. |
+| `_ALDecalVolume` | Int | Range | Value preserved. |
+| `_DepthRimHideInShadow` | Float | Range | Value preserved. |
+| `_UzumoreMaskUV` | Float | Int | Value preserved. |
+| `_EnableOutlines` | float | Float | Casting only, no effect. |
+
+## APIs For Developers
+
+Poiyomi 10.0 ships with an editor-side pipeline that upgrades materials between shader versions — including materials stranded on removed versions (8.x and 9.0–9.2) whose shaders are no longer in the package. This section documents the Public APIs available so you can drive the same translation logic from your own editor tools.
+
+Everything that is detailed here are editor-only and lives in the namespace `Poi.Tools.ShaderTranslator.VersionUpgrade`, compiled into the default `Assembly-CSharp-Editor`. If your tool is in the same assembly (or an Assembly Definition that references it), call these types directly. If it's in its own Assembly Definition that can't reference the default editor assembly, use the bridge instead.
+
+All Upgrade calls operate on live Material objects and modify them in place. They do not register their own Undo — wrap them in `Undo.RegisterCompleteObjectUndo` if you want undo support.
+
+### Quick Start
+
+```cs
+using Poi.Tools.ShaderTranslator.VersionUpgrade;
+
+// Upgrade a material to the latest Poiyomi version (currently 10.0).
+// Automatically routes legacy 8.x / 9.x materials through 9.3 first, translating values at each step.
+bool upgraded = PoiyomiVersionUpgradeController.UpgradeToLatest(material);
+
+// Upgrade many at once (one grouped unlock pass, progress bar included).
+PoiyomiVersionUpgradeController.UpgradeMaterials(materials); // IEnumerable<Material>
+```
+
+### Version Detection
+
+Use these to decide whether to show an "upgrade" affordance, or to branch on a version.
+
+| Method | Returns | Notes |
+| :--- | :--- | :--- |
+| `PoiyomiVersionDetector.IsPoiyomiShader(Material)` | bool | Resolves through locked shaders. |
+| `PoiyomiVersionDetector.TryGetVersion(Material, out Version)` | bool | Reads the version from the shader's master label. |
+| `PoiyomiVersionDetector.NeedsUpgrade(Material)` | bool | Returns `true` for any Poiyomi material older than the latest, including removed-version materials whose shader is missing. |
+| `PoiyomiVersionDetector.LatestVersion` | bool | String, shows the current shipping version. |
+
+```cs
+if (PoiyomiVersionDetector.NeedsUpgrade(material))
+{
+    // show your "Update" button
+}
+```
+
+### Upgrading Materials
+
+`PoiyomiVersionUpgradeController` is the top-level entry point for upgrading materials.
+
+```cs
+// To the latest version.
+bool UpgradeToLatest(Material material);
+
+// Batch variant.
+void UpgradeMaterials(IEnumerable<Material> materials);
+
+// Advanced: defer the final shader assignment (for your own batching).
+bool UpgradeToLatest(Material material, bool deferFinalShaderSwap, out Shader finalShader);
+```
+
+`UpgradeToLatest` handles the whole chain: a locked material is unlocked first, a removed-version (pre-9.3) material is landed on 9.3 with its values translated, and the result is carried forward to the latest version.
+
+#### Shader Swap Scenario
+
+If the material has *already* been swapped to a newer shader (for example, the user picked it from the inspector's shader dropdown) but its old property values are still serialized, translate them across with:
+
+```cs
+bool UpgradeAcrossShaderSwap(Material material, Shader oldShader, Shader newShader);
+```
+
+This respects the version the user picked — swapping to a 9.3 shader stops at 9.3, swapping to the latest chains all the way. Pre-9.3 sources are routed through the legacy pipeline automatically.
+
+### Legacy (Removed Version) Materials
+
+Materials on 8.x or 9.0–9.2 can't be translated directly, because those shaders were removed. The conservative path lands them on 9.3 — a version that still ships — from which the user can move to the latest at their discretion.
+
+```cs
+// Upgrade a legacy material onto Poiyomi 9.3, translating its values across.
+bool PoiyomiUpgrade_9_X_to_9_3.UpgradeToNine3(Material material);
+void PoiyomiUpgrade_9_X_to_9_3.UpgradeMaterials(IEnumerable<Material> materials);
+```
+
+This works whether the material is unlocked, locked, or sitting on the error/"missing" shader — the pipeline recovers it from its serialized data.
+
+#### Detecting Legacy Materials
+
+```cs
+// True if this is a pre-9.3 Poiyomi material (present or removed shader).
+bool LegacyMaterialDetector.NeedsLegacyUpgrade(Material material);
+
+// True only if it's pre-9.3 AND its shader is genuinely gone (error shader, or a
+// locked material whose source shader no longer resolves). Use this to gate a
+// "shader missing" recovery prompt so it doesn't nag materials that still render.
+bool LegacyMaterialDetector.IsLegacyShaderMissing(Material material);
+
+// Full detail.
+bool LegacyMaterialDetector.TryDetectLegacyNine(Material material, out LegacyMaterialInfo info);
+```
+
+`LegacyMaterialInfo` exposes: `IsLocked`, `LockedShaderBroken`, `ShaderMissing`, `Edition` (`PoiyomiEdition.Toon` / `Pro`), `Variant`, `DetectedVersion`, `UsesDps`, `UsesLegacyAnisoNoise`.
+
+### Calling From Another Assembly
+
+Types in a separate assembly definition can't reference the default editor assembly where the pipeline lives. For those cases, a lightweight bridge in namespace `Poi.Tools` (assembly `Poi.Tools`) is populated by the pipeline on load. Every hook is a `Func<Material, bool>` and may be `null` if the pipeline isn't present, so always null-check:
+
+```cs
+using Poi.Tools;
+
+if (PoiLegacyUpgradeBridge.IsLegacyShaderMissing?.Invoke(material) == true)
+{
+    PoiLegacyUpgradeBridge.UpgradeToNine3?.Invoke(material);
+}
+```
+
+Available hooks: `IsLegacyMaterial`, `IsLegacyShaderMissing`, `UpgradeToNine3`.
+
+### Rules to Follow
+- **Upgrade to latest:** `PoiyomiVersionUpgradeController.UpgradeToLatest(material)`
+- **Stop at 9.3 (conservative):** `PoiyomiUpgrade_9_X_to_9_3.UpgradeToNine3(material)`
+- **Gate your UI:** `PoiyomiVersionDetector.NeedsUpgrade` or `LegacyMaterialDetector.IsLegacyShaderMissing`
+- **From a separate asmdef:** go through `PoiLegacyUpgradeBridge`
