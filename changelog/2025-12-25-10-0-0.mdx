@@ -1,0 +1,61 @@
+---
+title: Poiyomi Pro 10.0.0 Changelog
+description: Full changelog of Poiyomi Pro 10.0.0 release.
+hide_table_of_contents: true
+authors:
+  poiyomi
+tags: [shader, vrchat, updates, update, pro]
+---
+
+This is the first release of 10.0.0 and is subject to change. You can download it now from [pro.poiyomi.com](https://pro.poiyomi.com) by logging in via your Patreon account.
+
+### New Features
+- Added a second normal map section because the details and detail normal section confused people.
+
+### Fixes & Improvements
+- Packed map textures in the shader properly reset all the sub textures now
+- There is more room horizontally in the UI now so there should be less getting cutoff when the inspector is thin
+- Improved UV Tile Discard labeling by showing the UDIM Coordinates that they target
+- The poiyomi right click menu has been simplified when right clicking a an object in the scene hierarchy
+- Open in cross shader editor has been added to the poiyomi scene object right click menu
+
+### Inspector Changes
+- The shader inspector no longer uses [HideInInspector] to hide things that could be animated by VRCFury
+- A lot of white space has been removed from the UI making things generally more compact
+- The cross shader editor inspector no longer looks broken
+
+### Glitter
+- Glitter now optionally allows shapes to overlap https://fixupx.com/poiyomi/status/2004759009891611074
+- Square Glitter shape has proper antialiasing
+- Square Glitter shape now allows for random rotations
+- Fixed a bug with square shape rotations randomly jittering
+- Added Random Offset to hue shift for glitter
+- Added Sprite sheet support https://fixupx.com/poiyomi/status/2005105388644106463
+- Added pixel mode support under the shape texture dropdown
+- Big time improved the linear emission type glitter
+- There is now an approximate translation from lil to poiyomi glitter
+
+### Flipbooks (Gifs)
+https://x.com/poiyomi/status/2007726827541058038
+- Gifs now automatically set FPS.
+- Gifs can now use the raycast positioning tools.
+- Automatic aspect ratio can be enabled.
+- Gif to flipbook creation now works on more than just Windows.
+
+### Outlines
+- RGBA masking and decals now color the outlines when maintex blend is enabled
+
+### SSAO
+- Intensity of 1 is now stronger and actually a good starting point
+- It should appear more similar between vr, camera and desktop
+- There's now an option to remove ao on super steep normals 
+- Should be resolution and fov independent
+- I'm currently trying to solve the issues it has in the mirror
+
+### Depth Rim Lighting
+- This has basically been rewritten at this point.
+- It works in mirrors now
+
+### Grabpass
+- It should appear more similar between vr, camera and desktop
+- should be resolution and fov independent now.

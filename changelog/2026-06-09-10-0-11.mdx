@@ -1,0 +1,96 @@
+---
+title: Poiyomi Pro 10.0.11 Changelog
+description: Full changelog of Poiyomi Pro 10.0.11 release.
+hide_table_of_contents: true
+authors:
+  scrn
+tags: [shader, vrchat, updates, update, pro]
+---
+
+You can download this version from [pro.poiyomi.com](https://pro.poiyomi.com) by logging in via your Patreon account. Alternatively, use the Poiyomi Pro VCC package by following the instructions [here](/download#pro-version-method-1-vcc-package).
+
+### Changes
+- **Added Lava Lamp**
+   - Can be found in Grab Pass shaders (Poiyomi Pro only).
+   - Feature is located under the new `Raymarching` category in the shader UI.
+- **Added Triplanar Projection shader** (`.poiyomi/Poiyomi Pro Triplanar Projection`)
+- **Up to 20% Performance Increase with multiple modules. Tons of code has been optimized.**
+- **Material Translation from 9.3 to 10.0 is now automatic without requiring an extra step.**
+   - This is enabled by default. Can be disabled under `Poi -> Auto-Upgrade Materials On Shader Change` from the Menu Bar.
+- Added AudioLink controls to Internal Parallax.
+- Added/Improved Color Adjust in Decals.
+- Updated Hue Shift with OKLab support in Outlines.
+- Added new "Flashing" option in Emissions -> Blinking.
+   - *To put things simply, it's basically flashing without a transition (like a small beacon on top of a tall building).*
+- Added mask slot to Vertex Glitching.
+- Added Global Masking support to Video Effects.
+- Added Edge Color customization and Sharp Borders toggle to Proximity Color.
+- Modernized UI in dormant sections across all modules.
+   - *Many of these changes introduced new UI elements written by Poiyomi.*
+- **Added custom labeling to UV Tile Discard.**
+   - `Right-Click` on a button to change it's text to anything you want, if you wanna remember which ones you are using them for!
+   - This is purely a decorative feature and __does not__ change the property name. I just think it's helpful.
+   - *Side Note: This also works in 9.3 shaders!*
+- Updated Color Overrides in sections that uses it for more refined control.
+- Overhauled the Modular Shader Generator pipeline.
+   - Added per-phase Progress Bar to see the status of the generation, with Asynchronous batching.
+      - *No more second-guessing what the build progress is!*
+   - Overhauled the lifecycle pipeline so that accidentally double-clicking Generate is a no-op.
+- Added new Presets.
+- New Documentation Links added.
+- Migrated some of Poiyomi's written Thry Editor add-ons into our official `poiyomi/ThryEditor` fork, included in this release.
+   - ***This is a breaking change!** If you attempt to downgrade Thry Editor from this point on, you'll be on your own.*
+- Fixed a memory leakage in the math for Constellation, among other significant improvements.
+- Fixed missing text on Hue Shift property in Flipbooks.
+   - *This caused a bug where it was impossible to tag it as animated.*
+- Fixed Circle Mask issues in Matcaps.
+- Fixed some Minimum Brightness issues.
+- Fixed modules not appearing in the meta pass.
+- Fixed vertex lights not contributing to lighting.
+- Fixed negative values causing compilation errors.
+- Fixed some missing text and spelling errors.
+- Fixed Shader GUIDs as some were never consistent in the repo.
+- Fixed LilFur with Masks, UVs, and fragmented shader data.
+- Fixed an issue with Flipbook 1 being broken.
+- Fixed error log spam when upgrading some 9.3 materials to 10.0.
+- Fixed Panosphere UVs for Constellation and Voronoi.
+- Fixed URP light cookies.
+- Fixed Skin Thickness map.
+- Removed modules not supposed to be in the meta pass.
+- Removed some dead scripts.
+- Removed Herobrine.
+
+### ThryEditor 2.71.1-poi
+
+- **Added Global Linking**
+   - Accessed in the Shader UI via a new icon (replaces Material Linking).
+   - Shares the same principle as the former Material Linking, but uses a JSON array system instead of hard-linking Materials together. This makes the system more efficient and WAY EASIER to manage.
+   - Properties are properly propagated when editing Global-linked sections.
+      - *If it's in a Locked Material, the properties are automatically updated from the JSON when Unlocked.*
+   - Values are stored in `Thry/global_links.json` in the Unity project's root.
+- **Added Material Blueprint System**
+   - Scriptable Object system that allows generation of Materials, leveraging the Presets system by pre-applying Presets onto the generated material in advance.
+   - You can generate as many materials with the predetermined set of presets already applied using this system.
+- **Added Material Text Serializer**
+   - Requested by poiyomi, this allows users to Copy/Paste Material Settings from in and out of Unity Editor in a JSON format.
+- Added new Help Boxes and Tooltips in relevant sections.
+   - *Example: Back Face will now warn you if `Cull` is __not__ set to `Off` in Rendering, as Back Face doesn't work anyway when backfaces are culled.*
+- Properties tagged as `A`/`RA` now have colored text to make them more obvious, in case overlapping issues with the symbol were to happen.
+- Changed the `RA` color to Yellow to tell the difference between the Green-colored `A` label.
+- Updated VectorLabel drawer icon (looks way better now).
+- New UI Icons.
+- Various UI elements now look better with some easier to see in Unity's Light Mode.
+- Flattened material variants when translating to a new shader.
+- Fixed alignment issues for `A`/`RA` labels to account for new drawers added.
+- Fixed an awful loading issue in Thry Texture Packer.
+   - *Dev Note: If you had issues opening and/or using the Texture Packer in the past, it was caused by a importer loop that went unchecked. This caused the Texture Packer to operate much slower than usual. This serious bug has finally been fixed. -BluWizard*
+- Fixed a regression that prevented some 10.0 shaders from locking.
+- Fixed Texture Packer input names on Vulkan and OpenGL.
+- Updated Localization.
+
+## Known Issues
+- On some Presets, you may see a warning labeled `"Original Shader not saved to Material"` on save after applying them. This is due to the serialization of the Preset files. It is safe to ignore this warning.
+- Manually copying and pasting settings from the same section in a 9.3 material to a 10.0 material will not work.
+- Upgrading a **locked** 9.3 material to 10.0 may cause a mis-match of properties with scattered sections enabled and disabled. To avoid this issue, __please ensure your materials are **unlocked**__ before attempting an upgrade from 9.3 to 10.0.
+
+And last but not least, thanks to bluwizard for all the Thry Editor fixes.

@@ -1,0 +1,26 @@
+---
+title: Poiyomi Pro 10.0.14 Changelog
+description: Full changelog of Poiyomi Pro 10.0.14 release.
+hide_table_of_contents: true
+authors:
+  scrn
+tags: [shader, vrchat, updates, update, pro]
+---
+
+You can download this version from [pro.poiyomi.com](https://pro.poiyomi.com) by logging in via your Patreon account. Alternatively, use the Poiyomi Pro VCC package by following the instructions [here](/download#pro-version-method-1-vcc-package).
+
+### Quick patch on some minor issues, refer to 10.0.13 for shading changes
+- Added back LTCGI for avatar shaders, **but there's a huge warning saying it will be deprecated**
+- Fixed Copy/Paste regression in modules such as Emissions
+- Fixed inline sliders not being able to be marked as animatable
+- Fixed squish compile error on lilFur
+- Fixed jitter noise on SSAO and contact shadows
+- Fixed OKlab hue shift looking different between main and decals
+- Reverted parallax quality presets to exposed min and max steps again
+- Emission theme color behavior changed back to mimic main color theme behavior
+- Fixed Post Process modules not working on add passes and LilFur
+- Made all toggles < or >= 0.5, instead of == 0 or == 1, this should help with floating point precision if the property was animated
+- Added UV selection for internal parallax
+- Added normal maps refracting lava lamp
+- Added tile, offset, pan, UV selection to lilToon stylized specular, and linked it in the shader translator
+- Hopefully i didn't break anything else so this can be a stable release for a while

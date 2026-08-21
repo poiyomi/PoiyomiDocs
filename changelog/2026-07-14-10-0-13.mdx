@@ -1,0 +1,118 @@
+---
+title: Poiyomi Pro 10.0.13 Changelog
+description: Full changelog of Poiyomi Pro 10.0.13 release.
+hide_table_of_contents: true
+authors:
+  scrn
+tags: [shader, vrchat, updates, update, pro]
+---
+
+You can download this version from [pro.poiyomi.com](https://pro.poiyomi.com) by logging in via your Patreon account. Alternatively, use the Poiyomi Pro VCC package by following the instructions [here](/download#pro-version-method-1-vcc-package).
+
+### Compatibility and Migration
+
+- Unity 6.5 support
+- LTCGI has been removed from avatars, LTCGI v1.7.1 has deprecated their avatar functions, please see their patch notes
+
+### Lighting and GI
+- There has been a ton of lighting changes in 10.0.13, because of this, there's a new curve editor under Light Data -> Add Pass -> **Light Attenuation Curve**, this lets u change how light affects the material at given distances
+- added **Casted Shadow Softness** setting, this helps to smooth out hard shadows from the main light
+- changed internal light calculations to be stereo by default, non physically correct effects will defer to a centered eye
+- fixed support for light cookies on additional lights
+- fixed toon ramp on additional lights
+- fixed GI contributing to additional lights
+- "ignore directional lights" checkbox now work correctly, default is now off
+- new light data debug viz options
+- anisotropics now respect distance attenuation (light further away is less bright)
+- fixed subsurface scattering from additional lights
+- fixed adaptive probe volumes (APV) L2 assignment error (URP)
+- new APV dominant light direction estimation (baked lighting with APV looks a lot better) (URP)
+- new minimum light cap function
+- fixed additional lights double counting attenuation
+- fixed light cap not counting indirect light in URP
+- realistic shading shadow tint now works
+- realistic shading now has a shadow strength slider
+- added occlusion to indirect color for other shading modes
+- fixed AO factor on main light
+- added light layers support (URP)
+- fixed cloth metallic reference not assigned
+- fixed sdf shadows using world coord translation
+- Light Volumes support updated to v.3.0.0-dev.9
+
+### Lava Lamp
+
+- **new lava lamp shapes to play with**
+- fixed add pass lighting for lava lamp
+- added some simple audiolink effects for lava lamp
+- added new shapes for lava lamp
+- added alpha slider to lava lamp
+- added a fallback for lava lamp mesh baking if it failed
+
+### LilFur
+
+- **LilFur has been completely reworked**
+- lilfur normals and mask uvs now have their own settings
+- fixed lighting, shadows, light maps on lilfur
+- less bandwith use in the geometry stage
+- lilfur now supports all poiyomi modules
+- added wind effect to lilfur
+
+### Grab Pass
+
+- **better grabpass masking**, you can now mix and match different blur effects
+- added a fast gaussian blur for grab pass; less compute, but less visually pleasing
+- fixed grab pass with additional lights
+
+### Outlines
+
+- moved outline base color to the beginning, it should not overwrite other effects in the outline anymore
+- added decals to outline pass, with toggles
+- added matcap toggles to show on outlines
+
+### Surface, Mapping, and Material Effects
+
+- better normal reconstruction for triplanar
+- added parallax LOD
+- removed internal parallax pan multiplier, added pan offset
+- fixed panosphere UVs (for the final time, hopefully), added support to different panosphere textures
+- global themes, move hue shift after saturation
+- added global masks to pathing
+
+### Performance and Rendering Internals
+
+- more code optimizations for glitter, constellation, ssao, metallics, parallax
+- less compile time on URP
+- fixed render layers for depth passes (URP)
+- change shader_feature to shader_feature_local for some modules, less global keywords
+- replaced float calculations with half precision (helps with mobile perf, no change on desktop) (URP)
+- changed view direction effects internally (should be no visible change if everything works correctly)
+
+### Liltoon Translation
+
+- Added: Auto-Translate on manual shader swap.
+- Fixed: Serialized float was discarded and returned the shader default instead.
+- Fixed: Decal enum mismappings in stale code.
+- Fixed: Replaced && guard with || on HSVG in Outlines.
+
+### Editor and UI
+
+- made UI categories more consistent, at the same place for every shader
+- added missing [DoNotAnimate] tags to some material properties
+- added 9.X to 9.3 shader translator to help update older shaders that were removed from 10.0
+- updated Localization
+
+### ThryEditor 2.72.1
+- **ThryEditor added as a `vpmDependency`.**
+   - IN A FUTURE UPDATE, ThryEditor will be installed automatically as a separate VCC package, **which is already listed in Poiyomi’s Repository.** This will make it easier for us to update the editor without having to release a new version each time in the future. So be sure to update ThryEditor in Creator Companion or ALCOM whenever a new version becomes available.
+   - **In the next version, ThryEditor VCC will be force-installed as a dependency when you update Poiyomi Pro package via your Creator Companion client.**
+- Orphaned textures, old textures no longer referenced by the shader, will be removed during lock.
+- Fixed an issue where MaterialToShaderPropertyHash ignored texture resolution while the optimizer baked _TexelSize as a constant.
+- Wrapped the AssetDatabase wedging method in a try/finally guard to prevent editor freezes.
+- Guard against malformed shader sources to prevent IndexOutOfRangeException.
+- Added using blocks to StreamReader/StreamWriter to prevent leaking a file handle.
+- Fixed VRChat world build when Developer Mode’s unlocked-shader stripping override is enabled.
+- Fixed spurious "original shader not found" warnings.
+- Optimizer messages now standardized through ThryLogger.
+- Successful shader unlocks now have a confirmation message.
+- Improved Detailed Logging behavior on the ShaderOptimizer and Presets.
+- The obsolete Auto-Lock YouTube link was replaced with the current Poiyomi shader-locking documentation.

@@ -1,0 +1,104 @@
+---
+title: Poiyomi Pro 10.0.15 Changelog
+description: Full changelog of Poiyomi Pro 10.0.15 release.
+hide_table_of_contents: true
+authors:
+  - tony_lewis
+  - scrn
+tags: [shader, vrchat, updates, update, pro]
+---
+
+You can download this version from [pro.poiyomi.com](https://pro.poiyomi.com) by logging in via your Patreon account. Alternatively, use the Poiyomi Pro VCC package by following the instructions [here](/download#pro-version-method-1-vcc-package).
+
+### Lighting
+Thanks for dealing with our rapid lighting changes while I try to combine both the Built-in Render Pipeline and the new Universal Render Pipline to be as similar to each other as possible.
+- Reverted back to 10.0.11 shading for Realistic shadow mode. For realistic shadows mode, I want to keep it as similar to Unity Standard shader.
+- (Another) new minimum brightness clamp that acts on both direct and indirect lighting independantly. Should stop indirect light banding artifacts.
+- Use Unity dielectrics for default BRDF Realistic shading.
+- Fixed vertex lights missing from fragment shading.
+- Fixed additive passes applying the light map twice.
+- Fixed additive lighting in backlight, metallic, specular, and subsurface effects.
+- Replaced light cookie branching with compile time eval.
+- Fixed reflection probe sampling when Rimlight was enabled (keyword collision).
+- Added compatiblity for 3rd party Poiyomi plugins using old attenuation and additiveShadow references.
+
+### Performance
+- Trimmed out modules that did not contribute to color, alpha, emissions, in their respective passes.
+- Replaced cubic curve sample with piecewise-linear curve.
+- Shader locking now removes more dead code.
+- Caching and reusing more pre-calculated lighting code.
+
+### Light Volumes
+- Updated to VRC Light Volumes v.3.0.0-dev.11.
+- Added Light Volumes intensity, point-shadow quality, and specular controls.
+- Added Light Volumes specular to metallic and stylized specular effects.
+- Replaced interal LV Specular code with different attenuation, normal calculations and lighting clamps.
+
+### UV
+- Added a Screen Space UV.
+- Removed Panosphere UV overrides from Constellation and Voronoi since regular Panosphere UVs are fixed.
+- Added missing UV options to UV selectors.
+
+### AudioLink
+- Fixed AudioLink crashing Unity.
+- Added AudioLink volume to the debug visualizer.
+- Fixed UI for AudioLink overrides.
+- Fixed AudioLink lingering in shaders after locking even when it's not enabled.
+- Removed the extra alpha slider in AudioLink Volume Color.
+
+### LilFur
+- Added Skin module to LilFur.
+- Added packed RGBA masks to LilFur.
+- Fixed LilFur vertex color interactions.
+- Fixed randomized LilFur directions on rotating objects.
+- Fixed LilToon translator not copying LilFur stencil values.
+- Removed the fur AO curve.
+
+### Regular Fur
+- Added tip tapering to regular fur.
+- Fur layers now fade smoothly over distance.
+- Fixed fur scaling with avatar scale.
+- Also removed the fur AO curve.
+
+### Internal Parallax
+- Parallax map now acts like a decal, it can be a single UV or tiled across the surface.
+
+### Other Fixes
+- Added a transition curve to Proximity Color.
+- Added random direction for glitter rotation.
+- Added Skin module to meta pass.
+- Fixed Decals leaking the previous emission in Lava Lamp materials.
+- Fixed Base Color as Emission so it still applies the emission tint.
+- Fixed Truchet emission ignoring its alpha value.
+- Fixed Proximity Color edge when Solid Transition is off.
+- Fixed Decal global masking for Metallics & Reflections.
+- Fixed Video Effects, Pixel to Resolution.
+- Fixed Uzumore normal calculation, avatar scaling.
+- Global Themes now only uses max instead of saturate to prevent clamping HDR values.
+- UDIM Discard pixel mode now works in EarlyZ.
+- Changed UI for Rendering, Fur, ShatterWave, Decal, and other inspector sections.
+- Decal Hue Shift now sits inside Decal Color Adjust.
+- Grab Pass alpha masks now default to the red channel.
+- Several shader keywords were removed.
+- Renamed a few UI elements to be more readable.
+- Fixed Liltoon to Poiyomi Translator.
+
+### URP
+- Added a regular or Render Feature outline choice for URP.
+- Added a Pro Wireframe shader for URP.
+- URP additional lights now process up to 16 lights, or 4 on mobile devices.
+- Fixed URP light cookie lookup in Forward mode.
+- Fixed fallback rendering for geometry shaders.
+- Fixed Add pass Stylized Specular.
+
+### ThryEditor 2.72.5
+- Installing Poiyomi Shaders through VCC or ALCOM should now prompt you to install ThryEditor as a dependency. Updates for ThryEditor and Poiyomi Shaders are now separate.
+- Fixed auto-collapsing Global Linked slots.
+- Fixed VRCFallback tag carrying over on upgraded materials.
+- Fixed Rendering Presets handling.
+- Fixed inline slider can't be marked as animatable.
+- Fixed headers can't be marked as animatable.
+- Added a 'Clear' button for inline RGBA packer.
+- Turned off random debugging log prints.
+
+And with that, hopefully, is the last update that extensively changes lights and shading.

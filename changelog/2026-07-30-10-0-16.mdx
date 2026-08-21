@@ -1,0 +1,33 @@
+---
+title: Poiyomi Pro 10.0.16 Changelog
+description: Full changelog of Poiyomi Pro 10.0.16 release.
+hide_table_of_contents: true
+authors:
+  scrn
+tags: [shader, vrchat, updates, update, pro]
+---
+
+Sorry, quick patch for the compile errors!
+
+You can download this version from [pro.poiyomi.com](https://pro.poiyomi.com) by logging in via your Patreon account. Alternatively, use the Poiyomi Pro VCC package by following the instructions [here](/download#pro-version-method-1-vcc-package).
+
+### Changes
+- Fixed compile error for Parallax
+- Fixed compile error for Bent Normals
+- Removed UDIM Discard from EarlyZ
+- Fixed Light Passthrough
+- Fixed metallics on Cloth Lighting
+- Non-Photorealistic Rendering Light modes should look closer to 9.3
+- Fixed Dynamic Lightmap Uvs
+- Fixed LilFur support for TPS, Parallax
+- Moved decals off samplers
+- Updated Multilayer Math defaults to LilToon 2.3.3
+- Redone some UI for Outlines, Squish, Proximity Color, Stats Overlay
+
+### URP
+- Fixed compile error for baked lighting
+- Fixed baked lighting colors
+
+### ThryEditor 2.72.6
+- `ShaderOptimizer`: Anchor the regex to line beginning as well. This fixes an issue where renaming `_Metallic` also rewrites the tail of `_LTCGI_Metallic` as well, as an example.
+- Added some new decorative drawers for future usage, including `[ThryHeader]` and `[ThryDescription]`.
