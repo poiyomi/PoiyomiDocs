@@ -1,6 +1,6 @@
 {
   "name": "poiyomidocs",
-  "version": "3.12.2",
+  "version": "3.12.3",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
@@ -22,12 +22,12 @@
     "@docusaurus/plugin-vercel-analytics": "^3.10.2",
     "@docusaurus/preset-classic": "3.10.2",
     "@docusaurus/theme-mermaid": "3.10.2",
-    "@easyops-cn/docusaurus-search-local": "0.55.2",
+    "@easyops-cn/docusaurus-search-local": "0.55.3",
     "@fortawesome/fontawesome-svg-core": "7.3.1",
     "@fortawesome/free-brands-svg-icons": "7.3.1",
     "@fortawesome/free-regular-svg-icons": "7.3.1",
     "@fortawesome/free-solid-svg-icons": "7.3.1",
-    "@fortawesome/react-fontawesome": "3.4.0",
+    "@fortawesome/react-fontawesome": "3.5.0",
     "@iconify/react": "^6.0.2",
     "@mdx-js/react": "^3.1.1",
     "@vercel/analytics": "^2.0.1",
@@ -36,8 +36,8 @@
     "clsx": "^2.1.1",
     "postcss": "^8.5.19",
     "prism-react-renderer": "^2.4.1",
-    "react": "^19.2.7",
-    "react-dom": "^19.2.7",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
     "react-player": "3.4.0",
     "rehype-katex": "7.0.1",
     "remark-math": "6.0.0"
@@ -46,8 +46,8 @@
     "@docusaurus/module-type-aliases": "3.10.2",
     "@docusaurus/tsconfig": "3.10.2",
     "@docusaurus/types": "3.10.2",
-    "@types/react": "^19.2.17",
-    "typescript": "~6.0.2"
+    "@types/react": "^19.2.18",
+    "typescript": "~6.0.3"
   },
   "engines": {
     "node": "^24.0"

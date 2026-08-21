@@ -89,14 +89,6 @@ const config: Config = {
             from: '/poiyomitoonvcc',
           },
           {
-            to: '/general/upgrade/v7-upgrade',
-            from: '/general/v7-upgrade',
-          },
-          {
-            to: '/general/upgrade/v8-upgrade',
-            from: '/general/v8-to-v9-upgrade',
-          },
-          {
             // Stylized Specular renamed to Stylized Reflections in 9.2.10
             to: '/shading/stylized-reflections',
             from: '/shading/stylized-specular',
@@ -369,7 +361,7 @@ const config: Config = {
             },
             {
               label: "GitHub",
-              href: "https://github.com/poiyomi/PoiyomiToonShader",
+              href: "https://github.com/poiyomi",
             },
             {
               label: "BOOTH",

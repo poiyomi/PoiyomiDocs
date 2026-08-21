@@ -2345,10 +2345,10 @@
     cssesc "^3.0.0"
     immediate "^3.2.3"
 
-"@easyops-cn/docusaurus-search-local@0.55.2":
-  version "0.55.2"
-  resolved "https://registry.yarnpkg.com/@easyops-cn/docusaurus-search-local/-/docusaurus-search-local-0.55.2.tgz#563ab1f8fd7bc18541d889f4d5001a3ef85c5a1e"
-  integrity sha512-dI/riu+MbDxkAjAHAdc0uahjXRaWKvbIPe9IAmA6AGcUfnVb9xd8s2I/6wEPTOXsAd6eFqn4Yis3WBWh3KUd3g==
+"@easyops-cn/docusaurus-search-local@0.55.3":
+  version "0.55.3"
+  resolved "https://registry.yarnpkg.com/@easyops-cn/docusaurus-search-local/-/docusaurus-search-local-0.55.3.tgz#4beba8939a630a5fe4b37fd83bb41beca9923809"
+  integrity sha512-PlMKmxuonvZ1C+/zJS1hJaF1xaxD1TsUvOMzpP6DdQMtZqmTaYjcLGM12ePzl0m1rp3AgfTBeDbFNHQhwnH/dA==
   dependencies:
     "@docusaurus/plugin-content-docs" "^2 || ^3"
     "@docusaurus/theme-translations" "^2 || ^3"
@@ -2423,10 +2423,10 @@
   dependencies:
     "@fortawesome/fontawesome-common-types" "7.3.1"
 
-"@fortawesome/react-fontawesome@3.4.0":
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/@fortawesome/react-fontawesome/-/react-fontawesome-3.4.0.tgz#17b989390349ded9214ffb35ad279da7c9a728ba"
-  integrity sha512-EgY5CXzzm6WGnUB40j9qNajYmoJHC8TUV/rvpcmHUoPZmQyRlh8WuRaxaerjMq61NZAz0vS+MOoJaPbZWRDibw==
+"@fortawesome/react-fontawesome@3.5.0":
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/@fortawesome/react-fontawesome/-/react-fontawesome-3.5.0.tgz#ce8152e556809326e1253682088bfdd116a453bd"
+  integrity sha512-63mlRr6fiBbJ0wjr1Cf6dsDGtP2lNvk9lnatKgxs/fIkhslsZT291hIUzJkuUkI9yr69ZvWnWfgb2qXm4QyVaA==
 
 "@hapi/hoek@^9.0.0", "@hapi/hoek@^9.3.0":
   version "9.3.0"
@@ -3764,10 +3764,10 @@
   dependencies:
     csstype "^3.2.2"
 
-"@types/react@^19.2.17":
-  version "19.2.17"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-19.2.17.tgz#dccac365baa0f1734ec270ff4b51c89465e8dc7f"
-  integrity sha512-MXfmqaVPEVgkBT/aY0aGCkRWWtByiYQXo3xdQ8r5RzuFrPiRn8Gar2tQdXSUQ2GKV3bkXckek89V8wQBY2Q/Aw==
+"@types/react@^19.2.18":
+  version "19.2.18"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-19.2.18.tgz#eb0b6a1fb635d1a9692d5f84a3495bd8ad153707"
+  integrity sha512-AnzbBERsrLKtk2XSfTbYRLjQPdy116Sty4q+T+Bp3IC4l6jNBvreVPAHmpq9qhXQM7CXZPjLVmGMw9sy+hxQ3w==
   dependencies:
     csstype "^3.2.2"
 
@@ -9615,10 +9615,10 @@ rc@1.2.8:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-dom@^19.2.7:
-  version "19.2.7"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-19.2.7.tgz#0450dc9ae9ddbff76ef196401cd8b8c7fb466ccc"
-  integrity sha512-t0BRVXvbiE/o20Hfw669rLbMCDWtYZLvmJigy2f0MxsXF+71pxhR3xOkspmsO8h3ZlNzyibAmtCa3l4lYKk6gQ==
+react-dom@^19.2.8:
+  version "19.2.8"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-19.2.8.tgz#3b46b9eeda877cdff2cf13d2770fff4ae36c2ec2"
+  integrity sha512-rVprimfGBG3DR+Tq0IQG2DT5PxKth1WIGDmj5yPmlzr4YBe7uyE+Du4oVqTDXZSHGGGXRtTJEGSSePyQCMBglQ==
   dependencies:
     scheduler "^0.27.0"
 
@@ -9720,10 +9720,10 @@ react-router@5.3.4, react-router@^5.3.4:
     tiny-invariant "^1.0.2"
     tiny-warning "^1.0.0"
 
-react@^19.2.7:
-  version "19.2.7"
-  resolved "https://registry.yarnpkg.com/react/-/react-19.2.7.tgz#1f47a1bfc06f8ec885752c6f4af14369a9f8260b"
-  integrity sha512-HNe9WslTbXmFK8o8cmwgAeJFSBvt1bPdHCVKtaaV+WlAN36mpT4hcRpwbf3fY56ar2oIXzsBpOAiIRHAdY0OlQ==
+react@^19.2.8:
+  version "19.2.8"
+  resolved "https://registry.yarnpkg.com/react/-/react-19.2.8.tgz#a80663dbb58d69c6fe3fd291d3cb324e8a7dff2d"
+  integrity sha512-PWaYA1L/q9u2u7xYQi+Y3L3Yfnie7XyLeaJICV1MGD6LprsBxcAqGjYyr0eY3p+QdsA+x/Irkt4Qif8D63+Sbw==
 
 readable-stream@^2.0.1:
   version "2.3.8"
@@ -10789,7 +10789,7 @@ typedarray-to-buffer@^3.1.5:
   dependencies:
     is-typedarray "^1.0.0"
 
-typescript@~6.0.2:
+typescript@~6.0.3:
   version "6.0.3"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-6.0.3.tgz#90251dc007916e972786cb94d74d15b185577d21"
   integrity sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==
