@@ -54,12 +54,12 @@ Our improved translation utilities have been updated to make this transition as 
 ### Surface Texturing
 - **Normal Map 2**: Added second normal map with it's own Scale and Mapping set.
 - **Global UV Configuration**: Shared UV configuration across modules with translation support, with Screen-space UV option.
-- Extended Stochastic Sampling to Lil Fur.
+- Extended Stochastic Sampling to LilFur.
 
 ### Color
 - Added `Chromatize` and `Tint` to Color Adjust.
 - Added Gradient Mask to Color Adjust.
-- Added Color Adjust baking, mirroring Lil Toon's Color baking.
+- Added Color Adjust baking, mirroring LilToon's Color baking.
   - Bakes Hue Shift, Saturation, Brightness, Gamma, Chromatize, Tint, and Gradation into the main texture, then resets the values to use the baked map.
 - Added OKLab support to Global Themes, with backwards-compatibility support by setting it to use legacy values.
 - Offset and Constant Hue Shift options added.
@@ -75,7 +75,7 @@ Our improved translation utilities have been updated to make this transition as 
   - If you do plan to use `Emission 0` as your primary, we recommend using an Emission Map only on `Emission 0`.
 
 ### Outlines
-- Added `Highlight`, matching Lil Toon's outline highlighting feature. Supports Audio Link and Color Change.
+- Added `Highlight`, matching LilToon's outline highlighting feature. Supports Audio Link and Color Change.
 - Updated Outline Hue Shift to coincide with our modern Color Adjust framework. Backwards-compatible by setting it to use legacy values.
 - RGBA Color Masking, Decals, and Matcaps can now show on the Outlines pass.
 - Added Light Probe sampling for Outline lighting.
@@ -106,25 +106,26 @@ Our improved translation utilities have been updated to make this transition as 
 - **Subsurface Scattering** now supports mixing LIght Colors, Shadow Attenuation adjustment, and Global Masking.
 - **Stylized Specular** now supports Tiling, Offset, Panning and UV, and reworked Lil Reflections.
 - **Matcaps** can now act as a fallback cubemap by using the `Reflection Fallback` toggle.
-- **Backlight** UI now closely reflects Lil Toon's latest version and has Global Masking support.
+- **Backlight** UI now closely reflects LilToon's latest version and has Global Masking support.
 - Improved **Global Masking** to Parallax Heightmapping, Light Data, Decals, Path Color, and Reflections & Specular.
 - **Stats Overlay** improved with Clock support, utilizing VRChat's Shader Globals. Supports UTC + Offset, Local Time, Unix time, and added better font alignment.
 
-### Lil Fur
-- Nearly all Poiyomi features are now supported in Lil Fur, including Emission, Proximity Color, UV Tile Discard, Vertex Options, Audio Link, Dissolve, Stochastic Sampling, and more.
-- Lil Fur UVs are no longer linked to the main UVs and can be assigned per-texture UV.
+### LilFur
+- Nearly all Poiyomi features are now supported in LilFur, including Emission, Proximity Color, UV Tile Discard, Vertex Options, Audio Link, Dissolve, Stochastic Sampling, and more.
+- LilFur UVs are no longer linked to the main UVs and can be assigned per-texture UV.
 - Added Wind Effect, fur tip taper, width, RGBA Masking, and Inverted root width configuration options.
 
 ### Time
 - Networking Time Support, linking directly into VRChat's Shader Globals for Time syncing.
 
 ### Platforms & Compatibility
+- Added official support for Unity 6, ready for whenever VRChat is ready to unleash their SDK for Unity 6.
 - Added initial support for Warudo, MarrowSDK (Bonelab), and support skip-optimization for D3D.
 - `PoiDynamicBranchVariantStripper` added for Unity 2022.3, stripping redundant variants caused by the `dynamic_branch` Unity bug.
 
 ### Shaders
 - **Added Shaders for Universal Render Pipeline (URP)**
-  - Supports Unity 6.0 thru 6.5.
+  - Supports Unity 6 only.
   - Initial Support for BasisVR and Warudo URP.
 - **Added Poiyomi Pro Triplanar Projection (Poiyomi Pro only)**
   - World-space triplanar with edge fading, distance fading, depth clipping, self-mapping, and exposed depth sampling accuracy.
@@ -142,8 +143,9 @@ Our improved translation utilities have been updated to make this transition as 
 
 ### Upgrade & Translation Pipeline
 - Added new scripting pipeline to handle Materials still using legacy shaders, allowing instant upgrade & translation to the latest version.
-- Standalone auto-upgrading scripting added to allow instant translation of materials when changing the shader. Available for both Poiyomi and Lil Toon.
-  - This is enabled by default. Can be toggled under `Poi -> Auto-Upgrade Materials On Shader Change` and `Poi -> Auto-Translate LilToon Materials On Shader Change` in the menu bar.
+- New Material Upgrade Utility to handle mass-upgrading of multiple materials in the projection to the latest version.
+- Standalone auto-upgrading scripting added to allow instant translation of materials when changing the shader. Available for both Poiyomi and LilToon.
+  - This is enabled by default. Can be toggled under `Poi -> Auto-Translate Materials On Shader Change` in the menu bar.
 - Added more translation parameters to support translating from LilToon 2.3 to Poiyomi 10.0.
 - Cross-edition translation `Toon <-> Pro` now work correctly.
 
@@ -182,7 +184,7 @@ This area is the largest amount of changes compared to added features. For advan
 - Matcap `Border` now defaults to `0.5`.
   - If using `Double Sided` mode, set the `Border` to `0.43` for the intended appearance.
 - Networked Time is now the default method for time synchronization, utilizing VRChat's Shader Globals.
-- Multilayer Math default settings are now updated to match Lil Toon 2.3.
+- Multilayer Math default settings are now updated to match LilToon 2.3.
 - Additive Lighting `#T#` added so Proximity Color works with specular.
 - Passthrough defaults changed to `0`, Add Pass now ignores attenuation.
 - Vertex Lights are now filtered through the attenuation curve, and Vertex Lights are ignored on the Add Pass.
@@ -194,10 +196,10 @@ This area is the largest amount of changes compared to added features. For advan
 - Global Mask modifiers in Reflections & Specular now split into their own section for UI consistency.
 - Default Fur Noise no longer generates mipmaps (otherwise, fur was losing detail at a distance). Smoother fur LOD.
 - Adjusted defaults for UV Distortion, Squish, and Particle Direction ramp.
-- Lil Fur default noise textures corrected to use `Linear` instead of `sRGB`, matching Lil Toon's upstream repository.
+- LilFur default noise textures corrected to use `Linear` instead of `sRGB`, matching LilToon's upstream repository.
 - Updated Latex Matcaps (removes JPEG artifacts).
 - All included textures using Mipmapping now set to use Kaiser filtering (better support for VRChat's DPID filtering algorithm).
-- "lilToon" is now referred as to "Lil Toon" for general professional appearance in the UI.
+- "lilToon" or "lil toon" is now referred as to "LilToon" for general professional appearance in the UI.
 
 ### Performance & Compilation
 - **Fog**: `multi_compile` replaced with `dynamic_branch`, cutting the fog variants in half. `applyUnityFog` rewritten to use dynamic-branch keywords instead of runtime `unity_FogParams` heuristics; `fogData` interpolator simplified from `float2` to `float`.
@@ -224,7 +226,7 @@ This area is the largest amount of changes compared to added features. For advan
 - Shader Generation Workers improved with batching limits (on by default, prevents a runaway loop from exhausting RAM). `ReleaseGeneratedText` extended, a `ReleaseAll()` helper, `_genContexts` dropped at finalize, and deferred `Resources.UnloadUnusedAssets()` + `GC.Collect()` so memory can return to the Operating System level.
 
 ### Architecture & Internals
-- Object Scale exposed inthe fragment shader, stored in `normal.w`. Outlines, SSAO, Vertex Height offsets, View Clip Prevention, Fur, and the pixelate effect now scale with Object/Avatar size.
+- Object Scale exposed in the fragment shader, stored in `normal.w`. Outlines, SSAO, Vertex Height offsets, View Clip Prevention, Fur, and the pixelate effect now scale with Object/Avatar size.
 - `eyeViewDir` added; `viewDir` is now specifically the center eye. ALl camera positions reads are routed through `getCameraPosition()`.
 - Internal light calculations are made stereo-aware, with center eye used for shadows.
 - Injection points reordered and renamed for Triplanar Projection (`MAIN_TEXTURE_SAMPLE` and `FRAGMENT_NORMAL_CALCULATION` moved after camera init; `BASE_COLOR_MOD` to `MAIN_COLOR_MOD`).
@@ -239,7 +241,7 @@ This area is the largest amount of changes compared to added features. For advan
 - Shader `.shader` GUIDs realigned.
 
 ### UI
-- Broad UI modernization across all sections including Rim Lighting, Matcaps, Pathing, Black Light Masking, Clear Coat, Reflections & Specular, Backlight, Outlines, ShatterWave, Lil Fur, Rendering, Color Overrides, and all dormant sections.
+- Broad UI modernization across all sections including Rim Lighting, Matcaps, Pathing, Black Light Masking, Clear Coat, Reflections & Specular, Backlight, Outlines, ShatterWave, LilFur, Rendering, Color Overrides, and all dormant sections.
 - Thry Editor SubSection drawers adopted where appropriate, `[ThrySeparater]` added to replace `[Space]`, UV Tile Dissolve rows converted to SubSection drawers.
 - Consistent UI across all shaders.
 - Helpboxes rewritten and updated and `UIBoilerPlate` updated to include a common error cause.
@@ -294,7 +296,7 @@ This area is the largest amount of changes compared to added features. For advan
 - Panosphere perspective-correct fixed.
 - Camera position fixed inside mirrors.
 - Fixed screen-space UV in mirrors.
-- LIl Fur mirror/camera visibility fixed.
+- LilFur mirror/camera visibility fixed.
 - General stereo rendering, mirror, and VR bug fixes.
 - Corrected various screen effects.
 
@@ -308,7 +310,7 @@ This area is the largest amount of changes compared to added features. For advan
 - LV specular removed on lock when disabled.
 - Subsurface Scattering now behaves the same when locked.
 - Height bias now locks in correctly when no texture is used.
-- `isNOtAnimated` check added for Global Masks.
+- `isNotAnimated` check added for Global Masks.
 - Fixed a `DefineableCondition.ParseSingle` regression that prevented some shaders from locking.
 
 ### Shading & Lighting Bugs Fixed
@@ -334,15 +336,14 @@ This area is the largest amount of changes compared to added features. For advan
 - Fixed missing text on Flipbook Hue Shift, causing the property to be impossible to tag as animated.
 - Fixed Decal 3 having an extra Z field even though it's unused.
 - Fixed RNG function and typos in Constellation.
-- Fixed normals and clipping, mask compile errors, keyword warnings, and dissolve on Two Pass Lil Fur when using Squish.
-- Alpha, vertex discards, AO, and UV Tile Discard, vertex options with Audio Link, Theme Colors, Emission, Scaling, Blur, Masks, UVs, frag data, `ApplyDetailNormal` guarded from being applied to Lil Fur.
+- Fixed normals and clipping, mask compile errors, keyword warnings, and dissolve on Two Pass LilFur when using Squish.
 - Fixed mixing Metallics with other modules, as well as masks, anisotropy, and undeclared identifier / redefinition errors fixed.
 - Fixed Lil Reflections in Stylized Specular not rendering correctly.
 - Fixed Circle Masks, mip count, sample call count, and circle mask panning in Matcap.
 - Fixed masking, 0-width leaking from antialiasing, and fixed mismatched `_RimBlur`/`_Rim2Blur` defaults.
 - Fixed Hue toggle, Alpha mask, ordering relative to Decals/Matcaps, and Depth Bulge with self grab in Grab Pass.
 - Fixed pixelation seams and texture reads guarded with `ifdef` in Video Effects.
-- Post Processing now works with Emission and Decals, and with the Add Pass and Lil Fur.
+- Post Processing now works with Emission and Decals, and with the Add Pass and LilFur.
 - Fixed distance falloff, Audio Link ordering, Audio Link removed when unused.
 - Fixed world normals, normals, UV channel, and removal from the meta pass.
 - Fixed alpha not affecting Emission output in Voronoi and Truchet.
@@ -365,8 +366,8 @@ This area is the largest amount of changes compared to added features. For advan
 - Fixed Global Mask label indentation, text alignment, and animated property marker vertical alignment.
 
 ### Editor, Generation & Translation
-- Fixed a Lil Toon translator write-priming bug causing every write to be primed with a throwaway value first due to a StringComparison bug.
-- Fixed Decal enum mis-mappings in Lil Toon's translation, and `&&` guard replaced with `||` guard on HSVG in Outlines. Some corrections from Lil Toon's sneaky UI tricks.
+- Fixed a LilToon translator write-priming bug causing every write to be primed with a throwaway value first due to a StringComparison bug.
+- Fixed Decal enum mis-mappings in LilToon's translation, and `&&` guard replaced with `||` guard on HSVG in Outlines. Some corrections from LilToon's sneaky UI tricks.
 - `ShaderRepresentation` call hardened against null props, fixing a log error spam when upgrading materials.
 - Fixed an issue where cross-edition (`Toon <-> Pro`) upgrades got borked.
 - Fixed a guard against shader variants when upgrading.
@@ -396,14 +397,18 @@ This area is the largest amount of changes compared to added features. For advan
 - Removed `_ALDecalType`.
 - Removed unused module collections.
 - Removed dead scripts.
-- Removed Specular from the meta pass. Affects Contact Shadows, SSAO, backlight, Cubemap, Environmental Rim, Rim Lighting, Depth Rim Lighting, Matcap, and Reflections & Specular.
+- Removed Specular from the meta pass. Affects Contact Shadows, SSAO, Backlight, Cubemap, Environmental Rim, Rim Lighting, Depth Rim Lighting, Matcap, and Reflections & Specular.
 - **LTCGI** marked as pending deprecation.
   - This module is still available, but the feature will be removed in future versions due to VRC Light Volumes taking over. A warning was added. LTCGI should only be used in World projects.
 
-## Thry Editor
-- **Thry Editor is now a VCC Package!**
-  - **Upon installing Poiyomi Toon 10.0 via the Creator Companion for the first time, Thry Editor will be automatically added as a dependency and cannot be removed unless Poiyomi is removed.**
-  - This allows us to update Thry Editor more quickly without having to update the shader all the time for important fixes.
+## ThryEditor 2.73.6
+
+:::info[ThryEditor is now a VCC Package!]
+**Upon installing Poiyomi Toon 10.0 via the Creator Companion for the first time, ThryEditor will be automatically added as a dependency and cannot be removed unless Poiyomi is first removed.**
+
+Supplying ThryEditor separately now allows us to update ThryEditor more quickly without having to update the shader all the time for important UI-related fixes. Additionally, opens up the ability for third-party shader developers to use our toolset without needing to install Poiyomi Shaders.
+:::
+
 - Added Global Linking.
 - Added Blueprint.
 - Fixed VRCFallback tags not being carried over on upgraded materials.
