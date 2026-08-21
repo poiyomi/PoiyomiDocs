@@ -76,6 +76,10 @@ How much to blend on the UV's X-axis.
 
 How much to blend on the UV's Y-axis.
 
+:::tip
+Set this value to `1.0`, leaving the X Blend above to `0.0` to emulate the "AngelRing" effect.
+:::
+
 ### Panning
 
 - `Type`: <PropertyIcon name="float2" />**Vector2**
@@ -96,7 +100,9 @@ How far toward the edge the Matcap texture should be applied. At `0.0`, it would
 
 The Border value should be chosen based on how your Matcap texture appears. This is because there can be arbitrary cases depending on the [UV Mode](#uv-mode) you choose. By default, `0.5` should be what you use as it shows the whole Matcap as-is.
 
-Do keep in mind some Matcaps will not look pleasant at `0.5` when using `Double Sided` UV Mode, so you will need to adjust the Border. An arbitrary value to use for `Double Sided` should be at `0.43`.
+:::tip[Use 0.43 for Double Sided]
+If using Double Sided for your Matcap, it's recommended to set this to an arbitrary value of `0.43` for the intended appearance.
+:::
 
 ### Rotation
 
@@ -143,6 +149,12 @@ How much to blend with the Normals of your Material.
 If enabled, will only show the Matcap if the World has no reflection probes. This will essentially treat your Matcap as a fallback when there's no reflections in the World.
 
 ## Masking
+
+### Show on Outlines
+
+- `Type`: <PropertyIcon name="toggle" />**Toggle**
+
+If enabled, will make the Matcap effect appear on [Outlines](/outlines/outlines.mdx).
 
 ### Mask
 

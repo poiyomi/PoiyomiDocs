@@ -53,3 +53,120 @@ Any previous versions found in all packages of Poiyomi Shaders are located under
 :::warning[Only Upgrade from Old Versions]
 Please do not use Old Versions for new Materials other than to upgrade them.
 :::
+
+## APIs For Developers
+
+We offer editor-side pipelines that upgrades materials between shader versions — including materials stranded on removed versions (8.x and 9.0–9.2) whose shaders are no longer in the package. This section documents the Public APIs available so you can drive the same translation logic from your own editor tools if you wish.
+
+Everything that is detailed here are editor-only and lives in the C# namespace `Poi.Tools.ShaderTranslator.VersionUpgrade`, compiled into the default `Assembly-CSharp-Editor`. If your tool is in the same assembly (or an Assembly Definition that references it), call these types directly. If it's in its own Assembly Definition that can't reference the default editor assembly, use the bridge instead.
+
+All Upgrade calls operate on live Material objects and modify them in place. They do not register their own Undo — wrap them in `Undo.RegisterCompleteObjectUndo` if you want undo support.
+
+### Quick Start
+
+```cs
+using Poi.Tools.ShaderTranslator.VersionUpgrade;
+
+// Upgrade a material to the latest Poiyomi version (currently 10.0).
+// Automatically routes legacy 8.x / 9.x materials through 9.3 first, translating values at each step.
+bool upgraded = PoiyomiVersionUpgradeController.UpgradeToLatest(material);
+
+// Upgrade many at once (one grouped unlock pass, progress bar included).
+PoiyomiVersionUpgradeController.UpgradeMaterials(materials); // IEnumerable<Material>
+```
+
+### Version Detection
+
+Use these to decide whether to show an "upgrade" affordance, or to branch on a version.
+
+| Method | Returns | Notes |
+| :--- | :--- | :--- |
+| `PoiyomiVersionDetector.IsPoiyomiShader(Material)` | bool | Resolves through locked shaders. |
+| `PoiyomiVersionDetector.TryGetVersion(Material, out Version)` | bool | Reads the version from the shader's master label. |
+| `PoiyomiVersionDetector.NeedsUpgrade(Material)` | bool | Returns `true` for any Poiyomi material older than the latest, including removed-version materials whose shader is missing. |
+| `PoiyomiVersionDetector.LatestVersion` | bool | String, shows the current shipping version. |
+
+```cs
+if (PoiyomiVersionDetector.NeedsUpgrade(material))
+{
+    // show your "Update" button
+}
+```
+
+### Upgrading Materials
+
+`PoiyomiVersionUpgradeController` is the top-level entry point for upgrading materials.
+
+```cs
+// To the latest version.
+bool UpgradeToLatest(Material material);
+
+// Batch variant.
+void UpgradeMaterials(IEnumerable<Material> materials);
+
+// Advanced: defer the final shader assignment (for your own batching).
+bool UpgradeToLatest(Material material, bool deferFinalShaderSwap, out Shader finalShader);
+```
+
+`UpgradeToLatest` handles the whole chain: a locked material is unlocked first, a removed-version (pre-9.3) material is landed on 9.3 with its values translated, and the result is carried forward to the latest version.
+
+#### Shader Swap Scenario
+
+If the material has *already* been swapped to a newer shader (for example, the user picked it from the inspector's shader dropdown) but its old property values are still serialized, translate them across with:
+
+```cs
+bool UpgradeAcrossShaderSwap(Material material, Shader oldShader, Shader newShader);
+```
+
+This respects the version the user picked — swapping to a 9.3 shader stops at 9.3, swapping to the latest chains all the way. Pre-9.3 sources are routed through the legacy pipeline automatically.
+
+### Legacy (Removed Version) Materials
+
+Materials on 8.x or 9.0–9.2 can't be translated directly, because those shaders were removed. The conservative path lands them on 9.3 — a version that still ships — from which the user can move to the latest at their discretion.
+
+```cs
+// Upgrade a legacy material onto Poiyomi 9.3, translating its values across.
+bool PoiyomiUpgrade_9_X_to_9_3.UpgradeToNine3(Material material);
+void PoiyomiUpgrade_9_X_to_9_3.UpgradeMaterials(IEnumerable<Material> materials);
+```
+
+This works whether the material is unlocked, locked, or sitting on the error/"missing" shader — the pipeline recovers it from its serialized data.
+
+#### Detecting Legacy Materials
+
+```cs
+// True if this is a pre-9.3 Poiyomi material (present or removed shader).
+bool LegacyMaterialDetector.NeedsLegacyUpgrade(Material material);
+
+// True only if it's pre-9.3 AND its shader is genuinely gone (error shader, or a
+// locked material whose source shader no longer resolves). Use this to gate a
+// "shader missing" recovery prompt so it doesn't nag materials that still render.
+bool LegacyMaterialDetector.IsLegacyShaderMissing(Material material);
+
+// Full detail.
+bool LegacyMaterialDetector.TryDetectLegacyNine(Material material, out LegacyMaterialInfo info);
+```
+
+`LegacyMaterialInfo` exposes: `IsLocked`, `LockedShaderBroken`, `ShaderMissing`, `Edition` (`PoiyomiEdition.Toon` / `Pro`), `Variant`, `DetectedVersion`, `UsesDps`, `UsesLegacyAnisoNoise`.
+
+### Calling From Another Assembly
+
+Types in a separate assembly definition can't reference the default editor assembly where the pipeline lives. For those cases, a lightweight bridge in namespace `Poi.Tools` (assembly `Poi.Tools`) is populated by the pipeline on load. Every hook is a `Func<Material, bool>` and may be `null` if the pipeline isn't present, so always null-check:
+
+```cs
+using Poi.Tools;
+
+if (PoiLegacyUpgradeBridge.IsLegacyShaderMissing?.Invoke(material) == true)
+{
+    PoiLegacyUpgradeBridge.UpgradeToNine3?.Invoke(material);
+}
+```
+
+Available hooks: `IsLegacyMaterial`, `IsLegacyShaderMissing`, `UpgradeToNine3`.
+
+### Rules to Follow
+- **Upgrade to latest:** `PoiyomiVersionUpgradeController.UpgradeToLatest(material)`
+- **Stop at 9.3 (conservative):** `PoiyomiUpgrade_9_X_to_9_3.UpgradeToNine3(material)`
+- **Gate your UI:** `PoiyomiVersionDetector.NeedsUpgrade` or `LegacyMaterialDetector.IsLegacyShaderMissing`
+- **From a separate asmdef:** go through `PoiLegacyUpgradeBridge`
+
