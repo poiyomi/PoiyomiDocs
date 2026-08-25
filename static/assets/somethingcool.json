@@ -1,6 +1,9 @@
 {
-    "text": "Hmm... what should I do next...",
-    "texture": "https://d.furaffinity.net/art/bluwizard/1785899978/1785899978.bluwizard_blu_mouse_thinking_compresssed50.png",
-    "action": "https://bsky.app/profile/bluwizard.net/post/3mtuzctcfnk2p",
+    "text": "<color=#0092d9>Even when your partner is smaller, you gotta overcome your differences when working together.</color>",
+    "texture": {
+        "name": "https://d.furaffinity.net/art/bluwizard/1764902116/1764902116.bluwizard_partners_in_crisis_cycles_compressed.png",
+        "height": 270
+    },
+    "action": "https://www.furaffinity.net/view/63213907/",
     "center_position": true
 }
