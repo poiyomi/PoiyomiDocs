@@ -44,7 +44,7 @@ Immediately, you will see more compact areas, heavily reduced white spacing, bet
 
 Every single section across the shader have been reorganized to fit the new UI changes. If you don't see a feature that you saw before, don't worry! Material properties remain the same, with only UI-facing changes in it's labeling and it's organization in the UI.
 
-Most notably, some features that come from LilToon now closely match their UI, such as **Backface** and **Lil Reflections**.
+Most notably, some features that come from LilToon now closely match their UI, such as **Backlight** and **Lil Reflections**.
 
 You will also see more Helpboxes across the UI. We have began using these in areas that are appropriate. For example, if you attempt to use **Back Face** feature, it will now warn you if you forget to turn off Culling, which is required for that feature to function.
 
@@ -136,7 +136,7 @@ However, let's talk about some obvious details you will see!
 - Realistic Shadows mode now has a Shadow Strength slider since it didn't have one. Additionally, Realistic now finally uses Unity's dielectrics for the default BRDF.
 - Multilayer Math now uses the main shadow as the main attenuation, with each layer using it's own attenuation. This means the shadows are made to be more subtle.
 - Cloth now uses precalculated indirect color.
-- We have adjusted the `Min Brightness` beahvior with a noise floor and a new minimum light cap.
+- We have adjusted the `Min Brightness` behavior with a noise floor and a new minimum light cap.
 - The Max Light count has been lowered, fixing the light loop break as a result.
 - And turning off Shadows no longer breaks modules that don't use the lighting loop.
 
@@ -205,6 +205,16 @@ Over the course of developing 10.0, it was an opportunity for us to address some
 ## New APIs
 
 To compliment our newly overhauled translation pipeline, we have added new developer-accessible API endpoints to the C# namespace `Poi.Tools.ShaderTranslator.VersionUpgrade` to allow developers to use our upgrade pipelines to how they see fit. For more information on how to use these APIs, refer to our [Upgrading Documentation](/docs/general/upgrade).
+
+## Modular Shader System
+
+**Shader developers, this one's for you!**
+
+We are excited to announce that the Modular Shader System, the system that we have used to build Poiyomi Shaders since 8.0, is now fully available to the public! With this, you can now easily install your own modules within the shader using our toolset.
+
+By default, we expose only the Free features in the official public release, while the Pro-only features remain locked away in the Pro-only release.
+
+To learn more about how to develop Modular Shader templates, refer to our documentation [here](/docs/modular-shader-system).
 
 ## ThryEditor
 
