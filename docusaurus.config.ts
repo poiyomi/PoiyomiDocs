@@ -248,7 +248,7 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/Poiyomi-Thumbnail-Basic.png', // Default social card. Emits og:image + twitter:image on every page without an `image:` frontmatter. IMPORTANT FOR SEO!
+    image: 'img/Poiyomi-Thumbnail-Basic-V2.png', // Default social card. Emits og:image + twitter:image on every page without an `image:` frontmatter. IMPORTANT FOR SEO!
     metadata: [
       // Place global <meta> tags here!
       { name: 'keywords', content: 'poiyomi, shaders, shader, vrchat, poiyomi shaders, blog, docs, documentation, toon, realistic, unity' }, // IMPORTANT SEO KEYWORDS! DO NOT REMOVE!
@@ -300,12 +300,12 @@ const config: Config = {
     },
     announcementBar: { id: 'vcc-back', backgroundColor: '#007a3d', textColor: '#ffffff', isCloseable: true, content: '<b>Both VCC Repositories and the Poiyomi Pro website are back online and 100% safe to use!</b> Please make sure you clear your browser data to ensure authentication works again.' },
     navbar: {
-      title: "Poiyomi Shaders",
+      title: "",
       logo: {
-        alt: "Poiyomi Circle Logo",
-        src: "img/logo.svg",
-        width: 44,
-        height: 44,
+        alt: "Poiyomi",
+        src: "img/PoiyomiText.svg",
+        width: 110,
+        height: 110,
       },
       items: [
         {
@@ -376,14 +376,14 @@ const config: Config = {
       ],
     },
     prism: {
-      theme: prismThemes.vsDark,
-      darkTheme: prismThemes.dracula,
+      theme: prismThemes.vsLight,
+      darkTheme: prismThemes.vsDark,
       additionalLanguages: ['hlsl'],
     },
     footer: {
       logo: {
-        alt: "Poiyomi Logo",
-        src: "img/circle_logo.svg",
+        alt: "Poiyomi Icon",
+        src: "img/PoiyomiIcon.svg",
         width: 80,
         height: 80,
       },

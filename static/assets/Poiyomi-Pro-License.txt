@@ -28,6 +28,6 @@ To the fullest extent permitted by applicable law, the Licensor shall not be lia
 ## Entire Agreement
 This EULA constitutes the entire agreement between you and the Licensor regarding the Software and supersedes any prior agreements. If any provision of this EULA is held invalid, the remainder shall continue in full force and effect.
 
-**Copyright © 2025 Poiyomi Labs. All rights reserved.**  
+**Copyright © 2026 Poiyomi Labs. All rights reserved.**  
 
 By using the Software, you acknowledge that you have read, understood, and agree to this EULA. For questions, join the Poiyomi Discord at discord.gg/poiyomi.
