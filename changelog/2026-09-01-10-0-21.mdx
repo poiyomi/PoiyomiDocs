@@ -139,13 +139,16 @@ Our improved translation utilities have been updated to make this transition as 
 - **User Module Install & Creation Workflow**
   - Use `Poi -> Installed Modules` to find user modules anywhere in the project and fold enabled ones into the shaders on rebuild.
   - `Poi -> Create New Module` generates a working module without hand-editing template fileIDs.
+- Added Stencil Calculator UI to the shader templates.
 - **DepthGet Prefab Spawner** added on relevant modules that require the depth buffer, utilizing a prefab-spawner MaterialPropertyDrawer.
 - **Color Adjust Baker** scripting pipeline added for Color Adjust.
 - Hardened the Import/Export Checker to ensure bad installs never happen.
 
 ### Upgrade & Translation Pipeline
 - Added new scripting pipeline to handle Materials still using legacy shaders, allowing instant upgrade & translation to the latest version.
-- New Material Upgrade Utility to handle mass-upgrading of multiple materials in the projection to the latest version.
+- Introducing the **Material Upgrade Utility**
+  - Accessible via `Poi -> Material Upgrade Utility`, this allows you to seamlessly upgrade materials on older versions and translate them to the latest version, all at once!
+  - Uses the same to similar UI style as ThryEditor's refreshed Material Lock Manager such as Grouping, Filtering, and Searching.
 - Standalone auto-upgrading scripting added to allow instant translation of materials when changing the shader. Available for both Poiyomi and LilToon.
   - This is enabled by default. Can be toggled under `Poi -> Auto-Translate Materials On Shader Change` in the menu bar.
 - Added more translation parameters to support translating from LilToon 2.3 to Poiyomi 10.0.
@@ -334,6 +337,23 @@ This area is the largest amount of changes compared to added features. For advan
 - Cloth: Fixed unassigned referenced Metallic map and fixed texture sampling calling the wrong function.
 - Fixed Depth Rim Lighting ignore-lighting.
 - Fixed Bent Normals in Early Z.
+- Fixed Grab Pass outputs leaking to out-of-range values.
+- Fixed Depth Bulge misbehaving when `ZClip` is declared.
+- Fixed Outline width sometimes not scaling correctly with object scale.
+- Fixed a bug where Environmental Reflections in Lil Reflections had ugly flickering issues.
+- Fixed a bug where Multilayer Math shadows were double-counted.
+- Fixed a bug where SSAO and Contact Shadows had a flipped CBuffer.
+- Moved `_ST` placement vectors inside the CBuffer and guarded meta passes so it doesn't pull in code it cannot run.
+- Fixed ordering issues with AO and BlackLight Masking.
+- Fixed an issue with Flipbook Alpha not working in AudioLink.
+- Fixed Video Effects incorrectly pixelating the mesh, not the screen.
+- Fixed several coloring issues in Global Themes.
+- Fixed Dissolve's Edge Line Hue Shift completely missing from the feature. It has returned.
+- Corrected Matcap Circle Mask panning.
+- View Clip Prevention (Uzumore) fixed by correctly scaling to object scale, excluded from the meta pass, and now has the right UV channel.
+- Fixed LilFur's default noise texture not being linear, causing the appearance to not be accurate.
+- Fixed SDF Baking broken from some assembly definition mistakes.
+- Fixed Vertex Options having masking issues when AudioLink were driving some Vertex Options variables.
 
 ### Module & Feature Bugs Fixed
 - Fixed Theme Color in AL Spectrum double-multiplying and blend types using `Range(0, 1)` instead of `Int`.
@@ -406,13 +426,15 @@ This area is the largest amount of changes compared to added features. For advan
 - **LTCGI** marked as pending deprecation.
   - This module is still available, but the feature will be removed in future versions due to VRC Light Volumes taking over. A warning was added. LTCGI should only be used in World projects.
 
-## ThryEditor 2.73.6
+## ThryEditor 2.73.7
 
 :::info[ThryEditor is now a VCC Package!]
 **Upon installing Poiyomi Toon 10.0 via the Creator Companion for the first time, ThryEditor will be automatically added as a dependency and cannot be removed unless Poiyomi is first removed.**
 
 Supplying ThryEditor separately now allows us to update ThryEditor more quickly without having to update the shader all the time for important UI-related fixes. Additionally, opens up the ability for third-party shader developers to use our toolset without needing to install Poiyomi Shaders.
 :::
+
+The list below is a compilation of all the changes since the last 9.3 version.
 
 - Added Global Linking.
 - Added Blueprint.
@@ -457,3 +479,11 @@ Supplying ThryEditor separately now allows us to update ThryEditor more quickly 
 - Fixed some GUI issues if for some reason Thry Editor is being used on very... very old legacy shaders (what are you doing?).
 - Fixed an issue where `GetRoot()` re-read `mat.GetParent()` every iteration, causing deep variant chains resolving to the wrong materials.
 - Fixed an old regression causing Render Queues to show incorrect readings on custom values.
+- Optimized drawing sections by skipping ones that have no properties in them.
+- Repeated property declarations are now distinct in the Cross Shader Editor, accounting for properties that are declared twice (such as `_RimBlur`, `_OutlineSaturation`, etc.).
+- `A`/`RA` tagged properties are now carried through Global Links.
+- Material resets are now detected against the correct undo group, otherwise resetting a material had to be done twice before animated properties cleared.
+- The Cross Shader Editor's layout is now balanced when a drawer exits the GUI.
+- The Cross Shader Editor now refreshes when a target is edited elsewhere.
+- `[ThryHideInInspector]` attributes are gathered once per shader now.
+- Several optimizations implemented that should resolve some inspector performance issues in the UI when various sections are expanded.
