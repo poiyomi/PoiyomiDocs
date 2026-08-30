@@ -1,0 +1,73 @@
+---
+title: Poiyomi Pro 10.0.20 Changelog
+description: Full changelog of Poiyomi Pro 10.0.20 release.
+hide_table_of_contents: true
+authors:
+  bluwizard
+tags: [shader, vrchat, major, updates, update, pro, thryeditor]
+---
+
+This update contains a handful of improvements and fixes to 10.0 in preparation for Toon's release and is recommended for all users.
+
+You can download this version from the Poiyomi Pro VCC package by following the instructions [here](/download#pro-version-method-1-vcc-package). Alternatively, download this version from [pro.poiyomi.com](https://pro.poiyomi.com) by logging in via your Patreon account.
+
+## Added
+- Introducing the **Material Upgrade Utility**
+  - Accessible via `Poi -> Material Upgrade Utility`, this allows you to seamlessly upgrade materials on older versions and translate them to the latest version, all at once!
+  - Uses the same to similar UI style as ThryEditor's refreshed Material Lock Manager such as Grouping, Filtering, and Searching.
+- Added Highlight to Outlines. This is the same exact appearance as it's LilToon counterpart.
+- Added Stencil Calculator UI to the shader templates, thanks to MonadoArt. Give it a swing!
+- **Grab Pass**
+  - Added Color Mapping.
+  - Added a block-pixelation effect (accidental Minecraft?).
+- Added a slider to control the shadow strength for Light Volumes.
+- **Stats Overlay**
+  - Added more text effects.
+  - Added VRChat Clock.
+- Added **Self Grab**, an experimental Grab Pass effect that causes Grab Pass to affect itself through an Outline-like offset.
+
+## Changed
+- Updated our list of shader translations with more properties accounted for from previous versions.
+  - To our Pro users: Please test this out to see if all 9.x materials translate accurately to 10.0! Use the Material Upgrade Utility I mentioned above.
+- Materials detected on legacy versions (9.2 or older) will prompt to upgrade to 9.3 in the inspector.
+  - This process relies on serialized metadata, so it may not always work if there's missing GUIDs.
+  - Upgrading to 9.3 from legacy versions is our conservative approach, giving users the choice on when to decide to upgrade to 10.0.
+- Grab Pass now respects the alpha mask.
+- Reorganized Outlines section.
+- Light Volumes: Updated to 3.0.0-dev.14.
+- LTCGI notice rewritten.
+- Renamed Flipbook `Replace` slider to `Alpha` to reflect it's actual function.
+- Translating Grab Pass materials from 9.3 to 10.0 are now given a huge warning, notating some color and blending changes to the Grab Pass's behavior in 10.0.
+- Moved all Modules into the fragment stage, trimming keyword count along the way.
+- Normalized "Lil" spelling across the UI.
+
+## Fixed
+- Fixed Grab Pass outputs leaking to out-of-range values.
+- Fixed Depth Bulge misbehaving when `ZClip` is declared.
+- Fixed Outline width sometimes not scaling correctly with object scale.
+- Fixed a bug where Environmental Reflections in Lil Reflections had ugly flickering issues.
+- Fixed a bug where Multilayer Math shadows were double-counted.
+- Fixed a bug where SSAO and Contact Shadows had a flipped CBuffer.
+- Moved `_ST` placement vectors inside the CBuffer and guarded meta passes so it doesn't pull in code it cannot run.
+- Fixed ordering issues with AO and BlackLight Masking.
+- Fixed an issue with Flipbook Alpha not working in AudioLink.
+- Fixed Video Effects incorrectly pixelating the mesh, not the screen.
+- Fixed several coloring issues in Global Themes.
+- Fixed Dissolve's Edge Line Hue Shift completely missing from the feature. It has returned.
+- Corrected Matcap Circle Mask panning.
+- View Clip Prevention (Uzumore) fixed by correctly scaling to object scale, excluded from the meta pass, and now has the right UV channel.
+- Fixed LilFur's default noise texture not being linear, causing the appearance to not be accurate.
+- Fixed SDF Baking broken from some assembly definition mistakes.
+- Fixed Vertex Options having masking issues when AudioLink were driving some Vertex Options variables.
+
+## ThryEditor 2.73.7
+
+### Changes
+- Optimized drawing sections by skipping ones that have no properties in them.
+- Repeated property declarations are now distinct in the Cross Shader Editor, accounting for properties that are declared twice (such as `_RimBlur`, `_OutlineSaturation`, etc.).
+- `A`/`RA` tagged properties are now carried through Global Links.
+- Material resets are now detected against the correct undo group, otherwise resetting a material had to be done twice before animated properties cleared.
+- The Cross Shader Editor's layout is now balanced when a drawer exits the GUI.
+- The Cross Shader Editor now refreshes when a target is edited elsewhere.
+- `[ThryHideInInspector]` attributes are gathered once per shader now.
+- Several optimizations implemented that should resolve some inspector performance issues in the UI when various sections are expanded.
