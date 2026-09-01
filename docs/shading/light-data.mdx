@@ -274,6 +274,12 @@ Defines how much to use normals when calculating indirect lighting direction. If
 
 Defines how much to apply Unity's built-in casted shadows to the model. These can look good under certain conditions, but often will look blocky or otherwise produce undesirable results.
 
+### Casted Shadows Softness
+
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+
+Softens the casted shadows when casted to the model.
+
 ### Grayscale Lighting
 
 - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
@@ -375,9 +381,9 @@ Please be aware that you will not see the results of Light Volumes in your proje
 
 ### LV Specular
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
-Enables the specular feature in Light Volumes.
+Configures how intensity the specular feature in Light Volumes should appear.
 
 ### LV Intensity
 
@@ -387,13 +393,13 @@ Configures how intense Light Volumes should affect the material.
 
 ### LV Shadows
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`Soft`/`Medium`/`Sharp`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
 
-Configures the type of shadows to simulate when material is exposed to a Light Volume voxel.
+Configures the intensity of shadows to simulate when material is exposed to a Light Volume voxel.
 
 ### Normal Bias Sampling
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0-1.0 - 1.0`
+- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
 
 Offsets the position where lighting from the mesh normals is sampled from. This can control lighting artifacts when the geometry is thin or too close to edges.
 
