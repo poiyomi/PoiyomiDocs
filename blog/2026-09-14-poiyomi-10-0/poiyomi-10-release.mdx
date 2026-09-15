@@ -7,10 +7,7 @@ authors:
   - bluwizard
   - poiyomi
 tags: [shader, vrchat, updates, update, major]
-draft: true
 ---
-
-{/* THIS POST IS MARKED AS DRAFT. REMOVE `draft: true` from above when ready to post! */}
 
 After several months of testing and development, we are very excited to welcome Poiyomi Shaders 10.0, our biggest update since the first ever release of Poiyomi Shaders! 10.0 marks a brand new chapter in our overall development cycle.
 
@@ -26,19 +23,13 @@ Our improved translation utilities have been updated to make this transition as 
 **Be advised, our translation pipeline heavily relies on serialized material GUIDs. For this reason, please ensure you are up-to-date to 9.3. Additionally, make a back up of your materials!**
 :::
 
-{/* UNCOMMENT THIS SECTION IF POSTING VIDEO
-
 <div class="videobox">
-<iframe class="iframe-element" src="https://www.youtube-nocookie.com/embed/{SET_YOUTUBE_VIDEO_ID_HERE_WITHOUT_CURLY_BRACES}?si=TO5iXVR7NWWw4xNw" title="YouTube Video Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe class="iframe-element" src="https://www.youtube-nocookie.com/embed/cEnT2zLzYUw?si=TO5iXVR7NWWw4xNw" title="YouTube Video Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
-
-*/}
-
-{/* WRITE SUMMARIES HERE */}
 
 ## A whole UI overhaul!
 
-The whole UI has received a broad modernized refresh across all sections of the shader.
+The whole UI has received a broad modernized refresh across all sections of the shader.=
 
 Immediately, you will see more compact areas, heavily reduced white spacing, better DPI scaling on headers, and many new decorative elements.
 
@@ -71,6 +62,10 @@ Grab Pass received a large overhaul in this update to make way for the Pro-exclu
 
 Lastly, I've also added more translation parameters for our LilToon pipeline as well. Switching from LilToon 2.3 to Poiyomi 10.0 should be much smoother now!
 
+### New APIs
+
+To compliment our newly overhauled translation pipeline, we have added new developer-accessible API endpoints to the C# namespace `Poi.Tools.ShaderTranslator.VersionUpgrade` to allow developers to use our upgrade pipelines to how they see fit. For more information on how to use these APIs, refer to our [Upgrading Documentation](/docs/general/upgrade).
+
 ## New Features
 
 Theres a TON of changes in this release! I won't be able to cover all of them here as the changes are just that gigantic. So, I'll cover some of the headlining features you'll notice right away.
@@ -95,7 +90,6 @@ Theres a TON of changes in this release! I won't be able to cover all of them he
 - We've added **Skin**, a new experimental LUT coloring module allowing users to apply Skin coloring to the Base Color.
 - Added **Bent Normals**, which allow specular occlusion and indirect diffuse to affect your appearance.
 - Added Light Falloff an Attenuation curves to compensate for brightness at a distance.
-- AO is now applied to the main light and Occlusion is applied to the indirect color.
 - Added a **Normal Map 2**.
   - *Why? Because we found most people don't know that Details can act as a second Normal Map. So, here you go. Enjoy.*
 - Added **Global UV Configuration**, which allows you to share consistent UV configuration across all modules.
@@ -140,6 +134,16 @@ However, let's talk about some obvious details you will see!
 - The Max Light count has been lowered, fixing the light loop break as a result.
 - And turning off Shadows no longer breaks modules that don't use the lighting loop.
 
+## Modular Shader System
+
+**Shader developers, this one's for you!**
+
+We are excited to announce that the Modular Shader System, the system that we have used to build Poiyomi Shaders since 8.0, is now fully available to the public! With this, you can now easily install your own modules within the shader using our toolset.
+
+By default, we expose only the Free features in the official public release, while the Pro-only features remain locked away in the Pro-only release.
+
+To learn more about how to develop Modular Shader templates, refer to our documentation [here](/docs/modular-shader-system).
+
 ## Changes & Fixes
 
 Over the course of developing 10.0, it was an opportunity for us to address some long-standing issues and squash as many bugs as possible. These are just some of the bug fixes you will be happy to hear about (see more in the full changelog).
@@ -154,6 +158,7 @@ Over the course of developing 10.0, it was an opportunity for us to address some
 - Hue Shift moved after saturation in Global Themes.
 - Default Fur Noise no longer generates mipmaps (otherwise, fur was losing detail at a distance). Smoother fur LOD.
 - LilFur default noise textures corrected to use `Linear` instead of `sRGB`, matching LilToon's upstream repository.
+- AO is now applied to the main light and Occlusion is applied to the indirect color.
 - Fixed Latex Matcaps having JPEG artifacts.
   - *Latex lovers, rejoice!*
 - All included textures using Mipmapping now set to use Kaiser filtering, fully supporting VRChat's DPID filtering algorithm.
@@ -202,20 +207,6 @@ Over the course of developing 10.0, it was an opportunity for us to address some
 - Fixed Receive Casted Shadows not being set to `1` on PBR presets.
 - And an assortment of typos and spelling fixes!
 
-## New APIs
-
-To compliment our newly overhauled translation pipeline, we have added new developer-accessible API endpoints to the C# namespace `Poi.Tools.ShaderTranslator.VersionUpgrade` to allow developers to use our upgrade pipelines to how they see fit. For more information on how to use these APIs, refer to our [Upgrading Documentation](/docs/general/upgrade).
-
-## Modular Shader System
-
-**Shader developers, this one's for you!**
-
-We are excited to announce that the Modular Shader System, the system that we have used to build Poiyomi Shaders since 8.0, is now fully available to the public! With this, you can now easily install your own modules within the shader using our toolset.
-
-By default, we expose only the Free features in the official public release, while the Pro-only features remain locked away in the Pro-only release.
-
-To learn more about how to develop Modular Shader templates, refer to our documentation [here](/docs/modular-shader-system).
-
 ## ThryEditor
 
 Our most advanced material inspector interface, ThryEditor, has received a huge amount of updates. 
@@ -224,7 +215,7 @@ To start off, we have forked it!
 
 What does this mean? Well, basically, we now maintain ThryEditor on our own and many changes are way ahead of the original repository. From this point on, we now will be using `poiyomi/ThryEditor` on GitHub, instead of `Thryrallo/ThryEditor`. Because ThryEditor was graciously licensed under MIT, that has allowed us to maintain it on our own and be able to make changes quickly and effectively.
 
-**Additionally, ThryEditor will now be supplied as a VCC Package!** This is already included in our main Poiyomi Shaders repository and will be auto-installed via VPM when installing 10.0 for the first time. By doing so, we can quickly fix editor-related issues without having to update the whole shader package anymore.
+**Additionally, ThryEditor will now be supplied as a VCC Package!** This is already included in our main Poiyomi Shaders repository and will be auto-installed via VPM when installing 10.0 for the first time. By doing so, we can quickly fix editor-related issues without having to update the whole shader package anymore. ***This change does not affect the Poiyomi Pro version or .unitypackage versions.***
 
 Not only that, but having ThryEditor as a VCC Package will allow other Shader Developers to use it without having to install Poiyomi Shaders at the same time, if they wish to use it.
 
@@ -272,7 +263,6 @@ And finally, please be prepared for the following items that have been officiall
 - Removed Shadow Tint from Realistic Shadows (replaced by Shadow Strength).
 - Removed unused module collections.
 - Removed dead scripts.
-- Removed Specular from the meta pass. Affects Contact Shadows, SSAO, Backlight, Cubemap, Environmental Rim, Rim Lighting, Depth Rim Lighting, Matcap, and Reflections & Specular.
 
 ## Conclusion
 

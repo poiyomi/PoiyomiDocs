@@ -1,22 +1,17 @@
 ---
-title: Poiyomi Toon 10.0.21 Changelog
-description: Full changelog of Poiyomi Toon 10.0.21 release.
+title: Poiyomi Toon 10.0.20 Changelog
+description: Full changelog of Poiyomi Toon 10.0.20 release.
 hide_table_of_contents: true
 authors:
   bluwizard
 tags: [shader, vrchat, major, updates, update, free, pro, thryeditor]
-draft: true
 ---
-
-{/* THIS POST IS MARKED AS DRAFT. REMOVE `draft: true` from above when ready to post! */}
 
 ## This is a major release!
 
 Poiyomi Shaders have been graduated to 10.0 and is now ready for general usage. **Be advised, this is the largest changelog I've ever written!** So if you don't feel like reading everything, then please refer to our [Blog post](/blog/poiyomi-10-release) for a quick summary of the changes listed here.
 
-The Toon version is now available in the VCC Repository, GitHub, and on BOOTH.
-
-Poiyomi Pro Users: Install the Poiyomi Pro package in the VCC Repository. You will be prompted to login with Patreon. Upon successful authentication, the package will be installed into Unity.
+The Toon version is now being rolled out and will be available in the VCC Repository, GitHub, and on BOOTH in the following hours after this post.
 
 :::danger[Legacy Shaders Removed]
 As of this release, versions 7.3, 8.0, 8.1, 9.0, 9.1, and 9.2 have been officially deprecated and no longer exist in this release! This was done to cut down on file size. **If you are still using any of these versions mentioned above, PLEASE UPGRADE NOW!!!**
@@ -274,7 +269,7 @@ This area is the largest amount of changes compared to added features. For advan
 - Linux off-by-one padding error fixed.
 
 ### Unity Version Compatibility
-- Fixed compiler errors in Unity 6 thru 6.5.
+- Fixed compiler errors in Unity 6 thru 6.6.
 - Fixed `vertexSH`, UIElements fixed, `ui:` changed to `uie:`, `ifdef` guards for LOD crossfade.
 - Fixed `dynamic_branch` fog and variant strippers in Unity 2022.3.
 - Re-encoded `Glass.png` due to WebP format unsupported in Unity 6.
@@ -422,16 +417,17 @@ This area is the largest amount of changes compared to added features. For advan
 - Removed `_ALDecalType`.
 - Removed unused module collections.
 - Removed dead scripts.
-- Removed Specular from the meta pass. Affects Contact Shadows, SSAO, Backlight, Cubemap, Environmental Rim, Rim Lighting, Depth Rim Lighting, Matcap, and Reflections & Specular.
 - **LTCGI** marked as pending deprecation.
   - This module is still available, but the feature will be removed in future versions due to VRC Light Volumes taking over. A warning was added. LTCGI should only be used in World projects.
 
-## ThryEditor 2.73.7
+## ThryEditor 2.74.0
 
 :::info[ThryEditor is now a VCC Package!]
 **Upon installing Poiyomi Toon 10.0 via the Creator Companion for the first time, ThryEditor will be automatically added as a dependency and cannot be removed unless Poiyomi is first removed.**
 
 Supplying ThryEditor separately now allows us to update ThryEditor more quickly without having to update the shader all the time for important UI-related fixes. Additionally, opens up the ability for third-party shader developers to use our toolset without needing to install Poiyomi Shaders.
+
+***This change does not affect the Poiyomi Pro version.***
 :::
 
 The list below is a compilation of all the changes since the last 9.3 version.
