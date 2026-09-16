@@ -298,7 +298,22 @@ const config: Config = {
       minHeadingLevel: 2,
       maxHeadingLevel: 3,
     },
-    announcementBar: { id: 'vcc-back', backgroundColor: '#007a3d', textColor: '#ffffff', isCloseable: true, content: '<b>Both VCC Repositories and the Poiyomi Pro website are back online and 100% safe to use!</b> Please make sure you clear your browser data to ensure authentication works again.' },
+    /*
+    announcementBar: {
+      id: 'vcc-back',
+      backgroundColor: '#007a3d',
+      textColor: '#ffffff',
+      isCloseable: true,
+      content: '<b>Both VCC Repositories and the Poiyomi Pro website are back online and 100% safe to use!</b> Please make sure you clear your browser data to ensure authentication works again.'
+    },
+    */
+    announcementBar: {
+      id: '10-release',
+      backgroundColor: '#33ccff',
+      textColor: '#000000',
+      isCloseable: true,
+      content: '<b>10.0 is now available to the public!</b> Read the <a target="_blank" href="/blog/poiyomi-10-release">Blog post</a> to learn more.'
+    },
     navbar: {
       title: "",
       logo: {
