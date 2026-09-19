@@ -1,0 +1,22 @@
+---
+title: Poiyomi Toon 10.0.22 Changelog
+description: Full changelog of Poiyomi Toon 10.0.22 release.
+hide_table_of_contents: true
+authors:
+  bluwizard
+tags: [shader, vrchat, updates, update, free, thryeditor]
+---
+
+This is a hotfix release! Toon users, it is highly recommended to update to this version. Should finally resolve some ugly CBuffer errors in some cases! That being said, if you are still running into errors mentioning a cbuffer exceeded, please let us know!
+
+The Toon version is now available in the VCC Repository, GitHub, and on BOOTH.
+
+## Changes
+- Fixed DirectX buffer overflow with PBR and instancing.
+
+## ThryEditor 2.74.2
+
+### Changes
+- Added Include Textures to Global Links. Disable it before adding other materials to keep their AO maps and other textures, tiling, offset and texture animation tags local while synchronizing the section's other settings. The option applies to the whole link; existing links remain enabled.
+Changing the option supports undo/redo. Reenabling it copies textures from the inspected material. This is not an individual-property override system.
+- Fixed loading pretty-printed empty arrays, including links with no synchronized texture properties.
