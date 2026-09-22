@@ -415,6 +415,9 @@ This area is the largest amount of changes compared to added features. For advan
 - Removed Raliv DPS Integration.
 - Removed Shadow Tint from Realistic Shading (replaced by Shadow Strength).
 - Removed `_ALDecalType`.
+- Removed `Locked In Anim Sliders` from Dissolve.
+  - `Locked In Anim Sliders` was often used incorrectly and were originally added at a time where tagging `RA` did not exist. Because of the existence of `RA` tagging these days, we do not see a reason to keep `Locked In Anim Sliders` in Dissolve anymore.
+  - *If you have previously used this setup, please switch over to using `RA`-tagged animation workflows and have your independent animation logic be handled by your Animator's BlendTrees.*
 - Removed unused module collections.
 - Removed dead scripts.
 - **LTCGI** marked as pending deprecation.
