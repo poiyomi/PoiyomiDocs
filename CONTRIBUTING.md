@@ -138,6 +138,41 @@ Previously, MDX v1 supported HTML-style comments. With the introduction of MDX v
 Post Content
 ```
 
+### Heading IDs
+
+Every heading gets an anchor ID from its text automatically (`## Shading Mode` becomes `#shading-mode`), so most headings don't need one.
+
+If you need a custom ID (for example, to keep old links working after renaming a heading), put an MDX comment starting with `#` at the end of the heading. *Example:*
+
+```md
+## My Heading {/* #my-custom-id */}
+```
+
+- Don't use the legacy `{#my-custom-id}` syntax. It still works for now, but logs a warning during builds.
+- The `#` is required. `{/* my-custom-id */}` is ignored and logs a warning.
+- Don't reuse the same custom ID twice on a page.
+
+To add IDs to specific files automatically, run `yarn write-heading-ids . docs/path/to/file.mdx`.
+
+### Collapsible Boxes
+
+Use `<details>` to put content in a collapsible box. To use a heading as the box's title (like the questions in the FAQ), put it inside `<summary>` with an empty line above and below it. The heading still gets an anchor link and shows up in the Table of Contents, and following a link to it opens the box. *Example:*
+
+```md
+<details>
+<summary>
+
+### How do I upgrade Poiyomi Shaders?
+
+</summary>
+
+Answer goes here.
+
+</details>
+```
+
+Without the empty lines, `### How do I upgrade...` shows up as plain text instead of a heading.
+
 ### Other Static Assets
 
 Read the official Docusaurus documentation on [Static Assets](https://docusaurus.io/docs/static-assets).

@@ -2,6 +2,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
+import remarkHeadingIds, { parseFrontMatter } from './src/remark/heading-ids';
 import pkg from './package.json';
 
 const config: Config = {
@@ -22,6 +23,14 @@ const config: Config = {
   organizationName: "poiyomi", // Usually your GitHub org/user name.
   projectName: "PoiyomiDocs", // Usually your repo name.
   markdown: {
+    // Strict Heading IDs: custom heading IDs use `## My Heading {/* #my-id */}` (see CONTRIBUTING.md).
+    // The `future.v4` flag turns MDX v1 compat off, which makes the legacy `{#my-id}` syntax crash the build.
+    // DEV NOTE: this re-enables it for heading IDs only, as a fallback. Legacy IDs still work but log a warning
+    // (from src/remark/heading-ids.ts). Set it to false to turn legacy heading IDs into a build error.
+    mdx1Compat: {
+      headingIds: true,
+    },
+    parseFrontMatter, // Keeps `{/* #my-id */}` out of page titles and descriptions.
     hooks: {
       onBrokenMarkdownImages: "warn",
     }
@@ -148,6 +157,7 @@ const config: Config = {
         blogSidebarTitle: 'All Changelogs',
         blogSidebarCount: 'ALL',
         onUntruncatedBlogPosts: 'ignore',
+        beforeDefaultRemarkPlugins: [remarkHeadingIds],
         feedOptions: {
           type: ['rss', 'atom'],
           limit: 20,
@@ -175,6 +185,7 @@ const config: Config = {
           // Please change this to your repo.
           // editUrl: 'https://github.com/poiyomi/PoiyomiDocs',
           showLastUpdateTime: true,
+          beforeDefaultRemarkPlugins: [remarkHeadingIds], // Must run before Docusaurus assigns heading IDs.
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
           lastVersion: 'current',
@@ -195,6 +206,7 @@ const config: Config = {
           blogSidebarTitle: 'All Posts',
           blogSidebarCount: 'ALL',
           onUntruncatedBlogPosts: 'ignore',
+          beforeDefaultRemarkPlugins: [remarkHeadingIds],
           feedOptions: {
             type: ['rss', 'atom'],
             limit: 20,

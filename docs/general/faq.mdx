@@ -13,21 +13,47 @@ This is a list of Frequently Asked Questions regarding Poiyomi Shaders. If you a
 
 ## Poiyomi Shaders
 
-### What is the Poiyomi Shaders Terms of Service?
+<details>
+<summary>
+
+### What is the Poiyomi Shaders Terms of Service? {/* #tos */}
+
+</summary>
 
 A dedicated page is available which shows important information about the usage of the Shader. Please see [Terms of Service](/terms-of-service/terms-of-service.mdx) for more details.
 
-### I'm trying to import a version that's slightly older than the latest. How do I install them?
+</details>
+
+<details>
+<summary>
+
+### I'm trying to import a version that's slightly older than the latest. How do I install them? {/* #older-version-importing */}
+
+</summary>
 
 The most recently accessible version of the shader will include versions ranging from the latest all the way down to 9.3.
 
 So if the package says, for example, `Poi Toon 10.0.22.unitypackage`, it will include that plus the final version of 9.3.
 
-### If an Avatar Base asks for a specific version, will it still work if I import a version that is slightly newer?
+</details>
+
+<details>
+<summary>
+
+### If an Avatar Base asks for a specific version, will it still work if I import a version that is slightly newer? {/* #specific-versions */}
+
+</summary>
 
 It is always recommended to use the latest version of the Shader. If an Avatar Base asks for something like 9.0.52 and you are importing 9.0.57, it is expected to still work perfectly fine as it's just a patch-version increase.
 
-### I am receiving Errors when attempting to use Poiyomi Shaders. What should I do?
+</details>
+
+<details>
+<summary>
+
+### I am receiving Errors when attempting to use Poiyomi Shaders. What should I do? {/* #errors */}
+
+</summary>
 
 If you are having issues with Poiyomi Shaders such as the Material Inspector not working properly, please follow these troubleshooting steps in the following order:
 
@@ -43,7 +69,14 @@ If you are still running into issues, post some screenshots in the [Discord <FAI
 
 Related Issues: [64 Slot Crash](#why-does-unity-editor-constantly-crash-when-editing-the-shader), [Unity 2019 Issues](#why-cant-i-use-poiyomi-shaders-on-unity-2019).
 
-### When I Upload an Avatar, I get a message saying "Unlocked Shaders were found and will not be included in the build."
+</details>
+
+<details>
+<summary>
+
+### When I Upload an Avatar, I get a message saying "Unlocked Shaders were found and will not be included in the build." {/* #unlocked-shaders-issue */}
+
+</summary>
 
 This message indicates there was a problem with the Auto-Lock function, which should never happen.
 
@@ -57,7 +90,14 @@ If this function fails to work and you get that message, ensure there are no scr
 **Try manually Locking your Materials before uploading.** You can do this by `Right-Click` on your Avatar in the Hierarchy, followed by `Thry -> Materials -> Lock All` in the context menu. This function will Lock ALL Poiyomi Materials found on your Avatar.
 :::
 
-### How do I upgrade Poiyomi Shaders to a newer version?
+</details>
+
+<details>
+<summary>
+
+### How do I upgrade Poiyomi Shaders to a newer version? {/* #how-to-upgrade */}
+
+</summary>
 
 To upgrade the shader, refer to the instructions found in [Download & Install](/download/download.mdx) for the Method you used when you first installed the Shader.
 
@@ -67,7 +107,14 @@ Sometimes when updating your locked materials may get stuck in the locked state.
 If you are jumping from much older versions (7.3 or older) to the latest, [please refer to this documentation to learn how to account for these major changes](/general/upgrade/upgrade.mdx).
 :::
 
-### I'm trying to animate a property in the Material which kind of works, but it STOPS working when the Material gets Locked. What can I do?
+</details>
+
+<details>
+<summary>
+
+### I'm trying to animate a property in the Material which kind of works, but it STOPS working when the Material gets Locked. What can I do? {/* #animating-properties */}
+
+</summary>
 
 You need to mark properties that you are animating by `Right-Clicking` on them and selecting `Animated` or `Renamed`, which are specific tags that ensure the property remains accessible when the Shader is locked. For more information, see the Documentation page [Locking and Animation](/general/locking.mdx#marking-properties-for-animation) for further reading.
 
@@ -77,13 +124,27 @@ Keep in mind that properties marked as `Renamed` will only work when the Materia
 <img src="/img/general/locking_animated.png" alt="Animation Tags" width="400px"/>
 </a>
 
-### Where do AO Maps go in Poiyomi Shaders?
+</details>
+
+<details>
+<summary>
+
+### Where do AO Maps go in Poiyomi Shaders? {/* #ao-maps */}
+
+</summary>
 
 Place AO (Ambient Occlusion) Maps in the [AO Maps](/shading/light-data.mdx#ao-maps) Texture Slot, located in `Shading -> Light Data`.
 
 It is recommended to use a [Lighting Type](/shading/main.mdx#lighting-type) that supports AO Maps. Only Realistic-based Lighting Types will allow AO maps to appear correctly.
 
-### Where does Height Maps go in Poiyomi Shaders?
+</details>
+
+<details>
+<summary>
+
+### Where does Height Maps go in Poiyomi Shaders? {/* #height-maps */}
+
+</summary>
 
 Height maps are generally used to change the shape of the surface of a material. Generally, if it's small displacements, you can often get the same detail by using a Normal Map (make sure your shading is set to something other than Flat, though!). 
 
@@ -91,7 +152,14 @@ If you have a height map but not a normal map, you can convert it in Unity by se
 
 If you need the displacement, you can use it with [Parallax Heightmapping](/modifiers/uvs/parallax.mdx), which creates a displacement-like effect. You can also use a shader that tessellates, which will add geometry to create the height detail. Please be aware that this is not an optimized method and may have a performance impact!
 
-### What is the difference between Roughness vs. Smoothness Maps?
+</details>
+
+<details>
+<summary>
+
+### What is the difference between Roughness vs. Smoothness Maps? {/* #roughness-vs-smoothness */}
+
+</summary>
 
 Roughness and Smoothness have the same information, just flipped!
 
@@ -101,17 +169,38 @@ You can invert it in an image editor or use the invert checkboxes.
 
 Open Packed Maps by clicking on the triangle and place the Roughness in the [G Smoothness Map](/shading/reflections-and-specular.mdx#packed-maps) slot. It is important that you checkmark `Invert` so that it matches the Unity PBR Shading Pipeline. [Refer to the Documentation Page](/shading/reflections-and-specular.mdx#packed-maps) for more information.
 
-### How do I test Audio Link in Poiyomi Shaders?
+</details>
+
+<details>
+<summary>
+
+### How do I test Audio Link in Poiyomi Shaders? {/* #testing-audio-link */}
+
+</summary>
 
 We have dedicated instructions in our Audio Link feature Documentation on how to test Audio Link in Unity. [Please take a look at it (Click Here)](/audio-link/audio-link.mdx#how-to-test-audio-link-using-poiyomi-shaders)
 
-### Why isn't Audio Link playing music in the Scene?
+</details>
+
+<details>
+<summary>
+
+### Why isn't Audio Link playing music in the Scene? {/* #audio-link-not-playing-music */}
+
+</summary>
 
 The `AudioLinkAvatar` prefab in the scene uses the yt-dlp plugin from the VRChat installation files. However, YouTube has continuously made destructive changes to the audio/video format, which breaks it's functionality.
 
 Instead, you will need to manually specify a separate `yt-dlp.exe` to use instead to play audio. [Read the instructions carefully on our Docs (Click Here)](/audio-link/audio-link.mdx#using-a-custom-ytdl-location)
 
-### I am using a feature that is supposed to animate, but it doesn't show it's animating. Why is that?
+</details>
+
+<details>
+<summary>
+
+### I am using a feature that is supposed to animate, but it doesn't show it's animating. Why is that? {/* #previewing-animations */}
+
+</summary>
 
 In order to preview animations from Poiyomi Materials (such as Glitter or continuous Hue Shift) outside of Play Mode, you must toggle on this button/option in your Scene View:
 
@@ -119,19 +208,46 @@ In order to preview animations from Poiyomi Materials (such as Glitter or contin
 <img src="/img/general/mat-animation.png" alt="Material Animations Toggle" width="400px"/>
 </a>
 
-### Can I use Poiyomi Shaders in World Projects?
+</details>
+
+<details>
+<summary>
+
+### Can I use Poiyomi Shaders in World Projects? {/* #can-i-use-in-worlds */}
+
+</summary>
 
 Yes! Make sure to select `.poiyomi/Poiyomi Toon World` as the shader so that it can receive and contribute to Global Illumination. This special shader version includes all the same features in the Free version, but introduces the meta passes necessary for baking Global Illumination. Additionally, it exposes a category called `Shading -> Baked Lighting` that houses all the GI settings for the Material.
 
 You may want to consider setting it to Realistic Shading from the Shading settings so that it can look it’s best with Baked Lighting. We also recommend the "PBR" Preset for Light Data.
 
-### I've un-tagged a property that I don't want to be animated, but it still animates regardless when using an Emulator. Why does it still animate while in Play Mode?
+:::warning[Use Conservatively]
+You should only use Poiyomi World if the need for it is strictly necessary! Otherwise, your world size will greatly increase due to the Shader Optimizer system.
+
+For this reason, it is preferred you use a different shader for the majority of your World such as Mochie's Unity Shaders, Filamented, or ORL Shaders.
+:::
+
+</details>
+
+<details>
+<summary>
+
+### I've un-tagged a property that I don't want to be animated, but it still animates regardless when using an Emulator. Why does it still animate while in Play Mode? {/* #property-animates-while-unlocked */}
+
+</summary>
 
 You may have left the Material Unlocked! When a Material is Unlocked, all animated properties, regardless of it's animation tag, are still exposed in Play Mode.
 
 To test your Animator against animated properties that are no longer tagged with `A` or `RA`, Lock your Material(s) prior to starting Play Mode.
 
-### How can I quickly copy over the properties of a certain feature to a different Material?
+</details>
+
+<details>
+<summary>
+
+### How can I quickly copy over the properties of a certain feature to a different Material? {/* #copying-properties */}
+
+</summary>
 
 You can do this by clicking the 3 dots on the Header of the feature you wish to copy the properties of. Click on it, then hit `Copy`.
 
@@ -141,9 +257,16 @@ You can do this by clicking the 3 dots on the Header of the feature you wish to 
 
 Then, go under the same sub-menu in your other material and hit `Paste` to apply the copied properties from the Unity clipboard.
 
-### Can I swap/animate texture slots?
+</details>
 
-Due to Unity Editor limitations, you cannot do this as it can cause problems at runtime.
+<details>
+<summary>
+
+### Can I swap/animate texture slots? {/* #can-i-do-texture-swaps */}
+
+</summary>
+
+Due to Unity Editor limitations, you cannot do this as it can cause serious problems at runtime.
 
 While it is not possible to animate texture slots, Poiyomi Shaders has features that can make up for this. Try out using these modules:
 
@@ -152,15 +275,29 @@ While it is not possible to animate texture slots, Poiyomi Shaders has features 
 - [Geometric Dissove](/extended-features/geometric-dissolve.mdx). Like Dissolve, but uses your Mesh's Geometry to transition to a different Texture.
 - [UV Tile Discard](/special-fx/uv-tile-discard.mdx), to animate offsets when needed.
 
-### What happened to "Basic Emission" in the shader?
+</details>
 
-Basic Emission was removed in version 8.0 and newer because it was often used incorrectly.
+<details>
+<summary>
+
+### What happened to "Basic Emission" in the shader? {/* #what-happened-to-basic-emission */}
+
+</summary>
+
+Basic Emission was removed a long time ago because it was often used incorrectly.
 
 If you're wanting to make the model not too dark, it's generally better to use [Min Brightness](/shading/light-data.mdx#min-brightness) located in Light Data for that purpose, as it won't over-brighten the avatar in various situations.
 
 If you REALLY need to add what used to be called "Basic Emission," you can use an [Emission](/special-fx/emission.mdx) slot with `Use Base Colors` enabled and set a desired intensity.
 
-### Why use OKLab for Hue Shift instead of HSV?
+</details>
+
+<details>
+<summary>
+
+### Why use OKLab for Hue Shift instead of HSV? {/* #why-use-oklab */}
+
+</summary>
 
 OKLab has varying hue with constant lightness and chroma. It is more *even* in lightness for various hues. The reason for this is because OKLab takes the perceived lighting, including on how Green/Red and Blue/Yellow the color is, and calculates it to be a more accurate perception of the color being seen.
 
@@ -168,9 +305,16 @@ This eliminates issues with noise and colors being washed out when changing the 
 
 The usage of perceptual color space is desirable when using the Color Adjust feature. OKLab provides better perceptual properties that allow more accurate color changes, compared to the legacy HSV method. For more technical information on how this works, [see this external webpage <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://bottosson.github.io/posts/oklab/).
 
+</details>
+
 ## Unity Editor
 
-### Why does Unity Editor constantly crash when editing the Shader?
+<details>
+<summary>
+
+### Why does Unity Editor constantly crash when editing the Shader? {/* #why-does-unity-editor-constantly-crash-when-editing-the-shader */}
+
+</summary>
 
 You may be encountering the so-called "64 Crash" issue. This refers to a longtime Unity issue where if you reach or exceed 64 Texture Slots, the Editor will outright crash regardless if there's a texture or not in the slots.
 
@@ -180,7 +324,14 @@ To circumvent this issue, you can lock materials when not in use, as that will g
 
 More information documented [here](/general/textures-64-texture-slot-crash.mdx).
 
-### Why does lighting change randomly while moving in a World?
+</details>
+
+<details>
+<summary>
+
+### Why does lighting change randomly while moving in a World? {/* #why-does-lighting-change-randomly */}
+
+</summary>
 
 Without setting an `Anchor Override` on the meshes, Unity can sample the world's lighting from unwanted spots. This can lead to undesired behavior with your Avatar's Lighting.
 
@@ -194,7 +345,14 @@ Thry Editor will run this automatic fix to you if there's no Anchor Override set
 </a>
 :::
 
-### Why can't I use Poiyomi Shaders on Quest, Android, or iOS?
+</details>
+
+<details>
+<summary>
+
+### Why can't I use Poiyomi Shaders on Quest, Android, or iOS? {/* #why-cant-i-use-poiyomi-shaders-on-quest */}
+
+</summary>
 
 **You can only use the VRChat mobile shaders that come with the SDK on your Quest/Android/iOS Avatars!**
 
@@ -202,35 +360,83 @@ Quest, Android, and iOS hardware is underpowered and doesn't support features th
 
 VRChat's Toon Standard shader has some of the basic functionality for Toon-based shading on Quest and is our recommended alternative for Quest Avatars. To use it, ensure you use VRChat SDK 3.8.1 or newer, select `VRChat/Mobile/Toon Standard` shader and customize it to your needs.
 
-### Why can't I use Poiyomi Shaders on Unity 2019?
+</details>
+
+<details>
+<summary>
+
+### Why can't I use Poiyomi Shaders on Unity 2019? {/* #why-cant-i-use-poiyomi-shaders-on-unity-2019 */}
+
+</summary>
 
 As of recent versions, support for Unity 2019 was dropped. If you are attempting to use Poiyomi Shaders with VRM-based SDKs such as VSeeFace that only works in Unity 2019, only Poiyomi versions 9.2.42 or older currently work in Unity 2019.
 
 In order to user newer versions of Poiyomi for this purpose, we recommend some modern systems instead such as [Warudo <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://warudo.app/), which supports newer Unity versions.
 
+</details>
+
+<details>
+<summary>
+
+### [Linux] Why does Poiyomi Shaders fail to compile on Linux? {/* #linux-compile-issue */}
+
+</summary>
+
+On Linux, the Unity Editor tries to run on OpenGL by default, which is unsupported.
+
+**To fix this, you must open the Unity Editor using Vulkan**. In ALCOM, add `-force-vulkan` to the Unity Command-Line Arguments. This will force Vulkan whenever Unity Editor is opened from ALCOM.
+
+</details>
+
 ## VRChat
 
-### What is the recommended SDK and Unity Version to use with Poiyomi Shaders?
+<details>
+<summary>
+
+### What is the recommended SDK and Unity Version to use with Poiyomi Shaders? {/* #recommended-sdk-and-unity-version */}
+
+</summary>
 
 <u>You should always use the very latest VRChat SDK version available</u>, as uploading from older versions can be blocked by their servers (as mentioned from [VRChat Developer Update - 10 October 2025 <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://ask.vrchat.com/t/developer-update-10-october-2025/46874#p-85100-a-reminder-to-upgrade-to-the-latest-sdk-3) and [VRChat Developer Update - 23 October 2025 <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://ask.vrchat.com/t/developer-update-23-october-2025/46983#p-85382-a-reminder-to-upgrade-to-the-latest-sdk-3)). To ensure you receive the latest SDKs, make sure your VRChat Creator Companion App of choice is the latest version!
 
 Regarding Unity support, please refer to the [VRC Creators Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://creators.vrchat.com/sdk/upgrade/current-unity-version/) for the current Unity version that is supported by VRChat. Whichever specific Unity version VRChat actively supports takes priority in development of Poiyomi Shaders.
 
+</details>
+
 ## Other Resourceful Info
 
-### How can I test my Lighting in the Unity Editor without having to Upload and test in the VRChat Client?
+<details>
+<summary>
+
+### How can I test my Lighting in the Unity Editor without having to Upload and test in the VRChat Client? {/* #test-lighting */}
+
+</summary>
 
 We recommend **Haï Lightbox Viewer**, a Utility that simulates your Avatar's Shading and Lighting Behavior in various different Scenes, all at once. This is an excellent tool that can give a visual representation of how your Shading and Lighting setup is expected to be shown as in the client.
 
 [You can download Haï Lightbox Viewer here <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.hai-vr.dev/docs/products/lightbox-viewer).
 
-### Why does my Avatar get super bright in some Worlds?
+</details>
+
+<details>
+<summary>
+
+### Why does my Avatar get super bright in some Worlds? {/* #why-does-avatar-get-super-bright */}
+
+</summary>
 
 This is generally because of additive lights which add up. If you want to set a max overall brightness for additive lights, hit the `Presets` button at the top left of the Material UI and select `Maximum Add Intensity of 1`. You can change the max value in the `Light Data` section.
 
+</details>
+
+<details>
+<summary>
+
 ### Curated Tools
 
-Here is a list of recommended plugins and tools that we use when building our Avatars, with or without Poiyomi Toon Shader:
+</summary>
+
+Here is a list of recommended plugins and tools that we use when building our Avatars, with or without Poiyomi Shaders:
 
 **MUST HAVES:**
 - **Haï Lightbox Viewer:** Test your Avatar’s lighting behavior in the Unity Editor. Highly Recommended for testing Poiyomi’s lighting behavior in various conditions! [Download Haï Lightbox Viewer <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.hai-vr.dev/docs/products/lightbox-viewer)
@@ -241,5 +447,8 @@ Here is a list of recommended plugins and tools that we use when building our Av
 - **Pumkin’s Tools:** Avatar Component Copier and in-editor tool for capturing screenshots directly from your Scene. [Download Pumkin's Avatar Tools](https://github.com/rurre/PumkinsAvatarTools) | [Download Editor Screenshot <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/rurre/Editor-Screenshot)
 - **Avatars 3.0 Manager:** Manages your Avatar Descriptor, including editing, merging and copying your Animators, Menus, and Parameters. [Download Avatars 3.0 Manager <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/VRLabs/Avatars-3.0-Manager)
 
-**Honorable Mention:**
+**Honorable Mentions:**
 - **ALCOM:** An excellent and *faster* alternative to the VRChat Creator Companion App (VCC). Works on both Windows and Linux. [Download ALCOM <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://vrc-get.anatawa12.com/en/alcom/)
+- **Enhanced Hierarchy System:** Improved appearance for Unity's Hierarchy, tailored made for VRChat Creators. Allows toggling a GameObject or Component directly from the Hierarchy's customized Icons representing common VRC SDK Components, a component tree showing it's connection to parent and child objects, and many more. [Download Enhanced Hierarchy System <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/BluWizard10/Blu-Hierarchy)
+
+</details>

@@ -226,3 +226,19 @@ img.icon {
   color: var(--ifm-color-white, #fff);
   border-bottom: none;
 }
+
+/* Headings used as the <summary> of a <details> box, e.g. FAQ questions (see CONTRIBUTING.md). */
+.markdown details > summary > :is(h2, h3, h4, h5, h6) {
+  margin: 0;
+}
+
+/* Center the arrow on the heading's first line instead of the regular text line. */
+.markdown details > summary:has(> h2) { --details-heading-size: var(--ifm-h2-font-size); }
+.markdown details > summary:has(> h3) { --details-heading-size: var(--ifm-h3-font-size); }
+.markdown details > summary:has(> h4) { --details-heading-size: var(--ifm-h4-font-size); }
+.markdown details > summary:has(> h5) { --details-heading-size: var(--ifm-h5-font-size); }
+.markdown details > summary:has(> h6) { --details-heading-size: var(--ifm-h6-font-size); }
+
+.markdown details > summary:has(> :is(h2, h3, h4, h5, h6))::before {
+  top: calc(var(--details-heading-size) * var(--ifm-heading-line-height) / 2 - var(--docusaurus-details-summary-arrow-size));
+}
