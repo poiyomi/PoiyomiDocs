@@ -405,7 +405,7 @@ const config: Config = {
     prism: {
       theme: prismThemes.vsLight,
       darkTheme: prismThemes.vsDark,
-      additionalLanguages: ['hlsl'],
+      additionalLanguages: ['hlsl', 'csharp'],
     },
     footer: {
       logo: {
