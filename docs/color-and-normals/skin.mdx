@@ -1,19 +1,15 @@
 ---
-sidebar_position: 6
+sidebar_position: 7
 title: Skin
 description: Skin in Poiyomi Shaders can be customized to match the tone of human skin in Unity.
 keywords: [skin, tone, body, detail, poiyomi, shader]
 ---
 
-**Skin** applies a corrected coloring of the human skin in different Tones and features to the material. It can be used on Avatars with human skin that need an accurate representation of the skin's color.
-
-:::warning[Experimental Feature]
-This feature may contain bugs or unstable code. Use at your own risk!
-:::
+**Skin** is a Lookup Table (LUT) module that applies a corrected coloring of the human skin in different Tones to the material. It can be used on Avatars with human skin that need an accurate representation of the skin's color.
 
 ## Skin Tone Preset
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `None`/`Porcelain`/`Light`/`Golden`/`Medium`/`Olive`/`Tan`/`Brown`/`Dark Brown`/`Deep`
+<Property type="dropdown" options={['None', 'Porcelain', 'Light', 'Golden', 'Medium', 'Olive', 'Tan', 'Brown', 'Dark Brown', 'Deep']} />
 
 Configures the Skin Tone to use for the section. All ranges of the human skin are covered in this dropdown menu.
 
@@ -21,7 +17,7 @@ Configures the Skin Tone to use for the section. All ranges of the human skin ar
 
 ## Skin Detail Map
 
-- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = Off`)
+<Property type="texture" texture="data" />
 
 Data Texture Slot used to determine the detail map area for the Skin.
 
@@ -29,7 +25,7 @@ Data Texture Slot used to determine the detail map area for the Skin.
 
 ### Skin Color LUT
 
-- `Type`: <PropertyIcon name="texture" />**Color** Texture (`sRGB = On`)
+<Property type="texture" texture="color" default="T_skinColorLUT.png" />
 
 Specifies the LUT map to use for the Skin Color.
 
@@ -41,108 +37,108 @@ If one doesn't exist, Reset the section to populate the slot with the provided d
 
 ### Melanin
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" default="0.2" />
 
 Sets the natural pigment that determines the color of the human skin.
 
 ### Melanin Redness
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" default="0.5" />
 
 Sets the amount of melanin producing red-yellow tones.
 
 ### Hemoglobin
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" default="0.5" />
 
 Sets the amount of Hemoglobin, the oxygen-carrying protein (or red blood cells) on the outermost layer of the skin.
 
 ## Freckles
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Enables the visibility of generated Freckles on the skin.
 
 ### UV
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `UV0`/`UV1`/`UV2`/`UV3`
+<Property type="dropdown" options={['UV0', 'UV1', 'UV2', 'UV3']} />
 
 Which UV layout on the mesh to generate Freckles on the skin.
 
 ### Tiling
 
-- `Type`: <PropertyIcon name="vector2" />**Vector**
+<Property type="vector2" />
 
 Configures the amount of Tiling operation to use when generating Freckles on the skin.
 
 ### Strength
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" default="0.5" />
 
 The intensity of the Freckles visibility on the skin.
 
 ### Sharpness
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `1.0 - 10.0`
+<Property type="range" min="1" max="10" default="3" />
 
 The amount of sharpness to operate on the generated freckles.
 
 ### Redness Shift
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-0.5 - 0.5`
+<Property type="range" min="-5" max="5" default="0.1" />
 
 Amount to shift the Freckles with the skin's redness.
 
 ## Tan
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Enables a Tan appearance on the skin.
 
 ### UV
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `UV0`/`UV1`/`UV2`/`UV3`
+<Property type="dropdown" options={['UV0', 'UV1', 'UV2', 'UV3']} />
 
 Which UV layout to have the Tan appearance be used on.
 
 ### Tiling
 
-- `Type`: <PropertyIcon name="vector2" />**Vector**
+<Property type="vector2" />
 
 Configures the amount of Tiling operation to use for the Tan.
 
 ### Amount
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-0.5 - 0.5`
+<Property type="range" min="0" max="0.5" default="0.15" />
 
 Amount of tanning applied to the skin.
 
 ### Redness Shift
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 0.5`
+<Property type="range" min="-5" max="5" default="-0.1" />
 
 Amount to shift the Tan with the skin's redness.
 
 ## Brightness
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.5 - 2.0`
+<Property type="range" min="0.5" max="2" default="1" />
 
 Total amount of the skin's overall brightness.
 
 ## Tint
 
-- `Type`: <PropertyIcon name="color" />**Color**
+<Property type="color" />
 
 Tint color to use for the skin operator.
 
 ## Blend Mode
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Replace`/`Multiply`
+<Property type="dropdown" options={['Replace', 'Multiply']} default="Replace" />
 
 Defines the blending operator to use when applying skin to the material.
 
 ## Blend
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" default="1" />
 
 This is the overall amount of skin to apply to the base color.

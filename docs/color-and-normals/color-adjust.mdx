@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 title: Color Adjust
 description: Color Adjust provides options for modifying the base color of the material. This includes settings for adjusting the HUE and Color on your Material.
 image: /img/color-and-normals/Thumb-ColorAdjust.png
@@ -21,7 +21,7 @@ In order to Bake a texture (and enable this button), you must first adjust any o
 
 ## Mask
 
-- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = OFF`)
+<Property type="texture" texture="data" />
 
 Texture Slot that defines where to specifically apply the color adjustments to. If this texture is not defined, the adjustments will apply everywhere.
 
@@ -36,8 +36,7 @@ This slot has the [Texture Packer](/thryeditor/thryeditor.mdx#texture-packer) in
 
 ## Saturation
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 10.0`
-  - Normal: `0.0`
+<Property type="range" min="-1" max="10" default="0" />
 
 Adjusts the saturation of the base color. 
 
@@ -47,15 +46,13 @@ This is implemented as a lerp between the base color and a grayscale version of 
 
 ## Chromatize
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 10.0`
-  - Normal: `0.0`
+<Property type="range" min="-1" max="10" default="0" />
 
 Adjusts the intensity of the color's reproduction and quality regardless of it's luminance.
 
 ## Brightness
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
-  - Normal: `0.0`
+<Property type="range" min="-1" max="2" default="0" />
 
 Adjusts the brightness of the base color. 
 
@@ -63,8 +60,7 @@ This increases or decreases brightness directly on top of the existing color, wi
 
 ## Gamma
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.01 - 5.0`
-  - Normal: `1.0`
+<Property type="range" min="0.01" max="5" default="1" />
 
 Adjusts the gamma of the base color.
 
@@ -74,27 +70,25 @@ This can lerp the brightness of the color in regards to it's hue or tone. Lower 
 
 ### Tint Color
 
-- `Type`: <PropertyIcon name="color" />**Color**
-  - Normal: `#FFFFFF`
+<Property type="color" default="#FFFFFF" />
 
 Sets the mixture tone color, used for adjusting the colorfulness and how the perceived hue can be affected.
 
 ### Tint Texture
 
-- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = ON`)
+<Property type="texture" texture="data" />
 
 If defined, the texture's color can be used for defining the mixture tone color.
 
 ## Hue Shift
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Enable or Disable the Hue Shifting functionality. **Turn this ON to enable the Hue Shifting feature.**
 
 ### Color Space
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `OKLab`/`HSV`
-  - Default: `OKLab`
+<Property type="dropdown" options={['OKLab', 'HSV']} default="OKLab" />
 
 Choice of Color Space to use for the Hue Shift. By default, it will be set to `OKLab`.
 
@@ -127,8 +121,7 @@ On Legacy HSV, you will see that it makes the color look more washed out. This c
 
 ### Select or Shift
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Hue Select`/`Hue Shift`
-  - Default: `Hue Shift`
+<Property type="dropdown" options={['Hue Select', 'Hue Shift']} default="Hue Shift" />
 
 This dropdown allows you to select how the Color Adjustment should behave when the Hue Shift is used. By default, this will be set to `Hue Shift`.
 
@@ -145,8 +138,7 @@ This dropdown allows you to select how the Color Adjustment should behave when t
 
 ### Hue Replace
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
-  - Default: `On`
+<Property type="toggle" default="On" />
 
 Changes how the hue shift is applied when a hue shift mask is present. 
 
@@ -156,8 +148,7 @@ If disabled, the base color will be directly hue shifted, with the amount of hue
 
 ### Hue Shift
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
-  - Normal: `0.0`
+<Property type="range" min="0" max="1" default="0" />
 
 Determines how much to shift the base color around the Color Wheel. **This is the main hue shifting slider.**
 
@@ -169,13 +160,15 @@ This value is circular, starting at the Top-Middle of the Color Wheel (see below
 
 ### Hue Shift Speed
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 If set, will constantly shift the hue with time. A value of `1` will result in a full hue shift cycle every 20 seconds.
 
 ### Hue Shift Audio Link
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle">
+[Audio Link](/audio-link/audio-link.mdx) is enabled
+</Property>
 
 If enabled, allows the Hue Shift to be controlled with Audio Link chronotensity.
 
@@ -185,37 +178,41 @@ The settings in this section will only be visible when [Audio Link](/audio-link/
 
 #### Band
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+<Property type="dropdown" options={['Bass', 'Low Mid', 'High Mid', 'Treble', 'Volume']} />
 
 Which audio link frequency band to use for the hue shift motion.
 
 #### Motion Type
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**
+<Property type="dropdown" options={['Motion increases as intensity of band increases.', 'Above but smooth.', 'Motion moves back and forth as a function of intensity.', 'Above but Smoooth.', 'Fixed speed increase when the band is dark. Stationary when light.', 'Above but Smooooth.', 'Fixed speed increase when the band is dark. Fixed speed decrease when light.', 'Above but Smoooooth.']} />
 
 Which chronotensity motion mode to use for the hue shift motion. These are somewhat self descriptive, but more information is available in the [Audio Link Docs](https://github.com/llealloo/vrc-udon-audio-link/tree/master/Docs#alpass_chronotensity).
 
 #### Motion Speed
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 How fast the audio link chronotensity should cycle the hue shift.
 
 ## Color Grading
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 If enabled, uses a `Gradation Map` as reference to determine how the Color Adjust should appear with the defined Color Grading style.
 
 ### Gradation Map
 
-- `Type`: <PropertyIcon name="texture" />**Color** Texture (`sRGB = ON`)
+<Property type="texture" texture="color" />
 
 Texture to use for the Color Grading.
 
+### Gradation Mask
+
+<Property type="dropdown" options={['R', 'G', 'B', 'A']} />
+
 ### Gradation Strength
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 How strong should the Color Grading be applied to the Color Adjust.
 
@@ -225,24 +222,24 @@ Use this section to instead use a [Global Mask](/modifiers/global-masks.mdx) for
 
 ### Hue
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+<Property type="dropdown" options={['Off', '1R', '1G', '1B', '1A', '2R', '2G', '2B', '2A', '3R', '3G', '3B', '3A', '4R', '4G', '4B', '4A']} />
 
 Choice of which Global Mask channel to use for the Hue.
 
 ### Saturation
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+<Property type="dropdown" options={['Off', '1R', '1G', '1B', '1A', '2R', '2G', '2B', '2A', '3R', '3G', '3B', '3A', '4R', '4G', '4B', '4A']} />
 
 Choice of which Global Mask channel to use for the Saturation.
 
 ### Brightness
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+<Property type="dropdown" options={['Off', '1R', '1G', '1B', '1A', '2R', '2G', '2B', '2A', '3R', '3G', '3B', '3A', '4R', '4G', '4B', '4A']} />
 
 Choice of which Global Mask channel to use for the Brightness.
 
 ### Gamma
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+<Property type="dropdown" options={['Off', '1R', '1G', '1B', '1A', '2R', '2G', '2B', '2A', '3R', '3G', '3B', '3A', '4R', '4G', '4B', '4A']} />
 
 Choice of which Global Mask channel to use for the Gamma.

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 10
+sidebar_position: 5
 title: Normal Correct
 description: Normal Correct is used to force normals of the mesh to point towards a specific direction.
 keywords: [normals, normal, normal correction, correction]
@@ -13,24 +13,24 @@ The "center" of the Origin is an offset from the `Root Bone` of your mesh. This 
 
 ## Normal Correct Amount
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" default="0.9" />
 
 Controls the intensity of how much it alters the normals.
 
 ## X
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
+<Property type="range" min="-1" max="1" default="0" />
 
 The point that acts as the center on the X-axis where the normals are aligned outwards from.
 
 ## Y
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
+<Property type="range" min="-1" max="1" default="0.4" />
 
 The point that acts as the center on the Y-axis where the normals are aligned outwards from.
 
 ## Z
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
+<Property type="range" min="-1" max="1" default="-0.025" />
 
 The point that acts as the center on the Z-axis where the normals are aligned outwards from.

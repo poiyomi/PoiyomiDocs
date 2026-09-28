@@ -173,6 +173,46 @@ Answer goes here.
 
 Without the empty lines, `### How do I upgrade...` shows up as plain text instead of a heading.
 
+### Material Properties
+
+Use `<Property>` right under a property's heading to show its type, options, default value, and when it appears in the Shader UI. *Example:*
+
+```md
+### UV Mode
+
+<Property type="dropdown" options={['Normal', 'Circle']} default="Normal" />
+
+### Circle Dimensions
+
+<Property type="float4" default={{X: 0, Y: 1, Z: 0, W: 1}}>
+  [UV Mode](#uv-mode) is set to `Circle`
+</Property>
+```
+
+Anything between `<Property>` and `</Property>` is the condition for the property to show up. It appears after "Shown when", so phrase it to follow that (`[Shape Clip](#shape-clip) is enabled`). Links work like anywhere else in the page.
+
+| `type` | Shows as | Other props |
+| --- | --- | --- |
+| `toggle` | Toggle | |
+| `float` | Float | |
+| `range` | Range | `min`, `max` |
+| `int` | Integer | `min`, `max` (optional) |
+| `clamped` | Clamped Slider | `min`, `max` |
+| `float2`, `float3`, `float4` | Float2, Float3, Float4 | |
+| `vector2`, `vector3`, `vector4` | Vector2, Vector3, Vector4 | |
+| `curve` | Vector Curve | |
+| `color` | Color | |
+| `hdrcolor` | HDR Color | |
+| `texture` | Texture Slot | `texture`: `color`, `data`, `normal`, `cubemap` or `gradient`. Adds the sRGB setting that texture needs, which `srgb={true}` or `srgb={false}` can override. |
+| `dropdown` | Dropdown | `options`: a list like `{['Off', 'On']}` |
+
+Every type also takes:
+
+- `default`: the default value. Use `{{X: 0.5, Y: 0.5}}` for one value per axis, and a hex code like `"#FF8800"` to show a color swatch. On a dropdown, the matching option gets marked instead.
+- `label`: replaces the name shown for the type, e.g. `label="Vector4 Curve"`.
+
+Write numbers as strings (`min="0.0"`) to keep their decimals, since `{0.0}` shows up as `0`.
+
 ### Other Static Assets
 
 Read the official Docusaurus documentation on [Static Assets](https://docusaurus.io/docs/static-assets).

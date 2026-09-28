@@ -9,7 +9,7 @@ Bent Normal Maps is a texture used to improve ambient lighting and specular refl
 
 ## Bent Normal Map
 
-- `Type`: <PropertyIcon name="texture" />**Normal Map** Texture (`sRGB = OFF`)
+<Property type="texture" texture="normal" />
 
 Normal Map texture slot to use for the Bent Normals. When expanded, the Normal Map texture has options for **Tiling** and **Offset**.
 
@@ -19,12 +19,12 @@ Normal Map texture slot to use for the Bent Normals. When expanded, the Normal M
 
 ## Specular Occlusion Strength
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" default="1" />
 
 Sets how strong the specular occlusion should be applied for the bent normals.
 
 ## Use for Indirect Diffuse
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" default="On" />
 
 Enable this if using your Bent Normal Map to control indirect diffuse.

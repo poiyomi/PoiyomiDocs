@@ -11,7 +11,7 @@ This section contains more customization features for 2nd Normals in comparison 
 
 ## Detail Mask
 
-- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = OFF`)
+<Property type="texture" texture="data" />
 
 A texture that defines how and where to apply different detail textures.
 
@@ -25,31 +25,31 @@ A texture that defines how and where to apply different detail textures.
 
 ### Tint
 
-- `Type`: <PropertyIcon name="color" />**Color**
+<Property type="color" default="#FFFFFF" />
 
 A tint color that's blended multiplicative with the Detail Texture.
 
 ### Detail Texture
 
-- `Type`: <PropertyIcon name="color" />**Color** Texture (`sRGB = ON`)
+<Property type="texture" texture="color" />
 
 Texture used to add detail to the base color. This texture is blended multiplicative with the base color.
 
 ### Intensity
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 10.0`
+<Property type="range" min="0" max="10" default="1" />
 
 How much to blend the detail texture with the main texture.
 
 ### Brightness
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 2.0`
+<Property type="range" min="0" max="2" default="1" />
 
 Multiplier for the detail texture's base brightness. Can be used to emphasize darker parts of a detail texture.
 
 ### Global Mask
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+<Property type="dropdown" options={['Off', '1R', '1G', '1B', '1A', '2R', '2G', '2B', '2A', '3R', '3G', '3B', '3A', '4R', '4G', '4B', '4A']} />
 
 Select which [Global Mask](/modifiers/global-masks.mdx) to only affect the Detail Texture onto.
 
@@ -57,18 +57,18 @@ Select which [Global Mask](/modifiers/global-masks.mdx) to only affect the Detai
 
 ### Detail Normal
 
-- `Type`: <PropertyIcon name="texture" />**Normal Map** Texture (`sRGB = OFF`)
+<Property type="texture" texture="normal" />
 
 A normal map texture that's blended with the base normal map. 
 
 #### Normal Intensity
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 10.0`
+<Property type="range" min="0" max="10" />
 
 Intensity multiplier for the detail normal map. Expand the Detail Normal texture slot to see this property.
 
 ### Global Mask
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+<Property type="dropdown" options={['Off', '1R', '1G', '1B', '1A', '2R', '2G', '2B', '2A', '3R', '3G', '3B', '3A', '4R', '4G', '4B', '4A']} />
 
 Select which [Global Mask](/modifiers/global-masks.mdx) to only affect the Detail Normal onto.

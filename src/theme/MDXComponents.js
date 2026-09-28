@@ -12,6 +12,7 @@ import TabItem from '@theme/TabItem';
 
 // import PoiVideo from '@site/src/components/PoiVideo'; // Import PoiVideo component globally.
 import PropertyIcon from '@site/src/components/PropertyIcon'; // Import PropertyIcon component globally.
+import Property from '@site/src/components/Property'; // Box describing a material property's type, options and default.
 
 import Card from '@site/src/components/Card/Card';
 import CardBody from '@site/src/components/Card/CardBody';
@@ -41,6 +42,7 @@ export default {
   Tabs,
   TabItem,
   PropertyIcon,
+  Property,
   Card,
   CardBody,
   CardHeader,

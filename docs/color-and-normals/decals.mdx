@@ -1,5 +1,5 @@
 ---
-sidebar_position: 9
+sidebar_position: 10
 title: Decals
 description: In Poiyomi Shaders, Decals are used to place images onto your UV with specific location, rotation, and blending.
 image: /img/color-and-normals/Thumb-Decals.png
@@ -19,7 +19,7 @@ They can be used to add high resolution designs and details onto a mesh without 
 
 ## Decal RGBA Mask
 
-- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = OFF`)
+<Property type="texture" texture="data" />
 
 A mask texture that defines where to place different decals. Each decal section can define which channel of the mask to sample from.
 
@@ -27,7 +27,7 @@ This texture defaults to pure white, so no masking will be applied with no textu
 
 ## Decal Slot
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Enables the mentioned Decal slot.
 
@@ -50,37 +50,43 @@ To use this feature, edit the Decal on your Material <u>directly from the Mesh</
 
 ### Position
 
-- `Type`: <PropertyIcon name="float2" />**Vector2**
+<Property type="vector2" default={{X: 0.5, Y: 0.5}} />
 
 Where on the UV the decal's center should be.
 
 ### Rotation
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 360.0`
+<Property type="range" min="0" max="360" />
 
 How much rotation to apply to the decal, around its center position.
 
 ### Rotation Speed
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 A constant roatation speed applied to the decal. A value of `180` will rotate the decal once per second.
 
 ### Scale
 
-- `Type`: <PropertyIcon name="float2" />**Vector2**
+<Property type="vector2" default={{X: 1, Y: 1}} />
 
 Scale of the decal, in UV space. `1.0, 1.0` would map the decal to the entire UV square.
 
 ### Side Offset
 
-- `Type`: <PropertyIcon name="float4" />**Vector4**
+<Property type="vector4" default={{X: 0, Y: 0, Z: 0, W: 0}} />
 
 How much scale offset to define on each side of the decal.
 
+### Aspect Ratio
+
+<Property type="dropdown" options={['Off', 'Shrink to Fit', 'Grow to Fit']} default="Off" />
+
+Sets the desired Aspect Ratio for the Decal.
+
 ### Mirrored UV Mode
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`Flip`/`Left Only`/`Right Only`/`Flip Right Only`
+<Property type="dropdown" options={['Off', 'Flip', 'Left Only', 'Right Only', 'Flip Right Only']} default="Off" />
 
 This option allows you to place Decals on Meshes that have problematic overlapping UVs, where two or more UV islands stack above each other. Use this to put Decals on just one side, or flip them on one side as well.
 
@@ -92,43 +98,45 @@ While models with Overlapping UVs are becoming less and less common, there are s
 
 ### Symmetry Mode
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`Symmetry`/`Flipped`
+<Property type="dropdown" options={['Off', 'Symmetry', 'Flipped']} default="Off" />
 
 This setting will divide the UV down the Center (at `X = 0.5`) and puts the Decal on Both Sides of the Symmetry, like a mirror. This only works on models that have a perfectly symmetrized UV layout.
 
 ### Tiled
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" default="Off" />
 
 Whether or not the decal texture should be tiled. By default, decals are not tiled.
 
 ## Color
 
-- `Type`: <PropertyIcon name="color" />**Color**
+<Property type="color" default="#FFFFFF" />
 
 Base color for the decal texture. This is blended multiplicative with the Decal.
 
 ## Decal
 
-- `Type`: <PropertyIcon name="texture" />**Color** Texture (`sRGB = ON`)
+<Property type="texture" texture="color" />
 
 The texture used for the decal. The alpha channel is used to define where the decal should be blended.
 
 ### Mask Channel
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `R`/`G`/`B`/`A`
+<Property type="dropdown" options={['R', 'G', 'B', 'A']}>
+Decal slot is expanded
+</Property>
 
-Which channel of the Decal RGBA mask to use for masking. ***Expand the [Decal](#decal) Texture Slot to see this property.***
+Which channel of the Decal RGBA mask to use for masking.
 
 ## Emission Strength
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 20.0`
+<Property type="range" min="0" max="20" />
 
 How much Emission to apply from the Decal's Base Color. Higher values will yield a bloom-like effect in certain Worlds.
 
 ## Color Blend Mode
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Replace`/`Darken`/`Multiply`/`Lighten`/`Screen`/`Subtract`/`Add`/`Overlay`/`Mixed`
+<Property type="dropdown" options={['Replace', 'Darken', 'Multiply', 'Lighten', 'Screen', 'Subtract', 'Add', 'Overlay', 'Mixed']} default="Replace" />
 
 Which blending operation to use for the Decal's base color.
 
@@ -136,15 +144,14 @@ These are the same blending operators that are used in Adobe Photoshop.[^1]
 
 ## Alpha Blend Mode
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**
-  - Main Options: `Off`/`Replace`/`Multiply`/`Add`/`Subtract`/`Min`/`Max`
-  - Secondary Options: `Everywhere`/`Decal Bounds`
+<Property type="dropdown" options={['Off', 'Replace', 'Multiply', 'Add', 'Subtract', 'Min', 'Max']} default="Off" />
+<Property type="dropdown" options={['Everywhere', 'Decal Bounds', 'Everywhere Masked', 'Bounds Masked']} default="Everywhere" />
 
 Which blending operation to use from the Decal's Alpha channel.
 
 ## Alpha
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 How much to apply the blended color to the base color.
 
@@ -154,38 +161,37 @@ This slider can be animated to hide and show the decal. Animating the [Section H
 
 ## Alpha Intensity
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 10.0`
-  - Default: `1.0`
+<Property type="range" min="0" max="10" default="1" />
 
 Applies a multiplier for how much the decal's alpha should affect the material's alpha.
 
 ## Apply Video Effect
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
-  - Conditional: Requires [Video Effects](/special-fx/video-effects.mdx) to be turned on.
+<Property type="toggle">
+[Video Effects](/special-fx/video-effects.mdx) is turned on
+</Property>
 
 If enabled, will apply [Video Effects](/special-fx/video-effects.mdx) to the Decal from it's global function.
 
 :::info[Shader Limitation]
-Video Effects [Brightness](/special-fx/video-effects.mdx#brightness) setting will override this module's Emissions, as they are not cross-compatible!
+Video Effects [Brightness](/special-fx/video-effects.mdx#brightness) setting will override this module's Emissions as they are not cross-compatible!
 :::
 
 ## Depth
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-0.5 - 2.0`
+<Property type="range" min="-0.5" max="2" default="0" />
 
 How much parallax depth the decal should have. This can be used for layered parallax posters, or other unique designs.
 
 ## Color Adjust
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Enables the Color Adjustment sliders in Decals.
 
 ### Saturation
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 10.0`
-  - Normal: `0.0`
+<Property type="range" min="-1" max="10" default="0" />
 
 Adjusts the saturation of the Decal. 
 
@@ -195,15 +201,13 @@ This is implemented as a lerp between the Decal and a grayscale version of the D
 
 ### Chromatize
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 10.0`
-  - Normal: `0.0`
+<Property type="range" min="-1" max="10" default="0" />
 
 Adjusts the intensity of the Decal's color reproduction and quality regardless of it's luminance.
 
 ### Brightness
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
-  - Normal: `0.0`
+<Property type="range" min="-1" max="2" default="0" />
 
 Adjusts the brightness of the Decal. 
 
@@ -211,8 +215,7 @@ This increases or decreases brightness directly on top of the existing color, wi
 
 ### Gamma
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.01 - 5.0`
-  - Normal: `1.0`
+<Property type="range" min="0.01" max="5" default="1" />
 
 Adjusts the gamma of the Decal.
 
@@ -220,13 +223,13 @@ This can lerp the brightness of the Decal's color in regards to it's hue or tone
 
 ### Hue Shift
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Enable or Disable hue shifting of the Decal.
 
 #### Color Space
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `OKLab`/`HSV`
+<Property type="dropdown" options={['OKLab', 'HSV']} default="OKLab" />
 
 Choice of Color Space to use for the Hue Shift. By default, it will be set to `OKLab`.
 
@@ -234,8 +237,7 @@ Learn about the difference of Color Spaces as documented here in [Color Adjust](
 
 #### Select or Shift
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Hue Select`/`Hue Shift`
-  - Default: `Hue Shift`
+<Property type="dropdown" options={['Hue Select', 'Hue Shift']} default="Hue Shift" />
 
 This dropdown allows you to select how the Color Adjustment should behave when the Hue Shift is used. By default, this will be set to `Hue Shift`.
 
@@ -249,13 +251,13 @@ This dropdown allows you to select how the Color Adjustment should behave when t
 
 #### Shift Speed
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 How much to constantly shift the decal hue with time. A value of 1 will result in a full hue shift cycle every 20 seconds.
 
 #### Hue Shift
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" default="0" />
 
 How much to shift the base color around the hue circle.
 
@@ -263,13 +265,13 @@ This value is circular, and will have the same result at `0` and `1`.
 
 #### Hue Angle Power
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 How much to shift the hue with surface angle. A value of `1` will give maximum hue shift when looking straight-on, and no hue shift cycle when looking side-on. The opposite effect can be achieved with negative values. Higher or lower values will produce more or less hue shift as the surface angle changes, creating the kind of effect seen on some holographic trading cards and iridescent materials.
 
 ## Video Texture
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Enables Video Texture to project on the Decal.
 
@@ -293,67 +295,67 @@ This feature enables a Video Texture to appear on the Decal. It will only work i
 
 ### Aspect Ratio
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Shrink2Fit`/`Grow2Fit`/`Off`
+<Property type="dropdown" options={['Shrink2Fit', 'Grow2Fit', 'Off']} default="Shrink2Fit" />
 
 Determines the Aspect Ratio of the Video Texture. You can specify to either fit within the boundaries of your Decal, or fill in the entire Decal boundaries.
 
 ### Fit To Scale
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" default="On" />
 
 Changes the sizing of the Video Texture to fit to the Scale of the Decal.
 
 ### Use Decal Alpha
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" default="Off" />
 
 Uses the Alpha of the Decal for the Video Texture.
 
 ### Only Show Video
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" default="Off" />
 
 If enabled, will show ONLY the Video on the Decal.
 
 ### Emission
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 20.0`
+<Property type="range" min="0" max="20" default="0" />
 
 Adjusts the Emissive effect of the Video Texture. Higher values will yield a bloom-like effect in some Worlds.
 
 ## Chromatic Aberration
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Enables a feature that turns the specified Decal into a Chromatic Aberration effect, which splits the colors alongside a specified angle.
 
 ### Intensity
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 Amount of aberration to use, increasing it's distance. Higher values will yield more intense aberration.
 
 ### Surface Angle Intensity
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 Adjusts how the surface influences the Angle intensity.
 
 ### Hue
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
+<Property type="range" min="-1" max="1" />
 
 Modifies the chromatic hue on the aberration.
 
 ### Direction
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-3.14 - 3.14`
+<Property type="range" min="-3.14" max="3.14" />
 
 Adjusts the direction of the aberration.
 
 ### Premultiply Alpha
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Enables pre-multiplying the Alpha of your Decal for Chromatic Aberration.
 
@@ -361,25 +363,25 @@ Enables pre-multiplying the Alpha of your Decal for Chromatic Aberration.
 
 ### Face Mask
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`Front Only`/`Back Only`
+<Property type="dropdown" options={['Off', 'Front Only', 'Back Only']} default="Off" />
 
 Choice of where the Decal should appear on your Normals. You can choose it to appear only on the Front Face, the Back Face, or Both (default).
 
 ### Apply From Global Mask
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+<Property type="dropdown" options={['Off', '1R', '1G', '1B', '1A', '2R', '2G', '2B', '2A', '3R', '3G', '3B', '3A', '4R', '4G', '4B', '4A']} />
 
 Select which [Global Mask](/modifiers/global-masks.mdx) to apply directly onto the Decal.
 
 ### Apply To Global Mask
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+<Property type="dropdown" options={['Off', '1R', '1G', '1B', '1A', '2R', '2G', '2B', '2A', '3R', '3G', '3B', '3A', '4R', '4G', '4B', '4A']} />
 
 Select which [Global Mask](/modifiers/global-masks.mdx) to send your Decal's effects onto the specified Global Mask.
 
 ### Show On Outlines
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 If enabled, will show the Decal on [Outlines](/outlines/outlines.mdx).
 
@@ -391,15 +393,15 @@ The settings in this section will only be visible when [Audio Link](/audio-link/
 
 ### Scale Band
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+<Property type="dropdown" options={['Bass', 'Low Mid', 'High Mid', 'Treble', 'Volume']} />
 
 Which band of the audio to use for the Audio Link Scale Mod.
 
 ### Scale Mod
 
-How much to modify (mod) the scale of the decal. These values are added to the current scale, and can be positive or negative.
+<Property type="float4" />
 
-- `Type`: <PropertyIcon name="float4" />**Vector4**
+How much to modify (mod) the scale of the decal. These values are added to the current scale, and can be positive or negative.
 
 | Channel | Function |
 | --- | --- |
@@ -410,13 +412,13 @@ How much to modify (mod) the scale of the decal. These values are added to the c
 
 ### Side Band
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+<Property type="dropdown" options={['Bass', 'Low Mid', 'High Mid', 'Treble', 'Volume']} />
 
 Which band to use for the Audio Link Side adjustment.
 
 ### Side Mod Min
 
-- `Type`: <PropertyIcon name="float4" />**Vector4**
+<Property type="float4" />
 
 How much to modify (mod) the side adjustment of the decal when there is no audio in the Side Band. These values are added to the current scale, and can be positive or negative.
 
@@ -429,9 +431,9 @@ How much to modify (mod) the side adjustment of the decal when there is no audio
 
 ### Side Mod Max
 
-How much to modify (mod) the side adjustment of the decal when there is maximum audio in the Side Band. These values are added to the current scale, and can be positive or negative.
+<Property type="float4" />
 
-- `Type`: <PropertyIcon name="float4" />**Vector4**
+How much to modify (mod) the side adjustment of the decal when there is maximum audio in the Side Band. These values are added to the current scale, and can be positive or negative.
 
 | Channel | Function |
 | --- | --- |
@@ -442,13 +444,13 @@ How much to modify (mod) the side adjustment of the decal when there is maximum 
 
 ### Rotation Band
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+<Property type="dropdown" options={['Bass', 'Low Mid', 'High Mid', 'Treble', 'Volume']} />
 
 Which band to use for the Audio Link Rotation adjustment.
 
 ### Rotation Mod
 
-- `Type`: <PropertyIcon name="float2" />**Vector2**
+<Property type="float2" />
 
 How much to modify the rotation of the decal, in degrees.
 
@@ -459,13 +461,13 @@ How much to modify the rotation of the decal, in degrees.
 
 ### Alpha Band
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+<Property type="dropdown" options={['Bass', 'Low Mid', 'High Mid', 'Treble', 'Volume']} />
 
 Which band to use for the Audio Link Alpha adjustment.
 
 ### Alpha Mod
 
-- `Type`: <PropertyIcon name="float2" />**Vector2**
+<Property type="float2" />
 
 How much to modify the alpha of the decal.
 
@@ -476,13 +478,13 @@ How much to modify the alpha of the decal.
 
 ### Emission Band
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+<Property type="dropdown" options={['Bass', 'Low Mid', 'High Mid', 'Treble', 'Volume']} />
 
 Which band to use for the Audio Link Emission adjustment.
 
 ### Emission Mod
 
-- `Type`: <PropertyIcon name="float2" />**Vector2**
+<Property type="float2" />
 
 How much to modify the Emission of the decal.
 
@@ -493,68 +495,55 @@ How much to modify the Emission of the decal.
 
 ### CC Strip
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Enables or disables the ColorChord strip. ColorChord strip is a strip of colors that vary based on the audio, producing specific consistent colors for given chords.
 
 ### Chrono Rotation Band
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+<Property type="dropdown" options={['Bass', 'Low Mid', 'High Mid', 'Treble', 'Volume']} />
 
 Which band to use for the Audio Link Chrono Rotation adjustment.
 
 ### Chrono Motion Type
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**
+<Property type="dropdown" options={['Motion increases as intensity of band increases.', 'Above but smooth.', 'Motion moves back and forth as a function of intensity.', 'Above but Smoooth.', 'Fixed speed increase when the band is dark. Stationary when light.', 'Above but Smooooth.', 'Fixed speed increase when the band is dark. Fixed speed decrease when light.', 'Above but Smoooooth.']} />
 
 Which motion type to use for the Chrono Rotation. Chronotensity is an Audio Link feature that allows time-dependent features, which shaders alone cannot do. In this case, chronotensity is used to create a time-dependent rotation of the decal.
 
-<details>
-<summary><b>Chronotensity Options</b></summary>
-
-- Motion Increases as intensity of the band increases
-- Above but Smooth
-- Motion moves back and forth as a function of intensity
-- Above but Smoooth
-- Fixed Speed Increase when the band is dark Stationary when light
-- Above but Smooooth
-- Fixed Speed Increase when the band is dark Fixed speed decrease when light
-
-</details>
-
 ### Chrono Rotation Speed
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 How much chronotensity should affect the rotation of the decal. Good starting values are `0.1 - 0.5`.
 
 ### Color Override
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Enables overriding the Color using Audio Link.
 
 #### Color
 
-- `Type`: <PropertyIcon name="color" />**Color**
+<Property type="color" />
 
 Sets a Color to use as the Color Override.
 
 #### Theme Color
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Theme Color 0`/`Theme Color 1`/`Theme Color 2`/`Theme Color 3`/`ColorChord 0`/`ColorChord 1`/`ColorChord 2`/`ColorChord 3`/`AL Theme 0`/`AL Theme 1`/`AL Theme 2`/`AL Theme 3`
+<Property type="dropdown" options={['Theme Color 0', 'Theme Color 1', 'Theme Color 2', 'Theme Color 3', 'ColorChord 0', 'ColorChord 1', 'ColorChord 2', 'ColorChord 3', 'AL Theme 0', 'AL Theme 1', 'AL Theme 2', 'AL Theme 3']} />
 
 Option to set a Theme Color to use as the Color Override instead.
 
 #### Color Override Band
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+<Property type="dropdown" options={['Bass', 'Low Mid', 'High Mid', 'Treble', 'Volume']} />
 
 Which Band to use to trigger the Color Override.
 
 #### Color Override Ramp
 
-- `Type`: <PropertyIcon name="vectorcurve" />**Vector Curve**
+<Property type="curve" />
 
 Vector ramp to determine how Color Override is used.
 
