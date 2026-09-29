@@ -1,0 +1,19 @@
+---
+title: Poiyomi Toon 10.0.23 Changelog
+description: Full changelog of Poiyomi Toon 10.0.23 release.
+hide_table_of_contents: true
+authors:
+  bluwizard
+tags: [shader, vrchat, updates, update, free]
+---
+
+This update contains bug fixes and is recommended for all users. The Toon version is now available in the VCC Repository, GitHub, and on BOOTH.
+
+## Changes & Fixes
+- Detail Normals are now applied **after** RGBA Color Masking Normals.
+- Details are moved to before RGBA Color Masking, as it's supposed to be replaced instead.
+- Switched to using `PoiBlendNormal()` helper instead of Unity's BlendNormals.
+- Cleaned up `VRLT_PoiDecals` and reduced multiple Decal samples into 1 loop.
+- Fixed several stack overflow issues causing some common shader crashes.
+- Fixed LilFur issues under Stereo rendering.
+- Bumped ThryEditor requirement to `>=2.74.3`.
