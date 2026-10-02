@@ -20,6 +20,19 @@ This is used to globally toggle the Uzumore Shader's effect across the entire ma
 Make sure to tag this checkbox as animated if creating toggles for this feature. Animating the [Section Header](/general/locking.mdx#section-header-checkboxes) will not work! [Read More](/general/locking.mdx#marking-properties-for-animation)
 :::
 
+## Object Scale
+
+- `Type`: <PropertyIcon name="float" />**Float**
+  - Default: `1.0`
+
+Multiplies the transform scale that Push Amount and Push Bias scales with.
+
+:::warning[Important]
+This property serves as an critical component in how the shader effect is multiplied. Therefore, users who scale their avatars shorter than average should consider ensuring this value is adjusted accordingly.
+
+If you play VRChat, refer to [VRChat's built-in Avatar Scaling Parameters](https://creators.vrchat.com/avatars/animator-parameters/#avatar-scaling-parameters) in order to understand how to use them in relation to this material property in your Animator.
+:::
+
 ## Push Amount (m)
 
 - `Type`: <PropertyIcon name="float" />**Float**
