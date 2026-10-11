@@ -1,0 +1,17 @@
+---
+title: Poiyomi Toon 10.0.25 Changelog
+description: Full changelog of Poiyomi Toon 10.0.25 release.
+hide_table_of_contents: true
+authors:
+  bluwizard
+tags: [shader, vrchat, updates, update, free]
+---
+
+This update contains some more bug fixes backported from upstream and is recommended for all users. The Toon version is now available in the VCC Repository, GitHub, and on BOOTH.
+
+## Changes & Fixes
+- Fixed an issue with Legacy Material Detector message (which appears on materials made in 9.2 and older) appearing on non-Poiyomi materials.
+- Fixed compatibility with Unity 6.6 and newer.
+- Fixed an issue with Outlines not scaling properly when using World Space.
+- [Linux] Added a small script to check what the Graphics API Unity is using, printing a normal message in the Console upon launching Unity.
+  - *Unity defaults to OpenGL on Linux, which is unsupported. For this reason, a prompt will appear asking you to switch to Vulkan with instructions to do so IF Unity attempts to open on OpenGL. This is our method to ensure users on Linux always use Vulkan.*
