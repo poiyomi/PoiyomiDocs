@@ -1,0 +1,50 @@
+---
+sidebar_position: 1
+title: Baked Lighting
+description: Controls lighting behavior when used in a Scene with Global Illumination.
+keywords: [baked, lighting, light, static, poiyomi, shader]
+---
+
+Controls for the lighting behavior when used in a Scene with Global Illumination or Baked Lightmaps. To use Baked Lighting, switch to `.poiyomi/Poiyomi Toon World` or `.poiyomi/Poiyomi Pro World` Shader. If you are building a World with Poiyomi Materials, using `Poiyomi World` is required in order to include it with your Global Illumination.
+
+:::caution
+Poiyomi Shaders is <u>not</u> designed to be used as a general-purpose World shader. It should be reserved only when you require specialized functionality that Poiyomi Shaders offers that typical World shaders lack thereof.
+
+Using Poiyomi World for all of your World materials will be detrimental to performance and will risk a bloated world size due to the Shader Optimizer system.
+
+Additionally, Static Batching is unsupported! For this reason, you should keep your usage of Poiyomi World to a strict minimum!
+:::
+
+## GI Emission Multiplier
+
+<Property type="float" default="1" />
+
+Sets the Global Illumination Multiplier for the Emission's influence on your baked meshes.
+
+## Double Sided Global Illumination
+
+<Property type="toggle" default="Off" />
+
+If enabled, allows the Global Illumination to be baked on both faces.
+
+## Global Illumination
+
+<Property type="dropdown" options={['None', 'Baked', 'Realtime']} />
+
+Sets the behavior of how your Material is treated in your environment.
+
+- `None`: Nothing in your environment will be influenced by the Emissions.
+- `Baked`: Any meshes nearby will be influenced by the Emissions.
+- `Realtime`: Any meshes nearby will be influenced by the Emissions in real time.
+
+## Bakery Mode
+
+<Property type="dropdown" options={['None', 'SH', 'RNM', 'MonoSH']} />
+
+If using Bakery GPU Lightmapper, use this property to choose which mode is being used in Bakery.
+
+## Use Bicubic Filtering
+
+<Property type="toggle" />
+
+If enabled, will use the Bicubic Filtering algorithm in Global Illumination.

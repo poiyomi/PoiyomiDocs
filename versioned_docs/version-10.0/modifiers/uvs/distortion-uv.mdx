@@ -1,0 +1,294 @@
+---
+sidebar_position: 2
+title: Distortion UV
+description: Offsets or warps the UV coordinates of the texture to create the illusion of distortion or other wobbly effects.
+keywords: [distortion, uv, fx, shading, poiyomi, shaders]
+toc_min_heading_level: 2
+toc_max_heading_level: 4
+---
+
+Distortion UV refers to a shader technique where the UV coordinates used to sample a texture are offset or warped to create the illusion of distortion or other wobbly effects.
+
+This section houses the global settings for Distortion UV. To use it, select it as a UV option in supported sections of the shader.
+
+## Distortion UV
+
+<Property type="toggle" />
+
+Enables Distortion UV effects on the material. Make sure to select which Texture Slots across the shader should use Distortion UV.
+
+## Distorted UV
+
+<Property type="dropdown" options={['UV0', 'UV1', 'UV2', 'UV3', 'Panosphere', 'World Pos XZ', 'Local Pos', 'Polar UV']} />
+
+Sets which UV set to use for the distortion effect.
+
+## Mask
+
+<Property type="texture" texture="data" />
+
+Masks where the Distortion effect should only appear in.
+
+## Distortion Mode
+
+<Property type="dropdown" options={['Texture', 'Gerstner Waves', 'Simplex Noise', 'Voronoi', 'Curl Noise', 'Fractal Brownian Motion']} default="Texture" />
+
+Switches the Distortion method to use on the material.
+
+## Tiling
+
+<Property type="vector2">
+[Distortion Mode](#distortion-mode) is set to `Gerstner Waves`, `Simplex Noise`, `Voronoi`, `Curl Noise`, or `Fractal Brownian Motion`
+</Property>
+
+Sets the tiling of the custom Distortion on all modes EXCEPT `Texture`.
+
+## Pan Speed
+
+<Property type="vector2">
+[Distortion Mode](#distortion-mode) is set to `Gerstner Waves`, `Simplex Noise`, `Voronoi`, `Curl Noise`, or `Fractal Brownian Motion`
+</Property>
+
+Sets the panning speed of the custom Distortion on all modes EXCEPT `Texture`.
+
+## Texture Mode
+
+This area is shown when [Distortion Mode](#distortion-mode) is configured to use `Texture`.
+
+### Distortion Texture 1
+
+<Property type="texture" texture="data" />
+
+Linear texture of the first distortion.
+
+### Distortion Texture 2
+
+<Property type="texture" texture="data" />
+
+Linear texture of the second distortion.
+
+### Strength 1
+
+<Property type="float" />
+
+Sets the strength of the Distortion from Texture 1.
+
+### Strength 2
+
+<Property type="float" />
+
+Sets the strength of the Distortion from Texture 2.
+
+## Gerstner Waves
+
+This area is shown when [Distortion Mode](#distortion-mode) is configured to use `Gerstner Waves`.
+
+Gerstner Waves is an effect known in fluid dynamics for periodic surface gravitational waves. [More Info](https://en.wikipedia.org/wiki/Trochoidal_wave).
+
+### Wave Speed
+
+<Property type="range" min="0.1" max="5" />
+
+Total speed of the waves.
+
+### Wave Density
+
+<Property type="range" min="0.01" max="100" />
+
+Density of the waves.
+
+### Flow Strength
+
+<Property type="range" min="0" max="1" />
+
+Total strength of the entire wave flow.
+
+### Wave
+
+:::info[Documentation Info]
+Each of the settings below appears for Waves 1, 2, 3, and 4. They are independent of each other.
+:::
+
+#### Direction
+
+<Property type="range" min="0" max="360" />
+
+Direction of the Wave in a rotational angle.
+
+#### Amplitude
+
+<Property type="range" min="0" max="1" />
+
+The amplitude intensity of the Wave.
+
+#### Wavelength
+
+<Property type="range" min="0.5" max="20" />
+
+Total length of the Wave.
+
+#### Speed Mult
+
+<Property type="range" min="0" max="10" />
+
+Multiplier value of the Wave speed.
+
+## Simplex Noise
+
+This area is shown when [Distortion Mode](#distortion-mode) is configured to use `Simplex Noise`.
+
+This is a type of gradient coherent noise used to generate smooth, natural-looking random patterns. [More Info](https://en.wikipedia.org/wiki/Simplex_noise)
+
+### Scale
+
+<Property type="range" min="0.01" max="50" />
+
+Sets the total scale of the noise.
+
+### Strength
+
+<Property type="range" min="0" max="1" />
+
+Sets the total strength of the noise effect.
+
+### Speed
+
+<Property type="range" min="0" max="5" />
+
+Sets how fast the noise is generated.
+
+## Voronoi
+
+This area is shown when [Distortion Mode](#distortion-mode) is configured to use `Voronoi`.
+
+Similar to [Voronoi](/special-fx/voronoi.mdx), it is an effect that generates a noise pattern in 2D or 3D, making for very interesting stylized effects.
+
+### Scale
+
+<Property type="range" min="0.01" max="50" />
+
+Sets the total scale of the Voronoi.
+
+### Strength
+
+<Property type="range" min="0" max="1" />
+
+Sets the total strength of the Voronoi.
+
+### Speed
+
+<Property type="range" min="0" max="5" />
+
+Sets the total speed of the Voronoi.
+
+### Edge Bleed
+
+<Property type="range" min="0" max="1" />
+
+Sets how much to bleed the edge of the Voronoi.
+
+## Curl Noise
+
+This area is shown when [Distortion Mode](#distortion-mode) is configured to use `Curl Noise`.
+
+Curl Noise is a generated noise that turns into swirling motion through the application of a curl operator in the shader's code. This results in interesting fluid-like patterns without having to run a full fluid simulation. [Example Reference](https://al-ro.github.io/projects/curl/)
+
+### Scale
+
+<Property type="range" min="0.01" max="1" />
+
+Sets the total scale of the Curl Noise.
+
+### Strength
+
+<Property type="range" min="0" max="0.5" />
+
+Sets the total strength of the Curl Noise.
+
+### Speed
+
+<Property type="range" min="0" max="5" />
+
+Sets the total speed of how fast the Curl Noise is generated in the loop.
+
+## Fractal Brownian Motion
+
+This area is shown when [Distortion Mode](#distortion-mode) is configured to use `Fractal Brownian Motion`.
+
+In the theory of probability, a [fractional Brownian motion (fBm)](https://en.wikipedia.org/wiki/Fractional_Brownian_motion) is the generalization of [Brownian motion](https://en.wikipedia.org/wiki/Brownian_motion).
+
+### Scale
+
+<Property type="range" min="0.01" max="2" />
+
+Sets the total scale of the motion.
+
+### Strength
+
+<Property type="range" min="0" max="1" />
+
+Sets the total strength of the motion.
+
+### Speed
+
+<Property type="range" min="0" max="5" />
+
+Sets the total speed of the motion
+
+### Octaves
+
+<Property type="range" min="1" max="8" />
+
+Sets the total amount of octaves to apply to the motion.
+
+### Lacunarity
+
+<Property type="range" min="1" max="4" />
+
+Sets the total amount of lacunarity to apply to the motion.
+
+### Gain
+
+<Property type="range" min="0" max="1" />
+
+How much gain to apply to the motion.
+
+## Audio Link
+
+:::info
+The settings in this section will only be visible when [Audio Link](/audio-link/audio-link.mdx) is activated on the Material.
+:::
+
+### Strength 1 Band
+
+<Property type="dropdown" options={['Bass', 'Low Mid', 'High Mid', 'Treble', 'Volume']} />
+
+Which Band to use for adjusting Strength 1 when Audio Link is present.
+
+### Strength 1 Offset Range
+
+<Property type="float2" />
+
+How much to add or subtract from Strength 1 in reaction to the selected Audio Link Band.
+
+| Modifier | Function |
+| --- | --- |
+| Min | Amount changed to Strength 1 with No Audio in Strength 1 Band |
+| Max | Amount changed to Strength 1 with Max Audio in Strength 1 Band |
+
+### Strength 2 Band
+
+<Property type="dropdown" options={['Bass', 'Low Mid', 'High Mid', 'Treble', 'Volume']} />
+
+Which Band to use for adjusting Strength 2 when Audio Link is present.
+
+### Strength 2 Offset Range
+
+<Property type="float2" />
+
+How much to add or subtract from Strength 2 in reaction to the selected Audio Link Band.
+
+| Modifier | Function |
+| --- | --- |
+| Min | Amount changed to Strength 2 with No Audio in Strength 2 Band |
+| Max | Amount changed to Strength 2 with Max Audio in Strength 2 Band |

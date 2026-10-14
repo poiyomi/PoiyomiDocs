@@ -1,0 +1,462 @@
+---
+sidebar_position: 6
+title: Glitter / Sparkle
+description: Glitter adds a voronoi-based sparkle to the color of the Mesh, and can be used to create sparkles or to simulate specular lighting on a glittery surface.
+keywords: [glitter, sparkle, voronoi, specular, special fx, effect, fx, poiyomi, shader]
+---
+
+The Glitter feature is a simple effect that adds a voronoi-based sparkle to the color of the mesh. It can be used to add a sparkle to a mesh, or to simulate specular lighting on a glittery surface.
+
+<ReactVideo src='/vid/special-fx/GlitterExample.mp4'/>
+<em>Example of the Glitter effect on this Clothing.</em>
+
+## UV
+
+<Property type="dropdown" options={['UV0', 'UV1', 'UV2', 'UV3', 'Panosphere', 'World Pos', 'Local Pos', 'Polar UV', 'Distorted UV', 'Matcap', 'Screen Space']} default="UV0" />
+
+Which UV to project the glitter effect on. 
+
+The UV used for this should be relatively even for the glitter effect to not be distorted. If the UV is distorted, the glitter effect will be distorted. For example, if part of the mesh is projected larger than the rest, the glitter effect will be larger in that area.
+
+## Mode
+
+<Property type="dropdown" options={['Angle', 'Linear Emission', 'Light Reflections']} default="Angle" />
+
+Which mode to use for glitter.
+
+- `Angle`: The glitter effect is masked according to the angle between the view direction and the normal of the mesh. This threshold is controlled by the **Glitter Angle Range** Property.
+- `Linear Emission`: The glitter effect is emitted in a linear fashion, with all areas of the mesh having an equal amount of glitter.
+- `Light Reflections`: The glitter effect is masked by the specular reflection of the mesh. The size of the effect is controlled by the **Glitter Angle Range** Property. Glitter in this mode will always be hidden in dark areas of the mesh, as there's no light to reflect off of.
+
+## Shape
+
+<Property type="dropdown" options={['Circle', 'Square']} default="Circle" />
+
+What shape to use for the glitter effect, within each Voronoi cell. The shape can only be seen when **Glitter Size** is set low enough to not take up the entire cell.
+
+## Blend Mode
+
+<Property type="dropdown" options={['Add', 'Replace']} default="Add" />
+
+How the glitter should be blended with the base color.
+
+- `Add`: The glitter effect is added to the base color. Generally results in a brighter effect.
+- `Replace`: The glitter effect replaces the base color. Generally results in a richer effect.
+
+## Use Normals
+
+<Property type="range" min="0" max="1" default="0" />
+
+At `0`, only vertex normals are taken into account when calculating glitter. At `1`, normal maps (pixel normals) are also taken into account at full strength. Values in between blend.
+
+## Layers
+
+<Property type="int" min="1" max="4" default="1" />
+
+How many layers of the glitter effect should be applied.
+
+## Shape & Color
+
+### Shape Texture
+
+<Property type="texture" texture="color" />
+
+Texture to use for the individual glitter particles. These particles are placed in each voronoi cell. The glitter texture should generally be used with large glitter particles (smaller **Glitter Density**).
+
+### Color Map
+
+<Property type="texture" texture="color" />
+
+Map of what color the glitter should be in different areas of the mesh. This offers more control over the glitter color.
+
+### Color
+
+<Property type="hdrcolor" />
+
+Base color used for the glitter effect. This color is an HDR color, meaning it can have an intensity applied to make the color brighter than normal colors.
+
+### Use Base Color
+
+<Property type="range" min="0" max="1" />
+
+How much to blend the surface color with the glitter color. This creates a somewhat metallic effect. A value of 1.0 will result in the **Color** being completely replaced by the surface color.
+
+### Random Color
+
+<Property type="toggle" />
+
+Applies random colors to glitter.
+
+#### Saturation Range
+
+<Property type="clamped" min="0" max="1" />
+
+The saturation range of the randomly generated glitter colors.
+
+#### Brightness Range
+
+<Property type="clamped" min="0" max="1" />
+
+The brightness range of the randomly generated glitter colors.
+
+## Position & Size
+
+### Glitter Density
+
+<Property type="float" />
+
+How dense the glitter should be. This represents the number of voronoi cells that should bne along the edge of the mesh UV. Reasonable values are generally between `250` and `1000`, but can vary significantly.
+
+### Glitter Size
+
+<Property type="range" min="0" max="1" />
+
+How much the glitter should occupy the voronoi cell. At `0.0`, the glitter will be totally invisible. At `1.0`, the glitter will completely fill the cell, making the borders of the cell visible.
+
+### Panning
+
+<Property type="vector2" />
+
+How fast the glitter particles should move across the **Glitter UV**. This is a 2D vector, with the X and Y values defining the speed in the X and Y directions.
+
+### Random Position
+
+<Property type="toggle" />
+
+Applies random positional offset to glitter.
+
+### Random Size
+
+<Property type="toggle" />
+
+Applies random size to glitter.
+
+#### Size Range
+
+<Property type="clamped" min="0" max="1" />
+
+The size range of the glitter. Overrides 'Glitter Size'.
+
+### Allow Overlap
+
+<Property type="toggle" />
+
+If enabled, allows each shape to overlap one another instead of being spaced apart from each other.
+
+:::danger
+Enabling `Allow Overlap` will invoke a heavy performance cost the more dense your Glitter is. Use this conservatively!
+:::
+
+## Sparkle Control
+
+### Glitter Min Brightness
+
+<Property type="range" min="0" max="1" />
+
+Minimum brightness level for the glitter. At `0`, the glitter will be completely invisible. At `1`, the glitter will always have the maximum brightness.
+
+### Glitter Max Brightness
+
+<Property type="range" min="0" max="40" />
+
+Maximum brightness level for the glitter. At `0`, the glitter will always be completely invisible.
+
+### Speed
+
+<Property type="float" />
+
+How fast the the glitter should "flicker", or cycle between bright and dark. Higher values will result in a faster flickering effect.
+
+### Dim Light
+
+<Property type="range" min="0" max="1" />
+
+How much to "dim" the glitter effect, which shrinks it from taking up the entire voronoi cell. At `0`, the glitter will be completely visible. At `1`, the glitter will be very small.
+
+Only visible when **Mode** is set to `Linear Emission`.
+
+### Glitter Angle Range
+
+<Property type="range" min="0" max="90" />
+
+Range to limit the angle of the glitter effect. Smaller values will create a tighter glitter pattern.
+
+Only visible when **Mode** is set to `Angle` or `Light Reflections`.
+
+### Glitter Bias
+
+<Property type="range" min="0" max="1" />
+
+How much to bias the glitter brightness. At `0`, the glitter will be completely dark. At `1`, the glitter will always have the maximum brightness. This works similarly to the **Glitter Contrast** Property.
+
+Only Visible when **Mode** is set to `Angle`.
+
+### Post Contrast
+
+<Property type="range" min="1" max="1000" />
+
+How much contrast the glitter should have. At lower values, the cells will all have a similar brightness. At higher values, cells will have increasingly different brightness levels.
+
+Only visible when **Mode** is set to `Angle` or `Light Reflections`.
+
+### Distant Jaggy Fix
+
+<Property type="range" min="0" max="0.1" />
+
+How much to apply a fix for jagged edges of square glitter. Slightly rounds the corners of the glitter cells.
+
+Only visible when **Shape** is set to `Square`.
+
+### Distance LOD
+
+<Property type="toggle" />
+
+When enabled, the shader will calculate an appropriate Level-of-Detail (LOD) based on the Camera's distance to the mesh.
+
+## Rotations
+
+### Random Offset
+
+<Property type="toggle" />
+
+Applies random rotation offsets to glitter cells.
+
+### Constant Speed
+
+<Property type="float" />
+
+How fast the glitter particles should rotate within the voronoi cell. This is only visible with glitter set to Square, or glitter that uses a Texture.
+
+### Random Speed Range
+
+<Property type="float2" />
+
+Applies a constant, randomly selected rotation speed to each cell, meaning each individual cell will have a consistent rotation speed.
+
+## Sprite Sheet
+
+<Property type="toggle" />
+
+When enabled, allows the usage of a Sprite Sheet to use for your glitter animation. This will change the treatment of the [Shape Texture](#shape-texture) to look for Sprite Sheets instead.
+
+When using a Sprite Sheet, use the properties exposed here to define how many Columns and Rows are in the Sprite Sheet texture.
+
+### Columns
+
+<Property type="float" />
+
+Set how many Columns (Horizontal) are in your Sprite Sheet.
+
+### Rows
+
+<Property type="float" />
+
+Set how many Rows (Vertical) are in your Sprite Sheet.
+
+### Frame Selection
+
+<Property type="dropdown" options={['Random', 'Time Based']} />
+
+Choice of Frame Selection technique to use for the Sprite Sheet. `Random` will let the shader choose the frames randomly, while `Time Based` will expose some properties below that allow you to define the FPS and if a Frame should be selected randomly at start.
+
+### FPS
+
+<Property type="float" />
+
+Sets the FPS (Frames per Second) of the Sprite Sheet animation.
+
+This property is exposed when `Frame Selection` is set to `Time Based`.
+
+### Random Start Frame
+
+<Property type="toggle" />
+
+If enabled, the shader will randomly decide which frame to start the Sprite Sheet animation from each cycle.
+
+This property is exposed when `Frame Selection` is set to `Time Based`.
+
+### Total Frames
+
+<Property type="float" />
+
+Use this if when the Sprite Sheet atlas isn't full and has some empty frames.
+
+If set to `0`, this will be automatic. Keep this set to `0` if all atlases are filled.
+
+## Masking & Light Masking
+
+### Glitter Mask
+
+<Property type="texture" texture="data" />
+
+Mask texture that defines what areas of the mesh should have glitter. Black areas will not have glitter, while white areas will.
+
+### Hide in Shadow
+
+<Property type="range" min="0" max="1" />
+
+How much to hide the glitter in shadow. At `0`, the glitter will be completely visible in shadow. At `1`, the glitter will be completely invisible in shadow.
+
+### Scale with Lighting
+
+<Property type="range" min="0" max="1" />
+
+Increasing this value will scale the brightness of the glitter based on the intensity of scene lighting.
+
+### Global Mask
+
+<Property type="dropdown" options={['Off', '1R', '1G', '1B', '1A', '2R', '2G', '2B', '2A', '3R', '3G', '3B', '3A', '4R', '4G', '4B', '4A']} />
+
+Select which [Global Mask](/modifiers/global-masks.mdx) to use to mask the Glitter effects.
+
+## Hue Shift
+
+<Property type="toggle" />
+
+Enables or Disables the Hue Shift effect for glitter.
+
+### Color Space
+
+<Property type="dropdown" options={['OKLab', 'HSV']} />
+
+Choice of Color Space to use for the Hue Shift. By default, it will be set to `OKLab`.
+
+Learn about the difference of Color Spaces as documented here in [Color Adjust](/color-and-normals/color-adjust.mdx#oklab-vs-hsv).
+
+### Select or Shift
+
+<Property type="dropdown" options={['Hue Select', 'Hue Shift']} default="Hue Shift" />
+
+This dropdown allows you to select how the Color Adjustment should behave when the Hue Shift is used. By default, this will be set to `Hue Shift`.
+
+<details>
+<summary><b>Select or Shift Options</b></summary>
+
+- `Hue Select`: Directly applies the selected Hue as an override to the entire Glitter.
+- `Hue Shift`: Only tints the Glitter based on the lerped value. This is the default behavior.
+
+</details>
+
+### Shift Speed
+
+<Property type="float" />
+
+How much to constantly shift the hue with time. A value of 1 will result in a full hue shift cycle every 20 seconds.
+
+### Hue Shift
+
+<Property type="range" min="0" max="1" />
+
+How much to shift the base color around the hue circle. This value is circular, and will have the same result at 0 and 1.
+
+## Audio Link
+
+<Property type="toggle" />
+
+Enables or Disables Audio Link effects for Glitter.
+
+:::info
+The settings in this section will only be visible when [Audio Link](/audio-link/audio-link.mdx) is activated on the Material.
+:::
+
+### Alpha Band
+
+<Property type="dropdown" options={['Bass', 'Low Mid', 'High Mid', 'Treble']} />
+
+Selects which audio band should be used to modulate glitter alpha. 
+
+### Alpha Mod
+
+<Property type="float2" />
+
+Configures by how much glitter alpha should be modulated when the selected band gets triggered. 'Min' specifies alpha at rest, 'Max' specifies alpha at full activation.
+
+### Max Brightness Band
+
+<Property type="dropdown" options={['Bass', 'Low Mid', 'High Mid', 'Treble']} />
+
+Selects which audio band should be used to modulate glitter max brightness. 
+
+### Max Brightness Mod
+
+<Property type="float2" />
+
+Configures by how much glitter max brightness should be modulated when the selected band gets triggered. 'Min' specifies max brightness at rest, 'Max' specifies max brightness at full activation.
+
+### Size Band
+
+<Property type="dropdown" options={['Bass', 'Low Mid', 'High Mid', 'Treble']} />
+
+Selects which audio band should be used to modulate glitter size. 
+
+### Size Mod
+
+<Property type="float2" />
+
+Configures by how much glitter size should be modulated when the selected band gets triggered. 'Min' specifies the size at rest, 'Max' specifies the size at full activation.
+
+### Chrono Sparkle Type
+
+<Property type="dropdown" />
+
+Determines how chronotensity is applied to sparkle speed.
+
+### Chrono Sparkle Band
+
+<Property type="dropdown" options={['Bass', 'Low Mid', 'High Mid', 'Treble']} />
+
+Selects which audio band should be used to drive chronotensity sparkle speed.
+
+### Chrono Sparkle Speed
+
+<Property type="float" />
+
+Determines how much sparkle speed will be modulated as a function of chronotensity.
+
+### Chrono Rotation Type
+
+<Property type="dropdown" />
+
+Determines how chronotensity is applied to sparkle texture rotation.
+
+### Chrono Rotation Band
+
+<Property type="dropdown" options={['Bass', 'Low Mid', 'High Mid', 'Treble']} />
+
+Selects which audio band should be used to drive chronotensity sparkle texture rotation.
+
+### Chrono Rotation Speed
+
+<Property type="float" />
+
+Determines how much sparkle rotation speed will be modulated as a function of chronotensity.
+
+### Color Override
+
+<Property type="toggle" />
+
+Enables overriding the Color using Audio Link.
+
+#### Color
+
+<Property type="color" />
+
+Sets a Color to use as the Color Override.
+
+#### Theme Color
+
+<Property type="dropdown" options={['Theme Color 0', 'Theme Color 1', 'Theme Color 2', 'Theme Color 3', 'ColorChord 0', 'ColorChord 1', 'ColorChord 2', 'ColorChord 3', 'AL Theme 0', 'AL Theme 1', 'AL Theme 2', 'AL Theme 3']} />
+
+Option to set a Theme Color to use as the Color Override instead.
+
+#### Color Override Band
+
+<Property type="dropdown" options={['Bass', 'Low Mid', 'High Mid', 'Treble']} />
+
+Which Band to use to trigger the Color Override.
+
+#### Color Override Ramp
+
+<Property type="curve" />
+
+Vector ramp to determine how Color Override is used.

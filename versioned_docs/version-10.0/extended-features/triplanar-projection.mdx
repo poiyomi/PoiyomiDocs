@@ -1,0 +1,57 @@
+---
+sidebar_position: 7
+title: Triplanar Projection
+description: Projects a texture onto the mesh from three directions, covering the surface without using UV coordinates.
+keywords: [triplanar, tri-planar, projection, special effect, special fx]
+---
+
+Triplanar Projection is a feature that projects a texture onto the mesh from three directions, on the X, Y, and Z axes, to cover the entire surface without using UV coordinates. The projected textures are blended together based on the mesh's normals, which can assist in reducing visible seams between the projected sides.
+
+{/* POIYOMI PRO LABEL */}
+<a target="_blank" href="https://www.patreon.com/poiyomi">
+<img src="/img/Poiyomi-Pro-Label.png" alt="Pro Feature" width="600px"/>
+</a>
+
+:::danger
+Triplanar Projection is expensive. It samples texture three times and can be especially heavy with normals, masks, lighting, or extra features enabled. Use it conservatively!
+:::
+
+:::warning[Requires Depth Buffer]
+In order to use Triplanar Projection, you will need to place the `DepthGet` Prefab found in the `Assets/_PoiyomiShaders/Prefabs` on your avatar.
+:::
+
+## Type
+
+<Property type="dropdown" options={['Depth Projection', 'Self']} />
+
+Sets the type of Triplanar Projection to use. To use it without the depth buffer, choose `Self`.
+
+## Blend Method
+
+<Property type="dropdown" options={['Normal Blend', 'GPU Gems 3', 'Asymmetric Triplanar']} />
+
+Sets the type of blending to use. Normal Blending is the default, with the option to use GPU Gems 3 or the Asymmetric method.
+
+## Blend Sharpness
+
+<Property type="range" min="0" max="0.55" />
+
+Sets the sharpness factor of the triplanar projection, which can greatly affect the overall appearance at various distances between the Camera and the mesh.
+
+## Triplanar Texture
+
+<Property type="texture" texture="color" />
+
+Color texture to use for the triplanar projection.
+
+## Triplanar Normal
+
+<Property type="texture" texture="normal" />
+
+Normal Map to use with the triplanar projection.
+
+## Triplanar Mask
+
+<Property type="texture" texture="data" />
+
+Black and White mask that determines which areas should only be affected by the triplanar projection.

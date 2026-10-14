@@ -1,0 +1,91 @@
+---
+sidebar_position: 2
+title: Glitching
+description: Distorts the mesh for brief moments to give it a "glitchy" look.
+keywords: [vertex, glitching, vertex glitching]
+---
+
+**Vertex Glitching** is a shader effect that distorts the mesh for brief moments to give it a "glitchy" look.
+
+Each Glitch is triggered through a rolling [sine wave](https://mathematicalmysteries.org/sine-wave/), whereas the Interval is the wavelength and the Threshold is the amplitude of the frequency.
+
+:::note[Z-fighting Issues]
+Vertex Options can cause nasty Z-fighting when seen against projection-based shaders, as they re-render the mesh using a shader of their own. This is a known limitation in Unity.
+:::
+
+<ReactVideo src='/vid/color-and-normals/VertexGlitchingDemo.webm'/>
+<em>Demonstration of the Vertex Glitching shader effect.</em>
+
+## Glitch Interval
+
+<Property type="float" />
+
+Sets the wavelength of the glitching effect. Higher values will yield more tighter gaps.
+
+## Glitch Threshold
+
+<Property type="range" min="0" max="1" />
+
+Sets the amplitude of the triggering threshold in the sine wave. Lower values will yield more noticeable glitches.
+
+## Glitch Strength
+
+<Property type="range" min="0" max="10" />
+
+Sets the intensity of the glitching effect.
+
+## Glitch Texture
+
+<Property type="toggle" />
+
+Enables the ability to use a Texture for the glitching effect.
+
+### Glitch Map
+
+<Property type="texture" texture="data" />
+
+Map to use for the glitching effect. `R` channel is used for Both Directions, `G` channel is used for Right, and `B` channel is used for Left.
+
+### Glitch Density
+
+<Property type="range" min="0" max="50" />
+
+How dense should the glitching occur based on the define Glitch Map.
+
+### Glitch Map Pan Speed
+
+<Property type="range" min="0" max="100" />
+
+How much to pan the Glitch Map for the effect.
+
+## Mirror
+
+<Property type="toggle" />
+
+Enables the ability to control the visibility of the glitching in mirrors.
+
+### Show in Mirror
+
+<Property type="dropdown" options={['Show In Both', 'Show Only in Mirror', "Don't Show in Mirror"]} />
+
+## Audio Link
+
+<Property type="toggle" />
+
+Enables the ability to use Audio Link to control the Glitching Intensity.
+
+:::info
+The settings in this section will only be visible when [Audio Link](/audio-link/audio-link.mdx) is activated on the Material.
+:::
+
+### Glitch Band
+
+<Property type="dropdown" options={['Bass', 'Low Mid', 'High Mid', 'Treble', 'VU Intensity']} />
+
+Choice of which music band to use when triggering Vertex Glitching.
+
+### Override Glitch Intensity with Audio Link
+
+<Property type="toggle" />
+
+If enabled, will override the [Glitch Strength](#glitch-strength) with the selected music band in Audio Link.

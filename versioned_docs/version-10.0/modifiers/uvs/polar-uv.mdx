@@ -1,0 +1,49 @@
+---
+sidebar_position: 5
+title: Polar UV
+description: Set of texture coordinate remapping properties, which converts the UVs into Polar coordinates by wrapping the texture in a circular/radial fashion.
+keywords: [polar, uv, fx, shading, poiyomi, shaders]
+---
+
+Polar UV is a set of texture coordinate remapping properties, which converts the UVs into Polar coordinates. When used, your texture will be wrapped in a circular/radial fashion around the mesh rather than stretched flat.
+
+This section houses the global settings for Polar UV. To use it, select it as a UV option in supported sections of the shader.
+
+## UV
+
+<Property type="dropdown" options={['UV0', 'UV1', 'UV2', 'UV3', 'Panosphere', 'World Pos', 'Local Pos', 'Matcap', 'Screen Space']} default="UV0" />
+
+## Mode
+
+<Property type="dropdown" options={['Standard', 'Log Polar', 'Square Polar']} default="Standard" />
+
+Sets the Polar UV method to use.
+
+## Center Coordinate
+
+<Property type="vector2" />
+
+Sets the center coordinate of the Polar UVs.
+
+| Axis | Function |
+| --- | --- |
+| X | (Horizontal) translates to an angle (θ, theta) around the center point. |
+| Y | (Vertical) translates to a radius (r) outward from that center. |
+
+## Radial Scale
+
+<Property type="float" />
+
+Sets the radial scale of the Polar UV.
+
+## Length Scale
+
+<Property type="float" />
+
+Sets the length scale of the Polar UV.
+
+## Spiral Power
+
+<Property type="float" />
+
+Sets the spiral power of the Polar UV.

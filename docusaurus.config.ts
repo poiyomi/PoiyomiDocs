@@ -191,7 +191,11 @@ const config: Config = {
           lastVersion: 'current',
           versions: {
             current: {
+              label: '11.0',
+            },
+            '10.0': {
               label: '10.0',
+              path: '10.0',
             },
             '9.3': {
               label: '9.3',
@@ -366,6 +370,7 @@ const config: Config = {
           position: "right",
           versions: [
             'current',
+            '10.0',
             '9.3'
           ]
         },

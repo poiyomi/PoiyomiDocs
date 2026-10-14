@@ -1,0 +1,598 @@
+---
+sidebar_position: 6
+title: Attributes
+description: Description of the Drawers and Decorators available in the Thry Editor shader inspector.
+keywords: [drawer, decorator, shader, inspector, thry, editor, thryeditor, poiyomi, shader]
+---
+
+The Attributes are what allow shader developers to draw specific UI elements across each Thry Editor Drawer and Decorator placed in the shader's code. This page covers all the available Drawers and Decorators available to shader developers who utilize Thry Editor.
+
+:::warning[Advanced Information Ahead]
+This page is for shader developers. Therefore, it is intended for advanced users only!
+:::
+
+## Drawers
+
+All drawers mention here resolve to the C# namespace `Thry.ThryEditor.Drawers`.
+
+### Texture Array
+
+- `Type`: **Drawer**, 2DArray
+  - `[TextureArray]`
+  - `[TextureArray(framesProperty)]`
+  - `[TextureArray(framesProperty, fpsProperty)]`
+
+A `Texture2DArray` field that also accepts a multi-file drag and drop of loose images and builds the array asset for you.
+
+After building, it writes the frame count into the named frames property and, when the source files carry a frame rate, the detected FPS into the named fps property. Omitted names fall back to the property options `reference_property` and `fps_property`.
+
+*Example:*
+```hlsl
+[TextureArray(_FlipbookTotalFrames, _FlipbookFPS)] _FlipbookTexArray ("Flipbook Array", 2DArray) = "" {}
+```
+
+### Gradient
+
+- `Type`: **Drawer**, 2D
+  - `[Gradient]`
+  - `[Gradient(gamma)]`
+
+Texture field with an inline gradient swatch. Clicking the swatch opens the Thry Gradient Editor, which bakes the result to a texture and assigns it.
+
+The optional argument sets the color space the gradient is baked in, defaults to Linear. Gradient data is stored per material, so each material keeps its own editable gradient.
+
+*Example:*
+```hlsl
+[Gradient] _ToonRamp ("Lighting Ramp", 2D) = "white" {}
+```
+
+### Curve
+
+- `Type`: **Drawer**, 2D
+  - `[Curve]`
+
+Texture field with an `AnimationCurve` next to it. The curve is rasterized into a ramp texture and saved as a PNG once the curve window closes.
+
+The generated texture's size and format come from the property's `texture` option when one is set.
+
+*Example:*
+```hlsl
+[Curve] _ColorCurve ("Curve", 2D) = "white" {}
+```
+
+### Thry RGBA Packer
+
+- `Type`: **Drawer**, 2D
+  - `[ThryRGBAPacker(rLabel, gLabel, bLabel, aLabel, colorspace, alphaIsTransparency)]`
+  - `[ThryRGBAPacker(rgbLabel, aLabel, colorspace, alphaIsTransparency)]`
+
+Puts a channel packer directly in the inspector. Each slot takes a source texture with its own channel pick, invert toggle and remap slider, or a flat fallback value when empty.
+
+Buttons: **Merge** writes the packed result to disk, **Revert** restores the previous texture, **Advanced** opens the full node packer, **Clear** empties every slot. The configuration lives in material override tags, so it survives reopening the inspector and is un-doable.
+
+The four-argument form treats the first slot as a full RGB source and the second as the alpha, instead of four separate channels.
+
+*Example:*
+```hlsl
+[ThryRGBAPacker(Metallic, Smoothness, AO, Detail, linear, false)] _PackedMask ("Packed Mask", 2D) = "white" {}
+```
+
+### Thry External Texture Tool
+
+- `Type`: **Drawer**, 2D
+  - `[ThryExternalTextureTool(buttonLabel, Namespace.ToolTypeName)]`
+
+Hosts a third-party texture generator inside the property's foldout, found by full type name through `System.Reflection`.
+
+If the type is not present in the project the field degrades to a plain small texture, so the shader still works without the tool installed. When the hosted tool raises a `TextureGenerated` event, the result is assigned to this property automatically.
+
+### Thry Int Range
+
+- `Type`: **Drawer**, Range
+  - `[ThryIntRange]`
+
+An integer slider over the property's declared range, so the value always snaps to a whole number.
+
+*Example:*
+```hlsl
+[ThryIntRange] _SampleCount ("Samples", Range(1, 16)) = 4
+```
+
+### Inverted Slider
+
+- `Type`: **Drawer**, Range
+  - `[InvertedSlider]`
+
+Shows a value that is stored negative as a positive number. The user drags a positive slider; the material receives its negation.
+
+Useful where the shader math needs a negative constant but the artist-facing concept reads it as a positive amount.
+
+### Multi-Slider
+
+- `Type`: **Drawer**, Vector
+  - `[MultiSlider]`
+
+A two-handled min/max slider driven by a Vector property: `X` and `Y` hold the two values, `Z` and `W` hold the slider's own minimum and maximum.
+
+*Example:*
+```hlsl
+[MultiSlider] _Slider ("Multi Slider", Vector) = (0.1, 0.9, 0, 1)
+```
+
+### Byte Slider
+
+- `Type`: **Drawer**, Range(0, 255)
+  - `[ByteSlider]`
+
+A 0–255 slider with a foldout arrow that reveals the eight individual bits underneath.
+
+Requires a `Range` property. On any other type it draws a warning box instead of the slider.
+
+*Example:*
+```hlsl
+[ByteSlider] _StencilRef ("Stencil Reference Value", Range(0, 255)) = 0
+```
+
+### Byte Bit Field
+
+- `Type`: **Drawer**, Float / Range
+  - `[ByteBitField]`
+
+A row of eight checkboxes, one per bit of a 0–255 value, most significant bit on the left.
+
+Handles mixed values across a multi-material selection. Warns when applied to a color, vector, or texture properties.
+
+*Example:*
+```hlsl
+[ByteBitField] _StencilReadMask ("Stencil ReadMask", Range(0, 255)) = 255
+```
+
+### Ramp 4
+
+- `Type`: **Drawer**, Vector
+  - `[Ramp4]`
+  - `[Ramp4(normalized)]`
+  - `[Ramp4(unclampedZ, unclampedW)]`
+
+Packs a smoothstep ramp into one Vector: `X` start value, `Y` end value, `Z` start time, `W` end time.
+
+Draws a live graph with four draggable handles — two in the side gutters for the values, two vertical lines for the times — plus four numeric fields underneath. Times are kept in order automatically.
+
+Modes may be combined, up to three arguments. `normalized` rescales the graph so values outside 0–1 stay visible. `unclampedZ` and `unclampedW` let the corresponding time exceed 1, for ranges measured in metres rather than fractions.
+
+*Example:*
+```hlsl
+[Ramp4(unclampedW)] _FadeRamp ("Distance Fade", Vector) = (0, 1, 0, 5)
+```
+
+### Curve 4
+
+- `Type`: **Drawer**, Vector
+  - `[Curve4]`
+
+A curve field stored in a Vector instead of a texture. Four evenly spaced samples are baked at t = 0, 1/3, 2/3 and 1, each clamped to 0–1.
+
+Reads the vector back into an editable curve, so the shape survives reopening. Shader-side, sample the four values with a smooth cubic.
+
+*Example:*
+```hlsl
+[Curve4] _FalloffCurve ("Falloff (4 samples)", Vector) = (1, 1, 1, 1)
+```
+
+### Vector 2
+
+- `Type`: **Drawer**, Vector
+  - `[Vector2]`
+
+An `X`/`Y` field. The `Z` and `W` components are left exactly as they were, so they can still carry hidden data.
+
+*Example:*
+```hlsl
+[Vector2] _GlobalPanSpeed ("Global Pan Speed", Vector) = (0, 0, 0, 0)
+```
+
+### Vector 3
+
+- `Type`: **Drawer**, Vector
+  - `[Vector3]`
+
+An `X`/`Y`/`Z` field, leaving `W` untouched.
+
+### Vector 31
+
+- `Type`: **Drawer**, Vector
+  - `[Vector31]`
+
+An `X`/`Y`/`Z` field with a separate float field for `W` on the line below.
+
+Split the display name on `|` to label the two rows independently with no pipe, both use the same text.
+
+*Example:*
+```hlsl
+[Vector31] _LightDir ("Direction|Strength", Vector) = (0, 1, 0, 1)
+```
+
+### Vector 3 Slider
+
+- `Type`: **Drawer**, Vector
+  - `[Vector3Slider]`
+  - `[Vector3Slider(min, max)]`
+  - `[Vector3Slider(min, max, allowUnbounded)]`
+
+An `X`/`Y`/`Z` field with a slider bound to `W` underneath, for a direction plus a magnitude.
+
+Passes a min and max to set the slider range. Passing `1` as the third argument swaps the plain slider for a slider paired with a free number field, so `W` can be pushed past the range when needed. Labels split on `|`.
+
+*Example:*
+```hlsl
+[Vector3Slider(0, 10, 1)] _Wind ("Direction|Speed", Vector) = (0, 0, 1, 1)
+```
+
+### Thry Vector
+
+- `Type`: **Drawer**, Vector
+  - `[ThryVector]`
+
+All four components on a single line, where Unity's own vector field spans two.
+
+Draws a warning box if the property is not a Vector.
+
+### Vector Label
+
+- `Type`: **Drawer**, Vector
+  - `[VectorLabel(labelX, labelY)]`
+  - `[VectorLabel(labelX, labelY, labelZ)]`
+  - `[VectorLabel(labelX, labelY, labelZ, labelW)]`
+  - `[VectorLabel(link, Tiling X, Tiling Y)]`
+
+A vector row with your own per-component labels. Only the components you label are written back, so trailing components keep their values.
+
+Adding the literal argument `link` inserts a small chain button before the fields that cycles through three modes. **Off** edits one component at a time. **Ratio** scales every component by the same factor, the way Transform scale behaves. **Delta** adds the same amount to every component. The active mode tints the fields so it stays visible.
+
+*Example:*
+```hlsl
+[VectorLabel(link, Width, Height)] _Size ("Size", Vector) = (1, 1, 0, 0)
+```
+
+### Vector 4 Toggles
+
+- `Type`: **Drawer**, Vector
+  - `[Vector4Toggles]`
+
+Four unlabelled checkboxes writing `0` or `1` into `X`, `Y`, `Z` and `W`.
+
+### Button Vector
+
+- `Type`: **Drawer**, Vector
+  - `[ButtonVector(a)]`
+  - `[ButtonVector(a, b, c, d)]`
+
+One to four labelled toggle buttons, each writing 0 or 1 into the matching component.
+
+A label of `NA` renders that button greyed out and pins its component to 0 — useful for keeping a consistent row width when a slot has no meaning.
+
+*Example:*
+```hlsl
+[ButtonVector(UV0, UV1, UV2, NA)] _UVSet ("UV Set", Vector) = (1, 0, 0, 0)
+```
+
+### Vector To Sliders
+
+- `Type`: **Drawer**, Vector
+  - `[VectorToSliders(label1, min1, max1, label2, min2, max2)]`
+  - `[VectorToSliders(label1, min1, max1, ... up to four)]`
+  - `[VectorToSliders(1, label1, min1, max1, label2, min2, max2)]`
+
+Breaks a Vector into two, three or four independent labelled sliders, each with its own range.
+
+Passing `1` as a leading argument switches to two min/max sliders instead, the first over `X–Y` and the second over `Z–W`.
+
+Bounds may be written as plain numbers. They can also be written as strings with a one-letter prefix, where n means negative and any other letter means positive — the mechanism that lets a negative bound survive Unity's attribute parsing.
+
+*Example:*
+```hlsl
+[VectorToSliders(Offset X, n1, p1, Offset Y, n1, p1)] _Offsets ("Offsets", Vector) = (0, 0, 0, 0)
+```
+
+### Thry Multi-Floats
+
+- `Type`: **Drawer**, Float
+  - `[ThryMultiFloats(displayAsToggles, prop2, ... prop8)]`
+
+Draws this property plus up to seven named siblings as a single row under one label.
+
+The first argument chooses the control: `true` or `1` for checkboxes, anything else for float fields. Animation state, the modified-value indicator and rename state stay synchronized across the whole row, so animating one animates all.
+
+On a UV Tile Discard row — four toggles whose main property matches `_UDIM(Face)DiscardRow#_#` — the tiles additionally gain a right-click rename.
+
+*Example:*
+```hlsl
+[ThryMultiFloats(true, _UDIMDiscardRow0_1, _UDIMDiscardRow0_2, _UDIMDiscardRow0_3)] _UDIMDiscardRow0_0 ("Row 0", Float) = 0
+```
+
+### Thry Multi-Float Buttons
+
+- `Type`: **Drawer**, Float
+  - `[ThryMultiFloatButtons(label0, label1, label2, label3, prop1, prop2, prop3)]`
+
+A row of four toggle buttons — this property plus three named siblings — each carrying its own label.
+
+On UV Tile Discard properties, right-clicking a button opens Rename and Reset. Custom names are stored as material override tags keyed to the unlocked property name, so they survive lock and unlock and travel with section copy and paste. A label written as `u1v3` is displayed as `1, 3`.
+
+### Thry Multi-Float Header
+
+- `Type`: **Drawer**, Float
+  - `[ThryMultiFloatHeader(label0, label1, label2, label3)]`
+
+Purely decorative — it edits nothing and registers no drawer with ThryEditor. Attach it to a throwaway property.
+
+### Thry Toggle
+
+- `Type`: **Drawer**, Float / Range / Int
+  - `[ThryToggle]`
+  - `[ThryToggle(true)]`
+  - `[ThryToggle(KEYWORD)]`
+  - `[ThryToggle(KEYWORD, true)]`
+
+Renders the property as a checkbox that can drive a shader keyword and keeps it in sync with the value.
+
+The single-argument form is overloaded: `true` or `false` sets left alignment, anything else is read as the keyword name. Left alignment puts the box before a rich-text label.
+
+When it manages a keyword, the property cannot be animated, and toggling it pauses animation recording so the keyword change is not written into a clip. Keywords are never touched on a locked material.
+
+*Example:*
+```hlsl
+[ThryToggle(_METALLICGLOSSMAP)] _EnableMetallic ("Enable Metallics", Float) = 0
+```
+
+### Thry Toggle UI
+
+- `Type`: **Drawer**, Float / Range / Int
+  - `[ThryToggleUI]`
+  - `[ThryToggleUI(true)]`
+  - `[ThryToggleUI(KEYWORD, true)]`
+
+The UI-only variant of `[ThryToggle]`, mirroring Unity's `[ToggleUI]`. Same three constructor forms.
+
+Use it for switches that only feed shader maths, so no keyword and no variant is created.
+
+### Thry Wide Enum
+
+- `Type`: **Drawer**, Float / Int
+  - `[ThryWideEnum(name1, value1, name2, value2, ...)]`
+  - `[ThryWideEnum(EnumTypeName, 0)]`
+
+A dropdown that uses the full inspector width instead of Unity's narrow material-editor width.
+
+Takes inline name/value pairs — up to twenty — or the name of a C# enum type. Entry names are run through ThryEditor's locale system, so translations apply. Re-selecting the same entry still fires a change event, which matters for entries wired to `on_value` actions.
+
+*Example:*
+```hlsl
+[ThryWideEnum(Opaque, 0, Cutout, 1, Fade, 2, Transparent, 3)] _Mode ("Rendering Preset", Float) = 0
+```
+
+### Thry Mask
+
+- `Type`: **Drawer**, Float / Int
+  - `[ThryMask(EnumTypeName)]`
+
+A multi-select flags dropdown backed by a C# enum, storing the bitmask in the property.
+
+Choosing "Everything" is normalized to exactly the bits the enum defines rather than `-1`, so the stored value stays meaningful in the shader. ThryEditor ships `Thry.ColorMaskFlags` (Alpha, Blue, Green, Red) for the common case.
+
+*Example:*
+```hlsl
+[ThryMask(ColorMaskFlags)] _ColorMask ("Color Mask", Float) = 15
+```
+
+### Helpbox
+
+- `Type`: **Drawer**, Any
+  - `[Helpbox]`
+  - `[Helpbox(messageType)]`
+  - `[Helpbox(messageType, minLines)]`
+  - `[Helpbox(messageType, minLines, iconType)]`
+
+A boxed message with an icon, using the property's display name as the text. The box grows to fit the wrapped text.
+
+**Icon (Third Argument):** 0 default help, 1 Help, 2 Warning, 3 Danger, 4 Pass, 5 Fail. An unknown index falls back to 0. **Second Argument** sets a minimum height in lines. If the property carries an `onClick` option, clicking the box runs it.
+
+The first argument is stored but never read while drawing, so it does not change the appearance today.
+
+*Example:*
+```hlsl
+[Helpbox(1, 0, 4)] _PassBox ("The stencil check would have passed", Int) = 0
+```
+
+### Thry Header
+
+- `Type`: **Drawer**, Any
+  - `[ThryHeader]`
+  - `[ThryHeader(size)]`
+
+A bold rich-text heading whose text is the property's display name, sized by the optional argument.
+
+Because it sits on a real property, it flows through the normal draw pipeline, so it accepts the usual property options — conditional visibility via `condition_showS`, extra space via `margin_top` and `margin_bottom`, and section indentation.
+
+*Example:*
+```hlsl
+[ThryHeader(14)] _Head ("Advanced--{margin_top:8}", Int) = 0
+```
+
+### Thry Description
+
+- `Type`: **Drawer**, Any
+  - `[ThryDescription]`
+  - `[ThryDescription(size)]`
+
+A word-wrapped paragraph drawn at 60% label opacity so it reads as secondary text next to the controls around it.
+
+Supports rich text, and takes the same property options as `[ThryHeader]`. The dimming is applied to every interaction state, so hovering does not brighten it. `<color>` tags still override it.
+
+*Example:*
+```hlsl
+[ThryDescription] _Note ("Only affects the base pass.--{margin_bottom:8}", Int) = 0
+```
+
+### Thry Rich Label
+
+- `Type`: **Drawer**, Any
+  - `[ThryRichLabel]`
+  - `[ThryRichLabel(size)]`
+
+A single-line bold rich-text label at a fixed height.
+
+The simpler predecessor of `[ThryHeader]`: no wrapping and no margin options. Prefer `[ThryHeader]` for new work unless you specifically want the fixed single-line height.
+
+### Local Message
+
+- `Type`: **Drawer**, Any
+  - `[LocalMessage]`
+
+Renders a message block described by JSON in the property's display name — text, an image, or both, optionally clickable.
+
+Recognized fields: `text`, `texture`, `hover` for the tooltip, `center_position`, and `action` for what a click performs. Text supports rich formatting and wraps to the section width.
+
+*Example:*
+```hlsl
+[LocalMessage] _Msg ("{''text'':''Docs'',''action'':{''type'':''URL'',''data'':''https://example.com''}}", Float) = 0
+```
+
+### Remote Message
+
+- `Type`: **Drawer**, Any
+  - `[RemoteMessage]`
+
+The same message block as `[LocalMessage]`, except the display name is a URL. The JSON is downloaded asynchronously and rendered once it arrives.
+
+Nothing is drawn until the download completes, and a failed request leaves the row empty rather than erroring.
+
+### Thry Shader Optimizer Lock Button
+
+- `Type`: **Drawer**, Float
+  - `[ThryShaderOptimizerLockButton]`
+
+Renders the Lock In / Unlock button and marks the shader as using the optimizer. Adding this property is what opts a shader into locking.
+
+Keeps the property value in step with the material's real locked state, adapts its wording for multi-selection, and exposes the locked-property suffix field when custom renaming is enabled. Disabled on variant materials. The property cannot be animated.
+
+*Example:*
+```hlsl
+[HideInInspector] [ThryShaderOptimizerLockButton] _ShaderOptimizerEnabled ("Lock In Optimizations", Float) = 0
+```
+
+## Decorators
+
+All decorators mentioned here resolve to the C# namespace `Thry.ThryEditor.Decorators`.
+
+### Thry Space
+
+- `Type`: **Decorator**, Any
+  - `[ThrySpace]`
+  - `[ThrySpace(pixels)]`
+
+Inserts vertical space above the property. Defaults to 10 pixels.
+
+*Example:*
+```hlsl
+[ThrySpace(16)] _Color ("Color", Color) = (1,1,1,1)
+```
+
+### Thry Seperator
+
+- `Type`: **Decorator**, Any
+  - `[ThrySeperator]`
+  - `[ThrySeperator(thickness)]`
+  - `[ThrySeperator(thickness, padding)]`
+  - `[ThrySeperator(thickness, paddingTop, paddingBottom)]`
+  - `[ThrySeperator(color)] · [ThrySeperator(color, thickness, paddingTop, paddingBottom)]`
+
+A horizontal rule above the property, in the editor's dark background tone by default.
+
+Thickness and padding are optional, and padding can be set once for both sides or separately for top and bottom. A leading hex string overrides the color; the leading `#` is optional.
+
+*Example:*
+```hlsl
+[ThrySeperator(444444, 1, 8, 4)] _Next ("Next Section", Float) = 0
+```
+
+### Thry Header Label
+
+- `Type`: **Decorator**, Any
+  - `[ThryHeaderLabel(text)]`
+  - `[ThryHeaderLabel(text, size)]`
+
+A bold caption drawn immediately above the property it decorates.
+
+Where `[ThryHeader]` is a drawer on its own dummy property, this rides on a real one: the text is an argument rather than the display name, and it does not accept property options. Reach for it when you want a caption without spending an extra property.
+
+### sRGB Warning
+
+- `Type`: **Decorator**, 2D
+  - `[sRGBWarning]`
+  - `[sRGBWarning(gamma)]`
+
+Warns when the assigned texture's sRGB import setting does not match what the shader expects, with a one-click fix.
+
+Expects a linear texture by default. Pass `gamma` (or `true`) for properties that want sRGB. Nothing is drawn while the user has colorspace warnings switched off in Thry Editor's settings.
+
+*Example:*
+```hlsl
+[sRGBWarning] _NoiseMask ("Noise Mask", 2D) = "white" {}
+```
+
+### Texture Keyword
+
+- `Type`: **Decorator**, 2D
+  - `[TextureKeyword]`
+  - `[TextureKeyword(KEYWORD)]`
+
+Enables a shader keyword while a texture is assigned and disables it the moment the slot is cleared. No visible UI.
+
+With no argument the keyword is `PROP_` followed by the property name uppercased with its leading underscores removed, so `_DetailTex` becomes `PROP_DETAILTEX`. It applies across every selected material.
+
+*Example:*
+```hlsl
+[TextureKeyword] _DetailTex ("Detail Texture", 2D) = "gray" {}
+```
+
+### Thry Decal Positioning
+
+- `Type`: **Decorator**, Any
+  - `[ThryDecalPositioning(texture, uvIndex, position, rotation, scale, offset)]`
+
+Adds **Raycast** and **Scene Tools** buttons that place a Decal directly in the scene view, writing back into the six named properties.
+
+Raycast drops the decal where you click on the mesh. Scene Tools gives you move, rotate and scale handles. The active mode is highlighted, and Escape cancels it, reverting the change. The buttons only appears when the selected object has a Renderer.
+
+### Thry Stencil Calculator
+
+- `Type`: **Decorator**, Any
+  - `[ThryStencilCalculator]`
+  - `[ThryStencilCalculator(Back)]`
+  - `[ThryStencilCalculator(bufferValue, ref, readMask, writeMask, compareFunction, passOp, failOp, zFailOp, checkResult, isOccluded)]`
+
+Simulates the stencil test and shows the resulting buffer value as an editable bit grid, so the outcome of a mask setup is visible without entering play mode.
+
+The properties it reads are editor-side simulation inputs, so they cannot be animated.
+
+*Example:*
+```hlsl
+[ThryStencilCalculator(Back)] _StencilBackCheckResult ("", Float) = 0
+```
+
+### Thry Stencil Summary
+
+- `Type`: **Decorator, Any
+  - `[ThryStencilSummary]`
+  - `[ThryStencilSummary(Back)]`
+  - `[ThryStencilSummary(... ten property names ...)]`
+
+Renders the same stencil state as a decision flow, showing which of the three options the test's outcome selects.
+
+Takes the same three argument format as `[ThryStencilCalculator]`.
+
+*Example:*
+```hlsl
+[ThryStencilSummary] [ThryToggleUI(true)] _StencilIsOccluded ("Simulate ZFail", Float) = 0
+```

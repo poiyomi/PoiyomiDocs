@@ -1,0 +1,144 @@
+---
+sidebar_position: 7
+title: Skin
+description: Skin in Poiyomi Shaders can be customized to match the tone of human skin in Unity.
+keywords: [skin, tone, body, detail, poiyomi, shader]
+---
+
+**Skin** is a Lookup Table (LUT) module that applies a corrected coloring of the human skin in different Tones to the material. It can be used on Avatars with human skin that need an accurate representation of the skin's color.
+
+## Skin Tone Preset
+
+<Property type="dropdown" options={['None', 'Porcelain', 'Light', 'Golden', 'Medium', 'Olive', 'Tan', 'Brown', 'Dark Brown', 'Deep']} />
+
+Configures the Skin Tone to use for the section. All ranges of the human skin are covered in this dropdown menu.
+
+**This dropdown will immediately override the settings in this section for the indicated skin tone.**
+
+## Skin Detail Map
+
+<Property type="texture" texture="data" />
+
+Data Texture Slot used to determine the detail map area for the Skin.
+
+## Pigment
+
+### Skin Color LUT
+
+<Property type="texture" texture="color" default="T_skinColorLUT.png" />
+
+Specifies the LUT map to use for the Skin Color.
+
+:::warning[Required Texture]
+A Skin Color LUT is required in order for Skin to work properly!
+
+If one doesn't exist, Reset the section to populate the slot with the provided default LUT texture.
+:::
+
+### Melanin
+
+<Property type="range" min="0" max="1" default="0.2" />
+
+Sets the natural pigment that determines the color of the human skin.
+
+### Melanin Redness
+
+<Property type="range" min="0" max="1" default="0.5" />
+
+Sets the amount of melanin producing red-yellow tones.
+
+### Hemoglobin
+
+<Property type="range" min="0" max="1" default="0.5" />
+
+Sets the amount of Hemoglobin, the oxygen-carrying protein (or red blood cells) on the outermost layer of the skin.
+
+## Freckles
+
+<Property type="toggle" />
+
+Enables the visibility of generated Freckles on the skin.
+
+### UV
+
+<Property type="dropdown" options={['UV0', 'UV1', 'UV2', 'UV3']} />
+
+Which UV layout on the mesh to generate Freckles on the skin.
+
+### Tiling
+
+<Property type="vector2" />
+
+Configures the amount of Tiling operation to use when generating Freckles on the skin.
+
+### Strength
+
+<Property type="range" min="0" max="1" default="0.5" />
+
+The intensity of the Freckles visibility on the skin.
+
+### Sharpness
+
+<Property type="range" min="1" max="10" default="3" />
+
+The amount of sharpness to operate on the generated freckles.
+
+### Redness Shift
+
+<Property type="range" min="-5" max="5" default="0.1" />
+
+Amount to shift the Freckles with the skin's redness.
+
+## Tan
+
+<Property type="toggle" />
+
+Enables a Tan appearance on the skin.
+
+### UV
+
+<Property type="dropdown" options={['UV0', 'UV1', 'UV2', 'UV3']} />
+
+Which UV layout to have the Tan appearance be used on.
+
+### Tiling
+
+<Property type="vector2" />
+
+Configures the amount of Tiling operation to use for the Tan.
+
+### Amount
+
+<Property type="range" min="0" max="0.5" default="0.15" />
+
+Amount of tanning applied to the skin.
+
+### Redness Shift
+
+<Property type="range" min="-5" max="5" default="-0.1" />
+
+Amount to shift the Tan with the skin's redness.
+
+## Brightness
+
+<Property type="range" min="0.5" max="2" default="1" />
+
+Total amount of the skin's overall brightness.
+
+## Tint
+
+<Property type="color" />
+
+Tint color to use for the skin operator.
+
+## Blend Mode
+
+<Property type="dropdown" options={['Replace', 'Multiply']} default="Replace" />
+
+Defines the blending operator to use when applying skin to the material.
+
+## Blend
+
+<Property type="range" min="0" max="1" default="1" />
+
+This is the overall amount of skin to apply to the base color.

@@ -1,0 +1,36 @@
+---
+sidebar_position: 5
+title: Normal Correct
+description: Normal Correct is used to force normals of the mesh to point towards a specific direction.
+keywords: [normals, normal, normal correction, correction]
+---
+
+Normal Correct forces the normals of the mesh to point towards a certain direction. This can have the effect of "flattening" out the shading, commonly only useful for getting more out of toon shading on faces.
+
+:::info
+The "center" of the Origin is an offset from the `Root Bone` of your mesh. This means the effect will appear differently depending on the specified `Root Bone` your mesh is set to.
+:::
+
+## Normal Correct Amount
+
+<Property type="range" min="0" max="1" default="0.9" />
+
+Controls the intensity of how much it alters the normals.
+
+## X
+
+<Property type="range" min="-1" max="1" default="0" />
+
+The point that acts as the center on the X-axis where the normals are aligned outwards from.
+
+## Y
+
+<Property type="range" min="-1" max="1" default="0.4" />
+
+The point that acts as the center on the Y-axis where the normals are aligned outwards from.
+
+## Z
+
+<Property type="range" min="-1" max="1" default="-0.025" />
+
+The point that acts as the center on the Z-axis where the normals are aligned outwards from.

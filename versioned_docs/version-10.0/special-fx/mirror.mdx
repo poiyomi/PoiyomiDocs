@@ -1,0 +1,120 @@
+---
+sidebar_position: 8
+title: Mirror/Camera Visibility
+description: The Mirror section controls whether the material should appear in VRChat Mirrors or Cameras.
+image: /img/special-fx/Mirror_SpotTheDifference.webp
+keywords: [mirror, mirrors, appearance, special fx, effect, poiyomi, shader]
+---
+
+The Mirror/Camera Visibility section is a very simple section that controls whether the material should appear in VRChat Mirrors, in Cameras, or not at all. This can be used for very niche effects, such as if you want only a specific texture or effect to only show when the material is being viewed from a Mirror, or from a Camera.
+
+In VRChat, this section takes advantage of the game's unique rendering behaviors in Mirrors and Cameras for greater control in various circumstances.
+
+<a>
+<img src="/img/special-fx/Mirror_SpotTheDifference.webp" alt="Spot the Difference!"/>
+</a>
+<em>Spot The Difference: This example image above shows two things that were changed on the Avatar's mirrored clone as a result of using Mirror/Camera Visibility.</em>
+
+## Mode
+
+<Property type="dropdown" options={['VRC', 'Generic']} default="VRC" />
+
+Sets the behavioral mode for the Mirror and Camera visibility.
+
+- `VRC`: Changes settings that cater to VRChat-specific functionality.
+- `Generic`: Changes settings that are for general usages, with limited options available.
+
+## VRC: Mode Settings
+
+These settings below will show if [Mode](#mode) is set to `VRC`.
+
+### Normal (Outside Mirror/Camera)
+
+<Property type="toggle" />
+
+Toggles the visibility of the material in a normal situation, without the requirement of a Mirror or a Camera.
+
+### Mirror (VR)
+
+<Property type="toggle" />
+
+Toggles the visibility of the material in the Mirror in VR.
+
+### Mirror (Desktop)
+
+<Property type="toggle" />
+
+Toggles the visibility of the material in the Mirror while on Desktop Mode.
+
+### Camera (VR)
+
+<Property type="toggle" />
+
+Toggles the visibility of the material in Cameras in VR.
+
+### Camera (Desktop)
+
+<Property type="toggle" />
+
+Toggles the visibility of the material in Cameras while on Desktop Mode.
+
+### Screenshot
+
+<Property type="toggle" />
+
+Toggles the visibility of the material in Screenshots.
+
+## Generic: Mode Settings
+
+These settings below will show if [Mode](#mode) is set to `Generic`.
+
+### Mirror Visibility
+
+<Property type="dropdown" options={['Show In Both', 'Show Only In Mirror', "Don't Show In Mirror"]} />
+
+Mode to use for the mirror visibility.
+
+<details>
+<summary><b>Mirror Visibility Options</b></summary>
+
+- `Show In Both`: The material will be shown both outside and inside the mirror.
+- `Show Only In Mirror`: The material will only be shown inside the mirror.
+- `Don't Show In Mirror`: The material will only be shown outside the mirror.
+
+</details>
+
+## Mirror Texture & Color
+
+<Property type="toggle" />
+
+Enables the ability to change the Main Texture or Color when the material is shown in a Mirror.
+
+### Blending
+
+<Property type="dropdown" options={['Replace', 'Darken', 'Multiply', 'Lighten', 'Screen', 'Subtract', 'Add', 'Overlay', 'Mixed']} />
+
+Set of the Blending of the Mirror Texture in the Mirror.
+
+### Color
+
+<Property type="color" />
+
+Color shown in the Mirror. It is blended multiplicative with the Mirror Texture. If no Mirror Texture is defined, the Color will be used instead.
+
+### Texture
+
+<Property type="texture" texture="color" />
+
+Texture shown in the Mirror. The base color of the material in the Mirror is set from the color of this texture.
+
+### Force Show (Preview)
+
+<Property type="toggle" />
+
+Toggle checkbox used to debug your results, assuming it's being seen in a Mirror or Camera right now.
+
+:::danger[Debugging Only]
+The `Force Show (Preview)` checkbox is designed for debugging the result of your Mirror Texture & Color settings!
+
+Make sure to turn this OFF when you're done testing!
+:::

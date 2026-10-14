@@ -1,0 +1,98 @@
+---
+sidebar_position: 13
+title: Backlight
+description: Backlight expresses lighting from behind a character or model, which can look similar to how Japanese-style illustrations are drawn.
+keywords: [backlight, back, light, shading, lighting, liltoon, poiyomi, shader]
+---
+
+Backlight is a shading feature that is used to express lighting from *behind* a character or model, which can look similar to how Japanese-style illustrations are drawn.
+
+While it may seem similar to some form of Rim Lighting, it's instead rendered quite differently. Lights can receive shadows and follow the light source, which can be effective when the light hits from behind. 
+
+This feature is based off of LilToon's Backlighting feature.
+
+<a>
+<img src="/img/shading/backlight_demo.png" alt="Example of the Backlight Effect."/>
+</a>
+
+*Example of the Backlighting Effect on Teeh's Avatar.*
+
+## Color
+
+<Property type="hdrcolor" />
+
+Color of the light background.
+
+## Texture
+
+<Property type="texture" texture="color" />
+
+Texture that can be used as the Color of the Backlight.
+
+## Main Color Power
+
+<Property type="range" min="0" max="1" />
+
+How much to blend the color of the Backlight with the Base Color.
+
+## Receive Shadow
+
+<Property type="toggle" />
+
+If enabled, receive Shadows from other objects.
+
+## Backface Mask
+
+<Property type="toggle" />
+
+Enables/Disables the visibility of the backlight's light on the Backface.
+
+:::caution[Requires Culling to be Off]
+For this setting to take affect, [Cull](/rendering/rendering.mdx#cull) must be set to `Off` in order for this toggle to take effect. Find this option under [Rendering](/rendering/rendering.mdx).
+:::
+
+## Backlight Options
+
+### Normal Strength
+
+<Property type="range" min="0" max="1" />
+
+How much to blend the lighting with the Normals on your Model or Material.
+
+### Border
+
+<Property type="range" min="0" max="1" />
+
+The range of light that can be used with the Backlight.
+
+### Blur
+
+<Property type="range" min="0" max="1" />
+
+The amount of blur on the Backlight.
+
+### Directivity
+
+<Property type="float" />
+
+Determines the amount of brightness *in degrees* that change according to the direction of the light source.
+
+### View Direction Strength
+
+<Property type="range" min="0" max="1" />
+
+The *degree* to which the brightness is changed according to the direction of light.
+
+## Masking
+
+### Global Mask
+
+<Property type="dropdown" options={['Off', '1R', '1G', '1B', '1A', '2R', '2G', '2B', '2A', '3R', '3G', '3B', '3A', '4R', '4G', '4B', '4A']} />
+
+Select which [Global Mask](/modifiers/global-masks.mdx) to use as the Backlight Mask.
+
+### Apply to Global Mask
+
+<Property type="dropdown" options={['Off', '1R', '1G', '1B', '1A', '2R', '2G', '2B', '2A', '3R', '3G', '3B', '3A', '4R', '4G', '4B', '4A']} />
+
+Select which [Global Mask](/modifiers/global-masks.mdx) to apply Backlight effects onto.

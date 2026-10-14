@@ -1,0 +1,253 @@
+---
+sidebar_position: 12
+title: Stylized Reflections
+description: Stylized Reflections applies a stylized specular highlight effect to the Material, useful for creating a more toon-like stylized effect.
+keywords: [stylized, specular, style, toon, effect, highlight, poiyomi, shader]
+toc_min_heading_level: 2
+toc_max_heading_level: 4
+---
+
+Stylized Reflections is a module that applies a stylized specular highlight or reflective effect to the material. It's useful for creating a more toon-like, stylized effect than the standard specular highlights or reflections from [Reflections & Specular](/shading/reflections-and-specular.mdx).
+
+## Mode
+
+<Property type="dropdown" options={['UnityChan', 'LilToon']} default="UnityChan" />
+
+Choice of which style of Stylized Reflections that you wish to use.
+
+The default mode is `UnityChan`, which creates a cartoon-styled specular highlight in a style that is similar to Unity-Chan Toon Shader.
+
+The mode `LilToon` adds both specular and environmental reflections in a more stylized fashion, a feature commonly found in Lil Toon Shader.
+
+:::note[Documentation Info]
+This page is split into two separate sections, as each of the Modes vastly differ from each other. Use the Table of Contents to navigate.
+:::
+
+## Unity-Chan Specular
+
+Unity-Chan Specular is the default style, applying specular highlight effects to the material in a toon-like fashion.
+
+### Specular Map
+
+<Property type="texture" texture="color" />
+
+The specular map defines what color the specular highlight should have at different points along the model. The way this map is used varies depending on the `Color Blend Mode` setting.
+
+### Tint
+
+<Property type="color" />
+
+Tint color applied to the specular highlights. This color is multiplied with the specular map, if defined.
+
+### Mask
+
+<Property type="texture" texture="data" />
+
+A mask that defines where to apply the specular highlight. Black indicates where the specular highlight should not be applied, and white indicates where it should be applied.
+
+### Specular Mode
+
+<Property type="dropdown" options={['Toon', 'Realistic']} />
+
+Specular mode provides different options for how the specular highlight should be calculated. This modifies the options available for each layer, and how these options are used.
+
+- `Toon`: Uses a simplified specular highlight calculation that provides direct control over the edge smoothness and size.
+- `Realistic`: The standard specular highlight calculation. This is essentially equivalent to the specular highlights from Reflections & Specular.
+
+### Color Blend Mode
+
+<Property type="dropdown" options={['Replace', 'Add']} />
+
+Determines how the specular highlight is blended with the base color of the material.
+
+- `Replace`: The base color is replaced with the specular highlight. In this mode, the Specular Map color is used directly, and allows the specular highlight to darken the color of the material.
+- `Add`: The specular highlight is added to the base color. In this mode, the Specular Map color is used to add to the base color, meaning that darker colors will not contribute to the specular highlight, while light colors will brighten the highlight.
+
+### Strength
+
+<Property type="float" />
+
+Controls the strength of the Stylized Specular Highlight. Generally, the `0-1` range is the most useful. Negative values are not used, and values above 1.0 will make the highlight brighter than standard specular highlights. This value is used to scale both highlight layers.
+
+### Use Light Color
+
+<Property type="toggle" />
+
+Determines whether the Stylized Specular Highlight should use the light color or the color defined with the specular map and tint. This is useful for creating a more toon-like effect by forcing a specific color.
+
+### Layer 1/2
+
+Two highlight layers are available, each with the same options, allowing for a multi-layer specular highlight effect.
+
+#### Size
+
+<Property type="range" min="0" max="1" />
+
+Size of the highlight layer. In the `Toon` mode, this determines where the edge of the  highlight is. In the `Realistic` mode, this is analogous to the `Smoothness` setting in the standard specular highlights, but is reversed, with a larger value indicating a larger highlight.
+
+#### Feather
+
+<Property type="range" min="0" max="1" />
+
+*Only visible if `Toon` mode is selected.*
+
+Controls softness of the highlight. This is similar to changing smoothness in the standard specular highlights, but is independent of the size of the highlight.
+
+#### Strength
+
+<Property type="range" min="0" max="1" />
+
+Strength of the individual highlight layer. This is used to scale the highlight layer, and stacks with the main `Strength` setting.
+
+### Advanced
+
+#### Show on Back
+
+<Property type="toggle" />
+
+Shows the Specular result on the Backface.
+
+:::caution[Requires Culling to be Off]
+For this setting to take affect, [Cull](/rendering/rendering.mdx#cull) must be set to `Off` in order for this toggle to take effect. Find this option under [Rendering](/rendering/rendering.mdx).
+:::
+
+#### Ignore Shadow
+
+<Property type="toggle" />
+
+Ignores shadows on the Specular results.
+
+#### Ignore Casted Shadows
+
+<Property type="toggle" />
+
+Ignores casted shadows on the Specular results.
+
+## Lil Reflections
+
+In Lil Reflections mode, this creates the appearance of metallic or smooth surfaces as if it was in a cartoon. It closely matches the Reflections feature in LilToon shader.
+
+### sReflection
+
+<Property type="toggle" />
+
+Enables Lil Reflections.
+
+### Smoothness
+
+<Property type="texture" texture="data" />
+<Property type="range" min="0" max="1" />
+
+How smooth Lil Reflections should be. Smoothness is a value that controls how diffuse, or blurred, highlights and reflections are. A value of `0.0` means that the material is completely diffuse, meaning reflections will be highly blurred, and specular reflections will be large and not very bright. A value of `1.0` means that the material is completely smooth, and will have very small and concentrated specular.
+
+This value is multiplied with the value of the Smoothness Map. If no smoothness map is defined, this setting is used directly.
+
+### GSAA
+
+<Property type="range" min="0" max="1" />
+
+GSAA (Geometric Specular Anti-Aliasing) is a technique that improves the quality of specular reflections. It uses the geometry of the model to modify the specular reflections in order to reduce Specular Aliasing, which is a visible artifact that occurs at high smoothness levels, especially with highly detailed models or normal maps.
+
+### Metallic
+
+<Property type="texture" texture="data" />
+<Property type="range" min="0" max="1" />
+
+How metallic Lil Reflections should be. Metallics are usually used for (as would be expected) metals. However,The defining feature of metallic surfaces is that reflections are tinted with the color of the material. For non-metallic, the reflections are not tinted.
+
+This value is multiplied with the value of the Metallic Map. If no metallic map is defined, this setting is used directly.
+
+### Color / Mask
+
+<Property type="texture" texture="color" />
+<Property type="color" />
+
+Defines the Color and Tint of the surface used for Lil Reflections.
+
+### Reflectance
+
+<Property type="range" min="0" max="1" />
+
+Defines the intensity of the reflectivity.
+
+### Specular
+
+<Property type="toggle" />
+
+Creates a toon-style specular appearance on the Material.
+
+#### Specular Mode
+
+<Property type="dropdown" options={['Toon', 'Realistic']} />
+
+Specular mode provides different options for how the specular highlight should be calculated. This modifies the options available for each layer, and how these options are used.
+
+- `Toon`: Uses a simplified specular highlight calculation that provides direct control over the edge smoothness and size.
+- `Realistic`: The standard specular highlight calculation. This is essentially equivalent to the specular highlights from Reflections & Specular.
+
+#### Normal Strength
+
+<Property type="range" min="0" max="1" />
+
+How much to blend the speculars with the Normals of your Material.
+
+#### Border
+
+<Property type="range" min="0" max="1" />
+
+Defines the border of the specular.
+
+#### Blur
+
+<Property type="range" min="0" max="1" />
+
+Blurs the border of the specular. Lower values are more sharper, while higher values are more soft.
+
+#### Multi Light Specular
+
+<Property type="toggle" />
+
+Allows MultiLight specular to be used.
+
+### Environmental Reflections
+
+<Property type="toggle" />
+
+Enables the ability to render Environmental Reflections from the World onto the specular reflections.
+
+#### Normal Strength
+
+<Property type="range" min="0" max="1" />
+
+How much to blend the Environmental Reflections with the Normals of your Material.
+
+#### Cubemap Fallback
+
+<Property type="texture" texture="cubemap" />
+<Property type="color" />
+
+Fallback Cubemap which, if specified, will be used for the reference Environment Reflection when there's no probes in the scene.
+
+#### Override
+
+<Property type="toggle" />
+
+If enabled, will strictly enforce the Cubemap Fallback to always be used regardless.
+
+#### Enable Lighting (Fallback)
+
+<Property type="range" min="0" max="1" />
+
+Enables the Lighting Fallback in a variable value.
+
+#### Apply Transparency
+
+<Property type="toggle" />
+
+If enabled, will apply transparency to the material.
+
+#### Blending Modes
+
+<Property type="dropdown" options={['Replace', 'Add', 'Screen', 'Multiply']} />
+
+Choice of blending operations to use.

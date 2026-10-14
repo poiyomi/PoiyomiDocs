@@ -1,0 +1,186 @@
+---
+sidebar_position: 7
+title: Depth Rim Lighting
+description: Depth-based Rim Lighting creates a constant-size Rim in screen space, allowing the Rim to have a more consistent size unlike traditional Rim Lighting.
+keywords: [rim, lighting, depth rim lighting, depth, lighting, shading, poiyomi, shader]
+---
+
+Depth-based Rim Lighting is a rim lighting effect that creates a constant-size rim in screen space, meaning the rim has a more constant size, unlike traditional rim lighting.
+
+This effect relies on the [Depth Buffer/Depth Texture <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-CameraDepthTexture.html) being active in the scene. Since this has some computational overhead, it's not always active. Some worlds will not have this enabled, and some will have it disabled.
+
+To forcibly enable the depth buffer from an avatar, a reliable method is to add a realtime directional light to the scene, which will trigger the depth texture to be updated. A prefab called `DepthGet` is included in the Poiyomi Shaders package.
+
+:::warning[Requires Depth Buffer]
+In order to use Depth Rim Lighting, you will need to place the `DepthGet` Prefab found in the `Assets/_PoiyomiShaders/Prefabs` on your avatar.
+
+Make sure to only enable the depth buffer when you need it! This can be a performance hit, and it's not always necessary.
+:::
+
+## Normal To Use
+
+<Property type="dropdown" options={['Pixel', 'Vertex']} default="Pixel" />
+
+Normal to use for the depth rim light effect. `Pixel` uses the normal of the pixel after all normal maps have been applied. `Vertex` uses the normal from the mesh itself.
+
+## Rim Type
+
+<Property type="dropdown" options={['Two Samples', 'Four Samples', 'Eight Samples']} default="Eight Samples" />
+
+How many samples to use for the depth rim lighting. This will determine what details appear in the rim as drawn by the Depth Buffer.
+
+## Shape Control
+
+### Width
+
+<Property type="range" min="0" max="1" />
+
+How wide the rim should extend from the edge.
+
+### Sharpness
+
+<Property type="range" min="0" max="1">
+[Binary](#binary) is disabled
+</Property>
+
+How sharp the edge of the rim should be. Generally, at higher sharpness, the rim will appear in less areas.
+
+### Depth Threshold
+
+<Property type="range" min="0" max="1" />
+
+The amount of threshold depth to use.
+
+### Binary
+
+<Property type="toggle" />
+
+Enables the usage of Binary to control the shape's sharpness.
+
+:::info
+If Binary is enabled, it will disable [Sharpness](#sharpness)
+:::
+
+### Fixed Size Threshold
+
+<Property type="float" />
+
+Sets a fixed size threshold to use for the shape control.
+
+### Min Distance
+
+<Property type="float" />
+
+Minimum distance to use for the shape size.
+
+### Max Distance
+
+<Property type="float" />
+
+Maximum distance to use for the shape size.
+
+## Light Direction
+
+### Method 
+
+<Property type="dropdown" options={['NDotL', 'Rim Dot Light']} default="NDotL" />
+
+What light direction method to use for how the depth rim lighting is treated with lighting direction.
+
+### Map to Light Direction
+
+<Property type="range" min="0" max="1" />
+
+Sets the mapping to the Light Direction to a specific amount.
+
+### Mix Attenuation
+
+<Property type="range" min="0" max="1" />
+
+How much to mix the light direction attenuation.
+
+### Mix Ramped Light Map
+
+<Property type="range" min="0" max="1" />
+
+How much to mix the ramped light map with the light direction.
+
+## Masking
+
+### Mask
+
+<Property type="texture" texture="data" />
+
+Mask texture slot to mask the depth rim lighting to appear in only the specified areas of the UV.
+
+### Channel
+
+<Property type="dropdown" options={['R', 'G', 'B', 'A']} />
+
+If a Mask texture is used, this should select which color channel in the texture to use for the Mask.
+
+## Color
+
+### Use Base Color
+
+<Property type="range" min="0" max="1" />
+
+How much to incorporate the base color into the rim color. At `0`, only the Rim Color will be used. At `1`, only the base color of the mesh will be used.
+
+### Light Color Mix
+
+<Property type="range" min="0" max="1" />
+
+How much to mix the rim color with the light color. The light color scaled to this value is multiplied with the rim color.
+
+### Rim Color
+
+<Property type="color" />
+
+Base color of the rim.
+
+### Color Brightness
+
+<Property type="range" min="0" max="10" />
+
+How bright should the rim color appear.
+
+### Emission
+
+<Property type="range" min="0" max="20" />
+
+How much emission the rim should exhibit.
+
+## Blending
+
+In most application, choosing one blend mode to use will be sufficient.
+
+### Replace
+
+<Property type="range" min="0" max="1" />
+
+How much to replace the base color with the rim color.
+
+### Add
+
+<Property type="range" min="0" max="1" />
+
+How much to add the rim color to the base color.
+
+### Screen
+
+<Property type="range" min="0" max="1" />
+
+How much to blend screen the rim color to the base color.
+
+### Multiply
+
+<Property type="range" min="0" max="1" />
+
+How much to multiply the rim color with the base color.
+
+### Unlit Add
+
+<Property type="range" min="0" max="1" />
+
+How much to add the rim color to the light intensity (base pass only).

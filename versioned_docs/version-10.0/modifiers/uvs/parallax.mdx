@@ -1,0 +1,68 @@
+---
+sidebar_position: 6
+title: Parallax Heightmapping
+description: Parallax Heightmapping simulates large bumps and protrusions on a Material using a specialized linear texture that determines depth.
+keywords: [parallax, height, map, heightmap, bump, bumpmapping, heightmapping, protrustion, poiyomi, shader]
+---
+
+Parallax Heightmapping is a feature that can simulate large bumps and protrusions on a Material. It utilizes a specialized linear texture that determines how much depth there is on the Material.
+
+This feature is similar to the Height Map function found in the Unity Standard Shader, but with some more options available for additional tweaks.
+
+:::warning
+Parallax Heightmapping is an expensive feature. We recommend you use [Normal Maps](https://www.poiyomi.com/color-and-normals/main#normal-map) instead.
+:::
+
+## Applies To
+
+<Property type="dropdown" options={['UV0', 'UV1', 'UV2', 'UV3', 'Panosphere', 'World Pos', 'Local Pos', 'Polar UV', 'Distorted UV']} />
+
+Choice of UV to use for the Parallax Heightmapping feature.
+
+## Heightmap
+
+<Property type="texture" texture="data" />
+
+The main Height Map texture slot, defining where the bumps and protrusions should be simulated. Darker colors in Grayscale will yield larger depth.
+
+## Mask
+
+<Property type="texture" texture="data" />
+
+Optional Mask that can be used to constrain the Height Map to only affect a specified area.
+
+## Strength
+
+<Property type="range" min="0" max="1" />
+
+Determines the strength of the Height Map. Higher values will yield larger depth.
+
+## Curvature U
+
+<Property type="range" min="0" max="100" />
+
+Adjusts the curvature of the parallax on the Local Horizontal axis.
+
+## Curvature V
+
+<Property type="range" min="0" max="30" />
+
+Adjusts the curvature of the parallax on the Local Vertical axis.
+
+## Steps Min
+
+<Property type="range" min="0" max="128" />
+
+Minimum amount of parallax steps to generate at the beginning of the parallax.
+
+## Steps Max
+
+<Property type="range" min="0" max="128" />
+
+Maximum amount of parallax steps to generate at the end of the parallax.
+
+## Curvature Bias
+
+<Property type="range" min="0" max="1" />
+
+Adjusts the bias of the curvature when rendering the parallax.
