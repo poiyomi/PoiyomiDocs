@@ -28,14 +28,6 @@ After doing so, follow the instructions found in [Download & Install](/download)
 
 <a class="button button--primary" href="/download">Download & Install</a>
 
-### Warudo
-
-Poiyomi Shaders is supported in Warudo Mods for VTubing, as Warudo supports custom shaders. Refer to the [Warudo Handbook <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.warudo.app/docs/modding/mod-sdk) for more information on setting up the Warudo SDK in Unity.
-
-While there are some tools out there that can help automate converting VRChat Avatars to Warudo Mods (such as [Pumkin's Warudo Exporter <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://rurre.github.io/docs/warudo-exporter/intro)), please note that building Warudo Mods from scratch requires using Unity version `2021.3.45f2` as per the Warudo Handbook.
-
-**Be advised that Materials must be <u>manually locked</u> prior to building Warudo Mods!**
-
 ### Basis
 
 The Universal Render Pipeline (URP) version of Poiyomi Shaders may be used on Avatars built for Basis. [Refer to the Basis Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.basisvr.org/en/docs/avatar/shaders#how-to-make-avatars-which-use-poiyomi-shaders-work-in-basisvrurp) on converting an Avatar using Poiyomi Shaders to the URP version. **Be advised the URP version is in BETA and may be unstable!**
@@ -45,17 +37,15 @@ The Universal Render Pipeline (URP) version of Poiyomi Shaders may be used on Av
 Poiyomi Shaders is primarily built for usage in VRChat. Therefore, limitations may apply when used for other purposes.
 
 If you are a Game Developer or hobbyist wishing to use Poiyomi Shaders on a non-VRChat Project, here are the requirements:
-- Supported Unity Versions (Built-In Rendering Pipeline): `2021.3`, `2022.3`, and `6.0` thru `6.6`.
+- Supported Unity Versions (Built-In Rendering Pipeline): `2022.3`, and `6.0` thru `6.6`.
 - Supported Unity Versions (URP): `6.0` thru `6.6`
 - Supported Platforms: `Windows`, `Linux`
-- Supported APIs: `Direct3D11`, `Vulkan (Experimental)`
+- Supported APIs: `Direct3D 11`, `Vulkan (Experimental)`
 
 Please note that this information above are **strict** requirements. We do NOT support the High Definition Render Pipeline (HDRP) in the Unity versions mentioned above.
 
-:::warning[URP Version is in Beta!]
-If using Unity 6 (`6000.0` and up), our Universal Render Pipeline (URP) version is currently in BETA and may be unstable!
-
-Please join the [Poiyomi Shaders Discord <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://discord.gg/poiyomi) in order to access to the Unity 6-compatible URP version of Poiyomi Shaders, found in the channel `#urp-release`.
+:::info[URP Version]
+You can find the URP version on our [GitHub Releases](https://github.com/poiyomi/PoiyomiToonShader/releases/latest) page. Download the Unity Package labeled `Poi.Toon.URP`.
 :::
 
 ## Version 11.0
