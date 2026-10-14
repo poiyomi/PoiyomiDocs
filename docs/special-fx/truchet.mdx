@@ -11,13 +11,13 @@ Truchet is a feature that generates a pattern of non-rotationally symmetric tile
 
 ## UV
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `UV0`/`UV1`/`UV2`/`UV3`/`Panosphere`/`World Pos`/`Local Pos`/`Polar UV`/`Distorted UV`
+<Property type="dropdown" options={['UV0', 'UV1', 'UV2', 'UV3', 'Panosphere', 'World Pos', 'Local Pos', 'Polar UV', 'Distorted UV']} />
 
 Choice of UV to project the Truchet effect on.
 
 ## Blending
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Replace`/`Darken`/`Multiply`/`Lighten`/`Screen`/`Subtract`/`Add`/`Overlay`/`Mixed`
+<Property type="dropdown" options={['Replace', 'Darken', 'Multiply', 'Lighten', 'Screen', 'Subtract', 'Add', 'Overlay', 'Mixed']} />
 
 Which blending operation to use for the Decal's base color.
 
@@ -25,7 +25,7 @@ These are the same blending operations used in Adobe Photoshop.
 
 ## Pan & Offset
 
-- `Type`: <PropertyIcon name="float4" />**Float4**
+<Property type="float4" />
 
 Configures the amount of Panning to run on the Truchet. This can also configure the offset of each Truchet tile.
 
@@ -38,49 +38,49 @@ Configures the amount of Panning to run on the Truchet. This can also configure 
 
 ## Density
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 Configures the density of how many Truchet tiles should appear in the tile.
 
 ## Color
 
-- `Type`: <PropertyIcon name="color" />**Color**
+<Property type="color" />
 
 Configures the Color of the Truchet.
 
 ## Truchet Texture
 
-- `Type`: <PropertyIcon name="texture" />**Color** Texture (`sRGB = On`)
+<Property type="texture" texture="color" />
 
 Which texture to use for the Truchet pattern.
 
 ## Truchet Mask
 
-- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = On`)
+<Property type="texture" texture="data" />
 
 Mask to use to clamp the Truchet effect to only a specific area on the UV.
 
 ## Emission Strength
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 20.0`
+<Property type="range" min="0" max="20" />
 
 How much Emission to apply to the Truchet Color. Higher values will yield a bloom-like effect in certain Worlds.
 
 ## Thiccness
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 0.5`
+<Property type="range" min="0" max="0.5" />
 
 Determines how thick each quarter-circle should be drawn.
 
 ## Edge Sharpness
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Determines how sharp the edge of each quarter-circle. This can be used to create either a sharp edge or a more softer and smooth edge.
 
 ## Alpha
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 How much to apply the Truchet to the Base Color.
 
@@ -90,7 +90,7 @@ This slider can be used to control the main appearance of the Truchet.
 
 ## Override Alpha
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 If enabled, will override the Alpha/Transparency from the Base, if Transparency exists.
 
@@ -102,25 +102,25 @@ The settings in this section will only be visible when [Audio Link](/audio-link/
 
 ### Hide When No AL
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 If enabled, the Truchet will be completely hidden when there's NO Audio Link whatsoever.
 
 ### AL Emission
 
-- `TYpe`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Enables the ability to control the Truchet Emission using Audio Link.
 
 #### Emission Band
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+<Property type="dropdown" options={['Bass', 'Low Mid', 'High Mid', 'Treble']} />
 
 Which band to use for the Audio Link Emission adjustment.
 
 #### Emission Mod
 
-- `Type`: <PropertyIcon name="float2" />**Vector2**
+<Property type="float2" />
 
 How much to modify the Emission of the Truchet.
 
@@ -131,19 +131,19 @@ How much to modify the Emission of the Truchet.
 
 ### AL Alpha
 
-- `TYpe`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Enables the ability to control the Truchet Alpha using Audio Link.
 
 #### Alpha Band
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+<Property type="dropdown" options={['Bass', 'Low Mid', 'High Mid', 'Treble']} />
 
 Which band to use for the Audio Link Alpha adjustment.
 
 #### Alpha Multiply
 
-- `Type`: <PropertyIcon name="float2" />**Vector2**
+<Property type="vector2" />
 
 How much to multiply the Alpha of the Truchet.
 
@@ -154,19 +154,19 @@ How much to multiply the Alpha of the Truchet.
 
 ### Chrono Pan
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Enables the ability to use Chronotensity timing on the Truchet.
 
 #### Band
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+<Property type="dropdown" options={['Bass', 'Low Mid', 'High Mid', 'Treble']} />
 
 Which band to use for the Audio Link Chrono Rotation adjustment.
 
 #### Chrono Motion Type
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**
+<Property type="dropdown" />
 
 Which motion type to use for the Chrono Pan. Chronotensity is an Audio Link feature that allows time-dependent features, which shaders alone cannot do. In this case, chronotensity is used to create a time-dependent rotation of the Truchet.
 
@@ -185,7 +185,7 @@ Which motion type to use for the Chrono Pan. Chronotensity is an Audio Link feat
 
 #### Pan Speed
 
-- `Type`: <PropertyIcon name="float2" />**Float2**
+<Property type="float2" />
 
 Amount to pan the Truchet with Audio Link.
 

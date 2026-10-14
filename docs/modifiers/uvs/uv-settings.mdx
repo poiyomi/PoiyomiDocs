@@ -15,40 +15,36 @@ Each of the UV assignments (UV0, UV1, UV2, and UV3) have the following options l
 
 ### Tiling
 
-- `Type`: <PropertyIcon name="float2" />**Vector**
-  - Default: `X = 1`, `Y = 1`
+<Property type="vector2" default={{X: 1, Y: 1}} />
 
 Sets the Tiling of the UV layout.
 
 ### Offset
 
-- `Type`: <PropertyIcon name="float2" />**Vector**
-  - Default: `X = 0`, `Y = 0`
+<Property type="vector2" default={{X: 0, Y: 0}} />
 
 Sets an Offset for the UV by a specified increment.
 
 ### Angle
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-180 - 180`
-  - Default: `0`
+<Property type="range" min="-180" max="180" default="0" />
 
 Sets a rotational angle offset of the UV layout in degrees.
 
 ### Pan
 
-- `Type`: <PropertyIcon name="float2" />**Vector**
-  - Default: `X = 0`, `Y = 0`
+<Property type="vector2" default={{X: 0, Y: 0}} />
 
 If set, animates the UV in a panning animation on the set axis.
 
 ### Rotate
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 If set, animates the UV in a rotation animation of a specified amount.
 
 ## Shift Backface UV
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 If enabled, will also shift the UVs on the backfaces as well. This is only visible if [Cull](/rendering/rendering.mdx#cull) under Rendering is set to `Off`.

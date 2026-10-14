@@ -12,7 +12,7 @@ View Clip Prevention (also known as the [Uzumore Shader <FAIcon icon="fa-solid f
 
 ## Animation Toggle
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 This is used to globally toggle the Uzumore Shader's effect across the entire material.
 
@@ -22,12 +22,11 @@ Make sure to tag this checkbox as animated if creating toggles for this feature.
 
 ## Object Scale
 
-- `Type`: <PropertyIcon name="float" />**Float**
-  - Default: `1.0`
+<Property type="float" default="1" />
 
 Multiplies the transform scale that Push Amount and Push Bias scales with.
 
-:::warning[Important]
+:::danger[Important]
 This property serves as an critical component in how the shader effect is multiplied. Therefore, users who scale their avatars shorter than average should consider ensuring this value is adjusted accordingly.
 
 If you play VRChat, refer to [VRChat's built-in Avatar Scaling Parameters](https://creators.vrchat.com/avatars/animator-parameters/#avatar-scaling-parameters) in order to understand how to use them in relation to this material property in your Animator.
@@ -35,8 +34,7 @@ If you play VRChat, refer to [VRChat's built-in Avatar Scaling Parameters](https
 
 ## Push Amount (m)
 
-- `Type`: <PropertyIcon name="float" />**Float**
-  - Default: `0.1`
+<Property type="float" default="0.1" />
 
 Measured in meters, this controls how far the mesh will be pushed back when the camera penetrates inside the mesh.
 
@@ -46,20 +44,19 @@ Setting this value too high may cause unintended burying. It's best to keep it a
 
 ## Push Bias
 
-- `Type`: <PropertyIcon name="float" />**Float**
-  - Default: `0.001`
+<Property type="float" default="0.001" />
 
 This measures the bias of the push amount.
 
 ## Push Mask (A)
 
-- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = OFF`)
+<Property type="texture" texture="data" />
 
 Texture Mask that can set the range on where the effect becomes active. White areas on the texture enable sinking, while Black areas disable the effect.
 
 ## Push Mask Channel
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `R`/`G`/`B`/`A`
+<Property type="dropdown" options={['R', 'G', 'B', 'A']} />
 
 Which channel from the Push Mask to use as the mask.
 

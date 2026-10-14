@@ -11,11 +11,17 @@ This section houses the global settings for Polar UV. To use it, select it as a 
 
 ## UV
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `UV0`/`UV1`/`UV2`/`UV3`/`Panosphere`/`World Pos`/`Local Pos`
+<Property type="dropdown" options={['UV0', 'UV1', 'UV2', 'UV3', 'Panosphere', 'World Pos', 'Local Pos', 'Matcap', 'Screen Space']} default="UV0" />
+
+## Mode
+
+<Property type="dropdown" options={['Standard', 'Log Polar', 'Square Polar']} default="Standard" />
+
+Sets the Polar UV method to use.
 
 ## Center Coordinate
 
-- `Type`: <PropertyIcon name="vector2" />**Vector2**
+<Property type="vector2" />
 
 Sets the center coordinate of the Polar UVs.
 
@@ -26,18 +32,18 @@ Sets the center coordinate of the Polar UVs.
 
 ## Radial Scale
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 Sets the radial scale of the Polar UV.
 
 ## Length Scale
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 Sets the length scale of the Polar UV.
 
 ## Spiral Power
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 Sets the spiral power of the Polar UV.

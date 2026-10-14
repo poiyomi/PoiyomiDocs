@@ -23,18 +23,18 @@ Depth Bulge doesn't write to depth, which can break certain transparent effects 
 
 ## Bulge Mask
 
-- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = Off`)
+<Property type="texture" texture="data" />
 
 Mask to use for the Depth Bulge.
 
 ## Touch Distance
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Minimum amount of distance for the Depth Bulge to affect the Mesh.
 
 ## Bulge Height
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-0.2 - 0.2`
+<Property type="range" min="-0.2" max="0.2" />
 
 The maximum Height of the Depth Bulge effect.

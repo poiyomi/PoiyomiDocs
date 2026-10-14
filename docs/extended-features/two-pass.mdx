@@ -17,48 +17,48 @@ Because the Two Pass shader renders everything twice, it can have a slight perfo
 
 ### Rendering Preset
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**
+<Property type="dropdown" />
 
 Sets the Rendering Preset for the 2nd Pass. Refer to the [Rendering Presets](/general/render-preset.mdx) for more information on what they do.
 
 ### First Pass Mask
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+<Property type="dropdown" options={['Off', '1R', '1G', '1B', '1A', '2R', '2G', '2B', '2A', '3R', '3G', '3B', '3A', '4R', '4G', '4B', '4A']} />
 
 Sets which Global Mask should be used as the Mask for the Base Pass.
 
 ### 2nd Pass Mask
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+<Property type="dropdown" options={['Off', '1R', '1G', '1B', '1A', '2R', '2G', '2B', '2A', '3R', '3G', '3B', '3A', '4R', '4G', '4B', '4A']} />
 
 Sets which Global Mask should be used as the Mask for the 2nd Pass.
 
 ### Override Main Color
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 If enabled, the Second Pass will override the Main Color of the Material.
 
 ### Alpha Cutoff
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Just like it was described in [Color & Normals](/color-and-normals/color-and-normals.mdx#alpha-cutoff), the **Alpha Cutoff** value sets the alpha value for the 2nd Pass at which to [clip](https://docs.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-clip) a pixel. If the alpha value of a pixel is below this value, the pixel is [discarded](https://docs.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-discard).
 
 ### Invert Alpha Cutoff
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 This inverts the Alpha Cutoff.
 
 ### Force Opaque
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Just like it was described in [Alpha Options](/color-and-normals/alpha-options.mdx#force-opaque), this option forces the 2nd Pass to have an alpha value of 1. Generally, this will result in any transparency on the 2nd Pass being disabled.
 
 ### Alpha Power
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 10.0`
+<Property type="range" min="0" max="10" />
 
 Sets the power factor of the Alpha on the 2nd Pass.

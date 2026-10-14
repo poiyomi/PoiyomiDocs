@@ -17,7 +17,7 @@ To use Poiyomi + Lil Fur, select the shader version `.poiyomi/Poiyomi Toon + Lil
 
 ## Fur Mode
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Cutout`/`Transparent`
+<Property type="dropdown" options={['Cutout', 'Transparent']} />
 
 This chooses the rendering mode to use for Lil Fur. Settings will be applied to the module's [Rendering](#lil-fur-rendering) properties.
 
@@ -25,7 +25,7 @@ For reference on the meanings of these modes, see [Rendering Presets](/general/r
 
 ### Fur Mask (RGBA)
 
-- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = OFF`)
+<Property type="texture" texture="data" />
 
 Mask Texture in grayscale that determines the length of the Fur in various places on the UV space. Areas in darker grayscale will reduce the length based on the initial [Length](#length) value set.
 
@@ -35,46 +35,44 @@ Determines and caps the length of the Fur.
 
 ### Normal Map
 
-- `Type`: <PropertyIcon name="texture" />**Normal Map** Texture (`sRGB = OFF`)
-  - `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 10.0`
+<Property type="texture" texture="normal" />
+<Property type="range" min="0" max="10" />
 
 The Fur Normal Map determines the direction of the Fur strands.
 
 ### Vector
 
-- `Type`: <PropertyIcon name="float3" />**Float3**
-  - Default: `X = 0`, `Y = 0`, `Z = 1`
+<Property type="float3" default={{X: 0, Y: 0, Z: 1}} />
 
 Sets the vectors on the direction of the Fur in `X`, `Y`, and `Z`.
 
 ### Length
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 0.5`
-  - Default: `0.02`
+<Property type="range" min="0" max="0.5" default="0.02" />
 
 Sets the total length of the Fur hairs.
 
 ### Length Mask
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`R`/`G`/`B`/`A`
+<Property type="dropdown" options={['Off', 'R', 'G', 'B', 'A']} />
 
 When specified, the fur's length is determined from the selected channel specified from the Fur Mask.
 
 ### Use Vertex Colors
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 If enabled, will use your mesh's Vertex Colors as the Fur Vector.
 
 ### Gravity
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Sets how much the Fur will face down from the force of gravity. The source of the Gravity is determined by the World's Z direction.
 
 ### Randomize
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 Sets a degree on how much each direction of the fur is randomized.
 
@@ -82,8 +80,7 @@ Sets a degree on how much each direction of the fur is randomized.
 
 ### Noise
 
-- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = OFF`)
-  - Default: `_PoiyomiShaders/Textures/Fur/lil_noise_fur_2.png`
+<Property type="texture" texture="data" default="_PoiyomiShaders/Textures/Fur/lil_noise_fur_2.png" />
 
 Sets a noise texture to use in the fur generation. By default, this is set to a noise texture included in the shader package, courtesy of lilxyzw.
 
@@ -93,13 +90,13 @@ LilFur has no effect if this texture slot is empty. Make sure this is properly a
 
 ### Alpha Mask
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`R`/`G`/`B`/`A`
+<Property type="dropdown" options={['Off', 'R', 'G', 'B', 'A']} />
 
 When specified, the fur is disabled on areas that are masked out in the specific color channel.
 
 ### AO
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Sets the degree of amount to apply shading to the fur. This may show an darkened underlying structure of the furs (triangular patterns) from certain angles when increased, creating a slightly realistic appearance.
 
@@ -107,28 +104,25 @@ Sets the degree of amount to apply shading to the fur. This may show an darkened
 
 ### Layer Count
 
-- `Type`: <PropertyIcon name="floatrange" />**Int**, Range: `1 - 3`
-  - Default: `2`
+<Property type="int" min="1" max="3" default="2" />
 
 Amount of Fur that is produced. The higher the number, the denser and higher the load is.
 
 ### Root Width
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
-  - Default: `0.0`
+<Property type="range" min="0" max="1" default="0" />
 
 Sets the thickness of the root to increase density and make the main body less visible.
 
 ### Width
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
-  - Default: `0.15`
+<Property type="range" min="0" max="1" default="0.15" />
 
 Set's the width of the layer. Typically this should be of a small value. Higher values may yield more "blocky" results.
 
 ## Wind
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Enables an effect where Fur can be simulated with wind, determined by the settings exposed here.
 
@@ -136,25 +130,25 @@ Enables an effect where Fur can be simulated with wind, determined by the settin
 
 #### Direction
 
-- `Type`: <PropertyIcon name="vector4" />**Vector4**
+<Property type="vector4" />
 
 Sets the direction of the wind in X, Y, Z, and W axis.
 
 #### Amplitude
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 2.0`
+<Property type="range" min="0" max="2" />
 
 Sets the intensity of how the fur should be simulated with wind, back to back. This can create an effect where the wind changes direction at frequent speed.
 
 #### Speed
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 Sets the primary speed of the wind.
 
 #### Frequency
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 Sets how frequent this effect is given to the fur.
 
@@ -162,25 +156,25 @@ Sets how frequent this effect is given to the fur.
 
 #### Direction
 
-- `Type`: <PropertyIcon name="vector4" />**Vector4**
+<Property type="vector4" />
 
 Sets the direction of the detailing wind in X, Y, Z, and W axis.
 
 #### Amplitude
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 2.0`
+<Property type="range" min="0" max="2" />
 
 Sets the intensity of how the fur should be simulated with wind, back to back, on the secondary pass. This can create an effect where the wind changes direction at frequent speed.
 
 #### Speed
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 Sets the secondary speed of the wind.
 
 #### Frequency
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 Sets how frequent this secondary effect is given to the fur.
 
@@ -188,19 +182,19 @@ Sets how frequent this secondary effect is given to the fur.
 
 ### Color
 
-- `Type`: <PropertyIcon name="color" />**Color**
+<Property type="color" />
 
 Color of the Rim Lighting on the Fur.
 
 ### Fresnel Power
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.01 - 50.0`
+<Property type="range" min="0.01" max="50" />
 
 Sets the Fresnel strength of the Rim Lighting on the Fur.
 
 ### Anti Light
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Sets the Anti Light factor on the Fur's Rim Lighting.
 
@@ -214,15 +208,13 @@ Most, if not all properties that are listed here are the same descriptions as no
 
 ### Cull
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Back`/`Front`/`Off`
-  - Default: `Off`
+<Property type="dropdown" options={['Back', 'Front', 'Off']} default="Off" />
 
 Sets what faces should be culled.
 
 ### ZTest
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Disabled`/`Never`/`Less`/`Equal`/`LessEqual`/`Greater`/`NotEqual`/`GreaterEqual`/`Always`
-  - Default: `LessEqual`
+<Property type="dropdown" options={['Disabled', 'Never', 'Less', 'Equal', 'LessEqual', 'Greater', 'NotEqual', 'GreaterEqual', 'Always']} default="LessEqual" />
 
 Sets how the shader should test the depth buffer on the Fur. By default, the depth buffer is tested, and if the depth value is not less than or equal to the current value, the pixel is discarded.
 
@@ -230,17 +222,15 @@ Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-r
 
 ### ZWrite
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`On`
-  - Default: Determined by [Fur Mode](#fur-mode)
+<Property type="dropdown" options={['Off', 'On']} />
 
-Determines whether the shader should write to the depth buffer on the Fur. For Cutout, this is usually `On`, but for Transparent, this is usually `Off`.
+Determines whether the shader should write to the depth buffer on the Fur. Its default depends on the [Fur Mode](#fur-mode): for Cutout, this is usually `On`, but for Transparent, this is usually `Off`.
 
 Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-ZWrite.html).
 
 ### ZClip
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
-  - Default: `On`
+<Property type="toggle" default="On" />
 
 Enables or Disables the GPU's Depth Clip Mode on the Fur, which determines how the GPU handles fragments of the Shader that are outside of the Near and Far Planes.
 
@@ -248,8 +238,7 @@ Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-r
 
 ### Offset Factor
 
-- `Type`: <PropertyIcon name="float" />**Float**
-  - Default: `0`
+<Property type="float" default="0" />
 
 Offset factor moves where a polygon is rendered in screen-space on the Fur. This doesn't change the visual appearance of the polygon, but can be used to specially modify the depth value of the polygon.
 
@@ -257,8 +246,7 @@ Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-r
 
 ### Offset Units
 
-- `Type`: <PropertyIcon name="float" />**Float**
-  - Default: `0`
+<Property type="float" default="0" />
 
 A fixed value to move the polygon away from or toward the camera, while keeping it visually the same size on the Fur.
 
@@ -268,8 +256,7 @@ Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-r
 
 #### Color Mask
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `None`/`R`/`G`/`B`/`A`/`RGB`/`RGBA`
-  - Default: `Everything`
+<Property type="dropdown" options={['None', 'R', 'G', 'B', 'A', 'RGB', 'RGBA']} default="Everything" />
 
 Color Mask determines which color channels should be rendered on the Fur. By default, this is set to `RGBA`, which means that all colors are rendered. All permutations of color channels are available.
 
@@ -277,7 +264,7 @@ Learn more at [Unity's Documentation <FAIcon icon="fa-solid fa-square-arrow-up-r
 
 #### Alpha To Mask
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Sets the Alpha to affect the Mask of the Fur.
 
@@ -287,19 +274,19 @@ These configurations will also appear for the Fur's **Forward Add** pass as well
 
 #### RGB Blend Op
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Add`/`Subtract`/`ReverseSubtract`/`Min`/`Max`/`LogicalClear`/`LogicalSet`/`LogicalCopy`/`LogicalCopyInverted`/`LogicalNoop`/`LogicalInvert`/`LogicalAnd`/`LogicalNand`/`LogicalOr`/`LogicalXor`/`LogicalEquivalence`/`LogicalAndReverse`/`LogicalAndInverted`/`LogicalOrReverse`/`LogicalOrInverted`/`Multiply`/`Screen`/`Overlay`/`Darken`/`Lighten`/`ColorDodge`/`ColorBurn`/`HardLight`/`SoftLight`/`Difference`/`Exclusion`/`HSLHue`/`HSLSaturation`/`HSLColor`/`HSLLuminosity`
+<Property type="dropdown" options={['Add', 'Subtract', 'ReverseSubtract', 'Min', 'Max', 'LogicalClear', 'LogicalSet', 'LogicalCopy', 'LogicalCopyInverted', 'LogicalNoop', 'LogicalInvert', 'LogicalAnd', 'LogicalNand', 'LogicalOr', 'LogicalXor', 'LogicalEquivalence', 'LogicalAndReverse', 'LogicalAndInverted', 'LogicalOrReverse', 'LogicalOrInverted', 'Multiply', 'Screen', 'Overlay', 'Darken', 'Lighten', 'ColorDodge', 'ColorBurn', 'HardLight', 'SoftLight', 'Difference', 'Exclusion', 'HSLHue', 'HSLSaturation', 'HSLColor', 'HSLLuminosity']} />
 
 Which blend operator to use for the RGB channels on the Fur. This is almost always set to `Add`. See the [Unity Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-BlendOp.html) for more information.
 
 #### RGB Source Blend
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Zero`/`One`/`DstColor`/`SrcColor`/`OneMinusDstColor`/`SrcAlpha`/`OneMinusSrcColor`/`DstAlpha`/`OneMinusDstAlpha`/`SrcAlphaSaturate`/`OneMinusSrcAlpha`
+<Property type="dropdown" options={['Zero', 'One', 'DstColor', 'SrcColor', 'OneMinusDstColor', 'SrcAlpha', 'OneMinusSrcColor', 'DstAlpha', 'OneMinusDstAlpha', 'SrcAlphaSaturate', 'OneMinusSrcAlpha']} />
 
 Which blend factors to use for the source on the Fur. See the [Unity Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-Blend.html) and [Rendering Presets](/general/render-preset.mdx) page for more information.
 
 #### RGB Destination Blend
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Zero`/`One`/`DstColor`/`SrcColor`/`OneMinusDstColor`/`SrcAlpha`/`OneMinusSrcColor`/`DstAlpha`/`OneMinusDstAlpha`/`SrcAlphaSaturate`/`OneMinusSrcAlpha`
+<Property type="dropdown" options={['Zero', 'One', 'DstColor', 'SrcColor', 'OneMinusDstColor', 'SrcAlpha', 'OneMinusSrcColor', 'DstAlpha', 'OneMinusDstAlpha', 'SrcAlphaSaturate', 'OneMinusSrcAlpha']} />
 
 Which blend factors to use for the destination on the Fur. See the [Unity Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-Blend.html) and [Rendering Presets](/general/render-preset.mdx) page for more information.
 
@@ -309,19 +296,19 @@ These configurations will also appear for the Fur's **Forward Add** pass as well
 
 ##### Alpha Blend Op
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Add`/`Subtract`/`ReverseSubtract`/`Min`/`Max`/`LogicalClear`/`LogicalSet`/`LogicalCopy`/`LogicalCopyInverted`/`LogicalNoop`/`LogicalInvert`/`LogicalAnd`/`LogicalNand`/`LogicalOr`/`LogicalXor`/`LogicalEquivalence`/`LogicalAndReverse`/`LogicalAndInverted`/`LogicalOrReverse`/`LogicalOrInverted`/`Multiply`/`Screen`/`Overlay`/`Darken`/`Lighten`/`ColorDodge`/`ColorBurn`/`HardLight`/`SoftLight`/`Difference`/`Exclusion`/`HSLHue`/`HSLSaturation`/`HSLColor`/`HSLLuminosity`
+<Property type="dropdown" options={['Add', 'Subtract', 'ReverseSubtract', 'Min', 'Max', 'LogicalClear', 'LogicalSet', 'LogicalCopy', 'LogicalCopyInverted', 'LogicalNoop', 'LogicalInvert', 'LogicalAnd', 'LogicalNand', 'LogicalOr', 'LogicalXor', 'LogicalEquivalence', 'LogicalAndReverse', 'LogicalAndInverted', 'LogicalOrReverse', 'LogicalOrInverted', 'Multiply', 'Screen', 'Overlay', 'Darken', 'Lighten', 'ColorDodge', 'ColorBurn', 'HardLight', 'SoftLight', 'Difference', 'Exclusion', 'HSLHue', 'HSLSaturation', 'HSLColor', 'HSLLuminosity']} />
 
 What blend op to use for the Alpha channel on the Fur. This is typically set by the Rendering Preset. See the [Unity Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-BlendOp.html) for more information.
 
 ### Alpha Source Blend
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Zero`/`One`/`DstColor`/`SrcColor`/`OneMinusDstColor`/`SrcAlpha`/`OneMinusSrcColor`/`DstAlpha`/`OneMinusDstAlpha`/`SrcAlphaSaturate`/`OneMinusSrcAlpha`
+<Property type="dropdown" options={['Zero', 'One', 'DstColor', 'SrcColor', 'OneMinusDstColor', 'SrcAlpha', 'OneMinusSrcColor', 'DstAlpha', 'OneMinusDstAlpha', 'SrcAlphaSaturate', 'OneMinusSrcAlpha']} />
 
 Which blend factors to use for the Alpha source on the Fur. See the [Unity Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-Blend.html) and [Rendering Presets](/general/render-preset.mdx) page for more information.
 
 ### Alpha Destination Blend
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Zero`/`One`/`DstColor`/`SrcColor`/`OneMinusDstColor`/`SrcAlpha`/`OneMinusSrcColor`/`DstAlpha`/`OneMinusDstAlpha`/`SrcAlphaSaturate`/`OneMinusSrcAlpha`
+<Property type="dropdown" options={['Zero', 'One', 'DstColor', 'SrcColor', 'OneMinusDstColor', 'SrcAlpha', 'OneMinusSrcColor', 'DstAlpha', 'OneMinusDstAlpha', 'SrcAlphaSaturate', 'OneMinusSrcAlpha']} />
 
 Which blend factors to use for the Alpha destination on the Fur. See the [Unity Documentation <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.unity3d.com/Manual/SL-Blend.html) and [Rendering Presets](/general/render-preset.mdx) page for more information.
 
@@ -333,25 +320,25 @@ Most, if not all properties that are listed here are the same descriptions as no
 
 ### Stencil Type
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Simple`/`Front Face vs Back Face`
+<Property type="dropdown" options={['Simple', 'Front Face vs Back Face']} />
 
 This controls the type of Stencil to use, whether to keep it simple or to compare it to the Front Face against the Back Face of the mesh. For the most part, this is usually set to `Simple`.
 
 ### Stencil Reference Value
 
-- `Type`: <PropertyIcon name="int" />**Integer**, Range: `0 - 255`, Default: `0`
+<Property type="int" min="0" max="255" default="0" />
 
 What reference value to use for the stencil test. This is the value that the stencil buffer is compared to or written from.
 
 ### Stencil ReadMask Value
 
-- `Type`: <PropertyIcon name="int" />**Integer**, Range: `0 - 255`, Default: `255`
+<Property type="int" min="0" max="255" default="255" />
 
 Value used to mask what bits of the stencil buffer are read from. This is best thought of as a binary number, which is bitwise ANDed with the stencil buffer value to determine if the read tests true.
 
 ### Stencil WriteMask Value
 
-- `Type`: <PropertyIcon name="int" />**Integer**, Range: `0 - 255`, Default: `255`
+<Property type="int" min="0" max="255" default="255" />
 
 Value used to mask what bits of the stencil buffer are read from. This is best thought of as a binary number, which is bitwise ANDed with the stencil buffer value to determine if the write tests true.
 
@@ -359,24 +346,24 @@ For a reference on stencil read/write masks, [this thread <FAIcon icon="fa-solid
 
 ### Stencil Pass Op
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Keep`/`Zero`/`Replace`/`Increment`/`Decrement`/`Invert`/`IncrementWrap`/`DecrementWrap`
+<Property type="dropdown" options={['Keep', 'Zero', 'Replace', 'Increment', 'Decrement', 'Invert', 'IncrementWrap', 'DecrementWrap']} />
 
 Defines the operation that the GPU performs on the Stencil buffer when a pixel passes both the Stencil test and the Depth test.
 
 ### Stencil Fail Op
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Keep`/`Zero`/`Replace`/`Increment`/`Decrement`/`Invert`/`IncrementWrap`/`DecrementWrap`
+<Property type="dropdown" options={['Keep', 'Zero', 'Replace', 'Increment', 'Decrement', 'Invert', 'IncrementWrap', 'DecrementWrap']} />
 
 Defines the operation that the GPU performs on the Stencil buffer when a pixel fails the Stencil test.
 
 ### Stencil ZFail Op
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Keep`/`Zero`/`Replace`/`Increment`/`Decrement`/`Invert`/`IncrementWrap`/`DecrementWrap`
+<Property type="dropdown" options={['Keep', 'Zero', 'Replace', 'Increment', 'Decrement', 'Invert', 'IncrementWrap', 'DecrementWrap']} />
 
 Defines the operation that the GPU performs on the Stencil buffer when a pixel passes the Stencil test, but fails the Depth test.
 
 ### Stencil Compare Function
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Disabled`/`Never`/`Less`/`Equal`/`LessEqual`/`Greater`/`NotEqual`/`GreaterEqual`/`Always`
+<Property type="dropdown" options={['Disabled', 'Never', 'Less', 'Equal', 'LessEqual', 'Greater', 'NotEqual', 'GreaterEqual', 'Always']} />
 
 What comparison function to use for the stencil test. This is the function that is used to compare the reference value and the value in the stencil buffer. This can be used to create effects where the stencil buffer is used to determine if a pixel should be drawn or not.

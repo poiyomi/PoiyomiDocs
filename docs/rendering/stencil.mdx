@@ -15,25 +15,25 @@ Outline Stencil will also be visible here containing the same settings as descri
 
 ## Stencil Type
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Simple`/`Front Face vs Back Face`
+<Property type="dropdown" options={['Simple', 'Front Face vs Back Face']} />
 
 This controls the type of Stencil to use, whether to keep it simple or to compare it to the Front Face against the Back Face of the mesh. For the most part, this is usually set to `Simple`.
 
 ## Stencil Reference Value
 
-- `Type`: <PropertyIcon name="int" />**Integer**, Range: `0 - 255`, Default: `0`
+<Property type="int" min="0" max="255" default="0" />
 
 What reference value to use for the stencil test. This is the value that the stencil buffer is compared to or written from.
 
 ## Stencil ReadMask Value
 
-- `Type`: <PropertyIcon name="int" />**Integer**, Range: `0 - 255`, Default: `255`
+<Property type="int" min="0" max="255" default="255" />
 
 Value used to mask what bits of the stencil buffer are read from. This is best thought of as a binary number, which is bitwise ANDed with the stencil buffer value to determine if the read tests true.
 
 ## Stencil WriteMask Value
 
-- `Type`: <PropertyIcon name="int" />**Integer**, Range: `0 - 255`, Default: `255`
+<Property type="int" min="0" max="255" default="255" />
 
 Value used to mask what bits of the stencil buffer are read from. This is best thought of as a binary number, which is bitwise ANDed with the stencil buffer value to determine if the write tests true.
 
@@ -41,24 +41,24 @@ For a reference on stencil read/write masks, [this thread <FAIcon icon="fa-solid
 
 ## Stencil Pass Op
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Keep`/`Zero`/`Replace`/`Increment`/`Decrement`/`Invert`/`IncrementWrap`/`DecrementWrap`
+<Property type="dropdown" options={['Keep', 'Zero', 'Replace', 'Increment', 'Decrement', 'Invert', 'IncrementWrap', 'DecrementWrap']} />
 
 Defines the operation that the GPU performs on the Stencil buffer when a pixel passes both the Stencil test and the Depth test.
 
 ## Stencil Fail Op
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Keep`/`Zero`/`Replace`/`Increment`/`Decrement`/`Invert`/`IncrementWrap`/`DecrementWrap`
+<Property type="dropdown" options={['Keep', 'Zero', 'Replace', 'Increment', 'Decrement', 'Invert', 'IncrementWrap', 'DecrementWrap']} />
 
 Defines the operation that the GPU performs on the Stencil buffer when a pixel fails the Stencil test.
 
 ## Stencil ZFail Op
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Keep`/`Zero`/`Replace`/`Increment`/`Decrement`/`Invert`/`IncrementWrap`/`DecrementWrap`
+<Property type="dropdown" options={['Keep', 'Zero', 'Replace', 'Increment', 'Decrement', 'Invert', 'IncrementWrap', 'DecrementWrap']} />
 
 Defines the operation that the GPU performs on the Stencil buffer when a pixel passes the Stencil test, but fails the Depth test.
 
 ## Stencil Compare Function
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Disabled`/`Never`/`Less`/`Equal`/`LessEqual`/`Greater`/`NotEqual`/`GreaterEqual`/`Always`
+<Property type="dropdown" options={['Disabled', 'Never', 'Less', 'Equal', 'LessEqual', 'Greater', 'NotEqual', 'GreaterEqual', 'Always']} />
 
 What comparison function to use for the stencil test. This is the function that is used to compare the reference value and the value in the stencil buffer. This can be used to create effects where the stencil buffer is used to determine if a pixel should be drawn or not.

@@ -15,54 +15,54 @@ Parallax Heightmapping is an expensive feature. We recommend you use [Normal Map
 
 ## Applies To
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `UV0`/`UV1`/`UV2`/`UV3`/`Panosphere`/`World Pos`/`Local Pos`/`Polar UV`/`Distorted UV`
+<Property type="dropdown" options={['UV0', 'UV1', 'UV2', 'UV3', 'Panosphere', 'World Pos', 'Local Pos', 'Polar UV', 'Distorted UV']} />
 
 Choice of UV to use for the Parallax Heightmapping feature.
 
 ## Heightmap
 
-- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = Off`)
+<Property type="texture" texture="data" />
 
 The main Height Map texture slot, defining where the bumps and protrusions should be simulated. Darker colors in Grayscale will yield larger depth.
 
 ## Mask
 
-- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = Off`)
+<Property type="texture" texture="data" />
 
 Optional Mask that can be used to constrain the Height Map to only affect a specified area.
 
 ## Strength
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Determines the strength of the Height Map. Higher values will yield larger depth.
 
 ## Curvature U
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 100.0`
+<Property type="range" min="0" max="100" />
 
 Adjusts the curvature of the parallax on the Local Horizontal axis.
 
 ## Curvature V
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 30.0`
+<Property type="range" min="0" max="30" />
 
 Adjusts the curvature of the parallax on the Local Vertical axis.
 
 ## Steps Min
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 128.0`
+<Property type="range" min="0" max="128" />
 
 Minimum amount of parallax steps to generate at the beginning of the parallax.
 
 ## Steps Max
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 128.0`
+<Property type="range" min="0" max="128" />
 
 Maximum amount of parallax steps to generate at the end of the parallax.
 
 ## Curvature Bias
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Adjusts the bias of the curvature when rendering the parallax.

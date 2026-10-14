@@ -194,6 +194,7 @@ Anything between `<Property>` and `</Property>` is the condition for the propert
 | `type` | Shows as | Other props |
 | --- | --- | --- |
 | `toggle` | Toggle | |
+| `toggles` | Vector Toggles | `options`: the buttons, like `{['Base', 'Red', 'Green', 'Blue']}`. Each one is labelled with the component it sets (X, Y, Z, W). |
 | `float` | Float | |
 | `range` | Range | `min`, `max` |
 | `int` | Integer | `min`, `max` (optional) |
@@ -203,12 +204,12 @@ Anything between `<Property>` and `</Property>` is the condition for the propert
 | `curve` | Vector Curve | |
 | `color` | Color | |
 | `hdrcolor` | HDR Color | |
-| `texture` | Texture Slot | `texture`: `color`, `data`, `normal`, `cubemap` or `gradient`. Adds the sRGB setting that texture needs, which `srgb={true}` or `srgb={false}` can override. |
+| `texture` | Texture Slot | `texture`: `color`, `data`, `normal`, `cubemap`, `gradient`, `array` or `volume`. Adds the sRGB setting that texture needs, which `srgb={true}` or `srgb={false}` can override. |
 | `dropdown` | Dropdown | `options`: a list like `{['Off', 'On']}` |
 
 Every type also takes:
 
-- `default`: the default value. Use `{{X: 0.5, Y: 0.5}}` for one value per axis, and a hex code like `"#FF8800"` to show a color swatch. On a dropdown, the matching option gets marked instead.
+- `default`: the default value. Use `{{X: 0.5, Y: 0.5}}` for one value per axis, and a hex code like `"#FF8800"` to show a color swatch. On a dropdown, the matching option gets marked instead. On vector toggles, list the buttons that are on, like `{['Base']}`, or `{[]}` if they're all off.
 - `label`: replaces the name shown for the type, e.g. `label="Vector4 Curve"`.
 
 Write numbers as strings (`min="0.0"`) to keep their decimals, since `{0.0}` shows up as `0`.

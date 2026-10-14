@@ -11,7 +11,7 @@ This section houses the global settings for Stochastic Sampling. To use it, enab
 
 ## Sampling Mode
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Deliot Heitz`/`Hextile`/`Off`
+<Property type="dropdown" options={['Deliot Heitz', 'Hextile', 'None']} default="Deliot Heitz" />
 
 Choice of which Sampling Mode to use, both of which are vastly significant in appearance. This will determine what settings are exposed below.
 
@@ -21,7 +21,7 @@ Referring to the method from [Thomas Deliot and Éric Heitz <FAIcon icon="fa-sol
 
 ### Detiling Density
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.1 - 10.0`
+<Property type="range" min="0.1" max="10" />
 
 How dense should the Deliot-Heitz detiling should be.
 
@@ -31,24 +31,24 @@ How dense should the Deliot-Heitz detiling should be.
 
 ### Hex Grid Density
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.1 - 10.0`
+<Property type="range" min="0.1" max="10" />
 
 Sets the density of the hexagonal grid, higher numbers being more dense.
 
 ### Rotation Strength
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 2.0`
+<Property type="range" min="0" max="2" />
 
 Sets the rotation strength of each tile.
 
 ### Falloff Contrast
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.01 - 0.99`
+<Property type="range" min="0.01" max="0.99" />
 
 Sets the falloff contrast of the Hextile sampling.
 
 ### Falloff Power
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 20.0`
+<Property type="range" min="0" max="20" />
 
 Sets the falloff power of the Hextile sampling.

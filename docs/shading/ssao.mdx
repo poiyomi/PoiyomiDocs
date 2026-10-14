@@ -22,7 +22,7 @@ SSAO is a performance heavy effect, so use it mindfully. Add a toggle for [Anima
 
 ## Animatable Toggle
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 This checkbox allows toggling SSAO at runtime.
 
@@ -32,19 +32,19 @@ SSAO rendering is enabled by default. To turn off SSAO in-game, you need to anim
 
 ## AO Intensity
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 5.0`
+<Property type="range" min="0" max="5" />
 
 Determines how intensely AO will be blended.
 
 ## AO Radius
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0001 - 0.02`
+<Property type="range" min="0.0001" max="0.02" />
 
 Determines the radius tested for hemispheric visibility check. This controls how far AO shadows can spread out.
 
 ## AO Quality
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `2.0 - 10.0`
+<Property type="range" min="2" max="10" />
 
 :::warning[Performance]
 This directly controls how many samples from the depth buffer AO takes for each pixel it is run on. If you fill your display with SSAO pixels (common when cuddling, for example) this performance cost adds up. Try starting at 4, and adding .05 jitter. Make sure you evaluate changes in-game and in VR - artifacts isn't generally as noticeable in motion.
@@ -56,63 +56,51 @@ Lower Values will make it look more like a cel-shader, while Higher Values will 
 
 ## Center Importance
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Weights shadows towards the source of occlusion, making shadow falloff more gradual.
 
 ## Depth Bias
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 0.2`
+<Property type="range" min="0" max="0.2" />
 
 Clips away the least intense shadows to help reduce visual artifacts.
 
 ## Cone Bias
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Reduces shadowing on geometry that isn't actually occluded. Generally, you should use this instead of Depth bias.
 
 ## Random Jitter
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Adds a dithered jitter effect which can help mask lower sample counts.
 
 ## Use Normals
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 0 uses vertex normals, 1 uses per-pixel normals when calculating the SSAO.
 
 ## Color and Masking
 
-### Use Color Texture?
+### Color {/* #color */}
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
-
-Enables the Color Map texture slot for SSAO.
-
-#### Color Map
-
-- `Type`: <PropertyIcon name="texture" />**Color** Texture (`sRGB = On`)
+<Property type="texture" texture="color" />
 
 Color Map allows the user to map SSAO shadow color using a texture.
 
-### Use Color Mask?
+### Mask
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
-
-Enables the Color Mask texture slot for SSAO.
-
-#### Mask
-
-- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = Off`)
+<Property type="texture" texture="data" />
 
 Color Mask allows the user to mask out certain areas from being affected by SSAO.
 
 ### HSVG
 
-- `Type`: <PropertyIcon name="float4" />**Float4**
+<Property type="float4" />
 
 Color Adjust fields for SSAO. Refers to Hue, Saturation, Brightness, and Gamma.
 
@@ -123,21 +111,21 @@ Color Adjust fields for SSAO. Refers to Hue, Saturation, Brightness, and Gamma.
 | Z | Value/Brightness |
 | W | Gamma |
 
-### Color
+### Color {/* #color-texture */}
 
-- `Type`: <PropertyIcon name="color" />**Color**
+<Property type="color" />
 
 SSAO shadow color. Black by default.
 
 ### Use Surface Color
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Samples the color from the surface of the Material to use for the SSAO color.
 
 ### Blend Mode
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Repalce`/`Darken`/`Multiply`/`Lighten`/`Screen`/`Subtract`/`Add`/`Overlay`
+<Property type="dropdown" options={['Replace', 'Darken', 'Multiply', 'Lighten', 'Screen', 'Subtract', 'Add', 'Overlay']} />
 
 Which blending operation to use for the SSAO color.
 
@@ -145,36 +133,36 @@ Which blending operation to use for the SSAO color.
 
 ### Hide In Light
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Stylistically hide SSAO under bright lighting conditions.
 
 ### Quality Falloff Start
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 The distance from the camera, in meters, beyond which AO will steadily reduce quality to improve performance.
 
 ### Quality Falloff End
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 The distance from the camera, in meters, beyond which AO will be completely disabled to improve performance.
 
 ### Max Distance Falloff
 
-- `Type`: <PropertyIcon name="float2" />**Float2**
+<Property type="float2" />
 
 Reduce these if your AO looks like it's "reaching too far". X determines the difference in depth (beyond the radius) beyond which AO shadows will begin to attenuate. Y determines the difference in depth (beyond the radius) beyond which AO shadows will completely terminate.
 
 ### Apply From Global Mask
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+<Property type="dropdown" options={['Off', '1R', '1G', '1B', '1A', '2R', '2G', '2B', '2A', '3R', '3G', '3B', '3A', '4R', '4G', '4B', '4A']} />
 
 Select which [Global Mask](/modifiers/global-masks.mdx) to apply to SSAO.
 
 ### Apply To Global Mask
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+<Property type="dropdown" options={['Off', '1R', '1G', '1B', '1A', '2R', '2G', '2B', '2A', '3R', '3G', '3B', '3A', '4R', '4G', '4B', '4A']} />
 
 Select which [Global Mask](/modifiers/global-masks.mdx) SSAO writes to.

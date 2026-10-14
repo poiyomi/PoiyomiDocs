@@ -11,7 +11,7 @@ It is primarily driven by a Pixel Texture, which determines the density of each 
 
 ## Screen Type
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `LCD`/`TN`/`CRT`/`OLED`/`Gameboy`/`Projector`
+<Property type="dropdown" options={['LCD', 'TN', 'CRT', 'OLED', 'Gameboy', 'Projector']} default="OLED" />
 
 Chooses the type of digital display you wish to emulate. These options may expose extra settings depending on which Screen Type is selected.
 
@@ -50,25 +50,25 @@ Simulates the display of how a Project casts light to create images on a flat su
 
 ## Brightness
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 100.0`
+<Property type="range" min="0" max="100" default="1" />
 
 Controls the total brightness of the display.
 
 ## Emission Enabled
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" default="On" />
 
 If enabled, will pass the brightness to the Emissive pass.
 
 ## Pixel Texture
 
-- `Type`: <PropertyIcon name="texture" />**Color** Texture (`sRGB = On`)
+<Property type="texture" texture="color" />
 
 Reference Texture to use in order to display the RGB diode grid. This will be tiled depending on the Resolution set.
 
 ## Mask
 
-- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = Off`)
+<Property type="texture" texture="data" />
 
 Determines where the effects should only display itself on, as determined by the Mask.
 
@@ -76,7 +76,7 @@ Determines where the effects should only display itself on, as determined by the
 
 ### Resolution
 
-- `Type`: <PropertyIcon name="float2" />**Vector2**
+<Property type="vector2" />
 
 Determines the pixel density of the Video Texture effect in order to replicate a specific display resolution.
 
@@ -87,19 +87,19 @@ Determines the pixel density of the Video Texture effect in order to replicate a
 
 ### Pixelate to Resolution
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 If enabled, will pixelate the display to the Resolution depending on viewing distance.
 
 ### Saturation
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 3.0`
+<Property type="range" min="-1" max="3" />
 
 How much to add or subtract saturation from the color of the image.
 
 ### Contrast Boost
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 3.0`
+<Property type="range" min="0" max="3" />
 
 How much to boost the contrast of the image.
 
@@ -111,13 +111,17 @@ This section is only exposed when [Screen Type](#screen-type) is set to `CRT`.
 
 ### Refresh Rate
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float">
+[Screen Type](#screen-type) is set to `CRT`
+</Property>
 
 The amount of times to refresh the screen. This can determine the flickering intensity.
 
 ### Pixel Fade Time
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float">
+[Screen Type](#screen-type) is set to `CRT`
+</Property>
 
 How much time it takes to fade the pixels each refresh.
 
@@ -129,6 +133,8 @@ This section is only exposed when [Screen Type](#screen-type) is set to `Gameboy
 
 ### Color Ramp
 
-- `Type`: <PropertyIcon name="texture" />**Color** Texture (`sRGB = On`)
+<Property type="texture" texture="color">
+[Screen Type](#screen-type) is set to `Gameboy`
+</Property>
 
 Determines which Color Ramp to use for the display emulation.

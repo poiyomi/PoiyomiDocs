@@ -17,19 +17,19 @@ Additionally, Static Batching is unsupported! For this reason, you should keep y
 
 ## GI Emission Multiplier
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**
+<Property type="float" default="1" />
 
 Sets the Global Illumination Multiplier for the Emission's influence on your baked meshes.
 
 ## Double Sided Global Illumination
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" default="Off" />
 
 If enabled, allows the Global Illumination to be baked on both faces.
 
 ## Global Illumination
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `None`/`Baked`/`Realtime`
+<Property type="dropdown" options={['None', 'Baked', 'Realtime']} />
 
 Sets the behavior of how your Material is treated in your environment.
 
@@ -39,12 +39,12 @@ Sets the behavior of how your Material is treated in your environment.
 
 ## Bakery Mode
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `None`/`SH`/`RNM`/`MonoSH`
+<Property type="dropdown" options={['None', 'SH', 'RNM', 'MonoSH']} />
 
 If using Bakery GPU Lightmapper, use this property to choose which mode is being used in Bakery.
 
 ## Use Bicubic Filtering
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 If enabled, will use the Bicubic Filtering algorithm in Global Illumination.

@@ -18,7 +18,7 @@ In Poiyomi Shaders, there are various features that support Audio Link. However,
 
 ## Audio Link
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 If enabled, activates Audio Link features and exposes Audio Link parameter controls for supported modules and effects.
 
@@ -46,7 +46,7 @@ When this feature activates, the following sections in Poiyomi Shaders will have
 
 ### Anim Toggle
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 This checkbox allows toggling Audio Link effects at runtime.
 
@@ -58,25 +58,25 @@ Audio Link is enabled by default. To turn off Audio Link in-game, you need to an
 
 ### Bass
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Modifier for smoothing the Bass Band.
 
 ### Low Mid
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Modifier for smoothing the Low Mid Band.
 
 ### High Mid
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Modifier for smoothing the High Mid Band.
 
 ### Treble
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Modifier for smoothing the Treble Band.
 
@@ -86,7 +86,7 @@ Properties that allow animated overrides of the Audio Bands against Audio Link d
 
 ### Band Overrides
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 When ON, the per‑band sliders below completely replace the incoming AudioLink data for their respective bands. When OFF, normal AudioLink data (if any) is used and the sliders are ignored.
 
@@ -99,25 +99,25 @@ This can be useful if you for some reason wish to use the `Voice` VRChat Paramet
 
 #### Bass
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Value to force for the Bass band while Band Overrides is enabled. (0 = silence, 1 = full). The value always overrides while Band Overrides is ON, even if it is `0.0`. When Band Overrides is OFF this value does nothing.
 
 #### Low Mid
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Value to force for the Low Mid band while Band Overrides is enabled. Behaves identically to Bass.
 
 #### High Mid
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Value to force for the High Mid band while Band Overrides is enabled. Behaves identically to Bass.
 
 #### Treble
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Value to force for the Treble band while Band Overrides is enabled. Behaves identically to Bass.
 

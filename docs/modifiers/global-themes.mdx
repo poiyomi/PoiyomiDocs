@@ -33,14 +33,13 @@ Each of the 4 Global Themes (0, 1, 2, 3) have the following unique options liste
 
 ## Theme Color
 
-- `Type`: <PropertyIcon name="hdrcolor" />**HDR Color**
+<Property type="hdrcolor" />
 
 Color to use for Theme Color.
 
 ## Color Space
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `OKLab`/`HSV`
-  - Default: `OKLab`
+<Property type="dropdown" options={['OKLab', 'HSV']} default="OKLab" />
 
 Choice of Color Space to use for the Hue Shift.
 
@@ -48,13 +47,13 @@ Learn about the difference of Color Spaces as documented in [Color Adjust](/colo
 
 ## Shift Speed
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 How much to constantly shift the Theme Color Hue with time. A value of 1 will result in a full hue shift cycle every 20 seconds.
 
 ## Hue Shift
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 How much to shift the Theme Color around the Hue Circle. This value is circular, and will have the same result at 0 and 1.
 
@@ -62,8 +61,7 @@ This functions in the same fashion as Color Adjust's [Hue Shift](/color-and-norm
 
 ## Saturation Style
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Saturation Value (old)`/`Saturation Brightness`
-  - Default: `Saturation Brightness`
+<Property type="dropdown" options={['Saturation Value (old)', 'Saturation Brightness']} default="Saturation Brightness" />
 
 Selects the type of Saturation or Brightness style to use.
 
@@ -74,9 +72,9 @@ This dropdown is provided for backwards-compatibility with both old 9.3 and newe
 
 ## Saturation
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 10.0`
-  - Normal: `0.0`
-  - Conditional: Requires [Saturation Style](#saturation-style) set to `Saturation Brightness`.
+<Property type="range" min="-1" max="10" default="0">
+[Saturation Style](#saturation-style) is set to `Saturation Brightness`
+</Property>
 
 Adjusts the saturation of the Theme Color. 
 
@@ -86,9 +84,9 @@ This is implemented as a lerp between the base color and a grayscale version of 
 
 ## Brightness
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 2.0`
-  - Normal: `0.0`
-  - Conditional: Requires [Saturation Style](#saturation-style) set to `Saturation Brightness`.
+<Property type="range" min="-1" max="2" default="0">
+[Saturation Style](#saturation-style) is set to `Saturation Brightness`
+</Property>
 
 Adjusts the brightness of the Theme Color. 
 
@@ -96,9 +94,9 @@ This increases or decreases brightness directly on top of the Theme Color, witho
 
 ## Saturation Adjust
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
-  - Normal: `0.0`
-  - Conditional: Requires [Saturation Style](#saturation-style) set to `Saturation Value (old)`.
+<Property type="range" min="-1" max="1" default="0">
+[Saturation Style](#saturation-style) is set to `Saturation Value (old)`
+</Property>
 
 Adjusts the Saturation of the Theme Color.
 
@@ -106,8 +104,8 @@ A value of -1 will make the Theme Color fully de-saturate (grayscale). A value o
 
 ## Value Adjust
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
-  - Normal: `0.0`
-  - Conditional: Requires [Saturation Style](#saturation-style) set to `Saturation Value (old)`.
+<Property type="range" min="-1" max="1" default="0">
+[Saturation Style](#saturation-style) is set to `Saturation Value (old)`
+</Property>
 
 Adjusts the brightness value of the Theme Color on top, without regard for it's Hue or Tone.

@@ -15,9 +15,23 @@ To use Grab Pass, select the Shader version `.poiyomi/Poiyomi Toon Grab Pass`. I
 Grab Pass is an expensive feature - it has to take a screenshot every frame. This will always cause some amount of performance hit, so use it judiciously!
 :::
 
+## Mask Type
+
+<Property type="dropdown" options={['Texture', 'Vertex Color']} default="Texture" />
+
+If using Masking for Grab Pass effects, Texture will be used. Otherwise, this can be set to have the Masking be sample from your mesh's Vertex Colors.
+
+## Masks {/* #masks-texture */}
+
+<Property type="texture" texture="data">
+[Mask Type](#mask-type) is set to `Texture`
+</Property>
+
+Sets the masks to use for Grab Pass.
+
 ## Refraction
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Enables or disables refraction.
 
@@ -25,8 +39,7 @@ Refraction is a special effect that makes the Grab Pass appear to be refracted b
 
 ### Refraction
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 3.0`
-  - Default: `1.0`
+<Property type="range" min="0" max="3" default="1" />
 
 How much refraction to add. This is equivalent to the [refractive index](https://en.wikipedia.org/wiki/Refractive_index) of the material. A value of 1.0 means no refraction. Some common physical values include:
 
@@ -40,7 +53,7 @@ A refractive index of less than 1.0 is not physically accurate, but it can be us
 
 ### Chromatic Aberration
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Defines how much chromatic aberration to add. In areas where there is more refraction, more chromatic aberration is added.
 
@@ -50,56 +63,77 @@ Note that if Chromatic Aberration is enabled, the Blur function will be disabled
 
 ### Fresnel Power
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 10.0`
+<Property type="range" min="0" max="10" />
 
 Controls the distortion of the Refraction.
 
+### Masks
+
+#### Mask Channel
+
+<Property type="dropdown" options={['Off', 'R', 'G', 'B', 'A']} />
+
+Channel to use from the [Masks](#masks-texture) in Refraction. 
+
+#### Global Mask
+
+<Property type="dropdown" options={['Off', '1R', '1G', '1B', '1A', '2R', '2G', '2B', '2A', '3R', '3G', '3B', '3A', '4R', '4G', '4B', '4A']} />
+
+Choice of which [Global Mask](/modifiers/global-masks.mdx) channel to use as the Mask in Refraction.
+
+#### Invert
+
+<Property type="toggle" />
+
+If enabled, inverts the value of the selected Mask above.
+
 ## Blur
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 If enabled, creates a realtime Blur effect on the Material.
 
 ### Pattern
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Sunflower`/`Gaussian`/`Hexagonal`
+<Property type="dropdown" options={['Sunflower', 'Gaussian', 'Hexagonal']} />
 
 Choice of which Blur pattern to use. These can have a wide range of different appearances.
 
 ### Blur Distance
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 How much blur to apply. The higher this value is, the blurrier the transparency will be.
 
 ### Blur Quality
 
-- `Type`: <PropertyIcon name="slider" />**Integer**, Range: `1 - 20`
+<Property type="int" min="1" max="20" />
 
 How many samples to draw for the blur. The higher this number, the more accurate the blur, but the more expensive it is to render. Good compromise values for quality are between 3 and 6, with higher values being more necessary for higher **Blur Distance**.
 
 ### Blur Directions
 
-- `Type`: <PropertyIcon name="slider" />**Integer**, Range: `1 - 10`
+<Property type="int" min="1" max="10" />
 
 How many directions to sample for the blur. The higher this number, the more accurate the blur, but the more expensive it is to render. Good compromise values for quality are between 4 and 8, with higher values being more necessary for higher **Blur Distance**.
 
 ### Use Smoothness
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Applies a Smoothness modifier to the Blur.
 
 ### Center Importance
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
-  - Conditional: Requires [Pattern](#pattern) set to `Sunflower` OR `Gaussian`
+<Property type="range" min="0" max="1">
+[Pattern](#pattern) is set to `Sunflower` OR `Gaussian`
+</Property>
 
 Determines the importance of the Blur of Opaque objects visible behind the Material.
 
 ### Use Depth
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 If enabled, utilize the Depth Buffer to determine accurate focus of the Blur. This will make meshes closer to it appear clearly, while distant meshes are blurred.
 
@@ -109,40 +143,205 @@ In order to use Blur Depth, you will need to place the `DepthGet` Prefab found i
 
 ### Depth Ramp
 
-- `Type`: <PropertyIcon name="vectorcurve" />**Vector Curve**
-  - Conditional: Requires [Use Depth](#use-depth) to be enabled.
+<Property type="curve">
+[Use Depth](#use-depth) is enabled
+</Property>
 
 Vector Ramp that determines the focus range of the Blur Depth.
+
+### Masks
+
+#### Mask Channel
+
+<Property type="dropdown" options={['Off', 'R', 'G', 'B', 'A']} />
+
+Channel to use from the [Masks](#masks-texture) in Blur. 
+
+#### Global Mask
+
+<Property type="dropdown" options={['Off', '1R', '1G', '1B', '1A', '2R', '2G', '2B', '2A', '3R', '3G', '3B', '3A', '4R', '4G', '4B', '4A']} />
+
+Choice of which [Global Mask](/modifiers/global-masks.mdx) channel to use as the Mask in Blur.
+
+#### Invert
+
+<Property type="toggle" />
+
+If enabled, inverts the value of the selected Mask above.
+
+## Pixelation
+
+<Property type="toggle" />
+
+If enabled, creates an effect that will "pixelate" the affected area like a pixelated censor.
+
+### Pixel Size
+
+<Property type="range" min="1" max="128" />
+
+Sets the size of pixels in bits.
+
+### Distance Scaling
+
+<Property type="toggle" />
+
+Turns on a slider to allow the pixelation to scale with distance.
+
+### Scaling Amount
+
+<Property type="range" min="0" max="5">
+Distance Scaling is enabled
+</Property>
+
+The amount to scale the pixelation with distance.
+
+### Block Gap
+
+<Property type="range" min="0" max="1" />
+
+How many gaps to have in each pixelation block.
+
+### Masks
+
+#### Mask Channel
+
+<Property type="dropdown" options={['Off', 'R', 'G', 'B', 'A']} />
+
+Channel to use from the [Masks](#masks-texture) in Pixelation. 
+
+#### Global Mask
+
+<Property type="dropdown" options={['Off', '1R', '1G', '1B', '1A', '2R', '2G', '2B', '2A', '3R', '3G', '3B', '3A', '4R', '4G', '4B', '4A']} />
+
+Choice of which [Global Mask](/modifiers/global-masks.mdx) channel to use as the Mask in Pixelation.
+
+#### Invert
+
+<Property type="toggle" />
+
+If enabled, inverts the value of the selected Mask above.
+
+## Color Ramp
+
+<Property type="toggle" />
+
+If enabled, applies the mentioned Color Ramp Preset across the Grab Pass.
+
+### Preset
+
+<Property type="dropdown" options={['Custom Ramp', 'Gameboy', 'Virtual Boy', 'CGA', 'Sepia', 'Cyberpunk Neon']} />
+
+Which Preset coloring ramp to use.
+
+### Custom Ramp
+
+<Property type="texture" texture="color">
+Preset is set to `Custom Ramp`
+</Property>
+
+Custom texture ramp to use.
+
+### Blend
+
+<Property type="range" min="0" max="1" />
+
+How much to blend the Color Ramp with the Grab Pass.
+
+### Contrast
+
+<Property type="range" min="-1" max="1" />
+
+How much contrast to blend with the Color Ramp.
+
+### Brightness Offset
+
+<Property type="range" min="-1" max="1" />
+
+Sets how much to offset the brightness of the Color Ramp.
+
+### Posterize
+
+<Property type="toggle" />
+
+If enabled, will posterize the Color Ramp. Exposes two sliders below this property.
+
+### Levels
+
+<Property type="range" min="2" max="16">
+Posterize is enabled
+</Property>
+
+Amount of posterization levels to apply.
+
+### Dither
+
+<Property type="range" min="0" max="1">
+Posterize is enabled
+</Property>
+
+How much dithering to apply to the posterization.
+
+### Masks
+
+#### Mask Channel
+
+<Property type="dropdown" options={['Off', 'R', 'G', 'B', 'A']} />
+
+Channel to use from the [Masks](#masks-texture) in Color Ramp. 
+
+#### Global Mask
+
+<Property type="dropdown" options={['Off', '1R', '1G', '1B', '1A', '2R', '2G', '2B', '2A', '3R', '3G', '3B', '3A', '4R', '4G', '4B', '4A']} />
+
+Choice of which [Global Mask](/modifiers/global-masks.mdx) channel to use as the Mask in Color Ramp.
+
+#### Invert
+
+<Property type="toggle" />
+
+If enabled, inverts the value of the selected Mask above.
 
 ## Color
 
 ### Color
 
-- `Type`: <PropertyIcon name="color" />**Color**
+<Property type="color" />
 
 Color used for multiplicative and additive brightness of the Grab Pass
 
 ### Multiplicative Brightness
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 Controls the multiplication value of the Grab Pass Color.
 
 ### Additive Brightness
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 Controls the additive of additional brightness of the Grab Pass Color.
 
+### Saturation
+
+<Property type="range" min="-1" max="3" />
+
+Sets the saturation of the Color.
+
+### Vibrance
+
+<Property type="range" min="-1" max="1" />
+
+Sets how vibrant the Color should appear.
+
 ### Hue Shift
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Enable Hue Shifting of the Grab Pass Color.
 
 #### Color Space
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `OKLab`/`HSV`
+<Property type="dropdown" options={['OKLab', 'HSV']} />
 
 Choice of Color Space to use for the Hue Shift. By default, it will be set to `OKLab`.
 
@@ -150,8 +349,7 @@ Learn about the difference of Color Spaces as documented here in [Color Adjust](
 
 #### Select or Shift
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Hue Select`/`Hue Shift`
-  - Default: `Hue Shift`
+<Property type="dropdown" options={['Hue Select', 'Hue Shift']} default="Hue Shift" />
 
 This dropdown allows you to select how the Color Adjustment should behave when the Hue Shift is used. By default, this will be set to `Hue Shift`.
 
@@ -165,7 +363,7 @@ This dropdown allows you to select how the Color Adjustment should behave when t
 
 #### Hue Shift
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 How much to shift the color around the hue circle.
 
@@ -173,42 +371,62 @@ This value is circular, and will have the same result at `0` and `1`.
 
 #### Hue Shift Speed
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 How much to constantly shift the hue with time. A value of `1` will result in a full hue shift cycle every 20 seconds.
 
-## Advanced
+### Masks
 
-### Use Material Alpha
+#### Mask Channel
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="dropdown" options={['Off', 'R', 'G', 'B', 'A']} />
 
-Directly uses the alpha of the material to define the blend amount (how much the Grab Pass color is blended with the base color).
+Channel to use from the [Masks](#masks-texture) in Color. 
 
-If enabled, the below **Blend Map** and **Blend Amount** settings will be ignored.
+#### Global Mask
 
-### Blend Map
+<Property type="dropdown" options={['Off', '1R', '1G', '1B', '1A', '2R', '2G', '2B', '2A', '3R', '3G', '3B', '3A', '4R', '4G', '4B', '4A']} />
 
-- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = Off`)
+Choice of which [Global Mask](/modifiers/global-masks.mdx) channel to use as the Mask in Color.
 
-Texture that defines where the Grab Pass should be blended. White means the Grab Pass is fully blended, black means the Grab Pass is not blended at all. Can be thought of as an inverse opacity map.
+#### Invert
 
-### Blend Amount
+<Property type="toggle" />
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+If enabled, inverts the value of the selected Mask above.
+
+## Alpha
+
+### Alpha Blend
+
+<Property type="range" min="0" max="1" />
 
 Scaler for the blend amount. The Grab Pass color is blended with the base color by this amount. If a blend map is used, this should generally be set to 1.0.
 
-### Global Mask
-
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
-
-Select which [Global Mask](/modifiers/global-masks.mdx) should be used as the Blend Map.
-
 ### Source/Destination Blend
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Zero`/`One`/`DstColor`/`SrcColor`/`OneMinusDstColor`/`SrcAlpha`/`OneMinusSrcColor`/`DstAlpha`/`OneMinusDstAlpha`/`SrcAlphaSaturate`/`OneMinusSrcAlpha`
+<Property type="dropdown" options={['Zero', 'One', 'DstColor', 'SrcColor', 'OneMinusDstColor', 'SrcAlpha', 'OneMinusSrcColor', 'DstAlpha', 'OneMinusDstAlpha', 'SrcAlphaSaturate', 'OneMinusSrcAlpha']} />
 
 Blend factor to use for the source and destination factors, respectively.
 
 For traditional transparent blending, `Source Blend` should be set to `SrcAlpha` and `Destination Blend` should be set to `OneMinusSrcAlpha`. Other factors can be used for other effects. Try some of the combinations listed in [Render Presets](/general/render-preset.mdx#blending).
+
+### Masks
+
+#### Mask Channel
+
+<Property type="dropdown" options={['Off', 'R', 'G', 'B', 'A']} />
+
+Channel to use from the [Masks](#masks-texture) in Alpha. 
+
+#### Global Mask
+
+<Property type="dropdown" options={['Off', '1R', '1G', '1B', '1A', '2R', '2G', '2B', '2A', '3R', '3G', '3B', '3A', '4R', '4G', '4B', '4A']} />
+
+Choice of which [Global Mask](/modifiers/global-masks.mdx) channel to use as the Mask in Alpha.
+
+#### Invert
+
+<Property type="toggle" />
+
+If enabled, inverts the value of the selected Mask above.

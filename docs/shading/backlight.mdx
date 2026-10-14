@@ -19,63 +19,67 @@ This feature is based off of LilToon's Backlighting feature.
 
 ## Color
 
-- `Type`: <PropertyIcon name="hdrcolor" />**HDR Color**
+<Property type="hdrcolor" />
 
 Color of the light background.
 
 ## Texture
 
-- `Type`: <PropertyIcon name="texture" />**Color** Texture (`sRGB: ON`)
+<Property type="texture" texture="color" />
 
 Texture that can be used as the Color of the Backlight.
 
 ## Main Color Power
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 How much to blend the color of the Backlight with the Base Color.
 
 ## Receive Shadow
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 If enabled, receive Shadows from other objects.
 
 ## Backface Mask
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
-Enables/Disables the visibility of the backlight's light on the backface.
+Enables/Disables the visibility of the backlight's light on the Backface.
+
+:::caution[Requires Culling to be Off]
+For this setting to take affect, [Cull](/rendering/rendering.mdx#cull) must be set to `Off` in order for this toggle to take effect. Find this option under [Rendering](/rendering/rendering.mdx).
+:::
 
 ## Backlight Options
 
 ### Normal Strength
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 How much to blend the lighting with the Normals on your Model or Material.
 
 ### Border
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 The range of light that can be used with the Backlight.
 
 ### Blur
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 The amount of blur on the Backlight.
 
 ### Directivity
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 Determines the amount of brightness *in degrees* that change according to the direction of the light source.
 
 ### View Direction Strength
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 The *degree* to which the brightness is changed according to the direction of light.
 
@@ -83,12 +87,12 @@ The *degree* to which the brightness is changed according to the direction of li
 
 ### Global Mask
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+<Property type="dropdown" options={['Off', '1R', '1G', '1B', '1A', '2R', '2G', '2B', '2A', '3R', '3G', '3B', '3A', '4R', '4G', '4B', '4A']} />
 
 Select which [Global Mask](/modifiers/global-masks.mdx) to use as the Backlight Mask.
 
 ### Apply to Global Mask
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+<Property type="dropdown" options={['Off', '1R', '1G', '1B', '1A', '2R', '2G', '2B', '2A', '3R', '3G', '3B', '3A', '4R', '4G', '4B', '4A']} />
 
 Select which [Global Mask](/modifiers/global-masks.mdx) to apply Backlight effects onto.

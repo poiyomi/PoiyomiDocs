@@ -19,13 +19,13 @@ Make sure to only enable the depth buffer when you need it! This can be a perfor
 
 ## Normal To Use
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Pixel`/`Vertex`
+<Property type="dropdown" options={['Pixel', 'Vertex']} default="Pixel" />
 
 Normal to use for the depth rim light effect. `Pixel` uses the normal of the pixel after all normal maps have been applied. `Vertex` uses the normal from the mesh itself.
 
 ## Rim Type
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Two Samples`/`Four Samples`/`Eight Samples`
+<Property type="dropdown" options={['Two Samples', 'Four Samples', 'Eight Samples']} default="Eight Samples" />
 
 How many samples to use for the depth rim lighting. This will determine what details appear in the rim as drawn by the Depth Buffer.
 
@@ -33,26 +33,27 @@ How many samples to use for the depth rim lighting. This will determine what det
 
 ### Width
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 How wide the rim should extend from the edge.
 
 ### Sharpness
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
-  - Conditional: Requires [Binary](#binary) to be disabled.
+<Property type="range" min="0" max="1">
+[Binary](#binary) is disabled
+</Property>
 
 How sharp the edge of the rim should be. Generally, at higher sharpness, the rim will appear in less areas.
 
 ### Depth Threshold
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 The amount of threshold depth to use.
 
 ### Binary
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Enables the usage of Binary to control the shape's sharpness.
 
@@ -62,19 +63,19 @@ If Binary is enabled, it will disable [Sharpness](#sharpness)
 
 ### Fixed Size Threshold
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 Sets a fixed size threshold to use for the shape control.
 
 ### Min Distance
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="float" />
 
 Minimum distance to use for the shape size.
 
 ### Max Distance
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="float" />
 
 Maximum distance to use for the shape size.
 
@@ -82,25 +83,25 @@ Maximum distance to use for the shape size.
 
 ### Method 
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `NdotL`/`Rim Dot Light`
+<Property type="dropdown" options={['NDotL', 'Rim Dot Light']} default="NDotL" />
 
 What light direction method to use for how the depth rim lighting is treated with lighting direction.
 
 ### Map to Light Direction
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Sets the mapping to the Light Direction to a specific amount.
 
 ### Mix Attenuation
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 How much to mix the light direction attenuation.
 
 ### Mix Ramped Light Map
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 How much to mix the ramped light map with the light direction.
 
@@ -108,13 +109,13 @@ How much to mix the ramped light map with the light direction.
 
 ### Mask
 
-- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = Off`)
+<Property type="texture" texture="data" />
 
 Mask texture slot to mask the depth rim lighting to appear in only the specified areas of the UV.
 
 ### Channel
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `R`/`G`/`B`/`A`
+<Property type="dropdown" options={['R', 'G', 'B', 'A']} />
 
 If a Mask texture is used, this should select which color channel in the texture to use for the Mask.
 
@@ -122,31 +123,31 @@ If a Mask texture is used, this should select which color channel in the texture
 
 ### Use Base Color
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 How much to incorporate the base color into the rim color. At `0`, only the Rim Color will be used. At `1`, only the base color of the mesh will be used.
 
 ### Light Color Mix
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 How much to mix the rim color with the light color. The light color scaled to this value is multiplied with the rim color.
 
 ### Rim Color
 
-- `Type`: <PropertyIcon name="color" />**Color**
+<Property type="color" />
 
 Base color of the rim.
 
 ### Color Brightness
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 10.0`
+<Property type="range" min="0" max="10" />
 
 How bright should the rim color appear.
 
 ### Emission
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 20.0`
+<Property type="range" min="0" max="20" />
 
 How much emission the rim should exhibit.
 
@@ -156,30 +157,30 @@ In most application, choosing one blend mode to use will be sufficient.
 
 ### Replace
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 How much to replace the base color with the rim color.
 
 ### Add
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 How much to add the rim color to the base color.
 
 ### Screen
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 How much to blend screen the rim color to the base color.
 
 ### Multiply
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 How much to multiply the rim color with the base color.
 
 ### Unlit Add
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 How much to add the rim color to the light intensity (base pass only).

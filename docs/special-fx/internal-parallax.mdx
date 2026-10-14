@@ -16,7 +16,7 @@ Internal Parallax creates an illusion of layers going inside the Mesh. Similar t
 
 ## Parallax Mode
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Basic`/`HeightMap`
+<Property type="dropdown" options={['Basic', 'HeightMap']} />
 
 Determines the Parallax Mode to use for the Internal Parallax.
 
@@ -30,7 +30,7 @@ Uses the Height Map technique to create the Internal Parallax.
 
 ## Internal Map
 
-- `Type`: <PropertyIcon name="texture" />**Color** Texture (`sRGB = On`)
+<Property type="texture" texture="color" />
 
 Color Map to use for the Internal Map. `RGB` for Color, and `A` channel for the Height.
 
@@ -40,7 +40,7 @@ For best results, use only **two** colors for your Internal Mapping. Those two c
 
 ## Mask
 
-- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = Off`)
+<Property type="texture" texture="data" />
 
 Clamps the Internal Parallax to only affect a specified area as determined by the Mask.
 
@@ -48,31 +48,31 @@ Clamps the Internal Parallax to only affect a specified area as determined by th
 
 ### Parallax Internal Iterations
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `1.0 - 50.0`
+<Property type="range" min="1" max="50" />
 
 How many iterations should there be for the Parallax. Higher numbers yield more iterations.
 
 ### Min Iterations
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `1.0 - 50.0`
+<Property type="range" min="1" max="50" />
 
 Clamps the minimum amount of iterations to a specific value. Typically this should be left at `1.0`.
 
 ### Distance Falloff
 
-- `Type`: <PropertyIcon name="vector2" />**Vector2**
+<Property type="vector2" />
 
 Sets the nearest and farthest falloff distance of the Internal Parallax iterations.
 
 ### Min Depth
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 The Minimum Depth for the Parallax, or the beginning of the iteration. Normally this is set to `0`.
 
 ### Max Depth
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 The Maximum Depth for the Parallax, or the ending of the iteration. In a literal sense, this determines the distance of the "infinite mirror" effect.
 
@@ -80,49 +80,49 @@ The Maximum Depth for the Parallax, or the ending of the iteration. In a literal
 
 ### Min Depth Brightness
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 5.0`
+<Property type="range" min="0" max="5" />
 
 Minimum Brightness intensity of the Minimum Depth Color.
 
 ### Max Depth Brightness
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 5.0`
+<Property type="range" min="0" max="5" />
 
 Maximum Brightness intensity of the Maximum Depth Color.
 
 ### Min Depth Color
 
-- `Type`: <PropertyIcon name="color" />**Color**
+<Property type="color" />
 
 Color to use for the Minimum Depth. This should be set to the starting color of the parallax from the [Internal Map](#internal-map).
 
 ### Max Depth Color
 
-- `Type`: <PropertyIcon name="color" />**Color**
+<Property type="color" />
 
 Color to use for the Maximum Depth. This should be set to the ending color of the parallax from the [Internal Map](#internal-map).
 
 ### Internal Blend Mode
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Add`/`Max`
+<Property type="dropdown" options={['Add', 'Max']} />
 
 Configures the primary blending operator to use for the Internal Parallax with the Base Color.
 
 ### Surface Blend Mode
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Replace`/`Darken`/`Multiply`/`Lighten`/`Screen`/`Subtract`/`Add`/`Overlay`/`Mixed`
+<Property type="dropdown" options={['Replace', 'Darken', 'Multiply', 'Lighten', 'Screen', 'Subtract', 'Add', 'Overlay', 'Mixed']} />
 
 How much to blend the Surface of the Internal Parallax to the Base Color.
 
 ## Hue Shift
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Enables the Hue Shift feature of the Internal Parallax.
 
 ### Color Space
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `OKLab`/`HSV`
+<Property type="dropdown" options={['OKLab', 'HSV']} />
 
 Choice of Color Space to use for the Hue Shift. By default, it will be set to `OKLab`.
 
@@ -130,8 +130,7 @@ Learn about the difference of Color Spaces as documented here in [Color Adjust](
 
 ### Select or Shift
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Hue Select`/`Hue Shift`
-  - Default: `Hue Shift`
+<Property type="dropdown" options={['Hue Select', 'Hue Shift']} default="Hue Shift" />
 
 This dropdown allows you to select how the Color Adjustment should behave when the Hue Shift is used. By default, this will be set to `Hue Shift`.
 
@@ -145,7 +144,7 @@ This dropdown allows you to select how the Color Adjustment should behave when t
 
 ### Hue Shift
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 How much to shift the base color around the hue circle. 
 
@@ -153,19 +152,19 @@ This value is circular, and will have the same result at 0 and 1.
 
 ### Hue Shift Speed
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 How much to constantly shift the hue with time. A value of 1 will result in a full hue shift cycle every 20 seconds.
 
 ### Hue Shift Per Level
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 How much to constantly shift the hue with each level of the Parallax. This can create a rather interesting pattern of various colors for each step.
 
 ## Audio Link
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Enables Audio Link shaders to influence Internal Parallax for a wide range of rather interesting effects.
 
@@ -175,13 +174,13 @@ The settings in this section will only be visible when [Audio Link](/audio-link/
 
 ### Emission Band
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+<Property type="dropdown" options={['Bass', 'Low Mid', 'High Mid', 'Treble', 'Volume']} />
 
 Selection for which audio band should control the Internal Parallax Emissions.
 
 ### Emission Mod
 
-- `Type`: <PropertyIcon name="float2" />**Vector**
+<Property type="float2" />
 
 | Channel | Function |
 | --- | --- |
@@ -190,13 +189,13 @@ Selection for which audio band should control the Internal Parallax Emissions.
 
 ### Min Depth Band
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+<Property type="dropdown" options={['Bass', 'Low Mid', 'High Mid', 'Treble', 'Volume']} />
 
 Selection for which audio band should control the Internal Parallax Min Depth.
 
 ### Min Depth Mod
 
-- `Type`: <PropertyIcon name="float2" />**Vector**
+<Property type="float2" />
 
 | Channel | Function |
 | --- | --- |
@@ -205,13 +204,13 @@ Selection for which audio band should control the Internal Parallax Min Depth.
 
 ### Max Depth Band
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+<Property type="dropdown" options={['Bass', 'Low Mid', 'High Mid', 'Treble', 'Volume']} />
 
 Selection for which audio band should control the Internal Parallax Max Depth.
 
 ### Max Depth Mod
 
-- `Type`: <PropertyIcon name="float2" />**Vector**
+<Property type="float2" />
 
 | Channel | Function |
 | --- | --- |
@@ -220,7 +219,7 @@ Selection for which audio band should control the Internal Parallax Max Depth.
 
 ### Pan Motion Type
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**
+<Property type="dropdown" />
 
 Which motion type to use for the Panning motion. Chronotensity is an Audio Link feature that allows time-dependent features, which shaders alone cannot do. In this case, chronotensity is used to create a time-dependent rotation of the texture's Panning.
 
@@ -239,19 +238,19 @@ Which motion type to use for the Panning motion. Chronotensity is an Audio Link 
 
 ### Pan Band
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+<Property type="dropdown" options={['Bass', 'Low Mid', 'High Mid', 'Treble', 'Volume']} />
 
 Which band to use for the Panning motion.
 
 ### Pan Speed
 
-- `Type`: <PropertyIcon name="vector2" />**Vector2**
+<Property type="vector2" />
 
 Sets the speed of the Panning motion on the X and Y axis.
 
 ### Hue Shift Motion Type
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**
+<Property type="dropdown" />
 
 Which motion type to use for the Hue Shift. Chronotensity is an Audio Link feature that allows time-dependent features, which shaders alone cannot do. In this case, chronotensity is used to create a time-dependent rotation of the Hue Shift.
 
@@ -270,102 +269,102 @@ Which motion type to use for the Hue Shift. Chronotensity is an Audio Link featu
 
 ### Hue Shift Band
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+<Property type="dropdown" options={['Bass', 'Low Mid', 'High Mid', 'Treble', 'Volume']} />
 
 Which band to use for the Hue Shift.
 
 ### Hue Shift Speed
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 Sets the speed of the Hue Shift in reaction to Audio Link.
 
 ### Spatial History
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Enables Spatial History for the Internal Parallax Audio Link. Similar to [Pathing](/special-fx/pathing.mdx), Spatial History will create moving emission pattern that flows from the Min Depth to the Max Depth in reaction to Audio Link.
 
 #### History Band
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+<Property type="dropdown" options={['Bass', 'Low Mid', 'High Mid', 'Treble', 'Volume']} />
 
 Which band to use for the Spatial History.
 
 #### History Depth
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `1.0 - 127.0`
+<Property type="range" min="1" max="127" />
 
 Sets how much depth the Spatial History will travel at a time.
 
 #### History Color
 
-- `Type`: <PropertyIcon name="color" />**Color**
+<Property type="color" />
 
 Sets which Color to use for the Spatial History. Typically this should blend with the Layer Colors currently used.
 
 #### History UV Bump
 
-- `Type`: <PropertyIcon name="vector2" />**Vector2**
+<Property type="vector2" />
 
 Configures the X and Y offset to shift the parallax in a specific direction each time Spatial History is triggered from Audio Link.
 
 ### Min Color Override
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Enables overriding the Min Depth Color using Audio Link.
 
 #### Color
 
-- `Type`: <PropertyIcon name="color" />**Color**
+<Property type="color" />
 
 Sets a Color to use as the Min Depth Color Override.
 
 #### Theme Color
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Theme Color 0`/`Theme Color 1`/`Theme Color 2`/`Theme Color 3`/`ColorChord 0`/`ColorChord 1`/`ColorChord 2`/`ColorChord 3`/`AL Theme 0`/`AL Theme 1`/`AL Theme 2`/`AL Theme 3`
+<Property type="dropdown" options={['Theme Color 0', 'Theme Color 1', 'Theme Color 2', 'Theme Color 3', 'ColorChord 0', 'ColorChord 1', 'ColorChord 2', 'ColorChord 3', 'AL Theme 0', 'AL Theme 1', 'AL Theme 2', 'AL Theme 3']} />
 
 Option to set a Theme Color to use as the Min Depth Color Override instead.
 
 #### Color Override Band
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+<Property type="dropdown" options={['Bass', 'Low Mid', 'High Mid', 'Treble']} />
 
 Which Band to use to trigger the Min Depth Color Override.
 
 #### Color Override Ramp
 
-- `Type`: <PropertyIcon name="vectorcurve" />**Vector Curve**
+<Property type="curve" />
 
 Vector ramp to determine how the Min Depth Color Override is used.
 
 ### Max Color Override
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Enables overriding the Max Depth Color using Audio Link.
 
 #### Color
 
-- `Type`: <PropertyIcon name="color" />**Color**
+<Property type="color" />
 
 Sets a Color to use as the Max Depth Color Override.
 
 #### Theme Color
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Theme Color 0`/`Theme Color 1`/`Theme Color 2`/`Theme Color 3`/`ColorChord 0`/`ColorChord 1`/`ColorChord 2`/`ColorChord 3`/`AL Theme 0`/`AL Theme 1`/`AL Theme 2`/`AL Theme 3`
+<Property type="dropdown" options={['Theme Color 0', 'Theme Color 1', 'Theme Color 2', 'Theme Color 3', 'ColorChord 0', 'ColorChord 1', 'ColorChord 2', 'ColorChord 3', 'AL Theme 0', 'AL Theme 1', 'AL Theme 2', 'AL Theme 3']} />
 
 Option to set a Theme Color to use as the Max Depth Color Override instead.
 
 #### Color Override Band
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`
+<Property type="dropdown" options={['Bass', 'Low Mid', 'High Mid', 'Treble']} />
 
 Which Band to use to trigger the Max Depth Color Override.
 
 #### Color Override Ramp
 
-- `Type`: <PropertyIcon name="vectorcurve" />**Vector Curve**
+<Property type="curve" />
 
 Vector ramp to determine how the Max Depth Color Override is used.

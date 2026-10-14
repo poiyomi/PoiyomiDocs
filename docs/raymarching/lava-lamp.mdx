@@ -29,7 +29,7 @@ In order to use this function, you must edit the Material directly from the Mesh
 
 ### SDF Volume
 
-- `Type`: <PropertyIcon name="texture" />**3D Volume** Texture
+<Property type="texture" texture="volume" />
 
 Defines the Signed Distance Field 3D Volume to use for Lava Lamp.
 
@@ -37,7 +37,7 @@ This texture is generated upon using the `Bake SDF + Bind Data` option.
 
 ### Min Thickness
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Defines the minimum thickness of the 3D Volume's gradients.
 
@@ -45,13 +45,13 @@ Defines the minimum thickness of the 3D Volume's gradients.
 
 ### Refractive Index
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `1.0 - 1.5`
+<Property type="range" min="1" max="1.5" />
 
 Defines how the refractive effect appears from the surface, dependent on the mesh used.
 
 ### Normal Strength
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Sets an intensity level on how much Lava Lamp should affect Normals.
 
@@ -59,35 +59,31 @@ Sets an intensity level on how much Lava Lamp should affect Normals.
 
 ### Use Mesh Bind Data
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Disabled`/`Enabled`/`Auto`
-  - Default: `Auto`
+<Property type="dropdown" options={['Disabled', 'Enabled', 'Auto']} default="Auto" />
 
 Selects which Mesh Bind Data to use. By default, this is automatic.
 
 ### Bind Positions UV Channel
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `UV2`/`UV3`/`UV4`/`UV5`/`UV6`/`UV7`/`UV8`
-  - Default: `UV6`
+<Property type="dropdown" options={['UV2', 'UV3', 'UV4', 'UV5', 'UV6', 'UV7', 'UV8']} default="UV6" />
 
 Selects the Positions UV Channel to bind to.
 
 ### Bind Normals UV Channel
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `UV2`/`UV3`/`UV4`/`UV5`/`UV6`/`UV7`/`UV8`
-  - Default: `UV7`
+<Property type="dropdown" options={['UV2', 'UV3', 'UV4', 'UV5', 'UV6', 'UV7', 'UV8']} default="UV7" />
 
 Selects the Normals UV channel to bind to.
 
 ### Bind Tangents UV Channel
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `UV2`/`UV3`/`UV4`/`UV5`/`UV6`/`UV7`/`UV8`
-  - Default: `UV8`
+<Property type="dropdown" options={['UV2', 'UV3', 'UV4', 'UV5', 'UV6', 'UV7', 'UV8']} default="UV8" />
 
 Selects the Tangents UV channel to bind to.
 
 ### World Rescale
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 Sets the scale value for the binding data reference.
 
@@ -95,7 +91,7 @@ Sets the scale value for the binding data reference.
 
 ### Mask
 
-- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = Off`)
+<Property type="texture" texture="data" />
 
 Mask Texture to isolate which area on your UV the Lava Lamp effect should only appear within.
 
@@ -103,109 +99,109 @@ Mask Texture to isolate which area on your UV the Lava Lamp effect should only a
 
 ### Shape
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Blob`/`X Snd O`/`Stars`/`Hearts`
+<Property type="dropdown" options={['Blob', 'X Snd O', 'Stars', 'Hearts']} />
 
 Configures what physical shape of each Lava Blob should look like.
 
 ### Padding
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.01 - 0.2`
+<Property type="range" min="0.01" max="0.2" />
 
 This determines how much padding (or spacing) surrounding each blob.
 
 ### Smoothing
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.01 - 0.5`
+<Property type="range" min="0.01" max="0.5" />
 
 Sets how the blobs should reach to each other. Lower values are more solid, while higher values will yield a more gooey effect.
 
 ### Vertical Spacing
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `1.0 - 5.0`
+<Property type="range" min="1" max="5" />
 
 This sets how much spacing should be given for each blob when traveling from both directions. Lower values are more claustrophobic, while higher values are more spaced out.
 
 ### Invisible Blob Chance
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Sets how random there's a chance that there will be non-visible blob. Lower values are more common blobs, while higher values yield far less blobs.
 
 ### Min Size
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Configures the absolute smallest size possible for a blob to appear.
 
 ### Max Size
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Configures the absolute largest size possible for a blob to appear.
 
 ### Size Distribution
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-3.0 - 3.0`
+<Property type="range" min="-3" max="3" />
 
 Configures how each blob should be distributed across the visible space.
 
 ### Min Speed
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Configures how fast each blob should move at a minimum.
 
 ### Max Speed
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Configures how fast each blob should move at a maximum.
 
 ### Min Drift Speed
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 5.0`
+<Property type="range" min="0" max="5" />
 
 Sets how much it should drift left and right at the minimum.
 
 ### Max Drift Speed
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 5.0`
+<Property type="range" min="0" max="5" />
 
 Sets how much total it should drift left and right at the maximum.
 
 ### Reflectiveness
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Configures how much reflection from the lava blobs from the light should be shown.
 
 ### Roughness
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Sets how rough or glossy the lava blobs should appear. Lower values are more glossy, while higher values are more rough.
 
 ### Translucency
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Sets how translucent the lava appears.
 
 ## Matcap
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Enables the usage of a Matcap on the lava blobs.
 
 ### Matcap
 
-- `Type`: <PropertyIcon name="texture" />**Color** Texture (`sRGB = On`)
+<Property type="texture" texture="color" />
 
 Texture used for the Matcap. This can be any color texture, but it is typically a sphere texture.
 
 #### Border
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 5.0`
+<Property type="range" min="0" max="5" />
 
 How far toward the edge the Matcap texture should be applied. At `0.0`, it would only project the very center. At `0.5`, it would project all the way to the edge.
 
@@ -213,13 +209,13 @@ The Border value should be chosen based on how your Matcap texture appears. This
 
 ### Alpha
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Sets how much the Matcap should appear.
 
 ### Blend Mode
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Replace`/`Darken`/`Multiply`/`Lighten`/`Screen`/`Subtract`/`Add`/`Overlay`/`Mixed`
+<Property type="dropdown" options={['Replace', 'Darken', 'Multiply', 'Lighten', 'Screen', 'Subtract', 'Add', 'Overlay', 'Mixed']} />
 
 Sets the blending operator to use for the Matcap.
 
@@ -227,84 +223,84 @@ Sets the blending operator to use for the Matcap.
 
 ### Scale
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 This can set the TOTAL amount of blobs appearing all at once. Lower values are smaller blobs, while higher values are larger blobs.
 
 ### Top Reservoir Height
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 Sets the region on where the lava reservoir should appear from the very top. Configure this value to match your desired location on the top.
 
 ### Bottom Reservoir Height
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 Sets the region on where the lava reservoir should appear from the very bottom. Configure this value to match your desired location on the bottom.
 
 ### Lava Color
 
-- `Type`: <PropertyIcon name="color" />**Color**
+<Property type="color" />
 
 Sets the main primary color of the blobs.
 
 ### Haze Color
 
-- `Type`: <PropertyIcon name="color" />**Color**
+<Property type="color" />
 
 Sets the color of the hazy area contained within the lava's movement space.
 
 ### Haze Density
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 50.0`
+<Property type="range" min="0" max="50" />
 
 Sets how dense the hazy area should appear. This setting is used to add realism to the contained area.
 
 ### Tint Color
 
-- `Type`: <PropertyIcon name="color" />**Color**
+<Property type="color" />
 
 Sets the tint of the hazy area.
 
 ### Tint Strength
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `1.0 - 100.0`
+<Property type="range" min="1" max="100" />
 
 Sets the strength of the tint to the hazy area.
 
 ### Top Color
 
-- `Type`: <PropertyIcon name="color" />**Color**
+<Property type="color" />
 
 Sets what color the top reservoir should appear as.
 
 ### Top Emission
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 10.0`
+<Property type="range" min="0" max="10" />
 
 Sets the total brightness of the top reservoir.
 
 ### Bottom Color
 
-- `Type`: <PropertyIcon name="color" />**Color**
+<Property type="color" />
 
 Sets what color the bottom reservoir should appear as.
 
 ### Bottom Emission
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 10.0`
+<Property type="range" min="0" max="10" />
 
 Sets the total brightness of the bottom reservoir.
 
 ### Color Range
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Sets how much to blend the colors from the top reservoir to the bottom reservoir, which can tint the color of the blobs.
 
 ### Flow Direction
 
-- `Type`: - `Type`: <PropertyIcon name="float4" />**Vector4**
+<Property type="vector4" />
 
 Configures the absolute direction of flow to use on the X, Y, Z, and W axis.

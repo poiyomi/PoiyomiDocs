@@ -21,7 +21,7 @@ In order to use Squish, an Orifice penetrator must be present in the Scene. Use 
 
 ## Animation Toggle
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 This checkbox allows toggling Squish at runtime.
 
@@ -31,37 +31,37 @@ Squish is enabled by default. To turn off Squish in-game, you need to animate th
 
 ## Collider Size
 
-- `Type`: <PropertyIcon name="float2" />**Vector**
+<Property type="vector2" />
 
 Sets the collision size to use with Squish. This value must match the same dimensions as the Orifice penetrator.
 
 ## Squish Strength
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Configures the total strength of the Squish effect. For the full effect, this should be set to `1`.
 
 ## Squish Spread
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
+<Property type="range" min="-1" max="1" />
 
 Sets the spreading of the Squish across the penetrated area. This will impact how the mesh appears when it is squished by the orifice.
 
 ## Max Squish
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.1 - 1.0`
+<Property type="range" min="0.1" max="1" />
 
 Controls how much the mesh is penetrated by the orifice.
 
 ## Squish Falloff
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.1 - 1.0`
+<Property type="range" min="0.1" max="1" />
 
 Controls the falloff range of the penetrated mesh area.
 
 ## Z-Clipping Fix
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 This value controls the Z-clipping factor of the penetrated mesh. For the most part, this should be kept at it's default.
 
@@ -71,7 +71,7 @@ If this value is not adjusted carefully (especially on the Body), ugly clipping 
 
 ## Color Gradient
 
-- `Type`: <PropertyIcon name="texture" />**Color Gradient** Texture (`sRGB = ON`)
+<Property type="texture" texture="gradient" />
 
 Color Gradient texture to use on the mesh when the mesh is being penetrated by the orifice. This is optional.
 
@@ -83,19 +83,19 @@ When editing the Color Gradient using the Gradient Editor, your changes will be 
 
 ## Gradient Min
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-2.0 - 0.0`
+<Property type="range" min="-2" max="0" />
 
 Minimum starting point to use for the Color Gradient.
 
 ## Gradient Max
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 4.0`
+<Property type="range" min="0" max="4" />
 
 Maximum ending point to use for the Color Gradient.
 
 ## Gradient Intensity
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 5.0`
+<Property type="range" min="0" max="5" />
 
 Sets how intense the Color Gradient should appear.
 
@@ -103,13 +103,13 @@ Sets how intense the Color Gradient should appear.
 
 ### Squish Mask
 
-- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = OFF`)
+<Property type="texture" texture="data" />
 
 Mask texture slot to isolate specific areas that the orifice should only affect when the mesh is penetrated.
 
 ### Write to Global Mask
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+<Property type="dropdown" options={['Off', '1R', '1G', '1B', '1A', '2R', '2G', '2B', '2A', '3R', '3G', '3B', '3A', '4R', '4G', '4B', '4A']} />
 
 If set, will write the Squish Mask to the chosen [Global Mask](/modifiers/global-masks.mdx) channel.
 
@@ -117,18 +117,18 @@ If set, will write the Squish Mask to the chosen [Global Mask](/modifiers/global
 
 ### Replace
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Replace blending modifier to use.
 
 ### Multiply
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Multiplicative blending modifier to use.
 
 ### Unlit Add
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Unlit blending modifier to use.

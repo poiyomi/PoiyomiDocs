@@ -18,7 +18,7 @@ Use of LTCGI on Avatars should be avoided unless absolutely necessary, as LTCGI 
 
 ## Anim Toggle
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 This checkbox allows toggling LTCGI effects at runtime.
 
@@ -28,20 +28,19 @@ LTCGI rendering is enabled by default. To turn off LTCGI in-game, you need to an
 
 ## Diffuse Tint
 
-- `Type`: <PropertyIcon name="color" />**Color**
+<Property type="color" />
 
 Color to blend multiplicatively with LTCGI to tint the lighting. Use shades of gray to darken lighting as desired.
 
 ## Specular Tint
 
-- `Type`: <PropertyIcon name="color" />**Color**
+<Property type="color" />
 
 Color to blend multiplicatively with LTCGI to tint the reflection. Use shades of gray to darken reflections as desired.
 
 ## Use Reflection and Specular
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
-  - Default: `On`
+<Property type="toggle" default="On" />
 
 When enabled, will sample the metallicity and smoothness values from [Reflections & Specular](/shading/reflections-and-specular.mdx) for LTCGI.
 
@@ -53,33 +52,34 @@ Those sliders will also appear if you turn off this checkbox.
 
 ### Metallic
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1">
+[Use Reflection and Specular](#use-reflection-and-specular) is disabled
+</Property>
 
 Determines how metallic the surface is.
 
 ### Smoothness
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1">
+[Use Reflection and Specular](#use-reflection-and-specular) is disabled
+</Property>
 
 Determines how rough or smooth the specular reflections are.
 
 ## Use Exposure Occlusion
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
-  - Default: `Off`
+<Property type="toggle" default="Off" />
 
 Enables LTCGI to use Exposure Occlusion.
 
 ## Specular Multiplier
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 2.0`
-  - Default: `1.0`
+<Property type="range" min="0" max="2" default="1" />
 
 Modifies the multiplicative factor of LTCGI's speculars. Use this for artistic control of it's appearance.
 
 ## Diffuse Multiplier
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 2.0`
-  - Default: `1.0`
+<Property type="range" min="0" max="2" default="1" />
 
 Modifies the multiplicative factor of LTCGI's diffuse. Use this for artistic control of it's appearance.

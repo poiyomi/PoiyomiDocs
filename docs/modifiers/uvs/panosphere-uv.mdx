@@ -12,18 +12,16 @@ This section houses the global settings for Panosphere. To use it, select it as 
 <ReactVideo src='/vid/modifiers/panosphere-demo.webm' width='300px'/>
 <em>*Example of Glitter on a 3D Sphere switched to using Panosphere UV. Notice how the Panosphere stays consistent, regardless of the Camera's POV.*</em>
 
-## Stereo Enabled
+## Stereo Layout
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
-  - Default: `Off`
+<Property type="dropdown" options={['Mono', 'Top Bottom', 'Side by Side']} default="Mono" />
 
-When enabled, switches the sampling logic to per-eye so that the left and right eyes see slighly different directions or sampled different regions of the stereoscopic panorama.
+By default, the Stereo layout of the Panosphere uses a monoscopic sample. This switches the sampling logic to per-eye so that the left and right eyes see slighly different directions or sampled different regions of the stereoscopic panorama.
 
-If disabled, both eyes would see the same monoscopic sample.
+This can be customized to operate from Top to Bottom, or from Side by Side. Doing so will modify the appearance of the Stereo pass in the Panosphere.
 
 ## Perspective Correct (VR)
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
-  - Default: `On`
+<Property type="toggle" default="On" />
 
 This makes the UV lookup use the actual eye's view ray rather than a naive direction computed from a singular center camera. This reduces warping and rotation artifacts that show up with view-mapped effects in head-tracked VR.

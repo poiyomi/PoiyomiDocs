@@ -17,13 +17,13 @@ Please keep this in mind when using UV Tile Discard.
 
 ## Discard UV
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `UV0`/`UV1`/`UV2`/`UV3`
+<Property type="dropdown" options={['UV0', 'UV1', 'UV2', 'UV3']} />
 
 Which UV to draw from for discarding. This can be the base UV or an alternative UV made specifically for UV Tile discard.
 
 ## Discard Mode
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Vertex (Faster)`/`Pixel (Slower)`
+<Property type="dropdown" options={['Vertex (Faster)', 'Pixel (Slower)']} default="Vertex (Faster)" />
 
 Defines how the discarding is performed. Generally this should be set to `Vertex` which is most common among setups, unless there is a good reason to use `Pixel`.
 
@@ -33,7 +33,7 @@ Defines how the discarding is performed. Generally this should be set to `Vertex
 
 ## Discard Coordinates
 
-- `Type`: <PropertyIcon name="toggle" />**Toggles**
+<Property type="toggles" />
 
 Defines which UV tiles to discard. These are organized into 4 rows of 4 tiles, defining a grid of 16 discard tiles. The bottom left is the origin, and the top right is the maximum. The bottom left tile (`0,0`) is where most UV mapping is performed.
 
@@ -56,7 +56,7 @@ To ensure you can use them, enter the material property names manually in their 
 
 ## Face Discard
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Face Discard is a granular alternative to the [Cull](/rendering/rendering.mdx#cull) rendering option, providing control over which faces of a mesh to discard. It utilizes the pixel mode of UV Tile Discard to apply face discarding selectively, instead of applying global face culling across the entire material.
 
@@ -66,19 +66,19 @@ However, it’s important to note that while Face Discard provides more granular
 
 ### Face Discard UV
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `UV0`/`UV1`/`UV2`/`UV3`
+<Property type="dropdown" options={['UV0', 'UV1', 'UV2', 'UV3']} />
 
 Which UV to draw from for discarding. This can be the base UV or an alternative UV made specifically for UV Tile discard.
 
 ### Face to Discard
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Back`/`Front`
+<Property type="dropdown" options={['Back', 'Front']} />
 
 Sets what faces should be discarded. By default, this is set to `Back`. `Front` is only useful for special effects.
 
 ### Discard Coordinates
 
-- `Type`: <PropertyIcon name="toggle" />**Toggles**
+<Property type="toggles" />
 
 These coordinates work in the same manner as the primary [Discard Coordinates](#discard-coordinates) option.
 

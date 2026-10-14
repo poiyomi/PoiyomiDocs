@@ -17,7 +17,7 @@ In VRChat, this section takes advantage of the game's unique rendering behaviors
 
 ## Mode
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `VRC`/`Generic`
+<Property type="dropdown" options={['VRC', 'Generic']} default="VRC" />
 
 Sets the behavioral mode for the Mirror and Camera visibility.
 
@@ -30,37 +30,37 @@ These settings below will show if [Mode](#mode) is set to `VRC`.
 
 ### Normal (Outside Mirror/Camera)
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Toggles the visibility of the material in a normal situation, without the requirement of a Mirror or a Camera.
 
 ### Mirror (VR)
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Toggles the visibility of the material in the Mirror in VR.
 
 ### Mirror (Desktop)
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Toggles the visibility of the material in the Mirror while on Desktop Mode.
 
 ### Camera (VR)
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Toggles the visibility of the material in Cameras in VR.
 
 ### Camera (Desktop)
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Toggles the visibility of the material in Cameras while on Desktop Mode.
 
 ### Screenshot
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Toggles the visibility of the material in Screenshots.
 
@@ -70,7 +70,7 @@ These settings below will show if [Mode](#mode) is set to `Generic`.
 
 ### Mirror Visibility
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Show In Both`/`Show Only In Mirror`/`Don't Show In Mirror`
+<Property type="dropdown" options={['Show In Both', 'Show Only In Mirror', "Don't Show In Mirror"]} />
 
 Mode to use for the mirror visibility.
 
@@ -85,36 +85,36 @@ Mode to use for the mirror visibility.
 
 ## Mirror Texture & Color
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Enables the ability to change the Main Texture or Color when the material is shown in a Mirror.
 
 ### Blending
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Replace`/`Darken`/`Multiply`/`Lighten`/`Screen`/`Subtract`/`Add`/`Overlay`/`Mixed`
+<Property type="dropdown" options={['Replace', 'Darken', 'Multiply', 'Lighten', 'Screen', 'Subtract', 'Add', 'Overlay', 'Mixed']} />
 
 Set of the Blending of the Mirror Texture in the Mirror.
 
 ### Color
 
-- `Type`: <PropertyIcon name="color" />**Color**
+<Property type="color" />
 
 Color shown in the Mirror. It is blended multiplicative with the Mirror Texture. If no Mirror Texture is defined, the Color will be used instead.
 
 ### Texture
 
-- `Type`: <PropertyIcon name="texture" />**Color** Texture (`sRGB = On`)
+<Property type="texture" texture="color" />
 
 Texture shown in the Mirror. The base color of the material in the Mirror is set from the color of this texture.
 
-### Test
+### Force Show (Preview)
 
-- `Type` <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Toggle checkbox used to debug your results, assuming it's being seen in a Mirror or Camera right now.
 
 :::danger[Debugging Only]
-The `Test` checkbox is designed for debugging the result of your Mirror Texture & Color settings!
+The `Force Show (Preview)` checkbox is designed for debugging the result of your Mirror Texture & Color settings!
 
 Make sure to turn this OFF when you're done testing!
 :::

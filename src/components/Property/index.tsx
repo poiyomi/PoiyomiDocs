@@ -50,6 +50,8 @@ const TEXTURES: Record<string, { label: string; srgb: boolean }> = {
     normal: { label: 'Normal map', srgb: false },
     cubemap: { label: 'Cubemap', srgb: true },
     gradient: { label: 'Gradient texture', srgb: true },
+    array: { label: 'Texture array', srgb: true },
+    volume: { label: '3D volume texture', srgb: false },
 };
 
 type Scalar = string | number | boolean;
@@ -69,7 +71,7 @@ type PropertyProps = {
      * For vector toggles, the list of buttons that are on, like `['Base']`.
      */
     default?: Scalar | Scalar[] | Record<string, Scalar>;
-    /** What a texture slot expects: `color`, `data`, `normal`, `cubemap` or `gradient`. */
+    /** What a texture slot expects: `color`, `data`, `normal`, `cubemap`, `gradient`, `array` or `volume`. */
     texture?: string;
     /** Overrides the sRGB setting implied by `texture`. */
     srgb?: boolean;

@@ -20,7 +20,7 @@ Each of the 4 Emission slots (0, 1, 2, 3) have the following unique options list
 
 ## Emission Mask
 
-- `Type`: <PropertyIcon name="texture" />**Data** Texture (`sRGB = Off`)
+<Property type="texture" texture="data" />
 
 Mask texture that defines where to place the emission effect. Black areas will not be affected by the emission, while white areas will be fully affected by the emission.
 
@@ -30,7 +30,7 @@ Please be aware that Fallback Shaders do not support Masking. If you are using *
 
 ### Global Mask
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Off`/`1R`/`1G`/`1B`/`1A`/`2R`/`2G`/`2B`/`2A`/`3R`/`3G`/`3B`/`3A`/`4R`/`4G`/`4B`/`4A`
+<Property type="dropdown" options={['Off', '1R', '1G', '1B', '1A', '2R', '2G', '2B', '2A', '3R', '3G', '3B', '3A', '4R', '4G', '4B', '4A']} />
 
 Select which [Global Mask](/modifiers/global-masks.mdx) to use as the Emission Mask instead.
 
@@ -38,7 +38,7 @@ Expand the **Emission Mask** slot from above to see this property.
 
 ## Emission Color
 
-- `Type`: <PropertyIcon name="hdrcolor" />**HDR Color**
+<Property type="hdrcolor" />
 
 Tint color applied to the emission map. If no map is defined, this color will be used entirely.
 
@@ -54,7 +54,7 @@ You can safely use the other slots, **Emission 1, 2, or 3,** without affecting y
 
 ## Emission Map
 
-- `Type`: <PropertyIcon name="texture" />**Color** Texture (`sRGB = On`)
+<Property type="texture" texture="color" />
 
 Color map of the emissions. This is used to define independent colors of your emissions in different areas on the mesh. Black areas will not be affected by the emission, while areas with color will be blended with the emission color.
 
@@ -68,7 +68,7 @@ Please keep this in mind when creating your Emissions. This only applies to **Em
 
 ## Emission Strength
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 20.0`
+<Property type="range" min="0" max="20" />
 
 Strength of the emission. Values greater than `1.0` will not change the base color as much, but will increase the amount the emission *blooms* (glows) in worlds with post processing enabled, and bloom configured.
 
@@ -76,19 +76,19 @@ Generally, this value should be set between `0.0` and `1.0` for a normal effect,
 
 ## Use Base Colors
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Applies the base color as a map. Useful for adding highlights to a mesh, especially in combination with an emission mask.
 
 ## Override Base Color
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 If enabled, the base color of the mesh will be replaced with the emission color (calculated from the combined strength of all the emission sections with Replace Base Color enabled). This means that the mesh, in areas with intense emission, will take on the color of the emission.
 
 ## Fluorescence
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Controls how the Emission brightness appears in dark environments. Therefore, Emission will only contribute it's brightness when your mesh is in the dark. This would essentially make it so that Emissions won't look extra-bright when there's lighting on it.
 
@@ -98,13 +98,13 @@ Fluorescence is a very basic slider. For more advanced control of Emission behav
 
 ## Color Adjust
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Enables hue shifting of the emission.
 
 ### Color Space
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `OKLab`/`HSV`
+<Property type="dropdown" options={['OKLab', 'HSV']} />
 
 Choice of Color Space to use for the Hue Shift. By default, it will be set to `OKLab`.
 
@@ -112,8 +112,7 @@ Learn about the difference of Color Spaces as documented here in [Color Adjust](
 
 ### Select or Shift
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Hue Select`/`Hue Shift`
-  - Default: `Hue Shift`
+<Property type="dropdown" options={['Hue Select', 'Hue Shift']} default="Hue Shift" />
 
 This dropdown allows you to select how the Color Adjustment should behave when the Hue Shift is used. By default, this will be set to `Hue Shift`.
 
@@ -127,13 +126,13 @@ This dropdown allows you to select how the Color Adjustment should behave when t
 
 ### Saturation
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 10.0`
+<Property type="range" min="-1" max="10" />
 
 Adjust the Saturation of the Hue Shift.
 
 ### Hue Shift
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 How much to shift the base color around the hue circle.
 
@@ -141,25 +140,25 @@ This value is circular, and will have the same result at 0 and 1.
 
 ### Hue Shift Speed
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 How much to constantly shift the hue with time. A value of 1 will result in a full hue shift cycle every 20 seconds.
 
 ## Center Out
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Whether to change the emission mode to center out. This will make the emission move from the center of the mesh to the edges of the mesh, relative to the view direction and the mesh's normal. The emission map is used to create the center out map.
 
 ### Flow Speed
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 How fast the center out effect should move.
 
 ## Light Based
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Enables Light Based emission. This allows modifying the emission based on the light intensity at different points on the mesh, or based on the world lighting.
 
@@ -167,99 +166,99 @@ The default settings define an emission that will glow in the dark, multiplying 
 
 ### Lighting Type
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `World`/`Mesh`
+<Property type="dropdown" options={['World', 'Mesh']} />
 
 Whether to use `World` or `Mesh` lighting as the basis. `World` type uses the light intensity of the probe being used, meaning it will be the same at all points on the mesh. `Mesh` type uses the intensity of lighting at each point on the mesh, which can be different at different points, such as in shadow.
 
 ### Min Emission Multiplier
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Amount to multiply the emission by at the *Min Lighting* value.
 
 ### Max Emission Multiplier
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Amount to multiply the emission by at the *Max Lighting* value.
 
 ### Min Lighting
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Lighting intensity at which to use the *Min Emission Multiplier*.
 
 ### Max Lighting
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 Lighting intensity at which to use the *Max Emission Multiplier*.
 
 ## Blinking
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Enables Blinking of the emission. This allows the emission to blink at a certain rate without needing to explicitly animate it.
 
 ### Mode
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Smooth`/`Pulse`
+<Property type="dropdown" options={['Smooth', 'Pulse']} />
 
 Choice of blinking behavior to use. By default, a smooth blinking transition is used. If set to `Pulse`, it will instead function in a PWM or Duty blink cycle.
 
 ### Emissive Blink Min
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 Minimum multiplier for emissive blink. This is the amount the emission will be multiplied by at the low end of the blink cycle.
 
 ### Emissive Blink Max
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 Maximum multiplier for emissive blink. This is the amount the emission will be multiplied by at the high end of the blink cycle.
 
 ### Emissive Blink Velocity
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 How fast the blink cycle should move. This uses the sine of time, so a value of 1 will result in a blink cycle every 6.28 (`Pi * 2`) seconds or so. Higher values will result in a faster blink cycle.
 
 ### Offset
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 Offset of the blink cycle in time. Useful for offsetting the blink cycle of different emission sections. This uses the sine of time, so a value of 6.28 (`Pi * 2`) will offset the blink cycle by 1 second. Higher values will result in a blink cycle that is offset by a larger amount of time.
 
 ### Pulse Interval
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
-  - Default: `0.5`
-  - Conditional: Requires [Mode](#mode) set to `Basic`
+<Property type="range" min="0" max="1" default="0.5">
+[Mode](#mode) is set to `Basic`
+</Property>
 
 Sets the interval in how and when each blink is timed. This is similar to PWM or Duty cycle modes in electronic lighting modules.
 
 ## Scrolling
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Enables a scrolling emission effect. This creates a wave (or other pattern defined by a Curve) that travels in world space.
 
 ### Use Curve
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Enables the use of a Curve to define the scrolling wave shape.
 
 #### Curve
 
-- `Type`: <PropertyIcon name="texture" />**Data** Gradient Texture (`sRGB = Off`)
+<Property type="texture" texture="gradient" />
 
 Curve texture that defines the scrolling wave shape. By clicking the horizontal box, a curve editor will open that can create a curve texture.
 
 ### VColor as position
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Whether to use the vertex color to determine the position of the wave. If disabled, the position will be determined by world-space coordinates.
 
@@ -267,31 +266,31 @@ This option requires baking position data into the vertex color, which can be do
 
 ### Direction
 
-- `Type`: <PropertyIcon name="float4" />**Vector4**
+<Property type="vector4" />
 
 Direction of the scrolling wave. This vector is in world space, with the X, Y, and Z values defining the direction of the wave. The W value is ignored. The higher the values of the directional components, the more dense the wave will be.
 
 ### Width
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 Width of the wave; must be greater than 0. This value is unitless, and is constant regardless of the model scale. Smaller Width values result in a wider wave.
 
 ### Velocity
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 How fast the wave should move. Higher values result in a faster wave. This value can be negative, which will cause the wave to move in the opposite direction.
 
 ### Interval
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 How much distance there should be between each wave. This value is unitless, and is constant regardless of the model scale. Larger intervals result in more space between waves.
 
 ### Offset
 
-- `Type`: <PropertyIcon name="float" />**Float**
+<Property type="float" />
 
 An offset applied to the wave. This value is unit-less, and depends on the velocity and interval values.
 
@@ -299,7 +298,7 @@ An offset applied to the wave. This value is unit-less, and depends on the veloc
 
 ## Audio Link
 
-- `Type`: <PropertyIcon name="toggle" />**Toggle**
+<Property type="toggle" />
 
 Enables or disables Emission Audio Link features.
 
@@ -313,14 +312,13 @@ Adjusts the Emission Strength times(x) the defined value. This will use the equa
 
 #### Band
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+<Property type="dropdown" options={['Bass', 'Low Mid', 'High Mid', 'Treble', 'Volume']} />
 
 Which band to use for the Audio Link Emission multiplier.
 
 #### Multiplier
 
-- `Type`: <PropertyIcon name="float2" />**Vector2**
-    - Default: `Min = 1`, `Max = 1`
+<Property type="vector2" default={{Min: 1, Max: 1}} />
 
 How much to multiply the Emission Strength with Audio.
 
@@ -341,13 +339,13 @@ Adjusts the Emission Strength by adding or subtracting from the current [Emissio
 
 #### Band
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+<Property type="dropdown" options={['Bass', 'Low Mid', 'High Mid', 'Treble', 'Volume']} />
 
 Which band to use for the Audio Link Emission adjustment.
 
 #### Strength Add
 
-- `Type`: <PropertyIcon name="float2" />**Vector2**
+<Property type="float2" />
 
 How much to add to or subtract from the emission strength with audio.
 
@@ -362,13 +360,13 @@ Makes the Emission move from the center of the mesh to the edges of the mesh, re
 
 #### Band
 
-- `Type`: <PropertyIcon name="dropdown" />**Dropdown**, Options: `Bass`/`Low Mid`/`High Mid`/`Treble`/`Volume`
+<Property type="dropdown" options={['Bass', 'Low Mid', 'High Mid', 'Treble', 'Volume']} />
 
 Which band to use for the Audio Link Center Out adjustment.
 
 #### Strength
 
-- `Type`: <PropertyIcon name="float2" />**Vector2**
+<Property type="vector2" />
 
 How much to add to or subtract from the center out strength with audio.
 
@@ -379,12 +377,12 @@ How much to add to or subtract from the center out strength with audio.
 
 #### Intensity Threshold
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `0.0 - 1.0`
+<Property type="range" min="0" max="1" />
 
 How high the audio intensity must be before being added to the center out strength. This can be used to create a "punchier" center out effect.
 
 #### Duration
 
-- `Type`: <PropertyIcon name="floatrange" />**Float**, Range: `-1.0 - 1.0`
+<Property type="range" min="-1" max="1" />
 
 How much audio history should be used to calculate the center out. Lower values will result in a faster center out with less detail.
