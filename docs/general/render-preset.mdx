@@ -7,10 +7,12 @@ keywords: [render, rendering, preset, opaque, cutout, transparent, transclipping
 
 At the top of the shader, there is a dropdown that may be labeled with something like `Opaque`, `Cutout`, `Transparent`, or something similar. It's located on the bottom-right from the Material Lock/Unlock button.
 
+<Property type="dropdown" options={['Opaque', 'Cutout', 'TransClipping', 'Fade', 'Transparent', 'Additive', 'Soft Additive', 'Multiplicative', '2x Multiplicative']} default="Opaque" />
+
 When you click on this, the dropdown will show the options that are documented on this page. The option you select will automatically configure your [Rendering](/rendering/rendering.mdx) settings to ensure they appear as intended.
 
 <a>
-<img src="/img/general/RenderingPresets-new.png" alt="Rendering Presets Dropdown Menu" width="700px"/>
+<img src="/img/general/RenderingPresets-newUI.png" alt="Rendering Presets Dropdown Menu" width="700px"/>
 </a>
 
 This setting is critical to determining how a material will render, and it's important to know what options are available. **This is always the most important step in your Avatar creation journey!**
@@ -19,14 +21,15 @@ This setting is critical to determining how a material will render, and it's imp
 
 ### Opaque
 
-- Render Queue: `2000` (Geometry)
+- Render Queue: `Geometry` `2000`
 - ZWrite: `On`
 
 The default rendering mode in Unity, typically recommended for general usage. Commonly used for objects with no transparency at all, such as concrete, wood, solid plastic, human skin, etc.
 
 ### Cutout
 
-- Render Queue: `2450` (AlphaTest)
+- Render Queue (Built-in): `AlphaTest` `2450`
+- Render Queue (URP): `AlphaTest +100` `2550`
 - ZWrite: `On`
 
 Similar to Opaque, but allows a yes/no for whether a pixel should be rendered. This is suitable for objects with general transparency, like clothing with holes in it, hair using hair cards, etc.
@@ -52,26 +55,27 @@ To learn more about transparency issues, and how to mitigate some of them, check
 <iframe class="iframe-element" src="https://www.youtube-nocookie.com/embed/jvaoZJmjENs?si=TO5iXVR7NWWw4xNw" title="YouTube Video Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
+### TransClipping
+
+- Render Queue (Built-in): `AlphaTest +10` `2460`
+- Render Queue (URP): `AlphaTest +110` `2560`
+- ZWrite: `On`
+
+TransClipping is like Transparent, but will write to the Z-buffer and render on the AlphaTest queue with +10. This can sometimes fix certain transparency issues, but may cause other issues.
+
 ### Fade
 
-- Render Queue: `3000` (Transparent)
+- Render Queue: `Transparent` `3000`
 - ZWrite: `Off`
 
 Fade is a fully transparent preset, and allows an object to be completely faded away when its alpha value is 0. This is useful for things that need reliable partial transparency, but also need to disappear completely. Therefore, this does not work with specular highlights or reflections.
 
 ### Transparent
 
-- Render Queue: `3000` (Transparent)
+- Render Queue: `Transparent` `3000`
 - ZWrite: `Off`
 
 Transparent is like fade, but will keep specular highlights and reflections, like real transparent materials. This is more useful for rendering transparent physically-based materials, like glass, water, etc.
-
-### TransClipping
-
-- Render Queue: `2460` (AlphaTest+10)
-- ZWrite: `On`
-
-TransClipping is like Transparent, but will write to the Z-buffer and render on the AlphaTest queue with +10. This can sometimes fix certain transparency issues, but may cause other issues.
 
 ## Color Blend Presets
 
@@ -79,7 +83,7 @@ These presets are transparent, but primarily use the color instead of the alpha 
 
 ### Additive
 
-- Render Queue: `3000` (Transparent)
+- Render Queue: `Transparent` `3000`
 - ZWrite: `Off`
 
 Additive adds the color of the material to the background. This tends to brighten the background. Black areas will be fully transparent, while white areas will be most visible.
@@ -88,7 +92,7 @@ The additive preset will always either keep or brighten the background color, by
 
 ### Soft Additive
 
-- Render Queue: `3000` (Transparent)
+- Render Queue: `Transparent` `3000`
 - ZWrite: `Off`
 
 Soft Additive is similar to Additive, but instead of using the material color directly, it uses the material color multiplied by one minus the background color. This means that when the destination color is very bright, the amount of blending will be very little. This prevents the additive blending from being too strong.
@@ -97,7 +101,7 @@ The soft additive preset will always either keep or brighten the background colo
 
 ### Multiplicative
 
-- Render Queue: `3000` (Transparent)
+- Render Queue: `Transparent` `3000`
 - ZWrite: `Off`
 
 Multiplicative multiplies the background color by the material color. This tends to darken the background. It's useful for creating tinted effects. Black areas will be fully opaque, while white areas will be fully transparent.
@@ -106,7 +110,7 @@ The multiplicative preset will always either keep or darken the background color
 
 ### 2x Multiplicative
 
-- Render Queue: `3000` (Transparent)
+- Render Queue: `Transparent` `3000`
 - ZWrite: `Off`
 
 2X Multiplicative is similar to Multiplicative, but instead of simply multiplying the material color by the background color, it ends up multiplying the result by 2. This means that it's capable of slightly brightening the background when white, but can still darken all the way to black.
@@ -117,19 +121,33 @@ The multiplicative preset will always either keep or darken the background color
 
 Render Presets Set a bunch of options for how a material should render. They are all set to the default values, but if you know what you're doing, you can adjust them in the [Rendering Settings](/rendering/rendering.mdx) section.
 
-The options that are set by default by rendering presets are:
+The options that are configured by Rendering Presets are:
+- Render Queue [`render_queue`]
+- Render Type (internal only) [`render_type`]
+- Force Opaque [`_AlphaForceOpaque`]
+- Alpha Cutoff [`_Cutoff`]
+- RGB Source Blend [`_SrcBlend`]
+- RGB Destination Blend [`_DstBlend`]
+- Additive RGB Source Blend [`_AddSrcBlend`]
+- ZWrite [`_ZWrite`]
+- Alpha Premultiply [`_AlphaPremultiply`]
+- Outline RGB Source Blend [`_OutlineSrcBlend`]
+- Outline RGB Destination Blend [`_OutlineDstBlend`]
+- Outline Alpha Destination Blend [`_OutlineDstBlendAlpha`]
 
-- Render Queue
-- Render Type (internal only)
-- Blend Op
-- Blend Op Alpha
-- Alpha Cutoff
-- Source Blend Factor
-- Distance Blend Factor
-- Alpha To Coverage
-- ZWrite
-- ZTest
-- Alpha Premultiply
+These options are also set anytime a Rendering Preset is selected, although they remain the same across all presets:
+- RGB Blend Op [`_BlendOp = Add(0)`]
+- Alpha Blend Op [`_BlendOpAlpha = Max(4)`]
+- Alpha Source Blend [`_SrcBlendAlpha = One(1)`]
+- Alpha Destination Blend [`_DstBlendAlpha = One(1)`]
+- Additive RGB Destination Blend [`_AddDstBlend = One(1)`]
+- Additive Alpha Source Blend = [`_AddSrcBlendAlpha = Zero(0)`]
+- Additive Alpha Destination Blend = [`_AddDstBlendAlpha = One(1)`]
+- Alpha to Coverage [`_AlphaToCoverage = 0`]
+- ZTest [`_ZTest = LessEqual(4)`]
+- Outline Alpha Source Blend [`_OutlineSrcBlendAlpha = One(1)`]
+- Outline RGB Blend Op [`_OutlineBlendOp = Add(0)`]
+- Outline Alpha Blend Op [`_OutlineBlendOpAlpha = Max(4)`]
 
 ### Blending
 
