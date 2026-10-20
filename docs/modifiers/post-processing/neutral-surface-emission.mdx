@@ -1,0 +1,25 @@
+---
+sidebar_position: 4
+title: Neutral Surface Emission
+description: Maps bright surface Emission toward white as the intensity is increased, leaving colors in the normal brightness range unchanged.
+keywords: [post, processing, postprocessing, advanced, look, hdr, retention, neutral, surface, emission, poiyomi, shader]
+---
+
+Neutral Surface Emission maps bright Emissions found on the material toward white as the intensity is increased, while leaving colors in the normal brightness range unchanged. This feature is based on [Smash-ter's Neutral Tonemap <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://github.com/Smash-ter/SmashterNeutral) shader.
+
+{/* POIYOMI PRO LABEL */}
+<a target="_blank" href="https://www.patreon.com/poiyomi">
+<img src="/img/Poiyomi-Pro-Label.png" alt="Pro Feature" width="600px"/>
+</a>
+
+## HDR Retention
+
+<Property type="range" min="0" max="1" />
+
+Blends back toward the original Emission to preserve brightness for Bloom. World Post Processing, including Bloom and Tone Mapping, can still change how this looks.
+
+## Hue Correction
+
+<Property type="range" min="0" max="1" />
+
+Amount of correction to add to the Hue on the material.
