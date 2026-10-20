@@ -393,31 +393,17 @@ The results of this setting can be easily noticeable in Worlds that use it. For 
 
 More Technical Info: [<FAIcon icon="fa-solid fa-blog"/> "Why are Light Volumes cool?" by Teeh](https://www.poiyomi.com/blog/2025-06-30-light-volumes)
 
-:::warning
-Due to some of the code required for Light Volumes to work, it is known that enabling Light Volumes may cause a brief performance impact on users loading your Avatar.
-
-To ensure the impact is far lessened, make sure you are on the latest version of Poiyomi Shaders as it contains the most up-to-date code on Light Volumes.
-:::
-
 Please be aware that you will not see the results of Light Volumes in your project unless you have a working setup in your Scene that can show it to you. You can use newer versions of [Haï Lightbox Viewer <FAIcon icon="fa-solid fa-square-arrow-up-right"/>](https://docs.hai-vr.dev/docs/products/lightbox-viewer) (v2.4.0 and up) to preview the results, which includes new lightboxes supporting Light Volumes.
+
+:::note[LV Shadows Behavior]
+Shadows from Light Volumes is treated alongside Poiyomi's code. Therefore, the intensity of the shadows in Light Volumes will be controlled by your chosen [Shadows](/shading/main.mdx) mode.
+:::
 
 ### LV Specular
 
 <Property type="range" min="0" max="1" default="1" />
 
 Configures how intensity the specular feature in Light Volumes should appear.
-
-### LV Intensity
-
-<Property type="range" min="0" max="1" default="1" />
-
-Configures how intense Light Volumes should affect the material.
-
-### LV Shadows
-
-<Property type="range" min="0" max="1" default="0" />
-
-Configures the intensity of shadows to simulate when material is exposed to a Light Volume voxel.
 
 ### Normal Bias Sampling
 
