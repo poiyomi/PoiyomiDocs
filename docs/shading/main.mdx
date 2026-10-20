@@ -25,7 +25,7 @@ This section often uses some terms interchangeably.
 
 ## Lighting Type
 
-<Property type="dropdown" options={['TextureRamp', 'Multilayer Math', 'Wrapped', 'Skin', 'ShadeMap', 'Flat', 'Realistic', 'Cloth', 'SDF']} default="Flat" />
+<Property type="dropdown" options={['TextureRamp', 'Multilayer Math', 'Wrapped', 'Skin', 'ShadeMap', 'Flat', 'Realistic', 'Cloth', 'SDF', 'PBR']} default="Flat" />
 
 Lighting mode to use. Each of these models uses the same lighting data in different ways to produce different lighting effects.
 
@@ -796,6 +796,169 @@ Determines how strong of a shadow is applied. A value of `0.0` will not apply an
 <Property type="range" min="0" max="1" default="1" />
 
 Determines whether or not to incorporate the full ambient color into the lighting calculation. A value of `0.0` will fully tint the shadow with the ambient color, and a value of `1.0` will ignore it.
+
+</details>
+
+### PBR
+
+PBR (Physically-Based Rendering) implements the rendering technique that achieves a more lifelike appearance on the material. In this mode, the calibrated Bidrectional Reflectance Distribution Function (BRDF) is enforced.
+
+:::warning[Work in Progress]
+PBR mode is a Work in Progress and is subject to change!
+:::
+
+<details>
+<summary><b>PBR Options</b></summary>
+
+#### Packed Maps
+
+<Property type="texture" texture="data" />
+
+The map texture defines multiple settings of the PBR across different parts of the material. These maps are *packed* into a single texture, which increases performance and reduces memory usage.
+
+#### Metallic
+
+<Property type="range" min="0" max="1" />
+
+How metallic the material should be. Metallic materials are usually used for (as would be expected) metals. The defining feature of metallic surfaces is that reflections are tinted with the color of the material. For non-metallic materials, the reflections are not tinted.
+
+This value is multiplied with the value of the Metallic Map. If no metallic map is defined, this setting is used directly.
+
+This setting is equivalent to the `Metallic` setting in the Unity Standard shader.
+
+#### Smoothness
+
+<Property type="range" min="0" max="1" />
+
+How smooth the material should be. Smoothness is a value that controls how diffuse, or blurred, highlights and reflections are. A value of `0.0` means that the material is completely diffuse, meaning reflections will be highly blurred, and specular reflections will be large and not very bright. A value of `1.0` means that the material is completely smooth, and will have very small and concentrated specular.
+
+Smoothness is the opposite of Roughness, and they can be converted by inverting the value - `0.2` roughness is `1.0 - 0.2` = `0.8` smoothness, and `0.7` smoothness would be `1.0 - 0.7` = `0.3` roughness.
+
+This value is multiplied with the value of the Smoothness Map. If no smoothness map is defined, this setting is used directly.
+
+This setting is equivalent to the `Smoothness` setting in the Unity Standard shader.
+
+#### Dielectric Reflectance
+
+<Property type="range" min="0" max="1" />
+
+Sets the intensity of the reflection of light.
+
+#### Occlusion Strength
+
+<Property type="range" min="0" max="1" />
+
+Sets the strength and intensity of the PBR occlusion.
+
+#### Clear Coat
+
+##### Strength
+
+<Property type="range" min="0" max="1" />
+
+Sets the strength of the Clear Coating effect on the PBR.
+
+##### Smoothness
+
+<Property type="range" min="0" max="1" />
+
+Sets the overall smoothness of the Clear Coating effect. This property is only intractable when the Clear Coat Strength is greater than 0.
+
+#### Glints
+
+<Property type="toggle" />
+
+Enables Metallic-style Glitter onto the material, creating a sandblasted-like painted metallic style.
+
+##### UV
+
+<Property type="dropdown" options={['UV0', 'UV1', 'UV2', 'UV3']} />
+
+Configures which UV to use for the Glints.
+
+##### Mask Channel
+
+<Property type="dropdown" options={['R', 'G', 'B', 'A', 'White']} />
+
+Chose which Packed Map channel to use for the Glints. If set to `White`, it will affect everything.
+
+##### Flake Color
+
+<Property type="color" />
+
+Sets the color of the flakes.
+
+##### Use Base Reflectance
+
+<Property type="range" min="0" max="1" />
+
+Sets how much to use the basis Reflectance from the PBR.
+
+##### Color Variation
+
+<Property type="range" min="0" max="1" />
+
+Sets how much colors should be allowed in the flakes shown.
+
+##### Smoothness
+
+<Property type="range" min="0" max="1" />
+
+Sets the overall smoothness of the flakes.
+
+##### Density
+
+<Property type="float" default="2000" />
+
+Configures the overall amount of flakes to show.
+
+##### Flake Roughness
+
+<Property type="range" min="0.002" max="0.2" />
+
+Sets the overall Roughness of each flake.
+
+##### Flake Size
+
+<Property type="range" min="0" max="1" />
+
+Sets the overall basis size of each flake.
+
+##### VR Eye Blend
+
+<Property type="range" min="0" max="1" />
+
+Sets the overall blending of the flakes to each eye in VR.
+
+##### Ambient Sparkle
+
+<Property type="range" min="0" max="2" />
+
+Sets how much ambience that sparkles on each glint.
+
+##### Vertex Light Sparkles
+
+<Property type="toggle" />
+
+Uses the Vertex pass for each light sparkle.
+
+#### Specular Anti-Aliasing
+
+<Property type="toggle" />
+
+Enables the ability to use Anti-Aliasing pass on the speculars. Recommended to be enabled by default.
+
+##### Variance
+
+<Property type="range" min="0" max="1" />
+
+How much variance to use for Anti-Aliasing.
+
+##### Threshold
+
+<Property type="range" min="0" max="1" />
+
+Threshold to use for the Anti-Aliasing.
 
 </details>
 
