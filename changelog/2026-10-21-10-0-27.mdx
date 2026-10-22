@@ -1,0 +1,32 @@
+---
+title: Poiyomi Toon 10.0.27 Changelog
+description: Full changelog of Poiyomi Toon 10.0.27 release.
+hide_table_of_contents: true
+authors:
+  bluwizard
+tags: [shader, vrchat, updates, update, free]
+---
+
+This update includes various optimizations to the shader pipeline. More importantly, Light Volumes 3.0 is no longer a layer on top of normal lighting and has been fully integrated into the Poiyomi lighting pipeline. As a result, this fixes several inconsistencies when setting up your Avatar and making Light Volumes properly follow your shading. Now, what you see is what you get.
+
+The Toon version is now available in the VCC Repository, GitHub, and on BOOTH.
+
+### Performance Optimizations
+- If Dissolve is `0`, the shader now exits early before sampling any mask, noise, or texture.
+  - *This does not apply to UV Tile Dissolve, Wave Mode, or Audio Link Edge Width.*
+- Stochastic Sampling no longer runs it's samples if disabled while unlocked.
+- Shadow Caster passes now returns only alpha. Color modules and fog no longer compile into the shadow pass.
+- Screen-space shadow variants are now skipped when the material receives no shadows.
+- Add Pass shadow variants are now skipped when the material receives no additive shadows.
+- UV1, UV2, UV3, and tangent vertex outputs are dropped when no enabled module reads them.
+  - *Unlocked materials will still keep every output.*
+- Vertex outputs that nothing reads are now skipped.
+- Fake Shadow no longer compiles unused variants.
+- Stats Overlay, Pathing, LTCGI, and Vertex Audio Link Band and Mask selection now have far less dynamic arrays, avoiding indexing arrays at runtime.
+- Voronoi now tracks it's two nearest distances with Min/Max, and MaxLuminance is now a simple select.
+- [URP] The DepthOnly and DepthNormals passes now sample the main texture at a fixed UV.
+
+### Changes & Fixes
+- Multilayer Math's half-lambert curve are now used by Light Volumes and Unity lights inside Light Volumes. This means any Light Volume in the scene pushed the shadow edge well into the lit side.
+- [URP] The Outline Renderer feature in URP now has it's own runtime assembly and only compiles when URP 17 or newer is installed, fixing several problems in Unity 6.
+- Removed "Experimental" from Skin.
