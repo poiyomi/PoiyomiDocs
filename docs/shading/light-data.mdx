@@ -275,6 +275,12 @@ Whether to cap the brightness value to a specific maximum. Enabling this option 
 
 If **Limit Brightness** is enabled, the brightness due to base pass lighting calculations will never go above this value. Add pass lighting or emission can cause the final color to exceed this value.
 
+### Luminance Limit
+
+<Property type="range" min="0" max="1" default="0" />
+
+When set above `0`, preserves the lighting color to a specified amount when using Limit Brightness.
+
 ### Min Brightness
 
 <Property type="range" min="0" max="1" default="0" />
