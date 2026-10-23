@@ -1,6 +1,12 @@
-# Poiyomi Shaders Documentation
+<div align=center class=flex>
+  <img height="125" alt="Poi Documentation" src="https://www.poiyomi.com/img/PoiyomiDocs.png">
+</div>
+<br>
+<div align=center>
 
-Main repository for the Poiyomi Shaders Documentation's source code, containing all the pages and scripts used to host the website. It is built using [Docusaurus](https://docusaurus.io/), a modern static website generator utilizing React.
+  Main repository for the Poiyomi Docs source code, containing all the pages and scripts used to host the website. Poiyomi Docs is built using [Docusaurus](https://docusaurus.io/), a modern static website generator utilizing React.
+
+</div>
 
 # [🌐 View Website 🌐](https://www.poiyomi.com)
 
