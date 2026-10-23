@@ -11,7 +11,7 @@ Truchet is a feature that generates a pattern of non-rotationally symmetric tile
 
 ## UV
 
-<Property type="dropdown" options={['UV0', 'UV1', 'UV2', 'UV3', 'Panosphere', 'World Pos', 'Local Pos', 'Polar UV', 'Distorted UV']} />
+<Property type="dropdown" options={['UV0', 'UV1', 'UV2', 'UV3', 'Panosphere', 'World Pos', 'Local Pos', 'Polar UV', 'Distorted UV', 'Matcap', 'Screen Space']} />
 
 Choice of UV to project the Truchet effect on.
 
@@ -23,7 +23,27 @@ Which blending operation to use for the Decal's base color.
 
 These are the same blending operations used in Adobe Photoshop.
 
-## Pan & Offset
+## Color
+
+<Property type="color" />
+
+Configures the Color of the Truchet.
+
+## TruchetTex
+
+<Property type="texture" texture="color" />
+
+Which texture to use for the Truchet pattern.
+
+## Emission Strength
+
+<Property type="range" min="0" max="20" />
+
+How much Emission to apply to the Truchet Color. Higher values will yield a bloom-like effect in certain Worlds.
+
+## Pattern
+
+### Pan & Offset
 
 <Property type="float4" />
 
@@ -36,49 +56,27 @@ Configures the amount of Panning to run on the Truchet. This can also configure 
 | OffX | How much to offset each tile on the X-axis. |
 | OffY | How much to offset each tile on the Y-axis. |
 
-## Density
+### Density
 
 <Property type="float" />
 
 Configures the density of how many Truchet tiles should appear in the tile.
 
-## Color
-
-<Property type="color" />
-
-Configures the Color of the Truchet.
-
-## Truchet Texture
-
-<Property type="texture" texture="color" />
-
-Which texture to use for the Truchet pattern.
-
-## Truchet Mask
-
-<Property type="texture" texture="data" />
-
-Mask to use to clamp the Truchet effect to only a specific area on the UV.
-
-## Emission Strength
-
-<Property type="range" min="0" max="20" />
-
-How much Emission to apply to the Truchet Color. Higher values will yield a bloom-like effect in certain Worlds.
-
-## Thiccness
+### Thiccness
 
 <Property type="range" min="0" max="0.5" />
 
 Determines how thick each quarter-circle should be drawn.
 
-## Edge Sharpness
+### Edge Sharpness
 
 <Property type="range" min="0" max="1" />
 
 Determines how sharp the edge of each quarter-circle. This can be used to create either a sharp edge or a more softer and smooth edge.
 
 ## Alpha
+
+### Alpha
 
 <Property type="range" min="0" max="1" />
 
@@ -88,11 +86,19 @@ How much to apply the Truchet to the Base Color.
 This slider can be used to control the main appearance of the Truchet.
 :::
 
-## Override Alpha
+### Override Alpha
 
 <Property type="toggle" />
 
 If enabled, will override the Alpha/Transparency from the Base, if Transparency exists.
+
+## Masking
+
+### Truchet Mask
+
+<Property type="texture" texture="data" />
+
+Mask to use to clamp the Truchet effect to only a specific area on the UV.
 
 ## Audio Link
 
