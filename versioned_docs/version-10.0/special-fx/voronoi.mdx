@@ -9,7 +9,7 @@ Voronoi is an effect that generates a noise pattern across the Material, either 
 
 ## Type
 
-<Property type="dropdown" options={['2D (Fast)', '3D (Fast with color bugs)', '3D (Slow with no bugs)']} />
+<Property type="dropdown" options={['2D (Fast)', '3D (Fast with color bugs)', '3D (Slow with no bugs)']} default="3D (Fast with color bugs)" />
 
 Choice of Voronoi effect to use. Each of these are self-explanatory due to the way they function.
 
@@ -19,9 +19,17 @@ Choice of Voronoi effect to use. Each of these are self-explanatory due to the w
 
 Where should the Voronoi effects be simulated on.
 
+## UV
+
+<Property type="dropdown" options={['UV0', 'UV1', 'UV2', 'UV3', 'Panosphere', 'World Pos', 'Local Pos', 'Polar UV', 'Distorted UV', 'Matcap', 'Screen Space']}>
+Space is set to `UV`
+</Property>
+
+Selection of UV to use for the Voronoi.
+
 ## Blend
 
-<Property type="dropdown" options={['Color and Emission', 'Just Emission']} />
+<Property type="dropdown" options={['Color and Emission', 'Just Emission']} default="Color and Emission" />
 
 Chooses how you want the Voronoi to Blend with the Material.
 
@@ -31,77 +39,31 @@ Chooses how you want the Voronoi to Blend with the Material.
 
 If enabled, the Voronoi will also affect the Material's Alpha.
 
-## Mask
+## Colors
 
-<Property type="texture" texture="data" />
-
-Determines where to contain the Voronoi effects and where it should only appear in.
-
-## Global Mask
-
-<Property type="dropdown" options={['1R', '1G', '1B', '1A', '2R', '2G', '2B', '2A', '3R', '3G', '3B', '3A', '4R', '4G', '4B', '4A']} />
-
-Same as above, but uses a [Global Mask](/modifiers/global-masks.mdx) instead to determine the Mask.
-
-## Noise
-
-<Property type="texture" texture="data" />
-
-Which Noise Map to use for the Voronoi effect.
-
-## Noise Intensity
-
-<Property type="range" min="0" max="1" />
-
-How much intensity to add to the Noise Map, if provided.
-
-## Outer Color
+### Outer Color
 
 <Property type="color" />
 
 Choice of Color to use for the Outer Voronoi.
 
-## Outer Emission
+### Outer Emission
 
 <Property type="range" min="0" max="20" />
 
 How much Emission to add to the Outer Voronoi's color.
 
-## Inner Color
+### Inner Color
 
 <Property type="color" />
 
 Choice of Color to use for the Inner Voronoi.
 
-## Inner Emission
+### Inner Emission
 
 <Property type="range" min="0" max="20" />
 
 How much Emission to add to the Inner Voronoi's color.
-
-## Gradient
-
-<Property type="vector2" />
-
-In X and Y coordinates, determines the Gradient location of the Voronoi in the 2D space.
-
-## Power
-
-<Property type="float" />
-
-How much power to add to the Voronoi.
-
-## Scale
-
-<Property type="float" />
-
-How large or small to scale the Voronoi effects.
-
-## Speed
-
-<Property type="float3" />
-
-How fast to move the Voronoi effect among the simulated space.
 
 ## Voronoi Random Cell Color
 
@@ -120,6 +82,60 @@ Minimum and Maximum range of Saturation to apply to each randomized Voronoi Cell
 <Property type="clamped" min="0" max="1" />
 
 Minimum and Maximum range of Brightness to apply to each randomized Voronoi Cell.
+
+## Shape & Motion
+
+### Scale
+
+<Property type="float" />
+
+How large or small to scale the Voronoi effects.
+
+### Power
+
+<Property type="float" />
+
+How much power to add to the Voronoi.
+
+### Gradient
+
+<Property type="vector2" />
+
+In X and Y coordinates, determines the Gradient location of the Voronoi in the 2D space.
+
+### Speed
+
+<Property type="float3" />
+
+How fast to move the Voronoi effect among the simulated space.
+
+## Noise
+
+### Noise
+
+<Property type="texture" texture="data" />
+
+Which Noise Map to use for the Voronoi effect.
+
+### Noise Intensity
+
+<Property type="range" min="0" max="1" />
+
+How much intensity to add to the Noise Map, if provided.
+
+## Masking
+
+### Mask
+
+<Property type="texture" texture="data" />
+
+Determines where to contain the Voronoi effects and where it should only appear in.
+
+### Global Mask
+
+<Property type="dropdown" options={['1R', '1G', '1B', '1A', '2R', '2G', '2B', '2A', '3R', '3G', '3B', '3A', '4R', '4G', '4B', '4A']} />
+
+Same as above, but uses a [Global Mask](/modifiers/global-masks.mdx) instead to determine the Mask.
 
 ## Audio Link
 
