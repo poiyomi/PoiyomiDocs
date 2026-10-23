@@ -425,21 +425,17 @@ Configures how intensity the specular feature in Light Volumes should appear.
 
 Offsets the position where lighting from the mesh normals is sampled from. This can control lighting artifacts when the geometry is thin or too close to edges.
 
-## Debug Visualization
-
-Debug visualization provides visualizations of the results of lighting data settings and calculations. 
-
-### Debug
+## Debug / Data Visualization
 
 <Property type="toggle" />
 
-Enable or Disable debug view.
+Enable or Disable debug view, visualizing the results of lighting data settings and calculations. 
 
 :::danger[DO NOT LEAVE THIS ON!]
 This section is only meant to visualize and debug your Light Data settings. Make sure to turn it off prior to finalizing your Material!
 :::
 
-#### Visualize
+### Visualize
 
 <Property type="dropdown" options={['Direct Color', 'Indirect Color', 'Light Map', 'Attenuation', 'Shadow', 'N Dot L', 'Half Dir', 'Direction', 'Add Color', 'Add Attenuation', 'Add Shadow', 'Add N Dot L', 'Add Half Dir', 'Add Light Map']} />
 
