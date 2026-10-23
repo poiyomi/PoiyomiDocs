@@ -29,37 +29,39 @@ This checkbox allows toggling Squish at runtime.
 Squish is enabled by default. To turn off Squish in-game, you need to animate this Toggle (checkbox) when creating toggles for Squish on this Material. Animating the [Section Header](/general/locking.mdx#section-header-checkboxes) will not work!
 :::
 
-## Collider Size
+## Deformation
+
+### Collider Size
 
 <Property type="vector2" />
 
 Sets the collision size to use with Squish. This value must match the same dimensions as the Orifice penetrator.
 
-## Squish Strength
+### Squish Strength
 
 <Property type="range" min="0" max="1" />
 
 Configures the total strength of the Squish effect. For the full effect, this should be set to `1`.
 
-## Squish Spread
+### Squish Spread
 
 <Property type="range" min="-1" max="1" />
 
 Sets the spreading of the Squish across the penetrated area. This will impact how the mesh appears when it is squished by the orifice.
 
-## Max Squish
+### Max Squish
 
 <Property type="range" min="0.1" max="1" />
 
 Controls how much the mesh is penetrated by the orifice.
 
-## Squish Falloff
+### Squish Falloff
 
 <Property type="range" min="0.1" max="1" />
 
 Controls the falloff range of the penetrated mesh area.
 
-## Z-Clipping Fix
+### Z-Clipping Fix
 
 <Property type="float" />
 
@@ -71,6 +73,8 @@ If this value is not adjusted carefully (especially on the Body), ugly clipping 
 
 ## Color Gradient
 
+### Color Gradient
+
 <Property type="texture" texture="gradient" />
 
 Color Gradient texture to use on the mesh when the mesh is being penetrated by the orifice. This is optional.
@@ -81,37 +85,23 @@ This texture can be edited using the Thry Gradient Editor by clicking the checke
 When editing the Color Gradient using the Gradient Editor, your changes will be saved in the `Assets/textures/Gradients` folder in Unity with a unique identifier. If this folder doesn't exist, it will be generated automatically upon saving.
 :::
 
-## Gradient Min
+### Gradient Min
 
 <Property type="range" min="-2" max="0" />
 
 Minimum starting point to use for the Color Gradient.
 
-## Gradient Max
+### Gradient Max
 
 <Property type="range" min="0" max="4" />
 
 Maximum ending point to use for the Color Gradient.
 
-## Gradient Intensity
+### Gradient Intensity
 
 <Property type="range" min="0" max="5" />
 
 Sets how intense the Color Gradient should appear.
-
-## Masking
-
-### Squish Mask
-
-<Property type="texture" texture="data" />
-
-Mask texture slot to isolate specific areas that the orifice should only affect when the mesh is penetrated.
-
-### Write to Global Mask
-
-<Property type="dropdown" options={['Off', '1R', '1G', '1B', '1A', '2R', '2G', '2B', '2A', '3R', '3G', '3B', '3A', '4R', '4G', '4B', '4A']} />
-
-If set, will write the Squish Mask to the chosen [Global Mask](/modifiers/global-masks.mdx) channel.
 
 ## Blending
 
@@ -132,3 +122,17 @@ Multiplicative blending modifier to use.
 <Property type="range" min="0" max="1" />
 
 Unlit blending modifier to use.
+
+## Masking
+
+### Squish Mask
+
+<Property type="texture" texture="data" />
+
+Mask texture slot to isolate specific areas that the orifice should only affect when the mesh is penetrated.
+
+### Write to Global Mask
+
+<Property type="dropdown" options={['Off', '1R', '1G', '1B', '1A', '2R', '2G', '2B', '2A', '3R', '3G', '3B', '3A', '4R', '4G', '4B', '4A']} />
+
+If set, will write the Squish Mask to the chosen [Global Mask](/modifiers/global-masks.mdx) channel.
