@@ -34,98 +34,6 @@ Sets the Color of the overall Constellation patterns.
 
 Sets the overall Emissive effect of the Constellation.
 
-## Density
-
-<Property type="float" />
-
-Sets how much the Constellation pattern should be tiled across the UV.
-
-## Z Center
-
-<Property type="float2" />
-
-Sets the target of the starting center of the Constellations. Changes to this value are best visualized with Pan Speed `Z` modifier adjusted as Panning is visualized based on the Z Center.
-
-## Pan Speed
-
-<Property type="float3" />
-
-Sets the panning speed of the Constellations. `X` is left-right, `Y` is up-down, and `Z` is depth-zoom.
-
-## Offset
-
-<Property type="float3" />
-
-Sets an offset, mainly for Panning.
-
-## Star Movement
-
-<Property type="range" min="0" max="0.5" />
-
-This value sets the range of how the stars are moved across in constellations as it animates.
-
-If this is set to `0`, the stars will freeze in place and won't move.
-
-## Line Thickness
-
-<Property type="range" min="0" max="1" />
-
-Sets how much thickness the constellation lines should appear. Lower values are thin, while higher values are thicker.
-
-## Line Thickness Variation
-
-<Property type="range" min="0" max="1" />
-
-This can determine how much variation the lines should have in terms of thickness throughout the animation.
-
-## Line Brightness
-
-<Property type="range" min="0" max="2" />
-
-Sets the base brightness of the lines.
-
-## Star Size
-
-<Property type="range" min="0" max="20" />
-
-Sets how small or large each star should appear across the animation. Higher values will yield larger stars.
-
-## Star Brightness
-
-<Property type="range" min="0" max="2" />
-
-Sets the base brightness of the stars.
-
-## Twinkle Speed
-
-<Property type="range" min="0" max="10" />
-
-As the constellation animates, stars will twinkle in a blinking pattern. This slider will set how fast the stars should "blink" over time.
-
-## Layer Fade
-
-<Property type="clamped" min="0" max="1" />
-
-This sets how the constellation should fade on it's depth distance.
-
-## Mask
-
-<Property type="texture" texture="data" />
-
-Mask texture that limits where the constellation should only appear in. Black is nothing, while White shows constellations.
-
-## Use Global Mask
-
-<Property type="dropdown" options={['Off', '1R', '1G', '1B', '1A', '2R', '2G', '2B', '2A', '3R', '3G', '3B', '3A', '4R', '4G', '4B', '4A']} />
-
-Uses a [Global Mask](/modifiers/global-masks.mdx) to limit where the constellation should only appear in.
-
-## Write to Global Mask
-
-<Property type="dropdown" options={['Off', '1R', '1G', '1B', '1A', '2R', '2G', '2B', '2A', '3R', '3G', '3B', '3A', '4R', '4G', '4B', '4A']} />
-
-If set, constellations will write onto the selected [Global Mask](/modifiers/global-masks.mdx) channel.
-
 ## Random Colors
 
 <Property type="toggle" />
@@ -143,6 +51,130 @@ Sets the range of saturation to apply to the constellations at random intervals.
 <Property type="clamped" />
 
 Sets the range of value/brightness to apply to the constellations at random intervals.
+
+## Stars
+
+### Star Size
+
+<Property type="range" min="0" max="20" />
+
+Sets how small or large each star should appear across the animation. Higher values will yield larger stars.
+
+### Star Brightness
+
+<Property type="range" min="0" max="2" />
+
+Sets the base brightness of the stars.
+
+### Brightness Variation
+
+<Property type="range" min="0" max="1" />
+
+Sets a variation of brightness across each star.
+
+### Star Movement
+
+<Property type="range" min="0" max="0.5" />
+
+This value sets the range of how the stars are moved across in constellations as it animates.
+
+If this is set to `0`, the stars will freeze in place and won't move.
+
+### Star Speed
+
+<Property type="range" min="0" max="5" />
+
+Multiplier for the speed of each star.
+
+### Twinkle Speed
+
+<Property type="range" min="0" max="10" />
+
+As the constellation animates, stars will twinkle in a blinking pattern. This slider will set how fast the stars should "blink" over time.
+
+## Lines
+
+### Line Thickness
+
+<Property type="range" min="0" max="1" />
+
+Sets how much thickness the constellation lines should appear. Lower values are thin, while higher values are thicker.
+
+### Line Thickness Variation
+
+<Property type="range" min="0" max="1" />
+
+This can determine how much variation the lines should have in terms of thickness throughout the animation.
+
+### Line Brightness
+
+<Property type="range" min="0" max="2" />
+
+Sets the base brightness of the lines.
+
+### Line Density
+
+<Property type="range" min="0" max="1" />
+
+Sets how dense each line is.
+
+## Placement & Motion
+
+### Density
+
+<Property type="float" />
+
+Sets how much the Constellation pattern should be tiled across the UV.
+
+### Z Center
+
+<Property type="float2" />
+
+Sets the target of the starting center of the Constellations. Changes to this value are best visualized with Pan Speed `Z` modifier adjusted as Panning is visualized based on the Z Center.
+
+### Pan Speed
+
+<Property type="float3" />
+
+Sets the panning speed of the Constellations. `X` is left-right, `Y` is up-down, and `Z` is depth-zoom.
+
+### Offset
+
+<Property type="float3" />
+
+Sets an offset, mainly for Panning.
+
+### Layer Fade
+
+<Property type="clamped" min="0" max="1" />
+
+This sets how the constellation should fade on it's depth distance.
+
+### Depth
+
+<Property type="range" min="0" max="1" />
+
+Creates depth perception on the constellation for a more trippy appearance.
+
+## Masking
+
+### Mask
+
+<Property type="texture" texture="data" />
+
+Mask texture that limits where the constellation should only appear in. Black is nothing, while White shows constellations.
+
+### Use Global Mask
+
+<Property type="dropdown" options={['Off', '1R', '1G', '1B', '1A', '2R', '2G', '2B', '2A', '3R', '3G', '3B', '3A', '4R', '4G', '4B', '4A']} />
+
+Uses a [Global Mask](/modifiers/global-masks.mdx) to limit where the constellation should only appear in.
+
+### Write to Global Mask
+
+<Property type="dropdown" options={['Off', '1R', '1G', '1B', '1A', '2R', '2G', '2B', '2A', '3R', '3G', '3B', '3A', '4R', '4G', '4B', '4A']} />
+
+If set, constellations will write onto the selected [Global Mask](/modifiers/global-masks.mdx) channel.
 
 ## Audio Link
 
