@@ -439,8 +439,14 @@ Enable or Disable debug view.
 This section is only meant to visualize and debug your Light Data settings. Make sure to turn it off prior to finalizing your Material!
 :::
 
+#### Visualize
+
+<Property type="dropdown" options={['Direct Color', 'Indirect Color', 'Light Map', 'Attenuation', 'Shadow', 'N Dot L', 'Half Dir', 'Direction', 'Add Color', 'Add Attenuation', 'Add Shadow', 'Add N Dot L', 'Add Half Dir', 'Add Light Map']} />
+
+This dropdown changes what to visualize in the lighting debugger.
+
 <details>
-<summary><b>Debug Options</b></summary>
+<summary><b>Visualize Options</b></summary>
 
 #### Direct Color
 
@@ -457,6 +463,10 @@ Shows the Light Map across the model.
 #### Attenuation
 
 Shows the Attenuation (Unity Shadows) across the model.
+
+#### Shadow
+
+Shows the shadow map across the model.
 
 #### N Dot L
 
@@ -482,8 +492,16 @@ Shows the attenuation from any Add Pass lights across the model.
 
 Shows the shadow map from any Add Pass lighting across the model.
 
-#### Add NDotL
+#### Add N Dot L
 
 Shows the N Dot L result (Normal dot Light) from any Add Pass lighting across the model.
+
+#### Add Half Dir
+
+Shows the Half Dir (normalized sum of light direction and view direction) from any Add Pass lighting across the model.
+
+#### Add Light Map
+
+Shows the Light Map from any Add Pass lighting across the model.
 
 </details>
