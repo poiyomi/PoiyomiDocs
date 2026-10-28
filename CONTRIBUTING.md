@@ -206,6 +206,7 @@ Anything between `<Property>` and `</Property>` is the condition for the propert
 | `hdrcolor` | HDR Color | |
 | `texture` | Texture Slot | `texture`: `color`, `data`, `normal`, `cubemap`, `gradient`, `array` or `volume`. Adds the sRGB setting that texture needs, which `srgb={true}` or `srgb={false}` can override. |
 | `dropdown` | Dropdown | `options`: a list like `{['Off', 'On']}` |
+| `logicgate` | Logic Gate | `options`: a list like `{['AND', 'OR', 'XOR']}`. No icon yet. |
 
 Every type also takes:
 

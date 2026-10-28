@@ -5,8 +5,8 @@ import { faEye } from '@fortawesome/free-solid-svg-icons';
 import PropertyIcon from '@site/src/components/PropertyIcon';
 import styles from './styles.module.css';
 
-// Every `type` a <Property> can have. `icon` is a PropertyIcon name.
-const TYPES: Record<string, { label: string; icon: string }> = {
+// Every `type` a <Property> can have. `icon` is a PropertyIcon name; types without one show just the label.
+const TYPES: Record<string, { label: string; icon?: string }> = {
     toggle: { label: 'Toggle', icon: 'toggle' },
     toggles: { label: 'Vector Toggles', icon: 'toggle' },
     float: { label: 'Float', icon: 'float' },
@@ -24,6 +24,7 @@ const TYPES: Record<string, { label: string; icon: string }> = {
     hdrcolor: { label: 'HDR Color', icon: 'hdrcolor' },
     texture: { label: 'Texture Slot', icon: 'texture' },
     dropdown: { label: 'Dropdown', icon: 'dropdown' },
+    logicgate: { label: 'Logic Gate' },
 };
 
 // Other names accepted for `type`, so the PropertyIcon names used in older docs keep working.
@@ -41,6 +42,7 @@ const ALIASES: Record<string, string> = {
     buttonvector: 'toggles',
     hdr: 'hdrcolor',
     enum: 'dropdown',
+    logic: 'logicgate',
 };
 
 // What a texture slot expects (`texture` prop), and whether that kind of texture is sRGB by default.
@@ -61,7 +63,7 @@ type PropertyProps = {
     type: string;
     /** Replaces the type's display name. */
     label?: string;
-    /** Choices of a dropdown, or buttons of vector toggles, in the order they appear in the Shader UI. */
+    /** Choices of a dropdown or logic gate, or buttons of vector toggles, in the order they appear in the Shader UI. */
     options?: string[];
     /** Bounds of a range, integer or clamped slider. Pass strings (`"0.0"`) to keep the decimal. */
     min?: string | number;
@@ -128,7 +130,7 @@ export default function Property({ type, label, options, min, max, default: defa
         : defaultValue !== undefined && typeof defaultValue !== 'object'
           ? [format(defaultValue)]
           : [];
-    // Dropdowns and vector toggles mark their defaults among the options instead of repeating them in a row of their own.
+    // Dropdowns, logic gates and vector toggles mark their defaults among the options instead of repeating them in a row of their own.
     const defaultInOptions = options !== undefined && defaults.length > 0 && defaults.every((d) => options.includes(d));
     const showDefault = defaultValue !== undefined && !defaultInOptions;
 
@@ -144,7 +146,7 @@ export default function Property({ type, label, options, min, max, default: defa
             {row(
                 'Type',
                 <>
-                    {info && (
+                    {info?.icon && (
                         <span className={styles.icon} aria-hidden="true">
                             <PropertyIcon name={info.icon} size="1.25rem" style={{ marginRight: 0 }} />
                         </span>

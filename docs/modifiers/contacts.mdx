@@ -1,0 +1,77 @@
+---
+sidebar_position: 4
+title: Contacts
+description: Contacts are used to create a multitude of different effects applied to Global Masks when interacted with in VRChat.
+keywords: [contacts, material contacts, global mask, vrc contacts, vrc, vrchat, poiyomi, shader]
+---
+
+Contacts are used alongside [Global Masks](/modifiers/global-masks.mdx) to create a multitude of different effects applied to Global Masks in reaction to users interacting with VRC Contacts. It opens a wide range of creative possibilities on any feature in the shader that supports Global Masking.
+
+To get started, ensure this material is on an Avatar to connect it with a VRC Contact Receiver of your choice. View the video attached below to understand the concept and how it works.
+
+:::warning[Required SDK Version]
+**In order to use this feature, you must update VRChat Avatars SDK to 3.10.6 or newer!**
+:::
+
+<ReactVideo src='/vid/modifiers/PoiContactsTutorialDemo.webm'/>
+<em>Tutorial and Demonstration on the usage of Contacts with Global Masks.</em>
+
+## Contact
+
+<Property type="toggle" />
+
+Enables the mentioned contact slot.
+
+:::info[Documentation Info]
+There are 8 Contact Slots available for a total of 16 Tags, all have the unique options listed below. They are independent of each other.
+:::
+
+### Who
+
+<Property type="logicgate" options={['| OR', '& AND', '~ NOT', '^ XOR']} default="| OR" />
+
+This area determines which of the receiver's tags this contact reacts to. If none are picked, it will react to all of them.
+
+Filtering of this tag is done through the menu on the side of each tag, all with supported Logic Gates of OR, AND, NOT, and XOR.
+
+### People
+
+<Property type="dropdown" options={['Everyone', 'Only Others', 'Only Me']} />
+
+Filters which remote players whose touches this Contact reacts to. The VRC Contact Receiver has to allow them too.
+
+### Person Color
+
+<Property type="dropdown" options={['Off', 'Theme Color 0', 'Theme Color 1', 'Theme Color 2', 'Theme Color 3']} />
+
+If active, will give the Theme Color a hue for each person touching the Contact.
+
+### Inner Radius
+
+<Property type="float" />
+
+Full strength within this distance of a touch's center in meters. This radius grows with the Contact Sender's scale.
+
+### Outer Radius
+
+<Property type="float" />
+
+Fades out between the inner radius and this distance.
+
+### Where
+
+<Property type="dropdown" options={['Around the Touch', 'Whole Mesh']} />
+
+Sets where the fade with each pixel's distance is to the touch.
+
+### Invert
+
+<Property type="toggle" />
+
+Inverts the effect.
+
+### Writes To
+
+<Property type="dropdown" options={['Off', '1R', '1G', '1B', '1A', '2R', '2G', '2B', '2A', '3R', '3G', '3B', '3A', '4R', '4G', '4B', '4A']} />
+
+Sets which Global Mask channel this Contact will fill. Pick the same channel in any section's Global Mask to make it react to it.
