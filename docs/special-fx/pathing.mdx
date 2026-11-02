@@ -7,33 +7,31 @@ keywords: [pathing, gradient, special effect, special fx, effect, poiyomi, shade
 
 Pathing is a powerful and flexible way to create effects that follow along paths defined using gradients. It can be used for complex effects like emissions traveling across a material, or selectively showing an underlying texture based on a defined path.
 
-:::info[Documentation Info]
-Options in this section will be labeled as **"R/G/B/A"**, each corresponding to a common option with separate values for each different channel of the gradient.
-
-For example, "`R Path Type`" will be documented here as "`R/G/B/A Path Type`" instead.
-:::
-
 <ReactVideo src='/vid/special-fx/4paths.mp4' width='300px'/>
 <em>Example of Paths used on the lines of this Jacket. Notice the timing of each Path as they animate.</em>
 
+## Motion Preview
+
+<a>
+<img src="/img/special-fx/pathing-motion.gif" alt="Motion Preview gimmick in the shader UI." width="600px"/>
+</a>
+
+The Motion Preview allows you to see how Paths in each channel are being animated in a ten-second preview, showing the shape and timing as each property is modified. Masks and Audio Link are excluded.
+
 ## Path Source
 
-<Property type="dropdown" options={['Tex Gradient', 'UV Gradient']} />
+<Property type="dropdown" options={['Tex Gradient', 'UV Gradient']} default="Tex Gradient" />
 
 Choice of what Path Gradient should be used.
 
 - `Tex Gradient`: Uses a Texture to fetch the Gradient.
 - `UV Gradient`: Fetches the gradient from the UV of the mesh.
 
-## Blend Mode
-
-<Property type="dropdown" options={['Replace', 'Add', 'Multiply']} />
-
-Choice of blending operator to use for the Pathing gradient.
-
 ## Gradient Type
 
-<Property type="dropdown" options={['Split Channels', 'Merged Channels']} />
+<Property type="dropdown" options={['Split Channels', 'Merged Channels']} default="Split Channels">
+[Path Source](#path-source) is set to `Tex Gradient`
+</Property>
 
 Determines whether to sample the Path Map texture. There are two modes:
 
@@ -46,29 +44,23 @@ The Gradient Type setting is only visible with [Path Source](#path-source) set t
 
 ## UV
 
-<Property type="dropdown" options={['UV0', 'UV1', 'UV2', 'UV3', 'Panosphere', 'World Pos', 'Local Pos', 'Polar UV', 'Distorted UV']} />
+<Property type="dropdown" options={['UV0', 'UV1', 'UV2', 'UV3', 'Panosphere', 'World Pos', 'Local Pos', 'Polar UV', 'Distorted UV']}>
+[Path Source](#path-source) is set to `UV Gradient`
+</Property>
 
 Determines which UV to sample the Path Map from.
 
-:::info
-The UV setting is only visible with [Path Source](#path-source) set to `UV Gradient`.
-:::
-
 ## Point Sampling
 
-<Property type="toggle" />
+<Property type="toggle" default="On" />
 
 If enabled, will sample the Path from points.
 
-## Override Alpha
+## Direction Map
 
-<Property type="toggle" />
-
-If enabled, multiplies the base alpha of the material with the Path's final alpha.
-
-## RGBA Path Gradient / Mask
-
-<Property type="texture" texture="data" />
+<Property type="texture" texture="data">
+[Path Source](#path-source) is set to `Tex Gradient`
+</Property>
 
 Defines the gradients for the path. If using `Split Channels` mode, this texture should consist of between 1 and 4 channels of gradient data, with each channel representing a different path. Each channel used will flow between a value of `1` to a value of `255` (in 0-255 range), and should be defined from linear textures. 
 
@@ -76,7 +68,15 @@ When expanded, 4 slots will be visible, one for each path. This is an integrated
 
 If using `Merged Channels` mode, this texture should be the output of the Poiyomi Pathing tool. The 4 channels will be sampled in order, from `R -> G -> B -> A`.
 
-## Color & Mask
+## Packed Masks
+
+<Property type="texture" texture="data" />
+
+Allows independent coverage for each Path. Select `R` for a single-channel BC4 mask.
+
+Color and Mask Alpha remains a shared mask unless disabled.
+
+## Color & Shared Mask
 
 <Property type="texture" texture="color" />
 
@@ -84,11 +84,31 @@ Defines the underlying color for the paths, and a mask for the paths. Both the R
 
 The RGB Color can be used to show textures or colors where the path is active. The Alpha Mask can be used to define where the path is shown, and is very useful for creating clean paths, by creating "wider" paths on the path map, and masking out the edges (which often cause artifacts).
 
-## Path Types
+## Paths
 
-### R/G/B/A Path Type
+:::info[Documentation Info]
+Options in this section are sorted in a table view by each Row and Column, with each Column representing the specified Path channel. Each Path channel are independent of each other.
+:::
 
-<Property type="dropdown" options={['Fill', 'Path', 'Loop', 'Dashed', 'Off']} />
+### Direction (Tex Gradient)
+
+<Property type="dropdown" options={['Default', 'R', 'G', 'B', 'A']} default="Default">
+[Path Source](#path-source) is set to `Tex Gradient`
+</Property>
+
+Choice of channel from the Direction Map to use. Default follows Split or Merged Channels, or select `R` to share a single-channel gradient.
+
+### Direction (UV Gradient)
+
+<Property type="dropdown" options={['X Axis', 'Y Axis']}>
+[Path Source](#path-source) is set to `UV Gradient`
+</Property>
+
+Choice of which direction the Path should travel on the UV's axis. X is left to right, and Y is bottom to top.
+
+### Shape
+
+<Property type="dropdown" options={['Fill', 'Path', 'Loop', 'Dashed', 'Off']} default="Path" />
 
 Defines the path type for each path channel.
 
@@ -103,101 +123,149 @@ Defines the path type for each path channel.
 
 </details>
 
-## Path Colors
+### Color
 
-### R/G/B/A Color
-
-<Property type="hdrcolor" />
+<Property type="color" />
 
 Colors for each path channel. This is overlain on the `Color` texture, if defined. Otherwise, the `Color` will be used directly.
 
 The **Alpha** value of these colors determines the strength of the path. Path channels can be disabled by setting their colors' alpha to `0`.
 
-## Path Source Directions
+### Theme
 
-### R/G/B/A Direction
+<Property type="dropdown" options={['Theme Color 0', 'Theme Color 1', 'Theme Color 2', 'Theme Color 3', 'ColorChord 0', 'ColorChord 1', 'ColorChord 2', 'ColorChord 3', 'AL Theme 0', 'AL Theme 1', 'AL Theme 2', 'AL Theme 3']} />
 
-<Property type="dropdown" options={['UV X Axis', 'UV Y Axis']} />
+Allows to use a [Theme Color](/docs/modifiers/global-themes.mdx) for the Color. If this is set, it will override the above Color.
 
-Choice of which direction the Path should travel on the UV's axis. X is left to right, and Y is bottom to top.
+### Mask
 
-:::info
-Path Source Directions will only appear when [Path Source](#path-source) is set to `UV Gradient`.
-:::
+<Property type="dropdown" options={['R', 'G', 'B', 'A', 'None']} />
 
-## Path Appearance
+Choice of Channel from Packed Masks used by each Path. If None, leaves the Path unmasked. For a single-channel texture, use `R`.
 
-Each of these settings below has 4 fields, one for each path channel. They are labeled accordingly as `R`, `G`, `B`, and `A`, referring to their respective channels.
+### Emission
 
-### Emission Strength
-
-<Property type="float4" />
+<Property type="float" />
 
 How strong the emission of the active part of the path should be.
 
-### Softness
-
-<Property type="float4" />
-
-How sharp the edges of the active path segment should be. This smooths and softens the appearance of the path.
-
-### Speed
-
-<Property type="float4" />
-
-How fast the path should move from minimum to maximum along the gradient. A value of `1` will result in a complete path cycle every `20` seconds.
-
 ### Length
 
-<Property type="float4" />
+<Property type="float" />
 
 How long the path should be, relative to the gradient. A value of `1` will result in a path that extends across the entire gradient.
 
-### Gap Length
+### Softness
 
-<Property type="float4" />
+<Property type="float" />
 
-Determines the Gap in between each Path fired when [R/G/B/A Path Type](#rgba-path-type) is set to `Dashed`.
+How sharp the edges of the active path segment should be. This smooths and softens the appearance of the path.
+
+### Gap
+
+<Property type="float" />
+
+Determines the Gap in between each Path fired when using `Dashed` mode.
 
 :::info
-This option is only visible when any [R/G/B/A Path Type](#rgba-path-type) is set to `Dashed`.
+This option can only be accessible when [Shape](#shape) is set to `Dashed`.
 :::
 
-## Timing Options
+### Speed
 
-Each of these settings has 4 fields, one for each path channel.
+<Property type="float" />
 
-### Manual Timing
+How fast the path should move from minimum to maximum along the gradient. A value of `1` will result in a complete path cycle every `20` seconds.
 
-<Property type="float4" />
+### Phase
 
-Determines whether to use manual timing, useful for animating a path in response to avatar parameters.
+<Property type="float" />
 
-A value of `-999` will result in automatic timing; any other value will offset in terms of path cycles, looping every `1`.
+Offsets the position of a Path relative to others.
 
-### Timing Offset
+### Steps
 
-<Property type="float4" />
+<Property type="float" />
 
-How much to offset the time by, in terms of path cycles. This can be used whether automatic or manual timing is active.
+Sets how many steps there are in the path. Non-zero values quantize movement into that many steps. `0` will yield continuous.
 
-### Path Segments
+### Motion
 
-<Property type="float4" />
+<Property type="dropdown" options={['Repeat', 'Ping Pong']} default="Repeat" />
 
-How many segments to split the path into. At a value of `0`, this defaults to the texture precision. If set to a value greater than `0`, the path will be split into that many segments - for most paths, this will be `255` by default, so lower values can be used to break up the path into blockier segments.
+Sets the travel motion of the Path. By default, it repeats to the beginning after the Path animation ends. Alternatively, this can be set to animate back and forth.
 
-## Path Remapping
+### Easing
+
+<Property type="dropdown" options={['Linear', 'Ease In', 'Ease Out', 'Ease In Out']} default="Linear" />
+
+This changes acceleration of the Path with each trip.
+
+### Edges
+
+<Property type="dropdown" options={['Linked', 'Separate']} default="Linked" />
+
+Allows how the edges should be treated. By default, it's linked to the [Softness](#softness) value. If using `Separate`, it will give Path, Loop, and Dashed modes have independent leading and trailing edges.
+
+### Head
+
+<Property type="float" />
+
+If using Separate Edges, this sets the Head (or start) of the Path's edge.
+
+### Tail
+
+<Property type="float" />
+
+If using Separate Edges, this sets the Tail (or end) of the Path's edge.
+
+## Gradient Range
+
+### Enable
 
 <Property type="toggle" />
 
-Enables Path Remapping, allowing the ability to change the entire range of the Path to a clamped range instead. This is especially useful when using `UV Gradient` as the [Path Source](#path-source).
+Enables the functions of the clamped sliders below, allowing the ability to change the entire range of the Path to a clamped range instead. This is especially useful when using `UV Gradient`.
 
 ### R/G/B/A Range
 
 <Property type="clamped" min="0" max="1" />
 
 Adjusts the mapping range of the specified Path.
+
+## Output & Blending
+
+### Blend Mode
+
+<Property type="dropdown" options={['Replace', 'Add', 'Multiply']} default="Replace" />
+
+Choice of blending operator to use for the Pathing gradient.
+
+### Path Overlap
+
+<Property type="dropdown" options={['Layered', 'Additive', 'Brightest']} default="Layered" />
+
+Sets the Path overlapping behavior. `Layered` keeps the original stacking order from R to A. `Additive` combines the paths, while `Brightest` keeps the path with the brightest covered color.
+
+### Edge Antialiasing
+
+<Property type="toggle" />
+
+If enabled, uses a pixel-sized edge smoothing algorithm for thin paths and dashes.
+
+### Write Material Alpha
+
+<Property type="toggle" />
+
+If enabled, multiplies the base alpha of the material with the Path's final alpha.
+
+## Global Masks
+
+### R/G/B/A Path Color Mask
+
+<Property type="dropdown" options={['Off', '1R', '1G', '1B', '1A', '2R', '2G', '2B', '2A', '3R', '3G', '3B', '3A', '4R', '4G', '4B', '4A']} />
+
+Select which [Global Mask](/modifiers/global-masks.mdx) to use as the specified Path's mask.
 
 ## Audio Link
 
