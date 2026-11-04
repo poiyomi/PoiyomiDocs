@@ -1,0 +1,334 @@
+---
+sidebar_position: 0
+title: Third Party
+description: Third Party section is used for custom-made shader features that were designed by the community.
+keywords: [third party, modular, modular shader, template, development, custom, poiTemplateCollection, poiTemplate, VRLM, VRLT, VRLTC, poiyomi, shader]
+---
+
+The Third Party module exists to allow users to add custom shader effects and code into Poiyomi Shaders. Thus, any feature added by third-party creators will be commonly placed here. Use this page to understand how Third Party modules are installed, updated, and removed.
+
+**SHADER DEVELOPERS:** Please refer to the [Modular Shader System](/modular-shader-system/modular-shader-system.mdx) Docs for detailed information on understanding the back-end pipeline, how it works, and using our injection keywords, hooks, and structs that are explained on this page.
+
+:::danger
+**Poiyomi Shaders is not responsible or liable for any features added by Third Party creators!** If you use any feature that is found inside the Third Party section, we may not be able to assist you if there is a problem. Please refer to the original creator of those Third Party modules for information on how to use them properly.
+:::
+
+## What is a Third Party Module
+
+Poiyomi Shaders sorts every `ShaderModule` asset in the project into three different kinds based on where the asset lives:
+
+| Kind | Where it's Located | Included? |
+| :--- | :--- | :--- |
+| Core System | Your Poiyomi Installation | Always |
+| Optional | Your Poiyomi Installation under `ModularShader/Editor/Poi_OptionalModules/` | Only once Installed |
+| Third Party | Anywhere | Only once installed |
+
+Our Optional Modules ship with all versions but are handled exactly like Third Party ones. When adding your own system, the following convention should be followed:
+
+> Keep your modules **OUTSIDE** of `_PoiyomiShaders` folder.
+> Anything inside the folder that isn't under `Poi_OptionalModules` will count as part of the Core System and will be overwritten with each update.
+
+Poiyomi Shaders function where it's installed by itself and still holds when Poiyomi has been installed as a VPM package.
+
+A `ModuleCollection` shows up as **one** row. The modules inside it are hidden, so you can ship a feature made of several modules as a singular installable one.
+
+## Expected Pipeline Behavior
+
+### Importing
+
+When importing a module into the project, a log will print in the console informing you that it has detected one. You may see something like this:
+
+```
+[Poiyomi] Found 1 new shader module: My Module. Install them from the Third Party section of a Poiyomi material.
+```
+
+This message will not be announced with modules that ship with Poiyomi Shaders.
+
+### Installing
+
+Look for the section labeled **Third Party** in the Shader UI. Every module that isn't installed will show an Icon, Name, Author, Version, where it Shows, a Description, and an Install button.
+
+Clicking `Install` on a Module will record the module as a fingerprint into the project, which will summon the Modular Shader Generator window and build the updated shader.
+
+Once it's done, the new settings will appear in whichever section it targets. The material's shader name remains the same.
+
+### Updating
+
+After each rebuild, Poiyomi Shaders records a fingerprint of every installed module files. If those files change, whether from importing a newer version or from editing them yourself, the module will have an **Update** row. Clicking the `Update` button will rebuild the current shader with the new files.
+
+### Removing
+
+In the <FAIcon icon="fa-solid fa-ellipsis-vertical"/> submenu of the Third Party header in the Shader UI will list every installed module. When clicking `Remove` from that menu, it will regenerate the current shader (with others caching up when selected).
+
+:::warning[Values Are Preserved]
+Removing a Third Party Module from a shader doesn't clear it's values, as Unity keeps it's metadata preserved in the material in case you reinstall it later.
+
+You can clear them by using `Tools Icon -> Unbound Properties -> Remove` from the Shader UI.
+:::
+
+### Blocked Features
+
+If a Third Party Module exists, the scripts in Poiyomi Shaders will check each module against Poiyomi's own Core modules and the ones already installed. If there is a problem, you will be blocked from installing said Third Party Module.
+
+Below is a few common issues that will cause the system to block installation of Third Party Modules:
+
+| Message | Cause | Fix |
+| :--- | :--- | :--- |
+| `Module "X" (Id) has missing dependency id "Y".` | `ModuleDependencies` lists an Id that isn't installed and requires installing `Y` first. | Install `Y` first. A dependency has to be installed, not just imported |
+| `Module "X" (Id) is incompatible with module "Z" (Id).` | One or more of the two lists the other `IncompatibleWith` | You must remove the other module first. |
+| `Module "X" (Ix) is duplicate.` | Another module already uses the same `Id`. | Give the Module a unique `Id` first. |
+
+### After a Poiyomi Update
+
+Updating Poiyomi Shaders replaces it's shader assets, which drops the installed modules out of them. Nothing is lost however, because the install list lives outside of `Assets`.
+
+Due to this, the Third Party section will tell you that your installed modules will need a rebuild with a `Rebuild Shader` button. When doing this, shaders also catch up as materials using them are selected.
+
+### Render Pipelines
+
+ONLY shaders for the selected Rendering Pipeline in use get rebuild. IF the project switches between Build-in and URP, the other set reports as out of date and rebuilds on selection, the same as after an update.
+
+### Locked Materials
+
+Materials that are locked keeps rendering with the shader it was cached as. While you can install from a locked material, you will need to unlock it first in order to see and edit the Module's settings. Locking them in again with the Module installed will bake them in.
+
+### Where Install State is Kept
+
+The state of which Modules are installed is saved per-project. In your root Unity Project folder, it will be stored as `Poi/Settings/PoiInstalledModules.json`. Each Module is identified with it's own asset GUID.
+
+If the project is shared through Version Control, that file needs to be committed. Otherwise, collaborators will see the module as not installed and have to install it themselves.
+
+## Building A Module
+
+### Using The Wizard (Quickest)
+
+Open `Poi -> Create New Module` from the Unity Menu Bar. It is important to understand what each field does, so refer to the table below for full explanation:
+
+| Field | What It Does |
+| :--- | :--- |
+| Name | The display name. It's also turned into the `Id` and the property prefix, keeping only letters and digits. |
+| Author, Version, Description | Shown on the Third Party row. Version defaults to `1.0`. Can be changed. |
+| Inspector Section | Where the settings appear. Defaults to **Third Party**, so it's highly recommended you stick to that. |
+| Hooks Into | Where in the fragment program your code runs. **Color** is the usual choice, but you can change this if your Module requires something specific to hook to. |
+| Passes | Which passes the effect runs in. Any pass the chosen hook cannot reach is greyed out. |
+| Output Folder | Has to be inside `Assets`. Defaults to `Assets/PoiyomiModules` always. |
+
+Pressing `Create Module` writes two files into the output folder:
+
+- `VRLTC_<Id>.poiTemplateCollection`: Your HLSL and Shader Properties.
+- `VRLM_<Id>.asset`: The actual `ShaderModule`, holding all metadata and which section goes where.
+
+The starter code compiles and visibly does something suited to the hook you picked. This starter code tints the color, adds a glow, fades the alpha, and some other things. This allows you to install it straight away and watch it work.
+
+:::warning[Do Not Use Conflicting IDs]
+The Wizard will not accept a name that is already used by another module in the project using the `Id`, or if Poiyomi already has properties with the names it would generate.
+:::
+
+### By Hand (Advanced)
+
+Shader Authors can create files by hand by doing the following:
+
+1. Create a text file with the extension `.poiTemplateCollection` with your sections in it (see Example below).
+2. Create the ShaderModule with `Assets -> Create -> Poi -> Modular Shader -> Shader Module`.
+3. Fill in `Id`, `Name`, `Version`, `Author`, and `Description`. Then add one `Templates` entry per section: Expand the Collection in the Project window, drag the section into `Template` and list it's `Keywords`.
+
+:::danger
+DO NOT hand-edit the `fileID` references in the `.asset` as doing so will create problems! Let Unity write them.
+:::
+
+### The Development Loop
+
+When developing the module, expect to do these steps:
+
+1. Install your Module once from Third Party.
+2. Edit the `.poiTemplateCollection` and save it.
+3. Third Party now shows an `Update` button reading "new changes". Clicking it will rebuild the shader you're looking at right now.
+
+Repeat Steps 2 and 3. If you change which keywords a section targets, do it from the `.asset` and then click `Update` in the same way.
+
+### Example: Edge Glow
+
+This module adds an Emissive glow around an object's silhouette, which an optional mask texture. Once way to build it is to run the Wizard with the name "Edge Glow", hook into `Emission - early` with only the `Base` pass ticked, and then edi the generated file to this:
+
+```hlsl
+#T#EdgeGlowProperties
+//ifex _EdgeGlowEnabled==0
+[HideInInspector] m_start_EdgeGlow (" Edge Glow--{reference_property:_EdgeGlowEnabled}", Float) = 0
+[ThryHideInInspector][ToggleUI]_EdgeGlowEnabled ("Enable", Float) = 0
+[HDR] _EdgeGlowColor ("Color", Color) = (1, 1, 1, 1)
+_EdgeGlowMask ("Mask", 2D) = "white" { }
+_EdgeGlowPower ("Sharpness", Range(0.5, 8)) = 3
+_EdgeGlowStrength ("Strength", Range(0, 4)) = 1
+[HideInInspector] m_end_EdgeGlow ("Edge Glow", Float) = 0
+//endex
+
+#T#EdgeGlowVariablesExposed
+//ifex _EdgeGlowEnabled==0
+float _EdgeGlowEnabled;
+float4 _EdgeGlowColor;
+float4 _EdgeGlowMask_ST;
+float _EdgeGlowPower;
+float _EdgeGlowStrength;
+//endex
+
+#T#EdgeGlowVariables
+//ifex _EdgeGlowEnabled==0
+#if defined(PROP_EDGEGLOWMASK) || !defined(OPTIMIZER_ENABLED)
+    Texture2D _EdgeGlowMask;
+#endif
+//endex
+
+#T#EdgeGlowFunctions
+//ifex _EdgeGlowEnabled==0
+void ApplyEdgeGlow(inout PoiFragData poiFragData, in PoiMesh poiMesh, in PoiCam poiCam)
+{
+    if (_EdgeGlowEnabled < 0.5) return;
+
+    half rim = pow(saturate(1.0 - poiCam.vDotNCentered), _EdgeGlowPower);
+    #if defined(PROP_EDGEGLOWMASK) || !defined(OPTIMIZER_ENABLED)
+        rim *= POI2D_SAMPLER(_EdgeGlowMask, _MainTex, poiUV(poiMesh.uv[0], _EdgeGlowMask_ST)).r;
+    #endif
+    poiFragData.emission += _EdgeGlowColor.rgb * rim * _EdgeGlowStrength;
+}
+//endex
+
+#T#EdgeGlowFunctionCalls
+//ifex _EdgeGlowEnabled==0
+ApplyEdgeGlow(poiFragData, poiMesh, poiCam);
+//endex
+```
+
+The Wizard creates four of these sections. `EdgeGlowVariables` is new: After saving the file, add a fifth `Templates` entry to the module and drag that section into it. The module's `Templates` should end up as:
+
+| Template | Keywords | Queue |
+| :--- | :--- | :---: |
+| `EdgeGlowProperties` | `THIRDPARTY_PROPERTIES` | 100 |
+| `EdgeGlowVariablesExposed` | `BASE_PROPERTY_VARIABLES_EXPOSED` | 100 |
+| `EdgeGlowVariables` | `BASE_PROPERTY_VARIABLES` | 100 |
+| `EdgeGlowFunctions` | `FRAGMENT_BASE_FUNCTIONS` | 100 |
+| `EdgeGlowFunctionCalls` | `FRAGMENT_BASE_EMISSION_EARLY` | 100 |
+
+Here's what each part does in the file:
+
+- **`#T#` headers** split the file into sections. Unity imports each one as a separate sub-asset named after its header.
+- **`//ifex _EdgeGlowEnabled==0` ... `//endex`** lets the optimizer strip the whole feature out of locked materials that have it turned off.
+- **`m_start_EdgeGlow` / `m_end_EdgeGlow`** creates the module's foldout section. Third Party also finds your section by looking for the first `m_start_...` in your properties, which is how the <FAIcon icon="fa-solid fa-ellipsis-vertical"/> **Remove** item and the `shows in` label know where you are.
+- **Numeric uniforms go in `_EXPOSED`.** In URP that block sits inside the `UnityPerMaterial` cbuffer. **Textures go in the plain `PROPERTY_VARIABLES` block**, outside it.
+- **`PROP_EDGEGLOWMASK`** is defined by the optimizer when the mask is assigned on a locked material. Guarding the texture this way means an unassigned mask costs nothing once locked. The name is `PROP_` followed by the property name, upper-cased, without its leading underscore.
+- **Queue 100** is the default. Within a keyword, sections run in ascending Queue order, and on a tie user modules come after Poiyomi's, so at 100 your code runs after Poiyomi's own.
+
+To run the effect in more passes, add the matching keyword for each pass to every section except in Properties, for example `OUTLINE_PROPERTY_VARIABLES_EXPOSED`, `FRAGMENT_OUTLINE_FUNCTIONS` and `FRAGMENT_OUTLINE_EMISSION_EARLY`.
+
+### Common Keywords To Use
+
+`<PASS>` is one of `BASE`, `ADD`, `META`, `SHADOW`, `OUTLINE`, `LILFUR`, `DEPTH`, or `MOTION_VECTORS`.
+
+| Keyword | What it Holds |
+| :--- | :--- |
+| a `*_PROPERTIES` UI section | Shader properties. Third party modules should use `THIRDPARTY_PROPERTIES` |
+| `<PASS>_PASS_KEYWORDS` | `#pragma shader_feature_local` lines |
+| `<PASS>_PROPERTY_VARIABLES_EXPOSED` | `float` / `float4` / `half` uniforms |
+| `<PASS>_PROPERTY_VARIABLES` | `Texture2D` and sampler declarations |
+| `FRAGMENT_<PASS>_FUNCTIONS` | Fragment function definitions |
+| `FRAGMENT_<PASS>_<HOOK>` | The call that runs your code: `COLOR`, `LIGHTING_ADD`, `EMISSION`, `RETURN`, etc. |
+| `VERTEX_<PASS>_FUNCTIONS_EARLY` | Vertex function definitions |
+| `VERTEX_MODS` and friends | Code inside the vertex program (`v` is the input, `o` the output) |
+| `vertexOutData` | Extra fields on the vertex-to-fragment struct |
+
+For every hook and which passes have it, the vertex-stage keywords, and whatever is in `PoiFragData`, `PoiMesh`, `PoiLight`, `PoiCam`, and `PoiMods`, see [Modular Shader System](/modular-shader-system/modular-shader-system.mdx).
+
+### Shader Keywords
+
+To compile a feature out entirely when it's off, rather than branching at runtime, the following must be satisfied:
+
+1. Put `[ThryToggle(MY_KEYWORD)]` on your Enable property.
+2. Add a section containing `#pragma shader_feature_local MY_KEYWORD` and target `<PASS>_PASS_KEYWORDS` for every pass you use.
+3. Wrap your variables, functions and calls, in `#ifdef MY_KEYWORD`.
+
+Every keyword doubles the possible variants of the unlocked shader, so only add one when the feature is expensive.
+
+### Passing Data from Vertex to Fragment Stages
+
+Target `vertexOutData` with a section that declares the field, guarded by your keyword so it only uses an interpolator when the feature is on:
+
+```hlsl
+#ifdef MY_KEYWORD
+    float4 myFeatureData : TEXCOORD23;
+#endif
+```
+
+Write it in a vertex hook as `o.myFeatureData` and read it in a fragment hook as `i.myFeatureData`. Choose a `TEXCOORD` index that nothing else uses. Check the file `Poi_Passes_And_Programs/VRLT_PoiVertexToFragment.poiTemplate` and any other Poiyomi module that also target `vertexOutData` for context.
+
+The Lil Fur pass declares it's own interpolator structs and has no `vertexOutData` slot, so custom interpolators don't reach Fur.
+
+### Real-World Example: Beat Saber
+
+Beat Saber support is an optional module built entirely from these pieces, which makes it a useful reference for a module that touches both the vertex and fragment stages. It lives in `ModularShader/Editor/Poi_OptionalModules/BS_Modules/` with the following features:
+
+| Section | Keywords | What it Does |
+| :--- | :--- | :--- |
+| `PoiBSProperties` | `THIRDPARTY_PROPERTIES` (Queue 102) | Inspector UI |
+| `PoiBSKeywords` | `<PASS>_PASS_KEYWORDS` | `POIBS_ENABLE` and `POIBS_BLOOMFOG` shader features |
+| `PoiBSVariables` | `<PASS>_PROPERTY_VARIABLES` | Uniforms, including the bloom pre-pass texture |
+| `PoiBSVertexFunctions` | `VERTEX_<PASS>_FUNCTIONS_EARLY` | Fog coordinate helpers |
+| `PoiBSVertexReturn` | `VERTEX_MODS_PENETRATION` | Writes the fog screen UV into the vertex output |
+| `PoiBSAlphaRewrite` | `FRAGMENT_<PASS>_ALPHA_LATE` | Folds in emission and applies the fog |
+
+Beat Saber puts its numeric uniforms in `PROPERTY_VARIABLES` because it predates the `_EXPOSED` convention. New modules should use `_EXPOSED` for those.
+
+### Conventions to Use
+
+- **Give the module a unique `Id`.** Dependencies and conflicts refer to modules by `Id`.
+- **Prefix every property** with your module name (`_EdgeGlow...`) so it can't clash with Poiyomi or other modules.
+- **Default to `THIRDPARTY_PROPERTIES`.** Any module can be installed from Third Party wherever it's settings live, but users will look for third-party settings there.
+- **Wrap everything in `//ifex`** so locked materials don't carry features that are switched off.
+- **Use `m_start_` / `m_end_`** for your top-level section and `s_start_` / `s_end_` for sub-sections.
+- **Double-check keyword spelling.** Injection is a plain text match, so a keyword no pass has is silently skipped. That keeps harmless mismatches harmless, but it means a typo drops your code.
+
+## Shipping A Custom Module
+
+When shipping your own Third Party module, please ensure you do the following:
+
+1. **Keep it in it's own folder OUTSIDE Poiyomi**, for example `Assets/YourFolder/PoiModules/Whatever/`.
+2. **Export a `.unitypackage` containing the following files:**
+   - `VRLM_<Id>.asset`
+   - `VRLTC_<Id>.poiTemplateCollection`
+   - Your Icon (if using one).
+   - Any other `.poiTemplate` files your module references.
+   - **DO NOT INCLUDE DEPENDENCIES!!!** The module asset depends on Poiyomi's own scripts. Shipping copies of Poiyomi's own scripts and files will override files that will break things that your customers will yell at you about, SO DO NOT INCLUDE THEM!
+
+Finally, tell your customers:
+
+> "Import the Package, open any Poiyomi material, expand `Third Party` section, and click `Install`."
+
+### Shipping Updates
+
+- **Export the same files again, with their `.meta` files.** Install state is tracked by asset GUID, so if you recreate the module from scratch it gets a new GUID and shows up as a different, uninstalled module.
+- **Bump `Version`.** The Update row then reads `1.0 → 1.1` instead of `new changes`.
+- **Keep property names stable.** Materials store values by property name, so a renamed property loses its value.
+
+### Depending on Other Modules
+
+- List each dependency's `Id` in `ModuleDependencies`. It can be one of Poiyomi's own modules or another third-party module.
+- For a third-party dependency, the user has to import **and install** it first. Until then your row shows the missing dependency and **Install** stays greyed out.
+- Use `IncompatibleWith` for modules that can't be installed alongside yours.
+- To ship several modules as one feature, wrap them in a `ModuleCollection` (`Assets → Create → Poi → Modular Shader → Module Collection`) so they install as a single row.
+
+## Limitations
+
+- **One install applies to every Poiyomi shader**, Toon and Pro, every variant (Two Pass, Fur, Grab Pass, World, etc.). You can't install a module for just one shader. Variants missing a pass you target simply skip that code.
+- **Dependencies are checked against the fullest Poiyomi shader in the project** (Pro, when it's there), but the module is added to all of them. If you depend on a Pro-only module, Toon shaders fail generation with a missing-dependency error and are skipped. Where you can, depend only on modules every Poiyomi shader has.
+- **Interpolators added through `vertexOutData` don't reach Lil Fur pass** (see above).
+
+## Troubleshooting
+
+| Symptom | What to Check |
+| :--- | :--- |
+| Module isn't listed in Third Party | Is it inside Poiyomi's folder? There it counts as core. Is it inside a `ModuleCollection`? Look for the collection's row. Is the material using a Poiyomi shader for the project's current pipeline? Did you import the `.asset` and not just the `.poiTemplateCollection`? |
+| **Install** is greyed out | Read the row's byline or tooltip, then see [Blocked modules](#blocked-features). |
+| Installed, but no settings appear | The properties section must target a `*_PROPERTIES` keyword and contain a matching `m_start_` / `m_end_` pair. If the material is locked, unlock it. |
+| Installed, but nothing changes | Check keyword spelling and that the passes you need are targeted. Use `Poi → Tools → Modular Shader → Module Order Listing` to see whether something at a higher Queue overwrites your result. |
+| `undeclared identifier` | The variables aren't declared in that pass. Every pass you call into needs your `_EXPOSED` / `PROPERTY_VARIABLES` sections too. |
+| Other Poiyomi shaders don't have it yet | That's expected. They rebuild the first time a material using them is selected. |
+| Module disappeared after updating Poiyomi | Click **Rebuild Shader** in Third Party |
+| No **Remove** item on your section's <FAIcon icon="fa-solid fa-ellipsis-vertical"/> menu | Your properties have no `m_start_` section. Use the <FAIcon icon="fa-solid fa-ellipsis-vertical"/> menu on the Third Party header instead. |

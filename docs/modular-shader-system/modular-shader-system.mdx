@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 0
 title: Modular Shader System
 description: A guide to creating shader modules for the Poiyomi Shaders framework.
 keywords: [modular, shader, module, template, poiyomi, development, custom, poiTemplateCollection, VRLM, VRLT, VRLTC]
@@ -11,12 +11,26 @@ Poiyomi Shaders is put together using the Modular Shader System, which allows fo
 This page contains complex information! Therefore, this is intended to be read by Advanced Shader Developers only.
 :::
 
+## Quick Start
+
+The fastest way to make a module is `Poi -> Create New Module`. Name it, pick where its settings appear and where its code runs, then click `Create`. You get a folder containing the two files described below.
+
+Then open any Poiyomi material, expand `Third Party`, and click `Install` on your module. That material's shader rebuilds and your settings appear in its inspector. The shader's name doesn't change. Other Poiyomi shaders pick the module up the first time you select a material that uses them. To take it out again, use `Remove` in the <FAIcon icon="fa-solid fa-ellipsis-vertical"/> menu on your module's section.
+
+The rest of this page explains what the Wizard sets up for you. For how installing, updating and removing works from the user's side, see [Third Party](/third-party/third-party.mdx).
+
 ## Overview
 
 The Poiyomi Shader system uses a modular architecture where individual features are defined as separate modules. Each module consists of two main files:
 
 1. **Module Definition** (`.asset`) - YAML file defining module metadata and template references
 2. **Template Collection** (`.poiTemplateCollection`) - Contains the actual shader code templates
+
+The template collection is a plain text file. On import, every `#T#` section in it becomes its own sub-asset, named after its header. The module definition then points each section at one or more [injection keywords](#common-keywords-injection-points).
+
+:::tip
+Don't hand-edit the `fileID` references in the `.asset` file. Create the module with the wizard, or assign templates in the module's inspector, and let Unity write them.
+:::
 
 ## File Structure
 
@@ -28,6 +42,8 @@ Poi_FeatureModules/
 │   ├── VRLTC_PoiYourModule.poiTemplateCollection  # Shader code
 │   └── VRLTC_PoiYourModule.poiTemplateCollection.meta
 ```
+
+Poiyomi's own modules live in `Poi_FeatureModules/`. A Third Party module can live anywhere in the project, as long as it's **outside** the Poiyomi folder. See [What is a Third Party Module](/third-party/third-party.mdx#what-is-a-third-party-module) for why.
 
 ### Naming Convention
 
@@ -41,11 +57,16 @@ Poi_FeatureModules/
 
 | Field | Description |
 |-------|-------------|
-| `Id` | Unique identifier for the module |
-| `ModuleDependencies` | List of required modules |
-| `IncompatibleWith` | Modules that conflict with this one |
+| `Id` | Unique identifier for the module. Must be unique across the whole project, since dependencies and conflicts use it |
+| `Name`, `Version`, `Author`, `Description` | Shown on the module's row in Third Party before it's installed. Bump `Version` with each release, so the **Update** button can show which version people are moving to |
+| `Icon` | Optional texture shown at the start of that row. Without one, a puzzle piece is shown |
+| `ModuleDependencies` | Ids of modules that must also be installed |
+| `IncompatibleWith` | Ids of modules that can't be installed alongside this one |
+| `AllowDuplicates` | Whether the same module can appear more than once. See [Duplicate Module Support](#duplicate-module-support) |
 | `Templates` | References to template sections with keyword mappings |
-| `Queue` | Priority order (lower = earlier in shader) |
+| `Queue` | Set on each template entry. Priority order (lower = earlier in shader). See [Ordering](#ordering) |
+
+Dependencies and conflicts are checked before install. A module with an unmet dependency can't be installed, and its row in Third Party shows why.
 
 ## Template Collection (.poiTemplateCollection)
 
@@ -94,7 +115,20 @@ _YourProperty ("Property Name", Range(0, 1)) = 0.5
 
 ## Common Keywords (Injection Points)
 
-Keywords define where code is injected into the shader pipeline. Keywords are marked with `#K#` in templates.
+Keywords define where code is injected into the shader pipeline. Keywords are marked with `#K#` in templates. For example, `#K#FRAGMENT_BASE_COLOR` in a pass program is where everything targeting `FRAGMENT_BASE_COLOR` gets pasted.
+
+Keywords are per pass. `BASE` is the main forward pass. The others are `ADD` (extra realtime lights), `META` (lightmap baking), `SHADOW` (shadow caster), `OUTLINE`, `LILFUR` (fur), `DEPTH` (depth only and depth normals), and `MOTION_VECTORS` (URP only). Two-pass and grab pass shaders also have `BASETWO`/`ADDTWO` and `SELF_GRAB` versions of some keywords, listed in the tables below. Target every pass you want your effect to appear in.
+
+Targeting a keyword that a pass doesn't have is harmless. Injection is a plain text match, so that template is skipped silently instead of causing an error. The flip side is that a misspelled keyword doesn't cause an error either; that code just never shows up in the shader.
+
+### The Four Keywords a Typical Module Needs
+
+| Section | Keyword | Holds |
+|---------|---------|-------|
+| Properties | One [UI section](#property-categories) | Shader properties, which make up the inspector UI |
+| Variables | `<PASS>_PROPERTY_VARIABLES_EXPOSED` | Numeric declarations such as `float _MyThing;` |
+| Functions | `FRAGMENT_<PASS>_FUNCTIONS` | Your function definitions |
+| Function Calls | A [hook point](#fragment-execution-pipeline) | The call that runs your function |
 
 ### Top-Level Shader Structure
 
@@ -103,40 +137,47 @@ These keywords define the overall shader structure and pass ordering:
 | Keyword | Description |
 |---------|-------------|
 | `SHADER_TAGS` | Shader-level tags and properties |
-| `DEPTH_NORMAL_PASS` | Depth normals pass injection |
+| `DEPTH_NORMALS_PASS` | Depth normals pass injection |
 | `GRAB_PASS` | Grab pass for screen effects |
-| `EARLY_Z_PASS` | Early Z depth pass |
+| `DEPTH_ONLY_PASS` | Depth only (early Z) pass |
 | `EARLY_OUTLINE_PASS` | Early outline pass (before base) |
 | `BASE_PASS` | Main forward base pass |
-| `FUR_BASE_PASS` | Fur geometry base pass |
 | `ADD_PASS` | Additive lighting pass |
+| `SELF_GRAB_PASS` | Self grab pass |
 | `BASE_PASS_TWO` | Second base pass (two-pass shaders) |
 | `ADD_PASS_TWO` | Second additive pass |
-| `OUTLINE_PASS` | Outline rendering pass |
+| `OUTLINE_PASS` | Outline rendering pass. The lil Fur passes are injected here too |
 | `SHADOW_PASS` | Shadow casting pass |
 | `META_PASS` | Lightmapping/GI meta pass |
+| `MOTION_VECTORS_PASS` | Motion vectors pass (URP only) |
 
 ### Property Categories
 
-Properties are organized into UI categories:
+These keywords decide where your settings appear in the inspector. Third Party modules should default to `THIRDPARTY_PROPERTIES`. Every module is offered for install in the Third Party section either way; one that puts its settings somewhere else says where on its row.
 
-| Keyword | Category |
-|---------|----------|
-| `TOP_PROPERTIES` | Top-level shader properties |
-| `MAIN_PROPERTIES` | Color & Normals section |
-| `2NDPASS_PROPERTIES` | Second pass properties |
-| `OUTLINE_PROPERTIES` | Outline section |
-| `LIGHTING_PROPERTIES` | Shading section |
-| `SPECIALFX_PROPERTIES` | Special FX section |
-| `VERTEX_PROPERTIES` | Vertex Options section |
-| `GRABPASS_PROPERTIES` | Grab Pass section |
-| `GLOBAL_PROPERTIES` | Global Data and Masks |
-| `UV_PROPERTIES` | UV modification properties |
-| `POSTPROCESSING_PROPERTIES` | Post Processing section |
-| `MODIFIER_PROPERTIES` | Global Modifiers section |
-| `EXTRAS_PROPERTIES` | Extra/miscellaneous properties |
-| `THIRDPARTY_PROPERTIES` | Third Party integrations |
-| `RENDERING_PROPERTIES` | Rendering options section |
+In inspector order:
+
+| Keyword | Appears As |
+|---------|------------|
+| `MAIN_PROPERTIES` | Color & Normals |
+| `2NDPASS_PROPERTIES` | 2nd Pass *(Two Pass shaders only)* |
+| `OUTLINE_PROPERTIES` | Outlines |
+| `LIGHTING_PROPERTIES` | Shading |
+| `SPECIALFX_PROPERTIES` | Special FX |
+| `RAYMARCHING_PROPERTIES` | Raymarching |
+| `VERTEX_PROPERTIES` | Vertex Options |
+| `GRABPASS_PROPERTIES` | Grab Pass *(Grab Pass shaders only)* |
+| `GLOBAL_PROPERTIES` | Global Modifiers & Data -> Global Data and Masks |
+| `UV_PROPERTIES` | Global Modifiers & Data -> UVs |
+| `POSTPROCESSING_PROPERTIES` | Global Modifiers & Data -> Post Processing |
+| `MODIFIER_PROPERTIES` | Global Modifiers & Data |
+| `EXTRAS_PROPERTIES` | *(No header, added as-is)* |
+| `THIRDPARTY_PROPERTIES` | Third Party |
+| `RENDERING_PROPERTIES` | Rendering |
+
+`TOP_PROPERTIES` also exists, above every section. It's where the lock button lives, so it isn't a normal home for a module.
+
+The source of truth for this list is `Poi_UIBoilerPlate/VRLTC_PoiPropertySkeleton.poiTemplateCollection`. The Create New Module wizard reads that file directly, so its dropdown always matches the shader, even when new sections are added.
 
 ### Generic Pass Keywords
 
@@ -161,11 +202,12 @@ Each pass type has its own keyword and pragma injection points:
 | Shadow | `SHADOW_PASS_KEYWORDS` | `SHADOW_PASS_PRAGMA_PROGRAMS` |
 | Meta | `META_PASS_KEYWORDS` | `META_PASS_PRAGMA_PROGRAMS` |
 | Outline | `OUTLINE_PASS_KEYWORDS` | `OUTLINE_PASS_PRAGMA_PROGRAMS` |
-| EarlyZ | `EARLYZ_PASS_KEYWORDS` | `EARLYZ_PASS_PRAGMA_PROGRAMS` |
-| DepthNormal | `DEPTHNORMAL_PASS_KEYWORDS` | - |
+| Depth (Depth Only and Depth Normals) | `DEPTH_PASS_KEYWORDS` | `DEPTH_PASS_PRAGMA_PROGRAMS` |
 | LilFur | `LILFUR_PASS_KEYWORDS` | `LILFUR_PASS_PRAGMA_PROGRAMS` |
 | Base Two | `BASE_PASS_TWO_KEYWORDS` | `BASE_PASS_TWO_PRAGMA_PROGRAMS` |
 | Add Two | `ADD_PASS_TWO_KEYWORDS` | `ADD_PASS_TWO_PRAGMA_PROGRAMS` |
+| Self Grab | `SELF_GRAB_PASS_KEYWORDS` | - |
+| Motion Vectors (URP only) | `MOTION_VECTORS_PASS_KEYWORDS` | `MOTION_VECTORS_PASS_PRAGMA_PROGRAMS` |
 
 ### Stencil Injection Points
 
@@ -175,27 +217,31 @@ Each pass type has its own keyword and pragma injection points:
 | `ADD_PASS_STENCIL` | Add pass stencil settings |
 | `SHADOW_PASS_STENCIL` | Shadow pass stencil settings |
 | `META_PASS_STENCIL` | Meta pass stencil settings |
-| `EARLYZ_PASS_STENCIL` | EarlyZ pass stencil settings |
-| `DEPTHNORMAL_PASS_STENCIL` | Depth normal stencil settings |
+| `DEPTH_PASS_STENCIL` | Depth only and depth normals stencil settings |
+| `MOTION_VECTORS_PASS_STENCIL` | Motion vectors stencil settings (URP only) |
 | `BASETWO_PASS_STENCIL` | Base two pass stencil |
 | `ADDTWO_PASS_STENCIL` | Add two pass stencil |
 
 ### Variable Declarations
 
-Variables must be declared in the correct pass sections:
+Variables must be declared in every pass that uses them. Each pass has two keywords for this:
 
-| Keyword | Usage |
-|---------|-------|
-| `BASE_PROPERTY_VARIABLES` | Variables for base pass |
-| `ADD_PROPERTY_VARIABLES` | Variables for add pass |
-| `SHADOW_PROPERTY_VARIABLES` | Variables for shadow pass |
-| `META_PROPERTY_VARIABLES` | Variables for meta pass |
-| `OUTLINE_PROPERTY_VARIABLES` | Variables for outline pass |
-| `EARLYZ_PROPERTY_VARIABLES` | Variables for early Z pass |
-| `DEPTHNORMAL_PROPERTY_VARIABLES` | Variables for depth normal pass |
-| `LILFUR_PROPERTY_VARIABLES` | Variables for LilFur pass |
-| `BASETWO_PROPERTY_VARIABLES` | Variables for base two pass |
-| `ADDTWO_PROPERTY_VARIABLES` | Variables for add two pass |
+- **`<PASS>_PROPERTY_VARIABLES_EXPOSED`** holds numeric uniforms: floats, vectors and colors. In URP it sits inside the `UnityPerMaterial` cbuffer.
+- **`<PASS>_PROPERTY_VARIABLES`** holds `Texture2D` and sampler declarations, which must stay outside that cbuffer.
+
+| Pass | Numbers, Vectors & Colors | Textures & Samplers |
+|------|---------------------------|---------------------|
+| Base | `BASE_PROPERTY_VARIABLES_EXPOSED` | `BASE_PROPERTY_VARIABLES` |
+| Add | `ADD_PROPERTY_VARIABLES_EXPOSED` | `ADD_PROPERTY_VARIABLES` |
+| Shadow | `SHADOW_PROPERTY_VARIABLES_EXPOSED` | `SHADOW_PROPERTY_VARIABLES` |
+| Meta | `META_PROPERTY_VARIABLES_EXPOSED` | `META_PROPERTY_VARIABLES` |
+| Outline | `OUTLINE_PROPERTY_VARIABLES_EXPOSED` | `OUTLINE_PROPERTY_VARIABLES` |
+| Depth | `DEPTH_PROPERTY_VARIABLES_EXPOSED` | `DEPTH_PROPERTY_VARIABLES` |
+| LilFur | `LILFUR_PROPERTY_VARIABLES_EXPOSED` | `LILFUR_PROPERTY_VARIABLES` |
+| Base Two | `BASETWO_PROPERTY_VARIABLES_EXPOSED` | `BASETWO_PROPERTY_VARIABLES` |
+| Add Two | `ADDTWO_PROPERTY_VARIABLES_EXPOSED` | `ADDTWO_PROPERTY_VARIABLES` |
+| Self Grab | `SELF_GRAB_PROPERTY_VARIABLES_EXPOSED` | `SELF_GRAB_PROPERTY_VARIABLES` |
+| Motion Vectors (URP only) | `MOTION_VECTORS_PROPERTY_VARIABLES_EXPOSED` | `MOTION_VECTORS_PROPERTY_VARIABLES` |
 
 ### Vertex Shader Keywords
 
@@ -234,15 +280,18 @@ These keywords are used within the vertex program for modifying vertex data:
 | `HULLDOMAIN_ADD_PROGRAM` | Hull/Domain shader for add pass |
 | `HULLDOMAIN_SHADOW_PROGRAM` | Hull/Domain shader for shadow pass |
 | `HULLDOMAIN_META_PROGRAM` | Hull/Domain shader for meta pass |
-| `HULLDOMAIN_DEPTHNORMAL_PROGRAM` | Hull/Domain shader for depth normal |
+| `HULLDOMAIN_DEPTH_NORMALS_PROGRAM` | Hull/Domain shader for depth normals |
+| `HULLDOMAIN_DEPTH_ONLY_PROGRAM` | Hull/Domain shader for depth only |
 | `HULLDOMAIN_LILFUR_PROGRAM` | Hull/Domain shader for LilFur |
+| `HULLDOMAIN_MOTION_VECTORS_PROGRAM` | Hull/Domain shader for motion vectors (URP only) |
 | `GEOMETRY_BASE_PROGRAM` | Geometry shader for base pass |
 | `GEOMETRY_ADD_PROGRAM` | Geometry shader for add pass |
 | `GEOMETRY_SHADOW_PROGRAM` | Geometry shader for shadow pass |
 | `GEOMETRY_META_PROGRAM` | Geometry shader for meta pass |
-| `GEOMETRY_DEPTHNORMAL_PROGRAM` | Geometry shader for depth normal |
-| `GEOMETRY_EARLYZ_PROGRAM` | Geometry shader for early Z |
+| `GEOMETRY_DEPTH_NORMALS_PROGRAM` | Geometry shader for depth normals |
+| `GEOMETRY_DEPTH_ONLY_PROGRAM` | Geometry shader for depth only (early Z) |
 | `GEOMETRY_LILFUR_PROGRAM` | Geometry shader for LilFur |
+| `GEOMETRY_MOTION_VECTORS_PROGRAM` | Geometry shader for motion vectors (URP only) |
 
 ### Fragment Shader Keywords
 
@@ -258,27 +307,28 @@ Fragment program injection points (per pass - replace `BASE` with pass name):
 
 ### Fragment Execution Pipeline
 
-These keywords control the fragment shader execution order:
+These are the hook points where your code runs, in execution order within the fragment program. All of them sit in the same function body, so the same variables are in scope at every one.
 
-| Keyword | Timing | Description |
-|---------|--------|-------------|
-| `FRAGMENT_BASE_DECLARATIONS` | Start | Variable declarations |
-| `FRAGMENT_BASE_INIT_EARLY` | Init | Early initialization |
-| `FRAGMENT_BASE_INIT` | Init | Main initialization |
-| `FRAGMENT_BASE_INIT_LATE` | Init | Late initialization |
-| `FRAGMENT_BASE_COLOR_EARLY` | Color | Early color modifications |
-| `FRAGMENT_BASE_COLOR` | Color | Main color calculations |
-| `FRAGMENT_BASE_COLOR_LATE` | Color | Late color modifications |
-| `FRAGMENT_BASE_LIGHTING_EARLY` | Lighting | Early lighting setup |
-| `FRAGMENT_BASE_LIGHTING` | Lighting | Main lighting calculations |
-| `FRAGMENT_BASE_LIGHTING_LATE` | Lighting | Post-lighting effects |
-| `FRAGMENT_BASE_EMISSION_EARLY` | Emission | Early emission |
-| `FRAGMENT_BASE_EMISSION` | Emission | Main emission calculations |
-| `FRAGMENT_BASE_EMISSION_LATE` | Emission | Late emission effects |
-| `FRAGMENT_BASE_RETURN` | Return | Before final return |
-| `FRAGMENT_BASE_ALPHA_LATE` | Alpha | Final alpha modifications |
+| Keyword | Runs | Passes |
+|---------|------|--------|
+| `FRAGMENT_BASE_DECLARATIONS` | Structs are declared here. Don't target this | All |
+| `FRAGMENT_BASE_INIT_EARLY` | Before mesh data is filled in | All |
+| `FRAGMENT_BASE_INIT` | Mesh, light and camera data gets filled in | All |
+| `FRAGMENT_BASE_INIT_LATE` | After setup, before any color | All |
+| `FRAGMENT_BASE_COLOR_EARLY` | Before the main texture | All |
+| `FRAGMENT_BASE_COLOR` | Main texture and decals. **The usual choice** | All |
+| `FRAGMENT_BASE_COLOR_LATE` | After all color work | All |
+| `FRAGMENT_BASE_LIGHTING_EARLY` | Before the lighting model | All except Depth, Motion Vectors and Self Grab |
+| `FRAGMENT_BASE_LIGHTING` | Alongside the lighting model | All except Depth, Motion Vectors and Self Grab |
+| `FRAGMENT_BASE_LIGHTING_LATE` | After the lighting model | All except Depth, Motion Vectors and Self Grab |
+| `FRAGMENT_BASE_LIGHTING_ADD` | Adding light on top, such as rim lights and glows | Base, Add, Meta, Outline and LilFur |
+| `FRAGMENT_BASE_EMISSION_EARLY` | Early emission | All except Depth, Motion Vectors and Self Grab |
+| `FRAGMENT_BASE_EMISSION` | Main emission calculations | All except Depth, Motion Vectors and Self Grab |
+| `FRAGMENT_BASE_EMISSION_LATE` | Late emission effects | All except Depth, Motion Vectors and Self Grab |
+| `FRAGMENT_BASE_RETURN` | Last change before alpha cutout | All |
+| `FRAGMENT_BASE_ALPHA_LATE` | After clipping | Base, Add, Outline, LilFur and Self Grab |
 
-The same pattern applies to other passes: `FRAGMENT_ADD_*`, `FRAGMENT_OUTLINE_*`, `FRAGMENT_LILFUR_*`, etc.
+The same pattern applies to other passes: `FRAGMENT_ADD_*`, `FRAGMENT_OUTLINE_*`, `FRAGMENT_LILFUR_*`, etc. The **Passes** column shows which passes have each hook.
 
 ### Data Initialization Keywords
 
@@ -287,11 +337,10 @@ The same pattern applies to other passes: `FRAGMENT_ADD_*`, `FRAGMENT_OUTLINE_*`
 | `POI_MESH_PROPERTIES` | PoiMesh struct properties |
 | `POI_CAM_PROPERTIES` | PoiCam struct properties |
 | `POI_LIGHT_PROPERTIES` | PoiLight struct properties |
-| `POI_VERTEX_LIGHTS_PROPERTIES` | Vertex light properties |
 | `MESH_DATA_INIT` | Mesh data initialization |
 | `MESH_DATA_POST_INIT` | Post mesh initialization |
 | `MAIN_TEXTURE_SAMPLE` | Main texture sampling |
-| `FRAGMENT_NORMAL_CALCULATIION` | Normal calculation |
+| `FRAGMENT_NORMAL_CALCULATION` | Normal calculation |
 | `CAMERA_DATA_INIT` | Camera data initialization |
 
 ### Feature-Specific Keywords
@@ -300,7 +349,7 @@ Some modules expose their own injection points:
 
 | Keyword | Module | Description |
 |---------|--------|-------------|
-| `BASE_COLOR_MOD` | Main | Base color modification |
+| `MAIN_COLOR_MOD` | Main | Base color modification |
 | `TANGENT_NORMAL_INJECTION` | Main | Normal map injection |
 | `BASE_LIGHTDATA_MOD` | Light Data | Light data modification |
 | `BASE_AFTER_ATTENUATION` | Light Data | After attenuation calculation |
@@ -309,7 +358,42 @@ Some modules expose their own injection points:
 | `POI_EMISSION0_MODS` | Emission | Emission 0 modifications |
 | `LILFUR_TWO_PASS_PROPS` | LilFur | Fur two-pass properties |
 
+### Reflections & Specular Smoothness Modifiers
+
+Code injected at `MOCHIE_METALLIC_SMOOTHNESS_MOD` should access the current Reflections & Specular instance through `POI_BRDF_MOD_DATA`, for example `POI_BRDF_MOD_DATA.smoothness`. The alias only exists around that hook, and it follows the current instance when Reflections & Specular is duplicated. Don't hardcode the first instance's `mochieBRDFData` identifier in injected modifiers.
+
+## Ordering
+
+Each template entry has a `Queue` (default `100`). Within a keyword, everything targeting it is sorted by `Queue` in ascending order, so lower runs earlier. There's no "run after module X" setting; it's one flat number.
+
+Ties keep module order, and user modules are processed after Poiyomi's own. **So at the default `Queue` of 100, your code runs after Poiyomi's**, which is usually what you want.
+
+These bands are used throughout the shader. They're a convention, not a rule:
+
+| Queue | Used For |
+|-------|----------|
+| Negative | Before core setup |
+| `0` | Core infrastructure, such as data structures and init |
+| `1`–`99` | Features that must run before the bulk |
+| `100` | Default. Most features |
+| `101`–`999` | Features that must run after the bulk |
+| `1000`+ | Last |
+
+`Poi -> Tools -> Modular Shader -> Module Order Listing` lists every module targeting a given keyword, with editable queues.
+
 ## Core Data Structures
+
+Five structs are declared before any hook point and filled in during `INIT`, so they're in scope at every fragment hook:
+
+| Struct | Useful Fields |
+|--------|---------------|
+| `PoiFragData poiFragData` | `baseColor`, `finalColor`, `alpha`, `emission`, `smoothness`, `metallic` |
+| `PoiMesh poiMesh` | `uv[11]`, `normals[2]`, `worldPos`, `localPos`, `vertexColor`, `isFrontFace`, `tangent[2]` |
+| `PoiLight poiLight` | `finalLightAdd`, `direction`, `directColor`, `indirectColor`, `lightMap`, `nDotL`, `attenuation` |
+| `PoiCam poiCam` | Camera position and vectors |
+| `PoiMods poiMods` | `globalEmission` and other cross-module modifiers |
+
+Note that `baseColor`, `finalColor` and `emission` are `half3`, not `half4`. Alpha is kept separately.
 
 ### PoiFragData
 
@@ -317,19 +401,19 @@ Fragment output data for color, lighting, and material properties.
 
 ```hlsl
 struct PoiFragData {
-    float3 baseColor;           // Albedo color before lighting
-    float3 finalColor;          // Final color after all effects
-    float alpha;                // Transparency
-    float3 emission;            // Emissive color
+    half3 baseColor;            // Albedo color before lighting
+    half3 finalColor;           // Final color after all effects
+    half alpha;                 // Transparency
+    half3 emission;             // Emissive color
     
     // PBR Properties
-    float smoothness;           // Primary smoothness (0-1)
-    float smoothness2;          // Secondary smoothness for layered materials
-    float metallic;             // Metallic value (0-1)
-    float specularMask;         // Mask for specular highlights
-    float reflectionMask;       // Mask for reflections
+    half smoothness;            // Primary smoothness (0-1)
+    half smoothness2;           // Secondary smoothness for layered materials
+    half metallic;              // Metallic value (0-1)
+    half specularMask;          // Mask for specular highlights
+    half reflectionMask;        // Mask for reflections
     
-    float toggleVertexLights;   // Enable/disable vertex lights contribution
+    half toggleVertexLights;    // Enable/disable vertex lights contribution
 };
 ```
 
@@ -358,7 +442,7 @@ struct PoiMesh {
     float4 vertexColor;         // Vertex color RGBA
     float4 lightmapUV;          // Lightmap UVs
     
-    // UV Channels (10 total)
+    // UV Channels (11 total)
     // [0-3] = UV0-UV3
     // [4]   = Panosphere UV
     // [5]   = World position XZ
@@ -366,7 +450,8 @@ struct PoiMesh {
     // [7]   = Distorted UV
     // [8]   = Local position
     // [9]   = Matcap UV
-    float2 uv[10];
+    // [10]  = Screen space UV
+    float2 uv[11];
     
     // Parallax
     float2 parallaxUV;          // UV offset from parallax
@@ -565,6 +650,16 @@ Use placeholders in templates:
 - `<ms_include_in_not_first>{ }` - Only in subsequent instances
 - `<ms_include_in_last>{ }` - Only in last instance
 
+### Example: Multiple Backlight Instances
+
+Custom modular shaders can include `PoiBacklight` more than once. For example, one instance with low Directivity and View Direction Strength for a front highlight, plus another for silhouette backlighting. The current default shaders include two independently enabled sections, **Backlight 1** and **Backlight 2**. Both are disabled by default, so existing materials look the same until the second one is turned on.
+
+The generator keeps the first instance's existing property names and keyword. Additional instances use the standard `__1`, `__2`, etc. suffixes, for example `_BacklightDirectivity__1`, `_BacklightColorTex__1` and `POI_BACKLIGHT__1`. Colors, textures, directionality, shadow reception, backface masking and enable toggles are all independent. Each instance adds to `finalLightAdd` using the existing Backlight formula.
+
+Global mask storage is shared on purpose. Mask writes and reads follow module order, so instances targeting the same mask can affect each other.
+
+Each enabled instance repeats the Backlight lighting calculation in each relevant pass, plus one texture sample per shaded fragment when a texture is used. Each additional instance also adds a local shader keyword, which doubles the possible Backlight combinations before variant stripping. Disabled instances are excluded by their keyword, and the material optimizer can strip them using their own enable property. No extra render pass is added.
+
 ## ThryEditor Property Attributes
 
 Common UI attributes for material properties:
@@ -586,6 +681,25 @@ Common UI attributes for material properties:
 | `[MultiSlider]` | Sets the Vector to clamp between a min and max value |
 | `[Ramp4(normalized)]` | Use a vector curve ramp |
 | `[DoNotAnimate]` | Explicitly block the property from being tagged as Animated |
+| `[ThryHDR]` | HDR color picker for ordinary tint colors, without Unity's `HDR` flag. See [HDR Tint Colors](#hdr-tint-colors) |
+
+### HDR Tint Colors
+
+Use `[ThryHDR]` for ordinary tint colors. It turns on the HDR color picker in Thry's inspectors without setting Unity's `HDR` shader property flag:
+
+```hlsl
+[ThryHDR] _MyTint ("Tint", Color) = (1, 1, 1, 1)
+```
+
+Adding this drawer to an existing ordinary `Color` property keeps its saved values, alpha, and gamma-to-linear conversion. Values above 1 are allowed and use that same conversion. Keep any existing brightness or intensity multipliers, since the drawer doesn't change any shader math.
+
+Use Unity's `[HDR]` when a new property needs linear HDR values, such as an emission color.
+
+:::warning
+DO NOT remove existing `[HDR]` or `[Gamma]` attributes to switch to the tint picker. That would reinterpret existing materials and animation values.
+:::
+
+In 11.0 and newer, existing HDR properties keep their original flags, except Theme Colors 0–3. Those deliberately switch from `[HDR]` to `[ThryHDR]` to match ordinary tints, so saved non-white theme colors can render differently in Linear color space. Their stored values aren't migrated. Older shader versions, and other shaders that use ThryEditor, are unchanged.
 
 ### UI Organization
 
@@ -673,6 +787,34 @@ float poiEdgeLinear(float value, float border, float blur);
 #endif
 ```
 
+## Shared Raymarching Data
+
+:::info
+The Raymarching Data module only exists in Poiyomi Pro. A Third Party module that depends on it fails to generate in the Toon shaders. See the [Third Party Limitations](/third-party/third-party.mdx#limitations).
+:::
+
+Anything that raymarches through the mesh needs the same two baked inputs: an SDF volume of the mesh, and its bind pose stored in the mesh UVs. Both come from one bake, so they live in their own module, `Poi_FeatureModules/Pro/Poi_Raymarching`. It owns the **SDF Volume & Bind Data** section under Raymarching, the **Bake SDF + Bind Data** button, and these properties: `_SDFTexture`, `_SDFPixelSize`, `_SDFLowerCorner`, `_SDFSize`, `_MinThickness`, `_BindDataMode`, the three bind UV slots, and `_WorldRecale`.
+
+To use it from your own raymarching module:
+
+1. Add `Poi Raymarching Data` to your `ModuleDependencies`.
+2. Request the data from your keywords template, so shaders without your feature carry none of it:
+   ```hlsl
+   #ifdef MY_RAYMARCHING_KEYWORD
+       #define POI_RAYMARCHING_DATA
+   #endif
+   ```
+
+3. Add your enable property to the `//ifex` lines in that module's templates, so the optimizer can still strip the data from locked materials that use no raymarching feature at all.
+
+You then get the following, guarded by `POI_RAYMARCHING_DATA`:
+
+| Name | Description |
+|------|-------------|
+| `PoiGetModelThickness(startPos, marchDir)` | Distance from a point inside the mesh to where the ray exits, marched through the baked SDF |
+| `PoiUseBindData(poiMesh)` | Whether to march in bind space. Forced on, or automatic when the mesh carries bind data |
+| `poiMesh.bindPosition`, `poiMesh.bindNormal`, `poiMesh.bindTangent` | The bind pose at this fragment |
+
 ## Best Practices
 
 1. **Always wrap code in feature guards** - Use `#ifdef` and `//ifex` to exclude unused code
@@ -682,6 +824,8 @@ float poiEdgeLinear(float value, float border, float blur);
 5. **Use appropriate queue values** - Lower values execute first
 6. **Test with optimizer enabled** - Ensure guards work correctly
 7. **Provide documentation links** - Use `button_help` for tutorials
+8. **Prefix every property** - Start property names with your module's name (`_MyModule…`) so they can't collide with another module's
+9. **Put numbers in `_EXPOSED`** - Floats, vectors and colors go in `<PASS>_PROPERTY_VARIABLES_EXPOSED`, textures and samplers in `<PASS>_PROPERTY_VARIABLES`. See [Variable Declarations](#variable-declarations)
 
 ## Example: Simple Color Tint Module
 
@@ -801,6 +945,7 @@ The shader supports multiple UV coordinate sources:
 | 7 | Distorted UV | Post-distortion UVs |
 | 8 | Local Pos | Object-space position |
 | 9 | Matcap | View-space matcap UVs |
+| 10 | Screen Space | Screen-space UVs |
 
 ## String Builders (Duplicate Modules)
 
@@ -869,6 +1014,8 @@ if (VRCMirrorMode() > 0)
    - Verify the module is added to the appropriate ModuleCollection
    - Check that the GUID references in the .asset file are correct
    - Ensure Unity has reimported the meta files
+   - For a Third Party module, make sure it's outside the Poiyomi folder, and that it has been installed from the **Third Party** section of a material
+   - Check your keywords for typos, since a misspelled keyword is skipped without an error
 
 2. **Properties not showing in material**
    - Check `//ifex` conditions match property values
@@ -893,7 +1040,7 @@ if (VRCMirrorMode() > 0)
 ### Debugging Tips
 
 - Use the Debug module to visualize values
-- Enable `POI_DEBUG` to access debug output
+- Turn on the **DEBUG** section (`_DEBUGEnabled`) to access debug output
 - Check the generated shader code in the Shaders folder after generation
 - Test with optimizer both enabled and disabled
 
@@ -903,11 +1050,13 @@ if (VRCMirrorMode() > 0)
 
 When developing modules, enable automatic shader rebuilding to see changes immediately:
 
-1. Go to **Poi → Modular Shaders Generator**
+1. Go to `Poi -> Modular Shaders Generator`
 2. Check the checkbox next to the shader(s) you want to auto-rebuild
 3. The shader will now regenerate whenever you modify module files
 
 The generator window shows all available shader variants with their source module definitions. You can also manually trigger rebuilds by clicking **Generate Shaders**.
+
+For a module installed from **Third Party**, editing any of its files makes Third Party show an **Update** row marked "new changes". Click it to rebuild with your edits. See [The Development Loop](/third-party/third-party.mdx#the-development-loop).
 
 ### Shader Output Destinations
 
@@ -918,9 +1067,24 @@ Each shader has configurable output settings:
 
 ## Adding Modules to Shaders
 
-Modules are included via Module Collections. Add your module reference to the appropriate collection asset (e.g., `ModuleCollectionPro.asset`) or create a custom shader definition that includes your module.
+There are two ways a module ends up in a shader:
+
+- **Third Party modules** are installed from the **Third Party** section of any Poiyomi material. No collection asset needs editing. See [Third Party](/third-party/third-party.mdx).
+- **Core modules** are included via Module Collections. Add your module reference to the appropriate collection asset (e.g., `ModuleCollectionPro.asset`) or create a custom shader definition that includes your module.
+
+## Shipping a Module
+
+Export both files as a `.unitypackage`, plus your icon if you set one. Nothing else is needed: no folder requirements and no manifest. Importing it anywhere in a project makes it appear in the Third Party section of every Poiyomi material, ready to install.
+
+To ship an update, export the same files again. When someone imports the newer version, Third Party shows an **Update** button that rebuilds with it. Bump `Version` so the button can show which version they're moving to.
+
+See [Shipping A Custom Module](/third-party/third-party.mdx#shipping-a-custom-module) for what to leave out of the export, and why the `.meta` files matter.
 
 ## Additional Resources
 
 - [ThryEditor Attributes](/thryeditor/attributes.mdx)
-- Existing modules in `Poi_FeatureModules/` serve as excellent references
+- [Third Party](/third-party/third-party.mdx)
+- Existing modules in `Poi_FeatureModules/` serve as excellent references. These are small, complete examples in `ModularShader/Editor/Poi_FeatureModules/Toon/`:
+  - **`Poi_VertexColors`**: The minimal shape. Four sections, a color hook, and nothing else
+  - **`Poi_Backlight`**: A lighting module using `finalLightAdd`, with textures and a shader keyword
+  - **`AL_Modules/Poi_ALDecals`**: A large one, with sub-sections, masks and blend modes
