@@ -5,14 +5,22 @@ description: Grab Pass Transparency takes a screenshot of the scene every frame 
 keywords: [grab, pass, grabpass, transparency, refraction, blur, poiyomi, shader]
 ---
 
-Grab Pass transparency uses a Grab Pass, which takes a screenshot of the scene every frame to create special effects like refraction and blur. It's a powerful, but expensive feature that enables unique effects.
+Grab Pass transparency uses a Grab Pass, which takes a screenshot of the scene every frame to create special effects like refraction and blur. It's a powerful, but expensive feature that enables unique effects. Enabling Grab Pass will allow Raymarching effects (if they exist) within the shader.
 
-To use Grab Pass, select the Shader version `.poiyomi/Poiyomi Toon Grab Pass`. Included in this Shader version, a new Grab Pass category will appear with the following settings shown below.
-
-**Before you start adjusting settings, please choose a GrabPass Preset!** This dropdown replaces the Rendering Preset menu in favor of specialized Grab Pass Rendering Presets.
+To use Grab Pass, select the Shader version `.poiyomi/Poiyomi {Toon or Pro} Grab Pass`. Included in this Shader version, a new Grab Pass category will appear with the following settings shown below.
 
 :::warning
 Grab Pass is an expensive feature - it has to take a screenshot every frame. This will always cause some amount of performance hit, so use it judiciously!
+:::
+
+## GrabPass Preset
+
+<Property type="dropdown" options={['Transparent', 'Additive', 'Soft Additive', 'Multiplicative', '2x Multiplicative']} default="Transparent" />
+
+This dropdown replaces the [Rendering Preset](/general/render-preset.mdx) menu in favor of specialized Grab Pass Rendering Presets. **You must choose one of these presets before you start adjusting settings.** Each of these Grab Pass Rendering Presets will set the Render Queue to least `3000`.
+
+:::danger
+Any Grab Pass material that has a Render Queue that is way too low (less than `3000`) will cause the Grab Pass to get run earlier than it should, breaking every subsequent use of the Grab Pass in of itself!
 :::
 
 ## Mask Type
