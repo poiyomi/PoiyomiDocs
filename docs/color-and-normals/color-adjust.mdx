@@ -66,20 +66,6 @@ Adjusts the gamma of the base color.
 
 This can lerp the brightness of the color in regards to it's hue or tone. Lower values are more lighter, while higher values are more bolder.
 
-## Tint
-
-### Tint Color
-
-<Property type="color" default="#FFFFFF" />
-
-Sets the mixture tone color, used for adjusting the colorfulness and how the perceived hue can be affected.
-
-### Tint Texture
-
-<Property type="texture" texture="data" />
-
-If defined, the texture's color can be used for defining the mixture tone color.
-
 ## Hue Shift
 
 <Property type="toggle" />
@@ -193,6 +179,82 @@ Which chronotensity motion mode to use for the hue shift motion. These are somew
 <Property type="float" />
 
 How fast the audio link chronotensity should cycle the hue shift.
+
+## Tint
+
+### Tint Color
+
+<Property type="color" default="#FFFFFF" />
+
+Sets the mixture tone color, used for adjusting the colorfulness and how the perceived hue can be affected.
+
+### Tint Texture
+
+<Property type="texture" texture="data" />
+
+If defined, the texture's color can be used for defining the mixture tone color.
+
+## Black & White
+
+<Property type="toggle" />
+
+Turns the main texture into an old-fashioned style B&W look.
+
+### Measure Texture
+
+This button will read the main texture's typical tone and highlight so that proper B&W application can be visible.
+
+### Lightness
+
+<Property type="range" min="0" max="1" default="1" />
+
+Sets the light (or brightness) of the B&W effect.
+
+### Contrast
+
+<Property type="range" min="0" max="2" default="1" />
+
+Contrasts the B&W effect.
+
+### Tint
+
+<Property type="color" />
+
+Sets a color to tint the B&W effect to.
+
+### Strength
+
+<Property type="range" min="0" max="1" default="0" />
+
+Sets the overall strength of the effect.
+
+### Mask Channel
+
+<Property type="dropdown" options={['None', 'R', 'G', 'B', 'A']} />
+
+Isolates which channel in the Mask should be used for the B&W effect.
+
+### Pick Colors
+
+<Property type="toggle" />
+
+Takes the base and highlight from the texture.
+
+### Select By Color
+
+<Property type="toggle" />
+
+Limits the effect to one color only.
+
+### Texture Range
+
+#### Typical
+
+<Property type="range" min="0" max="1" default="0.5" />
+
+#### Highlight
+
+<Property type="range" min="0" max="1" default="0.7" />
 
 ## Color Grading
 
