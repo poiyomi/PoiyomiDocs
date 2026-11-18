@@ -18,6 +18,12 @@ Neutral Surface Emission maps bright Emissions found on the material toward whit
 
 Blends back toward the original Emission to preserve brightness for Bloom. World Post Processing, including Bloom and Tone Mapping, can still change how this looks.
 
+## Preserve Bloom
+
+<Property type="toggle" default="On" />
+
+Keeps the full HDR brightness from Bloom at any HDR Retention. The surface still maps toward white as much as the HDR Retention can allow.
+
 ## Hue Correction
 
 <Property type="range" min="0" max="1" />
