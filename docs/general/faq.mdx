@@ -51,6 +51,19 @@ It is always recommended to use the latest version of the Shader. If an Avatar B
 <details>
 <summary>
 
+### I'm having issues with my materials showing an error that the file "could not be written" when locked. Why? {/* #long-file-paths */}
+
+</summary>
+
+Many Operating Systems, including Windows, has a limit on how long your file path can be located relative to the system root. If your materials are located too far nested into your disk drive (inside LOTS of sub-folders), the OS will outright refuse to create them when attempting to lock your materials.
+
+To fix this issue, move your materials closer to the root of your `Assets` folder. Consider also moving your Unity Project's folder closer to the root of the drive it's located on so that you have more headroom for organization.
+
+</details>
+
+<details>
+<summary>
+
 ### I am receiving Errors when attempting to use Poiyomi Shaders. What should I do? {/* #errors */}
 
 </summary>
