@@ -126,11 +126,11 @@ This dropdown allows you to select how the Color Adjustment should behave when t
 
 <Property type="toggle" default="On" />
 
-Changes how the hue shift is applied when a hue shift mask is present. 
+Changes how the Hue channel is used when a mask is used.
 
-If enabled, the base color will be lerped with the hue shifted color based on the mask's red channel value. Generally, this will result in more of the base color being present.
+If enabled, the mask works as a strength. The base color is blended toward the hue-shifted color by the mask's red value. Black keeps the original color and white gets the full shift.
 
-If disabled, the base color will be directly hue shifted, with the amount of hue shift determined by both the slider and the mask's red channel. 
+If disabled, the mask works as a hue offset, not a strength. Its red value is added to the Hue Shift slider, so each pixel's hue turns by the slider amount plus the mask value. Pure black and pure white give the same result, and mid-grey adds half a turn. Use this to paint different hues with a grayscale mask. To limit where the shift applies, keep Hue Replace on.
 
 ### Hue Shift
 
