@@ -21,17 +21,15 @@ Usage of RGBA Color Masking can greatly increase efficiency for various types of
 
 Below are the list of properties available to use in RGBA Color Masking.
 
-## Mask Type
+## Masks
 
-<Property type="dropdown" options={['Texture', 'Vertex Colors']} default="Texture" />
+<Property type="texture" texture="data" />
 
-<Property type="dropdown" options={['Texture', 'Vertex Colors']} />
+Use a Texture Mask to set the RGBA Mask. Utilizes the integrated Thry Texture Packer.
 
-### Texture
+### Vertex Color
 
-Use a Texture Mask to set the RGBA Mask. If enabled, it exposes the [Masks](#masks) slot.
-
-### Vertex Colors
+<Property type="dropdown" options={['Off', 'R', 'G', 'B', 'A']} />
 
 Use the mesh's [Vertex Colors](/vertex-options/vertex-colors.mdx) to set the RGBA Mask.
 
@@ -39,29 +37,23 @@ Use the mesh's [Vertex Colors](/vertex-options/vertex-colors.mdx) to set the RGB
 When using Vertex Colors as the RGBA Mask, make sure the Color Attributes on the Mesh are in **Linear** Color so that the shader can accurately read them.
 :::
 
-## Masks and Maps
-
-### Masks
-
-<Property type="texture" texture="data" />
-
-Slot for the masks that you wish to use for your RGBA Masking. This will only be exposed when Mask Type is set to Texture.
-
-:::info
-This slot is only exposed when **Mask Type** is set to `Texture`.
-:::
-
-### Metallic Maps
+## Metallic Maps
 
 <Property type="texture" texture="data" />
 
 Slot to use for Metallics & Smoothness effect on your RGBA Masks. Use this for the Metallics mapping in each channel.
 
-### Smoothness Maps
+## Smoothness Maps
 
 <Property type="texture" texture="data" />
 
 Slot to use for Metallics & Smoothness effect on your RGBA Masks. Use this for the Smoothness mapping in each channel.
+
+## AO Maps
+
+<Property type="texture" texture="data" />
+
+Slot to use for baked Ambient Occlusion textures on your RGBA Masks.
 
 ## Channel Module
 
@@ -93,6 +85,12 @@ Determines both the Scale and Offset of the affected area.
 <Property type="dropdown" options={['Replace', 'Darken', 'Multiply', 'Lighten', 'Screen', 'Subtract', 'Add', 'Overlay', 'Mixed']} default="Replace" />
 
 Choice of Blend mode you wish to use for this channel.
+
+### Affect Alpha
+
+<Property type="toggle" />
+
+If enabled, the Channel will contribute to the material Alpha.
 
 ### Normal Blend
 
@@ -149,13 +147,67 @@ By default, a standard Normal intensity would be `1`, for reference.
 
 Set the Emission strength to the masked area. High values can create a "bloom" effect in worlds with Post Processing.
 
+### AO
+
+#### AO Strength
+
+<Property type="range" min="0" max="1" />
+
+Sets the overall strength used for the AO Map covering the Channel this is in.
+
+#### Custom Sampling {/* #ao-custom-sampling */}
+
+#### Tiling/Offset
+
+<Property type="vector4" default={{X: 1, Y: 1, Z: 0, W: 0}}>
+[Custom Sampling](#ao-custom-sampling) is enabled
+</Property>
+
+Sets the Tiling and Offset for the custom AO sampling.
+
+#### UV
+
+<Property type="dropdown" options={['UV0', 'UV1', 'UV2', 'UV3', 'Panosphere', 'World Pos', 'Local Pos', 'Polar UV', 'Distorted UV', 'Matcap']}>
+[Custom Sampling](#ao-custom-sampling) is enabled
+</Property>
+
+Sets the UV to use for the custom AO sampling.
+
+#### Stochastic Sampling
+
+<Property type="toggle">
+[Custom Sampling](#ao-custom-sampling) is enabled
+</Property>
+
+Turns on Stochastic Sampling for the AO sampling.
+
+#### Panning
+
+<Property type="vector2">
+[Custom Sampling](##ao-custom-sampling) is enabled
+</Property>
+
+Sets panning intensity on the AO sampling.
+
+#### Mask Channel
+
+<Property type="dropdown" options={['R', 'G', 'B', 'A', 'Same as Color']} />
+
+Sets which Mask Channel in RGBA Color Masking to use.
+
+#### Global Mask
+
+<Property type="dropdown" options={['Off', '1R', '1G', '1B', '1A', '2R', '2G', '2B', '2A', '3R', '3G', '3B', '3A', '4R', '4G', '4B', '4A', 'Same as Color']} />
+
+Sets which Global Mask to use for AO.
+
 ### Metallics & Smoothness
 
 <Property type="toggle" />
 
 Enables the usage of your [Metallic Map](#metallic-maps) and [Smoothness Map](#smoothness-maps) to be used in the Channel, if defined.
 
-### Custom Sampling
+#### Custom Sampling {/* #m&s-custom-sampling */}
 
 <Property type="toggle">
 [Metallics & Smoothness](#metallics--smoothness) is enabled
@@ -163,34 +215,52 @@ Enables the usage of your [Metallic Map](#metallic-maps) and [Smoothness Map](#s
 
 If enabled, exposes more options for sampling your Metallic Maps and Smoothness Maps.
 
-### Tiling/Offset
+#### Tiling/Offset
 
 <Property type="vector4" default={{X: 1, Y: 1, Z: 0, W: 0}}>
-[Custom Sampling](#custom-sampling) is enabled
+[Custom Sampling](#m&s-custom-sampling) is enabled
 </Property>
 
 Sets the Tiling and Offset for the custom Metallics & Smoothness sampling.
 
-### UV
+#### UV
 
 <Property type="dropdown" options={['UV0', 'UV1', 'UV2', 'UV3', 'Panosphere', 'World Pos', 'Local Pos', 'Polar UV', 'Distorted UV', 'Matcap']}>
-[Custom Sampling](#custom-sampling) is enabled
+[Custom Sampling](#m&s-custom-sampling) is enabled
 </Property>
 
 Sets the UV to use for the custom Metallics & Smoothness sampling.
 
-### Stochastic Sampling
+#### Stochastic Sampling
 
 <Property type="toggle">
-[Custom Sampling](#custom-sampling) is enabled
+[Custom Sampling](#m&s-custom-sampling) is enabled
 </Property>
 
 Turns on Stochastic Sampling for the Metallics & Smoothness sampling.
 
-### Panning
+#### Panning
 
 <Property type="vector2">
-[Custom Sampling](#custom-sampling) is enabled
+[Custom Sampling](#m&s-custom-sampling) is enabled
 </Property>
 
 Sets panning intensity on the Metallics & Smoothness sampling.
+
+#### Mask Channel
+
+<Property type="dropdown" options={['R', 'G', 'B', 'A', 'Same as Color']} />
+
+Sets which Mask Channel in RGBA Color Masking to use.
+
+#### Global Mask
+
+<Property type="dropdown" options={['Off', '1R', '1G', '1B', '1A', '2R', '2G', '2B', '2A', '3R', '3G', '3B', '3A', '4R', '4G', '4B', '4A', 'Same as Color']} />
+
+Sets which Global Mask to use for Metallics & Smoothness.
+
+#### Smoothness Blend
+
+<Property type="dropdown" options={['Replace', 'Multiply', 'Add', 'Subtract', 'Min', 'Max']} />
+
+Sets which blending operation to use for Metallics & Smoothness.
