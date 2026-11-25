@@ -8,7 +8,7 @@ import styles from './styles.module.css';
 // Every `type` a <Property> can have. `icon` is a PropertyIcon name; types without one show just the label.
 const TYPES: Record<string, { label: string; icon?: string }> = {
     toggle: { label: 'Toggle', icon: 'toggle' },
-    toggles: { label: 'Vector Toggles', icon: 'toggle' },
+    toggles: { label: 'Vector Toggles', icon: 'vectortoggles' },
     float: { label: 'Float', icon: 'float' },
     range: { label: 'Range', icon: 'floatrange' },
     int: { label: 'Integer', icon: 'int' },
@@ -21,7 +21,6 @@ const TYPES: Record<string, { label: string; icon?: string }> = {
     vector4: { label: 'Vector4', icon: 'float4' },
     curve: { label: 'Vector Curve', icon: 'vectorcurve' },
     color: { label: 'Color', icon: 'color' },
-    hdrcolor: { label: 'HDR Color', icon: 'hdrcolor' },
     texture: { label: 'Texture Slot', icon: 'texture' },
     dropdown: { label: 'Dropdown', icon: 'dropdown' },
     logicgate: { label: 'Logic Gate' },
@@ -40,7 +39,9 @@ const ALIASES: Record<string, string> = {
     checkbox: 'toggle',
     vectortoggles: 'toggles',
     buttonvector: 'toggles',
-    hdr: 'hdrcolor',
+    // HDR colors are shown as plain Colors, matching the Shader UI.
+    hdr: 'color',
+    hdrcolor: 'color',
     enum: 'dropdown',
     logic: 'logicgate',
 };

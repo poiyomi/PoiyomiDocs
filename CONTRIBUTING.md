@@ -202,8 +202,7 @@ Anything between `<Property>` and `</Property>` is the condition for the propert
 | `float2`, `float3`, `float4` | Float2, Float3, Float4 | |
 | `vector2`, `vector3`, `vector4` | Vector2, Vector3, Vector4 | |
 | `curve` | Vector Curve | |
-| `color` | Color | |
-| `hdrcolor` | HDR Color | |
+| `color` | Color | Use this for HDR colors too. |
 | `texture` | Texture Slot | `texture`: `color`, `data`, `normal`, `cubemap`, `gradient`, `array` or `volume`. Adds the sRGB setting that texture needs, which `srgb={true}` or `srgb={false}` can override. |
 | `dropdown` | Dropdown | `options`: a list like `{['Off', 'On']}` |
 | `logicgate` | Logic Gate | `options`: a list like `{['AND', 'OR', 'XOR']}`. No icon yet. |

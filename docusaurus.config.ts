@@ -226,6 +226,28 @@ const config: Config = {
           customCss: "./src/css/custom.css",
         },
 
+        // Inline SVGs share one page, so the `.cls-1` / `id` names Illustrator gives every export would clash
+        // (e.g. `.cls-3` is a dark fill in one property icon and a light one in another). prefixIds scopes them
+        // per file. The preset-default entry repeats Docusaurus's own default, which svgoConfig replaces.
+        svgr: {
+          svgrConfig: {
+            svgoConfig: {
+              plugins: [
+                {
+                  name: 'preset-default',
+                  params: {
+                    overrides: {
+                      removeTitle: false,
+                      removeViewBox: false,
+                    },
+                  },
+                },
+                'prefixIds',
+              ],
+            },
+          },
+        },
+
         sitemap: {
           lastmod: 'date',
           changefreq: 'weekly',

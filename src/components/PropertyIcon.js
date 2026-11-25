@@ -8,10 +8,10 @@ import Icon_Float3 from '@site/static/img/property-icons/Icon_Float3D.svg';
 import Icon_Float4 from '@site/static/img/property-icons/Icon_Float4D.svg';
 import Icon_FloatRange from '@site/static/img/property-icons/Icon_FloatRangeD.svg';
 import Icon_FloatClamped from '@site/static/img/property-icons/Icon_FloatClampedD.svg';
-import Icon_HDRColor from '@site/static/img/property-icons/Icon_HDRColorD.svg';
 import Icon_Slider from '@site/static/img/property-icons/Icon_SliderD.svg';
 import Icon_Texture from '@site/static/img/property-icons/Icon_TextureD.svg';
 import Icon_Toggle from '@site/static/img/property-icons/Icon_ToggleD.svg';
+import Icon_VectorToggles from '@site/static/img/property-icons/Icon_VectorToggles.svg';
 import Icon_Float4Curve from '@site/static/img/property-icons/Icon_Float4DCurve.svg';
 import Icon_Curve4 from '@site/static/img/property-icons/Icon_Curve4.svg';
 
@@ -31,13 +31,15 @@ const iconMap = {
     vector4: Icon_Float4,
     integer: Icon_Slider,
     int: Icon_Slider,
-    hdrcolor: Icon_HDRColor,
+    hdrcolor: Icon_Color,
     slider: Icon_Slider,
     texture: Icon_Texture,
     toggle: Icon_Toggle,
     checkbox: Icon_Toggle,
     bool: Icon_Toggle,
     boolean: Icon_Toggle,
+    vectortoggles: Icon_VectorToggles,
+    toggles: Icon_VectorToggles,
     vectorcurve: Icon_Float4Curve,
     curve4: Icon_Curve4,
 };
