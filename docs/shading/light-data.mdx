@@ -417,7 +417,15 @@ Shadows from Light Volumes is treated alongside Poiyomi's code. Therefore, the i
 
 <Property type="range" min="0" max="1" default="1" />
 
-Configures how intensity the specular feature in Light Volumes should appear.
+Adjusts the specular intensity received from Light Volumes data.
+
+### Max LV Specular Lights
+
+<Property type="range" min="∞" max="32" />
+
+Limits how many Light Volume probes adds a highlight. Every light will still light the surface though.
+
+If set to infinity, every light that reaches the pixel adds one. However, this can be limited. If set to a lower value (besides infinity), it will be faster in scenarios where many lights overlap each other.
 
 ### Normal Bias Sampling
 
