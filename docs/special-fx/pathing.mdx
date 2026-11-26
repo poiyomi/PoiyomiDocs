@@ -50,12 +50,6 @@ The Gradient Type setting is only visible with [Path Source](#path-source) set t
 
 Determines which UV to sample the Path Map from.
 
-## Point Sampling
-
-<Property type="toggle" default="On" />
-
-If enabled, will sample the Path from points.
-
 ## Direction Map
 
 <Property type="texture" texture="data">
@@ -83,6 +77,12 @@ Color and Mask Alpha remains a shared mask unless disabled.
 Defines the underlying color for the paths, and a mask for the paths. Both the RGB Color and the Alpha Mask will apply to all paths.
 
 The RGB Color can be used to show textures or colors where the path is active. The Alpha Mask can be used to define where the path is shown, and is very useful for creating clean paths, by creating "wider" paths on the path map, and masking out the edges (which often cause artifacts).
+
+## Point Sampling
+
+<Property type="toggle" default="On" />
+
+If enabled, will sample the Path from points.
 
 ## Paths
 
